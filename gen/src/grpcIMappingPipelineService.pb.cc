@@ -102,6 +102,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR init_grpc1Request::init_grpc1Request(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.relocalizationserviceurl_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.mapupdateserviceurl_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.grpcservercompressionformat_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct init_grpc1RequestDefaultTypeInternal {
@@ -420,6 +421,7 @@ const uint32_t TableStruct_grpcIMappingPipelineService_2eproto::offsets[] PROTOB
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::init_grpc1Request, _impl_.grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::init_grpc1Request, _impl_.relocalizationserviceurl_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::init_grpc1Request, _impl_.mapupdateserviceurl_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIMappingPipeline::init_grpc1Response, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -578,23 +580,23 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 28, -1, -1, sizeof(::grpcIMappingPipeline::stopRequest)},
   { 35, -1, -1, sizeof(::grpcIMappingPipeline::stopResponse)},
   { 42, -1, -1, sizeof(::grpcIMappingPipeline::init_grpc1Request)},
-  { 50, -1, -1, sizeof(::grpcIMappingPipeline::init_grpc1Response)},
-  { 57, -1, -1, sizeof(::grpcIMappingPipeline::setCameraParameters_grpc0Request)},
-  { 65, -1, -1, sizeof(::grpcIMappingPipeline::setCameraParameters_grpc0Response)},
-  { 72, -1, -1, sizeof(::grpcIMappingPipeline::setCameraParameters_grpc1Request)},
-  { 81, -1, -1, sizeof(::grpcIMappingPipeline::setCameraParameters_grpc1Response)},
-  { 88, -1, -1, sizeof(::grpcIMappingPipeline::setRectificationParametersRequest)},
-  { 97, -1, -1, sizeof(::grpcIMappingPipeline::setRectificationParametersResponse)},
-  { 104, -1, -1, sizeof(::grpcIMappingPipeline::set3DTransformSolARToWorldRequest)},
-  { 112, -1, -1, sizeof(::grpcIMappingPipeline::set3DTransformSolARToWorldResponse)},
-  { 119, -1, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc0Request)},
-  { 132, -1, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc0Response)},
-  { 141, -1, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc1Request)},
-  { 152, -1, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc1Response)},
-  { 160, -1, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc2Request)},
-  { 172, -1, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc2Response)},
-  { 181, -1, -1, sizeof(::grpcIMappingPipeline::getDataForVisualizationRequest)},
-  { 190, -1, -1, sizeof(::grpcIMappingPipeline::getDataForVisualizationResponse)},
+  { 51, -1, -1, sizeof(::grpcIMappingPipeline::init_grpc1Response)},
+  { 58, -1, -1, sizeof(::grpcIMappingPipeline::setCameraParameters_grpc0Request)},
+  { 66, -1, -1, sizeof(::grpcIMappingPipeline::setCameraParameters_grpc0Response)},
+  { 73, -1, -1, sizeof(::grpcIMappingPipeline::setCameraParameters_grpc1Request)},
+  { 82, -1, -1, sizeof(::grpcIMappingPipeline::setCameraParameters_grpc1Response)},
+  { 89, -1, -1, sizeof(::grpcIMappingPipeline::setRectificationParametersRequest)},
+  { 98, -1, -1, sizeof(::grpcIMappingPipeline::setRectificationParametersResponse)},
+  { 105, -1, -1, sizeof(::grpcIMappingPipeline::set3DTransformSolARToWorldRequest)},
+  { 113, -1, -1, sizeof(::grpcIMappingPipeline::set3DTransformSolARToWorldResponse)},
+  { 120, -1, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc0Request)},
+  { 133, -1, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc0Response)},
+  { 142, -1, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc1Request)},
+  { 153, -1, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc1Response)},
+  { 161, -1, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc2Request)},
+  { 173, -1, -1, sizeof(::grpcIMappingPipeline::mappingProcessRequest_grpc2Response)},
+  { 182, -1, -1, sizeof(::grpcIMappingPipeline::getDataForVisualizationRequest)},
+  { 191, -1, -1, sizeof(::grpcIMappingPipeline::getDataForVisualizationResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -634,100 +636,101 @@ const char descriptor_table_protodef_grpcIMappingPipelineService_2eproto[] PROTO
   "at\030\001 \001(\005\",\n\rstartResponse\022\033\n\023xpcfGrpcRet"
   "urnValue\030\001 \001(\021\"2\n\013stopRequest\022#\n\033grpcSer"
   "verCompressionFormat\030\001 \001(\005\"+\n\014stopRespon"
-  "se\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"Z\n\021init_"
+  "se\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"w\n\021init_"
   "grpc1Request\022#\n\033grpcServerCompressionFor"
   "mat\030\001 \001(\005\022 \n\030relocalizationServiceURL\030\002 "
-  "\001(\t\"1\n\022init_grpc1Response\022\033\n\023xpcfGrpcRet"
-  "urnValue\030\001 \001(\021\"]\n setCameraParameters_gr"
-  "pc0Request\022#\n\033grpcServerCompressionForma"
-  "t\030\001 \001(\005\022\024\n\014cameraParams\030\002 \001(\014\"@\n!setCame"
-  "raParameters_grpc0Response\022\033\n\023xpcfGrpcRe"
-  "turnValue\030\001 \001(\021\"u\n setCameraParameters_g"
-  "rpc1Request\022#\n\033grpcServerCompressionForm"
-  "at\030\001 \001(\005\022\025\n\rcameraParams1\030\002 \001(\014\022\025\n\rcamer"
-  "aParams2\030\003 \001(\014\"@\n!setCameraParameters_gr"
-  "pc1Response\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021"
-  "\"l\n!setRectificationParametersRequest\022#\n"
-  "\033grpcServerCompressionFormat\030\001 \001(\005\022\020\n\010re"
-  "ctCam1\030\002 \001(\014\022\020\n\010rectCam2\030\003 \001(\014\"A\n\"setRec"
-  "tificationParametersResponse\022\033\n\023xpcfGrpc"
-  "ReturnValue\030\001 \001(\021\"[\n!set3DTransformSolAR"
-  "ToWorldRequest\022#\n\033grpcServerCompressionF"
-  "ormat\030\001 \001(\005\022\021\n\ttransform\030\002 \001(\014\"A\n\"set3DT"
-  "ransformSolARToWorldResponse\022\033\n\023xpcfGrpc"
-  "ReturnValue\030\001 \001(\021\"\270\001\n\"mappingProcessRequ"
-  "est_grpc0Request\022#\n\033grpcServerCompressio"
-  "nFormat\030\001 \001(\005\022\016\n\006images\030\002 \001(\014\022\r\n\005poses\030\003"
-  " \001(\014\022\021\n\tfixedPose\030\004 \001(\010\022\021\n\ttransform\030\005 \001"
-  "(\014\022\030\n\020updatedTransform\030\006 \001(\014\022\016\n\006status\030\007"
-  " \001(\014\"l\n#mappingProcessRequest_grpc0Respo"
-  "nse\022\030\n\020updatedTransform\030\001 \001(\014\022\016\n\006status\030"
-  "\002 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\003 \001(\021\"\213\001\n\"m"
-  "appingProcessRequest_grpc1Request\022#\n\033grp"
-  "cServerCompressionFormat\030\001 \001(\005\022\016\n\006images"
-  "\030\002 \001(\014\022\r\n\005poses\030\003 \001(\014\022\021\n\tfixedPose\030\004 \001(\010"
-  "\022\016\n\006status\030\005 \001(\014\"R\n#mappingProcessReques"
-  "t_grpc1Response\022\016\n\006status\030\001 \001(\014\022\033\n\023xpcfG"
-  "rpcReturnValue\030\002 \001(\021\"\245\001\n\"mappingProcessR"
-  "equest_grpc2Request\022#\n\033grpcServerCompres"
-  "sionFormat\030\001 \001(\005\022\016\n\006images\030\002 \001(\014\022\r\n\005pose"
-  "s\030\003 \001(\014\022\021\n\tfixedPose\030\004 \001(\010\022\030\n\020updatedTra"
-  "nsform\030\005 \001(\014\022\016\n\006status\030\006 \001(\014\"l\n#mappingP"
-  "rocessRequest_grpc2Response\022\030\n\020updatedTr"
-  "ansform\030\001 \001(\014\022\016\n\006status\030\002 \001(\014\022\033\n\023xpcfGrp"
-  "cReturnValue\030\003 \001(\021\"w\n\036getDataForVisualiz"
-  "ationRequest\022#\n\033grpcServerCompressionFor"
-  "mat\030\001 \001(\005\022\031\n\021outputPointClouds\030\002 \001(\014\022\025\n\r"
-  "keyframePoses\030\003 \001(\014\"p\n\037getDataForVisuali"
-  "zationResponse\022\031\n\021outputPointClouds\030\001 \001("
-  "\014\022\025\n\rkeyframePoses\030\002 \001(\014\022\033\n\023xpcfGrpcRetu"
-  "rnValue\030\003 \001(\0212\242\014\n\033grpcIMappingPipelineSe"
-  "rvice\022a\n\ninit_grpc0\022\'.grpcIMappingPipeli"
-  "ne.init_grpc0Request\032(.grpcIMappingPipel"
-  "ine.init_grpc0Response\"\000\022R\n\005start\022\".grpc"
-  "IMappingPipeline.startRequest\032#.grpcIMap"
-  "pingPipeline.startResponse\"\000\022O\n\004stop\022!.g"
-  "rpcIMappingPipeline.stopRequest\032\".grpcIM"
-  "appingPipeline.stopResponse\"\000\022a\n\ninit_gr"
-  "pc1\022\'.grpcIMappingPipeline.init_grpc1Req"
-  "uest\032(.grpcIMappingPipeline.init_grpc1Re"
-  "sponse\"\000\022\216\001\n\031setCameraParameters_grpc0\0226"
-  ".grpcIMappingPipeline.setCameraParameter"
-  "s_grpc0Request\0327.grpcIMappingPipeline.se"
-  "tCameraParameters_grpc0Response\"\000\022\216\001\n\031se"
-  "tCameraParameters_grpc1\0226.grpcIMappingPi"
-  "peline.setCameraParameters_grpc1Request\032"
-  "7.grpcIMappingPipeline.setCameraParamete"
-  "rs_grpc1Response\"\000\022\221\001\n\032setRectificationP"
-  "arameters\0227.grpcIMappingPipeline.setRect"
-  "ificationParametersRequest\0328.grpcIMappin"
-  "gPipeline.setRectificationParametersResp"
-  "onse\"\000\022\221\001\n\032set3DTransformSolARToWorld\0227."
-  "grpcIMappingPipeline.set3DTransformSolAR"
-  "ToWorldRequest\0328.grpcIMappingPipeline.se"
-  "t3DTransformSolARToWorldResponse\"\000\022\224\001\n\033m"
-  "appingProcessRequest_grpc0\0228.grpcIMappin"
-  "gPipeline.mappingProcessRequest_grpc0Req"
-  "uest\0329.grpcIMappingPipeline.mappingProce"
-  "ssRequest_grpc0Response\"\000\022\224\001\n\033mappingPro"
-  "cessRequest_grpc1\0228.grpcIMappingPipeline"
-  ".mappingProcessRequest_grpc1Request\0329.gr"
-  "pcIMappingPipeline.mappingProcessRequest"
-  "_grpc1Response\"\000\022\224\001\n\033mappingProcessReque"
-  "st_grpc2\0228.grpcIMappingPipeline.mappingP"
-  "rocessRequest_grpc2Request\0329.grpcIMappin"
-  "gPipeline.mappingProcessRequest_grpc2Res"
-  "ponse\"\000\022\210\001\n\027getDataForVisualization\0224.gr"
-  "pcIMappingPipeline.getDataForVisualizati"
-  "onRequest\0325.grpcIMappingPipeline.getData"
-  "ForVisualizationResponse\"\000b\006proto3"
+  "\001(\t\022\033\n\023mapupdateServiceURL\030\003 \001(\t\"1\n\022init"
+  "_grpc1Response\022\033\n\023xpcfGrpcReturnValue\030\001 "
+  "\001(\021\"]\n setCameraParameters_grpc0Request\022"
+  "#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\024\n\014"
+  "cameraParams\030\002 \001(\014\"@\n!setCameraParameter"
+  "s_grpc0Response\022\033\n\023xpcfGrpcReturnValue\030\001"
+  " \001(\021\"u\n setCameraParameters_grpc1Request"
+  "\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\025\n"
+  "\rcameraParams1\030\002 \001(\014\022\025\n\rcameraParams2\030\003 "
+  "\001(\014\"@\n!setCameraParameters_grpc1Response"
+  "\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"l\n!setRect"
+  "ificationParametersRequest\022#\n\033grpcServer"
+  "CompressionFormat\030\001 \001(\005\022\020\n\010rectCam1\030\002 \001("
+  "\014\022\020\n\010rectCam2\030\003 \001(\014\"A\n\"setRectificationP"
+  "arametersResponse\022\033\n\023xpcfGrpcReturnValue"
+  "\030\001 \001(\021\"[\n!set3DTransformSolARToWorldRequ"
+  "est\022#\n\033grpcServerCompressionFormat\030\001 \001(\005"
+  "\022\021\n\ttransform\030\002 \001(\014\"A\n\"set3DTransformSol"
+  "ARToWorldResponse\022\033\n\023xpcfGrpcReturnValue"
+  "\030\001 \001(\021\"\270\001\n\"mappingProcessRequest_grpc0Re"
+  "quest\022#\n\033grpcServerCompressionFormat\030\001 \001"
+  "(\005\022\016\n\006images\030\002 \001(\014\022\r\n\005poses\030\003 \001(\014\022\021\n\tfix"
+  "edPose\030\004 \001(\010\022\021\n\ttransform\030\005 \001(\014\022\030\n\020updat"
+  "edTransform\030\006 \001(\014\022\016\n\006status\030\007 \001(\014\"l\n#map"
+  "pingProcessRequest_grpc0Response\022\030\n\020upda"
+  "tedTransform\030\001 \001(\014\022\016\n\006status\030\002 \001(\014\022\033\n\023xp"
+  "cfGrpcReturnValue\030\003 \001(\021\"\213\001\n\"mappingProce"
+  "ssRequest_grpc1Request\022#\n\033grpcServerComp"
+  "ressionFormat\030\001 \001(\005\022\016\n\006images\030\002 \001(\014\022\r\n\005p"
+  "oses\030\003 \001(\014\022\021\n\tfixedPose\030\004 \001(\010\022\016\n\006status\030"
+  "\005 \001(\014\"R\n#mappingProcessRequest_grpc1Resp"
+  "onse\022\016\n\006status\030\001 \001(\014\022\033\n\023xpcfGrpcReturnVa"
+  "lue\030\002 \001(\021\"\245\001\n\"mappingProcessRequest_grpc"
+  "2Request\022#\n\033grpcServerCompressionFormat\030"
+  "\001 \001(\005\022\016\n\006images\030\002 \001(\014\022\r\n\005poses\030\003 \001(\014\022\021\n\t"
+  "fixedPose\030\004 \001(\010\022\030\n\020updatedTransform\030\005 \001("
+  "\014\022\016\n\006status\030\006 \001(\014\"l\n#mappingProcessReque"
+  "st_grpc2Response\022\030\n\020updatedTransform\030\001 \001"
+  "(\014\022\016\n\006status\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValu"
+  "e\030\003 \001(\021\"w\n\036getDataForVisualizationReques"
+  "t\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\031"
+  "\n\021outputPointClouds\030\002 \001(\014\022\025\n\rkeyframePos"
+  "es\030\003 \001(\014\"p\n\037getDataForVisualizationRespo"
+  "nse\022\031\n\021outputPointClouds\030\001 \001(\014\022\025\n\rkeyfra"
+  "mePoses\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\003 \001"
+  "(\0212\242\014\n\033grpcIMappingPipelineService\022a\n\nin"
+  "it_grpc0\022\'.grpcIMappingPipeline.init_grp"
+  "c0Request\032(.grpcIMappingPipeline.init_gr"
+  "pc0Response\"\000\022R\n\005start\022\".grpcIMappingPip"
+  "eline.startRequest\032#.grpcIMappingPipelin"
+  "e.startResponse\"\000\022O\n\004stop\022!.grpcIMapping"
+  "Pipeline.stopRequest\032\".grpcIMappingPipel"
+  "ine.stopResponse\"\000\022a\n\ninit_grpc1\022\'.grpcI"
+  "MappingPipeline.init_grpc1Request\032(.grpc"
+  "IMappingPipeline.init_grpc1Response\"\000\022\216\001"
+  "\n\031setCameraParameters_grpc0\0226.grpcIMappi"
+  "ngPipeline.setCameraParameters_grpc0Requ"
+  "est\0327.grpcIMappingPipeline.setCameraPara"
+  "meters_grpc0Response\"\000\022\216\001\n\031setCameraPara"
+  "meters_grpc1\0226.grpcIMappingPipeline.setC"
+  "ameraParameters_grpc1Request\0327.grpcIMapp"
+  "ingPipeline.setCameraParameters_grpc1Res"
+  "ponse\"\000\022\221\001\n\032setRectificationParameters\0227"
+  ".grpcIMappingPipeline.setRectificationPa"
+  "rametersRequest\0328.grpcIMappingPipeline.s"
+  "etRectificationParametersResponse\"\000\022\221\001\n\032"
+  "set3DTransformSolARToWorld\0227.grpcIMappin"
+  "gPipeline.set3DTransformSolARToWorldRequ"
+  "est\0328.grpcIMappingPipeline.set3DTransfor"
+  "mSolARToWorldResponse\"\000\022\224\001\n\033mappingProce"
+  "ssRequest_grpc0\0228.grpcIMappingPipeline.m"
+  "appingProcessRequest_grpc0Request\0329.grpc"
+  "IMappingPipeline.mappingProcessRequest_g"
+  "rpc0Response\"\000\022\224\001\n\033mappingProcessRequest"
+  "_grpc1\0228.grpcIMappingPipeline.mappingPro"
+  "cessRequest_grpc1Request\0329.grpcIMappingP"
+  "ipeline.mappingProcessRequest_grpc1Respo"
+  "nse\"\000\022\224\001\n\033mappingProcessRequest_grpc2\0228."
+  "grpcIMappingPipeline.mappingProcessReque"
+  "st_grpc2Request\0329.grpcIMappingPipeline.m"
+  "appingProcessRequest_grpc2Response\"\000\022\210\001\n"
+  "\027getDataForVisualization\0224.grpcIMappingP"
+  "ipeline.getDataForVisualizationRequest\0325"
+  ".grpcIMappingPipeline.getDataForVisualiz"
+  "ationResponse\"\000b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_grpcIMappingPipelineService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_grpcIMappingPipelineService_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_grpcIMappingPipelineService_2eproto = {
-    false, false, 3834, descriptor_table_protodef_grpcIMappingPipelineService_2eproto,
+    false, false, 3863, descriptor_table_protodef_grpcIMappingPipelineService_2eproto,
     "grpcIMappingPipelineService.proto",
     &descriptor_table_grpcIMappingPipelineService_2eproto_once, descriptor_table_grpcIMappingPipelineService_2eproto_deps, 1, 24,
     schemas, file_default_instances, TableStruct_grpcIMappingPipelineService_2eproto::offsets,
@@ -1827,6 +1830,7 @@ init_grpc1Request::init_grpc1Request(const init_grpc1Request& from)
   init_grpc1Request* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.relocalizationserviceurl_){}
+    , decltype(_impl_.mapupdateserviceurl_){}
     , decltype(_impl_.grpcservercompressionformat_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
@@ -1839,6 +1843,14 @@ init_grpc1Request::init_grpc1Request(const init_grpc1Request& from)
     _this->_impl_.relocalizationserviceurl_.Set(from._internal_relocalizationserviceurl(), 
       _this->GetArenaForAllocation());
   }
+  _impl_.mapupdateserviceurl_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.mapupdateserviceurl_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_mapupdateserviceurl().empty()) {
+    _this->_impl_.mapupdateserviceurl_.Set(from._internal_mapupdateserviceurl(), 
+      _this->GetArenaForAllocation());
+  }
   _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   // @@protoc_insertion_point(copy_constructor:grpcIMappingPipeline.init_grpc1Request)
 }
@@ -1849,12 +1861,17 @@ inline void init_grpc1Request::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.relocalizationserviceurl_){}
+    , decltype(_impl_.mapupdateserviceurl_){}
     , decltype(_impl_.grpcservercompressionformat_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.relocalizationserviceurl_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.relocalizationserviceurl_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.mapupdateserviceurl_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.mapupdateserviceurl_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -1870,6 +1887,7 @@ init_grpc1Request::~init_grpc1Request() {
 inline void init_grpc1Request::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.relocalizationserviceurl_.Destroy();
+  _impl_.mapupdateserviceurl_.Destroy();
 }
 
 void init_grpc1Request::SetCachedSize(int size) const {
@@ -1883,6 +1901,7 @@ void init_grpc1Request::Clear() {
   (void) cached_has_bits;
 
   _impl_.relocalizationserviceurl_.ClearToEmpty();
+  _impl_.mapupdateserviceurl_.ClearToEmpty();
   _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1908,6 +1927,16 @@ const char* init_grpc1Request::_InternalParse(const char* ptr, ::_pbi::ParseCont
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "grpcIMappingPipeline.init_grpc1Request.relocalizationServiceURL"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string mapupdateServiceURL = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_mapupdateserviceurl();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "grpcIMappingPipeline.init_grpc1Request.mapupdateServiceURL"));
         } else
           goto handle_unusual;
         continue;
@@ -1956,6 +1985,16 @@ uint8_t* init_grpc1Request::_InternalSerialize(
         2, this->_internal_relocalizationserviceurl(), target);
   }
 
+  // string mapupdateServiceURL = 3;
+  if (!this->_internal_mapupdateserviceurl().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_mapupdateserviceurl().data(), static_cast<int>(this->_internal_mapupdateserviceurl().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "grpcIMappingPipeline.init_grpc1Request.mapupdateServiceURL");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_mapupdateserviceurl(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1977,6 +2016,13 @@ size_t init_grpc1Request::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_relocalizationserviceurl());
+  }
+
+  // string mapupdateServiceURL = 3;
+  if (!this->_internal_mapupdateserviceurl().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_mapupdateserviceurl());
   }
 
   // int32 grpcServerCompressionFormat = 1;
@@ -2005,6 +2051,9 @@ void init_grpc1Request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
   if (!from._internal_relocalizationserviceurl().empty()) {
     _this->_internal_set_relocalizationserviceurl(from._internal_relocalizationserviceurl());
   }
+  if (!from._internal_mapupdateserviceurl().empty()) {
+    _this->_internal_set_mapupdateserviceurl(from._internal_mapupdateserviceurl());
+  }
   if (from._internal_grpcservercompressionformat() != 0) {
     _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
@@ -2030,6 +2079,10 @@ void init_grpc1Request::InternalSwap(init_grpc1Request* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.relocalizationserviceurl_, lhs_arena,
       &other->_impl_.relocalizationserviceurl_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.mapupdateserviceurl_, lhs_arena,
+      &other->_impl_.mapupdateserviceurl_, rhs_arena
   );
   swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }

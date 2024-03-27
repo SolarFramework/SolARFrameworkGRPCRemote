@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<xpcf-registry>
+  <module uuid="a0f522d1-b70e-4d0f-ad78-84e78a9af6bf" name="xpcfGrpcRemotingSolARFramework" description="xpcf remoting module for project SolARFramework" path="$REMAKENROOT/modules">
+    <component uuid="5ac9298e-480b-11ed-b878-0242ac120002" name="IDenseMappingPipeline_grpcServer" description="IDenseMappingPipeline_grpcServer">
+      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+      <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+    </component>
+    <component uuid="82f9fdff-06ee-471f-a260-b7f4ac414627" name="IMapUpdatePipeline_grpcServer" description="IMapUpdatePipeline_grpcServer">
+      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+      <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+    </component>
+    <component uuid="aced265d-832c-44e3-9356-dab531fa153a" name="IMappingPipeline_grpcServer" description="IMappingPipeline_grpcServer">
+      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+      <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+    </component>
+    <component uuid="234bb765-ac3b-4755-8825-5cd92145b7a8" name="IRelocalizationPipeline_grpcServer" description="IRelocalizationPipeline_grpcServer">
+      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+      <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+    </component>
+    <component uuid="95913e8e-5695-11ec-bf63-0242ac130002" name="IFrontEnd_grpcServer" description="IFrontEnd_grpcServer">
+      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+      <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+    </component>
+    <component uuid="2bc10e03-8a2d-44a1-b53e-d72d09f99b9b" name="IMapsManager_grpcServer" description="IMapsManager_grpcServer">
+      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+      <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+    </component>
+    <component uuid="65c3a736-6432-11ed-81ce-0242ac120002" name="IServiceManager_grpcServer" description="IServiceManager_grpcServer">
+      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+      <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+    </component>
+  </module>
+  <factory>
+    <bindings>
+      <bind interface="org::bcom::xpcf::IGrpcService">
+        <component to="IDenseMappingPipeline_grpcServer"/>
+        <component to="IMapUpdatePipeline_grpcServer"/>
+        <component to="IMappingPipeline_grpcServer"/>
+        <component to="IRelocalizationPipeline_grpcServer"/>
+        <component to="IFrontEnd_grpcServer"/>
+        <component to="IMapsManager_grpcServer"/>
+        <component to="IServiceManager_grpcServer"/>
+      </bind>
+    </bindings>
+  </factory>
+</xpcf-registry>

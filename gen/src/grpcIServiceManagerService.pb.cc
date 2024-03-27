@@ -21,32 +21,6 @@ namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
 namespace grpcIServiceManager {
-PROTOBUF_CONSTEXPR initRequest::initRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.grpcservercompressionformat_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct initRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR initRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~initRequestDefaultTypeInternal() {}
-  union {
-    initRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 initRequestDefaultTypeInternal _initRequest_default_instance_;
-PROTOBUF_CONSTEXPR initResponse::initResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct initResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR initResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~initResponseDefaultTypeInternal() {}
-  union {
-    initResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 initResponseDefaultTypeInternal _initResponse_default_instance_;
 PROTOBUF_CONSTEXPR registerServiceRequest::registerServiceRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.serviceurl_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -191,25 +165,11 @@ struct unlockServiceResponseDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 unlockServiceResponseDefaultTypeInternal _unlockServiceResponse_default_instance_;
 }  // namespace grpcIServiceManager
-static ::_pb::Metadata file_level_metadata_grpcIServiceManagerService_2eproto[12];
+static ::_pb::Metadata file_level_metadata_grpcIServiceManagerService_2eproto[10];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_grpcIServiceManagerService_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_grpcIServiceManagerService_2eproto = nullptr;
 
 const uint32_t TableStruct_grpcIServiceManagerService_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::initRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::initRequest, _impl_.grpcservercompressionformat_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::initResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::initResponse, _impl_.xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::registerServiceRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -295,23 +255,19 @@ const uint32_t TableStruct_grpcIServiceManagerService_2eproto::offsets[] PROTOBU
   PROTOBUF_FIELD_OFFSET(::grpcIServiceManager::unlockServiceResponse, _impl_.xpcfgrpcreturnvalue_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::grpcIServiceManager::initRequest)},
-  { 7, -1, -1, sizeof(::grpcIServiceManager::initResponse)},
-  { 14, -1, -1, sizeof(::grpcIServiceManager::registerServiceRequest)},
-  { 23, -1, -1, sizeof(::grpcIServiceManager::registerServiceResponse)},
-  { 30, -1, -1, sizeof(::grpcIServiceManager::unregisterServiceRequest)},
-  { 39, -1, -1, sizeof(::grpcIServiceManager::unregisterServiceResponse)},
-  { 46, -1, -1, sizeof(::grpcIServiceManager::getServiceRequest)},
-  { 55, -1, -1, sizeof(::grpcIServiceManager::getServiceResponse)},
-  { 63, -1, -1, sizeof(::grpcIServiceManager::getAndLockServiceRequest)},
-  { 73, -1, -1, sizeof(::grpcIServiceManager::getAndLockServiceResponse)},
-  { 81, -1, -1, sizeof(::grpcIServiceManager::unlockServiceRequest)},
-  { 90, -1, -1, sizeof(::grpcIServiceManager::unlockServiceResponse)},
+  { 0, -1, -1, sizeof(::grpcIServiceManager::registerServiceRequest)},
+  { 9, -1, -1, sizeof(::grpcIServiceManager::registerServiceResponse)},
+  { 16, -1, -1, sizeof(::grpcIServiceManager::unregisterServiceRequest)},
+  { 25, -1, -1, sizeof(::grpcIServiceManager::unregisterServiceResponse)},
+  { 32, -1, -1, sizeof(::grpcIServiceManager::getServiceRequest)},
+  { 41, -1, -1, sizeof(::grpcIServiceManager::getServiceResponse)},
+  { 49, -1, -1, sizeof(::grpcIServiceManager::getAndLockServiceRequest)},
+  { 59, -1, -1, sizeof(::grpcIServiceManager::getAndLockServiceResponse)},
+  { 67, -1, -1, sizeof(::grpcIServiceManager::unlockServiceRequest)},
+  { 76, -1, -1, sizeof(::grpcIServiceManager::unlockServiceResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-  &::grpcIServiceManager::_initRequest_default_instance_._instance,
-  &::grpcIServiceManager::_initResponse_default_instance_._instance,
   &::grpcIServiceManager::_registerServiceRequest_default_instance_._instance,
   &::grpcIServiceManager::_registerServiceResponse_default_instance_._instance,
   &::grpcIServiceManager::_unregisterServiceRequest_default_instance_._instance,
@@ -327,56 +283,52 @@ static const ::_pb::Message* const file_default_instances[] = {
 const char descriptor_table_protodef_grpcIServiceManagerService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n grpcIServiceManagerService.proto\022\023grpc"
   "IServiceManager\032\033google/protobuf/empty.p"
-  "roto\"2\n\013initRequest\022#\n\033grpcServerCompres"
-  "sionFormat\030\001 \001(\005\"+\n\014initResponse\022\033\n\023xpcf"
-  "GrpcReturnValue\030\001 \001(\021\"f\n\026registerService"
-  "Request\022#\n\033grpcServerCompressionFormat\030\001"
-  " \001(\005\022\023\n\013serviceType\030\002 \001(\021\022\022\n\nserviceURL\030"
-  "\003 \001(\t\"6\n\027registerServiceResponse\022\033\n\023xpcf"
-  "GrpcReturnValue\030\001 \001(\021\"h\n\030unregisterServi"
-  "ceRequest\022#\n\033grpcServerCompressionFormat"
-  "\030\001 \001(\005\022\023\n\013serviceType\030\002 \001(\021\022\022\n\nserviceUR"
-  "L\030\003 \001(\t\"8\n\031unregisterServiceResponse\022\033\n\023"
-  "xpcfGrpcReturnValue\030\001 \001(\021\"a\n\021getServiceR"
+  "roto\"f\n\026registerServiceRequest\022#\n\033grpcSe"
+  "rverCompressionFormat\030\001 \001(\005\022\023\n\013serviceTy"
+  "pe\030\002 \001(\021\022\022\n\nserviceURL\030\003 \001(\t\"6\n\027register"
+  "ServiceResponse\022\033\n\023xpcfGrpcReturnValue\030\001"
+  " \001(\021\"h\n\030unregisterServiceRequest\022#\n\033grpc"
+  "ServerCompressionFormat\030\001 \001(\005\022\023\n\013service"
+  "Type\030\002 \001(\021\022\022\n\nserviceURL\030\003 \001(\t\"8\n\031unregi"
+  "sterServiceResponse\022\033\n\023xpcfGrpcReturnVal"
+  "ue\030\001 \001(\021\"a\n\021getServiceRequest\022#\n\033grpcSer"
+  "verCompressionFormat\030\001 \001(\005\022\023\n\013serviceTyp"
+  "e\030\002 \001(\021\022\022\n\nserviceURL\030\003 \001(\t\"E\n\022getServic"
+  "eResponse\022\022\n\nserviceURL\030\001 \001(\t\022\033\n\023xpcfGrp"
+  "cReturnValue\030\002 \001(\021\"|\n\030getAndLockServiceR"
   "equest\022#\n\033grpcServerCompressionFormat\030\001 "
-  "\001(\005\022\023\n\013serviceType\030\002 \001(\021\022\022\n\nserviceURL\030\003"
-  " \001(\t\"E\n\022getServiceResponse\022\022\n\nserviceURL"
-  "\030\001 \001(\t\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"|\n\030g"
-  "etAndLockServiceRequest\022#\n\033grpcServerCom"
-  "pressionFormat\030\001 \001(\005\022\023\n\013serviceType\030\002 \001("
-  "\021\022\022\n\nclientUUID\030\003 \001(\t\022\022\n\nserviceURL\030\004 \001("
-  "\t\"L\n\031getAndLockServiceResponse\022\022\n\nservic"
-  "eURL\030\001 \001(\t\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\""
-  "d\n\024unlockServiceRequest\022#\n\033grpcServerCom"
-  "pressionFormat\030\001 \001(\005\022\023\n\013serviceType\030\002 \001("
-  "\021\022\022\n\nclientUUID\030\003 \001(\t\"4\n\025unlockServiceRe"
-  "sponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\0212\222\005\n\032"
-  "grpcIServiceManagerService\022M\n\004init\022 .grp"
-  "cIServiceManager.initRequest\032!.grpcIServ"
-  "iceManager.initResponse\"\000\022n\n\017registerSer"
-  "vice\022+.grpcIServiceManager.registerServi"
-  "ceRequest\032,.grpcIServiceManager.register"
-  "ServiceResponse\"\000\022t\n\021unregisterService\022-"
-  ".grpcIServiceManager.unregisterServiceRe"
-  "quest\032..grpcIServiceManager.unregisterSe"
-  "rviceResponse\"\000\022_\n\ngetService\022&.grpcISer"
-  "viceManager.getServiceRequest\032\'.grpcISer"
-  "viceManager.getServiceResponse\"\000\022t\n\021getA"
-  "ndLockService\022-.grpcIServiceManager.getA"
-  "ndLockServiceRequest\032..grpcIServiceManag"
-  "er.getAndLockServiceResponse\"\000\022h\n\runlock"
-  "Service\022).grpcIServiceManager.unlockServ"
-  "iceRequest\032*.grpcIServiceManager.unlockS"
-  "erviceResponse\"\000b\006proto3"
+  "\001(\005\022\023\n\013serviceType\030\002 \001(\021\022\022\n\nclientUUID\030\003"
+  " \001(\t\022\022\n\nserviceURL\030\004 \001(\t\"L\n\031getAndLockSe"
+  "rviceResponse\022\022\n\nserviceURL\030\001 \001(\t\022\033\n\023xpc"
+  "fGrpcReturnValue\030\002 \001(\021\"d\n\024unlockServiceR"
+  "equest\022#\n\033grpcServerCompressionFormat\030\001 "
+  "\001(\005\022\023\n\013serviceType\030\002 \001(\021\022\022\n\nclientUUID\030\003"
+  " \001(\t\"4\n\025unlockServiceResponse\022\033\n\023xpcfGrp"
+  "cReturnValue\030\001 \001(\0212\303\004\n\032grpcIServiceManag"
+  "erService\022n\n\017registerService\022+.grpcIServ"
+  "iceManager.registerServiceRequest\032,.grpc"
+  "IServiceManager.registerServiceResponse\""
+  "\000\022t\n\021unregisterService\022-.grpcIServiceMan"
+  "ager.unregisterServiceRequest\032..grpcISer"
+  "viceManager.unregisterServiceResponse\"\000\022"
+  "_\n\ngetService\022&.grpcIServiceManager.getS"
+  "erviceRequest\032\'.grpcIServiceManager.getS"
+  "erviceResponse\"\000\022t\n\021getAndLockService\022-."
+  "grpcIServiceManager.getAndLockServiceReq"
+  "uest\032..grpcIServiceManager.getAndLockSer"
+  "viceResponse\"\000\022h\n\runlockService\022).grpcIS"
+  "erviceManager.unlockServiceRequest\032*.grp"
+  "cIServiceManager.unlockServiceResponse\"\000"
+  "b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_grpcIServiceManagerService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_grpcIServiceManagerService_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_grpcIServiceManagerService_2eproto = {
-    false, false, 1704, descriptor_table_protodef_grpcIServiceManagerService_2eproto,
+    false, false, 1528, descriptor_table_protodef_grpcIServiceManagerService_2eproto,
     "grpcIServiceManagerService.proto",
-    &descriptor_table_grpcIServiceManagerService_2eproto_once, descriptor_table_grpcIServiceManagerService_2eproto_deps, 1, 12,
+    &descriptor_table_grpcIServiceManagerService_2eproto_once, descriptor_table_grpcIServiceManagerService_2eproto_deps, 1, 10,
     schemas, file_default_instances, TableStruct_grpcIServiceManagerService_2eproto::offsets,
     file_level_metadata_grpcIServiceManagerService_2eproto, file_level_enum_descriptors_grpcIServiceManagerService_2eproto,
     file_level_service_descriptors_grpcIServiceManagerService_2eproto,
@@ -388,362 +340,6 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_grpcISer
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_grpcIServiceManagerService_2eproto(&descriptor_table_grpcIServiceManagerService_2eproto);
 namespace grpcIServiceManager {
-
-// ===================================================================
-
-class initRequest::_Internal {
- public:
-};
-
-initRequest::initRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:grpcIServiceManager.initRequest)
-}
-initRequest::initRequest(const initRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  initRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.grpcservercompressionformat_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
-  // @@protoc_insertion_point(copy_constructor:grpcIServiceManager.initRequest)
-}
-
-inline void initRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.grpcservercompressionformat_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-initRequest::~initRequest() {
-  // @@protoc_insertion_point(destructor:grpcIServiceManager.initRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void initRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void initRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void initRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:grpcIServiceManager.initRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.grpcservercompressionformat_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* initRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // int32 grpcServerCompressionFormat = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.grpcservercompressionformat_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* initRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:grpcIServiceManager.initRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 grpcServerCompressionFormat = 1;
-  if (this->_internal_grpcservercompressionformat() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:grpcIServiceManager.initRequest)
-  return target;
-}
-
-size_t initRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:grpcIServiceManager.initRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // int32 grpcServerCompressionFormat = 1;
-  if (this->_internal_grpcservercompressionformat() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData initRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    initRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*initRequest::GetClassData() const { return &_class_data_; }
-
-
-void initRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<initRequest*>(&to_msg);
-  auto& from = static_cast<const initRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.initRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from._internal_grpcservercompressionformat() != 0) {
-    _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void initRequest::CopyFrom(const initRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:grpcIServiceManager.initRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool initRequest::IsInitialized() const {
-  return true;
-}
-
-void initRequest::InternalSwap(initRequest* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata initRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_grpcIServiceManagerService_2eproto_getter, &descriptor_table_grpcIServiceManagerService_2eproto_once,
-      file_level_metadata_grpcIServiceManagerService_2eproto[0]);
-}
-
-// ===================================================================
-
-class initResponse::_Internal {
- public:
-};
-
-initResponse::initResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:grpcIServiceManager.initResponse)
-}
-initResponse::initResponse(const initResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  initResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.xpcfgrpcreturnvalue_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
-  // @@protoc_insertion_point(copy_constructor:grpcIServiceManager.initResponse)
-}
-
-inline void initResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.xpcfgrpcreturnvalue_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-initResponse::~initResponse() {
-  // @@protoc_insertion_point(destructor:grpcIServiceManager.initResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void initResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void initResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void initResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:grpcIServiceManager.initResponse)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.xpcfgrpcreturnvalue_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* initResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // sint32 xpcfGrpcReturnValue = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.xpcfgrpcreturnvalue_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* initResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:grpcIServiceManager.initResponse)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(1, this->_internal_xpcfgrpcreturnvalue(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:grpcIServiceManager.initResponse)
-  return target;
-}
-
-size_t initResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:grpcIServiceManager.initResponse)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // sint32 xpcfGrpcReturnValue = 1;
-  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
-    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_xpcfgrpcreturnvalue());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData initResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    initResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*initResponse::GetClassData() const { return &_class_data_; }
-
-
-void initResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<initResponse*>(&to_msg);
-  auto& from = static_cast<const initResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIServiceManager.initResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from._internal_xpcfgrpcreturnvalue() != 0) {
-    _this->_internal_set_xpcfgrpcreturnvalue(from._internal_xpcfgrpcreturnvalue());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void initResponse::CopyFrom(const initResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:grpcIServiceManager.initResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool initResponse::IsInitialized() const {
-  return true;
-}
-
-void initResponse::InternalSwap(initResponse* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata initResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_grpcIServiceManagerService_2eproto_getter, &descriptor_table_grpcIServiceManagerService_2eproto_once,
-      file_level_metadata_grpcIServiceManagerService_2eproto[1]);
-}
 
 // ===================================================================
 
@@ -1005,7 +601,7 @@ void registerServiceRequest::InternalSwap(registerServiceRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata registerServiceRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_grpcIServiceManagerService_2eproto_getter, &descriptor_table_grpcIServiceManagerService_2eproto_once,
-      file_level_metadata_grpcIServiceManagerService_2eproto[2]);
+      file_level_metadata_grpcIServiceManagerService_2eproto[0]);
 }
 
 // ===================================================================
@@ -1183,7 +779,7 @@ void registerServiceResponse::InternalSwap(registerServiceResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata registerServiceResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_grpcIServiceManagerService_2eproto_getter, &descriptor_table_grpcIServiceManagerService_2eproto_once,
-      file_level_metadata_grpcIServiceManagerService_2eproto[3]);
+      file_level_metadata_grpcIServiceManagerService_2eproto[1]);
 }
 
 // ===================================================================
@@ -1446,7 +1042,7 @@ void unregisterServiceRequest::InternalSwap(unregisterServiceRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata unregisterServiceRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_grpcIServiceManagerService_2eproto_getter, &descriptor_table_grpcIServiceManagerService_2eproto_once,
-      file_level_metadata_grpcIServiceManagerService_2eproto[4]);
+      file_level_metadata_grpcIServiceManagerService_2eproto[2]);
 }
 
 // ===================================================================
@@ -1624,7 +1220,7 @@ void unregisterServiceResponse::InternalSwap(unregisterServiceResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata unregisterServiceResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_grpcIServiceManagerService_2eproto_getter, &descriptor_table_grpcIServiceManagerService_2eproto_once,
-      file_level_metadata_grpcIServiceManagerService_2eproto[5]);
+      file_level_metadata_grpcIServiceManagerService_2eproto[3]);
 }
 
 // ===================================================================
@@ -1887,7 +1483,7 @@ void getServiceRequest::InternalSwap(getServiceRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata getServiceRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_grpcIServiceManagerService_2eproto_getter, &descriptor_table_grpcIServiceManagerService_2eproto_once,
-      file_level_metadata_grpcIServiceManagerService_2eproto[6]);
+      file_level_metadata_grpcIServiceManagerService_2eproto[4]);
 }
 
 // ===================================================================
@@ -2117,7 +1713,7 @@ void getServiceResponse::InternalSwap(getServiceResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata getServiceResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_grpcIServiceManagerService_2eproto_getter, &descriptor_table_grpcIServiceManagerService_2eproto_once,
-      file_level_metadata_grpcIServiceManagerService_2eproto[7]);
+      file_level_metadata_grpcIServiceManagerService_2eproto[5]);
 }
 
 // ===================================================================
@@ -2430,7 +2026,7 @@ void getAndLockServiceRequest::InternalSwap(getAndLockServiceRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata getAndLockServiceRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_grpcIServiceManagerService_2eproto_getter, &descriptor_table_grpcIServiceManagerService_2eproto_once,
-      file_level_metadata_grpcIServiceManagerService_2eproto[8]);
+      file_level_metadata_grpcIServiceManagerService_2eproto[6]);
 }
 
 // ===================================================================
@@ -2660,7 +2256,7 @@ void getAndLockServiceResponse::InternalSwap(getAndLockServiceResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata getAndLockServiceResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_grpcIServiceManagerService_2eproto_getter, &descriptor_table_grpcIServiceManagerService_2eproto_once,
-      file_level_metadata_grpcIServiceManagerService_2eproto[9]);
+      file_level_metadata_grpcIServiceManagerService_2eproto[7]);
 }
 
 // ===================================================================
@@ -2923,7 +2519,7 @@ void unlockServiceRequest::InternalSwap(unlockServiceRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata unlockServiceRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_grpcIServiceManagerService_2eproto_getter, &descriptor_table_grpcIServiceManagerService_2eproto_once,
-      file_level_metadata_grpcIServiceManagerService_2eproto[10]);
+      file_level_metadata_grpcIServiceManagerService_2eproto[8]);
 }
 
 // ===================================================================
@@ -3101,20 +2697,12 @@ void unlockServiceResponse::InternalSwap(unlockServiceResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata unlockServiceResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_grpcIServiceManagerService_2eproto_getter, &descriptor_table_grpcIServiceManagerService_2eproto_once,
-      file_level_metadata_grpcIServiceManagerService_2eproto[11]);
+      file_level_metadata_grpcIServiceManagerService_2eproto[9]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace grpcIServiceManager
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::grpcIServiceManager::initRequest*
-Arena::CreateMaybeMessage< ::grpcIServiceManager::initRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::grpcIServiceManager::initRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::grpcIServiceManager::initResponse*
-Arena::CreateMaybeMessage< ::grpcIServiceManager::initResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::grpcIServiceManager::initResponse >(arena);
-}
 template<> PROTOBUF_NOINLINE ::grpcIServiceManager::registerServiceRequest*
 Arena::CreateMaybeMessage< ::grpcIServiceManager::registerServiceRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIServiceManager::registerServiceRequest >(arena);

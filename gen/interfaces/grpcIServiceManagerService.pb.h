@@ -58,12 +58,6 @@ extern getServiceRequestDefaultTypeInternal _getServiceRequest_default_instance_
 class getServiceResponse;
 struct getServiceResponseDefaultTypeInternal;
 extern getServiceResponseDefaultTypeInternal _getServiceResponse_default_instance_;
-class initRequest;
-struct initRequestDefaultTypeInternal;
-extern initRequestDefaultTypeInternal _initRequest_default_instance_;
-class initResponse;
-struct initResponseDefaultTypeInternal;
-extern initResponseDefaultTypeInternal _initResponse_default_instance_;
 class registerServiceRequest;
 struct registerServiceRequestDefaultTypeInternal;
 extern registerServiceRequestDefaultTypeInternal _registerServiceRequest_default_instance_;
@@ -88,8 +82,6 @@ template<> ::grpcIServiceManager::getAndLockServiceRequest* Arena::CreateMaybeMe
 template<> ::grpcIServiceManager::getAndLockServiceResponse* Arena::CreateMaybeMessage<::grpcIServiceManager::getAndLockServiceResponse>(Arena*);
 template<> ::grpcIServiceManager::getServiceRequest* Arena::CreateMaybeMessage<::grpcIServiceManager::getServiceRequest>(Arena*);
 template<> ::grpcIServiceManager::getServiceResponse* Arena::CreateMaybeMessage<::grpcIServiceManager::getServiceResponse>(Arena*);
-template<> ::grpcIServiceManager::initRequest* Arena::CreateMaybeMessage<::grpcIServiceManager::initRequest>(Arena*);
-template<> ::grpcIServiceManager::initResponse* Arena::CreateMaybeMessage<::grpcIServiceManager::initResponse>(Arena*);
 template<> ::grpcIServiceManager::registerServiceRequest* Arena::CreateMaybeMessage<::grpcIServiceManager::registerServiceRequest>(Arena*);
 template<> ::grpcIServiceManager::registerServiceResponse* Arena::CreateMaybeMessage<::grpcIServiceManager::registerServiceResponse>(Arena*);
 template<> ::grpcIServiceManager::unlockServiceRequest* Arena::CreateMaybeMessage<::grpcIServiceManager::unlockServiceRequest>(Arena*);
@@ -100,302 +92,6 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace grpcIServiceManager {
 
 // ===================================================================
-
-class initRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManager.initRequest) */ {
- public:
-  inline initRequest() : initRequest(nullptr) {}
-  ~initRequest() override;
-  explicit PROTOBUF_CONSTEXPR initRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  initRequest(const initRequest& from);
-  initRequest(initRequest&& from) noexcept
-    : initRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline initRequest& operator=(const initRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline initRequest& operator=(initRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const initRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const initRequest* internal_default_instance() {
-    return reinterpret_cast<const initRequest*>(
-               &_initRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    0;
-
-  friend void swap(initRequest& a, initRequest& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(initRequest* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(initRequest* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  initRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<initRequest>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const initRequest& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const initRequest& from) {
-    initRequest::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(initRequest* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIServiceManager.initRequest";
-  }
-  protected:
-  explicit initRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kGrpcServerCompressionFormatFieldNumber = 1,
-  };
-  // int32 grpcServerCompressionFormat = 1;
-  void clear_grpcservercompressionformat();
-  int32_t grpcservercompressionformat() const;
-  void set_grpcservercompressionformat(int32_t value);
-  private:
-  int32_t _internal_grpcservercompressionformat() const;
-  void _internal_set_grpcservercompressionformat(int32_t value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:grpcIServiceManager.initRequest)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    int32_t grpcservercompressionformat_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_grpcIServiceManagerService_2eproto;
-};
-// -------------------------------------------------------------------
-
-class initResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManager.initResponse) */ {
- public:
-  inline initResponse() : initResponse(nullptr) {}
-  ~initResponse() override;
-  explicit PROTOBUF_CONSTEXPR initResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  initResponse(const initResponse& from);
-  initResponse(initResponse&& from) noexcept
-    : initResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline initResponse& operator=(const initResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline initResponse& operator=(initResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const initResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const initResponse* internal_default_instance() {
-    return reinterpret_cast<const initResponse*>(
-               &_initResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    1;
-
-  friend void swap(initResponse& a, initResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(initResponse* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(initResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  initResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<initResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const initResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const initResponse& from) {
-    initResponse::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(initResponse* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIServiceManager.initResponse";
-  }
-  protected:
-  explicit initResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kXpcfGrpcReturnValueFieldNumber = 1,
-  };
-  // sint32 xpcfGrpcReturnValue = 1;
-  void clear_xpcfgrpcreturnvalue();
-  int32_t xpcfgrpcreturnvalue() const;
-  void set_xpcfgrpcreturnvalue(int32_t value);
-  private:
-  int32_t _internal_xpcfgrpcreturnvalue() const;
-  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:grpcIServiceManager.initResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    int32_t xpcfgrpcreturnvalue_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_grpcIServiceManagerService_2eproto;
-};
-// -------------------------------------------------------------------
 
 class registerServiceRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIServiceManager.registerServiceRequest) */ {
@@ -445,7 +141,7 @@ class registerServiceRequest final :
                &_registerServiceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    0;
 
   friend void swap(registerServiceRequest& a, registerServiceRequest& b) {
     a.Swap(&b);
@@ -620,7 +316,7 @@ class registerServiceResponse final :
                &_registerServiceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    1;
 
   friend void swap(registerServiceResponse& a, registerServiceResponse& b) {
     a.Swap(&b);
@@ -768,7 +464,7 @@ class unregisterServiceRequest final :
                &_unregisterServiceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    2;
 
   friend void swap(unregisterServiceRequest& a, unregisterServiceRequest& b) {
     a.Swap(&b);
@@ -943,7 +639,7 @@ class unregisterServiceResponse final :
                &_unregisterServiceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    3;
 
   friend void swap(unregisterServiceResponse& a, unregisterServiceResponse& b) {
     a.Swap(&b);
@@ -1091,7 +787,7 @@ class getServiceRequest final :
                &_getServiceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    4;
 
   friend void swap(getServiceRequest& a, getServiceRequest& b) {
     a.Swap(&b);
@@ -1266,7 +962,7 @@ class getServiceResponse final :
                &_getServiceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    5;
 
   friend void swap(getServiceResponse& a, getServiceResponse& b) {
     a.Swap(&b);
@@ -1430,7 +1126,7 @@ class getAndLockServiceRequest final :
                &_getAndLockServiceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    6;
 
   friend void swap(getAndLockServiceRequest& a, getAndLockServiceRequest& b) {
     a.Swap(&b);
@@ -1621,7 +1317,7 @@ class getAndLockServiceResponse final :
                &_getAndLockServiceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    7;
 
   friend void swap(getAndLockServiceResponse& a, getAndLockServiceResponse& b) {
     a.Swap(&b);
@@ -1785,7 +1481,7 @@ class unlockServiceRequest final :
                &_unlockServiceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    8;
 
   friend void swap(unlockServiceRequest& a, unlockServiceRequest& b) {
     a.Swap(&b);
@@ -1960,7 +1656,7 @@ class unlockServiceResponse final :
                &_unlockServiceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    9;
 
   friend void swap(unlockServiceResponse& a, unlockServiceResponse& b) {
     a.Swap(&b);
@@ -2067,54 +1763,6 @@ class unlockServiceResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// initRequest
-
-// int32 grpcServerCompressionFormat = 1;
-inline void initRequest::clear_grpcservercompressionformat() {
-  _impl_.grpcservercompressionformat_ = 0;
-}
-inline int32_t initRequest::_internal_grpcservercompressionformat() const {
-  return _impl_.grpcservercompressionformat_;
-}
-inline int32_t initRequest::grpcservercompressionformat() const {
-  // @@protoc_insertion_point(field_get:grpcIServiceManager.initRequest.grpcServerCompressionFormat)
-  return _internal_grpcservercompressionformat();
-}
-inline void initRequest::_internal_set_grpcservercompressionformat(int32_t value) {
-  
-  _impl_.grpcservercompressionformat_ = value;
-}
-inline void initRequest::set_grpcservercompressionformat(int32_t value) {
-  _internal_set_grpcservercompressionformat(value);
-  // @@protoc_insertion_point(field_set:grpcIServiceManager.initRequest.grpcServerCompressionFormat)
-}
-
-// -------------------------------------------------------------------
-
-// initResponse
-
-// sint32 xpcfGrpcReturnValue = 1;
-inline void initResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_ = 0;
-}
-inline int32_t initResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_;
-}
-inline int32_t initResponse::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcIServiceManager.initResponse.xpcfGrpcReturnValue)
-  return _internal_xpcfgrpcreturnvalue();
-}
-inline void initResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
-  
-  _impl_.xpcfgrpcreturnvalue_ = value;
-}
-inline void initResponse::set_xpcfgrpcreturnvalue(int32_t value) {
-  _internal_set_xpcfgrpcreturnvalue(value);
-  // @@protoc_insertion_point(field_set:grpcIServiceManager.initResponse.xpcfGrpcReturnValue)
-}
-
-// -------------------------------------------------------------------
-
 // registerServiceRequest
 
 // int32 grpcServerCompressionFormat = 1;
@@ -2856,10 +2504,6 @@ inline void unlockServiceResponse::set_xpcfgrpcreturnvalue(int32_t value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

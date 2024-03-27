@@ -118,7 +118,8 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   std::cout << "====> IMappingPipeline_grpcServer::init request received at " << to_simple_string(start) << std::endl;
   #endif
   std::string relocalizationServiceURL = request->relocalizationserviceurl();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init(relocalizationServiceURL);
+  std::string mapupdateServiceURL = request->mapupdateserviceurl();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init(relocalizationServiceURL, mapupdateServiceURL);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();

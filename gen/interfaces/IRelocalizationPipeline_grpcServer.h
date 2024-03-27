@@ -25,9 +25,10 @@ class IRelocalizationPipeline_grpcServer:  public org::bcom::xpcf::ConfigurableB
     {
       public:
         grpcIRelocalizationPipelineServiceImpl() = default;
-        ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::initRequest* request, ::grpcIRelocalizationPipeline::initResponse* response) override;
+        ::grpc::Status init_grpc0(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::init_grpc0Request* request, ::grpcIRelocalizationPipeline::init_grpc0Response* response) override;
         ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response) override;
         ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response) override;
+        ::grpc::Status init_grpc1(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::init_grpc1Request* request, ::grpcIRelocalizationPipeline::init_grpc1Response* response) override;
         ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::setCameraParametersRequest* request, ::grpcIRelocalizationPipeline::setCameraParametersResponse* response) override;
         ::grpc::Status getCameraParameters(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::getCameraParametersRequest* request, ::grpcIRelocalizationPipeline::getCameraParametersResponse* response) override;
         ::grpc::Status relocalizeProcessRequest_grpc0(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc0Request* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc0Response* response) override;

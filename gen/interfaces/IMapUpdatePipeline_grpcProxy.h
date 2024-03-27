@@ -25,11 +25,13 @@ class IMapUpdatePipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, v
     SolAR::FrameworkReturnCode init()     override;
     SolAR::FrameworkReturnCode start()     override;
     SolAR::FrameworkReturnCode stop()     override;
+    SolAR::FrameworkReturnCode setMapUUID(std::string const& uuid)     override;
+    SolAR::FrameworkReturnCode getMapUUID(std::string& uuid)     const     override;
+    SolAR::FrameworkReturnCode resetMap()     override;
     SolAR::FrameworkReturnCode setCameraParameters(SolAR::datastructure::CameraParameters const& cameraParams)     override;
     SolAR::FrameworkReturnCode mapUpdateRequest(SRef<SolAR::datastructure::Map> const map)     override;
     SolAR::FrameworkReturnCode getMapRequest(SRef<SolAR::datastructure::Map>& map)     const     override;
     SolAR::FrameworkReturnCode getSubmapRequest(SRef<SolAR::datastructure::Frame> const frame, SRef<SolAR::datastructure::Map>& map)     const     override;
-    SolAR::FrameworkReturnCode resetMap()     override;
     SolAR::FrameworkReturnCode getPointCloudRequest(SRef<SolAR::datastructure::PointCloud>& pointCloud)     const     override;
 
 

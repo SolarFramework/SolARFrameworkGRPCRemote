@@ -4,16 +4,6 @@ import "google/protobuf/empty.proto";
 
 package grpcIServiceManager;
 
-message initRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-}
-
-message initResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
 message registerServiceRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -78,7 +68,6 @@ sint32 xpcfGrpcReturnValue = 1;
 }
 
 service grpcIServiceManagerService {
-rpc init(initRequest) returns(initResponse) {}
 rpc registerService(registerServiceRequest) returns(registerServiceResponse) {}
 rpc unregisterService(unregisterServiceRequest) returns(unregisterServiceResponse) {}
 rpc getService(getServiceRequest) returns(getServiceResponse) {}

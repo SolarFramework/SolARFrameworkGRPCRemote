@@ -14,7 +14,7 @@ IServiceManager_grpcServer::IServiceManager_grpcServer():xpcf::ConfigurableBase(
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::service::IServiceManager>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(7);
+  m_grpcServerCompressionConfig.resize(6);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -39,28 +39,6 @@ XPCFErrorCode IServiceManager_grpcServer::onConfigured()
 {
   return &m_grpcService;
 }
-
-::grpc::Status IServiceManager_grpcServer::grpcIServiceManagerServiceImpl::init(::grpc::ServerContext* context, const ::grpcIServiceManager::initRequest* request, ::grpcIServiceManager::initResponse* response)
-{
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "init", m_methodCompressionInfosMap);
-  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
-  #endif
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IServiceManager_grpcServer::init request received at " << to_simple_string(start) << std::endl;
-  #endif
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init();
-  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IServiceManager_grpcServer::init response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
 
 ::grpc::Status IServiceManager_grpcServer::grpcIServiceManagerServiceImpl::registerService(::grpc::ServerContext* context, const ::grpcIServiceManager::registerServiceRequest* request, ::grpcIServiceManager::registerServiceResponse* response)
 {

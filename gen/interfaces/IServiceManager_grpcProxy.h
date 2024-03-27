@@ -22,7 +22,6 @@ class IServiceManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virt
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode init()     override;
     SolAR::FrameworkReturnCode registerService(SolAR::api::service::ServiceType const serviceType, std::string const& serviceURL)     override;
     SolAR::FrameworkReturnCode unregisterService(SolAR::api::service::ServiceType const serviceType, std::string const& serviceURL)     override;
     SolAR::FrameworkReturnCode getService(SolAR::api::service::ServiceType const serviceType, std::string& serviceURL)     const     override;

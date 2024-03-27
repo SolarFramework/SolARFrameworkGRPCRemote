@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIMapsManager;
+
+message createMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+}
+
+message createMapResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message deleteMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+}
+
+message deleteMapResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getAllMapsRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes mapUUIDList = 2;
+}
+
+message getAllMapsResponse
+{
+bytes mapUUIDList = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message registerMapUpdateServiceRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string serviceURL = 2;
+}
+
+message registerMapUpdateServiceResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message unregisterMapUpdateServiceRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string serviceURL = 2;
+}
+
+message unregisterMapUpdateServiceResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message increaseMapClientsRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+string serviceURL = 3;
+}
+
+message increaseMapClientsResponse
+{
+string serviceURL = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message decreaseMapClientsRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+}
+
+message decreaseMapClientsResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+service grpcIMapsManagerService {
+rpc createMap(createMapRequest) returns(createMapResponse) {}
+rpc deleteMap(deleteMapRequest) returns(deleteMapResponse) {}
+rpc getAllMaps(getAllMapsRequest) returns(getAllMapsResponse) {}
+rpc registerMapUpdateService(registerMapUpdateServiceRequest) returns(registerMapUpdateServiceResponse) {}
+rpc unregisterMapUpdateService(unregisterMapUpdateServiceRequest) returns(unregisterMapUpdateServiceResponse) {}
+rpc increaseMapClients(increaseMapClientsRequest) returns(increaseMapClientsResponse) {}
+rpc decreaseMapClients(decreaseMapClientsRequest) returns(decreaseMapClientsResponse) {}
+}
+
