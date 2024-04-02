@@ -20,6 +20,10 @@ gen/interfaces/IFrontEnd_grpcProxy.h \
 gen/interfaces/IFrontEnd_grpcServer.h \
 gen/interfaces/grpcIFrontEndService.pb.h \
 gen/interfaces/grpcIFrontEndService.grpc.pb.h \
+gen/interfaces/IMapsManager_grpcProxy.h \
+gen/interfaces/IMapsManager_grpcServer.h \
+gen/interfaces/grpcIMapsManagerService.pb.h \
+gen/interfaces/grpcIMapsManagerService.grpc.pb.h \
 gen/interfaces/IServiceManager_grpcProxy.h \
 gen/interfaces/IServiceManager_grpcServer.h \
 gen/interfaces/grpcIServiceManagerService.pb.h \
@@ -47,6 +51,10 @@ gen/src/IFrontEnd_grpcProxy.cpp \
 gen/src/IFrontEnd_grpcServer.cpp \
 gen/src/grpcIFrontEndService.pb.cc \
 gen/src/grpcIFrontEndService.grpc.pb.cc \
+gen/src/IMapsManager_grpcProxy.cpp \
+gen/src/IMapsManager_grpcServer.cpp \
+gen/src/grpcIMapsManagerService.pb.cc \
+gen/src/grpcIMapsManagerService.grpc.pb.cc \
 gen/src/IServiceManager_grpcProxy.cpp \
 gen/src/IServiceManager_grpcServer.cpp \
 gen/src/grpcIServiceManagerService.pb.cc \
