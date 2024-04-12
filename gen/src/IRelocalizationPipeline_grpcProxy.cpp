@@ -19,7 +19,7 @@ IRelocalizationPipeline_grpcProxy::IRelocalizationPipeline_grpcProxy():xpcf::Con
   declareInterface<SolAR::api::pipeline::IRelocalizationPipeline>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(9);
+  m_grpcProxyCompressionConfig.resize(10);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -224,6 +224,43 @@ SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::relocalizeProcess
     throw xpcf::RemotingException("grpcIRelocalizationPipelineService","relocalizeProcessRequest_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.pose());
+  confidence = xpcf::deserialize<float_t>(respOut.confidence());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IRelocalizationPipeline_grpcProxy::relocalizeProcessRequestViz(SRef<SolAR::datastructure::Image> const image, std::vector<SRef<SolAR::datastructure::CloudPoint>>& currPointCloud, SolAR::datastructure::Transform3Df& pose, float_t& confidence, SolAR::datastructure::Transform3Df const& poseCoarse)
+{
+  ::grpc::ClientContext context;
+  ::grpcIRelocalizationPipeline::relocalizeProcessRequestVizRequest reqIn;
+  ::grpcIRelocalizationPipeline::relocalizeProcessRequestVizResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "relocalizeProcessRequestViz", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_image(xpcf::serialize<SRef<SolAR::datastructure::Image>>(image));
+  reqIn.set_posecoarse(xpcf::serialize<SolAR::datastructure::Transform3Df>(poseCoarse));
+  reqIn.set_currpointcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(currPointCloud));
+  reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
+  reqIn.set_confidence(xpcf::serialize<float_t>(confidence));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationPipeline_grpcProxy::relocalizeProcessRequestViz request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->relocalizeProcessRequestViz(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationPipeline_grpcProxy::relocalizeProcessRequestViz response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "relocalizeProcessRequestViz rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIRelocalizationPipelineService","relocalizeProcessRequestViz",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  currPointCloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(respOut.currpointcloud());
   pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.pose());
   confidence = xpcf::deserialize<float_t>(respOut.confidence());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
