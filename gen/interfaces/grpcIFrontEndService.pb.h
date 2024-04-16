@@ -374,12 +374,27 @@ class registerClientRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kDeviceInfoFieldNumber = 2,
-    kMapUUIDFieldNumber = 3,
-    kClientUUIDFieldNumber = 4,
+    kKeycloakTokenFieldNumber = 2,
+    kDeviceInfoFieldNumber = 3,
+    kMapUUIDFieldNumber = 4,
+    kClientUUIDFieldNumber = 5,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes deviceInfo = 2;
+  // string keycloakToken = 2;
+  void clear_keycloaktoken();
+  const std::string& keycloaktoken() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_keycloaktoken(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_keycloaktoken();
+  PROTOBUF_NODISCARD std::string* release_keycloaktoken();
+  void set_allocated_keycloaktoken(std::string* keycloaktoken);
+  private:
+  const std::string& _internal_keycloaktoken() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keycloaktoken(const std::string& value);
+  std::string* _internal_mutable_keycloaktoken();
+  public:
+
+  // bytes deviceInfo = 3;
   void clear_deviceinfo();
   const std::string& deviceinfo() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -393,7 +408,7 @@ class registerClientRequest final :
   std::string* _internal_mutable_deviceinfo();
   public:
 
-  // string mapUUID = 3;
+  // string mapUUID = 4;
   void clear_mapuuid();
   const std::string& mapuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -407,7 +422,7 @@ class registerClientRequest final :
   std::string* _internal_mutable_mapuuid();
   public:
 
-  // string clientUUID = 4;
+  // string clientUUID = 5;
   void clear_clientuuid();
   const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -438,6 +453,7 @@ class registerClientRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keycloaktoken_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr deviceinfo_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
@@ -1046,10 +1062,25 @@ class getAllClientsUUIDRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kClientUUIDListFieldNumber = 2,
+    kKeycloakTokenFieldNumber = 2,
+    kClientUUIDListFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes clientUUIDList = 2;
+  // string keycloakToken = 2;
+  void clear_keycloaktoken();
+  const std::string& keycloaktoken() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_keycloaktoken(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_keycloaktoken();
+  PROTOBUF_NODISCARD std::string* release_keycloaktoken();
+  void set_allocated_keycloaktoken(std::string* keycloaktoken);
+  private:
+  const std::string& _internal_keycloaktoken() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keycloaktoken(const std::string& value);
+  std::string* _internal_mutable_keycloaktoken();
+  public:
+
+  // bytes clientUUIDList = 3;
   void clear_clientuuidlist();
   const std::string& clientuuidlist() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1080,6 +1111,7 @@ class getAllClientsUUIDRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keycloaktoken_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuidlist_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -6892,10 +6924,25 @@ class createMapRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMapUUIDFieldNumber = 2,
+    kKeycloakTokenFieldNumber = 2,
+    kMapUUIDFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string mapUUID = 2;
+  // string keycloakToken = 2;
+  void clear_keycloaktoken();
+  const std::string& keycloaktoken() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_keycloaktoken(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_keycloaktoken();
+  PROTOBUF_NODISCARD std::string* release_keycloaktoken();
+  void set_allocated_keycloaktoken(std::string* keycloaktoken);
+  private:
+  const std::string& _internal_keycloaktoken() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keycloaktoken(const std::string& value);
+  std::string* _internal_mutable_keycloaktoken();
+  public:
+
+  // string mapUUID = 3;
   void clear_mapuuid();
   const std::string& mapuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -6926,6 +6973,7 @@ class createMapRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keycloaktoken_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -7204,10 +7252,25 @@ class deleteMapRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMapUUIDFieldNumber = 2,
+    kKeycloakTokenFieldNumber = 2,
+    kMapUUIDFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string mapUUID = 2;
+  // string keycloakToken = 2;
+  void clear_keycloaktoken();
+  const std::string& keycloaktoken() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_keycloaktoken(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_keycloaktoken();
+  PROTOBUF_NODISCARD std::string* release_keycloaktoken();
+  void set_allocated_keycloaktoken(std::string* keycloaktoken);
+  private:
+  const std::string& _internal_keycloaktoken() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keycloaktoken(const std::string& value);
+  std::string* _internal_mutable_keycloaktoken();
+  public:
+
+  // string mapUUID = 3;
   void clear_mapuuid();
   const std::string& mapuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -7238,6 +7301,7 @@ class deleteMapRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keycloaktoken_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -7516,10 +7580,25 @@ class getAllMapsUUIDRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMapUUIDListFieldNumber = 2,
+    kKeycloakTokenFieldNumber = 2,
+    kMapUUIDListFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // bytes mapUUIDList = 2;
+  // string keycloakToken = 2;
+  void clear_keycloaktoken();
+  const std::string& keycloaktoken() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_keycloaktoken(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_keycloaktoken();
+  PROTOBUF_NODISCARD std::string* release_keycloaktoken();
+  void set_allocated_keycloaktoken(std::string* keycloaktoken);
+  private:
+  const std::string& _internal_keycloaktoken() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keycloaktoken(const std::string& value);
+  std::string* _internal_mutable_keycloaktoken();
+  public:
+
+  // bytes mapUUIDList = 3;
   void clear_mapuuidlist();
   const std::string& mapuuidlist() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -7550,6 +7629,7 @@ class getAllMapsUUIDRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keycloaktoken_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuidlist_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -8188,11 +8268,26 @@ class getMapRequestRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMapUUIDFieldNumber = 2,
-    kMapDatastructureFieldNumber = 3,
+    kKeycloakTokenFieldNumber = 2,
+    kMapUUIDFieldNumber = 3,
+    kMapDatastructureFieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string mapUUID = 2;
+  // string keycloakToken = 2;
+  void clear_keycloaktoken();
+  const std::string& keycloaktoken() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_keycloaktoken(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_keycloaktoken();
+  PROTOBUF_NODISCARD std::string* release_keycloaktoken();
+  void set_allocated_keycloaktoken(std::string* keycloaktoken);
+  private:
+  const std::string& _internal_keycloaktoken() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keycloaktoken(const std::string& value);
+  std::string* _internal_mutable_keycloaktoken();
+  public:
+
+  // string mapUUID = 3;
   void clear_mapuuid();
   const std::string& mapuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -8206,7 +8301,7 @@ class getMapRequestRequest final :
   std::string* _internal_mutable_mapuuid();
   public:
 
-  // bytes mapDatastructure = 3;
+  // bytes mapDatastructure = 4;
   void clear_mapdatastructure();
   const std::string& mapdatastructure() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -8237,6 +8332,7 @@ class getMapRequestRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keycloaktoken_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapdatastructure_;
     int32_t grpcservercompressionformat_;
@@ -8532,11 +8628,26 @@ class setMapRequestRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMapUUIDFieldNumber = 2,
-    kMapDatastructureFieldNumber = 3,
+    kKeycloakTokenFieldNumber = 2,
+    kMapUUIDFieldNumber = 3,
+    kMapDatastructureFieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string mapUUID = 2;
+  // string keycloakToken = 2;
+  void clear_keycloaktoken();
+  const std::string& keycloaktoken() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_keycloaktoken(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_keycloaktoken();
+  PROTOBUF_NODISCARD std::string* release_keycloaktoken();
+  void set_allocated_keycloaktoken(std::string* keycloaktoken);
+  private:
+  const std::string& _internal_keycloaktoken() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keycloaktoken(const std::string& value);
+  std::string* _internal_mutable_keycloaktoken();
+  public:
+
+  // string mapUUID = 3;
   void clear_mapuuid();
   const std::string& mapuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -8550,7 +8661,7 @@ class setMapRequestRequest final :
   std::string* _internal_mutable_mapuuid();
   public:
 
-  // bytes mapDatastructure = 3;
+  // bytes mapDatastructure = 4;
   void clear_mapdatastructure();
   const std::string& mapdatastructure() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -8581,6 +8692,7 @@ class setMapRequestRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keycloaktoken_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapdatastructure_;
     int32_t grpcservercompressionformat_;
@@ -8860,11 +8972,26 @@ class getPointCloudRequestRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMapUUIDFieldNumber = 2,
-    kPointCloudFieldNumber = 3,
+    kKeycloakTokenFieldNumber = 2,
+    kMapUUIDFieldNumber = 3,
+    kPointCloudFieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string mapUUID = 2;
+  // string keycloakToken = 2;
+  void clear_keycloaktoken();
+  const std::string& keycloaktoken() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_keycloaktoken(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_keycloaktoken();
+  PROTOBUF_NODISCARD std::string* release_keycloaktoken();
+  void set_allocated_keycloaktoken(std::string* keycloaktoken);
+  private:
+  const std::string& _internal_keycloaktoken() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_keycloaktoken(const std::string& value);
+  std::string* _internal_mutable_keycloaktoken();
+  public:
+
+  // string mapUUID = 3;
   void clear_mapuuid();
   const std::string& mapuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -8878,7 +9005,7 @@ class getPointCloudRequestRequest final :
   std::string* _internal_mutable_mapuuid();
   public:
 
-  // bytes pointCloud = 3;
+  // bytes pointCloud = 4;
   void clear_pointcloud();
   const std::string& pointcloud() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -8909,6 +9036,7 @@ class getPointCloudRequestRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keycloaktoken_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
     int32_t grpcservercompressionformat_;
@@ -9112,7 +9240,57 @@ inline void registerClientRequest::set_grpcservercompressionformat(int32_t value
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.registerClientRequest.grpcServerCompressionFormat)
 }
 
-// bytes deviceInfo = 2;
+// string keycloakToken = 2;
+inline void registerClientRequest::clear_keycloaktoken() {
+  _impl_.keycloaktoken_.ClearToEmpty();
+}
+inline const std::string& registerClientRequest::keycloaktoken() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.registerClientRequest.keycloakToken)
+  return _internal_keycloaktoken();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void registerClientRequest::set_keycloaktoken(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.keycloaktoken_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.registerClientRequest.keycloakToken)
+}
+inline std::string* registerClientRequest::mutable_keycloaktoken() {
+  std::string* _s = _internal_mutable_keycloaktoken();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.registerClientRequest.keycloakToken)
+  return _s;
+}
+inline const std::string& registerClientRequest::_internal_keycloaktoken() const {
+  return _impl_.keycloaktoken_.Get();
+}
+inline void registerClientRequest::_internal_set_keycloaktoken(const std::string& value) {
+  
+  _impl_.keycloaktoken_.Set(value, GetArenaForAllocation());
+}
+inline std::string* registerClientRequest::_internal_mutable_keycloaktoken() {
+  
+  return _impl_.keycloaktoken_.Mutable(GetArenaForAllocation());
+}
+inline std::string* registerClientRequest::release_keycloaktoken() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.registerClientRequest.keycloakToken)
+  return _impl_.keycloaktoken_.Release();
+}
+inline void registerClientRequest::set_allocated_keycloaktoken(std::string* keycloaktoken) {
+  if (keycloaktoken != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.keycloaktoken_.SetAllocated(keycloaktoken, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.keycloaktoken_.IsDefault()) {
+    _impl_.keycloaktoken_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientRequest.keycloakToken)
+}
+
+// bytes deviceInfo = 3;
 inline void registerClientRequest::clear_deviceinfo() {
   _impl_.deviceinfo_.ClearToEmpty();
 }
@@ -9162,7 +9340,7 @@ inline void registerClientRequest::set_allocated_deviceinfo(std::string* devicei
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientRequest.deviceInfo)
 }
 
-// string mapUUID = 3;
+// string mapUUID = 4;
 inline void registerClientRequest::clear_mapuuid() {
   _impl_.mapuuid_.ClearToEmpty();
 }
@@ -9212,7 +9390,7 @@ inline void registerClientRequest::set_allocated_mapuuid(std::string* mapuuid) {
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientRequest.mapUUID)
 }
 
-// string clientUUID = 4;
+// string clientUUID = 5;
 inline void registerClientRequest::clear_clientuuid() {
   _impl_.clientuuid_.ClearToEmpty();
 }
@@ -9458,7 +9636,57 @@ inline void getAllClientsUUIDRequest::set_grpcservercompressionformat(int32_t va
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllClientsUUIDRequest.grpcServerCompressionFormat)
 }
 
-// bytes clientUUIDList = 2;
+// string keycloakToken = 2;
+inline void getAllClientsUUIDRequest::clear_keycloaktoken() {
+  _impl_.keycloaktoken_.ClearToEmpty();
+}
+inline const std::string& getAllClientsUUIDRequest::keycloaktoken() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getAllClientsUUIDRequest.keycloakToken)
+  return _internal_keycloaktoken();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void getAllClientsUUIDRequest::set_keycloaktoken(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.keycloaktoken_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllClientsUUIDRequest.keycloakToken)
+}
+inline std::string* getAllClientsUUIDRequest::mutable_keycloaktoken() {
+  std::string* _s = _internal_mutable_keycloaktoken();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getAllClientsUUIDRequest.keycloakToken)
+  return _s;
+}
+inline const std::string& getAllClientsUUIDRequest::_internal_keycloaktoken() const {
+  return _impl_.keycloaktoken_.Get();
+}
+inline void getAllClientsUUIDRequest::_internal_set_keycloaktoken(const std::string& value) {
+  
+  _impl_.keycloaktoken_.Set(value, GetArenaForAllocation());
+}
+inline std::string* getAllClientsUUIDRequest::_internal_mutable_keycloaktoken() {
+  
+  return _impl_.keycloaktoken_.Mutable(GetArenaForAllocation());
+}
+inline std::string* getAllClientsUUIDRequest::release_keycloaktoken() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getAllClientsUUIDRequest.keycloakToken)
+  return _impl_.keycloaktoken_.Release();
+}
+inline void getAllClientsUUIDRequest::set_allocated_keycloaktoken(std::string* keycloaktoken) {
+  if (keycloaktoken != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.keycloaktoken_.SetAllocated(keycloaktoken, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.keycloaktoken_.IsDefault()) {
+    _impl_.keycloaktoken_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getAllClientsUUIDRequest.keycloakToken)
+}
+
+// bytes clientUUIDList = 3;
 inline void getAllClientsUUIDRequest::clear_clientuuidlist() {
   _impl_.clientuuidlist_.ClearToEmpty();
 }
@@ -13666,7 +13894,57 @@ inline void createMapRequest::set_grpcservercompressionformat(int32_t value) {
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.createMapRequest.grpcServerCompressionFormat)
 }
 
-// string mapUUID = 2;
+// string keycloakToken = 2;
+inline void createMapRequest::clear_keycloaktoken() {
+  _impl_.keycloaktoken_.ClearToEmpty();
+}
+inline const std::string& createMapRequest::keycloaktoken() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.createMapRequest.keycloakToken)
+  return _internal_keycloaktoken();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void createMapRequest::set_keycloaktoken(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.keycloaktoken_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.createMapRequest.keycloakToken)
+}
+inline std::string* createMapRequest::mutable_keycloaktoken() {
+  std::string* _s = _internal_mutable_keycloaktoken();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.createMapRequest.keycloakToken)
+  return _s;
+}
+inline const std::string& createMapRequest::_internal_keycloaktoken() const {
+  return _impl_.keycloaktoken_.Get();
+}
+inline void createMapRequest::_internal_set_keycloaktoken(const std::string& value) {
+  
+  _impl_.keycloaktoken_.Set(value, GetArenaForAllocation());
+}
+inline std::string* createMapRequest::_internal_mutable_keycloaktoken() {
+  
+  return _impl_.keycloaktoken_.Mutable(GetArenaForAllocation());
+}
+inline std::string* createMapRequest::release_keycloaktoken() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.createMapRequest.keycloakToken)
+  return _impl_.keycloaktoken_.Release();
+}
+inline void createMapRequest::set_allocated_keycloaktoken(std::string* keycloaktoken) {
+  if (keycloaktoken != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.keycloaktoken_.SetAllocated(keycloaktoken, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.keycloaktoken_.IsDefault()) {
+    _impl_.keycloaktoken_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.createMapRequest.keycloakToken)
+}
+
+// string mapUUID = 3;
 inline void createMapRequest::clear_mapuuid() {
   _impl_.mapuuid_.ClearToEmpty();
 }
@@ -13764,7 +14042,57 @@ inline void deleteMapRequest::set_grpcservercompressionformat(int32_t value) {
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.deleteMapRequest.grpcServerCompressionFormat)
 }
 
-// string mapUUID = 2;
+// string keycloakToken = 2;
+inline void deleteMapRequest::clear_keycloaktoken() {
+  _impl_.keycloaktoken_.ClearToEmpty();
+}
+inline const std::string& deleteMapRequest::keycloaktoken() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.deleteMapRequest.keycloakToken)
+  return _internal_keycloaktoken();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void deleteMapRequest::set_keycloaktoken(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.keycloaktoken_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.deleteMapRequest.keycloakToken)
+}
+inline std::string* deleteMapRequest::mutable_keycloaktoken() {
+  std::string* _s = _internal_mutable_keycloaktoken();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.deleteMapRequest.keycloakToken)
+  return _s;
+}
+inline const std::string& deleteMapRequest::_internal_keycloaktoken() const {
+  return _impl_.keycloaktoken_.Get();
+}
+inline void deleteMapRequest::_internal_set_keycloaktoken(const std::string& value) {
+  
+  _impl_.keycloaktoken_.Set(value, GetArenaForAllocation());
+}
+inline std::string* deleteMapRequest::_internal_mutable_keycloaktoken() {
+  
+  return _impl_.keycloaktoken_.Mutable(GetArenaForAllocation());
+}
+inline std::string* deleteMapRequest::release_keycloaktoken() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.deleteMapRequest.keycloakToken)
+  return _impl_.keycloaktoken_.Release();
+}
+inline void deleteMapRequest::set_allocated_keycloaktoken(std::string* keycloaktoken) {
+  if (keycloaktoken != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.keycloaktoken_.SetAllocated(keycloaktoken, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.keycloaktoken_.IsDefault()) {
+    _impl_.keycloaktoken_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.deleteMapRequest.keycloakToken)
+}
+
+// string mapUUID = 3;
 inline void deleteMapRequest::clear_mapuuid() {
   _impl_.mapuuid_.ClearToEmpty();
 }
@@ -13862,7 +14190,57 @@ inline void getAllMapsUUIDRequest::set_grpcservercompressionformat(int32_t value
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllMapsUUIDRequest.grpcServerCompressionFormat)
 }
 
-// bytes mapUUIDList = 2;
+// string keycloakToken = 2;
+inline void getAllMapsUUIDRequest::clear_keycloaktoken() {
+  _impl_.keycloaktoken_.ClearToEmpty();
+}
+inline const std::string& getAllMapsUUIDRequest::keycloaktoken() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getAllMapsUUIDRequest.keycloakToken)
+  return _internal_keycloaktoken();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void getAllMapsUUIDRequest::set_keycloaktoken(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.keycloaktoken_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllMapsUUIDRequest.keycloakToken)
+}
+inline std::string* getAllMapsUUIDRequest::mutable_keycloaktoken() {
+  std::string* _s = _internal_mutable_keycloaktoken();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getAllMapsUUIDRequest.keycloakToken)
+  return _s;
+}
+inline const std::string& getAllMapsUUIDRequest::_internal_keycloaktoken() const {
+  return _impl_.keycloaktoken_.Get();
+}
+inline void getAllMapsUUIDRequest::_internal_set_keycloaktoken(const std::string& value) {
+  
+  _impl_.keycloaktoken_.Set(value, GetArenaForAllocation());
+}
+inline std::string* getAllMapsUUIDRequest::_internal_mutable_keycloaktoken() {
+  
+  return _impl_.keycloaktoken_.Mutable(GetArenaForAllocation());
+}
+inline std::string* getAllMapsUUIDRequest::release_keycloaktoken() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getAllMapsUUIDRequest.keycloakToken)
+  return _impl_.keycloaktoken_.Release();
+}
+inline void getAllMapsUUIDRequest::set_allocated_keycloaktoken(std::string* keycloaktoken) {
+  if (keycloaktoken != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.keycloaktoken_.SetAllocated(keycloaktoken, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.keycloaktoken_.IsDefault()) {
+    _impl_.keycloaktoken_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getAllMapsUUIDRequest.keycloakToken)
+}
+
+// bytes mapUUIDList = 3;
 inline void getAllMapsUUIDRequest::clear_mapuuidlist() {
   _impl_.mapuuidlist_.ClearToEmpty();
 }
@@ -14208,7 +14586,57 @@ inline void getMapRequestRequest::set_grpcservercompressionformat(int32_t value)
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapRequestRequest.grpcServerCompressionFormat)
 }
 
-// string mapUUID = 2;
+// string keycloakToken = 2;
+inline void getMapRequestRequest::clear_keycloaktoken() {
+  _impl_.keycloaktoken_.ClearToEmpty();
+}
+inline const std::string& getMapRequestRequest::keycloaktoken() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapRequestRequest.keycloakToken)
+  return _internal_keycloaktoken();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void getMapRequestRequest::set_keycloaktoken(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.keycloaktoken_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapRequestRequest.keycloakToken)
+}
+inline std::string* getMapRequestRequest::mutable_keycloaktoken() {
+  std::string* _s = _internal_mutable_keycloaktoken();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getMapRequestRequest.keycloakToken)
+  return _s;
+}
+inline const std::string& getMapRequestRequest::_internal_keycloaktoken() const {
+  return _impl_.keycloaktoken_.Get();
+}
+inline void getMapRequestRequest::_internal_set_keycloaktoken(const std::string& value) {
+  
+  _impl_.keycloaktoken_.Set(value, GetArenaForAllocation());
+}
+inline std::string* getMapRequestRequest::_internal_mutable_keycloaktoken() {
+  
+  return _impl_.keycloaktoken_.Mutable(GetArenaForAllocation());
+}
+inline std::string* getMapRequestRequest::release_keycloaktoken() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getMapRequestRequest.keycloakToken)
+  return _impl_.keycloaktoken_.Release();
+}
+inline void getMapRequestRequest::set_allocated_keycloaktoken(std::string* keycloaktoken) {
+  if (keycloaktoken != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.keycloaktoken_.SetAllocated(keycloaktoken, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.keycloaktoken_.IsDefault()) {
+    _impl_.keycloaktoken_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMapRequestRequest.keycloakToken)
+}
+
+// string mapUUID = 3;
 inline void getMapRequestRequest::clear_mapuuid() {
   _impl_.mapuuid_.ClearToEmpty();
 }
@@ -14258,7 +14686,7 @@ inline void getMapRequestRequest::set_allocated_mapuuid(std::string* mapuuid) {
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMapRequestRequest.mapUUID)
 }
 
-// bytes mapDatastructure = 3;
+// bytes mapDatastructure = 4;
 inline void getMapRequestRequest::clear_mapdatastructure() {
   _impl_.mapdatastructure_.ClearToEmpty();
 }
@@ -14406,7 +14834,57 @@ inline void setMapRequestRequest::set_grpcservercompressionformat(int32_t value)
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.setMapRequestRequest.grpcServerCompressionFormat)
 }
 
-// string mapUUID = 2;
+// string keycloakToken = 2;
+inline void setMapRequestRequest::clear_keycloaktoken() {
+  _impl_.keycloaktoken_.ClearToEmpty();
+}
+inline const std::string& setMapRequestRequest::keycloaktoken() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.setMapRequestRequest.keycloakToken)
+  return _internal_keycloaktoken();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void setMapRequestRequest::set_keycloaktoken(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.keycloaktoken_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.setMapRequestRequest.keycloakToken)
+}
+inline std::string* setMapRequestRequest::mutable_keycloaktoken() {
+  std::string* _s = _internal_mutable_keycloaktoken();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.setMapRequestRequest.keycloakToken)
+  return _s;
+}
+inline const std::string& setMapRequestRequest::_internal_keycloaktoken() const {
+  return _impl_.keycloaktoken_.Get();
+}
+inline void setMapRequestRequest::_internal_set_keycloaktoken(const std::string& value) {
+  
+  _impl_.keycloaktoken_.Set(value, GetArenaForAllocation());
+}
+inline std::string* setMapRequestRequest::_internal_mutable_keycloaktoken() {
+  
+  return _impl_.keycloaktoken_.Mutable(GetArenaForAllocation());
+}
+inline std::string* setMapRequestRequest::release_keycloaktoken() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.setMapRequestRequest.keycloakToken)
+  return _impl_.keycloaktoken_.Release();
+}
+inline void setMapRequestRequest::set_allocated_keycloaktoken(std::string* keycloaktoken) {
+  if (keycloaktoken != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.keycloaktoken_.SetAllocated(keycloaktoken, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.keycloaktoken_.IsDefault()) {
+    _impl_.keycloaktoken_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setMapRequestRequest.keycloakToken)
+}
+
+// string mapUUID = 3;
 inline void setMapRequestRequest::clear_mapuuid() {
   _impl_.mapuuid_.ClearToEmpty();
 }
@@ -14456,7 +14934,7 @@ inline void setMapRequestRequest::set_allocated_mapuuid(std::string* mapuuid) {
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setMapRequestRequest.mapUUID)
 }
 
-// bytes mapDatastructure = 3;
+// bytes mapDatastructure = 4;
 inline void setMapRequestRequest::clear_mapdatastructure() {
   _impl_.mapdatastructure_.ClearToEmpty();
 }
@@ -14554,7 +15032,57 @@ inline void getPointCloudRequestRequest::set_grpcservercompressionformat(int32_t
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getPointCloudRequestRequest.grpcServerCompressionFormat)
 }
 
-// string mapUUID = 2;
+// string keycloakToken = 2;
+inline void getPointCloudRequestRequest::clear_keycloaktoken() {
+  _impl_.keycloaktoken_.ClearToEmpty();
+}
+inline const std::string& getPointCloudRequestRequest::keycloaktoken() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getPointCloudRequestRequest.keycloakToken)
+  return _internal_keycloaktoken();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void getPointCloudRequestRequest::set_keycloaktoken(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.keycloaktoken_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getPointCloudRequestRequest.keycloakToken)
+}
+inline std::string* getPointCloudRequestRequest::mutable_keycloaktoken() {
+  std::string* _s = _internal_mutable_keycloaktoken();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getPointCloudRequestRequest.keycloakToken)
+  return _s;
+}
+inline const std::string& getPointCloudRequestRequest::_internal_keycloaktoken() const {
+  return _impl_.keycloaktoken_.Get();
+}
+inline void getPointCloudRequestRequest::_internal_set_keycloaktoken(const std::string& value) {
+  
+  _impl_.keycloaktoken_.Set(value, GetArenaForAllocation());
+}
+inline std::string* getPointCloudRequestRequest::_internal_mutable_keycloaktoken() {
+  
+  return _impl_.keycloaktoken_.Mutable(GetArenaForAllocation());
+}
+inline std::string* getPointCloudRequestRequest::release_keycloaktoken() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getPointCloudRequestRequest.keycloakToken)
+  return _impl_.keycloaktoken_.Release();
+}
+inline void getPointCloudRequestRequest::set_allocated_keycloaktoken(std::string* keycloaktoken) {
+  if (keycloaktoken != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.keycloaktoken_.SetAllocated(keycloaktoken, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.keycloaktoken_.IsDefault()) {
+    _impl_.keycloaktoken_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getPointCloudRequestRequest.keycloakToken)
+}
+
+// string mapUUID = 3;
 inline void getPointCloudRequestRequest::clear_mapuuid() {
   _impl_.mapuuid_.ClearToEmpty();
 }
@@ -14604,7 +15132,7 @@ inline void getPointCloudRequestRequest::set_allocated_mapuuid(std::string* mapu
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getPointCloudRequestRequest.mapUUID)
 }
 
-// bytes pointCloud = 3;
+// bytes pointCloud = 4;
 inline void getPointCloudRequestRequest::clear_pointcloud() {
   _impl_.pointcloud_.ClearToEmpty();
 }

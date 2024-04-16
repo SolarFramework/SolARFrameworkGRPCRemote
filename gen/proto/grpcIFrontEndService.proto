@@ -7,9 +7,10 @@ package grpcIFrontEnd;
 message registerClientRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes deviceInfo = 2;
-string mapUUID = 3;
-string clientUUID = 4;
+string keycloakToken = 2;
+bytes deviceInfo = 3;
+string mapUUID = 4;
+string clientUUID = 5;
 }
 
 message registerClientResponse
@@ -32,7 +33,8 @@ sint32 xpcfGrpcReturnValue = 1;
 message getAllClientsUUIDRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes clientUUIDList = 2;
+string keycloakToken = 2;
+bytes clientUUIDList = 3;
 }
 
 message getAllClientsUUIDResponse
@@ -262,7 +264,8 @@ sint32 xpcfGrpcReturnValue = 2;
 message createMapRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string mapUUID = 2;
+string keycloakToken = 2;
+string mapUUID = 3;
 }
 
 message createMapResponse
@@ -273,7 +276,8 @@ sint32 xpcfGrpcReturnValue = 1;
 message deleteMapRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string mapUUID = 2;
+string keycloakToken = 2;
+string mapUUID = 3;
 }
 
 message deleteMapResponse
@@ -284,7 +288,8 @@ sint32 xpcfGrpcReturnValue = 1;
 message getAllMapsUUIDRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes mapUUIDList = 2;
+string keycloakToken = 2;
+bytes mapUUIDList = 3;
 }
 
 message getAllMapsUUIDResponse
@@ -309,8 +314,9 @@ sint32 xpcfGrpcReturnValue = 2;
 message getMapRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string mapUUID = 2;
-bytes mapDatastructure = 3;
+string keycloakToken = 2;
+string mapUUID = 3;
+bytes mapDatastructure = 4;
 }
 
 message getMapRequestResponse
@@ -322,8 +328,9 @@ sint32 xpcfGrpcReturnValue = 2;
 message setMapRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string mapUUID = 2;
-bytes mapDatastructure = 3;
+string keycloakToken = 2;
+string mapUUID = 3;
+bytes mapDatastructure = 4;
 }
 
 message setMapRequestResponse
@@ -334,8 +341,9 @@ sint32 xpcfGrpcReturnValue = 1;
 message getPointCloudRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string mapUUID = 2;
-bytes pointCloud = 3;
+string keycloakToken = 2;
+string mapUUID = 3;
+bytes pointCloud = 4;
 }
 
 message getPointCloudRequestResponse
