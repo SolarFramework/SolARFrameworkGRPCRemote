@@ -1159,6 +1159,7 @@ class init_grpc1Request final :
 
   enum : int {
     kRelocalizationServiceURLFieldNumber = 2,
+    kMapupdateServiceURLFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
   // string relocalizationServiceURL = 2;
@@ -1173,6 +1174,20 @@ class init_grpc1Request final :
   const std::string& _internal_relocalizationserviceurl() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_relocalizationserviceurl(const std::string& value);
   std::string* _internal_mutable_relocalizationserviceurl();
+  public:
+
+  // string mapupdateServiceURL = 3;
+  void clear_mapupdateserviceurl();
+  const std::string& mapupdateserviceurl() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_mapupdateserviceurl(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_mapupdateserviceurl();
+  PROTOBUF_NODISCARD std::string* release_mapupdateserviceurl();
+  void set_allocated_mapupdateserviceurl(std::string* mapupdateserviceurl);
+  private:
+  const std::string& _internal_mapupdateserviceurl() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapupdateserviceurl(const std::string& value);
+  std::string* _internal_mutable_mapupdateserviceurl();
   public:
 
   // int32 grpcServerCompressionFormat = 1;
@@ -1193,6 +1208,7 @@ class init_grpc1Request final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr relocalizationserviceurl_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapupdateserviceurl_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -4403,6 +4419,56 @@ inline void init_grpc1Request::set_allocated_relocalizationserviceurl(std::strin
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.init_grpc1Request.relocalizationServiceURL)
+}
+
+// string mapupdateServiceURL = 3;
+inline void init_grpc1Request::clear_mapupdateserviceurl() {
+  _impl_.mapupdateserviceurl_.ClearToEmpty();
+}
+inline const std::string& init_grpc1Request::mapupdateserviceurl() const {
+  // @@protoc_insertion_point(field_get:grpcIMappingPipeline.init_grpc1Request.mapupdateServiceURL)
+  return _internal_mapupdateserviceurl();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void init_grpc1Request::set_mapupdateserviceurl(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.mapupdateserviceurl_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIMappingPipeline.init_grpc1Request.mapupdateServiceURL)
+}
+inline std::string* init_grpc1Request::mutable_mapupdateserviceurl() {
+  std::string* _s = _internal_mutable_mapupdateserviceurl();
+  // @@protoc_insertion_point(field_mutable:grpcIMappingPipeline.init_grpc1Request.mapupdateServiceURL)
+  return _s;
+}
+inline const std::string& init_grpc1Request::_internal_mapupdateserviceurl() const {
+  return _impl_.mapupdateserviceurl_.Get();
+}
+inline void init_grpc1Request::_internal_set_mapupdateserviceurl(const std::string& value) {
+  
+  _impl_.mapupdateserviceurl_.Set(value, GetArenaForAllocation());
+}
+inline std::string* init_grpc1Request::_internal_mutable_mapupdateserviceurl() {
+  
+  return _impl_.mapupdateserviceurl_.Mutable(GetArenaForAllocation());
+}
+inline std::string* init_grpc1Request::release_mapupdateserviceurl() {
+  // @@protoc_insertion_point(field_release:grpcIMappingPipeline.init_grpc1Request.mapupdateServiceURL)
+  return _impl_.mapupdateserviceurl_.Release();
+}
+inline void init_grpc1Request::set_allocated_mapupdateserviceurl(std::string* mapupdateserviceurl) {
+  if (mapupdateserviceurl != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.mapupdateserviceurl_.SetAllocated(mapupdateserviceurl, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.mapupdateserviceurl_.IsDefault()) {
+    _impl_.mapupdateserviceurl_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.init_grpc1Request.mapupdateServiceURL)
 }
 
 // -------------------------------------------------------------------

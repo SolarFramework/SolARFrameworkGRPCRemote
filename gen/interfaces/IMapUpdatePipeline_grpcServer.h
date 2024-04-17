@@ -28,11 +28,13 @@ class IMapUpdatePipeline_grpcServer:  public org::bcom::xpcf::ConfigurableBase, 
         ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::initRequest* request, ::grpcIMapUpdatePipeline::initResponse* response) override;
         ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::startRequest* request, ::grpcIMapUpdatePipeline::startResponse* response) override;
         ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::stopRequest* request, ::grpcIMapUpdatePipeline::stopResponse* response) override;
+        ::grpc::Status setMapUUID(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::setMapUUIDRequest* request, ::grpcIMapUpdatePipeline::setMapUUIDResponse* response) override;
+        ::grpc::Status getMapUUID(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::getMapUUIDRequest* request, ::grpcIMapUpdatePipeline::getMapUUIDResponse* response) override;
+        ::grpc::Status resetMap(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::resetMapRequest* request, ::grpcIMapUpdatePipeline::resetMapResponse* response) override;
         ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::setCameraParametersRequest* request, ::grpcIMapUpdatePipeline::setCameraParametersResponse* response) override;
         ::grpc::Status mapUpdateRequest(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::mapUpdateRequestRequest* request, ::grpcIMapUpdatePipeline::mapUpdateRequestResponse* response) override;
         ::grpc::Status getMapRequest(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::getMapRequestRequest* request, ::grpcIMapUpdatePipeline::getMapRequestResponse* response) override;
         ::grpc::Status getSubmapRequest(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::getSubmapRequestRequest* request, ::grpcIMapUpdatePipeline::getSubmapRequestResponse* response) override;
-        ::grpc::Status resetMap(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::resetMapRequest* request, ::grpcIMapUpdatePipeline::resetMapResponse* response) override;
         ::grpc::Status getPointCloudRequest(::grpc::ServerContext* context, const ::grpcIMapUpdatePipeline::getPointCloudRequestRequest* request, ::grpcIMapUpdatePipeline::getPointCloudRequestResponse* response) override;
 
         SRef<SolAR::api::pipeline::IMapUpdatePipeline> m_xpcfComponent;

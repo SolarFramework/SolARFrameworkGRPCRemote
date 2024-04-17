@@ -25,7 +25,6 @@ class IServiceManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, vir
     {
       public:
         grpcIServiceManagerServiceImpl() = default;
-        ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIServiceManager::initRequest* request, ::grpcIServiceManager::initResponse* response) override;
         ::grpc::Status registerService(::grpc::ServerContext* context, const ::grpcIServiceManager::registerServiceRequest* request, ::grpcIServiceManager::registerServiceResponse* response) override;
         ::grpc::Status unregisterService(::grpc::ServerContext* context, const ::grpcIServiceManager::unregisterServiceRequest* request, ::grpcIServiceManager::unregisterServiceResponse* response) override;
         ::grpc::Status getService(::grpc::ServerContext* context, const ::grpcIServiceManager::getServiceRequest* request, ::grpcIServiceManager::getServiceResponse* response) override;

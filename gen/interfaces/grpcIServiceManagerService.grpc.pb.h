@@ -35,13 +35,6 @@ class grpcIServiceManagerService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status init(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest& request, ::grpcIServiceManager::initResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManager::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManager::initResponse>>(AsyncinitRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManager::initResponse>> PrepareAsyncinit(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManager::initResponse>>(PrepareAsyncinitRaw(context, request, cq));
-    }
     virtual ::grpc::Status registerService(::grpc::ClientContext* context, const ::grpcIServiceManager::registerServiceRequest& request, ::grpcIServiceManager::registerServiceResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManager::registerServiceResponse>> AsyncregisterService(::grpc::ClientContext* context, const ::grpcIServiceManager::registerServiceRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManager::registerServiceResponse>>(AsyncregisterServiceRaw(context, request, cq));
@@ -80,8 +73,6 @@ class grpcIServiceManagerService final {
     class async_interface {
      public:
       virtual ~async_interface() {}
-      virtual void init(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest* request, ::grpcIServiceManager::initResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void init(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest* request, ::grpcIServiceManager::initResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void registerService(::grpc::ClientContext* context, const ::grpcIServiceManager::registerServiceRequest* request, ::grpcIServiceManager::registerServiceResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void registerService(::grpc::ClientContext* context, const ::grpcIServiceManager::registerServiceRequest* request, ::grpcIServiceManager::registerServiceResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void unregisterService(::grpc::ClientContext* context, const ::grpcIServiceManager::unregisterServiceRequest* request, ::grpcIServiceManager::unregisterServiceResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -97,8 +88,6 @@ class grpcIServiceManagerService final {
     virtual class async_interface* async() { return nullptr; }
     class async_interface* experimental_async() { return async(); }
    private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManager::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManager::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManager::registerServiceResponse>* AsyncregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::registerServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManager::registerServiceResponse>* PrepareAsyncregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::registerServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIServiceManager::unregisterServiceResponse>* AsyncunregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::unregisterServiceRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -113,13 +102,6 @@ class grpcIServiceManagerService final {
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
-    ::grpc::Status init(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest& request, ::grpcIServiceManager::initResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::initResponse>> Asyncinit(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::initResponse>>(AsyncinitRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::initResponse>> PrepareAsyncinit(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::initResponse>>(PrepareAsyncinitRaw(context, request, cq));
-    }
     ::grpc::Status registerService(::grpc::ClientContext* context, const ::grpcIServiceManager::registerServiceRequest& request, ::grpcIServiceManager::registerServiceResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::registerServiceResponse>> AsyncregisterService(::grpc::ClientContext* context, const ::grpcIServiceManager::registerServiceRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::registerServiceResponse>>(AsyncregisterServiceRaw(context, request, cq));
@@ -158,8 +140,6 @@ class grpcIServiceManagerService final {
     class async final :
       public StubInterface::async_interface {
      public:
-      void init(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest* request, ::grpcIServiceManager::initResponse* response, std::function<void(::grpc::Status)>) override;
-      void init(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest* request, ::grpcIServiceManager::initResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void registerService(::grpc::ClientContext* context, const ::grpcIServiceManager::registerServiceRequest* request, ::grpcIServiceManager::registerServiceResponse* response, std::function<void(::grpc::Status)>) override;
       void registerService(::grpc::ClientContext* context, const ::grpcIServiceManager::registerServiceRequest* request, ::grpcIServiceManager::registerServiceResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void unregisterService(::grpc::ClientContext* context, const ::grpcIServiceManager::unregisterServiceRequest* request, ::grpcIServiceManager::unregisterServiceResponse* response, std::function<void(::grpc::Status)>) override;
@@ -181,8 +161,6 @@ class grpcIServiceManagerService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::initResponse>* AsyncinitRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::initResponse>* PrepareAsyncinitRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::initRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::registerServiceResponse>* AsyncregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::registerServiceRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::registerServiceResponse>* PrepareAsyncregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::registerServiceRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::unregisterServiceResponse>* AsyncunregisterServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::unregisterServiceRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -193,7 +171,6 @@ class grpcIServiceManagerService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::getAndLockServiceResponse>* PrepareAsyncgetAndLockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::getAndLockServiceRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::unlockServiceResponse>* AsyncunlockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::unlockServiceRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIServiceManager::unlockServiceResponse>* PrepareAsyncunlockServiceRaw(::grpc::ClientContext* context, const ::grpcIServiceManager::unlockServiceRequest& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_init_;
     const ::grpc::internal::RpcMethod rpcmethod_registerService_;
     const ::grpc::internal::RpcMethod rpcmethod_unregisterService_;
     const ::grpc::internal::RpcMethod rpcmethod_getService_;
@@ -206,7 +183,6 @@ class grpcIServiceManagerService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIServiceManager::initRequest* request, ::grpcIServiceManager::initResponse* response);
     virtual ::grpc::Status registerService(::grpc::ServerContext* context, const ::grpcIServiceManager::registerServiceRequest* request, ::grpcIServiceManager::registerServiceResponse* response);
     virtual ::grpc::Status unregisterService(::grpc::ServerContext* context, const ::grpcIServiceManager::unregisterServiceRequest* request, ::grpcIServiceManager::unregisterServiceResponse* response);
     virtual ::grpc::Status getService(::grpc::ServerContext* context, const ::grpcIServiceManager::getServiceRequest* request, ::grpcIServiceManager::getServiceResponse* response);
@@ -214,32 +190,12 @@ class grpcIServiceManagerService final {
     virtual ::grpc::Status unlockService(::grpc::ServerContext* context, const ::grpcIServiceManager::unlockServiceRequest* request, ::grpcIServiceManager::unlockServiceResponse* response);
   };
   template <class BaseClass>
-  class WithAsyncMethod_init : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_init() {
-      ::grpc::Service::MarkMethodAsync(0);
-    }
-    ~WithAsyncMethod_init() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIServiceManager::initRequest* /*request*/, ::grpcIServiceManager::initResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void Requestinit(::grpc::ServerContext* context, ::grpcIServiceManager::initRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManager::initResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithAsyncMethod_registerService : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_registerService() {
-      ::grpc::Service::MarkMethodAsync(1);
+      ::grpc::Service::MarkMethodAsync(0);
     }
     ~WithAsyncMethod_registerService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -250,7 +206,7 @@ class grpcIServiceManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestregisterService(::grpc::ServerContext* context, ::grpcIServiceManager::registerServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManager::registerServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -259,7 +215,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_unregisterService() {
-      ::grpc::Service::MarkMethodAsync(2);
+      ::grpc::Service::MarkMethodAsync(1);
     }
     ~WithAsyncMethod_unregisterService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -270,7 +226,7 @@ class grpcIServiceManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestunregisterService(::grpc::ServerContext* context, ::grpcIServiceManager::unregisterServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManager::unregisterServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -279,7 +235,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getService() {
-      ::grpc::Service::MarkMethodAsync(3);
+      ::grpc::Service::MarkMethodAsync(2);
     }
     ~WithAsyncMethod_getService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -290,7 +246,7 @@ class grpcIServiceManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetService(::grpc::ServerContext* context, ::grpcIServiceManager::getServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManager::getServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -299,7 +255,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getAndLockService() {
-      ::grpc::Service::MarkMethodAsync(4);
+      ::grpc::Service::MarkMethodAsync(3);
     }
     ~WithAsyncMethod_getAndLockService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -310,7 +266,7 @@ class grpcIServiceManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetAndLockService(::grpc::ServerContext* context, ::grpcIServiceManager::getAndLockServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManager::getAndLockServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -319,7 +275,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_unlockService() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(4);
     }
     ~WithAsyncMethod_unlockService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -330,50 +286,23 @@ class grpcIServiceManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestunlockService(::grpc::ServerContext* context, ::grpcIServiceManager::unlockServiceRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIServiceManager::unlockServiceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_init<WithAsyncMethod_registerService<WithAsyncMethod_unregisterService<WithAsyncMethod_getService<WithAsyncMethod_getAndLockService<WithAsyncMethod_unlockService<Service > > > > > > AsyncService;
-  template <class BaseClass>
-  class WithCallbackMethod_init : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_init() {
-      ::grpc::Service::MarkMethodCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManager::initRequest, ::grpcIServiceManager::initResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIServiceManager::initRequest* request, ::grpcIServiceManager::initResponse* response) { return this->init(context, request, response); }));}
-    void SetMessageAllocatorFor_init(
-        ::grpc::MessageAllocator< ::grpcIServiceManager::initRequest, ::grpcIServiceManager::initResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManager::initRequest, ::grpcIServiceManager::initResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_init() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIServiceManager::initRequest* /*request*/, ::grpcIServiceManager::initResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* init(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIServiceManager::initRequest* /*request*/, ::grpcIServiceManager::initResponse* /*response*/)  { return nullptr; }
-  };
+  typedef WithAsyncMethod_registerService<WithAsyncMethod_unregisterService<WithAsyncMethod_getService<WithAsyncMethod_getAndLockService<WithAsyncMethod_unlockService<Service > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_registerService : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_registerService() {
-      ::grpc::Service::MarkMethodCallback(1,
+      ::grpc::Service::MarkMethodCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManager::registerServiceRequest, ::grpcIServiceManager::registerServiceResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIServiceManager::registerServiceRequest* request, ::grpcIServiceManager::registerServiceResponse* response) { return this->registerService(context, request, response); }));}
     void SetMessageAllocatorFor_registerService(
         ::grpc::MessageAllocator< ::grpcIServiceManager::registerServiceRequest, ::grpcIServiceManager::registerServiceResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(0);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManager::registerServiceRequest, ::grpcIServiceManager::registerServiceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -394,13 +323,13 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_unregisterService() {
-      ::grpc::Service::MarkMethodCallback(2,
+      ::grpc::Service::MarkMethodCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManager::unregisterServiceRequest, ::grpcIServiceManager::unregisterServiceResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIServiceManager::unregisterServiceRequest* request, ::grpcIServiceManager::unregisterServiceResponse* response) { return this->unregisterService(context, request, response); }));}
     void SetMessageAllocatorFor_unregisterService(
         ::grpc::MessageAllocator< ::grpcIServiceManager::unregisterServiceRequest, ::grpcIServiceManager::unregisterServiceResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManager::unregisterServiceRequest, ::grpcIServiceManager::unregisterServiceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -421,13 +350,13 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_getService() {
-      ::grpc::Service::MarkMethodCallback(3,
+      ::grpc::Service::MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManager::getServiceRequest, ::grpcIServiceManager::getServiceResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIServiceManager::getServiceRequest* request, ::grpcIServiceManager::getServiceResponse* response) { return this->getService(context, request, response); }));}
     void SetMessageAllocatorFor_getService(
         ::grpc::MessageAllocator< ::grpcIServiceManager::getServiceRequest, ::grpcIServiceManager::getServiceResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManager::getServiceRequest, ::grpcIServiceManager::getServiceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -448,13 +377,13 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_getAndLockService() {
-      ::grpc::Service::MarkMethodCallback(4,
+      ::grpc::Service::MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManager::getAndLockServiceRequest, ::grpcIServiceManager::getAndLockServiceResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIServiceManager::getAndLockServiceRequest* request, ::grpcIServiceManager::getAndLockServiceResponse* response) { return this->getAndLockService(context, request, response); }));}
     void SetMessageAllocatorFor_getAndLockService(
         ::grpc::MessageAllocator< ::grpcIServiceManager::getAndLockServiceRequest, ::grpcIServiceManager::getAndLockServiceResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManager::getAndLockServiceRequest, ::grpcIServiceManager::getAndLockServiceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -475,13 +404,13 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_unlockService() {
-      ::grpc::Service::MarkMethodCallback(5,
+      ::grpc::Service::MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManager::unlockServiceRequest, ::grpcIServiceManager::unlockServiceResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIServiceManager::unlockServiceRequest* request, ::grpcIServiceManager::unlockServiceResponse* response) { return this->unlockService(context, request, response); }));}
     void SetMessageAllocatorFor_unlockService(
         ::grpc::MessageAllocator< ::grpcIServiceManager::unlockServiceRequest, ::grpcIServiceManager::unlockServiceResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIServiceManager::unlockServiceRequest, ::grpcIServiceManager::unlockServiceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -496,32 +425,15 @@ class grpcIServiceManagerService final {
     virtual ::grpc::ServerUnaryReactor* unlockService(
       ::grpc::CallbackServerContext* /*context*/, const ::grpcIServiceManager::unlockServiceRequest* /*request*/, ::grpcIServiceManager::unlockServiceResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_init<WithCallbackMethod_registerService<WithCallbackMethod_unregisterService<WithCallbackMethod_getService<WithCallbackMethod_getAndLockService<WithCallbackMethod_unlockService<Service > > > > > > CallbackService;
+  typedef WithCallbackMethod_registerService<WithCallbackMethod_unregisterService<WithCallbackMethod_getService<WithCallbackMethod_getAndLockService<WithCallbackMethod_unlockService<Service > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
-  template <class BaseClass>
-  class WithGenericMethod_init : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_init() {
-      ::grpc::Service::MarkMethodGeneric(0);
-    }
-    ~WithGenericMethod_init() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIServiceManager::initRequest* /*request*/, ::grpcIServiceManager::initResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
   template <class BaseClass>
   class WithGenericMethod_registerService : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_registerService() {
-      ::grpc::Service::MarkMethodGeneric(1);
+      ::grpc::Service::MarkMethodGeneric(0);
     }
     ~WithGenericMethod_registerService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -538,7 +450,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_unregisterService() {
-      ::grpc::Service::MarkMethodGeneric(2);
+      ::grpc::Service::MarkMethodGeneric(1);
     }
     ~WithGenericMethod_unregisterService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -555,7 +467,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getService() {
-      ::grpc::Service::MarkMethodGeneric(3);
+      ::grpc::Service::MarkMethodGeneric(2);
     }
     ~WithGenericMethod_getService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -572,7 +484,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getAndLockService() {
-      ::grpc::Service::MarkMethodGeneric(4);
+      ::grpc::Service::MarkMethodGeneric(3);
     }
     ~WithGenericMethod_getAndLockService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -589,7 +501,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_unlockService() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(4);
     }
     ~WithGenericMethod_unlockService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -601,32 +513,12 @@ class grpcIServiceManagerService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_init : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_init() {
-      ::grpc::Service::MarkMethodRaw(0);
-    }
-    ~WithRawMethod_init() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIServiceManager::initRequest* /*request*/, ::grpcIServiceManager::initResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void Requestinit(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithRawMethod_registerService : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_registerService() {
-      ::grpc::Service::MarkMethodRaw(1);
+      ::grpc::Service::MarkMethodRaw(0);
     }
     ~WithRawMethod_registerService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -637,7 +529,7 @@ class grpcIServiceManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestregisterService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -646,7 +538,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_unregisterService() {
-      ::grpc::Service::MarkMethodRaw(2);
+      ::grpc::Service::MarkMethodRaw(1);
     }
     ~WithRawMethod_unregisterService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -657,7 +549,7 @@ class grpcIServiceManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestunregisterService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -666,7 +558,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getService() {
-      ::grpc::Service::MarkMethodRaw(3);
+      ::grpc::Service::MarkMethodRaw(2);
     }
     ~WithRawMethod_getService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -677,7 +569,7 @@ class grpcIServiceManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -686,7 +578,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getAndLockService() {
-      ::grpc::Service::MarkMethodRaw(4);
+      ::grpc::Service::MarkMethodRaw(3);
     }
     ~WithRawMethod_getAndLockService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -697,7 +589,7 @@ class grpcIServiceManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetAndLockService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -706,7 +598,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_unlockService() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(4);
     }
     ~WithRawMethod_unlockService() override {
       BaseClassMustBeDerivedFromService(this);
@@ -717,30 +609,8 @@ class grpcIServiceManagerService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestunlockService(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_init : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_init() {
-      ::grpc::Service::MarkMethodRawCallback(0,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->init(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_init() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIServiceManager::initRequest* /*request*/, ::grpcIServiceManager::initResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* init(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithRawCallbackMethod_registerService : public BaseClass {
@@ -748,7 +618,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_registerService() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+      ::grpc::Service::MarkMethodRawCallback(0,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->registerService(context, request, response); }));
@@ -770,7 +640,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_unregisterService() {
-      ::grpc::Service::MarkMethodRawCallback(2,
+      ::grpc::Service::MarkMethodRawCallback(1,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->unregisterService(context, request, response); }));
@@ -792,7 +662,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_getService() {
-      ::grpc::Service::MarkMethodRawCallback(3,
+      ::grpc::Service::MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getService(context, request, response); }));
@@ -814,7 +684,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_getAndLockService() {
-      ::grpc::Service::MarkMethodRawCallback(4,
+      ::grpc::Service::MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getAndLockService(context, request, response); }));
@@ -836,7 +706,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_unlockService() {
-      ::grpc::Service::MarkMethodRawCallback(5,
+      ::grpc::Service::MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->unlockService(context, request, response); }));
@@ -853,39 +723,12 @@ class grpcIServiceManagerService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_init : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_init() {
-      ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::grpcIServiceManager::initRequest, ::grpcIServiceManager::initResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::grpcIServiceManager::initRequest, ::grpcIServiceManager::initResponse>* streamer) {
-                       return this->Streamedinit(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_init() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status init(::grpc::ServerContext* /*context*/, const ::grpcIServiceManager::initRequest* /*request*/, ::grpcIServiceManager::initResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status Streamedinit(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIServiceManager::initRequest,::grpcIServiceManager::initResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_registerService : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_registerService() {
-      ::grpc::Service::MarkMethodStreamed(1,
+      ::grpc::Service::MarkMethodStreamed(0,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIServiceManager::registerServiceRequest, ::grpcIServiceManager::registerServiceResponse>(
             [this](::grpc::ServerContext* context,
@@ -912,7 +755,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_unregisterService() {
-      ::grpc::Service::MarkMethodStreamed(2,
+      ::grpc::Service::MarkMethodStreamed(1,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIServiceManager::unregisterServiceRequest, ::grpcIServiceManager::unregisterServiceResponse>(
             [this](::grpc::ServerContext* context,
@@ -939,7 +782,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getService() {
-      ::grpc::Service::MarkMethodStreamed(3,
+      ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIServiceManager::getServiceRequest, ::grpcIServiceManager::getServiceResponse>(
             [this](::grpc::ServerContext* context,
@@ -966,7 +809,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getAndLockService() {
-      ::grpc::Service::MarkMethodStreamed(4,
+      ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIServiceManager::getAndLockServiceRequest, ::grpcIServiceManager::getAndLockServiceResponse>(
             [this](::grpc::ServerContext* context,
@@ -993,7 +836,7 @@ class grpcIServiceManagerService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_unlockService() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIServiceManager::unlockServiceRequest, ::grpcIServiceManager::unlockServiceResponse>(
             [this](::grpc::ServerContext* context,
@@ -1014,9 +857,9 @@ class grpcIServiceManagerService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedunlockService(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIServiceManager::unlockServiceRequest,::grpcIServiceManager::unlockServiceResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_registerService<WithStreamedUnaryMethod_unregisterService<WithStreamedUnaryMethod_getService<WithStreamedUnaryMethod_getAndLockService<WithStreamedUnaryMethod_unlockService<Service > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_registerService<WithStreamedUnaryMethod_unregisterService<WithStreamedUnaryMethod_getService<WithStreamedUnaryMethod_getAndLockService<WithStreamedUnaryMethod_unlockService<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_registerService<WithStreamedUnaryMethod_unregisterService<WithStreamedUnaryMethod_getService<WithStreamedUnaryMethod_getAndLockService<WithStreamedUnaryMethod_unlockService<Service > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_registerService<WithStreamedUnaryMethod_unregisterService<WithStreamedUnaryMethod_getService<WithStreamedUnaryMethod_getAndLockService<WithStreamedUnaryMethod_unlockService<Service > > > > > StreamedService;
 };
 
 }  // namespace grpcIServiceManager
