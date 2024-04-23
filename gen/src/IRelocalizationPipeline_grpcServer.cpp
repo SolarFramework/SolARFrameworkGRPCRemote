@@ -204,37 +204,37 @@ XPCFErrorCode IRelocalizationPipeline_grpcServer::onConfigured()
 }
 
 
-::grpc::Status IRelocalizationPipeline_grpcServer::grpcIRelocalizationPipelineServiceImpl::relocalizeProcessRequestViz(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequestVizRequest* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequestVizResponse* response)
+::grpc::Status IRelocalizationPipeline_grpcServer::grpcIRelocalizationPipelineServiceImpl::relocalizeProcessRequest_grpc1(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc1Request* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc1Response* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "relocalizeProcessRequestViz", m_methodCompressionInfosMap);
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "relocalizeProcessRequest", m_methodCompressionInfosMap);
   xpcf::prepareServerCompressionContext(context, serverCompressInfo);
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IRelocalizationPipeline_grpcServer::relocalizeProcessRequestViz request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IRelocalizationPipeline_grpcServer::relocalizeProcessRequest request received at " << to_simple_string(start) << std::endl;
   #endif
   SRef<SolAR::datastructure::Image> image = xpcf::deserialize<SRef<SolAR::datastructure::Image>>(request->image());
   std::vector<SRef<SolAR::datastructure::CloudPoint>> currPointCloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->currpointcloud());
   SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
   float_t confidence = xpcf::deserialize<float_t>(request->confidence());
   SolAR::datastructure::Transform3Df poseCoarse = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->posecoarse());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequestViz(image, currPointCloud, pose, confidence, poseCoarse);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(image, currPointCloud, pose, confidence, poseCoarse);
   response->set_currpointcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(currPointCloud));
   response->set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   response->set_confidence(xpcf::serialize<float_t>(confidence));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IRelocalizationPipeline_grpcServer::relocalizeProcessRequestViz response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IRelocalizationPipeline_grpcServer::relocalizeProcessRequest response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
 }
 
 
-::grpc::Status IRelocalizationPipeline_grpcServer::grpcIRelocalizationPipelineServiceImpl::relocalizeProcessRequest_grpc1(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc1Request* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc1Response* response)
+::grpc::Status IRelocalizationPipeline_grpcServer::grpcIRelocalizationPipelineServiceImpl::relocalizeProcessRequest_grpc2(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc2Request* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc2Response* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
