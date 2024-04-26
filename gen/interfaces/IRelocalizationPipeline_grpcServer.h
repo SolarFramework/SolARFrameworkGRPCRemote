@@ -33,6 +33,7 @@ class IRelocalizationPipeline_grpcServer:  public org::bcom::xpcf::ConfigurableB
         ::grpc::Status getCameraParameters(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::getCameraParametersRequest* request, ::grpcIRelocalizationPipeline::getCameraParametersResponse* response) override;
         ::grpc::Status relocalizeProcessRequest_grpc0(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc0Request* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc0Response* response) override;
         ::grpc::Status relocalizeProcessRequest_grpc1(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc1Request* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc1Response* response) override;
+        ::grpc::Status relocalizeProcessRequest_grpc2(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc2Request* request, ::grpcIRelocalizationPipeline::relocalizeProcessRequest_grpc2Response* response) override;
         ::grpc::Status getMapRequest(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::getMapRequestRequest* request, ::grpcIRelocalizationPipeline::getMapRequestResponse* response) override;
 
         SRef<SolAR::api::pipeline::IRelocalizationPipeline> m_xpcfComponent;
