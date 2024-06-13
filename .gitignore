@@ -28,3 +28,6 @@ Makefile
 
 bundle_system_install.sh
 
+
+**/configure_conditions.pri
+
