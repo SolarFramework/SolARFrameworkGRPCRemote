@@ -51,10 +51,11 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::registerClient request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string keycloakToken = request->keycloaktoken();
   SolAR::api::service::DeviceInfo deviceInfo = xpcf::deserialize<SolAR::api::service::DeviceInfo>(request->deviceinfo());
   std::string mapUUID = request->mapuuid();
   std::string clientUUID = request->clientuuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->registerClient(deviceInfo, mapUUID, clientUUID);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->registerClient(keycloakToken, deviceInfo, mapUUID, clientUUID);
   response->set_clientuuid(clientUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -100,8 +101,9 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::getAllClientsUUID request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string keycloakToken = request->keycloaktoken();
   std::vector<std::string> clientUUIDList = xpcf::deserialize<std::vector<std::string>>(request->clientuuidlist());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getAllClientsUUID(clientUUIDList);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getAllClientsUUID(keycloakToken, clientUUIDList);
   response->set_clientuuidlist(xpcf::serialize<std::vector<std::string>>(clientUUIDList));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -522,8 +524,9 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::createMap request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string keycloakToken = request->keycloaktoken();
   std::string mapUUID = request->mapuuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->createMap(mapUUID);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->createMap(keycloakToken, mapUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -545,8 +548,9 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::deleteMap request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string keycloakToken = request->keycloaktoken();
   std::string mapUUID = request->mapuuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->deleteMap(mapUUID);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->deleteMap(keycloakToken, mapUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -568,8 +572,9 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::getAllMapsUUID request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string keycloakToken = request->keycloaktoken();
   std::vector<std::string> mapUUIDList = xpcf::deserialize<std::vector<std::string>>(request->mapuuidlist());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getAllMapsUUID(mapUUIDList);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getAllMapsUUID(keycloakToken, mapUUIDList);
   response->set_mapuuidlist(xpcf::serialize<std::vector<std::string>>(mapUUIDList));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -617,9 +622,10 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::getMapRequest request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string keycloakToken = request->keycloaktoken();
   std::string mapUUID = request->mapuuid();
   SRef<SolAR::datastructure::Map> mapDatastructure = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->mapdatastructure());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(mapUUID, mapDatastructure);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(keycloakToken, mapUUID, mapDatastructure);
   response->set_mapdatastructure(xpcf::serialize<SRef<SolAR::datastructure::Map>>(mapDatastructure));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -642,9 +648,10 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::setMapRequest request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string keycloakToken = request->keycloaktoken();
   std::string mapUUID = request->mapuuid();
   SRef<SolAR::datastructure::Map> mapDatastructure = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->mapdatastructure());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setMapRequest(mapUUID, mapDatastructure);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setMapRequest(keycloakToken, mapUUID, mapDatastructure);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -666,9 +673,10 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::getPointCloudRequest request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string keycloakToken = request->keycloaktoken();
   std::string mapUUID = request->mapuuid();
   SRef<SolAR::datastructure::PointCloud> pointCloud = xpcf::deserialize<SRef<SolAR::datastructure::PointCloud>>(request->pointcloud());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getPointCloudRequest(mapUUID, pointCloud);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getPointCloudRequest(keycloakToken, mapUUID, pointCloud);
   response->set_pointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(pointCloud));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
