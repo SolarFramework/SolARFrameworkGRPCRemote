@@ -56,6 +56,7 @@
         <value>method|getCameraParameters|none|none</value>
         <value>method|relocalizeProcessRequest|none|none</value>
         <value>method|relocalizeProcessRequest|none|none</value>
+        <value>method|relocalizeProcessRequest|none|none</value>
         <value>method|getMapRequest|none|none</value>
       </property>
     </configure>
