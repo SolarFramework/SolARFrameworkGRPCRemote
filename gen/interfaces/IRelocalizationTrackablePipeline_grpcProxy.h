@@ -3,7 +3,7 @@
 
 #ifndef IRELOCALIZATIONTRACKABLEPIPELINE_GRPCPROXY_H
 #define IRELOCALIZATIONTRACKABLEPIPELINE_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/SolARFramework/interfaces/api/pipeline/IRelocalizationTrackablePipeline.h"
+#include "api/pipeline/IRelocalizationTrackablePipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

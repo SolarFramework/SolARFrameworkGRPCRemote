@@ -3,7 +3,7 @@
 
 #ifndef IFRONTEND_GRPCPROXY_H
 #define IFRONTEND_GRPCPROXY_H
-#include "/home/christophe/Dev/SolAR/SolARFramework/interfaces/api/service/IFrontEnd.h"
+#include "api/service/IFrontEnd.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>

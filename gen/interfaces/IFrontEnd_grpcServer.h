@@ -2,7 +2,7 @@
 
 #ifndef IFRONTEND_GRPCSERVER_H
 #define IFRONTEND_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/SolARFramework/interfaces/api/service/IFrontEnd.h"
+#include "api/service/IFrontEnd.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>

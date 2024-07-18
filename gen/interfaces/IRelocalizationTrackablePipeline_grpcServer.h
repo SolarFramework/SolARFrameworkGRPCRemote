@@ -2,7 +2,7 @@
 
 #ifndef IRELOCALIZATIONTRACKABLEPIPELINE_GRPCSERVER_H
 #define IRELOCALIZATIONTRACKABLEPIPELINE_GRPCSERVER_H
-#include "/home/christophe/Dev/SolAR/SolARFramework/interfaces/api/pipeline/IRelocalizationTrackablePipeline.h"
+#include "api/pipeline/IRelocalizationTrackablePipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <xpcf/remoting/IGrpcService.h>
 #include <xpcf/remoting/GrpcHelper.h>
