@@ -47,7 +47,7 @@ XPCFErrorCode IFrontEnd_grpcProxy::onConfigured()
 }
 
 
-SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::registerClient(std::string const& keycloakToken, SolAR::api::service::DeviceInfo const& deviceInfo, std::string const& mapUUID, std::string& clientUUID)
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::registerClient(std::string const& keycloakToken, SolAR::api::service::DeviceInfo const& deviceInfo, std::string const& worldElementUUID, std::string& clientUUID)
 {
   ::grpc::ClientContext context;
   ::grpcIFrontEnd::registerClientRequest reqIn;
@@ -59,7 +59,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::registerClient(std::string cons
   #endif
   reqIn.set_keycloaktoken(keycloakToken);
   reqIn.set_deviceinfo(xpcf::serialize<SolAR::api::service::DeviceInfo>(deviceInfo));
-  reqIn.set_mapuuid(mapUUID);
+  reqIn.set_worldelementuuid(worldElementUUID);
   reqIn.set_clientuuid(clientUUID);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -77,7 +77,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::registerClient(std::string cons
   }
 
   clientUUID = respOut.clientuuid();
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -107,7 +107,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::unregisterClient(std::string co
     throw xpcf::RemotingException("grpcIFrontEndService","unregisterClient",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -139,7 +139,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getAllClientsUUID(std::string c
   }
 
   clientUUIDList = xpcf::deserialize<std::vector<std::string>>(respOut.clientuuidlist());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -171,7 +171,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getDeviceInfo(std::string const
   }
 
   deviceInfo = xpcf::deserialize<SolAR::api::service::DeviceInfo>(respOut.deviceinfo());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -201,7 +201,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::init(std::string const& clientU
     throw xpcf::RemotingException("grpcIFrontEndService","init_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -232,7 +232,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::init(std::string const& clientU
     throw xpcf::RemotingException("grpcIFrontEndService","init_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -262,7 +262,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::start(std::string const& client
     throw xpcf::RemotingException("grpcIFrontEndService","start",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -292,7 +292,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::stop(std::string const& clientU
     throw xpcf::RemotingException("grpcIFrontEndService","stop",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -324,7 +324,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getProcessingMode(std::string c
   }
 
   pipelineMode = xpcf::deserialize<SolAR::api::service::PipelineMode>(respOut.pipelinemode());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -355,7 +355,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::setCameraParameters(std::string
     throw xpcf::RemotingException("grpcIFrontEndService","setCameraParameters_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -387,7 +387,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::setCameraParameters(std::string
     throw xpcf::RemotingException("grpcIFrontEndService","setCameraParameters_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -419,7 +419,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::setRectificationParameters(std:
     throw xpcf::RemotingException("grpcIFrontEndService","setRectificationParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -451,7 +451,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getCameraParameters(std::string
   }
 
   cameraParams = xpcf::deserialize<SolAR::datastructure::CameraParameters>(respOut.cameraparams());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -494,7 +494,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::relocalizeProcessRequest(std::s
   transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.transform3d());
   confidence = xpcf::deserialize<float_t>(respOut.confidence());
   mappingStatus = xpcf::deserialize<SolAR::api::pipeline::MappingStatus>(respOut.mappingstatus());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -539,7 +539,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::relocalizeProcessRequest(std::s
   confidence = xpcf::deserialize<float_t>(respOut.confidence());
   mappingStatus = xpcf::deserialize<SolAR::api::pipeline::MappingStatus>(respOut.mappingstatus());
   detectedObjects = xpcf::deserialize<std::vector<SolAR::datastructure::DetectedObject>>(respOut.detectedobjects());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -575,7 +575,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::get3DTransformRequest(std::stri
   transform3DStatus = xpcf::deserialize<SolAR::api::service::TransformStatus>(respOut.transform3dstatus());
   transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.transform3d());
   confidence = xpcf::deserialize<float_t>(respOut.confidence());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -609,7 +609,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMappingDataRequest(std::stri
 
   outputPointClouds = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(respOut.outputpointclouds());
   keyframePoses = xpcf::deserialize<std::vector<SolAR::datastructure::Transform3Df>>(respOut.keyframeposes());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -642,7 +642,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getLastPose(std::string const& 
   }
 
   pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.pose());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -673,7 +673,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::createMap(std::string const& ke
     throw xpcf::RemotingException("grpcIFrontEndService","createMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -704,7 +704,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::deleteMap(std::string const& ke
     throw xpcf::RemotingException("grpcIFrontEndService","deleteMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -736,7 +736,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getAllMapsUUID(std::string cons
   }
 
   mapUUIDList = xpcf::deserialize<std::vector<std::string>>(respOut.mapuuidlist());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -768,7 +768,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getClientMapUUID(std::string co
   }
 
   mapUUID = respOut.mapuuid();
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -801,7 +801,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapRequest(std::string const
   }
 
   mapDatastructure = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(respOut.mapdatastructure());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -833,7 +833,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::setMapRequest(std::string const
     throw xpcf::RemotingException("grpcIFrontEndService","setMapRequest",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
@@ -866,7 +866,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getPointCloudRequest(std::strin
   }
 
   pointCloud = xpcf::deserialize<SRef<SolAR::datastructure::PointCloud>>(respOut.pointcloud());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+  return xpcf::deserialize<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 

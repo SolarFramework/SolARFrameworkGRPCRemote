@@ -3,7 +3,7 @@
 
 #ifndef IFRONTEND_GRPCPROXY_H
 #define IFRONTEND_GRPCPROXY_H
-#include "api/service/IFrontEnd.h"
+#include "/home/christophe/Dev/SolAR/SolARFramework/interfaces/api/service/IFrontEnd.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
@@ -22,7 +22,7 @@ class IFrontEnd_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode registerClient(std::string const& keycloakToken, SolAR::api::service::DeviceInfo const& deviceInfo, std::string const& mapUUID, std::string& clientUUID)     override;
+    SolAR::FrameworkReturnCode registerClient(std::string const& keycloakToken, SolAR::api::service::DeviceInfo const& deviceInfo, std::string const& worldElementUUID, std::string& clientUUID)     override;
     SolAR::FrameworkReturnCode unregisterClient(std::string const& clientUUID)     override;
     SolAR::FrameworkReturnCode getAllClientsUUID(std::string const& keycloakToken, std::vector<std::string>& clientUUIDList)     const     override;
     SolAR::FrameworkReturnCode getDeviceInfo(std::string const& clientUUID, SolAR::api::service::DeviceInfo& deviceInfo)     const     override;
