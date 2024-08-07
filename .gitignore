@@ -7,6 +7,8 @@ build/release/
 
 xpcfGrpcRemotingSolARFramework.pro
 
+#ignore xpcf_grpc_gen dependencies downloaded before generation starts
+xpcf_grpc_gen_bin/
 
 build/*
 .build-rules/*
