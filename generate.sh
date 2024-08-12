@@ -33,7 +33,7 @@ then
 fi
 
 DEFAULT_VERSION_SOLAR="1.3.0"
-DEFAULT_VERSION_XPCF="2.7.0"
+DEFAULT_VERSION_XPCF="2.8.0"
 DEFAULT_DATABASE_DIR="../build-SolARFramework-Desktop_Qt_6_5_3_GCC_64bit-Release"
 DEFAULT_SOLAR_FRAMEWORK_PATH="../SolARFramework"
 DEFAULT_MODULE_UUID="a0f522d1-b70e-4d0f-ad78-84e78a9af6bf"
@@ -170,7 +170,6 @@ $XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/$LIB_TYPE/release/xpc
         --module_uuid $MODULE_UUID \
         --name SolARFramework \
         --project_version $VERSION_SOLAR \
-        --module_uuid $MODULE_UUID \
         --repository SolARBuild@github \
         --url https://github.com/SolarFramework/SolARFramework/releases/download \
         --database_dir `realpath $DATABASE_DIR` \
