@@ -45,7 +45,7 @@ message getAndLockServiceRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 sint32 serviceType = 2;
-string clientUUID = 3;
+string uuid = 3;
 string serviceURL = 4;
 }
 
@@ -59,7 +59,7 @@ message unlockServiceRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 sint32 serviceType = 2;
-string clientUUID = 3;
+string uuid = 3;
 }
 
 message unlockServiceResponse

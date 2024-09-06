@@ -9,7 +9,7 @@ message registerClientRequest
 int32 grpcServerCompressionFormat  = 1;
 string keycloakToken = 2;
 bytes deviceInfo = 3;
-string mapUUID = 4;
+string worldElementUUID = 4;
 string clientUUID = 5;
 }
 

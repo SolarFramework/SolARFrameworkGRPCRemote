@@ -125,9 +125,9 @@ XPCFErrorCode IServiceManager_grpcServer::onConfigured()
   std::cout << "====> IServiceManager_grpcServer::getAndLockService request received at " << to_simple_string(start) << std::endl;
   #endif
   SolAR::api::service::ServiceType serviceType = static_cast<SolAR::api::service::ServiceType>(request->servicetype());
-  std::string clientUUID = request->clientuuid();
+  std::string uuid = request->uuid();
   std::string serviceURL = request->serviceurl();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getAndLockService(serviceType, clientUUID, serviceURL);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getAndLockService(serviceType, uuid, serviceURL);
   response->set_serviceurl(serviceURL);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -151,8 +151,8 @@ XPCFErrorCode IServiceManager_grpcServer::onConfigured()
   std::cout << "====> IServiceManager_grpcServer::unlockService request received at " << to_simple_string(start) << std::endl;
   #endif
   SolAR::api::service::ServiceType serviceType = static_cast<SolAR::api::service::ServiceType>(request->servicetype());
-  std::string clientUUID = request->clientuuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->unlockService(serviceType, clientUUID);
+  std::string uuid = request->uuid();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->unlockService(serviceType, uuid);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();

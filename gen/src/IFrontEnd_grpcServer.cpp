@@ -53,9 +53,9 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   #endif
   std::string keycloakToken = request->keycloaktoken();
   SolAR::api::service::DeviceInfo deviceInfo = xpcf::deserialize<SolAR::api::service::DeviceInfo>(request->deviceinfo());
-  std::string mapUUID = request->mapuuid();
+  std::string worldElementUUID = request->worldelementuuid();
   std::string clientUUID = request->clientuuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->registerClient(keycloakToken, deviceInfo, mapUUID, clientUUID);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->registerClient(keycloakToken, deviceInfo, worldElementUUID, clientUUID);
   response->set_clientuuid(clientUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
