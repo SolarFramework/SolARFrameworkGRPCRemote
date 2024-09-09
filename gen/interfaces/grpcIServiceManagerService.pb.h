@@ -1199,23 +1199,23 @@ class getAndLockServiceRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kClientUUIDFieldNumber = 3,
+    kUuidFieldNumber = 3,
     kServiceURLFieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
     kServiceTypeFieldNumber = 2,
   };
-  // string clientUUID = 3;
-  void clear_clientuuid();
-  const std::string& clientuuid() const;
+  // string uuid = 3;
+  void clear_uuid();
+  const std::string& uuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_clientuuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_clientuuid();
-  PROTOBUF_NODISCARD std::string* release_clientuuid();
-  void set_allocated_clientuuid(std::string* clientuuid);
+  void set_uuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_uuid();
+  PROTOBUF_NODISCARD std::string* release_uuid();
+  void set_allocated_uuid(std::string* uuid);
   private:
-  const std::string& _internal_clientuuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
-  std::string* _internal_mutable_clientuuid();
+  const std::string& _internal_uuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
+  std::string* _internal_mutable_uuid();
   public:
 
   // string serviceURL = 4;
@@ -1258,7 +1258,7 @@ class getAndLockServiceRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serviceurl_;
     int32_t grpcservercompressionformat_;
     int32_t servicetype_;
@@ -1554,22 +1554,22 @@ class unlockServiceRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kClientUUIDFieldNumber = 3,
+    kUuidFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
     kServiceTypeFieldNumber = 2,
   };
-  // string clientUUID = 3;
-  void clear_clientuuid();
-  const std::string& clientuuid() const;
+  // string uuid = 3;
+  void clear_uuid();
+  const std::string& uuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_clientuuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_clientuuid();
-  PROTOBUF_NODISCARD std::string* release_clientuuid();
-  void set_allocated_clientuuid(std::string* clientuuid);
+  void set_uuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_uuid();
+  PROTOBUF_NODISCARD std::string* release_uuid();
+  void set_allocated_uuid(std::string* uuid);
   private:
-  const std::string& _internal_clientuuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(const std::string& value);
-  std::string* _internal_mutable_clientuuid();
+  const std::string& _internal_uuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
+  std::string* _internal_mutable_uuid();
   public:
 
   // int32 grpcServerCompressionFormat = 1;
@@ -1598,7 +1598,7 @@ class unlockServiceRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
     int32_t grpcservercompressionformat_;
     int32_t servicetype_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2209,54 +2209,54 @@ inline void getAndLockServiceRequest::set_servicetype(int32_t value) {
   // @@protoc_insertion_point(field_set:grpcIServiceManager.getAndLockServiceRequest.serviceType)
 }
 
-// string clientUUID = 3;
-inline void getAndLockServiceRequest::clear_clientuuid() {
-  _impl_.clientuuid_.ClearToEmpty();
+// string uuid = 3;
+inline void getAndLockServiceRequest::clear_uuid() {
+  _impl_.uuid_.ClearToEmpty();
 }
-inline const std::string& getAndLockServiceRequest::clientuuid() const {
-  // @@protoc_insertion_point(field_get:grpcIServiceManager.getAndLockServiceRequest.clientUUID)
-  return _internal_clientuuid();
+inline const std::string& getAndLockServiceRequest::uuid() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManager.getAndLockServiceRequest.uuid)
+  return _internal_uuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void getAndLockServiceRequest::set_clientuuid(ArgT0&& arg0, ArgT... args) {
+void getAndLockServiceRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIServiceManager.getAndLockServiceRequest.clientUUID)
+ _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIServiceManager.getAndLockServiceRequest.uuid)
 }
-inline std::string* getAndLockServiceRequest::mutable_clientuuid() {
-  std::string* _s = _internal_mutable_clientuuid();
-  // @@protoc_insertion_point(field_mutable:grpcIServiceManager.getAndLockServiceRequest.clientUUID)
+inline std::string* getAndLockServiceRequest::mutable_uuid() {
+  std::string* _s = _internal_mutable_uuid();
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManager.getAndLockServiceRequest.uuid)
   return _s;
 }
-inline const std::string& getAndLockServiceRequest::_internal_clientuuid() const {
-  return _impl_.clientuuid_.Get();
+inline const std::string& getAndLockServiceRequest::_internal_uuid() const {
+  return _impl_.uuid_.Get();
 }
-inline void getAndLockServiceRequest::_internal_set_clientuuid(const std::string& value) {
+inline void getAndLockServiceRequest::_internal_set_uuid(const std::string& value) {
   
-  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
+  _impl_.uuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* getAndLockServiceRequest::_internal_mutable_clientuuid() {
+inline std::string* getAndLockServiceRequest::_internal_mutable_uuid() {
   
-  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
+  return _impl_.uuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* getAndLockServiceRequest::release_clientuuid() {
-  // @@protoc_insertion_point(field_release:grpcIServiceManager.getAndLockServiceRequest.clientUUID)
-  return _impl_.clientuuid_.Release();
+inline std::string* getAndLockServiceRequest::release_uuid() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManager.getAndLockServiceRequest.uuid)
+  return _impl_.uuid_.Release();
 }
-inline void getAndLockServiceRequest::set_allocated_clientuuid(std::string* clientuuid) {
-  if (clientuuid != nullptr) {
+inline void getAndLockServiceRequest::set_allocated_uuid(std::string* uuid) {
+  if (uuid != nullptr) {
     
   } else {
     
   }
-  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
+  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.clientuuid_.IsDefault()) {
-    _impl_.clientuuid_.Set("", GetArenaForAllocation());
+  if (_impl_.uuid_.IsDefault()) {
+    _impl_.uuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManager.getAndLockServiceRequest.clientUUID)
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManager.getAndLockServiceRequest.uuid)
 }
 
 // string serviceURL = 4;
@@ -2427,54 +2427,54 @@ inline void unlockServiceRequest::set_servicetype(int32_t value) {
   // @@protoc_insertion_point(field_set:grpcIServiceManager.unlockServiceRequest.serviceType)
 }
 
-// string clientUUID = 3;
-inline void unlockServiceRequest::clear_clientuuid() {
-  _impl_.clientuuid_.ClearToEmpty();
+// string uuid = 3;
+inline void unlockServiceRequest::clear_uuid() {
+  _impl_.uuid_.ClearToEmpty();
 }
-inline const std::string& unlockServiceRequest::clientuuid() const {
-  // @@protoc_insertion_point(field_get:grpcIServiceManager.unlockServiceRequest.clientUUID)
-  return _internal_clientuuid();
+inline const std::string& unlockServiceRequest::uuid() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManager.unlockServiceRequest.uuid)
+  return _internal_uuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void unlockServiceRequest::set_clientuuid(ArgT0&& arg0, ArgT... args) {
+void unlockServiceRequest::set_uuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.clientuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIServiceManager.unlockServiceRequest.clientUUID)
+ _impl_.uuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIServiceManager.unlockServiceRequest.uuid)
 }
-inline std::string* unlockServiceRequest::mutable_clientuuid() {
-  std::string* _s = _internal_mutable_clientuuid();
-  // @@protoc_insertion_point(field_mutable:grpcIServiceManager.unlockServiceRequest.clientUUID)
+inline std::string* unlockServiceRequest::mutable_uuid() {
+  std::string* _s = _internal_mutable_uuid();
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManager.unlockServiceRequest.uuid)
   return _s;
 }
-inline const std::string& unlockServiceRequest::_internal_clientuuid() const {
-  return _impl_.clientuuid_.Get();
+inline const std::string& unlockServiceRequest::_internal_uuid() const {
+  return _impl_.uuid_.Get();
 }
-inline void unlockServiceRequest::_internal_set_clientuuid(const std::string& value) {
+inline void unlockServiceRequest::_internal_set_uuid(const std::string& value) {
   
-  _impl_.clientuuid_.Set(value, GetArenaForAllocation());
+  _impl_.uuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* unlockServiceRequest::_internal_mutable_clientuuid() {
+inline std::string* unlockServiceRequest::_internal_mutable_uuid() {
   
-  return _impl_.clientuuid_.Mutable(GetArenaForAllocation());
+  return _impl_.uuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* unlockServiceRequest::release_clientuuid() {
-  // @@protoc_insertion_point(field_release:grpcIServiceManager.unlockServiceRequest.clientUUID)
-  return _impl_.clientuuid_.Release();
+inline std::string* unlockServiceRequest::release_uuid() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManager.unlockServiceRequest.uuid)
+  return _impl_.uuid_.Release();
 }
-inline void unlockServiceRequest::set_allocated_clientuuid(std::string* clientuuid) {
-  if (clientuuid != nullptr) {
+inline void unlockServiceRequest::set_allocated_uuid(std::string* uuid) {
+  if (uuid != nullptr) {
     
   } else {
     
   }
-  _impl_.clientuuid_.SetAllocated(clientuuid, GetArenaForAllocation());
+  _impl_.uuid_.SetAllocated(uuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.clientuuid_.IsDefault()) {
-    _impl_.clientuuid_.Set("", GetArenaForAllocation());
+  if (_impl_.uuid_.IsDefault()) {
+    _impl_.uuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManager.unlockServiceRequest.clientUUID)
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManager.unlockServiceRequest.uuid)
 }
 
 // -------------------------------------------------------------------
