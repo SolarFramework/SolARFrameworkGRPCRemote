@@ -169,7 +169,7 @@ SolAR::FrameworkReturnCode  IServiceManager_grpcProxy::getAndLockService(SolAR::
 }
 
 
-SolAR::FrameworkReturnCode  IServiceManager_grpcProxy::unlockService(SolAR::api::service::ServiceType const serviceType, std::string const& uuid)
+SolAR::FrameworkReturnCode  IServiceManager_grpcProxy::unlockService(SolAR::api::service::ServiceType const serviceType, std::string const& uuid, std::string const& serviceURL)
 {
   ::grpc::ClientContext context;
   ::grpcIServiceManager::unlockServiceRequest reqIn;
@@ -181,6 +181,7 @@ SolAR::FrameworkReturnCode  IServiceManager_grpcProxy::unlockService(SolAR::api:
   #endif
   reqIn.set_servicetype(static_cast<int32_t>(serviceType));
   reqIn.set_uuid(uuid);
+  reqIn.set_serviceurl(serviceURL);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IServiceManager_grpcProxy::unlockService request sent at " << to_simple_string(start) << std::endl;

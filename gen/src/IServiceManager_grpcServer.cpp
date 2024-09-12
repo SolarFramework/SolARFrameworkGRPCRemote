@@ -152,7 +152,8 @@ XPCFErrorCode IServiceManager_grpcServer::onConfigured()
   #endif
   SolAR::api::service::ServiceType serviceType = static_cast<SolAR::api::service::ServiceType>(request->servicetype());
   std::string uuid = request->uuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->unlockService(serviceType, uuid);
+  std::string serviceURL = request->serviceurl();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->unlockService(serviceType, uuid, serviceURL);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();

@@ -603,18 +603,13 @@ class registerClientResponse final :
   std::string* _internal_mutable_clientuuid();
   public:
 
-  // bytes xpcfGrpcReturnValue = 2;
+  // sint32 xpcfGrpcReturnValue = 2;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.registerClientResponse)
@@ -626,7 +621,7 @@ class registerClientResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -921,18 +916,13 @@ class unregisterClientResponse final :
   enum : int {
     kXpcfGrpcReturnValueFieldNumber = 1,
   };
-  // bytes xpcfGrpcReturnValue = 1;
+  // sint32 xpcfGrpcReturnValue = 1;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.unregisterClientResponse)
@@ -943,7 +933,7 @@ class unregisterClientResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1269,18 +1259,13 @@ class getAllClientsUUIDResponse final :
   std::string* _internal_mutable_clientuuidlist();
   public:
 
-  // bytes xpcfGrpcReturnValue = 2;
+  // sint32 xpcfGrpcReturnValue = 2;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getAllClientsUUIDResponse)
@@ -1292,7 +1277,7 @@ class getAllClientsUUIDResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuidlist_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1618,18 +1603,13 @@ class getDeviceInfoResponse final :
   std::string* _internal_mutable_deviceinfo();
   public:
 
-  // bytes xpcfGrpcReturnValue = 2;
+  // sint32 xpcfGrpcReturnValue = 2;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getDeviceInfoResponse)
@@ -1641,7 +1621,7 @@ class getDeviceInfoResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr deviceinfo_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1936,18 +1916,13 @@ class init_grpc0Response final :
   enum : int {
     kXpcfGrpcReturnValueFieldNumber = 1,
   };
-  // bytes xpcfGrpcReturnValue = 1;
+  // sint32 xpcfGrpcReturnValue = 1;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.init_grpc0Response)
@@ -1958,7 +1933,7 @@ class init_grpc0Response final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2269,18 +2244,13 @@ class init_grpc1Response final :
   enum : int {
     kXpcfGrpcReturnValueFieldNumber = 1,
   };
-  // bytes xpcfGrpcReturnValue = 1;
+  // sint32 xpcfGrpcReturnValue = 1;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.init_grpc1Response)
@@ -2291,7 +2261,7 @@ class init_grpc1Response final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2586,18 +2556,13 @@ class startResponse final :
   enum : int {
     kXpcfGrpcReturnValueFieldNumber = 1,
   };
-  // bytes xpcfGrpcReturnValue = 1;
+  // sint32 xpcfGrpcReturnValue = 1;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.startResponse)
@@ -2608,7 +2573,7 @@ class startResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2903,18 +2868,13 @@ class stopResponse final :
   enum : int {
     kXpcfGrpcReturnValueFieldNumber = 1,
   };
-  // bytes xpcfGrpcReturnValue = 1;
+  // sint32 xpcfGrpcReturnValue = 1;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.stopResponse)
@@ -2925,7 +2885,7 @@ class stopResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -3251,18 +3211,13 @@ class getProcessingModeResponse final :
   std::string* _internal_mutable_pipelinemode();
   public:
 
-  // bytes xpcfGrpcReturnValue = 2;
+  // sint32 xpcfGrpcReturnValue = 2;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getProcessingModeResponse)
@@ -3274,7 +3229,7 @@ class getProcessingModeResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pipelinemode_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -3585,18 +3540,13 @@ class setCameraParameters_grpc0Response final :
   enum : int {
     kXpcfGrpcReturnValueFieldNumber = 1,
   };
-  // bytes xpcfGrpcReturnValue = 1;
+  // sint32 xpcfGrpcReturnValue = 1;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.setCameraParameters_grpc0Response)
@@ -3607,7 +3557,7 @@ class setCameraParameters_grpc0Response final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -3934,18 +3884,13 @@ class setCameraParameters_grpc1Response final :
   enum : int {
     kXpcfGrpcReturnValueFieldNumber = 1,
   };
-  // bytes xpcfGrpcReturnValue = 1;
+  // sint32 xpcfGrpcReturnValue = 1;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.setCameraParameters_grpc1Response)
@@ -3956,7 +3901,7 @@ class setCameraParameters_grpc1Response final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -4283,18 +4228,13 @@ class setRectificationParametersResponse final :
   enum : int {
     kXpcfGrpcReturnValueFieldNumber = 1,
   };
-  // bytes xpcfGrpcReturnValue = 1;
+  // sint32 xpcfGrpcReturnValue = 1;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.setRectificationParametersResponse)
@@ -4305,7 +4245,7 @@ class setRectificationParametersResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -4631,18 +4571,13 @@ class getCameraParametersResponse final :
   std::string* _internal_mutable_cameraparams();
   public:
 
-  // bytes xpcfGrpcReturnValue = 2;
+  // sint32 xpcfGrpcReturnValue = 2;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getCameraParametersResponse)
@@ -4654,7 +4589,7 @@ class getCameraParametersResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cameraparams_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -5148,18 +5083,13 @@ class relocalizeProcessRequest_grpc0Response final :
   std::string* _internal_mutable_mappingstatus();
   public:
 
-  // bytes xpcfGrpcReturnValue = 5;
+  // sint32 xpcfGrpcReturnValue = 5;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response)
@@ -5174,7 +5104,7 @@ class relocalizeProcessRequest_grpc0Response final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3d_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mappingstatus_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -5699,18 +5629,13 @@ class relocalizeProcessRequest_grpc1Response final :
   std::string* _internal_mutable_detectedobjects();
   public:
 
-  // bytes xpcfGrpcReturnValue = 6;
+  // sint32 xpcfGrpcReturnValue = 6;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response)
@@ -5726,7 +5651,7 @@ class relocalizeProcessRequest_grpc1Response final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mappingstatus_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr detectedobjects_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -6114,18 +6039,13 @@ class get3DTransformRequestResponse final :
   std::string* _internal_mutable_confidence();
   public:
 
-  // bytes xpcfGrpcReturnValue = 4;
+  // sint32 xpcfGrpcReturnValue = 4;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.get3DTransformRequestResponse)
@@ -6139,7 +6059,7 @@ class get3DTransformRequestResponse final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3dstatus_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform3d_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr confidence_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -6496,18 +6416,13 @@ class getMappingDataRequestResponse final :
   std::string* _internal_mutable_keyframeposes();
   public:
 
-  // bytes xpcfGrpcReturnValue = 3;
+  // sint32 xpcfGrpcReturnValue = 3;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getMappingDataRequestResponse)
@@ -6520,7 +6435,7 @@ class getMappingDataRequestResponse final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputpointclouds_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keyframeposes_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -6862,18 +6777,13 @@ class getLastPoseResponse final :
   std::string* _internal_mutable_pose();
   public:
 
-  // bytes xpcfGrpcReturnValue = 2;
+  // sint32 xpcfGrpcReturnValue = 2;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getLastPoseResponse)
@@ -6885,7 +6795,7 @@ class getLastPoseResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pose_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -7196,18 +7106,13 @@ class createMapResponse final :
   enum : int {
     kXpcfGrpcReturnValueFieldNumber = 1,
   };
-  // bytes xpcfGrpcReturnValue = 1;
+  // sint32 xpcfGrpcReturnValue = 1;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.createMapResponse)
@@ -7218,7 +7123,7 @@ class createMapResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -7529,18 +7434,13 @@ class deleteMapResponse final :
   enum : int {
     kXpcfGrpcReturnValueFieldNumber = 1,
   };
-  // bytes xpcfGrpcReturnValue = 1;
+  // sint32 xpcfGrpcReturnValue = 1;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.deleteMapResponse)
@@ -7551,7 +7451,7 @@ class deleteMapResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -7877,18 +7777,13 @@ class getAllMapsUUIDResponse final :
   std::string* _internal_mutable_mapuuidlist();
   public:
 
-  // bytes xpcfGrpcReturnValue = 2;
+  // sint32 xpcfGrpcReturnValue = 2;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getAllMapsUUIDResponse)
@@ -7900,7 +7795,7 @@ class getAllMapsUUIDResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuidlist_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -8226,18 +8121,13 @@ class getClientMapUUIDResponse final :
   std::string* _internal_mutable_mapuuid();
   public:
 
-  // bytes xpcfGrpcReturnValue = 2;
+  // sint32 xpcfGrpcReturnValue = 2;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getClientMapUUIDResponse)
@@ -8249,7 +8139,7 @@ class getClientMapUUIDResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -8591,18 +8481,13 @@ class getMapRequestResponse final :
   std::string* _internal_mutable_mapdatastructure();
   public:
 
-  // bytes xpcfGrpcReturnValue = 2;
+  // sint32 xpcfGrpcReturnValue = 2;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getMapRequestResponse)
@@ -8614,7 +8499,7 @@ class getMapRequestResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapdatastructure_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -8941,18 +8826,13 @@ class setMapRequestResponse final :
   enum : int {
     kXpcfGrpcReturnValueFieldNumber = 1,
   };
-  // bytes xpcfGrpcReturnValue = 1;
+  // sint32 xpcfGrpcReturnValue = 1;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.setMapRequestResponse)
@@ -8963,7 +8843,7 @@ class setMapRequestResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -9305,18 +9185,13 @@ class getPointCloudRequestResponse final :
   std::string* _internal_mutable_pointcloud();
   public:
 
-  // bytes xpcfGrpcReturnValue = 2;
+  // sint32 xpcfGrpcReturnValue = 2;
   void clear_xpcfgrpcreturnvalue();
-  const std::string& xpcfgrpcreturnvalue() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_xpcfgrpcreturnvalue();
-  PROTOBUF_NODISCARD std::string* release_xpcfgrpcreturnvalue();
-  void set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue);
+  int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(int32_t value);
   private:
-  const std::string& _internal_xpcfgrpcreturnvalue() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_xpcfgrpcreturnvalue(const std::string& value);
-  std::string* _internal_mutable_xpcfgrpcreturnvalue();
+  int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getPointCloudRequestResponse)
@@ -9328,7 +9203,7 @@ class getPointCloudRequestResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pointcloud_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr xpcfgrpcreturnvalue_;
+    int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -9619,54 +9494,24 @@ inline void registerClientResponse::set_allocated_clientuuid(std::string* client
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientResponse.clientUUID)
 }
 
-// bytes xpcfGrpcReturnValue = 2;
+// sint32 xpcfGrpcReturnValue = 2;
 inline void registerClientResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& registerClientResponse::xpcfgrpcreturnvalue() const {
+inline int32_t registerClientResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t registerClientResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.registerClientResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void registerClientResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void registerClientResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void registerClientResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.registerClientResponse.xpcfGrpcReturnValue)
-}
-inline std::string* registerClientResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.registerClientResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& registerClientResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void registerClientResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* registerClientResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* registerClientResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.registerClientResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void registerClientResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -9747,54 +9592,24 @@ inline void unregisterClientRequest::set_allocated_clientuuid(std::string* clien
 
 // unregisterClientResponse
 
-// bytes xpcfGrpcReturnValue = 1;
+// sint32 xpcfGrpcReturnValue = 1;
 inline void unregisterClientResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& unregisterClientResponse::xpcfgrpcreturnvalue() const {
+inline int32_t unregisterClientResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t unregisterClientResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.unregisterClientResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void unregisterClientResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void unregisterClientResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void unregisterClientResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.unregisterClientResponse.xpcfGrpcReturnValue)
-}
-inline std::string* unregisterClientResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.unregisterClientResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& unregisterClientResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void unregisterClientResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* unregisterClientResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* unregisterClientResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.unregisterClientResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void unregisterClientResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.unregisterClientResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -9975,54 +9790,24 @@ inline void getAllClientsUUIDResponse::set_allocated_clientuuidlist(std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getAllClientsUUIDResponse.clientUUIDList)
 }
 
-// bytes xpcfGrpcReturnValue = 2;
+// sint32 xpcfGrpcReturnValue = 2;
 inline void getAllClientsUUIDResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& getAllClientsUUIDResponse::xpcfgrpcreturnvalue() const {
+inline int32_t getAllClientsUUIDResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t getAllClientsUUIDResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.getAllClientsUUIDResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getAllClientsUUIDResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getAllClientsUUIDResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void getAllClientsUUIDResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllClientsUUIDResponse.xpcfGrpcReturnValue)
-}
-inline std::string* getAllClientsUUIDResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getAllClientsUUIDResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& getAllClientsUUIDResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void getAllClientsUUIDResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getAllClientsUUIDResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getAllClientsUUIDResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getAllClientsUUIDResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void getAllClientsUUIDResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getAllClientsUUIDResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -10203,54 +9988,24 @@ inline void getDeviceInfoResponse::set_allocated_deviceinfo(std::string* devicei
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getDeviceInfoResponse.deviceInfo)
 }
 
-// bytes xpcfGrpcReturnValue = 2;
+// sint32 xpcfGrpcReturnValue = 2;
 inline void getDeviceInfoResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& getDeviceInfoResponse::xpcfgrpcreturnvalue() const {
+inline int32_t getDeviceInfoResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t getDeviceInfoResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.getDeviceInfoResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getDeviceInfoResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getDeviceInfoResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void getDeviceInfoResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getDeviceInfoResponse.xpcfGrpcReturnValue)
-}
-inline std::string* getDeviceInfoResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getDeviceInfoResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& getDeviceInfoResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void getDeviceInfoResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getDeviceInfoResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getDeviceInfoResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getDeviceInfoResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void getDeviceInfoResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getDeviceInfoResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -10331,54 +10086,24 @@ inline void init_grpc0Request::set_allocated_clientuuid(std::string* clientuuid)
 
 // init_grpc0Response
 
-// bytes xpcfGrpcReturnValue = 1;
+// sint32 xpcfGrpcReturnValue = 1;
 inline void init_grpc0Response::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& init_grpc0Response::xpcfgrpcreturnvalue() const {
+inline int32_t init_grpc0Response::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t init_grpc0Response::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.init_grpc0Response.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void init_grpc0Response::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void init_grpc0Response::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void init_grpc0Response::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.init_grpc0Response.xpcfGrpcReturnValue)
-}
-inline std::string* init_grpc0Response::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.init_grpc0Response.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& init_grpc0Response::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void init_grpc0Response::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* init_grpc0Response::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* init_grpc0Response::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.init_grpc0Response.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void init_grpc0Response::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.init_grpc0Response.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -10509,54 +10234,24 @@ inline void init_grpc1Request::set_allocated_pipelinemode(std::string* pipelinem
 
 // init_grpc1Response
 
-// bytes xpcfGrpcReturnValue = 1;
+// sint32 xpcfGrpcReturnValue = 1;
 inline void init_grpc1Response::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& init_grpc1Response::xpcfgrpcreturnvalue() const {
+inline int32_t init_grpc1Response::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t init_grpc1Response::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.init_grpc1Response.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void init_grpc1Response::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void init_grpc1Response::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void init_grpc1Response::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.init_grpc1Response.xpcfGrpcReturnValue)
-}
-inline std::string* init_grpc1Response::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.init_grpc1Response.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& init_grpc1Response::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void init_grpc1Response::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* init_grpc1Response::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* init_grpc1Response::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.init_grpc1Response.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void init_grpc1Response::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.init_grpc1Response.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -10637,54 +10332,24 @@ inline void startRequest::set_allocated_clientuuid(std::string* clientuuid) {
 
 // startResponse
 
-// bytes xpcfGrpcReturnValue = 1;
+// sint32 xpcfGrpcReturnValue = 1;
 inline void startResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& startResponse::xpcfgrpcreturnvalue() const {
+inline int32_t startResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t startResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.startResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void startResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void startResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void startResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.startResponse.xpcfGrpcReturnValue)
-}
-inline std::string* startResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.startResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& startResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void startResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* startResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* startResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.startResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void startResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.startResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -10765,54 +10430,24 @@ inline void stopRequest::set_allocated_clientuuid(std::string* clientuuid) {
 
 // stopResponse
 
-// bytes xpcfGrpcReturnValue = 1;
+// sint32 xpcfGrpcReturnValue = 1;
 inline void stopResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& stopResponse::xpcfgrpcreturnvalue() const {
+inline int32_t stopResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t stopResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.stopResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void stopResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void stopResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void stopResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.stopResponse.xpcfGrpcReturnValue)
-}
-inline std::string* stopResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.stopResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& stopResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void stopResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* stopResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* stopResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.stopResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void stopResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.stopResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -10993,54 +10628,24 @@ inline void getProcessingModeResponse::set_allocated_pipelinemode(std::string* p
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getProcessingModeResponse.pipelineMode)
 }
 
-// bytes xpcfGrpcReturnValue = 2;
+// sint32 xpcfGrpcReturnValue = 2;
 inline void getProcessingModeResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& getProcessingModeResponse::xpcfgrpcreturnvalue() const {
+inline int32_t getProcessingModeResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t getProcessingModeResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.getProcessingModeResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getProcessingModeResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getProcessingModeResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void getProcessingModeResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getProcessingModeResponse.xpcfGrpcReturnValue)
-}
-inline std::string* getProcessingModeResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getProcessingModeResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& getProcessingModeResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void getProcessingModeResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getProcessingModeResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getProcessingModeResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getProcessingModeResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void getProcessingModeResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getProcessingModeResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -11171,54 +10776,24 @@ inline void setCameraParameters_grpc0Request::set_allocated_cameraparams(std::st
 
 // setCameraParameters_grpc0Response
 
-// bytes xpcfGrpcReturnValue = 1;
+// sint32 xpcfGrpcReturnValue = 1;
 inline void setCameraParameters_grpc0Response::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& setCameraParameters_grpc0Response::xpcfgrpcreturnvalue() const {
+inline int32_t setCameraParameters_grpc0Response::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t setCameraParameters_grpc0Response::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.setCameraParameters_grpc0Response.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void setCameraParameters_grpc0Response::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void setCameraParameters_grpc0Response::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void setCameraParameters_grpc0Response::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.setCameraParameters_grpc0Response.xpcfGrpcReturnValue)
-}
-inline std::string* setCameraParameters_grpc0Response::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.setCameraParameters_grpc0Response.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& setCameraParameters_grpc0Response::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void setCameraParameters_grpc0Response::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* setCameraParameters_grpc0Response::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* setCameraParameters_grpc0Response::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.setCameraParameters_grpc0Response.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void setCameraParameters_grpc0Response::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setCameraParameters_grpc0Response.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -11399,54 +10974,24 @@ inline void setCameraParameters_grpc1Request::set_allocated_cameraparams2(std::s
 
 // setCameraParameters_grpc1Response
 
-// bytes xpcfGrpcReturnValue = 1;
+// sint32 xpcfGrpcReturnValue = 1;
 inline void setCameraParameters_grpc1Response::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& setCameraParameters_grpc1Response::xpcfgrpcreturnvalue() const {
+inline int32_t setCameraParameters_grpc1Response::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t setCameraParameters_grpc1Response::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.setCameraParameters_grpc1Response.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void setCameraParameters_grpc1Response::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void setCameraParameters_grpc1Response::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void setCameraParameters_grpc1Response::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.setCameraParameters_grpc1Response.xpcfGrpcReturnValue)
-}
-inline std::string* setCameraParameters_grpc1Response::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.setCameraParameters_grpc1Response.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& setCameraParameters_grpc1Response::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void setCameraParameters_grpc1Response::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* setCameraParameters_grpc1Response::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* setCameraParameters_grpc1Response::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.setCameraParameters_grpc1Response.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void setCameraParameters_grpc1Response::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setCameraParameters_grpc1Response.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -11627,54 +11172,24 @@ inline void setRectificationParametersRequest::set_allocated_rectcam2(std::strin
 
 // setRectificationParametersResponse
 
-// bytes xpcfGrpcReturnValue = 1;
+// sint32 xpcfGrpcReturnValue = 1;
 inline void setRectificationParametersResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& setRectificationParametersResponse::xpcfgrpcreturnvalue() const {
+inline int32_t setRectificationParametersResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t setRectificationParametersResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.setRectificationParametersResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void setRectificationParametersResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void setRectificationParametersResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void setRectificationParametersResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.setRectificationParametersResponse.xpcfGrpcReturnValue)
-}
-inline std::string* setRectificationParametersResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.setRectificationParametersResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& setRectificationParametersResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void setRectificationParametersResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* setRectificationParametersResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* setRectificationParametersResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.setRectificationParametersResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void setRectificationParametersResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setRectificationParametersResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -11855,54 +11370,24 @@ inline void getCameraParametersResponse::set_allocated_cameraparams(std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getCameraParametersResponse.cameraParams)
 }
 
-// bytes xpcfGrpcReturnValue = 2;
+// sint32 xpcfGrpcReturnValue = 2;
 inline void getCameraParametersResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& getCameraParametersResponse::xpcfgrpcreturnvalue() const {
+inline int32_t getCameraParametersResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t getCameraParametersResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.getCameraParametersResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getCameraParametersResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getCameraParametersResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void getCameraParametersResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getCameraParametersResponse.xpcfGrpcReturnValue)
-}
-inline std::string* getCameraParametersResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getCameraParametersResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& getCameraParametersResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void getCameraParametersResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getCameraParametersResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getCameraParametersResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getCameraParametersResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void getCameraParametersResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getCameraParametersResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -12603,54 +12088,24 @@ inline void relocalizeProcessRequest_grpc0Response::set_allocated_mappingstatus(
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.mappingStatus)
 }
 
-// bytes xpcfGrpcReturnValue = 5;
+// sint32 xpcfGrpcReturnValue = 5;
 inline void relocalizeProcessRequest_grpc0Response::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& relocalizeProcessRequest_grpc0Response::xpcfgrpcreturnvalue() const {
+inline int32_t relocalizeProcessRequest_grpc0Response::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t relocalizeProcessRequest_grpc0Response::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequest_grpc0Response::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void relocalizeProcessRequest_grpc0Response::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void relocalizeProcessRequest_grpc0Response::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.xpcfGrpcReturnValue)
-}
-inline std::string* relocalizeProcessRequest_grpc0Response::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& relocalizeProcessRequest_grpc0Response::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void relocalizeProcessRequest_grpc0Response::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* relocalizeProcessRequest_grpc0Response::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* relocalizeProcessRequest_grpc0Response::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void relocalizeProcessRequest_grpc0Response::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -13451,54 +12906,24 @@ inline void relocalizeProcessRequest_grpc1Response::set_allocated_detectedobject
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.detectedObjects)
 }
 
-// bytes xpcfGrpcReturnValue = 6;
+// sint32 xpcfGrpcReturnValue = 6;
 inline void relocalizeProcessRequest_grpc1Response::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& relocalizeProcessRequest_grpc1Response::xpcfgrpcreturnvalue() const {
+inline int32_t relocalizeProcessRequest_grpc1Response::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t relocalizeProcessRequest_grpc1Response::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void relocalizeProcessRequest_grpc1Response::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void relocalizeProcessRequest_grpc1Response::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void relocalizeProcessRequest_grpc1Response::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.xpcfGrpcReturnValue)
-}
-inline std::string* relocalizeProcessRequest_grpc1Response::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& relocalizeProcessRequest_grpc1Response::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void relocalizeProcessRequest_grpc1Response::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* relocalizeProcessRequest_grpc1Response::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* relocalizeProcessRequest_grpc1Response::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void relocalizeProcessRequest_grpc1Response::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -13879,54 +13304,24 @@ inline void get3DTransformRequestResponse::set_allocated_confidence(std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.get3DTransformRequestResponse.confidence)
 }
 
-// bytes xpcfGrpcReturnValue = 4;
+// sint32 xpcfGrpcReturnValue = 4;
 inline void get3DTransformRequestResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& get3DTransformRequestResponse::xpcfgrpcreturnvalue() const {
+inline int32_t get3DTransformRequestResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t get3DTransformRequestResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.get3DTransformRequestResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void get3DTransformRequestResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void get3DTransformRequestResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void get3DTransformRequestResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.get3DTransformRequestResponse.xpcfGrpcReturnValue)
-}
-inline std::string* get3DTransformRequestResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.get3DTransformRequestResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& get3DTransformRequestResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void get3DTransformRequestResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* get3DTransformRequestResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* get3DTransformRequestResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.get3DTransformRequestResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void get3DTransformRequestResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.get3DTransformRequestResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -14207,54 +13602,24 @@ inline void getMappingDataRequestResponse::set_allocated_keyframeposes(std::stri
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMappingDataRequestResponse.keyframePoses)
 }
 
-// bytes xpcfGrpcReturnValue = 3;
+// sint32 xpcfGrpcReturnValue = 3;
 inline void getMappingDataRequestResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& getMappingDataRequestResponse::xpcfgrpcreturnvalue() const {
+inline int32_t getMappingDataRequestResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t getMappingDataRequestResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMappingDataRequestResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getMappingDataRequestResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getMappingDataRequestResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void getMappingDataRequestResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMappingDataRequestResponse.xpcfGrpcReturnValue)
-}
-inline std::string* getMappingDataRequestResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getMappingDataRequestResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& getMappingDataRequestResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void getMappingDataRequestResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getMappingDataRequestResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getMappingDataRequestResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getMappingDataRequestResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void getMappingDataRequestResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMappingDataRequestResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -14485,54 +13850,24 @@ inline void getLastPoseResponse::set_allocated_pose(std::string* pose) {
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getLastPoseResponse.pose)
 }
 
-// bytes xpcfGrpcReturnValue = 2;
+// sint32 xpcfGrpcReturnValue = 2;
 inline void getLastPoseResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& getLastPoseResponse::xpcfgrpcreturnvalue() const {
+inline int32_t getLastPoseResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t getLastPoseResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.getLastPoseResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getLastPoseResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getLastPoseResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void getLastPoseResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getLastPoseResponse.xpcfGrpcReturnValue)
-}
-inline std::string* getLastPoseResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getLastPoseResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& getLastPoseResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void getLastPoseResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getLastPoseResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getLastPoseResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getLastPoseResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void getLastPoseResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getLastPoseResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -14663,54 +13998,24 @@ inline void createMapRequest::set_allocated_mapuuid(std::string* mapuuid) {
 
 // createMapResponse
 
-// bytes xpcfGrpcReturnValue = 1;
+// sint32 xpcfGrpcReturnValue = 1;
 inline void createMapResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& createMapResponse::xpcfgrpcreturnvalue() const {
+inline int32_t createMapResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t createMapResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.createMapResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void createMapResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void createMapResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void createMapResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.createMapResponse.xpcfGrpcReturnValue)
-}
-inline std::string* createMapResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.createMapResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& createMapResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void createMapResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* createMapResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* createMapResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.createMapResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void createMapResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.createMapResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -14841,54 +14146,24 @@ inline void deleteMapRequest::set_allocated_mapuuid(std::string* mapuuid) {
 
 // deleteMapResponse
 
-// bytes xpcfGrpcReturnValue = 1;
+// sint32 xpcfGrpcReturnValue = 1;
 inline void deleteMapResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& deleteMapResponse::xpcfgrpcreturnvalue() const {
+inline int32_t deleteMapResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t deleteMapResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.deleteMapResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void deleteMapResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void deleteMapResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void deleteMapResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.deleteMapResponse.xpcfGrpcReturnValue)
-}
-inline std::string* deleteMapResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.deleteMapResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& deleteMapResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void deleteMapResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* deleteMapResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* deleteMapResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.deleteMapResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void deleteMapResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.deleteMapResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -15069,54 +14344,24 @@ inline void getAllMapsUUIDResponse::set_allocated_mapuuidlist(std::string* mapuu
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getAllMapsUUIDResponse.mapUUIDList)
 }
 
-// bytes xpcfGrpcReturnValue = 2;
+// sint32 xpcfGrpcReturnValue = 2;
 inline void getAllMapsUUIDResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& getAllMapsUUIDResponse::xpcfgrpcreturnvalue() const {
+inline int32_t getAllMapsUUIDResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t getAllMapsUUIDResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.getAllMapsUUIDResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getAllMapsUUIDResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getAllMapsUUIDResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void getAllMapsUUIDResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getAllMapsUUIDResponse.xpcfGrpcReturnValue)
-}
-inline std::string* getAllMapsUUIDResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getAllMapsUUIDResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& getAllMapsUUIDResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void getAllMapsUUIDResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getAllMapsUUIDResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getAllMapsUUIDResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getAllMapsUUIDResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void getAllMapsUUIDResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getAllMapsUUIDResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -15297,54 +14542,24 @@ inline void getClientMapUUIDResponse::set_allocated_mapuuid(std::string* mapuuid
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getClientMapUUIDResponse.mapUUID)
 }
 
-// bytes xpcfGrpcReturnValue = 2;
+// sint32 xpcfGrpcReturnValue = 2;
 inline void getClientMapUUIDResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& getClientMapUUIDResponse::xpcfgrpcreturnvalue() const {
+inline int32_t getClientMapUUIDResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t getClientMapUUIDResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientMapUUIDResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getClientMapUUIDResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getClientMapUUIDResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void getClientMapUUIDResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientMapUUIDResponse.xpcfGrpcReturnValue)
-}
-inline std::string* getClientMapUUIDResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getClientMapUUIDResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& getClientMapUUIDResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void getClientMapUUIDResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getClientMapUUIDResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getClientMapUUIDResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getClientMapUUIDResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void getClientMapUUIDResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getClientMapUUIDResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -15575,54 +14790,24 @@ inline void getMapRequestResponse::set_allocated_mapdatastructure(std::string* m
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMapRequestResponse.mapDatastructure)
 }
 
-// bytes xpcfGrpcReturnValue = 2;
+// sint32 xpcfGrpcReturnValue = 2;
 inline void getMapRequestResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& getMapRequestResponse::xpcfgrpcreturnvalue() const {
+inline int32_t getMapRequestResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t getMapRequestResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapRequestResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getMapRequestResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getMapRequestResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void getMapRequestResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapRequestResponse.xpcfGrpcReturnValue)
-}
-inline std::string* getMapRequestResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getMapRequestResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& getMapRequestResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void getMapRequestResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getMapRequestResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getMapRequestResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getMapRequestResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void getMapRequestResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMapRequestResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -15803,54 +14988,24 @@ inline void setMapRequestRequest::set_allocated_mapdatastructure(std::string* ma
 
 // setMapRequestResponse
 
-// bytes xpcfGrpcReturnValue = 1;
+// sint32 xpcfGrpcReturnValue = 1;
 inline void setMapRequestResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& setMapRequestResponse::xpcfgrpcreturnvalue() const {
+inline int32_t setMapRequestResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t setMapRequestResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.setMapRequestResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void setMapRequestResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void setMapRequestResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void setMapRequestResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.setMapRequestResponse.xpcfGrpcReturnValue)
-}
-inline std::string* setMapRequestResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.setMapRequestResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& setMapRequestResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void setMapRequestResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* setMapRequestResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* setMapRequestResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.setMapRequestResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void setMapRequestResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.setMapRequestResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
@@ -16081,54 +15236,24 @@ inline void getPointCloudRequestResponse::set_allocated_pointcloud(std::string* 
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getPointCloudRequestResponse.pointCloud)
 }
 
-// bytes xpcfGrpcReturnValue = 2;
+// sint32 xpcfGrpcReturnValue = 2;
 inline void getPointCloudRequestResponse::clear_xpcfgrpcreturnvalue() {
-  _impl_.xpcfgrpcreturnvalue_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline const std::string& getPointCloudRequestResponse::xpcfgrpcreturnvalue() const {
+inline int32_t getPointCloudRequestResponse::_internal_xpcfgrpcreturnvalue() const {
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline int32_t getPointCloudRequestResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.getPointCloudRequestResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getPointCloudRequestResponse::set_xpcfgrpcreturnvalue(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.xpcfgrpcreturnvalue_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getPointCloudRequestResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+  
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+inline void getPointCloudRequestResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getPointCloudRequestResponse.xpcfGrpcReturnValue)
-}
-inline std::string* getPointCloudRequestResponse::mutable_xpcfgrpcreturnvalue() {
-  std::string* _s = _internal_mutable_xpcfgrpcreturnvalue();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getPointCloudRequestResponse.xpcfGrpcReturnValue)
-  return _s;
-}
-inline const std::string& getPointCloudRequestResponse::_internal_xpcfgrpcreturnvalue() const {
-  return _impl_.xpcfgrpcreturnvalue_.Get();
-}
-inline void getPointCloudRequestResponse::_internal_set_xpcfgrpcreturnvalue(const std::string& value) {
-  
-  _impl_.xpcfgrpcreturnvalue_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getPointCloudRequestResponse::_internal_mutable_xpcfgrpcreturnvalue() {
-  
-  return _impl_.xpcfgrpcreturnvalue_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getPointCloudRequestResponse::release_xpcfgrpcreturnvalue() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getPointCloudRequestResponse.xpcfGrpcReturnValue)
-  return _impl_.xpcfgrpcreturnvalue_.Release();
-}
-inline void getPointCloudRequestResponse::set_allocated_xpcfgrpcreturnvalue(std::string* xpcfgrpcreturnvalue) {
-  if (xpcfgrpcreturnvalue != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.xpcfgrpcreturnvalue_.SetAllocated(xpcfgrpcreturnvalue, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.xpcfgrpcreturnvalue_.IsDefault()) {
-    _impl_.xpcfgrpcreturnvalue_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getPointCloudRequestResponse.xpcfGrpcReturnValue)
 }
 
 #ifdef __GNUC__

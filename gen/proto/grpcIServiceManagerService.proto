@@ -60,6 +60,7 @@ message unlockServiceRequest
 int32 grpcServerCompressionFormat  = 1;
 sint32 serviceType = 2;
 string uuid = 3;
+string serviceURL = 4;
 }
 
 message unlockServiceResponse

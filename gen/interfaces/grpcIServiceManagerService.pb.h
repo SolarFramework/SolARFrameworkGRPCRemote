@@ -1555,6 +1555,7 @@ class unlockServiceRequest final :
 
   enum : int {
     kUuidFieldNumber = 3,
+    kServiceURLFieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
     kServiceTypeFieldNumber = 2,
   };
@@ -1570,6 +1571,20 @@ class unlockServiceRequest final :
   const std::string& _internal_uuid() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_uuid(const std::string& value);
   std::string* _internal_mutable_uuid();
+  public:
+
+  // string serviceURL = 4;
+  void clear_serviceurl();
+  const std::string& serviceurl() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_serviceurl(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_serviceurl();
+  PROTOBUF_NODISCARD std::string* release_serviceurl();
+  void set_allocated_serviceurl(std::string* serviceurl);
+  private:
+  const std::string& _internal_serviceurl() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_serviceurl(const std::string& value);
+  std::string* _internal_mutable_serviceurl();
   public:
 
   // int32 grpcServerCompressionFormat = 1;
@@ -1599,6 +1614,7 @@ class unlockServiceRequest final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr uuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr serviceurl_;
     int32_t grpcservercompressionformat_;
     int32_t servicetype_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2475,6 +2491,56 @@ inline void unlockServiceRequest::set_allocated_uuid(std::string* uuid) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:grpcIServiceManager.unlockServiceRequest.uuid)
+}
+
+// string serviceURL = 4;
+inline void unlockServiceRequest::clear_serviceurl() {
+  _impl_.serviceurl_.ClearToEmpty();
+}
+inline const std::string& unlockServiceRequest::serviceurl() const {
+  // @@protoc_insertion_point(field_get:grpcIServiceManager.unlockServiceRequest.serviceURL)
+  return _internal_serviceurl();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void unlockServiceRequest::set_serviceurl(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.serviceurl_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIServiceManager.unlockServiceRequest.serviceURL)
+}
+inline std::string* unlockServiceRequest::mutable_serviceurl() {
+  std::string* _s = _internal_mutable_serviceurl();
+  // @@protoc_insertion_point(field_mutable:grpcIServiceManager.unlockServiceRequest.serviceURL)
+  return _s;
+}
+inline const std::string& unlockServiceRequest::_internal_serviceurl() const {
+  return _impl_.serviceurl_.Get();
+}
+inline void unlockServiceRequest::_internal_set_serviceurl(const std::string& value) {
+  
+  _impl_.serviceurl_.Set(value, GetArenaForAllocation());
+}
+inline std::string* unlockServiceRequest::_internal_mutable_serviceurl() {
+  
+  return _impl_.serviceurl_.Mutable(GetArenaForAllocation());
+}
+inline std::string* unlockServiceRequest::release_serviceurl() {
+  // @@protoc_insertion_point(field_release:grpcIServiceManager.unlockServiceRequest.serviceURL)
+  return _impl_.serviceurl_.Release();
+}
+inline void unlockServiceRequest::set_allocated_serviceurl(std::string* serviceurl) {
+  if (serviceurl != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.serviceurl_.SetAllocated(serviceurl, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.serviceurl_.IsDefault()) {
+    _impl_.serviceurl_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIServiceManager.unlockServiceRequest.serviceURL)
 }
 
 // -------------------------------------------------------------------

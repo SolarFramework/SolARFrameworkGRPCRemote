@@ -26,7 +26,7 @@ class IServiceManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virt
     SolAR::FrameworkReturnCode unregisterService(SolAR::api::service::ServiceType const serviceType, std::string const& serviceURL)     override;
     SolAR::FrameworkReturnCode getService(SolAR::api::service::ServiceType const serviceType, std::string& serviceURL)     const     override;
     SolAR::FrameworkReturnCode getAndLockService(SolAR::api::service::ServiceType const serviceType, std::string const& uuid, std::string& serviceURL)     override;
-    SolAR::FrameworkReturnCode unlockService(SolAR::api::service::ServiceType const serviceType, std::string const& uuid)     override;
+    SolAR::FrameworkReturnCode unlockService(SolAR::api::service::ServiceType const serviceType, std::string const& uuid, std::string const& serviceURL)     override;
 
 
   private:
