@@ -16,6 +16,10 @@ gen/interfaces/IRelocalizationPipeline_grpcProxy.h \
 gen/interfaces/IRelocalizationPipeline_grpcServer.h \
 gen/interfaces/grpcIRelocalizationPipelineService.pb.h \
 gen/interfaces/grpcIRelocalizationPipelineService.grpc.pb.h \
+gen/interfaces/IRelocalizationTrackablePipeline_grpcProxy.h \
+gen/interfaces/IRelocalizationTrackablePipeline_grpcServer.h \
+gen/interfaces/grpcIRelocalizationTrackablePipelineService.pb.h \
+gen/interfaces/grpcIRelocalizationTrackablePipelineService.grpc.pb.h \
 gen/interfaces/IFrontEnd_grpcProxy.h \
 gen/interfaces/IFrontEnd_grpcServer.h \
 gen/interfaces/grpcIFrontEndService.pb.h \
@@ -28,6 +32,14 @@ gen/interfaces/IServiceManager_grpcProxy.h \
 gen/interfaces/IServiceManager_grpcServer.h \
 gen/interfaces/grpcIServiceManagerService.pb.h \
 gen/interfaces/grpcIServiceManagerService.grpc.pb.h \
+gen/interfaces/IServiceWorldGraph_grpcProxy.h \
+gen/interfaces/IServiceWorldGraph_grpcServer.h \
+gen/interfaces/grpcIServiceWorldGraphService.pb.h \
+gen/interfaces/grpcIServiceWorldGraphService.grpc.pb.h \
+gen/interfaces/IWorldGraphManager_grpcProxy.h \
+gen/interfaces/IWorldGraphManager_grpcServer.h \
+gen/interfaces/grpcIWorldGraphManagerService.pb.h \
+gen/interfaces/grpcIWorldGraphManagerService.grpc.pb.h \
 gen/interfaces/xpcfGrpcModuleMain.h
 
 SOURCES += \
@@ -47,6 +59,10 @@ gen/src/IRelocalizationPipeline_grpcProxy.cpp \
 gen/src/IRelocalizationPipeline_grpcServer.cpp \
 gen/src/grpcIRelocalizationPipelineService.pb.cc \
 gen/src/grpcIRelocalizationPipelineService.grpc.pb.cc \
+gen/src/IRelocalizationTrackablePipeline_grpcProxy.cpp \
+gen/src/IRelocalizationTrackablePipeline_grpcServer.cpp \
+gen/src/grpcIRelocalizationTrackablePipelineService.pb.cc \
+gen/src/grpcIRelocalizationTrackablePipelineService.grpc.pb.cc \
 gen/src/IFrontEnd_grpcProxy.cpp \
 gen/src/IFrontEnd_grpcServer.cpp \
 gen/src/grpcIFrontEndService.pb.cc \
@@ -59,4 +75,12 @@ gen/src/IServiceManager_grpcProxy.cpp \
 gen/src/IServiceManager_grpcServer.cpp \
 gen/src/grpcIServiceManagerService.pb.cc \
 gen/src/grpcIServiceManagerService.grpc.pb.cc \
+gen/src/IServiceWorldGraph_grpcProxy.cpp \
+gen/src/IServiceWorldGraph_grpcServer.cpp \
+gen/src/grpcIServiceWorldGraphService.pb.cc \
+gen/src/grpcIServiceWorldGraphService.grpc.pb.cc \
+gen/src/IWorldGraphManager_grpcProxy.cpp \
+gen/src/IWorldGraphManager_grpcServer.cpp \
+gen/src/grpcIWorldGraphManagerService.pb.cc \
+gen/src/grpcIWorldGraphManagerService.grpc.pb.cc \
 gen/src/xpcfGrpcModuleMain.cpp

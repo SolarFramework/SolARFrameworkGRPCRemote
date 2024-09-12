@@ -17,6 +17,10 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
     </component>
+    <component uuid="7dbb07bb-afe0-4ed0-add8-653d46243466" name="IRelocalizationTrackablePipeline_grpcServer" description="IRelocalizationTrackablePipeline_grpcServer">
+      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+      <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+    </component>
     <component uuid="95913e8e-5695-11ec-bf63-0242ac130002" name="IFrontEnd_grpcServer" description="IFrontEnd_grpcServer">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
@@ -29,6 +33,14 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
     </component>
+    <component uuid="af057b41-75fa-4db3-a502-55b6ffba0962" name="IServiceWorldGraph_grpcServer" description="IServiceWorldGraph_grpcServer">
+      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+      <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+    </component>
+    <component uuid="611d0dcb-5c75-418a-b2e8-cc86ad67f035" name="IWorldGraphManager_grpcServer" description="IWorldGraphManager_grpcServer">
+      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+      <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+    </component>
   </module>
   <factory>
     <bindings>
@@ -37,9 +49,12 @@
         <component to="IMapUpdatePipeline_grpcServer"/>
         <component to="IMappingPipeline_grpcServer"/>
         <component to="IRelocalizationPipeline_grpcServer"/>
+        <component to="IRelocalizationTrackablePipeline_grpcServer"/>
         <component to="IFrontEnd_grpcServer"/>
         <component to="IMapsManager_grpcServer"/>
         <component to="IServiceManager_grpcServer"/>
+        <component to="IServiceWorldGraph_grpcServer"/>
+        <component to="IWorldGraphManager_grpcServer"/>
       </bind>
     </bindings>
   </factory>
