@@ -32,14 +32,6 @@ gen/interfaces/IServiceManager_grpcProxy.h \
 gen/interfaces/IServiceManager_grpcServer.h \
 gen/interfaces/grpcIServiceManagerService.pb.h \
 gen/interfaces/grpcIServiceManagerService.grpc.pb.h \
-gen/interfaces/IServiceWorldGraph_grpcProxy.h \
-gen/interfaces/IServiceWorldGraph_grpcServer.h \
-gen/interfaces/grpcIServiceWorldGraphService.pb.h \
-gen/interfaces/grpcIServiceWorldGraphService.grpc.pb.h \
-gen/interfaces/IWorldGraphManager_grpcProxy.h \
-gen/interfaces/IWorldGraphManager_grpcServer.h \
-gen/interfaces/grpcIWorldGraphManagerService.pb.h \
-gen/interfaces/grpcIWorldGraphManagerService.grpc.pb.h \
 gen/interfaces/xpcfGrpcModuleMain.h
 
 SOURCES += \
@@ -75,12 +67,4 @@ gen/src/IServiceManager_grpcProxy.cpp \
 gen/src/IServiceManager_grpcServer.cpp \
 gen/src/grpcIServiceManagerService.pb.cc \
 gen/src/grpcIServiceManagerService.grpc.pb.cc \
-gen/src/IServiceWorldGraph_grpcProxy.cpp \
-gen/src/IServiceWorldGraph_grpcServer.cpp \
-gen/src/grpcIServiceWorldGraphService.pb.cc \
-gen/src/grpcIServiceWorldGraphService.grpc.pb.cc \
-gen/src/IWorldGraphManager_grpcProxy.cpp \
-gen/src/IWorldGraphManager_grpcServer.cpp \
-gen/src/grpcIWorldGraphManagerService.pb.cc \
-gen/src/grpcIWorldGraphManagerService.grpc.pb.cc \
 gen/src/xpcfGrpcModuleMain.cpp

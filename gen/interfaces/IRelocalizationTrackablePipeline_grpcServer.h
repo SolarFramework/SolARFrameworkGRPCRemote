@@ -26,16 +26,19 @@ class IRelocalizationTrackablePipeline_grpcServer:  public org::bcom::xpcf::Conf
       public:
         grpcIRelocalizationTrackablePipelineServiceImpl() = default;
         ::grpc::Status init_grpc0(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc0Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc0Response* response) override;
-        ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::startRequest* request, ::grpcIRelocalizationTrackablePipeline::startResponse* response) override;
-        ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::stopRequest* request, ::grpcIRelocalizationTrackablePipeline::stopResponse* response) override;
+        ::grpc::Status start_grpc0(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::start_grpc0Request* request, ::grpcIRelocalizationTrackablePipeline::start_grpc0Response* response) override;
+        ::grpc::Status stop_grpc0(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::stop_grpc0Request* request, ::grpcIRelocalizationTrackablePipeline::stop_grpc0Response* response) override;
         ::grpc::Status init_grpc1(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc1Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc1Response* response) override;
+        ::grpc::Status init_grpc2(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response* response) override;
+        ::grpc::Status start_grpc1(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::start_grpc1Request* request, ::grpcIRelocalizationTrackablePipeline::start_grpc1Response* response) override;
+        ::grpc::Status stop_grpc1(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::stop_grpc1Request* request, ::grpcIRelocalizationTrackablePipeline::stop_grpc1Response* response) override;
         ::grpc::Status setCameraParameters(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::setCameraParametersRequest* request, ::grpcIRelocalizationTrackablePipeline::setCameraParametersResponse* response) override;
         ::grpc::Status getCameraParameters(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::getCameraParametersRequest* request, ::grpcIRelocalizationTrackablePipeline::getCameraParametersResponse* response) override;
         ::grpc::Status relocalizeProcessRequest_grpc0(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc0Request* request, ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc0Response* response) override;
         ::grpc::Status relocalizeProcessRequest_grpc1(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc1Request* request, ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc1Response* response) override;
         ::grpc::Status relocalizeProcessRequest_grpc2(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc2Request* request, ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc2Response* response) override;
         ::grpc::Status getMapRequest(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::getMapRequestRequest* request, ::grpcIRelocalizationTrackablePipeline::getMapRequestResponse* response) override;
-        ::grpc::Status init_grpc2(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response* response) override;
+        ::grpc::Status init_grpc3(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc3Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc3Response* response) override;
 
         SRef<SolAR::api::pipeline::IRelocalizationTrackablePipeline> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;

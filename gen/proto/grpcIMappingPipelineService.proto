@@ -37,11 +37,23 @@ sint32 xpcfGrpcReturnValue = 1;
 message init_grpc1Request
 {
 int32 grpcServerCompressionFormat  = 1;
-string relocalizationServiceURL = 2;
-string mapupdateServiceURL = 3;
+string clientUUID = 2;
 }
 
 message init_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message init_grpc2Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+string relocalizationServiceURL = 3;
+string mapupdateServiceURL = 4;
+}
+
+message init_grpc2Response
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
@@ -161,6 +173,7 @@ rpc init_grpc0(init_grpc0Request) returns(init_grpc0Response) {}
 rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}
 rpc init_grpc1(init_grpc1Request) returns(init_grpc1Response) {}
+rpc init_grpc2(init_grpc2Request) returns(init_grpc2Response) {}
 rpc setCameraParameters_grpc0(setCameraParameters_grpc0Request) returns(setCameraParameters_grpc0Response) {}
 rpc setCameraParameters_grpc1(setCameraParameters_grpc1Request) returns(setCameraParameters_grpc1Response) {}
 rpc setRectificationParameters(setRectificationParametersRequest) returns(setRectificationParametersResponse) {}

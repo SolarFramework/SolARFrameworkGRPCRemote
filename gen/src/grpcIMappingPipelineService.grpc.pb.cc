@@ -26,6 +26,7 @@ static const char* grpcIMappingPipelineService_method_names[] = {
   "/grpcIMappingPipeline.grpcIMappingPipelineService/start",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/stop",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/init_grpc1",
+  "/grpcIMappingPipeline.grpcIMappingPipelineService/init_grpc2",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/setCameraParameters_grpc0",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/setCameraParameters_grpc1",
   "/grpcIMappingPipeline.grpcIMappingPipelineService/setRectificationParameters",
@@ -47,14 +48,15 @@ grpcIMappingPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelIn
   , rpcmethod_start_(grpcIMappingPipelineService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_stop_(grpcIMappingPipelineService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_init_grpc1_(grpcIMappingPipelineService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCameraParameters_grpc0_(grpcIMappingPipelineService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCameraParameters_grpc1_(grpcIMappingPipelineService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setRectificationParameters_(grpcIMappingPipelineService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_set3DTransformSolARToWorld_(grpcIMappingPipelineService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_mappingProcessRequest_grpc0_(grpcIMappingPipelineService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_mappingProcessRequest_grpc1_(grpcIMappingPipelineService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_mappingProcessRequest_grpc2_(grpcIMappingPipelineService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getDataForVisualization_(grpcIMappingPipelineService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_init_grpc2_(grpcIMappingPipelineService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCameraParameters_grpc0_(grpcIMappingPipelineService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCameraParameters_grpc1_(grpcIMappingPipelineService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setRectificationParameters_(grpcIMappingPipelineService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_set3DTransformSolARToWorld_(grpcIMappingPipelineService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_mappingProcessRequest_grpc0_(grpcIMappingPipelineService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_mappingProcessRequest_grpc1_(grpcIMappingPipelineService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_mappingProcessRequest_grpc2_(grpcIMappingPipelineService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getDataForVisualization_(grpcIMappingPipelineService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMappingPipelineService::Stub::init_grpc0(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc0Request& request, ::grpcIMappingPipeline::init_grpc0Response* response) {
@@ -145,6 +147,29 @@ void grpcIMappingPipelineService::Stub::async::init_grpc1(::grpc::ClientContext*
 ::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::init_grpc1Response>* grpcIMappingPipelineService::Stub::Asyncinit_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc1Request& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncinit_grpc1Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIMappingPipelineService::Stub::init_grpc2(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc2Request& request, ::grpcIMappingPipeline::init_grpc2Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMappingPipeline::init_grpc2Request, ::grpcIMappingPipeline::init_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_grpc2_, context, request, response);
+}
+
+void grpcIMappingPipelineService::Stub::async::init_grpc2(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc2Request* request, ::grpcIMappingPipeline::init_grpc2Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMappingPipeline::init_grpc2Request, ::grpcIMappingPipeline::init_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_grpc2_, context, request, response, std::move(f));
+}
+
+void grpcIMappingPipelineService::Stub::async::init_grpc2(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc2Request* request, ::grpcIMappingPipeline::init_grpc2Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_grpc2_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::init_grpc2Response>* grpcIMappingPipelineService::Stub::PrepareAsyncinit_grpc2Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc2Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMappingPipeline::init_grpc2Response, ::grpcIMappingPipeline::init_grpc2Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_init_grpc2_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMappingPipeline::init_grpc2Response>* grpcIMappingPipelineService::Stub::Asyncinit_grpc2Raw(::grpc::ClientContext* context, const ::grpcIMappingPipeline::init_grpc2Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncinit_grpc2Raw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -377,6 +402,16 @@ grpcIMappingPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMappingPipelineService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::init_grpc2Request, ::grpcIMappingPipeline::init_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMappingPipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMappingPipeline::init_grpc2Request* req,
+             ::grpcIMappingPipeline::init_grpc2Response* resp) {
+               return service->init_grpc2(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMappingPipelineService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::setCameraParameters_grpc0Request, ::grpcIMappingPipeline::setCameraParameters_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -385,7 +420,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->setCameraParameters_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[5],
+      grpcIMappingPipelineService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::setCameraParameters_grpc1Request, ::grpcIMappingPipeline::setCameraParameters_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -395,7 +430,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->setCameraParameters_grpc1(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[6],
+      grpcIMappingPipelineService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::setRectificationParametersRequest, ::grpcIMappingPipeline::setRectificationParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -405,7 +440,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->setRectificationParameters(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[7],
+      grpcIMappingPipelineService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::set3DTransformSolARToWorldRequest, ::grpcIMappingPipeline::set3DTransformSolARToWorldResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -415,7 +450,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->set3DTransformSolARToWorld(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[8],
+      grpcIMappingPipelineService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -425,7 +460,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->mappingProcessRequest_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[9],
+      grpcIMappingPipelineService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -435,7 +470,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->mappingProcessRequest_grpc1(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[10],
+      grpcIMappingPipelineService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Request, ::grpcIMappingPipeline::mappingProcessRequest_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -445,7 +480,7 @@ grpcIMappingPipelineService::Service::Service() {
                return service->mappingProcessRequest_grpc2(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMappingPipelineService_method_names[11],
+      grpcIMappingPipelineService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMappingPipelineService::Service, ::grpcIMappingPipeline::getDataForVisualizationRequest, ::grpcIMappingPipeline::getDataForVisualizationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMappingPipelineService::Service* service,
@@ -481,6 +516,13 @@ grpcIMappingPipelineService::Service::~Service() {
 }
 
 ::grpc::Status grpcIMappingPipelineService::Service::init_grpc1(::grpc::ServerContext* context, const ::grpcIMappingPipeline::init_grpc1Request* request, ::grpcIMappingPipeline::init_grpc1Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMappingPipelineService::Service::init_grpc2(::grpc::ServerContext* context, const ::grpcIMappingPipeline::init_grpc2Request* request, ::grpcIMappingPipeline::init_grpc2Response* response) {
   (void) context;
   (void) request;
   (void) response;
