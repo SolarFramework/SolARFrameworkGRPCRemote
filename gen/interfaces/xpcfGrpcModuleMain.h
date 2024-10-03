@@ -11,8 +11,6 @@
 #include "IMappingPipeline_grpcServer.h"
 #include "IRelocalizationPipeline_grpcProxy.h"
 #include "IRelocalizationPipeline_grpcServer.h"
-#include "IRelocalizationTrackablePipeline_grpcProxy.h"
-#include "IRelocalizationTrackablePipeline_grpcServer.h"
 #include "IFrontEnd_grpcProxy.h"
 #include "IFrontEnd_grpcServer.h"
 #include "IMapsManager_grpcProxy.h"

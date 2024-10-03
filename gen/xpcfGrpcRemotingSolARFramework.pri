@@ -16,10 +16,6 @@ gen/interfaces/IRelocalizationPipeline_grpcProxy.h \
 gen/interfaces/IRelocalizationPipeline_grpcServer.h \
 gen/interfaces/grpcIRelocalizationPipelineService.pb.h \
 gen/interfaces/grpcIRelocalizationPipelineService.grpc.pb.h \
-gen/interfaces/IRelocalizationTrackablePipeline_grpcProxy.h \
-gen/interfaces/IRelocalizationTrackablePipeline_grpcServer.h \
-gen/interfaces/grpcIRelocalizationTrackablePipelineService.pb.h \
-gen/interfaces/grpcIRelocalizationTrackablePipelineService.grpc.pb.h \
 gen/interfaces/IFrontEnd_grpcProxy.h \
 gen/interfaces/IFrontEnd_grpcServer.h \
 gen/interfaces/grpcIFrontEndService.pb.h \
@@ -51,10 +47,6 @@ gen/src/IRelocalizationPipeline_grpcProxy.cpp \
 gen/src/IRelocalizationPipeline_grpcServer.cpp \
 gen/src/grpcIRelocalizationPipelineService.pb.cc \
 gen/src/grpcIRelocalizationPipelineService.grpc.pb.cc \
-gen/src/IRelocalizationTrackablePipeline_grpcProxy.cpp \
-gen/src/IRelocalizationTrackablePipeline_grpcServer.cpp \
-gen/src/grpcIRelocalizationTrackablePipelineService.pb.cc \
-gen/src/grpcIRelocalizationTrackablePipelineService.grpc.pb.cc \
 gen/src/IFrontEnd_grpcProxy.cpp \
 gen/src/IFrontEnd_grpcServer.cpp \
 gen/src/grpcIFrontEndService.pb.cc \
