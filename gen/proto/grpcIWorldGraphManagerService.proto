@@ -1,0 +1,343 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIWorldGraphManager;
+
+message getRelocalizationInformationRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes uuids = 2;
+string token = 3;
+bytes capability = 4;
+bytes relocalizationInformation = 5;
+}
+
+message getRelocalizationInformationResponse
+{
+bytes relocalizationInformation = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getWorldElementRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes worldElementId = 2;
+bytes worldElement = 3;
+}
+
+message getWorldElementResponse
+{
+bytes worldElement = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getWorldElementsRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes vector = 2;
+}
+
+message getWorldElementsResponse
+{
+bytes vector = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getWorldElementByKeyValueRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string key = 2;
+string value = 3;
+bytes vector = 4;
+}
+
+message getWorldElementByKeyValueResponse
+{
+bytes vector = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getWorldElementByKeyRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string key = 2;
+bytes vector = 3;
+}
+
+message getWorldElementByKeyResponse
+{
+bytes vector = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message addTrackableRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes trackable = 2;
+bytes id = 3;
+}
+
+message addTrackableResponse
+{
+bytes id = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getTrackableRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes trackableId = 2;
+bytes trackable = 3;
+}
+
+message getTrackableResponse
+{
+bytes trackable = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message removeTrackableRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes trackableId = 2;
+}
+
+message removeTrackableResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getTrackablesRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes vector = 2;
+}
+
+message getTrackablesResponse
+{
+bytes vector = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message modifyTrackableRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes trackable = 2;
+bytes id = 3;
+}
+
+message modifyTrackableResponse
+{
+bytes id = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message addWorldAnchorRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes worldAnchor = 2;
+bytes id = 3;
+}
+
+message addWorldAnchorResponse
+{
+bytes id = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getWorldAnchorRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes worldAnchorId = 2;
+bytes worldAnchor = 3;
+}
+
+message getWorldAnchorResponse
+{
+bytes worldAnchor = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message removeWorldAnchorRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes worldAnchorId = 2;
+}
+
+message removeWorldAnchorResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getWorldAnchorsRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes vector = 2;
+}
+
+message getWorldAnchorsResponse
+{
+bytes vector = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message modifyWorldAnchorRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes worldAnchor = 2;
+bytes id = 3;
+}
+
+message modifyWorldAnchorResponse
+{
+bytes id = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message addWorldLinkRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes worldLink = 2;
+bytes id = 3;
+}
+
+message addWorldLinkResponse
+{
+bytes id = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getWorldLink_grpc0Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes parentId = 2;
+bytes childId = 3;
+bytes worldLink = 4;
+}
+
+message getWorldLink_grpc0Response
+{
+bytes worldLink = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getWorldLink_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes linkId = 2;
+bytes worldLink = 3;
+}
+
+message getWorldLink_grpc1Response
+{
+bytes worldLink = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message removeWorldLink_grpc0Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes parentId = 2;
+bytes childId = 3;
+}
+
+message removeWorldLink_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message removeWorldLink_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes linkId = 2;
+}
+
+message removeWorldLink_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getWorldLinksRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes vector = 2;
+}
+
+message getWorldLinksResponse
+{
+bytes vector = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message modifyWorldLinkRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes worldLink = 2;
+bytes id = 3;
+}
+
+message modifyWorldLinkResponse
+{
+bytes id = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message saveToFileRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message saveToFileResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message loadFromFileRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message loadFromFileResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message deleteFileRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message deleteFileResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+service grpcIWorldGraphManagerService {
+rpc getRelocalizationInformation(getRelocalizationInformationRequest) returns(getRelocalizationInformationResponse) {}
+rpc getWorldElement(getWorldElementRequest) returns(getWorldElementResponse) {}
+rpc getWorldElements(getWorldElementsRequest) returns(getWorldElementsResponse) {}
+rpc getWorldElementByKeyValue(getWorldElementByKeyValueRequest) returns(getWorldElementByKeyValueResponse) {}
+rpc getWorldElementByKey(getWorldElementByKeyRequest) returns(getWorldElementByKeyResponse) {}
+rpc addTrackable(addTrackableRequest) returns(addTrackableResponse) {}
+rpc getTrackable(getTrackableRequest) returns(getTrackableResponse) {}
+rpc removeTrackable(removeTrackableRequest) returns(removeTrackableResponse) {}
+rpc getTrackables(getTrackablesRequest) returns(getTrackablesResponse) {}
+rpc modifyTrackable(modifyTrackableRequest) returns(modifyTrackableResponse) {}
+rpc addWorldAnchor(addWorldAnchorRequest) returns(addWorldAnchorResponse) {}
+rpc getWorldAnchor(getWorldAnchorRequest) returns(getWorldAnchorResponse) {}
+rpc removeWorldAnchor(removeWorldAnchorRequest) returns(removeWorldAnchorResponse) {}
+rpc getWorldAnchors(getWorldAnchorsRequest) returns(getWorldAnchorsResponse) {}
+rpc modifyWorldAnchor(modifyWorldAnchorRequest) returns(modifyWorldAnchorResponse) {}
+rpc addWorldLink(addWorldLinkRequest) returns(addWorldLinkResponse) {}
+rpc getWorldLink_grpc0(getWorldLink_grpc0Request) returns(getWorldLink_grpc0Response) {}
+rpc getWorldLink_grpc1(getWorldLink_grpc1Request) returns(getWorldLink_grpc1Response) {}
+rpc removeWorldLink_grpc0(removeWorldLink_grpc0Request) returns(removeWorldLink_grpc0Response) {}
+rpc removeWorldLink_grpc1(removeWorldLink_grpc1Request) returns(removeWorldLink_grpc1Response) {}
+rpc getWorldLinks(getWorldLinksRequest) returns(getWorldLinksResponse) {}
+rpc modifyWorldLink(modifyWorldLinkRequest) returns(modifyWorldLinkResponse) {}
+rpc saveToFile(saveToFileRequest) returns(saveToFileResponse) {}
+rpc loadFromFile(loadFromFileRequest) returns(loadFromFileResponse) {}
+rpc deleteFile(deleteFileRequest) returns(deleteFileResponse) {}
+}
+

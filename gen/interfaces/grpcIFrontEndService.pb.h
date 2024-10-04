@@ -376,7 +376,7 @@ class registerClientRequest final :
   enum : int {
     kKeycloakTokenFieldNumber = 2,
     kDeviceInfoFieldNumber = 3,
-    kMapUUIDFieldNumber = 4,
+    kWorldElementUUIDFieldNumber = 4,
     kClientUUIDFieldNumber = 5,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
@@ -408,18 +408,18 @@ class registerClientRequest final :
   std::string* _internal_mutable_deviceinfo();
   public:
 
-  // string mapUUID = 4;
-  void clear_mapuuid();
-  const std::string& mapuuid() const;
+  // string worldElementUUID = 4;
+  void clear_worldelementuuid();
+  const std::string& worldelementuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_mapuuid(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_mapuuid();
-  PROTOBUF_NODISCARD std::string* release_mapuuid();
-  void set_allocated_mapuuid(std::string* mapuuid);
+  void set_worldelementuuid(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_worldelementuuid();
+  PROTOBUF_NODISCARD std::string* release_worldelementuuid();
+  void set_allocated_worldelementuuid(std::string* worldelementuuid);
   private:
-  const std::string& _internal_mapuuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuid(const std::string& value);
-  std::string* _internal_mutable_mapuuid();
+  const std::string& _internal_worldelementuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_worldelementuuid(const std::string& value);
+  std::string* _internal_mutable_worldelementuuid();
   public:
 
   // string clientUUID = 5;
@@ -455,7 +455,7 @@ class registerClientRequest final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr keycloaktoken_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr deviceinfo_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr worldelementuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -9340,54 +9340,54 @@ inline void registerClientRequest::set_allocated_deviceinfo(std::string* devicei
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientRequest.deviceInfo)
 }
 
-// string mapUUID = 4;
-inline void registerClientRequest::clear_mapuuid() {
-  _impl_.mapuuid_.ClearToEmpty();
+// string worldElementUUID = 4;
+inline void registerClientRequest::clear_worldelementuuid() {
+  _impl_.worldelementuuid_.ClearToEmpty();
 }
-inline const std::string& registerClientRequest::mapuuid() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.registerClientRequest.mapUUID)
-  return _internal_mapuuid();
+inline const std::string& registerClientRequest::worldelementuuid() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.registerClientRequest.worldElementUUID)
+  return _internal_worldelementuuid();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void registerClientRequest::set_mapuuid(ArgT0&& arg0, ArgT... args) {
+void registerClientRequest::set_worldelementuuid(ArgT0&& arg0, ArgT... args) {
  
- _impl_.mapuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.registerClientRequest.mapUUID)
+ _impl_.worldelementuuid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.registerClientRequest.worldElementUUID)
 }
-inline std::string* registerClientRequest::mutable_mapuuid() {
-  std::string* _s = _internal_mutable_mapuuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.registerClientRequest.mapUUID)
+inline std::string* registerClientRequest::mutable_worldelementuuid() {
+  std::string* _s = _internal_mutable_worldelementuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.registerClientRequest.worldElementUUID)
   return _s;
 }
-inline const std::string& registerClientRequest::_internal_mapuuid() const {
-  return _impl_.mapuuid_.Get();
+inline const std::string& registerClientRequest::_internal_worldelementuuid() const {
+  return _impl_.worldelementuuid_.Get();
 }
-inline void registerClientRequest::_internal_set_mapuuid(const std::string& value) {
+inline void registerClientRequest::_internal_set_worldelementuuid(const std::string& value) {
   
-  _impl_.mapuuid_.Set(value, GetArenaForAllocation());
+  _impl_.worldelementuuid_.Set(value, GetArenaForAllocation());
 }
-inline std::string* registerClientRequest::_internal_mutable_mapuuid() {
+inline std::string* registerClientRequest::_internal_mutable_worldelementuuid() {
   
-  return _impl_.mapuuid_.Mutable(GetArenaForAllocation());
+  return _impl_.worldelementuuid_.Mutable(GetArenaForAllocation());
 }
-inline std::string* registerClientRequest::release_mapuuid() {
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.registerClientRequest.mapUUID)
-  return _impl_.mapuuid_.Release();
+inline std::string* registerClientRequest::release_worldelementuuid() {
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.registerClientRequest.worldElementUUID)
+  return _impl_.worldelementuuid_.Release();
 }
-inline void registerClientRequest::set_allocated_mapuuid(std::string* mapuuid) {
-  if (mapuuid != nullptr) {
+inline void registerClientRequest::set_allocated_worldelementuuid(std::string* worldelementuuid) {
+  if (worldelementuuid != nullptr) {
     
   } else {
     
   }
-  _impl_.mapuuid_.SetAllocated(mapuuid, GetArenaForAllocation());
+  _impl_.worldelementuuid_.SetAllocated(worldelementuuid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.mapuuid_.IsDefault()) {
-    _impl_.mapuuid_.Set("", GetArenaForAllocation());
+  if (_impl_.worldelementuuid_.IsDefault()) {
+    _impl_.worldelementuuid_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientRequest.mapUUID)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.registerClientRequest.worldElementUUID)
 }
 
 // string clientUUID = 5;

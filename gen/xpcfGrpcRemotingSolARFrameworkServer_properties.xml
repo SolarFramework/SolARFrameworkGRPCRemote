@@ -60,6 +60,22 @@
         <value>method|getMapRequest|none|0</value>
       </property>
     </configure>
+    <configure component="IRelocalizationTrackablePipeline_grpcServer">
+      <property name="grpc_compress_server" type="string">
+        <value>service|none|0</value>
+        <value>method|init|none|0</value>
+        <value>method|start|none|0</value>
+        <value>method|stop|none|0</value>
+        <value>method|init|none|0</value>
+        <value>method|setCameraParameters|none|0</value>
+        <value>method|getCameraParameters|none|0</value>
+        <value>method|relocalizeProcessRequest|none|0</value>
+        <value>method|relocalizeProcessRequest|none|0</value>
+        <value>method|relocalizeProcessRequest|none|0</value>
+        <value>method|getMapRequest|none|0</value>
+        <value>method|init|none|0</value>
+      </property>
+    </configure>
     <configure component="IFrontEnd_grpcServer">
       <property name="grpc_compress_server" type="string">
         <value>service|none|0</value>
@@ -110,6 +126,44 @@
         <value>method|getService|none|0</value>
         <value>method|getAndLockService|none|0</value>
         <value>method|unlockService|none|0</value>
+      </property>
+    </configure>
+    <configure component="IServiceWorldGraph_grpcServer">
+      <property name="grpc_compress_server" type="string">
+        <value>service|none|0</value>
+        <value>method|init|none|0</value>
+        <value>method|start|none|0</value>
+        <value>method|stop|none|0</value>
+      </property>
+    </configure>
+    <configure component="IWorldGraphManager_grpcServer">
+      <property name="grpc_compress_server" type="string">
+        <value>service|none|0</value>
+        <value>method|getRelocalizationInformation|none|0</value>
+        <value>method|getWorldElement|none|0</value>
+        <value>method|getWorldElements|none|0</value>
+        <value>method|getWorldElementByKeyValue|none|0</value>
+        <value>method|getWorldElementByKey|none|0</value>
+        <value>method|addTrackable|none|0</value>
+        <value>method|getTrackable|none|0</value>
+        <value>method|removeTrackable|none|0</value>
+        <value>method|getTrackables|none|0</value>
+        <value>method|modifyTrackable|none|0</value>
+        <value>method|addWorldAnchor|none|0</value>
+        <value>method|getWorldAnchor|none|0</value>
+        <value>method|removeWorldAnchor|none|0</value>
+        <value>method|getWorldAnchors|none|0</value>
+        <value>method|modifyWorldAnchor|none|0</value>
+        <value>method|addWorldLink|none|0</value>
+        <value>method|getWorldLink|none|0</value>
+        <value>method|getWorldLink|none|0</value>
+        <value>method|removeWorldLink|none|0</value>
+        <value>method|removeWorldLink|none|0</value>
+        <value>method|getWorldLinks|none|0</value>
+        <value>method|modifyWorldLink|none|0</value>
+        <value>method|saveToFile|none|0</value>
+        <value>method|loadFromFile|none|0</value>
+        <value>method|deleteFile|none|0</value>
       </property>
     </configure>
   </properties>

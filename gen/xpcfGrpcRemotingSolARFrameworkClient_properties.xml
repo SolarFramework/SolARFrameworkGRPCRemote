@@ -60,6 +60,22 @@
         <value>method|getMapRequest|none|none</value>
       </property>
     </configure>
+    <configure component="IRelocalizationTrackablePipeline_grpcProxy">
+      <property name="grpc_compress_proxy" type="string">
+        <value>service|none|none</value>
+        <value>method|init|none|none</value>
+        <value>method|start|none|none</value>
+        <value>method|stop|none|none</value>
+        <value>method|init|none|none</value>
+        <value>method|setCameraParameters|none|none</value>
+        <value>method|getCameraParameters|none|none</value>
+        <value>method|relocalizeProcessRequest|none|none</value>
+        <value>method|relocalizeProcessRequest|none|none</value>
+        <value>method|relocalizeProcessRequest|none|none</value>
+        <value>method|getMapRequest|none|none</value>
+        <value>method|init|none|none</value>
+      </property>
+    </configure>
     <configure component="IFrontEnd_grpcProxy">
       <property name="grpc_compress_proxy" type="string">
         <value>service|none|none</value>
@@ -110,6 +126,44 @@
         <value>method|getService|none|none</value>
         <value>method|getAndLockService|none|none</value>
         <value>method|unlockService|none|none</value>
+      </property>
+    </configure>
+    <configure component="IServiceWorldGraph_grpcProxy">
+      <property name="grpc_compress_proxy" type="string">
+        <value>service|none|none</value>
+        <value>method|init|none|none</value>
+        <value>method|start|none|none</value>
+        <value>method|stop|none|none</value>
+      </property>
+    </configure>
+    <configure component="IWorldGraphManager_grpcProxy">
+      <property name="grpc_compress_proxy" type="string">
+        <value>service|none|none</value>
+        <value>method|getRelocalizationInformation|none|none</value>
+        <value>method|getWorldElement|none|none</value>
+        <value>method|getWorldElements|none|none</value>
+        <value>method|getWorldElementByKeyValue|none|none</value>
+        <value>method|getWorldElementByKey|none|none</value>
+        <value>method|addTrackable|none|none</value>
+        <value>method|getTrackable|none|none</value>
+        <value>method|removeTrackable|none|none</value>
+        <value>method|getTrackables|none|none</value>
+        <value>method|modifyTrackable|none|none</value>
+        <value>method|addWorldAnchor|none|none</value>
+        <value>method|getWorldAnchor|none|none</value>
+        <value>method|removeWorldAnchor|none|none</value>
+        <value>method|getWorldAnchors|none|none</value>
+        <value>method|modifyWorldAnchor|none|none</value>
+        <value>method|addWorldLink|none|none</value>
+        <value>method|getWorldLink|none|none</value>
+        <value>method|getWorldLink|none|none</value>
+        <value>method|removeWorldLink|none|none</value>
+        <value>method|removeWorldLink|none|none</value>
+        <value>method|getWorldLinks|none|none</value>
+        <value>method|modifyWorldLink|none|none</value>
+        <value>method|saveToFile|none|none</value>
+        <value>method|loadFromFile|none|none</value>
+        <value>method|deleteFile|none|none</value>
       </property>
     </configure>
   </properties>

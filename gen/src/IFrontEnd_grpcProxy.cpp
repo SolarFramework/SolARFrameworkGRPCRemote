@@ -47,7 +47,7 @@ XPCFErrorCode IFrontEnd_grpcProxy::onConfigured()
 }
 
 
-SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::registerClient(std::string const& keycloakToken, SolAR::api::service::DeviceInfo const& deviceInfo, std::string const& mapUUID, std::string& clientUUID)
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::registerClient(std::string const& keycloakToken, SolAR::api::service::DeviceInfo const& deviceInfo, std::string const& worldElementUUID, std::string& clientUUID)
 {
   ::grpc::ClientContext context;
   ::grpcIFrontEnd::registerClientRequest reqIn;
@@ -59,7 +59,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::registerClient(std::string cons
   #endif
   reqIn.set_keycloaktoken(keycloakToken);
   reqIn.set_deviceinfo(xpcf::serialize<SolAR::api::service::DeviceInfo>(deviceInfo));
-  reqIn.set_mapuuid(mapUUID);
+  reqIn.set_worldelementuuid(worldElementUUID);
   reqIn.set_clientuuid(clientUUID);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
