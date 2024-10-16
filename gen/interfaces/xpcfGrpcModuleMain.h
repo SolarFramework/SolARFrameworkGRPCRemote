@@ -19,8 +19,4 @@
 #include "IMapsManager_grpcServer.h"
 #include "IServiceManager_grpcProxy.h"
 #include "IServiceManager_grpcServer.h"
-#include "IServiceWorldGraph_grpcProxy.h"
-#include "IServiceWorldGraph_grpcServer.h"
-#include "IWorldGraphManager_grpcProxy.h"
-#include "IWorldGraphManager_grpcServer.h"
 #endif

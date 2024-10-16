@@ -86,26 +86,6 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIServiceManager::IServiceManager_grpcServer>(componentUUID,interfaceRef);
   }
 
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIServiceWorldGraph::IServiceWorldGraph_grpcProxy>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIServiceWorldGraph::IServiceWorldGraph_grpcServer>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIWorldGraphManager::IWorldGraphManager_grpcProxy>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIWorldGraphManager::IWorldGraphManager_grpcServer>(componentUUID,interfaceRef);
-  }
-
   return errCode;
 }
 
@@ -127,8 +107,4 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapsManager::IMapsManager_grpcPr
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIMapsManager::IMapsManager_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIServiceManager::IServiceManager_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIServiceManager::IServiceManager_grpcServer)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIServiceWorldGraph::IServiceWorldGraph_grpcProxy)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIServiceWorldGraph::IServiceWorldGraph_grpcServer)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIWorldGraphManager::IWorldGraphManager_grpcProxy)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIWorldGraphManager::IWorldGraphManager_grpcServer)
 XPCF_END_COMPONENTS_DECLARATION

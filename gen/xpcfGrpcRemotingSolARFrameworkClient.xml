@@ -33,13 +33,5 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="48c83eda-6432-11ed-81ce-0242ac120002" name="IServiceManager" description="The interface to define the service manager"/>
     </component>
-    <component uuid="0c98c9b8-cabb-4e6e-93fb-23cbbfc528e7" name="IServiceWorldGraph_grpcProxy" description="IServiceWorldGraph_grpcProxy">
-      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
-      <interface uuid="d193e3e4-54e8-44ff-b7f8-2ffdba2b04e9" name="IServiceWorldGraph" description="The interface to define the service managing a World Graph."/>
-    </component>
-    <component uuid="992cce43-18a7-4053-95c8-f57efcfd54e3" name="IWorldGraphManager_grpcProxy" description="IWorldGraphManager_grpcProxy">
-      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
-      <interface uuid="f8847b66-4bd0-48c6-ad54-e371a16fba1a" name="IWorldGraphManager" description="SolAR::api::storage::IWorldGraphManager defines the interface of a world graph manager and its representation with all its components such as trackables, worldanchors and their relations (3DF)."/>
-    </component>
   </module>
 </xpcf-registry>
