@@ -60,6 +60,22 @@
         <value>method|getMapRequest|none|none</value>
       </property>
     </configure>
+    <configure component="IRelocalizationTrackablePipeline_grpcProxy">
+      <property name="grpc_compress_proxy" type="string">
+        <value>service|none|none</value>
+        <value>method|init|none|none</value>
+        <value>method|start|none|none</value>
+        <value>method|stop|none|none</value>
+        <value>method|init|none|none</value>
+        <value>method|setCameraParameters|none|none</value>
+        <value>method|getCameraParameters|none|none</value>
+        <value>method|relocalizeProcessRequest|none|none</value>
+        <value>method|relocalizeProcessRequest|none|none</value>
+        <value>method|relocalizeProcessRequest|none|none</value>
+        <value>method|getMapRequest|none|none</value>
+        <value>method|init|none|none</value>
+      </property>
+    </configure>
     <configure component="IFrontEnd_grpcProxy">
       <property name="grpc_compress_proxy" type="string">
         <value>service|none|none</value>

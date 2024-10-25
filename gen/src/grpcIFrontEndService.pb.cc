@@ -25,7 +25,7 @@ PROTOBUF_CONSTEXPR registerClientRequest::registerClientRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.keycloaktoken_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.deviceinfo_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.mapuuid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.worldelementuuid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.clientuuid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.grpcservercompressionformat_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
@@ -784,7 +784,7 @@ const uint32_t TableStruct_grpcIFrontEndService_2eproto::offsets[] PROTOBUF_SECT
   PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::registerClientRequest, _impl_.grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::registerClientRequest, _impl_.keycloaktoken_),
   PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::registerClientRequest, _impl_.deviceinfo_),
-  PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::registerClientRequest, _impl_.mapuuid_),
+  PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::registerClientRequest, _impl_.worldelementuuid_),
   PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::registerClientRequest, _impl_.clientuuid_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::registerClientResponse, _internal_metadata_),
@@ -1332,208 +1332,208 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_grpcIFrontEndService_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\032grpcIFrontEndService.proto\022\rgrpcIFront"
-  "End\032\033google/protobuf/empty.proto\"\214\001\n\025reg"
+  "End\032\033google/protobuf/empty.proto\"\225\001\n\025reg"
   "isterClientRequest\022#\n\033grpcServerCompress"
   "ionFormat\030\001 \001(\005\022\025\n\rkeycloakToken\030\002 \001(\t\022\022"
-  "\n\ndeviceInfo\030\003 \001(\014\022\017\n\007mapUUID\030\004 \001(\t\022\022\n\nc"
-  "lientUUID\030\005 \001(\t\"I\n\026registerClientRespons"
-  "e\022\022\n\nclientUUID\030\001 \001(\t\022\033\n\023xpcfGrpcReturnV"
-  "alue\030\002 \001(\021\"R\n\027unregisterClientRequest\022#\n"
-  "\033grpcServerCompressionFormat\030\001 \001(\005\022\022\n\ncl"
-  "ientUUID\030\002 \001(\t\"7\n\030unregisterClientRespon"
-  "se\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"n\n\030getAl"
-  "lClientsUUIDRequest\022#\n\033grpcServerCompres"
-  "sionFormat\030\001 \001(\005\022\025\n\rkeycloakToken\030\002 \001(\t\022"
-  "\026\n\016clientUUIDList\030\003 \001(\014\"P\n\031getAllClients"
-  "UUIDResponse\022\026\n\016clientUUIDList\030\001 \001(\014\022\033\n\023"
-  "xpcfGrpcReturnValue\030\002 \001(\021\"c\n\024getDeviceIn"
-  "foRequest\022#\n\033grpcServerCompressionFormat"
-  "\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\022\022\n\ndeviceInfo"
-  "\030\003 \001(\014\"H\n\025getDeviceInfoResponse\022\022\n\ndevic"
-  "eInfo\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021"
-  "\"L\n\021init_grpc0Request\022#\n\033grpcServerCompr"
-  "essionFormat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\"1"
-  "\n\022init_grpc0Response\022\033\n\023xpcfGrpcReturnVa"
-  "lue\030\001 \001(\021\"b\n\021init_grpc1Request\022#\n\033grpcSe"
+  "\n\ndeviceInfo\030\003 \001(\014\022\030\n\020worldElementUUID\030\004"
+  " \001(\t\022\022\n\nclientUUID\030\005 \001(\t\"I\n\026registerClie"
+  "ntResponse\022\022\n\nclientUUID\030\001 \001(\t\022\033\n\023xpcfGr"
+  "pcReturnValue\030\002 \001(\021\"R\n\027unregisterClientR"
+  "equest\022#\n\033grpcServerCompressionFormat\030\001 "
+  "\001(\005\022\022\n\nclientUUID\030\002 \001(\t\"7\n\030unregisterCli"
+  "entResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021"
+  "\"n\n\030getAllClientsUUIDRequest\022#\n\033grpcServ"
+  "erCompressionFormat\030\001 \001(\005\022\025\n\rkeycloakTok"
+  "en\030\002 \001(\t\022\026\n\016clientUUIDList\030\003 \001(\014\"P\n\031getA"
+  "llClientsUUIDResponse\022\026\n\016clientUUIDList\030"
+  "\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"c\n\024ge"
+  "tDeviceInfoRequest\022#\n\033grpcServerCompress"
+  "ionFormat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\022\022\n\nd"
+  "eviceInfo\030\003 \001(\014\"H\n\025getDeviceInfoResponse"
+  "\022\022\n\ndeviceInfo\030\001 \001(\014\022\033\n\023xpcfGrpcReturnVa"
+  "lue\030\002 \001(\021\"L\n\021init_grpc0Request\022#\n\033grpcSe"
   "rverCompressionFormat\030\001 \001(\005\022\022\n\nclientUUI"
-  "D\030\002 \001(\t\022\024\n\014pipelineMode\030\003 \001(\014\"1\n\022init_gr"
-  "pc1Response\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021"
-  "\"G\n\014startRequest\022#\n\033grpcServerCompressio"
-  "nFormat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\",\n\rsta"
-  "rtResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\""
-  "F\n\013stopRequest\022#\n\033grpcServerCompressionF"
-  "ormat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\"+\n\014stopR"
-  "esponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"i\n\030"
-  "getProcessingModeRequest\022#\n\033grpcServerCo"
-  "mpressionFormat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001("
-  "\t\022\024\n\014pipelineMode\030\003 \001(\014\"N\n\031getProcessing"
-  "ModeResponse\022\024\n\014pipelineMode\030\001 \001(\014\022\033\n\023xp"
-  "cfGrpcReturnValue\030\002 \001(\021\"q\n setCameraPara"
-  "meters_grpc0Request\022#\n\033grpcServerCompres"
-  "sionFormat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\022\024\n\014"
-  "cameraParams\030\003 \001(\014\"@\n!setCameraParameter"
-  "s_grpc0Response\022\033\n\023xpcfGrpcReturnValue\030\001"
-  " \001(\021\"\211\001\n setCameraParameters_grpc1Reques"
-  "t\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\022"
-  "\n\nclientUUID\030\002 \001(\t\022\025\n\rcameraParams1\030\003 \001("
-  "\014\022\025\n\rcameraParams2\030\004 \001(\014\"@\n!setCameraPar"
-  "ameters_grpc1Response\022\033\n\023xpcfGrpcReturnV"
-  "alue\030\001 \001(\021\"\200\001\n!setRectificationParameter"
-  "sRequest\022#\n\033grpcServerCompressionFormat\030"
-  "\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\022\020\n\010rectCam1\030\003 "
-  "\001(\014\022\020\n\010rectCam2\030\004 \001(\014\"A\n\"setRectificatio"
-  "nParametersResponse\022\033\n\023xpcfGrpcReturnVal"
-  "ue\030\001 \001(\021\"k\n\032getCameraParametersRequest\022#"
-  "\n\033grpcServerCompressionFormat\030\001 \001(\005\022\022\n\nc"
-  "lientUUID\030\002 \001(\t\022\024\n\014cameraParams\030\003 \001(\014\"P\n"
-  "\033getCameraParametersResponse\022\024\n\014cameraPa"
-  "rams\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\""
-  "\230\002\n%relocalizeProcessRequest_grpc0Reques"
-  "t\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\022"
-  "\n\nclientUUID\030\002 \001(\t\022\016\n\006images\030\003 \001(\014\022\r\n\005po"
-  "ses\030\004 \001(\014\022\021\n\tfixedPose\030\005 \001(\010\022\026\n\016worldTra"
-  "nsform\030\006 \001(\014\022\021\n\ttimestamp\030\007 \001(\014\022\031\n\021trans"
-  "form3DStatus\030\010 \001(\014\022\023\n\013transform3D\030\t \001(\014\022"
-  "\022\n\nconfidence\030\n \001(\014\022\025\n\rmappingStatus\030\013 \001"
-  "(\014\"\240\001\n&relocalizeProcessRequest_grpc0Res"
+  "D\030\002 \001(\t\"1\n\022init_grpc0Response\022\033\n\023xpcfGrp"
+  "cReturnValue\030\001 \001(\021\"b\n\021init_grpc1Request\022"
+  "#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\022\n\n"
+  "clientUUID\030\002 \001(\t\022\024\n\014pipelineMode\030\003 \001(\014\"1"
+  "\n\022init_grpc1Response\022\033\n\023xpcfGrpcReturnVa"
+  "lue\030\001 \001(\021\"G\n\014startRequest\022#\n\033grpcServerC"
+  "ompressionFormat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001"
+  "(\t\",\n\rstartResponse\022\033\n\023xpcfGrpcReturnVal"
+  "ue\030\001 \001(\021\"F\n\013stopRequest\022#\n\033grpcServerCom"
+  "pressionFormat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t"
+  "\"+\n\014stopResponse\022\033\n\023xpcfGrpcReturnValue\030"
+  "\001 \001(\021\"i\n\030getProcessingModeRequest\022#\n\033grp"
+  "cServerCompressionFormat\030\001 \001(\005\022\022\n\nclient"
+  "UUID\030\002 \001(\t\022\024\n\014pipelineMode\030\003 \001(\014\"N\n\031getP"
+  "rocessingModeResponse\022\024\n\014pipelineMode\030\001 "
+  "\001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"q\n setC"
+  "ameraParameters_grpc0Request\022#\n\033grpcServ"
+  "erCompressionFormat\030\001 \001(\005\022\022\n\nclientUUID\030"
+  "\002 \001(\t\022\024\n\014cameraParams\030\003 \001(\014\"@\n!setCamera"
+  "Parameters_grpc0Response\022\033\n\023xpcfGrpcRetu"
+  "rnValue\030\001 \001(\021\"\211\001\n setCameraParameters_gr"
+  "pc1Request\022#\n\033grpcServerCompressionForma"
+  "t\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\022\025\n\rcameraPar"
+  "ams1\030\003 \001(\014\022\025\n\rcameraParams2\030\004 \001(\014\"@\n!set"
+  "CameraParameters_grpc1Response\022\033\n\023xpcfGr"
+  "pcReturnValue\030\001 \001(\021\"\200\001\n!setRectification"
+  "ParametersRequest\022#\n\033grpcServerCompressi"
+  "onFormat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\022\020\n\010re"
+  "ctCam1\030\003 \001(\014\022\020\n\010rectCam2\030\004 \001(\014\"A\n\"setRec"
+  "tificationParametersResponse\022\033\n\023xpcfGrpc"
+  "ReturnValue\030\001 \001(\021\"k\n\032getCameraParameters"
+  "Request\022#\n\033grpcServerCompressionFormat\030\001"
+  " \001(\005\022\022\n\nclientUUID\030\002 \001(\t\022\024\n\014cameraParams"
+  "\030\003 \001(\014\"P\n\033getCameraParametersResponse\022\024\n"
+  "\014cameraParams\030\001 \001(\014\022\033\n\023xpcfGrpcReturnVal"
+  "ue\030\002 \001(\021\"\230\002\n%relocalizeProcessRequest_gr"
+  "pc0Request\022#\n\033grpcServerCompressionForma"
+  "t\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\022\016\n\006images\030\003 "
+  "\001(\014\022\r\n\005poses\030\004 \001(\014\022\021\n\tfixedPose\030\005 \001(\010\022\026\n"
+  "\016worldTransform\030\006 \001(\014\022\021\n\ttimestamp\030\007 \001(\014"
+  "\022\031\n\021transform3DStatus\030\010 \001(\014\022\023\n\013transform"
+  "3D\030\t \001(\014\022\022\n\nconfidence\030\n \001(\014\022\025\n\rmappingS"
+  "tatus\030\013 \001(\014\"\240\001\n&relocalizeProcessRequest"
+  "_grpc0Response\022\031\n\021transform3DStatus\030\001 \001("
+  "\014\022\023\n\013transform3D\030\002 \001(\014\022\022\n\nconfidence\030\003 \001"
+  "(\014\022\025\n\rmappingStatus\030\004 \001(\014\022\033\n\023xpcfGrpcRet"
+  "urnValue\030\005 \001(\021\"\261\002\n%relocalizeProcessRequ"
+  "est_grpc1Request\022#\n\033grpcServerCompressio"
+  "nFormat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\022\016\n\006ima"
+  "ges\030\003 \001(\014\022\r\n\005poses\030\004 \001(\014\022\021\n\tfixedPose\030\005 "
+  "\001(\010\022\026\n\016worldTransform\030\006 \001(\014\022\021\n\ttimestamp"
+  "\030\007 \001(\014\022\031\n\021transform3DStatus\030\010 \001(\014\022\023\n\013tra"
+  "nsform3D\030\t \001(\014\022\022\n\nconfidence\030\n \001(\014\022\025\n\rma"
+  "ppingStatus\030\013 \001(\014\022\027\n\017detectedObjects\030\014 \001"
+  "(\014\"\271\001\n&relocalizeProcessRequest_grpc1Res"
   "ponse\022\031\n\021transform3DStatus\030\001 \001(\014\022\023\n\013tran"
   "sform3D\030\002 \001(\014\022\022\n\nconfidence\030\003 \001(\014\022\025\n\rmap"
-  "pingStatus\030\004 \001(\014\022\033\n\023xpcfGrpcReturnValue\030"
-  "\005 \001(\021\"\261\002\n%relocalizeProcessRequest_grpc1"
-  "Request\022#\n\033grpcServerCompressionFormat\030\001"
-  " \001(\005\022\022\n\nclientUUID\030\002 \001(\t\022\016\n\006images\030\003 \001(\014"
-  "\022\r\n\005poses\030\004 \001(\014\022\021\n\tfixedPose\030\005 \001(\010\022\026\n\016wo"
-  "rldTransform\030\006 \001(\014\022\021\n\ttimestamp\030\007 \001(\014\022\031\n"
-  "\021transform3DStatus\030\010 \001(\014\022\023\n\013transform3D\030"
-  "\t \001(\014\022\022\n\nconfidence\030\n \001(\014\022\025\n\rmappingStat"
-  "us\030\013 \001(\014\022\027\n\017detectedObjects\030\014 \001(\014\"\271\001\n&re"
-  "localizeProcessRequest_grpc1Response\022\031\n\021"
-  "transform3DStatus\030\001 \001(\014\022\023\n\013transform3D\030\002"
-  " \001(\014\022\022\n\nconfidence\030\003 \001(\014\022\025\n\rmappingStatu"
-  "s\030\004 \001(\014\022\027\n\017detectedObjects\030\005 \001(\014\022\033\n\023xpcf"
-  "GrpcReturnValue\030\006 \001(\021\"\233\001\n\034get3DTransform"
-  "RequestRequest\022#\n\033grpcServerCompressionF"
-  "ormat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\022\031\n\021trans"
-  "form3DStatus\030\003 \001(\014\022\023\n\013transform3D\030\004 \001(\014\022"
-  "\022\n\nconfidence\030\005 \001(\014\"\200\001\n\035get3DTransformRe"
-  "questResponse\022\031\n\021transform3DStatus\030\001 \001(\014"
-  "\022\023\n\013transform3D\030\002 \001(\014\022\022\n\nconfidence\030\003 \001("
-  "\014\022\033\n\023xpcfGrpcReturnValue\030\004 \001(\021\"\211\001\n\034getMa"
-  "ppingDataRequestRequest\022#\n\033grpcServerCom"
+  "pingStatus\030\004 \001(\014\022\027\n\017detectedObjects\030\005 \001("
+  "\014\022\033\n\023xpcfGrpcReturnValue\030\006 \001(\021\"\233\001\n\034get3D"
+  "TransformRequestRequest\022#\n\033grpcServerCom"
   "pressionFormat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t"
-  "\022\031\n\021outputPointClouds\030\003 \001(\014\022\025\n\rkeyframeP"
-  "oses\030\004 \001(\014\"n\n\035getMappingDataRequestRespo"
-  "nse\022\031\n\021outputPointClouds\030\001 \001(\014\022\025\n\rkeyfra"
-  "mePoses\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\003 \001"
-  "(\021\"m\n\022getLastPoseRequest\022#\n\033grpcServerCo"
-  "mpressionFormat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001("
-  "\t\022\020\n\010poseType\030\003 \001(\014\022\014\n\004pose\030\004 \001(\014\"@\n\023get"
-  "LastPoseResponse\022\014\n\004pose\030\001 \001(\014\022\033\n\023xpcfGr"
-  "pcReturnValue\030\002 \001(\021\"_\n\020createMapRequest\022"
-  "#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\025\n\r"
-  "keycloakToken\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\"0\n\021"
-  "createMapResponse\022\033\n\023xpcfGrpcReturnValue"
-  "\030\001 \001(\021\"_\n\020deleteMapRequest\022#\n\033grpcServer"
-  "CompressionFormat\030\001 \001(\005\022\025\n\rkeycloakToken"
-  "\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\"0\n\021deleteMapResp"
-  "onse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"h\n\025get"
-  "AllMapsUUIDRequest\022#\n\033grpcServerCompress"
-  "ionFormat\030\001 \001(\005\022\025\n\rkeycloakToken\030\002 \001(\t\022\023"
-  "\n\013mapUUIDList\030\003 \001(\014\"J\n\026getAllMapsUUIDRes"
-  "ponse\022\023\n\013mapUUIDList\030\001 \001(\014\022\033\n\023xpcfGrpcRe"
-  "turnValue\030\002 \001(\021\"c\n\027getClientMapUUIDReque"
-  "st\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\022"
-  "\022\n\nclientUUID\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\"H\n\030"
-  "getClientMapUUIDResponse\022\017\n\007mapUUID\030\001 \001("
-  "\t\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"}\n\024getMap"
-  "RequestRequest\022#\n\033grpcServerCompressionF"
-  "ormat\030\001 \001(\005\022\025\n\rkeycloakToken\030\002 \001(\t\022\017\n\007ma"
-  "pUUID\030\003 \001(\t\022\030\n\020mapDatastructure\030\004 \001(\014\"N\n"
-  "\025getMapRequestResponse\022\030\n\020mapDatastructu"
-  "re\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"}\n"
-  "\024setMapRequestRequest\022#\n\033grpcServerCompr"
-  "essionFormat\030\001 \001(\005\022\025\n\rkeycloakToken\030\002 \001("
-  "\t\022\017\n\007mapUUID\030\003 \001(\t\022\030\n\020mapDatastructure\030\004"
-  " \001(\014\"4\n\025setMapRequestResponse\022\033\n\023xpcfGrp"
-  "cReturnValue\030\001 \001(\021\"~\n\033getPointCloudReque"
-  "stRequest\022#\n\033grpcServerCompressionFormat"
-  "\030\001 \001(\005\022\025\n\rkeycloakToken\030\002 \001(\t\022\017\n\007mapUUID"
-  "\030\003 \001(\t\022\022\n\npointCloud\030\004 \001(\014\"O\n\034getPointCl"
-  "oudRequestResponse\022\022\n\npointCloud\030\001 \001(\014\022\033"
-  "\n\023xpcfGrpcReturnValue\030\002 \001(\0212\302\024\n\024grpcIFro"
-  "ntEndService\022_\n\016registerClient\022$.grpcIFr"
-  "ontEnd.registerClientRequest\032%.grpcIFron"
-  "tEnd.registerClientResponse\"\000\022e\n\020unregis"
-  "terClient\022&.grpcIFrontEnd.unregisterClie"
-  "ntRequest\032\'.grpcIFrontEnd.unregisterClie"
-  "ntResponse\"\000\022h\n\021getAllClientsUUID\022\'.grpc"
-  "IFrontEnd.getAllClientsUUIDRequest\032(.grp"
-  "cIFrontEnd.getAllClientsUUIDResponse\"\000\022\\"
-  "\n\rgetDeviceInfo\022#.grpcIFrontEnd.getDevic"
-  "eInfoRequest\032$.grpcIFrontEnd.getDeviceIn"
-  "foResponse\"\000\022S\n\ninit_grpc0\022 .grpcIFrontE"
-  "nd.init_grpc0Request\032!.grpcIFrontEnd.ini"
-  "t_grpc0Response\"\000\022S\n\ninit_grpc1\022 .grpcIF"
-  "rontEnd.init_grpc1Request\032!.grpcIFrontEn"
-  "d.init_grpc1Response\"\000\022D\n\005start\022\033.grpcIF"
-  "rontEnd.startRequest\032\034.grpcIFrontEnd.sta"
-  "rtResponse\"\000\022A\n\004stop\022\032.grpcIFrontEnd.sto"
-  "pRequest\032\033.grpcIFrontEnd.stopResponse\"\000\022"
-  "h\n\021getProcessingMode\022\'.grpcIFrontEnd.get"
-  "ProcessingModeRequest\032(.grpcIFrontEnd.ge"
-  "tProcessingModeResponse\"\000\022\200\001\n\031setCameraP"
-  "arameters_grpc0\022/.grpcIFrontEnd.setCamer"
-  "aParameters_grpc0Request\0320.grpcIFrontEnd"
-  ".setCameraParameters_grpc0Response\"\000\022\200\001\n"
-  "\031setCameraParameters_grpc1\022/.grpcIFrontE"
-  "nd.setCameraParameters_grpc1Request\0320.gr"
-  "pcIFrontEnd.setCameraParameters_grpc1Res"
-  "ponse\"\000\022\203\001\n\032setRectificationParameters\0220"
-  ".grpcIFrontEnd.setRectificationParameter"
-  "sRequest\0321.grpcIFrontEnd.setRectificatio"
-  "nParametersResponse\"\000\022n\n\023getCameraParame"
-  "ters\022).grpcIFrontEnd.getCameraParameters"
-  "Request\032*.grpcIFrontEnd.getCameraParamet"
-  "ersResponse\"\000\022\217\001\n\036relocalizeProcessReque"
-  "st_grpc0\0224.grpcIFrontEnd.relocalizeProce"
-  "ssRequest_grpc0Request\0325.grpcIFrontEnd.r"
-  "elocalizeProcessRequest_grpc0Response\"\000\022"
-  "\217\001\n\036relocalizeProcessRequest_grpc1\0224.grp"
-  "cIFrontEnd.relocalizeProcessRequest_grpc"
-  "1Request\0325.grpcIFrontEnd.relocalizeProce"
-  "ssRequest_grpc1Response\"\000\022t\n\025get3DTransf"
-  "ormRequest\022+.grpcIFrontEnd.get3DTransfor"
-  "mRequestRequest\032,.grpcIFrontEnd.get3DTra"
-  "nsformRequestResponse\"\000\022t\n\025getMappingDat"
-  "aRequest\022+.grpcIFrontEnd.getMappingDataR"
-  "equestRequest\032,.grpcIFrontEnd.getMapping"
-  "DataRequestResponse\"\000\022V\n\013getLastPose\022!.g"
-  "rpcIFrontEnd.getLastPoseRequest\032\".grpcIF"
-  "rontEnd.getLastPoseResponse\"\000\022P\n\tcreateM"
-  "ap\022\037.grpcIFrontEnd.createMapRequest\032 .gr"
-  "pcIFrontEnd.createMapResponse\"\000\022P\n\tdelet"
-  "eMap\022\037.grpcIFrontEnd.deleteMapRequest\032 ."
-  "grpcIFrontEnd.deleteMapResponse\"\000\022_\n\016get"
-  "AllMapsUUID\022$.grpcIFrontEnd.getAllMapsUU"
-  "IDRequest\032%.grpcIFrontEnd.getAllMapsUUID"
-  "Response\"\000\022e\n\020getClientMapUUID\022&.grpcIFr"
-  "ontEnd.getClientMapUUIDRequest\032\'.grpcIFr"
-  "ontEnd.getClientMapUUIDResponse\"\000\022\\\n\rget"
-  "MapRequest\022#.grpcIFrontEnd.getMapRequest"
-  "Request\032$.grpcIFrontEnd.getMapRequestRes"
-  "ponse\"\000\022\\\n\rsetMapRequest\022#.grpcIFrontEnd"
-  ".setMapRequestRequest\032$.grpcIFrontEnd.se"
-  "tMapRequestResponse\"\000\022q\n\024getPointCloudRe"
-  "quest\022*.grpcIFrontEnd.getPointCloudReque"
-  "stRequest\032+.grpcIFrontEnd.getPointCloudR"
-  "equestResponse\"\000b\006proto3"
+  "\022\031\n\021transform3DStatus\030\003 \001(\014\022\023\n\013transform"
+  "3D\030\004 \001(\014\022\022\n\nconfidence\030\005 \001(\014\"\200\001\n\035get3DTr"
+  "ansformRequestResponse\022\031\n\021transform3DSta"
+  "tus\030\001 \001(\014\022\023\n\013transform3D\030\002 \001(\014\022\022\n\nconfid"
+  "ence\030\003 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\004 \001(\021\""
+  "\211\001\n\034getMappingDataRequestRequest\022#\n\033grpc"
+  "ServerCompressionFormat\030\001 \001(\005\022\022\n\nclientU"
+  "UID\030\002 \001(\t\022\031\n\021outputPointClouds\030\003 \001(\014\022\025\n\r"
+  "keyframePoses\030\004 \001(\014\"n\n\035getMappingDataReq"
+  "uestResponse\022\031\n\021outputPointClouds\030\001 \001(\014\022"
+  "\025\n\rkeyframePoses\030\002 \001(\014\022\033\n\023xpcfGrpcReturn"
+  "Value\030\003 \001(\021\"m\n\022getLastPoseRequest\022#\n\033grp"
+  "cServerCompressionFormat\030\001 \001(\005\022\022\n\nclient"
+  "UUID\030\002 \001(\t\022\020\n\010poseType\030\003 \001(\014\022\014\n\004pose\030\004 \001"
+  "(\014\"@\n\023getLastPoseResponse\022\014\n\004pose\030\001 \001(\014\022"
+  "\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"_\n\020createMa"
+  "pRequest\022#\n\033grpcServerCompressionFormat\030"
+  "\001 \001(\005\022\025\n\rkeycloakToken\030\002 \001(\t\022\017\n\007mapUUID\030"
+  "\003 \001(\t\"0\n\021createMapResponse\022\033\n\023xpcfGrpcRe"
+  "turnValue\030\001 \001(\021\"_\n\020deleteMapRequest\022#\n\033g"
+  "rpcServerCompressionFormat\030\001 \001(\005\022\025\n\rkeyc"
+  "loakToken\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\"0\n\021dele"
+  "teMapResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001"
+  "(\021\"h\n\025getAllMapsUUIDRequest\022#\n\033grpcServe"
+  "rCompressionFormat\030\001 \001(\005\022\025\n\rkeycloakToke"
+  "n\030\002 \001(\t\022\023\n\013mapUUIDList\030\003 \001(\014\"J\n\026getAllMa"
+  "psUUIDResponse\022\023\n\013mapUUIDList\030\001 \001(\014\022\033\n\023x"
+  "pcfGrpcReturnValue\030\002 \001(\021\"c\n\027getClientMap"
+  "UUIDRequest\022#\n\033grpcServerCompressionForm"
+  "at\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\022\017\n\007mapUUID\030"
+  "\003 \001(\t\"H\n\030getClientMapUUIDResponse\022\017\n\007map"
+  "UUID\030\001 \001(\t\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\""
+  "}\n\024getMapRequestRequest\022#\n\033grpcServerCom"
+  "pressionFormat\030\001 \001(\005\022\025\n\rkeycloakToken\030\002 "
+  "\001(\t\022\017\n\007mapUUID\030\003 \001(\t\022\030\n\020mapDatastructure"
+  "\030\004 \001(\014\"N\n\025getMapRequestResponse\022\030\n\020mapDa"
+  "tastructure\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue"
+  "\030\002 \001(\021\"}\n\024setMapRequestRequest\022#\n\033grpcSe"
+  "rverCompressionFormat\030\001 \001(\005\022\025\n\rkeycloakT"
+  "oken\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\022\030\n\020mapDatast"
+  "ructure\030\004 \001(\014\"4\n\025setMapRequestResponse\022\033"
+  "\n\023xpcfGrpcReturnValue\030\001 \001(\021\"~\n\033getPointC"
+  "loudRequestRequest\022#\n\033grpcServerCompress"
+  "ionFormat\030\001 \001(\005\022\025\n\rkeycloakToken\030\002 \001(\t\022\017"
+  "\n\007mapUUID\030\003 \001(\t\022\022\n\npointCloud\030\004 \001(\014\"O\n\034g"
+  "etPointCloudRequestResponse\022\022\n\npointClou"
+  "d\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\0212\302\024\n"
+  "\024grpcIFrontEndService\022_\n\016registerClient\022"
+  "$.grpcIFrontEnd.registerClientRequest\032%."
+  "grpcIFrontEnd.registerClientResponse\"\000\022e"
+  "\n\020unregisterClient\022&.grpcIFrontEnd.unreg"
+  "isterClientRequest\032\'.grpcIFrontEnd.unreg"
+  "isterClientResponse\"\000\022h\n\021getAllClientsUU"
+  "ID\022\'.grpcIFrontEnd.getAllClientsUUIDRequ"
+  "est\032(.grpcIFrontEnd.getAllClientsUUIDRes"
+  "ponse\"\000\022\\\n\rgetDeviceInfo\022#.grpcIFrontEnd"
+  ".getDeviceInfoRequest\032$.grpcIFrontEnd.ge"
+  "tDeviceInfoResponse\"\000\022S\n\ninit_grpc0\022 .gr"
+  "pcIFrontEnd.init_grpc0Request\032!.grpcIFro"
+  "ntEnd.init_grpc0Response\"\000\022S\n\ninit_grpc1"
+  "\022 .grpcIFrontEnd.init_grpc1Request\032!.grp"
+  "cIFrontEnd.init_grpc1Response\"\000\022D\n\005start"
+  "\022\033.grpcIFrontEnd.startRequest\032\034.grpcIFro"
+  "ntEnd.startResponse\"\000\022A\n\004stop\022\032.grpcIFro"
+  "ntEnd.stopRequest\032\033.grpcIFrontEnd.stopRe"
+  "sponse\"\000\022h\n\021getProcessingMode\022\'.grpcIFro"
+  "ntEnd.getProcessingModeRequest\032(.grpcIFr"
+  "ontEnd.getProcessingModeResponse\"\000\022\200\001\n\031s"
+  "etCameraParameters_grpc0\022/.grpcIFrontEnd"
+  ".setCameraParameters_grpc0Request\0320.grpc"
+  "IFrontEnd.setCameraParameters_grpc0Respo"
+  "nse\"\000\022\200\001\n\031setCameraParameters_grpc1\022/.gr"
+  "pcIFrontEnd.setCameraParameters_grpc1Req"
+  "uest\0320.grpcIFrontEnd.setCameraParameters"
+  "_grpc1Response\"\000\022\203\001\n\032setRectificationPar"
+  "ameters\0220.grpcIFrontEnd.setRectification"
+  "ParametersRequest\0321.grpcIFrontEnd.setRec"
+  "tificationParametersResponse\"\000\022n\n\023getCam"
+  "eraParameters\022).grpcIFrontEnd.getCameraP"
+  "arametersRequest\032*.grpcIFrontEnd.getCame"
+  "raParametersResponse\"\000\022\217\001\n\036relocalizePro"
+  "cessRequest_grpc0\0224.grpcIFrontEnd.reloca"
+  "lizeProcessRequest_grpc0Request\0325.grpcIF"
+  "rontEnd.relocalizeProcessRequest_grpc0Re"
+  "sponse\"\000\022\217\001\n\036relocalizeProcessRequest_gr"
+  "pc1\0224.grpcIFrontEnd.relocalizeProcessReq"
+  "uest_grpc1Request\0325.grpcIFrontEnd.reloca"
+  "lizeProcessRequest_grpc1Response\"\000\022t\n\025ge"
+  "t3DTransformRequest\022+.grpcIFrontEnd.get3"
+  "DTransformRequestRequest\032,.grpcIFrontEnd"
+  ".get3DTransformRequestResponse\"\000\022t\n\025getM"
+  "appingDataRequest\022+.grpcIFrontEnd.getMap"
+  "pingDataRequestRequest\032,.grpcIFrontEnd.g"
+  "etMappingDataRequestResponse\"\000\022V\n\013getLas"
+  "tPose\022!.grpcIFrontEnd.getLastPoseRequest"
+  "\032\".grpcIFrontEnd.getLastPoseResponse\"\000\022P"
+  "\n\tcreateMap\022\037.grpcIFrontEnd.createMapReq"
+  "uest\032 .grpcIFrontEnd.createMapResponse\"\000"
+  "\022P\n\tdeleteMap\022\037.grpcIFrontEnd.deleteMapR"
+  "equest\032 .grpcIFrontEnd.deleteMapResponse"
+  "\"\000\022_\n\016getAllMapsUUID\022$.grpcIFrontEnd.get"
+  "AllMapsUUIDRequest\032%.grpcIFrontEnd.getAl"
+  "lMapsUUIDResponse\"\000\022e\n\020getClientMapUUID\022"
+  "&.grpcIFrontEnd.getClientMapUUIDRequest\032"
+  "\'.grpcIFrontEnd.getClientMapUUIDResponse"
+  "\"\000\022\\\n\rgetMapRequest\022#.grpcIFrontEnd.getM"
+  "apRequestRequest\032$.grpcIFrontEnd.getMapR"
+  "equestResponse\"\000\022\\\n\rsetMapRequest\022#.grpc"
+  "IFrontEnd.setMapRequestRequest\032$.grpcIFr"
+  "ontEnd.setMapRequestResponse\"\000\022q\n\024getPoi"
+  "ntCloudRequest\022*.grpcIFrontEnd.getPointC"
+  "loudRequestRequest\032+.grpcIFrontEnd.getPo"
+  "intCloudRequestResponse\"\000b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_grpcIFrontEndService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_grpcIFrontEndService_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_grpcIFrontEndService_2eproto = {
-    false, false, 7824, descriptor_table_protodef_grpcIFrontEndService_2eproto,
+    false, false, 7833, descriptor_table_protodef_grpcIFrontEndService_2eproto,
     "grpcIFrontEndService.proto",
     &descriptor_table_grpcIFrontEndService_2eproto_once, descriptor_table_grpcIFrontEndService_2eproto_deps, 1, 50,
     schemas, file_default_instances, TableStruct_grpcIFrontEndService_2eproto::offsets,
@@ -1566,7 +1566,7 @@ registerClientRequest::registerClientRequest(const registerClientRequest& from)
   new (&_impl_) Impl_{
       decltype(_impl_.keycloaktoken_){}
     , decltype(_impl_.deviceinfo_){}
-    , decltype(_impl_.mapuuid_){}
+    , decltype(_impl_.worldelementuuid_){}
     , decltype(_impl_.clientuuid_){}
     , decltype(_impl_.grpcservercompressionformat_){}
     , /*decltype(_impl_._cached_size_)*/{}};
@@ -1588,12 +1588,12 @@ registerClientRequest::registerClientRequest(const registerClientRequest& from)
     _this->_impl_.deviceinfo_.Set(from._internal_deviceinfo(), 
       _this->GetArenaForAllocation());
   }
-  _impl_.mapuuid_.InitDefault();
+  _impl_.worldelementuuid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.mapuuid_.Set("", GetArenaForAllocation());
+    _impl_.worldelementuuid_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_mapuuid().empty()) {
-    _this->_impl_.mapuuid_.Set(from._internal_mapuuid(), 
+  if (!from._internal_worldelementuuid().empty()) {
+    _this->_impl_.worldelementuuid_.Set(from._internal_worldelementuuid(), 
       _this->GetArenaForAllocation());
   }
   _impl_.clientuuid_.InitDefault();
@@ -1615,7 +1615,7 @@ inline void registerClientRequest::SharedCtor(
   new (&_impl_) Impl_{
       decltype(_impl_.keycloaktoken_){}
     , decltype(_impl_.deviceinfo_){}
-    , decltype(_impl_.mapuuid_){}
+    , decltype(_impl_.worldelementuuid_){}
     , decltype(_impl_.clientuuid_){}
     , decltype(_impl_.grpcservercompressionformat_){0}
     , /*decltype(_impl_._cached_size_)*/{}
@@ -1628,9 +1628,9 @@ inline void registerClientRequest::SharedCtor(
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.deviceinfo_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.mapuuid_.InitDefault();
+  _impl_.worldelementuuid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.mapuuid_.Set("", GetArenaForAllocation());
+    _impl_.worldelementuuid_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.clientuuid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -1651,7 +1651,7 @@ inline void registerClientRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.keycloaktoken_.Destroy();
   _impl_.deviceinfo_.Destroy();
-  _impl_.mapuuid_.Destroy();
+  _impl_.worldelementuuid_.Destroy();
   _impl_.clientuuid_.Destroy();
 }
 
@@ -1667,7 +1667,7 @@ void registerClientRequest::Clear() {
 
   _impl_.keycloaktoken_.ClearToEmpty();
   _impl_.deviceinfo_.ClearToEmpty();
-  _impl_.mapuuid_.ClearToEmpty();
+  _impl_.worldelementuuid_.ClearToEmpty();
   _impl_.clientuuid_.ClearToEmpty();
   _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1706,13 +1706,13 @@ const char* registerClientRequest::_InternalParse(const char* ptr, ::_pbi::Parse
         } else
           goto handle_unusual;
         continue;
-      // string mapUUID = 4;
+      // string worldElementUUID = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          auto str = _internal_mutable_mapuuid();
+          auto str = _internal_mutable_worldelementuuid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "grpcIFrontEnd.registerClientRequest.mapUUID"));
+          CHK_(::_pbi::VerifyUTF8(str, "grpcIFrontEnd.registerClientRequest.worldElementUUID"));
         } else
           goto handle_unusual;
         continue;
@@ -1777,14 +1777,14 @@ uint8_t* registerClientRequest::_InternalSerialize(
         3, this->_internal_deviceinfo(), target);
   }
 
-  // string mapUUID = 4;
-  if (!this->_internal_mapuuid().empty()) {
+  // string worldElementUUID = 4;
+  if (!this->_internal_worldelementuuid().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_mapuuid().data(), static_cast<int>(this->_internal_mapuuid().length()),
+      this->_internal_worldelementuuid().data(), static_cast<int>(this->_internal_worldelementuuid().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "grpcIFrontEnd.registerClientRequest.mapUUID");
+      "grpcIFrontEnd.registerClientRequest.worldElementUUID");
     target = stream->WriteStringMaybeAliased(
-        4, this->_internal_mapuuid(), target);
+        4, this->_internal_worldelementuuid(), target);
   }
 
   // string clientUUID = 5;
@@ -1827,11 +1827,11 @@ size_t registerClientRequest::ByteSizeLong() const {
         this->_internal_deviceinfo());
   }
 
-  // string mapUUID = 4;
-  if (!this->_internal_mapuuid().empty()) {
+  // string worldElementUUID = 4;
+  if (!this->_internal_worldelementuuid().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_mapuuid());
+        this->_internal_worldelementuuid());
   }
 
   // string clientUUID = 5;
@@ -1870,8 +1870,8 @@ void registerClientRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, 
   if (!from._internal_deviceinfo().empty()) {
     _this->_internal_set_deviceinfo(from._internal_deviceinfo());
   }
-  if (!from._internal_mapuuid().empty()) {
-    _this->_internal_set_mapuuid(from._internal_mapuuid());
+  if (!from._internal_worldelementuuid().empty()) {
+    _this->_internal_set_worldelementuuid(from._internal_worldelementuuid());
   }
   if (!from._internal_clientuuid().empty()) {
     _this->_internal_set_clientuuid(from._internal_clientuuid());
@@ -1907,8 +1907,8 @@ void registerClientRequest::InternalSwap(registerClientRequest* other) {
       &other->_impl_.deviceinfo_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.mapuuid_, lhs_arena,
-      &other->_impl_.mapuuid_, rhs_arena
+      &_impl_.worldelementuuid_, lhs_arena,
+      &other->_impl_.worldelementuuid_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.clientuuid_, lhs_arena,
