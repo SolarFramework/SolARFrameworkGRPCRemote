@@ -14,22 +14,22 @@ message init_grpc0Response
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-message startRequest
+message start_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
 }
 
-message startResponse
+message start_grpc0Response
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-message stopRequest
+message stop_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
 }
 
-message stopResponse
+message stop_grpc0Response
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
@@ -37,7 +37,7 @@ sint32 xpcfGrpcReturnValue = 1;
 message init_grpc1Request
 {
 int32 grpcServerCompressionFormat  = 1;
-string mapupdateServiceURL = 2;
+string clientUUID = 2;
 }
 
 message init_grpc1Response
@@ -45,10 +45,45 @@ message init_grpc1Response
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message init_grpc2Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+string mapupdateServiceURL = 3;
+}
+
+message init_grpc2Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message start_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+}
+
+message start_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stop_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+}
+
+message stop_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 message setCameraParametersRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes cameraParams = 2;
+string clientUUID = 2;
+bytes cameraParams = 3;
 }
 
 message setCameraParametersResponse
@@ -59,7 +94,8 @@ sint32 xpcfGrpcReturnValue = 1;
 message getCameraParametersRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes cameraParams = 2;
+string clientUUID = 2;
+bytes cameraParams = 3;
 }
 
 message getCameraParametersResponse
@@ -71,10 +107,11 @@ sint32 xpcfGrpcReturnValue = 2;
 message relocalizeProcessRequest_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes image = 2;
-bytes poseCoarse = 3;
-bytes pose = 4;
-bytes confidence = 5;
+string clientUUID = 2;
+bytes image = 3;
+bytes poseCoarse = 4;
+bytes pose = 5;
+bytes confidence = 6;
 }
 
 message relocalizeProcessRequest_grpc0Response
@@ -87,11 +124,12 @@ sint32 xpcfGrpcReturnValue = 3;
 message relocalizeProcessRequest_grpc1Request
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes image = 2;
-bytes poseCoarse = 3;
-bytes currPointCloud = 4;
-bytes pose = 5;
-bytes confidence = 6;
+string clientUUID = 2;
+bytes image = 3;
+bytes poseCoarse = 4;
+bytes currPointCloud = 5;
+bytes pose = 6;
+bytes confidence = 7;
 }
 
 message relocalizeProcessRequest_grpc1Response
@@ -105,11 +143,12 @@ sint32 xpcfGrpcReturnValue = 4;
 message relocalizeProcessRequest_grpc2Request
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes image = 2;
-bytes poseCoarse = 3;
-bytes pose = 4;
-bytes confidence = 5;
-bytes detectedObjects = 6;
+string clientUUID = 2;
+bytes image = 3;
+bytes poseCoarse = 4;
+bytes pose = 5;
+bytes confidence = 6;
+bytes detectedObjects = 7;
 }
 
 message relocalizeProcessRequest_grpc2Response
@@ -123,7 +162,8 @@ sint32 xpcfGrpcReturnValue = 4;
 message getMapRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes map = 2;
+string clientUUID = 2;
+bytes map = 3;
 }
 
 message getMapRequestResponse
@@ -134,9 +174,12 @@ sint32 xpcfGrpcReturnValue = 2;
 
 service grpcIRelocalizationPipelineService {
 rpc init_grpc0(init_grpc0Request) returns(init_grpc0Response) {}
-rpc start(startRequest) returns(startResponse) {}
-rpc stop(stopRequest) returns(stopResponse) {}
+rpc start_grpc0(start_grpc0Request) returns(start_grpc0Response) {}
+rpc stop_grpc0(stop_grpc0Request) returns(stop_grpc0Response) {}
 rpc init_grpc1(init_grpc1Request) returns(init_grpc1Response) {}
+rpc init_grpc2(init_grpc2Request) returns(init_grpc2Response) {}
+rpc start_grpc1(start_grpc1Request) returns(start_grpc1Response) {}
+rpc stop_grpc1(stop_grpc1Request) returns(stop_grpc1Response) {}
 rpc setCameraParameters(setCameraParametersRequest) returns(setCameraParametersResponse) {}
 rpc getCameraParameters(getCameraParametersRequest) returns(getCameraParametersResponse) {}
 rpc relocalizeProcessRequest_grpc0(relocalizeProcessRequest_grpc0Request) returns(relocalizeProcessRequest_grpc0Response) {}

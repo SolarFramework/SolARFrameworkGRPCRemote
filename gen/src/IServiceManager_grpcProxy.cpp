@@ -136,7 +136,7 @@ SolAR::FrameworkReturnCode  IServiceManager_grpcProxy::getService(SolAR::api::se
 }
 
 
-SolAR::FrameworkReturnCode  IServiceManager_grpcProxy::getAndLockService(SolAR::api::service::ServiceType const serviceType, std::string const& clientUUID, std::string& serviceURL)
+SolAR::FrameworkReturnCode  IServiceManager_grpcProxy::getAndLockService(SolAR::api::service::ServiceType const serviceType, std::string const& uuid, std::string& serviceURL)
 {
   ::grpc::ClientContext context;
   ::grpcIServiceManager::getAndLockServiceRequest reqIn;
@@ -147,7 +147,7 @@ SolAR::FrameworkReturnCode  IServiceManager_grpcProxy::getAndLockService(SolAR::
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_servicetype(static_cast<int32_t>(serviceType));
-  reqIn.set_clientuuid(clientUUID);
+  reqIn.set_uuid(uuid);
   reqIn.set_serviceurl(serviceURL);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -169,7 +169,7 @@ SolAR::FrameworkReturnCode  IServiceManager_grpcProxy::getAndLockService(SolAR::
 }
 
 
-SolAR::FrameworkReturnCode  IServiceManager_grpcProxy::unlockService(SolAR::api::service::ServiceType const serviceType, std::string const& clientUUID)
+SolAR::FrameworkReturnCode  IServiceManager_grpcProxy::unlockService(SolAR::api::service::ServiceType const serviceType, std::string const& uuid, std::string const& serviceURL)
 {
   ::grpc::ClientContext context;
   ::grpcIServiceManager::unlockServiceRequest reqIn;
@@ -180,7 +180,8 @@ SolAR::FrameworkReturnCode  IServiceManager_grpcProxy::unlockService(SolAR::api:
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_servicetype(static_cast<int32_t>(serviceType));
-  reqIn.set_clientuuid(clientUUID);
+  reqIn.set_uuid(uuid);
+  reqIn.set_serviceurl(serviceURL);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IServiceManager_grpcProxy::unlockService request sent at " << to_simple_string(start) << std::endl;

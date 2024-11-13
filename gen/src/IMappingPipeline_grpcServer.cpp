@@ -14,7 +14,7 @@ IMappingPipeline_grpcServer::IMappingPipeline_grpcServer():xpcf::ConfigurableBas
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::pipeline::IMappingPipeline>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(13);
+  m_grpcServerCompressionConfig.resize(14);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -117,9 +117,33 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcServer::init request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string clientUUID = request->clientuuid();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init(clientUUID);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcServer::init response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IMappingPipeline_grpcServer::grpcIMappingPipelineServiceImpl::init_grpc2(::grpc::ServerContext* context, const ::grpcIMappingPipeline::init_grpc2Request* request, ::grpcIMappingPipeline::init_grpc2Response* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "init", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMappingPipeline_grpcServer::init request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string clientUUID = request->clientuuid();
   std::string relocalizationServiceURL = request->relocalizationserviceurl();
   std::string mapupdateServiceURL = request->mapupdateserviceurl();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init(relocalizationServiceURL, mapupdateServiceURL);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init(clientUUID, relocalizationServiceURL, mapupdateServiceURL);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();

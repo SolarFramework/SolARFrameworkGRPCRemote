@@ -25,14 +25,17 @@ class IRelocalizationTrackablePipeline_grpcProxy:  public org::bcom::xpcf::Confi
     SolAR::FrameworkReturnCode init()     override;
     SolAR::FrameworkReturnCode start()     override;
     SolAR::FrameworkReturnCode stop()     override;
-    SolAR::FrameworkReturnCode init(std::string const& mapupdateServiceURL)     override;
-    SolAR::FrameworkReturnCode setCameraParameters(SolAR::datastructure::CameraParameters const& cameraParams)     override;
-    SolAR::FrameworkReturnCode getCameraParameters(SolAR::datastructure::CameraParameters& cameraParams)     const     override;
-    SolAR::FrameworkReturnCode relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence, SolAR::datastructure::Transform3Df const& poseCoarse)     override;
-    SolAR::FrameworkReturnCode relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, std::vector<SRef<SolAR::datastructure::CloudPoint>>& currPointCloud, SolAR::datastructure::Transform3Df& pose, float_t& confidence, SolAR::datastructure::Transform3Df const& poseCoarse)     override;
-    SolAR::FrameworkReturnCode relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence, std::vector<SolAR::datastructure::DetectedObject>& detectedObjects, SolAR::datastructure::Transform3Df const& poseCoarse)     override;
-    SolAR::FrameworkReturnCode getMapRequest(SRef<SolAR::datastructure::Map>& map)     const     override;
-    SolAR::FrameworkReturnCode init(std::vector<SRef<SolAR::datastructure::Trackable>> const& trackableObjects)     override;
+    SolAR::FrameworkReturnCode init(std::string const& clientUUID)     override;
+    SolAR::FrameworkReturnCode init(std::string const& clientUUID, std::string const& mapupdateServiceURL)     override;
+    SolAR::FrameworkReturnCode start(std::string const& clientUUID)     override;
+    SolAR::FrameworkReturnCode stop(std::string const& clientUUID)     override;
+    SolAR::FrameworkReturnCode setCameraParameters(std::string const& clientUUID, SolAR::datastructure::CameraParameters const& cameraParams)     override;
+    SolAR::FrameworkReturnCode getCameraParameters(std::string const& clientUUID, SolAR::datastructure::CameraParameters& cameraParams)     const     override;
+    SolAR::FrameworkReturnCode relocalizeProcessRequest(std::string const& clientUUID, SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence, SolAR::datastructure::Transform3Df const& poseCoarse)     override;
+    SolAR::FrameworkReturnCode relocalizeProcessRequest(std::string const& clientUUID, SRef<SolAR::datastructure::Image> const image, std::vector<SRef<SolAR::datastructure::CloudPoint>>& currPointCloud, SolAR::datastructure::Transform3Df& pose, float_t& confidence, SolAR::datastructure::Transform3Df const& poseCoarse)     override;
+    SolAR::FrameworkReturnCode relocalizeProcessRequest(std::string const& clientUUID, SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence, std::vector<SolAR::datastructure::DetectedObject>& detectedObjects, SolAR::datastructure::Transform3Df const& poseCoarse)     override;
+    SolAR::FrameworkReturnCode getMapRequest(std::string const& clientUUID, SRef<SolAR::datastructure::Map>& map)     const     override;
+    SolAR::FrameworkReturnCode init(std::string const& clientUUID, std::vector<SRef<SolAR::datastructure::Trackable>> const& trackableObjects)     override;
 
 
   private:

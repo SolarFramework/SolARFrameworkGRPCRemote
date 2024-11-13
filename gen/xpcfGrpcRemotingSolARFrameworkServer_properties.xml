@@ -35,6 +35,7 @@
         <value>method|start|none|0</value>
         <value>method|stop|none|0</value>
         <value>method|init|none|0</value>
+        <value>method|init|none|0</value>
         <value>method|setCameraParameters|none|0</value>
         <value>method|setCameraParameters|none|0</value>
         <value>method|setRectificationParameters|none|0</value>
@@ -52,6 +53,9 @@
         <value>method|start|none|0</value>
         <value>method|stop|none|0</value>
         <value>method|init|none|0</value>
+        <value>method|init|none|0</value>
+        <value>method|start|none|0</value>
+        <value>method|stop|none|0</value>
         <value>method|setCameraParameters|none|0</value>
         <value>method|getCameraParameters|none|0</value>
         <value>method|relocalizeProcessRequest|none|0</value>
@@ -67,6 +71,9 @@
         <value>method|start|none|0</value>
         <value>method|stop|none|0</value>
         <value>method|init|none|0</value>
+        <value>method|init|none|0</value>
+        <value>method|start|none|0</value>
+        <value>method|stop|none|0</value>
         <value>method|setCameraParameters|none|0</value>
         <value>method|getCameraParameters|none|0</value>
         <value>method|relocalizeProcessRequest|none|0</value>

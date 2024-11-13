@@ -19,7 +19,7 @@ IRelocalizationTrackablePipeline_grpcProxy::IRelocalizationTrackablePipeline_grp
   declareInterface<SolAR::api::pipeline::IRelocalizationTrackablePipeline>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(12);
+  m_grpcProxyCompressionConfig.resize(15);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -79,8 +79,8 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::init()
 SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::start()
 {
   ::grpc::ClientContext context;
-  ::grpcIRelocalizationTrackablePipeline::startRequest reqIn;
-  ::grpcIRelocalizationTrackablePipeline::startResponse respOut;
+  ::grpcIRelocalizationTrackablePipeline::start_grpc0Request reqIn;
+  ::grpcIRelocalizationTrackablePipeline::start_grpc0Response respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "start", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
@@ -90,15 +90,15 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::start()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationTrackablePipeline_grpcProxy::start request sent at " << to_simple_string(start) << std::endl;
   #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->start(&context, reqIn, &respOut);
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->start_grpc0(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationTrackablePipeline_grpcProxy::start response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "start rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIRelocalizationTrackablePipelineService","start",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    std::cout << "start_grpc0 rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIRelocalizationTrackablePipelineService","start_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
@@ -108,8 +108,8 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::start()
 SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::stop()
 {
   ::grpc::ClientContext context;
-  ::grpcIRelocalizationTrackablePipeline::stopRequest reqIn;
-  ::grpcIRelocalizationTrackablePipeline::stopResponse respOut;
+  ::grpcIRelocalizationTrackablePipeline::stop_grpc0Request reqIn;
+  ::grpcIRelocalizationTrackablePipeline::stop_grpc0Response respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "stop", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
@@ -119,22 +119,22 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::stop()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationTrackablePipeline_grpcProxy::stop request sent at " << to_simple_string(start) << std::endl;
   #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->stop(&context, reqIn, &respOut);
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->stop_grpc0(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationTrackablePipeline_grpcProxy::stop response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "stop rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIRelocalizationTrackablePipelineService","stop",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    std::cout << "stop_grpc0 rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIRelocalizationTrackablePipelineService","stop_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
-SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::init(std::string const& mapupdateServiceURL)
+SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::init(std::string const& clientUUID)
 {
   ::grpc::ClientContext context;
   ::grpcIRelocalizationTrackablePipeline::init_grpc1Request reqIn;
@@ -144,7 +144,7 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::init(std
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
-  reqIn.set_mapupdateserviceurl(mapupdateServiceURL);
+  reqIn.set_clientuuid(clientUUID);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationTrackablePipeline_grpcProxy::init request sent at " << to_simple_string(start) << std::endl;
@@ -164,7 +164,98 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::init(std
 }
 
 
-SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::setCameraParameters(SolAR::datastructure::CameraParameters const& cameraParams)
+SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::init(std::string const& clientUUID, std::string const& mapupdateServiceURL)
+{
+  ::grpc::ClientContext context;
+  ::grpcIRelocalizationTrackablePipeline::init_grpc2Request reqIn;
+  ::grpcIRelocalizationTrackablePipeline::init_grpc2Response respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "init", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_clientuuid(clientUUID);
+  reqIn.set_mapupdateserviceurl(mapupdateServiceURL);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationTrackablePipeline_grpcProxy::init request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->init_grpc2(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationTrackablePipeline_grpcProxy::init response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "init_grpc2 rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIRelocalizationTrackablePipelineService","init_grpc2",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::start(std::string const& clientUUID)
+{
+  ::grpc::ClientContext context;
+  ::grpcIRelocalizationTrackablePipeline::start_grpc1Request reqIn;
+  ::grpcIRelocalizationTrackablePipeline::start_grpc1Response respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "start", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_clientuuid(clientUUID);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationTrackablePipeline_grpcProxy::start request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->start_grpc1(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationTrackablePipeline_grpcProxy::start response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "start_grpc1 rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIRelocalizationTrackablePipelineService","start_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::stop(std::string const& clientUUID)
+{
+  ::grpc::ClientContext context;
+  ::grpcIRelocalizationTrackablePipeline::stop_grpc1Request reqIn;
+  ::grpcIRelocalizationTrackablePipeline::stop_grpc1Response respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "stop", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_clientuuid(clientUUID);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationTrackablePipeline_grpcProxy::stop request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->stop_grpc1(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationTrackablePipeline_grpcProxy::stop response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "stop_grpc1 rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIRelocalizationTrackablePipelineService","stop_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::setCameraParameters(std::string const& clientUUID, SolAR::datastructure::CameraParameters const& cameraParams)
 {
   ::grpc::ClientContext context;
   ::grpcIRelocalizationTrackablePipeline::setCameraParametersRequest reqIn;
@@ -174,6 +265,7 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::setCamer
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
+  reqIn.set_clientuuid(clientUUID);
   reqIn.set_cameraparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(cameraParams));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -194,7 +286,7 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::setCamer
 }
 
 
-SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::getCameraParameters(SolAR::datastructure::CameraParameters& cameraParams) const
+SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::getCameraParameters(std::string const& clientUUID, SolAR::datastructure::CameraParameters& cameraParams) const
 {
   ::grpc::ClientContext context;
   ::grpcIRelocalizationTrackablePipeline::getCameraParametersRequest reqIn;
@@ -204,6 +296,7 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::getCamer
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
+  reqIn.set_clientuuid(clientUUID);
   reqIn.set_cameraparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(cameraParams));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -225,7 +318,7 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::getCamer
 }
 
 
-SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence, SolAR::datastructure::Transform3Df const& poseCoarse)
+SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::relocalizeProcessRequest(std::string const& clientUUID, SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence, SolAR::datastructure::Transform3Df const& poseCoarse)
 {
   ::grpc::ClientContext context;
   ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc0Request reqIn;
@@ -235,6 +328,7 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::relocali
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
+  reqIn.set_clientuuid(clientUUID);
   reqIn.set_image(xpcf::serialize<SRef<SolAR::datastructure::Image>>(image));
   reqIn.set_posecoarse(xpcf::serialize<SolAR::datastructure::Transform3Df>(poseCoarse));
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
@@ -260,7 +354,7 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::relocali
 }
 
 
-SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, std::vector<SRef<SolAR::datastructure::CloudPoint>>& currPointCloud, SolAR::datastructure::Transform3Df& pose, float_t& confidence, SolAR::datastructure::Transform3Df const& poseCoarse)
+SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::relocalizeProcessRequest(std::string const& clientUUID, SRef<SolAR::datastructure::Image> const image, std::vector<SRef<SolAR::datastructure::CloudPoint>>& currPointCloud, SolAR::datastructure::Transform3Df& pose, float_t& confidence, SolAR::datastructure::Transform3Df const& poseCoarse)
 {
   ::grpc::ClientContext context;
   ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc1Request reqIn;
@@ -270,6 +364,7 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::relocali
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
+  reqIn.set_clientuuid(clientUUID);
   reqIn.set_image(xpcf::serialize<SRef<SolAR::datastructure::Image>>(image));
   reqIn.set_posecoarse(xpcf::serialize<SolAR::datastructure::Transform3Df>(poseCoarse));
   reqIn.set_currpointcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(currPointCloud));
@@ -297,7 +392,7 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::relocali
 }
 
 
-SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::relocalizeProcessRequest(SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence, std::vector<SolAR::datastructure::DetectedObject>& detectedObjects, SolAR::datastructure::Transform3Df const& poseCoarse)
+SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::relocalizeProcessRequest(std::string const& clientUUID, SRef<SolAR::datastructure::Image> const image, SolAR::datastructure::Transform3Df& pose, float_t& confidence, std::vector<SolAR::datastructure::DetectedObject>& detectedObjects, SolAR::datastructure::Transform3Df const& poseCoarse)
 {
   ::grpc::ClientContext context;
   ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc2Request reqIn;
@@ -307,6 +402,7 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::relocali
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
+  reqIn.set_clientuuid(clientUUID);
   reqIn.set_image(xpcf::serialize<SRef<SolAR::datastructure::Image>>(image));
   reqIn.set_posecoarse(xpcf::serialize<SolAR::datastructure::Transform3Df>(poseCoarse));
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
@@ -334,7 +430,7 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::relocali
 }
 
 
-SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::getMapRequest(SRef<SolAR::datastructure::Map>& map) const
+SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::getMapRequest(std::string const& clientUUID, SRef<SolAR::datastructure::Map>& map) const
 {
   ::grpc::ClientContext context;
   ::grpcIRelocalizationTrackablePipeline::getMapRequestRequest reqIn;
@@ -344,6 +440,7 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::getMapRe
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
+  reqIn.set_clientuuid(clientUUID);
   reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -365,30 +462,31 @@ SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::getMapRe
 }
 
 
-SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::init(std::vector<SRef<SolAR::datastructure::Trackable>> const& trackableObjects)
+SolAR::FrameworkReturnCode  IRelocalizationTrackablePipeline_grpcProxy::init(std::string const& clientUUID, std::vector<SRef<SolAR::datastructure::Trackable>> const& trackableObjects)
 {
   ::grpc::ClientContext context;
-  ::grpcIRelocalizationTrackablePipeline::init_grpc2Request reqIn;
-  ::grpcIRelocalizationTrackablePipeline::init_grpc2Response respOut;
+  ::grpcIRelocalizationTrackablePipeline::init_grpc3Request reqIn;
+  ::grpcIRelocalizationTrackablePipeline::init_grpc3Response respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "init", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
+  reqIn.set_clientuuid(clientUUID);
   reqIn.set_trackableobjects(xpcf::serialize<std::vector<SRef<SolAR::datastructure::Trackable>>>(trackableObjects));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationTrackablePipeline_grpcProxy::init request sent at " << to_simple_string(start) << std::endl;
   #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->init_grpc2(&context, reqIn, &respOut);
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->init_grpc3(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationTrackablePipeline_grpcProxy::init response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "init_grpc2 rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIRelocalizationTrackablePipelineService","init_grpc2",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    std::cout << "init_grpc3 rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIRelocalizationTrackablePipelineService","init_grpc3",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());

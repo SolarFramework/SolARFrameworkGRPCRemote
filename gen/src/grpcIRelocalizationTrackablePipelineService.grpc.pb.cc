@@ -23,16 +23,19 @@ namespace grpcIRelocalizationTrackablePipeline {
 
 static const char* grpcIRelocalizationTrackablePipelineService_method_names[] = {
   "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/init_grpc0",
-  "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/start",
-  "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/stop",
+  "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/start_grpc0",
+  "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/stop_grpc0",
   "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/init_grpc1",
+  "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/init_grpc2",
+  "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/start_grpc1",
+  "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/stop_grpc1",
   "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/setCameraParameters",
   "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/getCameraParameters",
   "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/relocalizeProcessRequest_grpc0",
   "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/relocalizeProcessRequest_grpc1",
   "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/relocalizeProcessRequest_grpc2",
   "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/getMapRequest",
-  "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/init_grpc2",
+  "/grpcIRelocalizationTrackablePipeline.grpcIRelocalizationTrackablePipelineService/init_grpc3",
 };
 
 std::unique_ptr< grpcIRelocalizationTrackablePipelineService::Stub> grpcIRelocalizationTrackablePipelineService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -43,16 +46,19 @@ std::unique_ptr< grpcIRelocalizationTrackablePipelineService::Stub> grpcIRelocal
 
 grpcIRelocalizationTrackablePipelineService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
   : channel_(channel), rpcmethod_init_grpc0_(grpcIRelocalizationTrackablePipelineService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_start_(grpcIRelocalizationTrackablePipelineService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_stop_(grpcIRelocalizationTrackablePipelineService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_start_grpc0_(grpcIRelocalizationTrackablePipelineService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_stop_grpc0_(grpcIRelocalizationTrackablePipelineService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_init_grpc1_(grpcIRelocalizationTrackablePipelineService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setCameraParameters_(grpcIRelocalizationTrackablePipelineService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getCameraParameters_(grpcIRelocalizationTrackablePipelineService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_relocalizeProcessRequest_grpc0_(grpcIRelocalizationTrackablePipelineService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_relocalizeProcessRequest_grpc1_(grpcIRelocalizationTrackablePipelineService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_relocalizeProcessRequest_grpc2_(grpcIRelocalizationTrackablePipelineService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapRequest_(grpcIRelocalizationTrackablePipelineService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_init_grpc2_(grpcIRelocalizationTrackablePipelineService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_init_grpc2_(grpcIRelocalizationTrackablePipelineService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_start_grpc1_(grpcIRelocalizationTrackablePipelineService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_stop_grpc1_(grpcIRelocalizationTrackablePipelineService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setCameraParameters_(grpcIRelocalizationTrackablePipelineService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getCameraParameters_(grpcIRelocalizationTrackablePipelineService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_relocalizeProcessRequest_grpc0_(grpcIRelocalizationTrackablePipelineService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_relocalizeProcessRequest_grpc1_(grpcIRelocalizationTrackablePipelineService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_relocalizeProcessRequest_grpc2_(grpcIRelocalizationTrackablePipelineService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapRequest_(grpcIRelocalizationTrackablePipelineService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_init_grpc3_(grpcIRelocalizationTrackablePipelineService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIRelocalizationTrackablePipelineService::Stub::init_grpc0(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc0Request& request, ::grpcIRelocalizationTrackablePipeline::init_grpc0Response* response) {
@@ -78,48 +84,48 @@ void grpcIRelocalizationTrackablePipelineService::Stub::async::init_grpc0(::grpc
   return result;
 }
 
-::grpc::Status grpcIRelocalizationTrackablePipelineService::Stub::start(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::startRequest& request, ::grpcIRelocalizationTrackablePipeline::startResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationTrackablePipeline::startRequest, ::grpcIRelocalizationTrackablePipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_, context, request, response);
+::grpc::Status grpcIRelocalizationTrackablePipelineService::Stub::start_grpc0(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::start_grpc0Request& request, ::grpcIRelocalizationTrackablePipeline::start_grpc0Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationTrackablePipeline::start_grpc0Request, ::grpcIRelocalizationTrackablePipeline::start_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_grpc0_, context, request, response);
 }
 
-void grpcIRelocalizationTrackablePipelineService::Stub::async::start(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::startRequest* request, ::grpcIRelocalizationTrackablePipeline::startResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationTrackablePipeline::startRequest, ::grpcIRelocalizationTrackablePipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, std::move(f));
+void grpcIRelocalizationTrackablePipelineService::Stub::async::start_grpc0(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::start_grpc0Request* request, ::grpcIRelocalizationTrackablePipeline::start_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationTrackablePipeline::start_grpc0Request, ::grpcIRelocalizationTrackablePipeline::start_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizationTrackablePipelineService::Stub::async::start(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::startRequest* request, ::grpcIRelocalizationTrackablePipeline::startResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_, context, request, response, reactor);
+void grpcIRelocalizationTrackablePipelineService::Stub::async::start_grpc0(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::start_grpc0Request* request, ::grpcIRelocalizationTrackablePipeline::start_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_grpc0_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::startResponse>* grpcIRelocalizationTrackablePipelineService::Stub::PrepareAsyncstartRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationTrackablePipeline::startResponse, ::grpcIRelocalizationTrackablePipeline::startRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_start_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::start_grpc0Response>* grpcIRelocalizationTrackablePipelineService::Stub::PrepareAsyncstart_grpc0Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::start_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationTrackablePipeline::start_grpc0Response, ::grpcIRelocalizationTrackablePipeline::start_grpc0Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_start_grpc0_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::startResponse>* grpcIRelocalizationTrackablePipelineService::Stub::AsyncstartRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::startRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::start_grpc0Response>* grpcIRelocalizationTrackablePipelineService::Stub::Asyncstart_grpc0Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::start_grpc0Request& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncstartRaw(context, request, cq);
+    this->PrepareAsyncstart_grpc0Raw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status grpcIRelocalizationTrackablePipelineService::Stub::stop(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stopRequest& request, ::grpcIRelocalizationTrackablePipeline::stopResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationTrackablePipeline::stopRequest, ::grpcIRelocalizationTrackablePipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_, context, request, response);
+::grpc::Status grpcIRelocalizationTrackablePipelineService::Stub::stop_grpc0(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stop_grpc0Request& request, ::grpcIRelocalizationTrackablePipeline::stop_grpc0Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationTrackablePipeline::stop_grpc0Request, ::grpcIRelocalizationTrackablePipeline::stop_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_grpc0_, context, request, response);
 }
 
-void grpcIRelocalizationTrackablePipelineService::Stub::async::stop(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stopRequest* request, ::grpcIRelocalizationTrackablePipeline::stopResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationTrackablePipeline::stopRequest, ::grpcIRelocalizationTrackablePipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, std::move(f));
+void grpcIRelocalizationTrackablePipelineService::Stub::async::stop_grpc0(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stop_grpc0Request* request, ::grpcIRelocalizationTrackablePipeline::stop_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationTrackablePipeline::stop_grpc0Request, ::grpcIRelocalizationTrackablePipeline::stop_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_grpc0_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizationTrackablePipelineService::Stub::async::stop(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stopRequest* request, ::grpcIRelocalizationTrackablePipeline::stopResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_, context, request, response, reactor);
+void grpcIRelocalizationTrackablePipelineService::Stub::async::stop_grpc0(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stop_grpc0Request* request, ::grpcIRelocalizationTrackablePipeline::stop_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_grpc0_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::stopResponse>* grpcIRelocalizationTrackablePipelineService::Stub::PrepareAsyncstopRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationTrackablePipeline::stopResponse, ::grpcIRelocalizationTrackablePipeline::stopRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_stop_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::stop_grpc0Response>* grpcIRelocalizationTrackablePipelineService::Stub::PrepareAsyncstop_grpc0Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stop_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationTrackablePipeline::stop_grpc0Response, ::grpcIRelocalizationTrackablePipeline::stop_grpc0Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_stop_grpc0_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::stopResponse>* grpcIRelocalizationTrackablePipelineService::Stub::AsyncstopRaw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stopRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::stop_grpc0Response>* grpcIRelocalizationTrackablePipelineService::Stub::Asyncstop_grpc0Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stop_grpc0Request& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncstopRaw(context, request, cq);
+    this->PrepareAsyncstop_grpc0Raw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -143,6 +149,75 @@ void grpcIRelocalizationTrackablePipelineService::Stub::async::init_grpc1(::grpc
 ::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::init_grpc1Response>* grpcIRelocalizationTrackablePipelineService::Stub::Asyncinit_grpc1Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc1Request& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncinit_grpc1Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIRelocalizationTrackablePipelineService::Stub::init_grpc2(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request& request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationTrackablePipeline::init_grpc2Request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_grpc2_, context, request, response);
+}
+
+void grpcIRelocalizationTrackablePipelineService::Stub::async::init_grpc2(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationTrackablePipeline::init_grpc2Request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_grpc2_, context, request, response, std::move(f));
+}
+
+void grpcIRelocalizationTrackablePipelineService::Stub::async::init_grpc2(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_grpc2_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::init_grpc2Response>* grpcIRelocalizationTrackablePipelineService::Stub::PrepareAsyncinit_grpc2Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationTrackablePipeline::init_grpc2Response, ::grpcIRelocalizationTrackablePipeline::init_grpc2Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_init_grpc2_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::init_grpc2Response>* grpcIRelocalizationTrackablePipelineService::Stub::Asyncinit_grpc2Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncinit_grpc2Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIRelocalizationTrackablePipelineService::Stub::start_grpc1(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::start_grpc1Request& request, ::grpcIRelocalizationTrackablePipeline::start_grpc1Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationTrackablePipeline::start_grpc1Request, ::grpcIRelocalizationTrackablePipeline::start_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_start_grpc1_, context, request, response);
+}
+
+void grpcIRelocalizationTrackablePipelineService::Stub::async::start_grpc1(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::start_grpc1Request* request, ::grpcIRelocalizationTrackablePipeline::start_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationTrackablePipeline::start_grpc1Request, ::grpcIRelocalizationTrackablePipeline::start_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_grpc1_, context, request, response, std::move(f));
+}
+
+void grpcIRelocalizationTrackablePipelineService::Stub::async::start_grpc1(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::start_grpc1Request* request, ::grpcIRelocalizationTrackablePipeline::start_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_start_grpc1_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::start_grpc1Response>* grpcIRelocalizationTrackablePipelineService::Stub::PrepareAsyncstart_grpc1Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::start_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationTrackablePipeline::start_grpc1Response, ::grpcIRelocalizationTrackablePipeline::start_grpc1Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_start_grpc1_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::start_grpc1Response>* grpcIRelocalizationTrackablePipelineService::Stub::Asyncstart_grpc1Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::start_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncstart_grpc1Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIRelocalizationTrackablePipelineService::Stub::stop_grpc1(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stop_grpc1Request& request, ::grpcIRelocalizationTrackablePipeline::stop_grpc1Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationTrackablePipeline::stop_grpc1Request, ::grpcIRelocalizationTrackablePipeline::stop_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_stop_grpc1_, context, request, response);
+}
+
+void grpcIRelocalizationTrackablePipelineService::Stub::async::stop_grpc1(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stop_grpc1Request* request, ::grpcIRelocalizationTrackablePipeline::stop_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationTrackablePipeline::stop_grpc1Request, ::grpcIRelocalizationTrackablePipeline::stop_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_grpc1_, context, request, response, std::move(f));
+}
+
+void grpcIRelocalizationTrackablePipelineService::Stub::async::stop_grpc1(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stop_grpc1Request* request, ::grpcIRelocalizationTrackablePipeline::stop_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_stop_grpc1_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::stop_grpc1Response>* grpcIRelocalizationTrackablePipelineService::Stub::PrepareAsyncstop_grpc1Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stop_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationTrackablePipeline::stop_grpc1Response, ::grpcIRelocalizationTrackablePipeline::stop_grpc1Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_stop_grpc1_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::stop_grpc1Response>* grpcIRelocalizationTrackablePipelineService::Stub::Asyncstop_grpc1Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::stop_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncstop_grpc1Raw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -285,25 +360,25 @@ void grpcIRelocalizationTrackablePipelineService::Stub::async::getMapRequest(::g
   return result;
 }
 
-::grpc::Status grpcIRelocalizationTrackablePipelineService::Stub::init_grpc2(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request& request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationTrackablePipeline::init_grpc2Request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_grpc2_, context, request, response);
+::grpc::Status grpcIRelocalizationTrackablePipelineService::Stub::init_grpc3(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc3Request& request, ::grpcIRelocalizationTrackablePipeline::init_grpc3Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIRelocalizationTrackablePipeline::init_grpc3Request, ::grpcIRelocalizationTrackablePipeline::init_grpc3Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_init_grpc3_, context, request, response);
 }
 
-void grpcIRelocalizationTrackablePipelineService::Stub::async::init_grpc2(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationTrackablePipeline::init_grpc2Request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_grpc2_, context, request, response, std::move(f));
+void grpcIRelocalizationTrackablePipelineService::Stub::async::init_grpc3(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc3Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc3Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIRelocalizationTrackablePipeline::init_grpc3Request, ::grpcIRelocalizationTrackablePipeline::init_grpc3Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_grpc3_, context, request, response, std::move(f));
 }
 
-void grpcIRelocalizationTrackablePipelineService::Stub::async::init_grpc2(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_grpc2_, context, request, response, reactor);
+void grpcIRelocalizationTrackablePipelineService::Stub::async::init_grpc3(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc3Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc3Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_init_grpc3_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::init_grpc2Response>* grpcIRelocalizationTrackablePipelineService::Stub::PrepareAsyncinit_grpc2Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationTrackablePipeline::init_grpc2Response, ::grpcIRelocalizationTrackablePipeline::init_grpc2Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_init_grpc2_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::init_grpc3Response>* grpcIRelocalizationTrackablePipelineService::Stub::PrepareAsyncinit_grpc3Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc3Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIRelocalizationTrackablePipeline::init_grpc3Response, ::grpcIRelocalizationTrackablePipeline::init_grpc3Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_init_grpc3_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::init_grpc2Response>* grpcIRelocalizationTrackablePipelineService::Stub::Asyncinit_grpc2Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIRelocalizationTrackablePipeline::init_grpc3Response>* grpcIRelocalizationTrackablePipelineService::Stub::Asyncinit_grpc3Raw(::grpc::ClientContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc3Request& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncinit_grpc2Raw(context, request, cq);
+    this->PrepareAsyncinit_grpc3Raw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -322,22 +397,22 @@ grpcIRelocalizationTrackablePipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIRelocalizationTrackablePipelineService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::startRequest, ::grpcIRelocalizationTrackablePipeline::startResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::start_grpc0Request, ::grpcIRelocalizationTrackablePipeline::start_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIRelocalizationTrackablePipelineService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::grpcIRelocalizationTrackablePipeline::startRequest* req,
-             ::grpcIRelocalizationTrackablePipeline::startResponse* resp) {
-               return service->start(ctx, req, resp);
+             const ::grpcIRelocalizationTrackablePipeline::start_grpc0Request* req,
+             ::grpcIRelocalizationTrackablePipeline::start_grpc0Response* resp) {
+               return service->start_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIRelocalizationTrackablePipelineService_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::stopRequest, ::grpcIRelocalizationTrackablePipeline::stopResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::stop_grpc0Request, ::grpcIRelocalizationTrackablePipeline::stop_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIRelocalizationTrackablePipelineService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::grpcIRelocalizationTrackablePipeline::stopRequest* req,
-             ::grpcIRelocalizationTrackablePipeline::stopResponse* resp) {
-               return service->stop(ctx, req, resp);
+             const ::grpcIRelocalizationTrackablePipeline::stop_grpc0Request* req,
+             ::grpcIRelocalizationTrackablePipeline::stop_grpc0Response* resp) {
+               return service->stop_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIRelocalizationTrackablePipelineService_method_names[3],
@@ -352,6 +427,36 @@ grpcIRelocalizationTrackablePipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIRelocalizationTrackablePipelineService_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::init_grpc2Request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIRelocalizationTrackablePipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request* req,
+             ::grpcIRelocalizationTrackablePipeline::init_grpc2Response* resp) {
+               return service->init_grpc2(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIRelocalizationTrackablePipelineService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::start_grpc1Request, ::grpcIRelocalizationTrackablePipeline::start_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIRelocalizationTrackablePipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIRelocalizationTrackablePipeline::start_grpc1Request* req,
+             ::grpcIRelocalizationTrackablePipeline::start_grpc1Response* resp) {
+               return service->start_grpc1(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIRelocalizationTrackablePipelineService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::stop_grpc1Request, ::grpcIRelocalizationTrackablePipeline::stop_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIRelocalizationTrackablePipelineService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIRelocalizationTrackablePipeline::stop_grpc1Request* req,
+             ::grpcIRelocalizationTrackablePipeline::stop_grpc1Response* resp) {
+               return service->stop_grpc1(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIRelocalizationTrackablePipelineService_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::setCameraParametersRequest, ::grpcIRelocalizationTrackablePipeline::setCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIRelocalizationTrackablePipelineService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -360,7 +465,7 @@ grpcIRelocalizationTrackablePipelineService::Service::Service() {
                return service->setCameraParameters(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIRelocalizationTrackablePipelineService_method_names[5],
+      grpcIRelocalizationTrackablePipelineService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::getCameraParametersRequest, ::grpcIRelocalizationTrackablePipeline::getCameraParametersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIRelocalizationTrackablePipelineService::Service* service,
@@ -370,7 +475,7 @@ grpcIRelocalizationTrackablePipelineService::Service::Service() {
                return service->getCameraParameters(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIRelocalizationTrackablePipelineService_method_names[6],
+      grpcIRelocalizationTrackablePipelineService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc0Request, ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIRelocalizationTrackablePipelineService::Service* service,
@@ -380,7 +485,7 @@ grpcIRelocalizationTrackablePipelineService::Service::Service() {
                return service->relocalizeProcessRequest_grpc0(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIRelocalizationTrackablePipelineService_method_names[7],
+      grpcIRelocalizationTrackablePipelineService_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc1Request, ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIRelocalizationTrackablePipelineService::Service* service,
@@ -390,7 +495,7 @@ grpcIRelocalizationTrackablePipelineService::Service::Service() {
                return service->relocalizeProcessRequest_grpc1(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIRelocalizationTrackablePipelineService_method_names[8],
+      grpcIRelocalizationTrackablePipelineService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc2Request, ::grpcIRelocalizationTrackablePipeline::relocalizeProcessRequest_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIRelocalizationTrackablePipelineService::Service* service,
@@ -400,7 +505,7 @@ grpcIRelocalizationTrackablePipelineService::Service::Service() {
                return service->relocalizeProcessRequest_grpc2(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIRelocalizationTrackablePipelineService_method_names[9],
+      grpcIRelocalizationTrackablePipelineService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::getMapRequestRequest, ::grpcIRelocalizationTrackablePipeline::getMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIRelocalizationTrackablePipelineService::Service* service,
@@ -410,14 +515,14 @@ grpcIRelocalizationTrackablePipelineService::Service::Service() {
                return service->getMapRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIRelocalizationTrackablePipelineService_method_names[10],
+      grpcIRelocalizationTrackablePipelineService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::init_grpc2Request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIRelocalizationTrackablePipelineService::Service, ::grpcIRelocalizationTrackablePipeline::init_grpc3Request, ::grpcIRelocalizationTrackablePipeline::init_grpc3Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIRelocalizationTrackablePipelineService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request* req,
-             ::grpcIRelocalizationTrackablePipeline::init_grpc2Response* resp) {
-               return service->init_grpc2(ctx, req, resp);
+             const ::grpcIRelocalizationTrackablePipeline::init_grpc3Request* req,
+             ::grpcIRelocalizationTrackablePipeline::init_grpc3Response* resp) {
+               return service->init_grpc3(ctx, req, resp);
              }, this)));
 }
 
@@ -431,14 +536,14 @@ grpcIRelocalizationTrackablePipelineService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIRelocalizationTrackablePipelineService::Service::start(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::startRequest* request, ::grpcIRelocalizationTrackablePipeline::startResponse* response) {
+::grpc::Status grpcIRelocalizationTrackablePipelineService::Service::start_grpc0(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::start_grpc0Request* request, ::grpcIRelocalizationTrackablePipeline::start_grpc0Response* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIRelocalizationTrackablePipelineService::Service::stop(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::stopRequest* request, ::grpcIRelocalizationTrackablePipeline::stopResponse* response) {
+::grpc::Status grpcIRelocalizationTrackablePipelineService::Service::stop_grpc0(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::stop_grpc0Request* request, ::grpcIRelocalizationTrackablePipeline::stop_grpc0Response* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -446,6 +551,27 @@ grpcIRelocalizationTrackablePipelineService::Service::~Service() {
 }
 
 ::grpc::Status grpcIRelocalizationTrackablePipelineService::Service::init_grpc1(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc1Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc1Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIRelocalizationTrackablePipelineService::Service::init_grpc2(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIRelocalizationTrackablePipelineService::Service::start_grpc1(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::start_grpc1Request* request, ::grpcIRelocalizationTrackablePipeline::start_grpc1Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIRelocalizationTrackablePipelineService::Service::stop_grpc1(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::stop_grpc1Request* request, ::grpcIRelocalizationTrackablePipeline::stop_grpc1Response* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -494,7 +620,7 @@ grpcIRelocalizationTrackablePipelineService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIRelocalizationTrackablePipelineService::Service::init_grpc2(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc2Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc2Response* response) {
+::grpc::Status grpcIRelocalizationTrackablePipelineService::Service::init_grpc3(::grpc::ServerContext* context, const ::grpcIRelocalizationTrackablePipeline::init_grpc3Request* request, ::grpcIRelocalizationTrackablePipeline::init_grpc3Response* response) {
   (void) context;
   (void) request;
   (void) response;

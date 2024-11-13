@@ -25,7 +25,8 @@ class IMappingPipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, vir
     SolAR::FrameworkReturnCode init()     override;
     SolAR::FrameworkReturnCode start()     override;
     SolAR::FrameworkReturnCode stop()     override;
-    SolAR::FrameworkReturnCode init(std::string const& relocalizationServiceURL, std::string const& mapupdateServiceURL)     override;
+    SolAR::FrameworkReturnCode init(std::string const& clientUUID)     override;
+    SolAR::FrameworkReturnCode init(std::string const& clientUUID, std::string const& relocalizationServiceURL, std::string const& mapupdateServiceURL)     override;
     SolAR::FrameworkReturnCode setCameraParameters(SolAR::datastructure::CameraParameters const& cameraParams)     override;
     SolAR::FrameworkReturnCode setCameraParameters(SolAR::datastructure::CameraParameters const& cameraParams1, SolAR::datastructure::CameraParameters const& cameraParams2)     override;
     SolAR::FrameworkReturnCode setRectificationParameters(SolAR::datastructure::RectificationParameters const& rectCam1, SolAR::datastructure::RectificationParameters const& rectCam2)     override;

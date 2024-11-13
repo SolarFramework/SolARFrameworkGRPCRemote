@@ -14,7 +14,7 @@ IRelocalizationPipeline_grpcServer::IRelocalizationPipeline_grpcServer():xpcf::C
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::pipeline::IRelocalizationPipeline>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(11);
+  m_grpcServerCompressionConfig.resize(14);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -62,7 +62,7 @@ XPCFErrorCode IRelocalizationPipeline_grpcServer::onConfigured()
 }
 
 
-::grpc::Status IRelocalizationPipeline_grpcServer::grpcIRelocalizationPipelineServiceImpl::start(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::startRequest* request, ::grpcIRelocalizationPipeline::startResponse* response)
+::grpc::Status IRelocalizationPipeline_grpcServer::grpcIRelocalizationPipelineServiceImpl::start_grpc0(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::start_grpc0Request* request, ::grpcIRelocalizationPipeline::start_grpc0Response* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
@@ -84,7 +84,7 @@ XPCFErrorCode IRelocalizationPipeline_grpcServer::onConfigured()
 }
 
 
-::grpc::Status IRelocalizationPipeline_grpcServer::grpcIRelocalizationPipelineServiceImpl::stop(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::stopRequest* request, ::grpcIRelocalizationPipeline::stopResponse* response)
+::grpc::Status IRelocalizationPipeline_grpcServer::grpcIRelocalizationPipelineServiceImpl::stop_grpc0(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::stop_grpc0Request* request, ::grpcIRelocalizationPipeline::stop_grpc0Response* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
@@ -117,12 +117,82 @@ XPCFErrorCode IRelocalizationPipeline_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationPipeline_grpcServer::init request received at " << to_simple_string(start) << std::endl;
   #endif
-  std::string mapupdateServiceURL = request->mapupdateserviceurl();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init(mapupdateServiceURL);
+  std::string clientUUID = request->clientuuid();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init(clientUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationPipeline_grpcServer::init response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IRelocalizationPipeline_grpcServer::grpcIRelocalizationPipelineServiceImpl::init_grpc2(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::init_grpc2Request* request, ::grpcIRelocalizationPipeline::init_grpc2Response* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "init", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationPipeline_grpcServer::init request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string clientUUID = request->clientuuid();
+  std::string mapupdateServiceURL = request->mapupdateserviceurl();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init(clientUUID, mapupdateServiceURL);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationPipeline_grpcServer::init response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IRelocalizationPipeline_grpcServer::grpcIRelocalizationPipelineServiceImpl::start_grpc1(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::start_grpc1Request* request, ::grpcIRelocalizationPipeline::start_grpc1Response* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "start", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationPipeline_grpcServer::start request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string clientUUID = request->clientuuid();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->start(clientUUID);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationPipeline_grpcServer::start response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IRelocalizationPipeline_grpcServer::grpcIRelocalizationPipelineServiceImpl::stop_grpc1(::grpc::ServerContext* context, const ::grpcIRelocalizationPipeline::stop_grpc1Request* request, ::grpcIRelocalizationPipeline::stop_grpc1Response* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "stop", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationPipeline_grpcServer::stop request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string clientUUID = request->clientuuid();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->stop(clientUUID);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IRelocalizationPipeline_grpcServer::stop response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
@@ -140,8 +210,9 @@ XPCFErrorCode IRelocalizationPipeline_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationPipeline_grpcServer::setCameraParameters request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string clientUUID = request->clientuuid();
   SolAR::datastructure::CameraParameters cameraParams = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->cameraparams());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setCameraParameters(cameraParams);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setCameraParameters(clientUUID, cameraParams);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -163,8 +234,9 @@ XPCFErrorCode IRelocalizationPipeline_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationPipeline_grpcServer::getCameraParameters request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string clientUUID = request->clientuuid();
   SolAR::datastructure::CameraParameters cameraParams = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->cameraparams());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getCameraParameters(cameraParams);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getCameraParameters(clientUUID, cameraParams);
   response->set_cameraparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(cameraParams));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -187,11 +259,12 @@ XPCFErrorCode IRelocalizationPipeline_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationPipeline_grpcServer::relocalizeProcessRequest request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string clientUUID = request->clientuuid();
   SRef<SolAR::datastructure::Image> image = xpcf::deserialize<SRef<SolAR::datastructure::Image>>(request->image());
   SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
   float_t confidence = xpcf::deserialize<float_t>(request->confidence());
   SolAR::datastructure::Transform3Df poseCoarse = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->posecoarse());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(image, pose, confidence, poseCoarse);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(clientUUID, image, pose, confidence, poseCoarse);
   response->set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   response->set_confidence(xpcf::serialize<float_t>(confidence));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
@@ -215,12 +288,13 @@ XPCFErrorCode IRelocalizationPipeline_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationPipeline_grpcServer::relocalizeProcessRequest request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string clientUUID = request->clientuuid();
   SRef<SolAR::datastructure::Image> image = xpcf::deserialize<SRef<SolAR::datastructure::Image>>(request->image());
   std::vector<SRef<SolAR::datastructure::CloudPoint>> currPointCloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->currpointcloud());
   SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
   float_t confidence = xpcf::deserialize<float_t>(request->confidence());
   SolAR::datastructure::Transform3Df poseCoarse = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->posecoarse());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(image, currPointCloud, pose, confidence, poseCoarse);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(clientUUID, image, currPointCloud, pose, confidence, poseCoarse);
   response->set_currpointcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(currPointCloud));
   response->set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   response->set_confidence(xpcf::serialize<float_t>(confidence));
@@ -245,12 +319,13 @@ XPCFErrorCode IRelocalizationPipeline_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationPipeline_grpcServer::relocalizeProcessRequest request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string clientUUID = request->clientuuid();
   SRef<SolAR::datastructure::Image> image = xpcf::deserialize<SRef<SolAR::datastructure::Image>>(request->image());
   SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
   float_t confidence = xpcf::deserialize<float_t>(request->confidence());
   std::vector<SolAR::datastructure::DetectedObject> detectedObjects = xpcf::deserialize<std::vector<SolAR::datastructure::DetectedObject>>(request->detectedobjects());
   SolAR::datastructure::Transform3Df poseCoarse = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->posecoarse());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(image, pose, confidence, detectedObjects, poseCoarse);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(clientUUID, image, pose, confidence, detectedObjects, poseCoarse);
   response->set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   response->set_confidence(xpcf::serialize<float_t>(confidence));
   response->set_detectedobjects(xpcf::serialize<std::vector<SolAR::datastructure::DetectedObject>>(detectedObjects));
@@ -275,8 +350,9 @@ XPCFErrorCode IRelocalizationPipeline_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IRelocalizationPipeline_grpcServer::getMapRequest request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string clientUUID = request->clientuuid();
   SRef<SolAR::datastructure::Map> map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->map());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(map);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(clientUUID, map);
   response->set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
