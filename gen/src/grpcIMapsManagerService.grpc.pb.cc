@@ -29,6 +29,9 @@ static const char* grpcIMapsManagerService_method_names[] = {
   "/grpcIMapsManager.grpcIMapsManagerService/unregisterMapUpdateService",
   "/grpcIMapsManager.grpcIMapsManagerService/increaseMapClients",
   "/grpcIMapsManager.grpcIMapsManagerService/decreaseMapClients",
+  "/grpcIMapsManager.grpcIMapsManagerService/getMapRequest",
+  "/grpcIMapsManager.grpcIMapsManagerService/setMapRequest",
+  "/grpcIMapsManager.grpcIMapsManagerService/getPointCloudRequest",
 };
 
 std::unique_ptr< grpcIMapsManagerService::Stub> grpcIMapsManagerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -45,6 +48,9 @@ grpcIMapsManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterf
   , rpcmethod_unregisterMapUpdateService_(grpcIMapsManagerService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_increaseMapClients_(grpcIMapsManagerService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_decreaseMapClients_(grpcIMapsManagerService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapRequest_(grpcIMapsManagerService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setMapRequest_(grpcIMapsManagerService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getPointCloudRequest_(grpcIMapsManagerService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMapsManagerService::Stub::createMap(::grpc::ClientContext* context, const ::grpcIMapsManager::createMapRequest& request, ::grpcIMapsManager::createMapResponse* response) {
@@ -208,6 +214,75 @@ void grpcIMapsManagerService::Stub::async::decreaseMapClients(::grpc::ClientCont
   return result;
 }
 
+::grpc::Status grpcIMapsManagerService::Stub::getMapRequest(::grpc::ClientContext* context, const ::grpcIMapsManager::getMapRequestRequest& request, ::grpcIMapsManager::getMapRequestResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapsManager::getMapRequestRequest, ::grpcIMapsManager::getMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getMapRequest_, context, request, response);
+}
+
+void grpcIMapsManagerService::Stub::async::getMapRequest(::grpc::ClientContext* context, const ::grpcIMapsManager::getMapRequestRequest* request, ::grpcIMapsManager::getMapRequestResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapsManager::getMapRequestRequest, ::grpcIMapsManager::getMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getMapRequest_, context, request, response, std::move(f));
+}
+
+void grpcIMapsManagerService::Stub::async::getMapRequest(::grpc::ClientContext* context, const ::grpcIMapsManager::getMapRequestRequest* request, ::grpcIMapsManager::getMapRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getMapRequest_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::getMapRequestResponse>* grpcIMapsManagerService::Stub::PrepareAsyncgetMapRequestRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::getMapRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapsManager::getMapRequestResponse, ::grpcIMapsManager::getMapRequestRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getMapRequest_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::getMapRequestResponse>* grpcIMapsManagerService::Stub::AsyncgetMapRequestRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::getMapRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetMapRequestRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIMapsManagerService::Stub::setMapRequest(::grpc::ClientContext* context, const ::grpcIMapsManager::setMapRequestRequest& request, ::grpcIMapsManager::setMapRequestResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapsManager::setMapRequestRequest, ::grpcIMapsManager::setMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setMapRequest_, context, request, response);
+}
+
+void grpcIMapsManagerService::Stub::async::setMapRequest(::grpc::ClientContext* context, const ::grpcIMapsManager::setMapRequestRequest* request, ::grpcIMapsManager::setMapRequestResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapsManager::setMapRequestRequest, ::grpcIMapsManager::setMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMapRequest_, context, request, response, std::move(f));
+}
+
+void grpcIMapsManagerService::Stub::async::setMapRequest(::grpc::ClientContext* context, const ::grpcIMapsManager::setMapRequestRequest* request, ::grpcIMapsManager::setMapRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMapRequest_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::setMapRequestResponse>* grpcIMapsManagerService::Stub::PrepareAsyncsetMapRequestRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::setMapRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapsManager::setMapRequestResponse, ::grpcIMapsManager::setMapRequestRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setMapRequest_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::setMapRequestResponse>* grpcIMapsManagerService::Stub::AsyncsetMapRequestRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::setMapRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncsetMapRequestRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIMapsManagerService::Stub::getPointCloudRequest(::grpc::ClientContext* context, const ::grpcIMapsManager::getPointCloudRequestRequest& request, ::grpcIMapsManager::getPointCloudRequestResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapsManager::getPointCloudRequestRequest, ::grpcIMapsManager::getPointCloudRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getPointCloudRequest_, context, request, response);
+}
+
+void grpcIMapsManagerService::Stub::async::getPointCloudRequest(::grpc::ClientContext* context, const ::grpcIMapsManager::getPointCloudRequestRequest* request, ::grpcIMapsManager::getPointCloudRequestResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapsManager::getPointCloudRequestRequest, ::grpcIMapsManager::getPointCloudRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getPointCloudRequest_, context, request, response, std::move(f));
+}
+
+void grpcIMapsManagerService::Stub::async::getPointCloudRequest(::grpc::ClientContext* context, const ::grpcIMapsManager::getPointCloudRequestRequest* request, ::grpcIMapsManager::getPointCloudRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getPointCloudRequest_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::getPointCloudRequestResponse>* grpcIMapsManagerService::Stub::PrepareAsyncgetPointCloudRequestRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::getPointCloudRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapsManager::getPointCloudRequestResponse, ::grpcIMapsManager::getPointCloudRequestRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getPointCloudRequest_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::getPointCloudRequestResponse>* grpcIMapsManagerService::Stub::AsyncgetPointCloudRequestRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::getPointCloudRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetPointCloudRequestRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 grpcIMapsManagerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapsManagerService_method_names[0],
@@ -279,6 +354,36 @@ grpcIMapsManagerService::Service::Service() {
              ::grpcIMapsManager::decreaseMapClientsResponse* resp) {
                return service->decreaseMapClients(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapsManagerService_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::getMapRequestRequest, ::grpcIMapsManager::getMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapsManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapsManager::getMapRequestRequest* req,
+             ::grpcIMapsManager::getMapRequestResponse* resp) {
+               return service->getMapRequest(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapsManagerService_method_names[8],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::setMapRequestRequest, ::grpcIMapsManager::setMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapsManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapsManager::setMapRequestRequest* req,
+             ::grpcIMapsManager::setMapRequestResponse* resp) {
+               return service->setMapRequest(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapsManagerService_method_names[9],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::getPointCloudRequestRequest, ::grpcIMapsManager::getPointCloudRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapsManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapsManager::getPointCloudRequestRequest* req,
+             ::grpcIMapsManager::getPointCloudRequestResponse* resp) {
+               return service->getPointCloudRequest(ctx, req, resp);
+             }, this)));
 }
 
 grpcIMapsManagerService::Service::~Service() {
@@ -327,6 +432,27 @@ grpcIMapsManagerService::Service::~Service() {
 }
 
 ::grpc::Status grpcIMapsManagerService::Service::decreaseMapClients(::grpc::ServerContext* context, const ::grpcIMapsManager::decreaseMapClientsRequest* request, ::grpcIMapsManager::decreaseMapClientsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapsManagerService::Service::getMapRequest(::grpc::ServerContext* context, const ::grpcIMapsManager::getMapRequestRequest* request, ::grpcIMapsManager::getMapRequestResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapsManagerService::Service::setMapRequest(::grpc::ServerContext* context, const ::grpcIMapsManager::setMapRequestRequest* request, ::grpcIMapsManager::setMapRequestResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapsManagerService::Service::getPointCloudRequest(::grpc::ServerContext* context, const ::grpcIMapsManager::getPointCloudRequestRequest* request, ::grpcIMapsManager::getPointCloudRequestResponse* response) {
   (void) context;
   (void) request;
   (void) response;
