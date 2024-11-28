@@ -123,6 +123,9 @@
         <value>method|unregisterMapUpdateService|none|none</value>
         <value>method|increaseMapClients|none|none</value>
         <value>method|decreaseMapClients|none|none</value>
+        <value>method|getMapRequest|none|none</value>
+        <value>method|setMapRequest|none|none</value>
+        <value>method|getPointCloudRequest|none|none</value>
       </property>
     </configure>
     <configure component="IServiceManager_grpcProxy">
