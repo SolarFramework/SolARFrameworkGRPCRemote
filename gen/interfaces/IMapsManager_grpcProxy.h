@@ -29,6 +29,10 @@ class IMapsManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
     SolAR::FrameworkReturnCode unregisterMapUpdateService(std::string const& serviceURL)     override;
     SolAR::FrameworkReturnCode increaseMapClients(std::string const& mapUUID, std::string& serviceURL)     override;
     SolAR::FrameworkReturnCode decreaseMapClients(std::string const& mapUUID)     override;
+    SolAR::FrameworkReturnCode getMapRequest(std::string const& mapUUID, SRef<SolAR::datastructure::Map>& map)     const     override;
+    SolAR::FrameworkReturnCode setMapRequest(std::string const& mapUUID, SRef<SolAR::datastructure::Map> const mapDatastructure)     override;
+    SolAR::FrameworkReturnCode getPointCloudRequest(std::string const& mapUUID, SRef<SolAR::datastructure::PointCloud>& pointCloud)     const     override;
+    SolAR::FrameworkReturnCode requestForMapProcessing(std::string const& mapUUID, SolAR::api::service::MapProcessingType const& processingType)     override;
 
 
   private:

@@ -84,6 +84,56 @@ message decreaseMapClientsResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message getMapRequestRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+bytes map = 3;
+}
+
+message getMapRequestResponse
+{
+bytes map = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message setMapRequestRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+bytes mapDatastructure = 3;
+}
+
+message setMapRequestResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getPointCloudRequestRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+bytes pointCloud = 3;
+}
+
+message getPointCloudRequestResponse
+{
+bytes pointCloud = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message requestForMapProcessingRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+bytes processingType = 3;
+}
+
+message requestForMapProcessingResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 service grpcIMapsManagerService {
 rpc createMap(createMapRequest) returns(createMapResponse) {}
 rpc deleteMap(deleteMapRequest) returns(deleteMapResponse) {}
@@ -92,5 +142,9 @@ rpc registerMapUpdateService(registerMapUpdateServiceRequest) returns(registerMa
 rpc unregisterMapUpdateService(unregisterMapUpdateServiceRequest) returns(unregisterMapUpdateServiceResponse) {}
 rpc increaseMapClients(increaseMapClientsRequest) returns(increaseMapClientsResponse) {}
 rpc decreaseMapClients(decreaseMapClientsRequest) returns(decreaseMapClientsResponse) {}
+rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
+rpc setMapRequest(setMapRequestRequest) returns(setMapRequestResponse) {}
+rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}
+rpc requestForMapProcessing(requestForMapProcessingRequest) returns(requestForMapProcessingResponse) {}
 }
 
