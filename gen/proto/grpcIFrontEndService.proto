@@ -352,19 +352,6 @@ bytes pointCloud = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-message requestForMapProcessingRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-string keycloakToken = 2;
-string mapUUID = 3;
-bytes processingType = 4;
-}
-
-message requestForMapProcessingResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
 service grpcIFrontEndService {
 rpc registerClient(registerClientRequest) returns(registerClientResponse) {}
 rpc unregisterClient(unregisterClientRequest) returns(unregisterClientResponse) {}
@@ -391,6 +378,5 @@ rpc getClientMapUUID(getClientMapUUIDRequest) returns(getClientMapUUIDResponse) 
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc setMapRequest(setMapRequestRequest) returns(setMapRequestResponse) {}
 rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}
-rpc requestForMapProcessing(requestForMapProcessingRequest) returns(requestForMapProcessingResponse) {}
 }
 

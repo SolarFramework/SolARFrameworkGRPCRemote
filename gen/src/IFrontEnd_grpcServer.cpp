@@ -14,7 +14,7 @@ IFrontEnd_grpcServer::IFrontEnd_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::service::IFrontEnd>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(27);
+  m_grpcServerCompressionConfig.resize(26);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -682,31 +682,6 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::getPointCloudRequest response sent at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  return ::grpc::Status::OK;
-}
-
-
-::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::requestForMapProcessing(::grpc::ServerContext* context, const ::grpcIFrontEnd::requestForMapProcessingRequest* request, ::grpcIFrontEnd::requestForMapProcessingResponse* response)
-{
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "requestForMapProcessing", m_methodCompressionInfosMap);
-  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
-  #endif
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IFrontEnd_grpcServer::requestForMapProcessing request received at " << to_simple_string(start) << std::endl;
-  #endif
-  std::string keycloakToken = request->keycloaktoken();
-  std::string mapUUID = request->mapuuid();
-  SolAR::api::service::MapProcessingType processingType = xpcf::deserialize<SolAR::api::service::MapProcessingType>(request->processingtype());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->requestForMapProcessing(keycloakToken, mapUUID, processingType);
-  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
-  #ifdef ENABLE_SERVER_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IFrontEnd_grpcServer::requestForMapProcessing response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;

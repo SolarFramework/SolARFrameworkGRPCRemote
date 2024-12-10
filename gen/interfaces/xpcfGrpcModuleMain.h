@@ -5,8 +5,6 @@
 #define XPCFGRPCMODULEMAIN_H
 #include "IDenseMappingPipeline_grpcProxy.h"
 #include "IDenseMappingPipeline_grpcServer.h"
-#include "IMapProcessingPipeline_grpcProxy.h"
-#include "IMapProcessingPipeline_grpcServer.h"
 #include "IMapUpdatePipeline_grpcProxy.h"
 #include "IMapUpdatePipeline_grpcServer.h"
 #include "IMappingPipeline_grpcProxy.h"

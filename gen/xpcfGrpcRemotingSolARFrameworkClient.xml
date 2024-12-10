@@ -5,10 +5,6 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="34ab0434-480b-11ed-b878-0242ac120002" name="IDenseMappingPipeline" description="The interface to define a dense mapping processing pipeline"/>
     </component>
-    <component uuid="3e0afc52-5d71-411a-9e5b-bb73ced1cad0" name="IMapProcessingPipeline_grpcProxy" description="IMapProcessingPipeline_grpcProxy">
-      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
-      <interface uuid="6dfb6b83-d4c0-44c5-be5f-0298a7b9e833" name="IMapProcessingPipeline" description="The interface to define a map processing pipeline"/>
-    </component>
     <component uuid="d9da863c-c9ff-4562-a3a2-329ac1f44008" name="IMapUpdatePipeline_grpcProxy" description="IMapUpdatePipeline_grpcProxy">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="49cbd32c-6dfa-4155-b151-7261dd13f552" name="IMapUpdatePipeline" description="The interface to define a map update pipeline"/>

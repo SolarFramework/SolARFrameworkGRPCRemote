@@ -50,7 +50,6 @@ class IFrontEnd_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual p
         ::grpc::Status getMapRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapRequestRequest* request, ::grpcIFrontEnd::getMapRequestResponse* response) override;
         ::grpc::Status setMapRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::setMapRequestRequest* request, ::grpcIFrontEnd::setMapRequestResponse* response) override;
         ::grpc::Status getPointCloudRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::getPointCloudRequestRequest* request, ::grpcIFrontEnd::getPointCloudRequestResponse* response) override;
-        ::grpc::Status requestForMapProcessing(::grpc::ServerContext* context, const ::grpcIFrontEnd::requestForMapProcessingRequest* request, ::grpcIFrontEnd::requestForMapProcessingResponse* response) override;
 
         SRef<SolAR::api::service::IFrontEnd> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;

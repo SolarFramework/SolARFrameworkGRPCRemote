@@ -4,10 +4,6 @@ gen/interfaces/IDenseMappingPipeline_grpcProxy.h \
 gen/interfaces/IDenseMappingPipeline_grpcServer.h \
 gen/interfaces/grpcIDenseMappingPipelineService.pb.h \
 gen/interfaces/grpcIDenseMappingPipelineService.grpc.pb.h \
-gen/interfaces/IMapProcessingPipeline_grpcProxy.h \
-gen/interfaces/IMapProcessingPipeline_grpcServer.h \
-gen/interfaces/grpcIMapProcessingPipelineService.pb.h \
-gen/interfaces/grpcIMapProcessingPipelineService.grpc.pb.h \
 gen/interfaces/IMapUpdatePipeline_grpcProxy.h \
 gen/interfaces/IMapUpdatePipeline_grpcServer.h \
 gen/interfaces/grpcIMapUpdatePipelineService.pb.h \
@@ -43,10 +39,6 @@ gen/src/IDenseMappingPipeline_grpcProxy.cpp \
 gen/src/IDenseMappingPipeline_grpcServer.cpp \
 gen/src/grpcIDenseMappingPipelineService.pb.cc \
 gen/src/grpcIDenseMappingPipelineService.grpc.pb.cc \
-gen/src/IMapProcessingPipeline_grpcProxy.cpp \
-gen/src/IMapProcessingPipeline_grpcServer.cpp \
-gen/src/grpcIMapProcessingPipelineService.pb.cc \
-gen/src/grpcIMapProcessingPipelineService.grpc.pb.cc \
 gen/src/IMapUpdatePipeline_grpcProxy.cpp \
 gen/src/IMapUpdatePipeline_grpcServer.cpp \
 gen/src/grpcIMapUpdatePipelineService.pb.cc \

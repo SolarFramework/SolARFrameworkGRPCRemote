@@ -12,18 +12,6 @@
         <value>method|getMesh|none|0</value>
       </property>
     </configure>
-    <configure component="IMapProcessingPipeline_grpcServer">
-      <property name="grpc_compress_server" type="string">
-        <value>service|none|0</value>
-        <value>method|init|none|0</value>
-        <value>method|start|none|0</value>
-        <value>method|stop|none|0</value>
-        <value>method|setMapToProcess|none|0</value>
-        <value>method|getStatus|none|0</value>
-        <value>method|getDataForVisualization|none|0</value>
-        <value>method|getProcessedMap|none|0</value>
-      </property>
-    </configure>
     <configure component="IMapUpdatePipeline_grpcServer">
       <property name="grpc_compress_server" type="string">
         <value>service|none|0</value>
@@ -123,7 +111,6 @@
         <value>method|getMapRequest|none|0</value>
         <value>method|setMapRequest|none|0</value>
         <value>method|getPointCloudRequest|none|0</value>
-        <value>method|requestForMapProcessing|none|0</value>
       </property>
     </configure>
     <configure component="IMapsManager_grpcServer">
@@ -139,7 +126,6 @@
         <value>method|getMapRequest|none|0</value>
         <value>method|setMapRequest|none|0</value>
         <value>method|getPointCloudRequest|none|0</value>
-        <value>method|requestForMapProcessing|none|0</value>
       </property>
     </configure>
     <configure component="IServiceManager_grpcServer">

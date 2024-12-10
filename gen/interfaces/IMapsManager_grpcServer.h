@@ -35,7 +35,6 @@ class IMapsManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
         ::grpc::Status getMapRequest(::grpc::ServerContext* context, const ::grpcIMapsManager::getMapRequestRequest* request, ::grpcIMapsManager::getMapRequestResponse* response) override;
         ::grpc::Status setMapRequest(::grpc::ServerContext* context, const ::grpcIMapsManager::setMapRequestRequest* request, ::grpcIMapsManager::setMapRequestResponse* response) override;
         ::grpc::Status getPointCloudRequest(::grpc::ServerContext* context, const ::grpcIMapsManager::getPointCloudRequestRequest* request, ::grpcIMapsManager::getPointCloudRequestResponse* response) override;
-        ::grpc::Status requestForMapProcessing(::grpc::ServerContext* context, const ::grpcIMapsManager::requestForMapProcessingRequest* request, ::grpcIMapsManager::requestForMapProcessingResponse* response) override;
 
         SRef<SolAR::api::service::IMapsManager> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
