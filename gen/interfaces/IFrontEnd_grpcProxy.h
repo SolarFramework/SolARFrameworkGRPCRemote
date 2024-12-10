@@ -47,6 +47,9 @@ class IFrontEnd_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     SolAR::FrameworkReturnCode getMapRequest(std::string const& keycloakToken, std::string const& mapUUID, SRef<SolAR::datastructure::Map>& mapDatastructure)     const     override;
     SolAR::FrameworkReturnCode setMapRequest(std::string const& keycloakToken, std::string const& mapUUID, SRef<SolAR::datastructure::Map> const mapDatastructure)     override;
     SolAR::FrameworkReturnCode getPointCloudRequest(std::string const& keycloakToken, std::string const& mapUUID, SRef<SolAR::datastructure::PointCloud>& pointCloud)     const     override;
+    SolAR::FrameworkReturnCode requestForMapProcessing(std::string const& keycloakToken, std::string const& mapUUID, SolAR::api::service::MapProcessingType const& processingType)     override;
+    SolAR::FrameworkReturnCode getStatusForMapProcessing(std::string const& keycloakToken, std::string const& mapUUID, SolAR::api::service::MapProcessingStatus& status, float& progress, std::string& resultingMapUUID)     const     override;
+    SolAR::FrameworkReturnCode getDataForMapProcessing(std::string const& keycloakToken, std::string const& mapUUID, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pointCloud, std::vector<SolAR::datastructure::Transform3Df>& keyframePoses)     const     override;
 
 
   private:

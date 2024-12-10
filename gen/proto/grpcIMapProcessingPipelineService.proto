@@ -1,0 +1,97 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIMapProcessingPipeline;
+
+message initRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message initResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message startRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message startResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message stopResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setMapToProcessRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes map = 2;
+}
+
+message setMapToProcessResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getStatusRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes status = 2;
+float progress = 3;
+}
+
+message getStatusResponse
+{
+bytes status = 1;
+float progress = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+message getDataForVisualizationRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes pointCloud = 2;
+bytes keyframePoses = 3;
+}
+
+message getDataForVisualizationResponse
+{
+bytes pointCloud = 1;
+bytes keyframePoses = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+message getProcessedMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes map = 2;
+}
+
+message getProcessedMapResponse
+{
+bytes map = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIMapProcessingPipelineService {
+rpc init(initRequest) returns(initResponse) {}
+rpc start(startRequest) returns(startResponse) {}
+rpc stop(stopRequest) returns(stopResponse) {}
+rpc setMapToProcess(setMapToProcessRequest) returns(setMapToProcessResponse) {}
+rpc getStatus(getStatusRequest) returns(getStatusResponse) {}
+rpc getDataForVisualization(getDataForVisualizationRequest) returns(getDataForVisualizationResponse) {}
+rpc getProcessedMap(getProcessedMapRequest) returns(getProcessedMapResponse) {}
+}
+
