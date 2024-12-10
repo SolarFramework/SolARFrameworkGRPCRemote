@@ -134,7 +134,7 @@ SolAR::FrameworkReturnCode  IMapProcessingPipeline_grpcProxy::stop()
 }
 
 
-SolAR::FrameworkReturnCode  IMapProcessingPipeline_grpcProxy::setMapToProcess(SRef<datastructure::Map const> map)
+SolAR::FrameworkReturnCode  IMapProcessingPipeline_grpcProxy::setMapToProcess(SRef<SolAR::datastructure::Map const> map)
 {
   ::grpc::ClientContext context;
   ::grpcIMapProcessingPipeline::setMapToProcessRequest reqIn;
@@ -144,7 +144,7 @@ SolAR::FrameworkReturnCode  IMapProcessingPipeline_grpcProxy::setMapToProcess(SR
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
-  reqIn.set_map(xpcf::serialize<SRef<datastructure::Map>>(map));
+  reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map const>>(map));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMapProcessingPipeline_grpcProxy::setMapToProcess request sent at " << to_simple_string(start) << std::endl;
@@ -230,7 +230,7 @@ SolAR::FrameworkReturnCode  IMapProcessingPipeline_grpcProxy::getDataForVisualiz
 }
 
 
-SolAR::FrameworkReturnCode  IMapProcessingPipeline_grpcProxy::getProcessedMap(SRef<datastructure::Map>& map) const
+SolAR::FrameworkReturnCode  IMapProcessingPipeline_grpcProxy::getProcessedMap(SRef<SolAR::datastructure::Map>& map) const
 {
   ::grpc::ClientContext context;
   ::grpcIMapProcessingPipeline::getProcessedMapRequest reqIn;
@@ -240,7 +240,7 @@ SolAR::FrameworkReturnCode  IMapProcessingPipeline_grpcProxy::getProcessedMap(SR
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
-  reqIn.set_map(xpcf::serialize<SRef<datastructure::Map>>(map));
+  reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMapProcessingPipeline_grpcProxy::getProcessedMap request sent at " << to_simple_string(start) << std::endl;
@@ -256,7 +256,7 @@ SolAR::FrameworkReturnCode  IMapProcessingPipeline_grpcProxy::getProcessedMap(SR
     throw xpcf::RemotingException("grpcIMapProcessingPipelineService","getProcessedMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  map = xpcf::deserialize<SRef<datastructure::Map>>(respOut.map());
+  map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(respOut.map());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

@@ -117,7 +117,7 @@ XPCFErrorCode IMapProcessingPipeline_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMapProcessingPipeline_grpcServer::setMapToProcess request received at " << to_simple_string(start) << std::endl;
   #endif
-  SRef<datastructure::Map> map = xpcf::deserialize<SRef<datastructure::Map>>(request->map());
+  SRef<SolAR::datastructure::Map> map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->map());
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setMapToProcess(map);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -192,9 +192,9 @@ XPCFErrorCode IMapProcessingPipeline_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMapProcessingPipeline_grpcServer::getProcessedMap request received at " << to_simple_string(start) << std::endl;
   #endif
-  SRef<datastructure::Map> map = xpcf::deserialize<SRef<datastructure::Map>>(request->map());
+  SRef<SolAR::datastructure::Map> map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->map());
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getProcessedMap(map);
-  response->set_map(xpcf::serialize<SRef<datastructure::Map>>(map));
+  response->set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
