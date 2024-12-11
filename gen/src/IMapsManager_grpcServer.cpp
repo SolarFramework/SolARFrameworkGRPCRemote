@@ -14,7 +14,7 @@ IMapsManager_grpcServer::IMapsManager_grpcServer():xpcf::ConfigurableBase(xpcf::
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::service::IMapsManager>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(14);
+  m_grpcServerCompressionConfig.resize(16);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -272,6 +272,54 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMapsManager_grpcServer::getPointCloudRequest response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IMapsManager_grpcServer::grpcIMapsManagerServiceImpl::registerMapProcessingService(::grpc::ServerContext* context, const ::grpcIMapsManager::registerMapProcessingServiceRequest* request, ::grpcIMapsManager::registerMapProcessingServiceResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "registerMapProcessingService", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapsManager_grpcServer::registerMapProcessingService request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SolAR::api::service::MapProcessingType processingType = xpcf::deserialize<SolAR::api::service::MapProcessingType>(request->processingtype());
+  std::string serviceURL = request->serviceurl();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->registerMapProcessingService(processingType, serviceURL);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapsManager_grpcServer::registerMapProcessingService response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IMapsManager_grpcServer::grpcIMapsManagerServiceImpl::unregisterMapProcessingService(::grpc::ServerContext* context, const ::grpcIMapsManager::unregisterMapProcessingServiceRequest* request, ::grpcIMapsManager::unregisterMapProcessingServiceResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "unregisterMapProcessingService", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapsManager_grpcServer::unregisterMapProcessingService request received at " << to_simple_string(start) << std::endl;
+  #endif
+  SolAR::api::service::MapProcessingType processingType = xpcf::deserialize<SolAR::api::service::MapProcessingType>(request->processingtype());
+  std::string serviceURL = request->serviceurl();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->unregisterMapProcessingService(processingType, serviceURL);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapsManager_grpcServer::unregisterMapProcessingService response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;

@@ -141,6 +141,8 @@
         <value>method|getMapRequest|none|none</value>
         <value>method|setMapRequest|none|none</value>
         <value>method|getPointCloudRequest|none|none</value>
+        <value>method|registerMapProcessingService|none|none</value>
+        <value>method|unregisterMapProcessingService|none|none</value>
         <value>method|requestForMapProcessing|none|none</value>
         <value>method|getStatusForMapProcessing|none|none</value>
         <value>method|getDataForMapProcessing|none|none</value>

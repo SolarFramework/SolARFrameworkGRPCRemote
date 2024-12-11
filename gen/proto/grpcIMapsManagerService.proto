@@ -122,6 +122,30 @@ bytes pointCloud = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
+message registerMapProcessingServiceRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes processingType = 2;
+string serviceURL = 3;
+}
+
+message registerMapProcessingServiceResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message unregisterMapProcessingServiceRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes processingType = 2;
+string serviceURL = 3;
+}
+
+message unregisterMapProcessingServiceResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 message requestForMapProcessingRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -177,6 +201,8 @@ rpc decreaseMapClients(decreaseMapClientsRequest) returns(decreaseMapClientsResp
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc setMapRequest(setMapRequestRequest) returns(setMapRequestResponse) {}
 rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}
+rpc registerMapProcessingService(registerMapProcessingServiceRequest) returns(registerMapProcessingServiceResponse) {}
+rpc unregisterMapProcessingService(unregisterMapProcessingServiceRequest) returns(unregisterMapProcessingServiceResponse) {}
 rpc requestForMapProcessing(requestForMapProcessingRequest) returns(requestForMapProcessingResponse) {}
 rpc getStatusForMapProcessing(getStatusForMapProcessingRequest) returns(getStatusForMapProcessingResponse) {}
 rpc getDataForMapProcessing(getDataForMapProcessingRequest) returns(getDataForMapProcessingResponse) {}
