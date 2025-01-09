@@ -20,7 +20,7 @@
         <value>method|stop|none|none</value>
         <value>method|setMapToProcess|none|none</value>
         <value>method|getStatus|none|none</value>
-        <value>method|getDataForVisualization|none|none</value>
+        <value>method|getProcessingData|none|none</value>
         <value>method|getProcessedMap|none|none</value>
       </property>
     </configure>
@@ -123,9 +123,9 @@
         <value>method|getMapRequest|none|none</value>
         <value>method|setMapRequest|none|none</value>
         <value>method|getPointCloudRequest|none|none</value>
-        <value>method|requestForMapProcessing|none|none</value>
-        <value>method|getStatusForMapProcessing|none|none</value>
-        <value>method|getDataForMapProcessing|none|none</value>
+        <value>method|requestMapProcessing|none|none</value>
+        <value>method|getMapProcessingStatus|none|none</value>
+        <value>method|getMapProcessingData|none|none</value>
       </property>
     </configure>
     <configure component="IMapsManager_grpcProxy">
@@ -143,9 +143,9 @@
         <value>method|getPointCloudRequest|none|none</value>
         <value>method|registerMapProcessingService|none|none</value>
         <value>method|unregisterMapProcessingService|none|none</value>
-        <value>method|requestForMapProcessing|none|none</value>
-        <value>method|getStatusForMapProcessing|none|none</value>
-        <value>method|getDataForMapProcessing|none|none</value>
+        <value>method|requestMapProcessing|none|none</value>
+        <value>method|getMapProcessingStatus|none|none</value>
+        <value>method|getMapProcessingData|none|none</value>
       </property>
     </configure>
     <configure component="IServiceManager_grpcProxy">

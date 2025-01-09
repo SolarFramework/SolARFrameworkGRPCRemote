@@ -70,12 +70,12 @@ class grpcIMapProcessingPipelineService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getStatusResponse>> PrepareAsyncgetStatus(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getStatusRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getStatusResponse>>(PrepareAsyncgetStatusRaw(context, request, cq));
     }
-    virtual ::grpc::Status getDataForVisualization(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest& request, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>> AsyncgetDataForVisualization(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>>(AsyncgetDataForVisualizationRaw(context, request, cq));
+    virtual ::grpc::Status getProcessingData(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest& request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getProcessingDataResponse>> AsyncgetProcessingData(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getProcessingDataResponse>>(AsyncgetProcessingDataRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>> PrepareAsyncgetDataForVisualization(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>>(PrepareAsyncgetDataForVisualizationRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getProcessingDataResponse>> PrepareAsyncgetProcessingData(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getProcessingDataResponse>>(PrepareAsyncgetProcessingDataRaw(context, request, cq));
     }
     virtual ::grpc::Status getProcessedMap(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest& request, ::grpcIMapProcessingPipeline::getProcessedMapResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getProcessedMapResponse>> AsyncgetProcessedMap(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest& request, ::grpc::CompletionQueue* cq) {
@@ -97,8 +97,8 @@ class grpcIMapProcessingPipelineService final {
       virtual void setMapToProcess(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcessRequest* request, ::grpcIMapProcessingPipeline::setMapToProcessResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void getStatus(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getStatusRequest* request, ::grpcIMapProcessingPipeline::getStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void getStatus(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getStatusRequest* request, ::grpcIMapProcessingPipeline::getStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void getDataForVisualization(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* request, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void getDataForVisualization(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* request, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void getProcessingData(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void getProcessingData(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void getProcessedMap(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest* request, ::grpcIMapProcessingPipeline::getProcessedMapResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void getProcessedMap(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest* request, ::grpcIMapProcessingPipeline::getProcessedMapResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -116,8 +116,8 @@ class grpcIMapProcessingPipelineService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::setMapToProcessResponse>* PrepareAsyncsetMapToProcessRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcessRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getStatusResponse>* AsyncgetStatusRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getStatusResponse>* PrepareAsyncgetStatusRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>* AsyncgetDataForVisualizationRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>* PrepareAsyncgetDataForVisualizationRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getProcessingDataResponse>* AsyncgetProcessingDataRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getProcessingDataResponse>* PrepareAsyncgetProcessingDataRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getProcessedMapResponse>* AsyncgetProcessedMapRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIMapProcessingPipeline::getProcessedMapResponse>* PrepareAsyncgetProcessedMapRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
@@ -159,12 +159,12 @@ class grpcIMapProcessingPipelineService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getStatusResponse>> PrepareAsyncgetStatus(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getStatusRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getStatusResponse>>(PrepareAsyncgetStatusRaw(context, request, cq));
     }
-    ::grpc::Status getDataForVisualization(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest& request, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>> AsyncgetDataForVisualization(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>>(AsyncgetDataForVisualizationRaw(context, request, cq));
+    ::grpc::Status getProcessingData(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest& request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getProcessingDataResponse>> AsyncgetProcessingData(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getProcessingDataResponse>>(AsyncgetProcessingDataRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>> PrepareAsyncgetDataForVisualization(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>>(PrepareAsyncgetDataForVisualizationRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getProcessingDataResponse>> PrepareAsyncgetProcessingData(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getProcessingDataResponse>>(PrepareAsyncgetProcessingDataRaw(context, request, cq));
     }
     ::grpc::Status getProcessedMap(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest& request, ::grpcIMapProcessingPipeline::getProcessedMapResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getProcessedMapResponse>> AsyncgetProcessedMap(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest& request, ::grpc::CompletionQueue* cq) {
@@ -186,8 +186,8 @@ class grpcIMapProcessingPipelineService final {
       void setMapToProcess(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcessRequest* request, ::grpcIMapProcessingPipeline::setMapToProcessResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void getStatus(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getStatusRequest* request, ::grpcIMapProcessingPipeline::getStatusResponse* response, std::function<void(::grpc::Status)>) override;
       void getStatus(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getStatusRequest* request, ::grpcIMapProcessingPipeline::getStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void getDataForVisualization(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* request, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* response, std::function<void(::grpc::Status)>) override;
-      void getDataForVisualization(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* request, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void getProcessingData(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response, std::function<void(::grpc::Status)>) override;
+      void getProcessingData(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void getProcessedMap(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest* request, ::grpcIMapProcessingPipeline::getProcessedMapResponse* response, std::function<void(::grpc::Status)>) override;
       void getProcessedMap(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest* request, ::grpcIMapProcessingPipeline::getProcessedMapResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
@@ -211,8 +211,8 @@ class grpcIMapProcessingPipelineService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::setMapToProcessResponse>* PrepareAsyncsetMapToProcessRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcessRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getStatusResponse>* AsyncgetStatusRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getStatusRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getStatusResponse>* PrepareAsyncgetStatusRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getStatusRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>* AsyncgetDataForVisualizationRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>* PrepareAsyncgetDataForVisualizationRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getProcessingDataResponse>* AsyncgetProcessingDataRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getProcessingDataResponse>* PrepareAsyncgetProcessingDataRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getProcessedMapResponse>* AsyncgetProcessedMapRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getProcessedMapResponse>* PrepareAsyncgetProcessedMapRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_init_;
@@ -220,7 +220,7 @@ class grpcIMapProcessingPipelineService final {
     const ::grpc::internal::RpcMethod rpcmethod_stop_;
     const ::grpc::internal::RpcMethod rpcmethod_setMapToProcess_;
     const ::grpc::internal::RpcMethod rpcmethod_getStatus_;
-    const ::grpc::internal::RpcMethod rpcmethod_getDataForVisualization_;
+    const ::grpc::internal::RpcMethod rpcmethod_getProcessingData_;
     const ::grpc::internal::RpcMethod rpcmethod_getProcessedMap_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
@@ -234,7 +234,7 @@ class grpcIMapProcessingPipelineService final {
     virtual ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::stopRequest* request, ::grpcIMapProcessingPipeline::stopResponse* response);
     virtual ::grpc::Status setMapToProcess(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::setMapToProcessRequest* request, ::grpcIMapProcessingPipeline::setMapToProcessResponse* response);
     virtual ::grpc::Status getStatus(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getStatusRequest* request, ::grpcIMapProcessingPipeline::getStatusResponse* response);
-    virtual ::grpc::Status getDataForVisualization(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* request, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* response);
+    virtual ::grpc::Status getProcessingData(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response);
     virtual ::grpc::Status getProcessedMap(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest* request, ::grpcIMapProcessingPipeline::getProcessedMapResponse* response);
   };
   template <class BaseClass>
@@ -338,22 +338,22 @@ class grpcIMapProcessingPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_getDataForVisualization : public BaseClass {
+  class WithAsyncMethod_getProcessingData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_getDataForVisualization() {
+    WithAsyncMethod_getProcessingData() {
       ::grpc::Service::MarkMethodAsync(5);
     }
-    ~WithAsyncMethod_getDataForVisualization() override {
+    ~WithAsyncMethod_getProcessingData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getDataForVisualization(::grpc::ServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* /*request*/, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* /*response*/) override {
+    ::grpc::Status getProcessingData(::grpc::ServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* /*request*/, ::grpcIMapProcessingPipeline::getProcessingDataResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestgetDataForVisualization(::grpc::ServerContext* context, ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestgetProcessingData(::grpc::ServerContext* context, ::grpcIMapProcessingPipeline::getProcessingDataRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIMapProcessingPipeline::getProcessingDataResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -377,7 +377,7 @@ class grpcIMapProcessingPipelineService final {
       ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_init<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_setMapToProcess<WithAsyncMethod_getStatus<WithAsyncMethod_getDataForVisualization<WithAsyncMethod_getProcessedMap<Service > > > > > > > AsyncService;
+  typedef WithAsyncMethod_init<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_setMapToProcess<WithAsyncMethod_getStatus<WithAsyncMethod_getProcessingData<WithAsyncMethod_getProcessedMap<Service > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_init : public BaseClass {
    private:
@@ -514,31 +514,31 @@ class grpcIMapProcessingPipelineService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getStatusRequest* /*request*/, ::grpcIMapProcessingPipeline::getStatusResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_getDataForVisualization : public BaseClass {
+  class WithCallbackMethod_getProcessingData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_getDataForVisualization() {
+    WithCallbackMethod_getProcessingData() {
       ::grpc::Service::MarkMethodCallback(5,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapProcessingPipeline::getDataForVisualizationRequest, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIMapProcessingPipeline::getProcessingDataRequest, ::grpcIMapProcessingPipeline::getProcessingDataResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* request, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* response) { return this->getDataForVisualization(context, request, response); }));}
-    void SetMessageAllocatorFor_getDataForVisualization(
-        ::grpc::MessageAllocator< ::grpcIMapProcessingPipeline::getDataForVisualizationRequest, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>* allocator) {
+                   ::grpc::CallbackServerContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response) { return this->getProcessingData(context, request, response); }));}
+    void SetMessageAllocatorFor_getProcessingData(
+        ::grpc::MessageAllocator< ::grpcIMapProcessingPipeline::getProcessingDataRequest, ::grpcIMapProcessingPipeline::getProcessingDataResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapProcessingPipeline::getDataForVisualizationRequest, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIMapProcessingPipeline::getProcessingDataRequest, ::grpcIMapProcessingPipeline::getProcessingDataResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_getDataForVisualization() override {
+    ~WithCallbackMethod_getProcessingData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getDataForVisualization(::grpc::ServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* /*request*/, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* /*response*/) override {
+    ::grpc::Status getProcessingData(::grpc::ServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* /*request*/, ::grpcIMapProcessingPipeline::getProcessingDataResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* getDataForVisualization(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* /*request*/, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerUnaryReactor* getProcessingData(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* /*request*/, ::grpcIMapProcessingPipeline::getProcessingDataResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_getProcessedMap : public BaseClass {
@@ -567,7 +567,7 @@ class grpcIMapProcessingPipelineService final {
     virtual ::grpc::ServerUnaryReactor* getProcessedMap(
       ::grpc::CallbackServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getProcessedMapRequest* /*request*/, ::grpcIMapProcessingPipeline::getProcessedMapResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_init<WithCallbackMethod_start<WithCallbackMethod_stop<WithCallbackMethod_setMapToProcess<WithCallbackMethod_getStatus<WithCallbackMethod_getDataForVisualization<WithCallbackMethod_getProcessedMap<Service > > > > > > > CallbackService;
+  typedef WithCallbackMethod_init<WithCallbackMethod_start<WithCallbackMethod_stop<WithCallbackMethod_setMapToProcess<WithCallbackMethod_getStatus<WithCallbackMethod_getProcessingData<WithCallbackMethod_getProcessedMap<Service > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_init : public BaseClass {
@@ -655,18 +655,18 @@ class grpcIMapProcessingPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_getDataForVisualization : public BaseClass {
+  class WithGenericMethod_getProcessingData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_getDataForVisualization() {
+    WithGenericMethod_getProcessingData() {
       ::grpc::Service::MarkMethodGeneric(5);
     }
-    ~WithGenericMethod_getDataForVisualization() override {
+    ~WithGenericMethod_getProcessingData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getDataForVisualization(::grpc::ServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* /*request*/, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* /*response*/) override {
+    ::grpc::Status getProcessingData(::grpc::ServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* /*request*/, ::grpcIMapProcessingPipeline::getProcessingDataResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -789,22 +789,22 @@ class grpcIMapProcessingPipelineService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_getDataForVisualization : public BaseClass {
+  class WithRawMethod_getProcessingData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_getDataForVisualization() {
+    WithRawMethod_getProcessingData() {
       ::grpc::Service::MarkMethodRaw(5);
     }
-    ~WithRawMethod_getDataForVisualization() override {
+    ~WithRawMethod_getProcessingData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getDataForVisualization(::grpc::ServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* /*request*/, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* /*response*/) override {
+    ::grpc::Status getProcessingData(::grpc::ServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* /*request*/, ::grpcIMapProcessingPipeline::getProcessingDataResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestgetDataForVisualization(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestgetProcessingData(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -939,25 +939,25 @@ class grpcIMapProcessingPipelineService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_getDataForVisualization : public BaseClass {
+  class WithRawCallbackMethod_getProcessingData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_getDataForVisualization() {
+    WithRawCallbackMethod_getProcessingData() {
       ::grpc::Service::MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getDataForVisualization(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getProcessingData(context, request, response); }));
     }
-    ~WithRawCallbackMethod_getDataForVisualization() override {
+    ~WithRawCallbackMethod_getProcessingData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status getDataForVisualization(::grpc::ServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* /*request*/, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* /*response*/) override {
+    ::grpc::Status getProcessingData(::grpc::ServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* /*request*/, ::grpcIMapProcessingPipeline::getProcessingDataResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* getDataForVisualization(
+    virtual ::grpc::ServerUnaryReactor* getProcessingData(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -1118,31 +1118,31 @@ class grpcIMapProcessingPipelineService final {
     virtual ::grpc::Status StreamedgetStatus(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapProcessingPipeline::getStatusRequest,::grpcIMapProcessingPipeline::getStatusResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_getDataForVisualization : public BaseClass {
+  class WithStreamedUnaryMethod_getProcessingData : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_getDataForVisualization() {
+    WithStreamedUnaryMethod_getProcessingData() {
       ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::grpcIMapProcessingPipeline::getDataForVisualizationRequest, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>(
+          ::grpcIMapProcessingPipeline::getProcessingDataRequest, ::grpcIMapProcessingPipeline::getProcessingDataResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::grpcIMapProcessingPipeline::getDataForVisualizationRequest, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>* streamer) {
-                       return this->StreamedgetDataForVisualization(context,
+                     ::grpcIMapProcessingPipeline::getProcessingDataRequest, ::grpcIMapProcessingPipeline::getProcessingDataResponse>* streamer) {
+                       return this->StreamedgetProcessingData(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_getDataForVisualization() override {
+    ~WithStreamedUnaryMethod_getProcessingData() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status getDataForVisualization(::grpc::ServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* /*request*/, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* /*response*/) override {
+    ::grpc::Status getProcessingData(::grpc::ServerContext* /*context*/, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* /*request*/, ::grpcIMapProcessingPipeline::getProcessingDataResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedgetDataForVisualization(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapProcessingPipeline::getDataForVisualizationRequest,::grpcIMapProcessingPipeline::getDataForVisualizationResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedgetProcessingData(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapProcessingPipeline::getProcessingDataRequest,::grpcIMapProcessingPipeline::getProcessingDataResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_getProcessedMap : public BaseClass {
@@ -1171,9 +1171,9 @@ class grpcIMapProcessingPipelineService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedgetProcessedMap(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIMapProcessingPipeline::getProcessedMapRequest,::grpcIMapProcessingPipeline::getProcessedMapResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_setMapToProcess<WithStreamedUnaryMethod_getStatus<WithStreamedUnaryMethod_getDataForVisualization<WithStreamedUnaryMethod_getProcessedMap<Service > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_setMapToProcess<WithStreamedUnaryMethod_getStatus<WithStreamedUnaryMethod_getProcessingData<WithStreamedUnaryMethod_getProcessedMap<Service > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_setMapToProcess<WithStreamedUnaryMethod_getStatus<WithStreamedUnaryMethod_getDataForVisualization<WithStreamedUnaryMethod_getProcessedMap<Service > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_init<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_setMapToProcess<WithStreamedUnaryMethod_getStatus<WithStreamedUnaryMethod_getProcessingData<WithStreamedUnaryMethod_getProcessedMap<Service > > > > > > > StreamedService;
 };
 
 }  // namespace grpcIMapProcessingPipeline

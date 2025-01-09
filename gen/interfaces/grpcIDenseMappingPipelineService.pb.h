@@ -1434,8 +1434,8 @@ class getPointCloudRequest final :
 
   enum : int {
     kOutputPointCloudFieldNumber = 2,
-    kStatusFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
+    kStatusFieldNumber = 3,
   };
   // bytes outputPointCloud = 2;
   void clear_outputpointcloud();
@@ -1451,20 +1451,6 @@ class getPointCloudRequest final :
   std::string* _internal_mutable_outputpointcloud();
   public:
 
-  // bytes status = 3;
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_NODISCARD std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
   // int32 grpcServerCompressionFormat = 1;
   void clear_grpcservercompressionformat();
   int32_t grpcservercompressionformat() const;
@@ -1472,6 +1458,15 @@ class getPointCloudRequest final :
   private:
   int32_t _internal_grpcservercompressionformat() const;
   void _internal_set_grpcservercompressionformat(int32_t value);
+  public:
+
+  // sint32 status = 3;
+  void clear_status();
+  int32_t status() const;
+  void set_status(int32_t value);
+  private:
+  int32_t _internal_status() const;
+  void _internal_set_status(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIDenseMappingPipeline.getPointCloudRequest)
@@ -1483,8 +1478,8 @@ class getPointCloudRequest final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputpointcloud_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
     int32_t grpcservercompressionformat_;
+    int32_t status_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1631,18 +1626,13 @@ class getPointCloudResponse final :
   std::string* _internal_mutable_outputpointcloud();
   public:
 
-  // bytes status = 2;
+  // sint32 status = 2;
   void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_NODISCARD std::string* release_status();
-  void set_allocated_status(std::string* status);
+  int32_t status() const;
+  void set_status(int32_t value);
   private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
+  int32_t _internal_status() const;
+  void _internal_set_status(int32_t value);
   public:
 
   // sint32 xpcfGrpcReturnValue = 3;
@@ -1663,7 +1653,7 @@ class getPointCloudResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputpointcloud_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+    int32_t status_;
     int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -1794,8 +1784,8 @@ class getMeshRequest final :
 
   enum : int {
     kOutputMeshFieldNumber = 2,
-    kStatusFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
+    kStatusFieldNumber = 3,
   };
   // bytes outputMesh = 2;
   void clear_outputmesh();
@@ -1811,20 +1801,6 @@ class getMeshRequest final :
   std::string* _internal_mutable_outputmesh();
   public:
 
-  // bytes status = 3;
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_NODISCARD std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
   // int32 grpcServerCompressionFormat = 1;
   void clear_grpcservercompressionformat();
   int32_t grpcservercompressionformat() const;
@@ -1832,6 +1808,15 @@ class getMeshRequest final :
   private:
   int32_t _internal_grpcservercompressionformat() const;
   void _internal_set_grpcservercompressionformat(int32_t value);
+  public:
+
+  // sint32 status = 3;
+  void clear_status();
+  int32_t status() const;
+  void set_status(int32_t value);
+  private:
+  int32_t _internal_status() const;
+  void _internal_set_status(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIDenseMappingPipeline.getMeshRequest)
@@ -1843,8 +1828,8 @@ class getMeshRequest final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputmesh_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
     int32_t grpcservercompressionformat_;
+    int32_t status_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1991,18 +1976,13 @@ class getMeshResponse final :
   std::string* _internal_mutable_outputmesh();
   public:
 
-  // bytes status = 2;
+  // sint32 status = 2;
   void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_NODISCARD std::string* release_status();
-  void set_allocated_status(std::string* status);
+  int32_t status() const;
+  void set_status(int32_t value);
   private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
+  int32_t _internal_status() const;
+  void _internal_set_status(int32_t value);
   public:
 
   // sint32 xpcfGrpcReturnValue = 3;
@@ -2023,7 +2003,7 @@ class getMeshResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr outputmesh_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+    int32_t status_;
     int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -2373,54 +2353,24 @@ inline void getPointCloudRequest::set_allocated_outputpointcloud(std::string* ou
   // @@protoc_insertion_point(field_set_allocated:grpcIDenseMappingPipeline.getPointCloudRequest.outputPointCloud)
 }
 
-// bytes status = 3;
+// sint32 status = 3;
 inline void getPointCloudRequest::clear_status() {
-  _impl_.status_.ClearToEmpty();
+  _impl_.status_ = 0;
 }
-inline const std::string& getPointCloudRequest::status() const {
+inline int32_t getPointCloudRequest::_internal_status() const {
+  return _impl_.status_;
+}
+inline int32_t getPointCloudRequest::status() const {
   // @@protoc_insertion_point(field_get:grpcIDenseMappingPipeline.getPointCloudRequest.status)
   return _internal_status();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getPointCloudRequest::set_status(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.status_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getPointCloudRequest::_internal_set_status(int32_t value) {
+  
+  _impl_.status_ = value;
+}
+inline void getPointCloudRequest::set_status(int32_t value) {
+  _internal_set_status(value);
   // @@protoc_insertion_point(field_set:grpcIDenseMappingPipeline.getPointCloudRequest.status)
-}
-inline std::string* getPointCloudRequest::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:grpcIDenseMappingPipeline.getPointCloudRequest.status)
-  return _s;
-}
-inline const std::string& getPointCloudRequest::_internal_status() const {
-  return _impl_.status_.Get();
-}
-inline void getPointCloudRequest::_internal_set_status(const std::string& value) {
-  
-  _impl_.status_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getPointCloudRequest::_internal_mutable_status() {
-  
-  return _impl_.status_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getPointCloudRequest::release_status() {
-  // @@protoc_insertion_point(field_release:grpcIDenseMappingPipeline.getPointCloudRequest.status)
-  return _impl_.status_.Release();
-}
-inline void getPointCloudRequest::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.status_.IsDefault()) {
-    _impl_.status_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIDenseMappingPipeline.getPointCloudRequest.status)
 }
 
 // -------------------------------------------------------------------
@@ -2477,54 +2427,24 @@ inline void getPointCloudResponse::set_allocated_outputpointcloud(std::string* o
   // @@protoc_insertion_point(field_set_allocated:grpcIDenseMappingPipeline.getPointCloudResponse.outputPointCloud)
 }
 
-// bytes status = 2;
+// sint32 status = 2;
 inline void getPointCloudResponse::clear_status() {
-  _impl_.status_.ClearToEmpty();
+  _impl_.status_ = 0;
 }
-inline const std::string& getPointCloudResponse::status() const {
+inline int32_t getPointCloudResponse::_internal_status() const {
+  return _impl_.status_;
+}
+inline int32_t getPointCloudResponse::status() const {
   // @@protoc_insertion_point(field_get:grpcIDenseMappingPipeline.getPointCloudResponse.status)
   return _internal_status();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getPointCloudResponse::set_status(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.status_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getPointCloudResponse::_internal_set_status(int32_t value) {
+  
+  _impl_.status_ = value;
+}
+inline void getPointCloudResponse::set_status(int32_t value) {
+  _internal_set_status(value);
   // @@protoc_insertion_point(field_set:grpcIDenseMappingPipeline.getPointCloudResponse.status)
-}
-inline std::string* getPointCloudResponse::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:grpcIDenseMappingPipeline.getPointCloudResponse.status)
-  return _s;
-}
-inline const std::string& getPointCloudResponse::_internal_status() const {
-  return _impl_.status_.Get();
-}
-inline void getPointCloudResponse::_internal_set_status(const std::string& value) {
-  
-  _impl_.status_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getPointCloudResponse::_internal_mutable_status() {
-  
-  return _impl_.status_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getPointCloudResponse::release_status() {
-  // @@protoc_insertion_point(field_release:grpcIDenseMappingPipeline.getPointCloudResponse.status)
-  return _impl_.status_.Release();
-}
-inline void getPointCloudResponse::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.status_.IsDefault()) {
-    _impl_.status_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIDenseMappingPipeline.getPointCloudResponse.status)
 }
 
 // sint32 xpcfGrpcReturnValue = 3;
@@ -2621,54 +2541,24 @@ inline void getMeshRequest::set_allocated_outputmesh(std::string* outputmesh) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDenseMappingPipeline.getMeshRequest.outputMesh)
 }
 
-// bytes status = 3;
+// sint32 status = 3;
 inline void getMeshRequest::clear_status() {
-  _impl_.status_.ClearToEmpty();
+  _impl_.status_ = 0;
 }
-inline const std::string& getMeshRequest::status() const {
+inline int32_t getMeshRequest::_internal_status() const {
+  return _impl_.status_;
+}
+inline int32_t getMeshRequest::status() const {
   // @@protoc_insertion_point(field_get:grpcIDenseMappingPipeline.getMeshRequest.status)
   return _internal_status();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getMeshRequest::set_status(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.status_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getMeshRequest::_internal_set_status(int32_t value) {
+  
+  _impl_.status_ = value;
+}
+inline void getMeshRequest::set_status(int32_t value) {
+  _internal_set_status(value);
   // @@protoc_insertion_point(field_set:grpcIDenseMappingPipeline.getMeshRequest.status)
-}
-inline std::string* getMeshRequest::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:grpcIDenseMappingPipeline.getMeshRequest.status)
-  return _s;
-}
-inline const std::string& getMeshRequest::_internal_status() const {
-  return _impl_.status_.Get();
-}
-inline void getMeshRequest::_internal_set_status(const std::string& value) {
-  
-  _impl_.status_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getMeshRequest::_internal_mutable_status() {
-  
-  return _impl_.status_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getMeshRequest::release_status() {
-  // @@protoc_insertion_point(field_release:grpcIDenseMappingPipeline.getMeshRequest.status)
-  return _impl_.status_.Release();
-}
-inline void getMeshRequest::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.status_.IsDefault()) {
-    _impl_.status_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIDenseMappingPipeline.getMeshRequest.status)
 }
 
 // -------------------------------------------------------------------
@@ -2725,54 +2615,24 @@ inline void getMeshResponse::set_allocated_outputmesh(std::string* outputmesh) {
   // @@protoc_insertion_point(field_set_allocated:grpcIDenseMappingPipeline.getMeshResponse.outputMesh)
 }
 
-// bytes status = 2;
+// sint32 status = 2;
 inline void getMeshResponse::clear_status() {
-  _impl_.status_.ClearToEmpty();
+  _impl_.status_ = 0;
 }
-inline const std::string& getMeshResponse::status() const {
+inline int32_t getMeshResponse::_internal_status() const {
+  return _impl_.status_;
+}
+inline int32_t getMeshResponse::status() const {
   // @@protoc_insertion_point(field_get:grpcIDenseMappingPipeline.getMeshResponse.status)
   return _internal_status();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getMeshResponse::set_status(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.status_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getMeshResponse::_internal_set_status(int32_t value) {
+  
+  _impl_.status_ = value;
+}
+inline void getMeshResponse::set_status(int32_t value) {
+  _internal_set_status(value);
   // @@protoc_insertion_point(field_set:grpcIDenseMappingPipeline.getMeshResponse.status)
-}
-inline std::string* getMeshResponse::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:grpcIDenseMappingPipeline.getMeshResponse.status)
-  return _s;
-}
-inline const std::string& getMeshResponse::_internal_status() const {
-  return _impl_.status_.Get();
-}
-inline void getMeshResponse::_internal_set_status(const std::string& value) {
-  
-  _impl_.status_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getMeshResponse::_internal_mutable_status() {
-  
-  return _impl_.status_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getMeshResponse::release_status() {
-  // @@protoc_insertion_point(field_release:grpcIDenseMappingPipeline.getMeshResponse.status)
-  return _impl_.status_.Release();
-}
-inline void getMeshResponse::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.status_.IsDefault()) {
-    _impl_.status_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIDenseMappingPipeline.getMeshResponse.status)
 }
 
 // sint32 xpcfGrpcReturnValue = 3;

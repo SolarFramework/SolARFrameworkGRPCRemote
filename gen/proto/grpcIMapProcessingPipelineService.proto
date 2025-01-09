@@ -48,25 +48,25 @@ sint32 xpcfGrpcReturnValue = 1;
 message getStatusRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes status = 2;
+sint32 status = 2;
 float progress = 3;
 }
 
 message getStatusResponse
 {
-bytes status = 1;
+sint32 status = 1;
 float progress = 2;
 sint32 xpcfGrpcReturnValue = 3;
 }
 
-message getDataForVisualizationRequest
+message getProcessingDataRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes pointCloud = 2;
 bytes keyframePoses = 3;
 }
 
-message getDataForVisualizationResponse
+message getProcessingDataResponse
 {
 bytes pointCloud = 1;
 bytes keyframePoses = 2;
@@ -91,7 +91,7 @@ rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}
 rpc setMapToProcess(setMapToProcessRequest) returns(setMapToProcessResponse) {}
 rpc getStatus(getStatusRequest) returns(getStatusResponse) {}
-rpc getDataForVisualization(getDataForVisualizationRequest) returns(getDataForVisualizationResponse) {}
+rpc getProcessingData(getProcessingDataRequest) returns(getProcessingDataResponse) {}
 rpc getProcessedMap(getProcessedMapRequest) returns(getProcessedMapResponse) {}
 }
 

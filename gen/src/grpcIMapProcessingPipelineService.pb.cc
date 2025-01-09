@@ -128,8 +128,8 @@ struct setMapToProcessResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 setMapToProcessResponseDefaultTypeInternal _setMapToProcessResponse_default_instance_;
 PROTOBUF_CONSTEXPR getStatusRequest::getStatusRequest(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.grpcservercompressionformat_)*/0
+    /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_.status_)*/0
   , /*decltype(_impl_.progress_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct getStatusRequestDefaultTypeInternal {
@@ -143,7 +143,7 @@ struct getStatusRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getStatusRequestDefaultTypeInternal _getStatusRequest_default_instance_;
 PROTOBUF_CONSTEXPR getStatusResponse::getStatusResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+    /*decltype(_impl_.status_)*/0
   , /*decltype(_impl_.progress_)*/0
   , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
@@ -156,36 +156,36 @@ struct getStatusResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getStatusResponseDefaultTypeInternal _getStatusResponse_default_instance_;
-PROTOBUF_CONSTEXPR getDataForVisualizationRequest::getDataForVisualizationRequest(
+PROTOBUF_CONSTEXPR getProcessingDataRequest::getProcessingDataRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.pointcloud_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.keyframeposes_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.grpcservercompressionformat_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
-struct getDataForVisualizationRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR getDataForVisualizationRequestDefaultTypeInternal()
+struct getProcessingDataRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR getProcessingDataRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~getDataForVisualizationRequestDefaultTypeInternal() {}
+  ~getProcessingDataRequestDefaultTypeInternal() {}
   union {
-    getDataForVisualizationRequest _instance;
+    getProcessingDataRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getDataForVisualizationRequestDefaultTypeInternal _getDataForVisualizationRequest_default_instance_;
-PROTOBUF_CONSTEXPR getDataForVisualizationResponse::getDataForVisualizationResponse(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getProcessingDataRequestDefaultTypeInternal _getProcessingDataRequest_default_instance_;
+PROTOBUF_CONSTEXPR getProcessingDataResponse::getProcessingDataResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.pointcloud_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.keyframeposes_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
-struct getDataForVisualizationResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR getDataForVisualizationResponseDefaultTypeInternal()
+struct getProcessingDataResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR getProcessingDataResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~getDataForVisualizationResponseDefaultTypeInternal() {}
+  ~getProcessingDataResponseDefaultTypeInternal() {}
   union {
-    getDataForVisualizationResponse _instance;
+    getProcessingDataResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getDataForVisualizationResponseDefaultTypeInternal _getDataForVisualizationResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getProcessingDataResponseDefaultTypeInternal _getProcessingDataResponse_default_instance_;
 PROTOBUF_CONSTEXPR getProcessedMapRequest::getProcessedMapRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.map_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -296,23 +296,23 @@ const uint32_t TableStruct_grpcIMapProcessingPipelineService_2eproto::offsets[] 
   PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getStatusResponse, _impl_.progress_),
   PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getStatusResponse, _impl_.xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getDataForVisualizationRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getProcessingDataRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getDataForVisualizationRequest, _impl_.grpcservercompressionformat_),
-  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getDataForVisualizationRequest, _impl_.pointcloud_),
-  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getDataForVisualizationRequest, _impl_.keyframeposes_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getProcessingDataRequest, _impl_.grpcservercompressionformat_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getProcessingDataRequest, _impl_.pointcloud_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getProcessingDataRequest, _impl_.keyframeposes_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getDataForVisualizationResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getProcessingDataResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getDataForVisualizationResponse, _impl_.pointcloud_),
-  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getDataForVisualizationResponse, _impl_.keyframeposes_),
-  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getDataForVisualizationResponse, _impl_.xpcfgrpcreturnvalue_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getProcessingDataResponse, _impl_.pointcloud_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getProcessingDataResponse, _impl_.keyframeposes_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getProcessingDataResponse, _impl_.xpcfgrpcreturnvalue_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIMapProcessingPipeline::getProcessedMapRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -341,8 +341,8 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 50, -1, -1, sizeof(::grpcIMapProcessingPipeline::setMapToProcessResponse)},
   { 57, -1, -1, sizeof(::grpcIMapProcessingPipeline::getStatusRequest)},
   { 66, -1, -1, sizeof(::grpcIMapProcessingPipeline::getStatusResponse)},
-  { 75, -1, -1, sizeof(::grpcIMapProcessingPipeline::getDataForVisualizationRequest)},
-  { 84, -1, -1, sizeof(::grpcIMapProcessingPipeline::getDataForVisualizationResponse)},
+  { 75, -1, -1, sizeof(::grpcIMapProcessingPipeline::getProcessingDataRequest)},
+  { 84, -1, -1, sizeof(::grpcIMapProcessingPipeline::getProcessingDataResponse)},
   { 93, -1, -1, sizeof(::grpcIMapProcessingPipeline::getProcessedMapRequest)},
   { 101, -1, -1, sizeof(::grpcIMapProcessingPipeline::getProcessedMapResponse)},
 };
@@ -358,8 +358,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::grpcIMapProcessingPipeline::_setMapToProcessResponse_default_instance_._instance,
   &::grpcIMapProcessingPipeline::_getStatusRequest_default_instance_._instance,
   &::grpcIMapProcessingPipeline::_getStatusResponse_default_instance_._instance,
-  &::grpcIMapProcessingPipeline::_getDataForVisualizationRequest_default_instance_._instance,
-  &::grpcIMapProcessingPipeline::_getDataForVisualizationResponse_default_instance_._instance,
+  &::grpcIMapProcessingPipeline::_getProcessingDataRequest_default_instance_._instance,
+  &::grpcIMapProcessingPipeline::_getProcessingDataResponse_default_instance_._instance,
   &::grpcIMapProcessingPipeline::_getProcessedMapRequest_default_instance_._instance,
   &::grpcIMapProcessingPipeline::_getProcessedMapResponse_default_instance_._instance,
 };
@@ -379,47 +379,46 @@ const char descriptor_table_protodef_grpcIMapProcessingPipelineService_2eproto[]
   "onFormat\030\001 \001(\005\022\013\n\003map\030\002 \001(\014\"6\n\027setMapToP"
   "rocessResponse\022\033\n\023xpcfGrpcReturnValue\030\001 "
   "\001(\021\"Y\n\020getStatusRequest\022#\n\033grpcServerCom"
-  "pressionFormat\030\001 \001(\005\022\016\n\006status\030\002 \001(\014\022\020\n\010"
+  "pressionFormat\030\001 \001(\005\022\016\n\006status\030\002 \001(\021\022\020\n\010"
   "progress\030\003 \001(\002\"R\n\021getStatusResponse\022\016\n\006s"
-  "tatus\030\001 \001(\014\022\020\n\010progress\030\002 \001(\002\022\033\n\023xpcfGrp"
-  "cReturnValue\030\003 \001(\021\"p\n\036getDataForVisualiz"
-  "ationRequest\022#\n\033grpcServerCompressionFor"
-  "mat\030\001 \001(\005\022\022\n\npointCloud\030\002 \001(\014\022\025\n\rkeyfram"
-  "ePoses\030\003 \001(\014\"i\n\037getDataForVisualizationR"
-  "esponse\022\022\n\npointCloud\030\001 \001(\014\022\025\n\rkeyframeP"
-  "oses\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\003 \001(\021\""
-  "J\n\026getProcessedMapRequest\022#\n\033grpcServerC"
-  "ompressionFormat\030\001 \001(\005\022\013\n\003map\030\002 \001(\014\"C\n\027g"
-  "etProcessedMapResponse\022\013\n\003map\030\001 \001(\014\022\033\n\023x"
-  "pcfGrpcReturnValue\030\002 \001(\0212\274\006\n!grpcIMapPro"
-  "cessingPipelineService\022[\n\004init\022\'.grpcIMa"
-  "pProcessingPipeline.initRequest\032(.grpcIM"
-  "apProcessingPipeline.initResponse\"\000\022^\n\005s"
-  "tart\022(.grpcIMapProcessingPipeline.startR"
-  "equest\032).grpcIMapProcessingPipeline.star"
-  "tResponse\"\000\022[\n\004stop\022\'.grpcIMapProcessing"
-  "Pipeline.stopRequest\032(.grpcIMapProcessin"
-  "gPipeline.stopResponse\"\000\022|\n\017setMapToProc"
-  "ess\0222.grpcIMapProcessingPipeline.setMapT"
-  "oProcessRequest\0323.grpcIMapProcessingPipe"
-  "line.setMapToProcessResponse\"\000\022j\n\tgetSta"
-  "tus\022,.grpcIMapProcessingPipeline.getStat"
-  "usRequest\032-.grpcIMapProcessingPipeline.g"
-  "etStatusResponse\"\000\022\224\001\n\027getDataForVisuali"
-  "zation\022:.grpcIMapProcessingPipeline.getD"
-  "ataForVisualizationRequest\032;.grpcIMapPro"
-  "cessingPipeline.getDataForVisualizationR"
-  "esponse\"\000\022|\n\017getProcessedMap\0222.grpcIMapP"
-  "rocessingPipeline.getProcessedMapRequest"
-  "\0323.grpcIMapProcessingPipeline.getProcess"
-  "edMapResponse\"\000b\006proto3"
+  "tatus\030\001 \001(\021\022\020\n\010progress\030\002 \001(\002\022\033\n\023xpcfGrp"
+  "cReturnValue\030\003 \001(\021\"j\n\030getProcessingDataR"
+  "equest\022#\n\033grpcServerCompressionFormat\030\001 "
+  "\001(\005\022\022\n\npointCloud\030\002 \001(\014\022\025\n\rkeyframePoses"
+  "\030\003 \001(\014\"c\n\031getProcessingDataResponse\022\022\n\np"
+  "ointCloud\030\001 \001(\014\022\025\n\rkeyframePoses\030\002 \001(\014\022\033"
+  "\n\023xpcfGrpcReturnValue\030\003 \001(\021\"J\n\026getProces"
+  "sedMapRequest\022#\n\033grpcServerCompressionFo"
+  "rmat\030\001 \001(\005\022\013\n\003map\030\002 \001(\014\"C\n\027getProcessedM"
+  "apResponse\022\013\n\003map\030\001 \001(\014\022\033\n\023xpcfGrpcRetur"
+  "nValue\030\002 \001(\0212\252\006\n!grpcIMapProcessingPipel"
+  "ineService\022[\n\004init\022\'.grpcIMapProcessingP"
+  "ipeline.initRequest\032(.grpcIMapProcessing"
+  "Pipeline.initResponse\"\000\022^\n\005start\022(.grpcI"
+  "MapProcessingPipeline.startRequest\032).grp"
+  "cIMapProcessingPipeline.startResponse\"\000\022"
+  "[\n\004stop\022\'.grpcIMapProcessingPipeline.sto"
+  "pRequest\032(.grpcIMapProcessingPipeline.st"
+  "opResponse\"\000\022|\n\017setMapToProcess\0222.grpcIM"
+  "apProcessingPipeline.setMapToProcessRequ"
+  "est\0323.grpcIMapProcessingPipeline.setMapT"
+  "oProcessResponse\"\000\022j\n\tgetStatus\022,.grpcIM"
+  "apProcessingPipeline.getStatusRequest\032-."
+  "grpcIMapProcessingPipeline.getStatusResp"
+  "onse\"\000\022\202\001\n\021getProcessingData\0224.grpcIMapP"
+  "rocessingPipeline.getProcessingDataReque"
+  "st\0325.grpcIMapProcessingPipeline.getProce"
+  "ssingDataResponse\"\000\022|\n\017getProcessedMap\0222"
+  ".grpcIMapProcessingPipeline.getProcessed"
+  "MapRequest\0323.grpcIMapProcessingPipeline."
+  "getProcessedMapResponse\"\000b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_grpcIMapProcessingPipelineService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_grpcIMapProcessingPipelineService_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_grpcIMapProcessingPipelineService_2eproto = {
-    false, false, 1903, descriptor_table_protodef_grpcIMapProcessingPipelineService_2eproto,
+    false, false, 1873, descriptor_table_protodef_grpcIMapProcessingPipelineService_2eproto,
     "grpcIMapProcessingPipelineService.proto",
     &descriptor_table_grpcIMapProcessingPipelineService_2eproto_once, descriptor_table_grpcIMapProcessingPipelineService_2eproto_deps, 1, 14,
     schemas, file_default_instances, TableStruct_grpcIMapProcessingPipelineService_2eproto::offsets,
@@ -1921,20 +1920,12 @@ getStatusRequest::getStatusRequest(const getStatusRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   getStatusRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.status_){}
-    , decltype(_impl_.grpcservercompressionformat_){}
+      decltype(_impl_.grpcservercompressionformat_){}
+    , decltype(_impl_.status_){}
     , decltype(_impl_.progress_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_status().empty()) {
-    _this->_impl_.status_.Set(from._internal_status(), 
-      _this->GetArenaForAllocation());
-  }
   ::memcpy(&_impl_.grpcservercompressionformat_, &from._impl_.grpcservercompressionformat_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.progress_) -
     reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.progress_));
@@ -1946,15 +1937,11 @@ inline void getStatusRequest::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.status_){}
-    , decltype(_impl_.grpcservercompressionformat_){0}
+      decltype(_impl_.grpcservercompressionformat_){0}
+    , decltype(_impl_.status_){0}
     , decltype(_impl_.progress_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 getStatusRequest::~getStatusRequest() {
@@ -1968,7 +1955,6 @@ getStatusRequest::~getStatusRequest() {
 
 inline void getStatusRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.status_.Destroy();
 }
 
 void getStatusRequest::SetCachedSize(int size) const {
@@ -1981,7 +1967,6 @@ void getStatusRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.status_.ClearToEmpty();
   ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.progress_) -
       reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.progress_));
@@ -2002,11 +1987,10 @@ const char* getStatusRequest::_InternalParse(const char* ptr, ::_pbi::ParseConte
         } else
           goto handle_unusual;
         continue;
-      // bytes status = 2;
+      // sint32 status = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_status();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2054,10 +2038,10 @@ uint8_t* getStatusRequest::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_grpcservercompressionformat(), target);
   }
 
-  // bytes status = 2;
-  if (!this->_internal_status().empty()) {
-    target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_status(), target);
+  // sint32 status = 2;
+  if (this->_internal_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(2, this->_internal_status(), target);
   }
 
   // float progress = 3;
@@ -2086,16 +2070,14 @@ size_t getStatusRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes status = 2;
-  if (!this->_internal_status().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_status());
-  }
-
   // int32 grpcServerCompressionFormat = 1;
   if (this->_internal_grpcservercompressionformat() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
+  }
+
+  // sint32 status = 2;
+  if (this->_internal_status() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_status());
   }
 
   // float progress = 3;
@@ -2125,11 +2107,11 @@ void getStatusRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_status().empty()) {
-    _this->_internal_set_status(from._internal_status());
-  }
   if (from._internal_grpcservercompressionformat() != 0) {
     _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+  if (from._internal_status() != 0) {
+    _this->_internal_set_status(from._internal_status());
   }
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_progress = from._internal_progress();
@@ -2154,13 +2136,7 @@ bool getStatusRequest::IsInitialized() const {
 
 void getStatusRequest::InternalSwap(getStatusRequest* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.status_, lhs_arena,
-      &other->_impl_.status_, rhs_arena
-  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(getStatusRequest, _impl_.progress_)
       + sizeof(getStatusRequest::_impl_.progress_)
@@ -2197,17 +2173,9 @@ getStatusResponse::getStatusResponse(const getStatusResponse& from)
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_status().empty()) {
-    _this->_impl_.status_.Set(from._internal_status(), 
-      _this->GetArenaForAllocation());
-  }
-  ::memcpy(&_impl_.progress_, &from._impl_.progress_,
+  ::memcpy(&_impl_.status_, &from._impl_.status_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.xpcfgrpcreturnvalue_) -
-    reinterpret_cast<char*>(&_impl_.progress_)) + sizeof(_impl_.xpcfgrpcreturnvalue_));
+    reinterpret_cast<char*>(&_impl_.status_)) + sizeof(_impl_.xpcfgrpcreturnvalue_));
   // @@protoc_insertion_point(copy_constructor:grpcIMapProcessingPipeline.getStatusResponse)
 }
 
@@ -2216,15 +2184,11 @@ inline void getStatusResponse::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.status_){}
+      decltype(_impl_.status_){0}
     , decltype(_impl_.progress_){0}
     , decltype(_impl_.xpcfgrpcreturnvalue_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 getStatusResponse::~getStatusResponse() {
@@ -2238,7 +2202,6 @@ getStatusResponse::~getStatusResponse() {
 
 inline void getStatusResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.status_.Destroy();
 }
 
 void getStatusResponse::SetCachedSize(int size) const {
@@ -2251,10 +2214,9 @@ void getStatusResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.status_.ClearToEmpty();
-  ::memset(&_impl_.progress_, 0, static_cast<size_t>(
+  ::memset(&_impl_.status_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.xpcfgrpcreturnvalue_) -
-      reinterpret_cast<char*>(&_impl_.progress_)) + sizeof(_impl_.xpcfgrpcreturnvalue_));
+      reinterpret_cast<char*>(&_impl_.status_)) + sizeof(_impl_.xpcfgrpcreturnvalue_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2264,11 +2226,10 @@ const char* getStatusResponse::_InternalParse(const char* ptr, ::_pbi::ParseCont
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes status = 1;
+      // sint32 status = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_status();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2318,10 +2279,10 @@ uint8_t* getStatusResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes status = 1;
-  if (!this->_internal_status().empty()) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_status(), target);
+  // sint32 status = 1;
+  if (this->_internal_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(1, this->_internal_status(), target);
   }
 
   // float progress = 2;
@@ -2356,11 +2317,9 @@ size_t getStatusResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes status = 1;
-  if (!this->_internal_status().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_status());
+  // sint32 status = 1;
+  if (this->_internal_status() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_status());
   }
 
   // float progress = 2;
@@ -2395,7 +2354,7 @@ void getStatusResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_status().empty()) {
+  if (from._internal_status() != 0) {
     _this->_internal_set_status(from._internal_status());
   }
   static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
@@ -2424,19 +2383,13 @@ bool getStatusResponse::IsInitialized() const {
 
 void getStatusResponse::InternalSwap(getStatusResponse* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.status_, lhs_arena,
-      &other->_impl_.status_, rhs_arena
-  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(getStatusResponse, _impl_.xpcfgrpcreturnvalue_)
       + sizeof(getStatusResponse::_impl_.xpcfgrpcreturnvalue_)
-      - PROTOBUF_FIELD_OFFSET(getStatusResponse, _impl_.progress_)>(
-          reinterpret_cast<char*>(&_impl_.progress_),
-          reinterpret_cast<char*>(&other->_impl_.progress_));
+      - PROTOBUF_FIELD_OFFSET(getStatusResponse, _impl_.status_)>(
+          reinterpret_cast<char*>(&_impl_.status_),
+          reinterpret_cast<char*>(&other->_impl_.status_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getStatusResponse::GetMetadata() const {
@@ -2447,19 +2400,19 @@ void getStatusResponse::InternalSwap(getStatusResponse* other) {
 
 // ===================================================================
 
-class getDataForVisualizationRequest::_Internal {
+class getProcessingDataRequest::_Internal {
  public:
 };
 
-getDataForVisualizationRequest::getDataForVisualizationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+getProcessingDataRequest::getProcessingDataRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:grpcIMapProcessingPipeline.getDataForVisualizationRequest)
+  // @@protoc_insertion_point(arena_constructor:grpcIMapProcessingPipeline.getProcessingDataRequest)
 }
-getDataForVisualizationRequest::getDataForVisualizationRequest(const getDataForVisualizationRequest& from)
+getProcessingDataRequest::getProcessingDataRequest(const getProcessingDataRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  getDataForVisualizationRequest* const _this = this; (void)_this;
+  getProcessingDataRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.pointcloud_){}
     , decltype(_impl_.keyframeposes_){}
@@ -2484,10 +2437,10 @@ getDataForVisualizationRequest::getDataForVisualizationRequest(const getDataForV
       _this->GetArenaForAllocation());
   }
   _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
-  // @@protoc_insertion_point(copy_constructor:grpcIMapProcessingPipeline.getDataForVisualizationRequest)
+  // @@protoc_insertion_point(copy_constructor:grpcIMapProcessingPipeline.getProcessingDataRequest)
 }
 
-inline void getDataForVisualizationRequest::SharedCtor(
+inline void getProcessingDataRequest::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
@@ -2507,8 +2460,8 @@ inline void getDataForVisualizationRequest::SharedCtor(
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
-getDataForVisualizationRequest::~getDataForVisualizationRequest() {
-  // @@protoc_insertion_point(destructor:grpcIMapProcessingPipeline.getDataForVisualizationRequest)
+getProcessingDataRequest::~getProcessingDataRequest() {
+  // @@protoc_insertion_point(destructor:grpcIMapProcessingPipeline.getProcessingDataRequest)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -2516,18 +2469,18 @@ getDataForVisualizationRequest::~getDataForVisualizationRequest() {
   SharedDtor();
 }
 
-inline void getDataForVisualizationRequest::SharedDtor() {
+inline void getProcessingDataRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.pointcloud_.Destroy();
   _impl_.keyframeposes_.Destroy();
 }
 
-void getDataForVisualizationRequest::SetCachedSize(int size) const {
+void getProcessingDataRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void getDataForVisualizationRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:grpcIMapProcessingPipeline.getDataForVisualizationRequest)
+void getProcessingDataRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIMapProcessingPipeline.getProcessingDataRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2538,7 +2491,7 @@ void getDataForVisualizationRequest::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* getDataForVisualizationRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* getProcessingDataRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -2593,9 +2546,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* getDataForVisualizationRequest::_InternalSerialize(
+uint8_t* getProcessingDataRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:grpcIMapProcessingPipeline.getDataForVisualizationRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIMapProcessingPipeline.getProcessingDataRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2621,12 +2574,12 @@ uint8_t* getDataForVisualizationRequest::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:grpcIMapProcessingPipeline.getDataForVisualizationRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIMapProcessingPipeline.getProcessingDataRequest)
   return target;
 }
 
-size_t getDataForVisualizationRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:grpcIMapProcessingPipeline.getDataForVisualizationRequest)
+size_t getProcessingDataRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIMapProcessingPipeline.getProcessingDataRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -2655,17 +2608,17 @@ size_t getDataForVisualizationRequest::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getDataForVisualizationRequest::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getProcessingDataRequest::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    getDataForVisualizationRequest::MergeImpl
+    getProcessingDataRequest::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getDataForVisualizationRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getProcessingDataRequest::GetClassData() const { return &_class_data_; }
 
 
-void getDataForVisualizationRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<getDataForVisualizationRequest*>(&to_msg);
-  auto& from = static_cast<const getDataForVisualizationRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIMapProcessingPipeline.getDataForVisualizationRequest)
+void getProcessingDataRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<getProcessingDataRequest*>(&to_msg);
+  auto& from = static_cast<const getProcessingDataRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIMapProcessingPipeline.getProcessingDataRequest)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -2682,18 +2635,18 @@ void getDataForVisualizationRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message&
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void getDataForVisualizationRequest::CopyFrom(const getDataForVisualizationRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:grpcIMapProcessingPipeline.getDataForVisualizationRequest)
+void getProcessingDataRequest::CopyFrom(const getProcessingDataRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIMapProcessingPipeline.getProcessingDataRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool getDataForVisualizationRequest::IsInitialized() const {
+bool getProcessingDataRequest::IsInitialized() const {
   return true;
 }
 
-void getDataForVisualizationRequest::InternalSwap(getDataForVisualizationRequest* other) {
+void getProcessingDataRequest::InternalSwap(getProcessingDataRequest* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
@@ -2709,7 +2662,7 @@ void getDataForVisualizationRequest::InternalSwap(getDataForVisualizationRequest
   swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata getDataForVisualizationRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata getProcessingDataRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_grpcIMapProcessingPipelineService_2eproto_getter, &descriptor_table_grpcIMapProcessingPipelineService_2eproto_once,
       file_level_metadata_grpcIMapProcessingPipelineService_2eproto[10]);
@@ -2717,19 +2670,19 @@ void getDataForVisualizationRequest::InternalSwap(getDataForVisualizationRequest
 
 // ===================================================================
 
-class getDataForVisualizationResponse::_Internal {
+class getProcessingDataResponse::_Internal {
  public:
 };
 
-getDataForVisualizationResponse::getDataForVisualizationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+getProcessingDataResponse::getProcessingDataResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:grpcIMapProcessingPipeline.getDataForVisualizationResponse)
+  // @@protoc_insertion_point(arena_constructor:grpcIMapProcessingPipeline.getProcessingDataResponse)
 }
-getDataForVisualizationResponse::getDataForVisualizationResponse(const getDataForVisualizationResponse& from)
+getProcessingDataResponse::getProcessingDataResponse(const getProcessingDataResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  getDataForVisualizationResponse* const _this = this; (void)_this;
+  getProcessingDataResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.pointcloud_){}
     , decltype(_impl_.keyframeposes_){}
@@ -2754,10 +2707,10 @@ getDataForVisualizationResponse::getDataForVisualizationResponse(const getDataFo
       _this->GetArenaForAllocation());
   }
   _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
-  // @@protoc_insertion_point(copy_constructor:grpcIMapProcessingPipeline.getDataForVisualizationResponse)
+  // @@protoc_insertion_point(copy_constructor:grpcIMapProcessingPipeline.getProcessingDataResponse)
 }
 
-inline void getDataForVisualizationResponse::SharedCtor(
+inline void getProcessingDataResponse::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
@@ -2777,8 +2730,8 @@ inline void getDataForVisualizationResponse::SharedCtor(
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
-getDataForVisualizationResponse::~getDataForVisualizationResponse() {
-  // @@protoc_insertion_point(destructor:grpcIMapProcessingPipeline.getDataForVisualizationResponse)
+getProcessingDataResponse::~getProcessingDataResponse() {
+  // @@protoc_insertion_point(destructor:grpcIMapProcessingPipeline.getProcessingDataResponse)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -2786,18 +2739,18 @@ getDataForVisualizationResponse::~getDataForVisualizationResponse() {
   SharedDtor();
 }
 
-inline void getDataForVisualizationResponse::SharedDtor() {
+inline void getProcessingDataResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.pointcloud_.Destroy();
   _impl_.keyframeposes_.Destroy();
 }
 
-void getDataForVisualizationResponse::SetCachedSize(int size) const {
+void getProcessingDataResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void getDataForVisualizationResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:grpcIMapProcessingPipeline.getDataForVisualizationResponse)
+void getProcessingDataResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIMapProcessingPipeline.getProcessingDataResponse)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2808,7 +2761,7 @@ void getDataForVisualizationResponse::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* getDataForVisualizationResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* getProcessingDataResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -2863,9 +2816,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* getDataForVisualizationResponse::_InternalSerialize(
+uint8_t* getProcessingDataResponse::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:grpcIMapProcessingPipeline.getDataForVisualizationResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIMapProcessingPipeline.getProcessingDataResponse)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2891,12 +2844,12 @@ uint8_t* getDataForVisualizationResponse::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:grpcIMapProcessingPipeline.getDataForVisualizationResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIMapProcessingPipeline.getProcessingDataResponse)
   return target;
 }
 
-size_t getDataForVisualizationResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:grpcIMapProcessingPipeline.getDataForVisualizationResponse)
+size_t getProcessingDataResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIMapProcessingPipeline.getProcessingDataResponse)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -2925,17 +2878,17 @@ size_t getDataForVisualizationResponse::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getDataForVisualizationResponse::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData getProcessingDataResponse::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    getDataForVisualizationResponse::MergeImpl
+    getProcessingDataResponse::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getDataForVisualizationResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*getProcessingDataResponse::GetClassData() const { return &_class_data_; }
 
 
-void getDataForVisualizationResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<getDataForVisualizationResponse*>(&to_msg);
-  auto& from = static_cast<const getDataForVisualizationResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIMapProcessingPipeline.getDataForVisualizationResponse)
+void getProcessingDataResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<getProcessingDataResponse*>(&to_msg);
+  auto& from = static_cast<const getProcessingDataResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIMapProcessingPipeline.getProcessingDataResponse)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -2952,18 +2905,18 @@ void getDataForVisualizationResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void getDataForVisualizationResponse::CopyFrom(const getDataForVisualizationResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:grpcIMapProcessingPipeline.getDataForVisualizationResponse)
+void getProcessingDataResponse::CopyFrom(const getProcessingDataResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIMapProcessingPipeline.getProcessingDataResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool getDataForVisualizationResponse::IsInitialized() const {
+bool getProcessingDataResponse::IsInitialized() const {
   return true;
 }
 
-void getDataForVisualizationResponse::InternalSwap(getDataForVisualizationResponse* other) {
+void getProcessingDataResponse::InternalSwap(getProcessingDataResponse* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
@@ -2979,7 +2932,7 @@ void getDataForVisualizationResponse::InternalSwap(getDataForVisualizationRespon
   swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata getDataForVisualizationResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata getProcessingDataResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_grpcIMapProcessingPipelineService_2eproto_getter, &descriptor_table_grpcIMapProcessingPipelineService_2eproto_once,
       file_level_metadata_grpcIMapProcessingPipelineService_2eproto[11]);
@@ -3478,13 +3431,13 @@ template<> PROTOBUF_NOINLINE ::grpcIMapProcessingPipeline::getStatusResponse*
 Arena::CreateMaybeMessage< ::grpcIMapProcessingPipeline::getStatusResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::grpcIMapProcessingPipeline::getStatusResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::grpcIMapProcessingPipeline::getDataForVisualizationRequest*
-Arena::CreateMaybeMessage< ::grpcIMapProcessingPipeline::getDataForVisualizationRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::grpcIMapProcessingPipeline::getDataForVisualizationRequest >(arena);
+template<> PROTOBUF_NOINLINE ::grpcIMapProcessingPipeline::getProcessingDataRequest*
+Arena::CreateMaybeMessage< ::grpcIMapProcessingPipeline::getProcessingDataRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIMapProcessingPipeline::getProcessingDataRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::grpcIMapProcessingPipeline::getDataForVisualizationResponse*
-Arena::CreateMaybeMessage< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse >(arena);
+template<> PROTOBUF_NOINLINE ::grpcIMapProcessingPipeline::getProcessingDataResponse*
+Arena::CreateMaybeMessage< ::grpcIMapProcessingPipeline::getProcessingDataResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::grpcIMapProcessingPipeline::getProcessingDataResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::grpcIMapProcessingPipeline::getProcessedMapRequest*
 Arena::CreateMaybeMessage< ::grpcIMapProcessingPipeline::getProcessedMapRequest >(Arena* arena) {

@@ -7,7 +7,7 @@ package grpcIFrontEnd;
 message registerClientRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string keycloakToken = 2;
+string accessToken = 2;
 bytes deviceInfo = 3;
 string worldElementUUID = 4;
 string clientUUID = 5;
@@ -33,7 +33,7 @@ sint32 xpcfGrpcReturnValue = 1;
 message getAllClientsUUIDRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string keycloakToken = 2;
+string accessToken = 2;
 bytes clientUUIDList = 3;
 }
 
@@ -71,7 +71,7 @@ message init_grpc1Request
 {
 int32 grpcServerCompressionFormat  = 1;
 string clientUUID = 2;
-bytes pipelineMode = 3;
+sint32 pipelineMode = 3;
 }
 
 message init_grpc1Response
@@ -105,12 +105,12 @@ message getProcessingModeRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string clientUUID = 2;
-bytes pipelineMode = 3;
+sint32 pipelineMode = 3;
 }
 
 message getProcessingModeResponse
 {
-bytes pipelineMode = 1;
+sint32 pipelineMode = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
@@ -174,18 +174,18 @@ bytes poses = 4;
 bool fixedPose = 5;
 bytes worldTransform = 6;
 bytes timestamp = 7;
-bytes transform3DStatus = 8;
+sint32 transform3DStatus = 8;
 bytes transform3D = 9;
 bytes confidence = 10;
-bytes mappingStatus = 11;
+sint32 mappingStatus = 11;
 }
 
 message relocalizeProcessRequest_grpc0Response
 {
-bytes transform3DStatus = 1;
+sint32 transform3DStatus = 1;
 bytes transform3D = 2;
 bytes confidence = 3;
-bytes mappingStatus = 4;
+sint32 mappingStatus = 4;
 sint32 xpcfGrpcReturnValue = 5;
 }
 
@@ -198,19 +198,19 @@ bytes poses = 4;
 bool fixedPose = 5;
 bytes worldTransform = 6;
 bytes timestamp = 7;
-bytes transform3DStatus = 8;
+sint32 transform3DStatus = 8;
 bytes transform3D = 9;
 bytes confidence = 10;
-bytes mappingStatus = 11;
+sint32 mappingStatus = 11;
 bytes detectedObjects = 12;
 }
 
 message relocalizeProcessRequest_grpc1Response
 {
-bytes transform3DStatus = 1;
+sint32 transform3DStatus = 1;
 bytes transform3D = 2;
 bytes confidence = 3;
-bytes mappingStatus = 4;
+sint32 mappingStatus = 4;
 bytes detectedObjects = 5;
 sint32 xpcfGrpcReturnValue = 6;
 }
@@ -219,14 +219,14 @@ message get3DTransformRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string clientUUID = 2;
-bytes transform3DStatus = 3;
+sint32 transform3DStatus = 3;
 bytes transform3D = 4;
 bytes confidence = 5;
 }
 
 message get3DTransformRequestResponse
 {
-bytes transform3DStatus = 1;
+sint32 transform3DStatus = 1;
 bytes transform3D = 2;
 bytes confidence = 3;
 sint32 xpcfGrpcReturnValue = 4;
@@ -251,7 +251,7 @@ message getLastPoseRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string clientUUID = 2;
-bytes poseType = 3;
+sint32 poseType = 3;
 bytes pose = 4;
 }
 
@@ -264,7 +264,7 @@ sint32 xpcfGrpcReturnValue = 2;
 message createMapRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string keycloakToken = 2;
+string accessToken = 2;
 string mapUUID = 3;
 }
 
@@ -276,7 +276,7 @@ sint32 xpcfGrpcReturnValue = 1;
 message deleteMapRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string keycloakToken = 2;
+string accessToken = 2;
 string mapUUID = 3;
 }
 
@@ -288,7 +288,7 @@ sint32 xpcfGrpcReturnValue = 1;
 message getAllMapsUUIDRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string keycloakToken = 2;
+string accessToken = 2;
 bytes mapUUIDList = 3;
 }
 
@@ -314,7 +314,7 @@ sint32 xpcfGrpcReturnValue = 2;
 message getMapRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string keycloakToken = 2;
+string accessToken = 2;
 string mapUUID = 3;
 bytes mapDatastructure = 4;
 }
@@ -328,7 +328,7 @@ sint32 xpcfGrpcReturnValue = 2;
 message setMapRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string keycloakToken = 2;
+string accessToken = 2;
 string mapUUID = 3;
 bytes mapDatastructure = 4;
 }
@@ -341,7 +341,7 @@ sint32 xpcfGrpcReturnValue = 1;
 message getPointCloudRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string keycloakToken = 2;
+string accessToken = 2;
 string mapUUID = 3;
 bytes pointCloud = 4;
 }
@@ -352,47 +352,47 @@ bytes pointCloud = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-message requestForMapProcessingRequest
+message requestMapProcessingRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string keycloakToken = 2;
+string accessToken = 2;
 string mapUUID = 3;
-bytes processingType = 4;
+sint32 processingType = 4;
 }
 
-message requestForMapProcessingResponse
+message requestMapProcessingResponse
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-message getStatusForMapProcessingRequest
+message getMapProcessingStatusRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string keycloakToken = 2;
+string accessToken = 2;
 string mapUUID = 3;
-bytes status = 4;
+sint32 status = 4;
 float progress = 5;
 string resultingMapUUID = 6;
 }
 
-message getStatusForMapProcessingResponse
+message getMapProcessingStatusResponse
 {
-bytes status = 1;
+sint32 status = 1;
 float progress = 2;
 string resultingMapUUID = 3;
 sint32 xpcfGrpcReturnValue = 4;
 }
 
-message getDataForMapProcessingRequest
+message getMapProcessingDataRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string keycloakToken = 2;
+string accessToken = 2;
 string mapUUID = 3;
 bytes pointCloud = 4;
 bytes keyframePoses = 5;
 }
 
-message getDataForMapProcessingResponse
+message getMapProcessingDataResponse
 {
 bytes pointCloud = 1;
 bytes keyframePoses = 2;
@@ -425,8 +425,8 @@ rpc getClientMapUUID(getClientMapUUIDRequest) returns(getClientMapUUIDResponse) 
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc setMapRequest(setMapRequestRequest) returns(setMapRequestResponse) {}
 rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}
-rpc requestForMapProcessing(requestForMapProcessingRequest) returns(requestForMapProcessingResponse) {}
-rpc getStatusForMapProcessing(getStatusForMapProcessingRequest) returns(getStatusForMapProcessingResponse) {}
-rpc getDataForMapProcessing(getDataForMapProcessingRequest) returns(getDataForMapProcessingResponse) {}
+rpc requestMapProcessing(requestMapProcessingRequest) returns(requestMapProcessingResponse) {}
+rpc getMapProcessingStatus(getMapProcessingStatusRequest) returns(getMapProcessingStatusResponse) {}
+rpc getMapProcessingData(getMapProcessingDataRequest) returns(getMapProcessingDataResponse) {}
 }
 

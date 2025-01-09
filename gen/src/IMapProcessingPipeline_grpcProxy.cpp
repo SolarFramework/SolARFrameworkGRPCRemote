@@ -174,7 +174,7 @@ SolAR::FrameworkReturnCode  IMapProcessingPipeline_grpcProxy::getStatus(SolAR::a
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
-  reqIn.set_status(xpcf::serialize<SolAR::api::pipeline::MapProcessingStatus>(status));
+  reqIn.set_status(static_cast<int32_t>(status));
   reqIn.set_progress(progress);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -191,19 +191,19 @@ SolAR::FrameworkReturnCode  IMapProcessingPipeline_grpcProxy::getStatus(SolAR::a
     throw xpcf::RemotingException("grpcIMapProcessingPipelineService","getStatus",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  status = xpcf::deserialize<SolAR::api::pipeline::MapProcessingStatus>(respOut.status());
+  status = static_cast<SolAR::api::pipeline::MapProcessingStatus>(respOut.status());
   progress = respOut.progress();
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
-SolAR::FrameworkReturnCode  IMapProcessingPipeline_grpcProxy::getDataForVisualization(std::vector<SRef<SolAR::datastructure::CloudPoint>>& pointCloud, std::vector<SolAR::datastructure::Transform3Df>& keyframePoses) const
+SolAR::FrameworkReturnCode  IMapProcessingPipeline_grpcProxy::getProcessingData(std::vector<SRef<SolAR::datastructure::CloudPoint>>& pointCloud, std::vector<SolAR::datastructure::Transform3Df>& keyframePoses) const
 {
   ::grpc::ClientContext context;
-  ::grpcIMapProcessingPipeline::getDataForVisualizationRequest reqIn;
-  ::grpcIMapProcessingPipeline::getDataForVisualizationResponse respOut;
+  ::grpcIMapProcessingPipeline::getProcessingDataRequest reqIn;
+  ::grpcIMapProcessingPipeline::getProcessingDataResponse respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getDataForVisualization", m_methodCompressionInfosMap);
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getProcessingData", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
@@ -211,17 +211,17 @@ SolAR::FrameworkReturnCode  IMapProcessingPipeline_grpcProxy::getDataForVisualiz
   reqIn.set_keyframeposes(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(keyframePoses));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapProcessingPipeline_grpcProxy::getDataForVisualization request sent at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapProcessingPipeline_grpcProxy::getProcessingData request sent at " << to_simple_string(start) << std::endl;
   #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->getDataForVisualization(&context, reqIn, &respOut);
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getProcessingData(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapProcessingPipeline_grpcProxy::getDataForVisualization response received at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapProcessingPipeline_grpcProxy::getProcessingData response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getDataForVisualization rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIMapProcessingPipelineService","getDataForVisualization",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    std::cout << "getProcessingData rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIMapProcessingPipelineService","getProcessingData",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   pointCloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(respOut.pointcloud());

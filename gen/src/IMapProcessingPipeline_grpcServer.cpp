@@ -140,10 +140,10 @@ XPCFErrorCode IMapProcessingPipeline_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMapProcessingPipeline_grpcServer::getStatus request received at " << to_simple_string(start) << std::endl;
   #endif
-  SolAR::api::pipeline::MapProcessingStatus status = xpcf::deserialize<SolAR::api::pipeline::MapProcessingStatus>(request->status());
+  SolAR::api::pipeline::MapProcessingStatus status = static_cast<SolAR::api::pipeline::MapProcessingStatus>(request->status());
   float progress = request->progress();
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getStatus(status, progress);
-  response->set_status(xpcf::serialize<SolAR::api::pipeline::MapProcessingStatus>(status));
+  response->set_status(static_cast<int32_t>(status));
   response->set_progress(progress);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -155,26 +155,26 @@ XPCFErrorCode IMapProcessingPipeline_grpcServer::onConfigured()
 }
 
 
-::grpc::Status IMapProcessingPipeline_grpcServer::grpcIMapProcessingPipelineServiceImpl::getDataForVisualization(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* request, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* response)
+::grpc::Status IMapProcessingPipeline_grpcServer::grpcIMapProcessingPipelineServiceImpl::getProcessingData(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
-  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getDataForVisualization", m_methodCompressionInfosMap);
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getProcessingData", m_methodCompressionInfosMap);
   xpcf::prepareServerCompressionContext(context, serverCompressInfo);
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapProcessingPipeline_grpcServer::getDataForVisualization request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapProcessingPipeline_grpcServer::getProcessingData request received at " << to_simple_string(start) << std::endl;
   #endif
   std::vector<SRef<SolAR::datastructure::CloudPoint>> pointCloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->pointcloud());
   std::vector<SolAR::datastructure::Transform3Df> keyframePoses = xpcf::deserialize<std::vector<SolAR::datastructure::Transform3Df>>(request->keyframeposes());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getDataForVisualization(pointCloud, keyframePoses);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getProcessingData(pointCloud, keyframePoses);
   response->set_pointcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(pointCloud));
   response->set_keyframeposes(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(keyframePoses));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapProcessingPipeline_grpcServer::getDataForVisualization response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapProcessingPipeline_grpcServer::getProcessingData response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;

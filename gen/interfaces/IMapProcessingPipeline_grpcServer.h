@@ -30,7 +30,7 @@ class IMapProcessingPipeline_grpcServer:  public org::bcom::xpcf::ConfigurableBa
         ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::stopRequest* request, ::grpcIMapProcessingPipeline::stopResponse* response) override;
         ::grpc::Status setMapToProcess(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::setMapToProcessRequest* request, ::grpcIMapProcessingPipeline::setMapToProcessResponse* response) override;
         ::grpc::Status getStatus(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getStatusRequest* request, ::grpcIMapProcessingPipeline::getStatusResponse* response) override;
-        ::grpc::Status getDataForVisualization(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* request, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* response) override;
+        ::grpc::Status getProcessingData(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response) override;
         ::grpc::Status getProcessedMap(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest* request, ::grpcIMapProcessingPipeline::getProcessedMapResponse* response) override;
 
         SRef<SolAR::api::pipeline::IMapProcessingPipeline> m_xpcfComponent;

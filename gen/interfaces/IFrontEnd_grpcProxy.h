@@ -22,9 +22,9 @@ class IFrontEnd_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode registerClient(std::string const& keycloakToken, SolAR::api::service::DeviceInfo const& deviceInfo, std::string const& worldElementUUID, std::string& clientUUID)     override;
+    SolAR::FrameworkReturnCode registerClient(std::string const& accessToken, SolAR::api::service::DeviceInfo const& deviceInfo, std::string const& worldElementUUID, std::string& clientUUID)     override;
     SolAR::FrameworkReturnCode unregisterClient(std::string const& clientUUID)     override;
-    SolAR::FrameworkReturnCode getAllClientsUUID(std::string const& keycloakToken, std::vector<std::string>& clientUUIDList)     const     override;
+    SolAR::FrameworkReturnCode getAllClientsUUID(std::string const& accessToken, std::vector<std::string>& clientUUIDList)     const     override;
     SolAR::FrameworkReturnCode getDeviceInfo(std::string const& clientUUID, SolAR::api::service::DeviceInfo& deviceInfo)     const     override;
     SolAR::FrameworkReturnCode init(std::string const& clientUUID)     override;
     SolAR::FrameworkReturnCode init(std::string const& clientUUID, SolAR::api::service::PipelineMode pipelineMode)     override;
@@ -40,16 +40,16 @@ class IFrontEnd_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     SolAR::FrameworkReturnCode get3DTransformRequest(std::string const& clientUUID, SolAR::api::service::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence)     override;
     SolAR::FrameworkReturnCode getMappingDataRequest(std::string const& clientUUID, std::vector<SRef<SolAR::datastructure::CloudPoint>>& outputPointClouds, std::vector<SolAR::datastructure::Transform3Df>& keyframePoses)     const     override;
     SolAR::FrameworkReturnCode getLastPose(std::string const& clientUUID, SolAR::datastructure::Transform3Df& pose, SolAR::api::service::PoseType const poseType)     const     override;
-    SolAR::FrameworkReturnCode createMap(std::string const& keycloakToken, std::string const& mapUUID)     override;
-    SolAR::FrameworkReturnCode deleteMap(std::string const& keycloakToken, std::string const& mapUUID)     override;
-    SolAR::FrameworkReturnCode getAllMapsUUID(std::string const& keycloakToken, std::vector<std::string>& mapUUIDList)     const     override;
+    SolAR::FrameworkReturnCode createMap(std::string const& accessToken, std::string const& mapUUID)     override;
+    SolAR::FrameworkReturnCode deleteMap(std::string const& accessToken, std::string const& mapUUID)     override;
+    SolAR::FrameworkReturnCode getAllMapsUUID(std::string const& accessToken, std::vector<std::string>& mapUUIDList)     const     override;
     SolAR::FrameworkReturnCode getClientMapUUID(std::string const& clientUUID, std::string& mapUUID)     const     override;
-    SolAR::FrameworkReturnCode getMapRequest(std::string const& keycloakToken, std::string const& mapUUID, SRef<SolAR::datastructure::Map>& mapDatastructure)     const     override;
-    SolAR::FrameworkReturnCode setMapRequest(std::string const& keycloakToken, std::string const& mapUUID, SRef<SolAR::datastructure::Map> const mapDatastructure)     override;
-    SolAR::FrameworkReturnCode getPointCloudRequest(std::string const& keycloakToken, std::string const& mapUUID, SRef<SolAR::datastructure::PointCloud>& pointCloud)     const     override;
-    SolAR::FrameworkReturnCode requestForMapProcessing(std::string const& keycloakToken, std::string const& mapUUID, SolAR::api::service::MapProcessingType const& processingType)     override;
-    SolAR::FrameworkReturnCode getStatusForMapProcessing(std::string const& keycloakToken, std::string const& mapUUID, SolAR::api::service::MapProcessingStatus& status, float& progress, std::string& resultingMapUUID)     const     override;
-    SolAR::FrameworkReturnCode getDataForMapProcessing(std::string const& keycloakToken, std::string const& mapUUID, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pointCloud, std::vector<SolAR::datastructure::Transform3Df>& keyframePoses)     const     override;
+    SolAR::FrameworkReturnCode getMapRequest(std::string const& accessToken, std::string const& mapUUID, SRef<SolAR::datastructure::Map>& mapDatastructure)     const     override;
+    SolAR::FrameworkReturnCode setMapRequest(std::string const& accessToken, std::string const& mapUUID, SRef<SolAR::datastructure::Map> const mapDatastructure)     override;
+    SolAR::FrameworkReturnCode getPointCloudRequest(std::string const& accessToken, std::string const& mapUUID, SRef<SolAR::datastructure::PointCloud>& pointCloud)     const     override;
+    SolAR::FrameworkReturnCode requestMapProcessing(std::string const& accessToken, std::string const& mapUUID, SolAR::api::service::MapProcessingType const processingType)     override;
+    SolAR::FrameworkReturnCode getMapProcessingStatus(std::string const& accessToken, std::string const& mapUUID, SolAR::api::service::MapProcessingStatus& status, float& progress, std::string& resultingMapUUID)     const     override;
+    SolAR::FrameworkReturnCode getMapProcessingData(std::string const& accessToken, std::string const& mapUUID, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pointCloud, std::vector<SolAR::datastructure::Transform3Df>& keyframePoses)     const     override;
 
 
   private:

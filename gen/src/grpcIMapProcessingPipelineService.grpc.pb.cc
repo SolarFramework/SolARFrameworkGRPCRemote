@@ -27,7 +27,7 @@ static const char* grpcIMapProcessingPipelineService_method_names[] = {
   "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/stop",
   "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/setMapToProcess",
   "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/getStatus",
-  "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/getDataForVisualization",
+  "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/getProcessingData",
   "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/getProcessedMap",
 };
 
@@ -43,7 +43,7 @@ grpcIMapProcessingPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::Cha
   , rpcmethod_stop_(grpcIMapProcessingPipelineService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_setMapToProcess_(grpcIMapProcessingPipelineService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getStatus_(grpcIMapProcessingPipelineService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getDataForVisualization_(grpcIMapProcessingPipelineService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getProcessingData_(grpcIMapProcessingPipelineService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getProcessedMap_(grpcIMapProcessingPipelineService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
@@ -162,25 +162,25 @@ void grpcIMapProcessingPipelineService::Stub::async::getStatus(::grpc::ClientCon
   return result;
 }
 
-::grpc::Status grpcIMapProcessingPipelineService::Stub::getDataForVisualization(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest& request, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapProcessingPipeline::getDataForVisualizationRequest, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getDataForVisualization_, context, request, response);
+::grpc::Status grpcIMapProcessingPipelineService::Stub::getProcessingData(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest& request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapProcessingPipeline::getProcessingDataRequest, ::grpcIMapProcessingPipeline::getProcessingDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getProcessingData_, context, request, response);
 }
 
-void grpcIMapProcessingPipelineService::Stub::async::getDataForVisualization(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* request, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIMapProcessingPipeline::getDataForVisualizationRequest, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDataForVisualization_, context, request, response, std::move(f));
+void grpcIMapProcessingPipelineService::Stub::async::getProcessingData(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapProcessingPipeline::getProcessingDataRequest, ::grpcIMapProcessingPipeline::getProcessingDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getProcessingData_, context, request, response, std::move(f));
 }
 
-void grpcIMapProcessingPipelineService::Stub::async::getDataForVisualization(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* request, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getDataForVisualization_, context, request, response, reactor);
+void grpcIMapProcessingPipelineService::Stub::async::getProcessingData(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getProcessingData_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>* grpcIMapProcessingPipelineService::Stub::PrepareAsyncgetDataForVisualizationRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse, ::grpcIMapProcessingPipeline::getDataForVisualizationRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getDataForVisualization_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getProcessingDataResponse>* grpcIMapProcessingPipelineService::Stub::PrepareAsyncgetProcessingDataRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapProcessingPipeline::getProcessingDataResponse, ::grpcIMapProcessingPipeline::getProcessingDataRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getProcessingData_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getDataForVisualizationResponse>* grpcIMapProcessingPipelineService::Stub::AsyncgetDataForVisualizationRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getProcessingDataResponse>* grpcIMapProcessingPipelineService::Stub::AsyncgetProcessingDataRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncgetDataForVisualizationRaw(context, request, cq);
+    this->PrepareAsyncgetProcessingDataRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -262,12 +262,12 @@ grpcIMapProcessingPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapProcessingPipelineService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMapProcessingPipelineService::Service, ::grpcIMapProcessingPipeline::getDataForVisualizationRequest, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIMapProcessingPipelineService::Service, ::grpcIMapProcessingPipeline::getProcessingDataRequest, ::grpcIMapProcessingPipeline::getProcessingDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapProcessingPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* req,
-             ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* resp) {
-               return service->getDataForVisualization(ctx, req, resp);
+             const ::grpcIMapProcessingPipeline::getProcessingDataRequest* req,
+             ::grpcIMapProcessingPipeline::getProcessingDataResponse* resp) {
+               return service->getProcessingData(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapProcessingPipelineService_method_names[6],
@@ -319,7 +319,7 @@ grpcIMapProcessingPipelineService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIMapProcessingPipelineService::Service::getDataForVisualization(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* request, ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* response) {
+::grpc::Status grpcIMapProcessingPipelineService::Service::getProcessingData(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response) {
   (void) context;
   (void) request;
   (void) response;

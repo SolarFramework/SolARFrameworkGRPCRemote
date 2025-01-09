@@ -46,18 +46,18 @@ struct TableStruct_grpcIMapProcessingPipelineService_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_grpcIMapProcessingPipelineService_2eproto;
 namespace grpcIMapProcessingPipeline {
-class getDataForVisualizationRequest;
-struct getDataForVisualizationRequestDefaultTypeInternal;
-extern getDataForVisualizationRequestDefaultTypeInternal _getDataForVisualizationRequest_default_instance_;
-class getDataForVisualizationResponse;
-struct getDataForVisualizationResponseDefaultTypeInternal;
-extern getDataForVisualizationResponseDefaultTypeInternal _getDataForVisualizationResponse_default_instance_;
 class getProcessedMapRequest;
 struct getProcessedMapRequestDefaultTypeInternal;
 extern getProcessedMapRequestDefaultTypeInternal _getProcessedMapRequest_default_instance_;
 class getProcessedMapResponse;
 struct getProcessedMapResponseDefaultTypeInternal;
 extern getProcessedMapResponseDefaultTypeInternal _getProcessedMapResponse_default_instance_;
+class getProcessingDataRequest;
+struct getProcessingDataRequestDefaultTypeInternal;
+extern getProcessingDataRequestDefaultTypeInternal _getProcessingDataRequest_default_instance_;
+class getProcessingDataResponse;
+struct getProcessingDataResponseDefaultTypeInternal;
+extern getProcessingDataResponseDefaultTypeInternal _getProcessingDataResponse_default_instance_;
 class getStatusRequest;
 struct getStatusRequestDefaultTypeInternal;
 extern getStatusRequestDefaultTypeInternal _getStatusRequest_default_instance_;
@@ -90,10 +90,10 @@ struct stopResponseDefaultTypeInternal;
 extern stopResponseDefaultTypeInternal _stopResponse_default_instance_;
 }  // namespace grpcIMapProcessingPipeline
 PROTOBUF_NAMESPACE_OPEN
-template<> ::grpcIMapProcessingPipeline::getDataForVisualizationRequest* Arena::CreateMaybeMessage<::grpcIMapProcessingPipeline::getDataForVisualizationRequest>(Arena*);
-template<> ::grpcIMapProcessingPipeline::getDataForVisualizationResponse* Arena::CreateMaybeMessage<::grpcIMapProcessingPipeline::getDataForVisualizationResponse>(Arena*);
 template<> ::grpcIMapProcessingPipeline::getProcessedMapRequest* Arena::CreateMaybeMessage<::grpcIMapProcessingPipeline::getProcessedMapRequest>(Arena*);
 template<> ::grpcIMapProcessingPipeline::getProcessedMapResponse* Arena::CreateMaybeMessage<::grpcIMapProcessingPipeline::getProcessedMapResponse>(Arena*);
+template<> ::grpcIMapProcessingPipeline::getProcessingDataRequest* Arena::CreateMaybeMessage<::grpcIMapProcessingPipeline::getProcessingDataRequest>(Arena*);
+template<> ::grpcIMapProcessingPipeline::getProcessingDataResponse* Arena::CreateMaybeMessage<::grpcIMapProcessingPipeline::getProcessingDataResponse>(Arena*);
 template<> ::grpcIMapProcessingPipeline::getStatusRequest* Arena::CreateMaybeMessage<::grpcIMapProcessingPipeline::getStatusRequest>(Arena*);
 template<> ::grpcIMapProcessingPipeline::getStatusResponse* Arena::CreateMaybeMessage<::grpcIMapProcessingPipeline::getStatusResponse>(Arena*);
 template<> ::grpcIMapProcessingPipeline::initRequest* Arena::CreateMaybeMessage<::grpcIMapProcessingPipeline::initRequest>(Arena*);
@@ -1430,24 +1430,10 @@ class getStatusRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStatusFieldNumber = 2,
     kGrpcServerCompressionFormatFieldNumber = 1,
+    kStatusFieldNumber = 2,
     kProgressFieldNumber = 3,
   };
-  // bytes status = 2;
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_NODISCARD std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
   // int32 grpcServerCompressionFormat = 1;
   void clear_grpcservercompressionformat();
   int32_t grpcservercompressionformat() const;
@@ -1455,6 +1441,15 @@ class getStatusRequest final :
   private:
   int32_t _internal_grpcservercompressionformat() const;
   void _internal_set_grpcservercompressionformat(int32_t value);
+  public:
+
+  // sint32 status = 2;
+  void clear_status();
+  int32_t status() const;
+  void set_status(int32_t value);
+  private:
+  int32_t _internal_status() const;
+  void _internal_set_status(int32_t value);
   public:
 
   // float progress = 3;
@@ -1474,8 +1469,8 @@ class getStatusRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
     int32_t grpcservercompressionformat_;
+    int32_t status_;
     float progress_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -1609,18 +1604,13 @@ class getStatusResponse final :
     kProgressFieldNumber = 2,
     kXpcfGrpcReturnValueFieldNumber = 3,
   };
-  // bytes status = 1;
+  // sint32 status = 1;
   void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_NODISCARD std::string* release_status();
-  void set_allocated_status(std::string* status);
+  int32_t status() const;
+  void set_status(int32_t value);
   private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
+  int32_t _internal_status() const;
+  void _internal_set_status(int32_t value);
   public:
 
   // float progress = 2;
@@ -1649,7 +1639,7 @@ class getStatusResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+    int32_t status_;
     float progress_;
     int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1659,24 +1649,24 @@ class getStatusResponse final :
 };
 // -------------------------------------------------------------------
 
-class getDataForVisualizationRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapProcessingPipeline.getDataForVisualizationRequest) */ {
+class getProcessingDataRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapProcessingPipeline.getProcessingDataRequest) */ {
  public:
-  inline getDataForVisualizationRequest() : getDataForVisualizationRequest(nullptr) {}
-  ~getDataForVisualizationRequest() override;
-  explicit PROTOBUF_CONSTEXPR getDataForVisualizationRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline getProcessingDataRequest() : getProcessingDataRequest(nullptr) {}
+  ~getProcessingDataRequest() override;
+  explicit PROTOBUF_CONSTEXPR getProcessingDataRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  getDataForVisualizationRequest(const getDataForVisualizationRequest& from);
-  getDataForVisualizationRequest(getDataForVisualizationRequest&& from) noexcept
-    : getDataForVisualizationRequest() {
+  getProcessingDataRequest(const getProcessingDataRequest& from);
+  getProcessingDataRequest(getProcessingDataRequest&& from) noexcept
+    : getProcessingDataRequest() {
     *this = ::std::move(from);
   }
 
-  inline getDataForVisualizationRequest& operator=(const getDataForVisualizationRequest& from) {
+  inline getProcessingDataRequest& operator=(const getProcessingDataRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline getDataForVisualizationRequest& operator=(getDataForVisualizationRequest&& from) noexcept {
+  inline getProcessingDataRequest& operator=(getProcessingDataRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1699,20 +1689,20 @@ class getDataForVisualizationRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const getDataForVisualizationRequest& default_instance() {
+  static const getProcessingDataRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const getDataForVisualizationRequest* internal_default_instance() {
-    return reinterpret_cast<const getDataForVisualizationRequest*>(
-               &_getDataForVisualizationRequest_default_instance_);
+  static inline const getProcessingDataRequest* internal_default_instance() {
+    return reinterpret_cast<const getProcessingDataRequest*>(
+               &_getProcessingDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     10;
 
-  friend void swap(getDataForVisualizationRequest& a, getDataForVisualizationRequest& b) {
+  friend void swap(getProcessingDataRequest& a, getProcessingDataRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(getDataForVisualizationRequest* other) {
+  inline void Swap(getProcessingDataRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1725,7 +1715,7 @@ class getDataForVisualizationRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(getDataForVisualizationRequest* other) {
+  void UnsafeArenaSwap(getProcessingDataRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1733,14 +1723,14 @@ class getDataForVisualizationRequest final :
 
   // implements Message ----------------------------------------------
 
-  getDataForVisualizationRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<getDataForVisualizationRequest>(arena);
+  getProcessingDataRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<getProcessingDataRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const getDataForVisualizationRequest& from);
+  void CopyFrom(const getProcessingDataRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const getDataForVisualizationRequest& from) {
-    getDataForVisualizationRequest::MergeImpl(*this, from);
+  void MergeFrom( const getProcessingDataRequest& from) {
+    getProcessingDataRequest::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -1758,15 +1748,15 @@ class getDataForVisualizationRequest final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(getDataForVisualizationRequest* other);
+  void InternalSwap(getProcessingDataRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIMapProcessingPipeline.getDataForVisualizationRequest";
+    return "grpcIMapProcessingPipeline.getProcessingDataRequest";
   }
   protected:
-  explicit getDataForVisualizationRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit getProcessingDataRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -1821,7 +1811,7 @@ class getDataForVisualizationRequest final :
   void _internal_set_grpcservercompressionformat(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:grpcIMapProcessingPipeline.getDataForVisualizationRequest)
+  // @@protoc_insertion_point(class_scope:grpcIMapProcessingPipeline.getProcessingDataRequest)
  private:
   class _Internal;
 
@@ -1839,24 +1829,24 @@ class getDataForVisualizationRequest final :
 };
 // -------------------------------------------------------------------
 
-class getDataForVisualizationResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapProcessingPipeline.getDataForVisualizationResponse) */ {
+class getProcessingDataResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:grpcIMapProcessingPipeline.getProcessingDataResponse) */ {
  public:
-  inline getDataForVisualizationResponse() : getDataForVisualizationResponse(nullptr) {}
-  ~getDataForVisualizationResponse() override;
-  explicit PROTOBUF_CONSTEXPR getDataForVisualizationResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline getProcessingDataResponse() : getProcessingDataResponse(nullptr) {}
+  ~getProcessingDataResponse() override;
+  explicit PROTOBUF_CONSTEXPR getProcessingDataResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  getDataForVisualizationResponse(const getDataForVisualizationResponse& from);
-  getDataForVisualizationResponse(getDataForVisualizationResponse&& from) noexcept
-    : getDataForVisualizationResponse() {
+  getProcessingDataResponse(const getProcessingDataResponse& from);
+  getProcessingDataResponse(getProcessingDataResponse&& from) noexcept
+    : getProcessingDataResponse() {
     *this = ::std::move(from);
   }
 
-  inline getDataForVisualizationResponse& operator=(const getDataForVisualizationResponse& from) {
+  inline getProcessingDataResponse& operator=(const getProcessingDataResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline getDataForVisualizationResponse& operator=(getDataForVisualizationResponse&& from) noexcept {
+  inline getProcessingDataResponse& operator=(getProcessingDataResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -1879,20 +1869,20 @@ class getDataForVisualizationResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const getDataForVisualizationResponse& default_instance() {
+  static const getProcessingDataResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const getDataForVisualizationResponse* internal_default_instance() {
-    return reinterpret_cast<const getDataForVisualizationResponse*>(
-               &_getDataForVisualizationResponse_default_instance_);
+  static inline const getProcessingDataResponse* internal_default_instance() {
+    return reinterpret_cast<const getProcessingDataResponse*>(
+               &_getProcessingDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     11;
 
-  friend void swap(getDataForVisualizationResponse& a, getDataForVisualizationResponse& b) {
+  friend void swap(getProcessingDataResponse& a, getProcessingDataResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(getDataForVisualizationResponse* other) {
+  inline void Swap(getProcessingDataResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -1905,7 +1895,7 @@ class getDataForVisualizationResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(getDataForVisualizationResponse* other) {
+  void UnsafeArenaSwap(getProcessingDataResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1913,14 +1903,14 @@ class getDataForVisualizationResponse final :
 
   // implements Message ----------------------------------------------
 
-  getDataForVisualizationResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<getDataForVisualizationResponse>(arena);
+  getProcessingDataResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<getProcessingDataResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const getDataForVisualizationResponse& from);
+  void CopyFrom(const getProcessingDataResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const getDataForVisualizationResponse& from) {
-    getDataForVisualizationResponse::MergeImpl(*this, from);
+  void MergeFrom( const getProcessingDataResponse& from) {
+    getProcessingDataResponse::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -1938,15 +1928,15 @@ class getDataForVisualizationResponse final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(getDataForVisualizationResponse* other);
+  void InternalSwap(getProcessingDataResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "grpcIMapProcessingPipeline.getDataForVisualizationResponse";
+    return "grpcIMapProcessingPipeline.getProcessingDataResponse";
   }
   protected:
-  explicit getDataForVisualizationResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit getProcessingDataResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -2001,7 +1991,7 @@ class getDataForVisualizationResponse final :
   void _internal_set_xpcfgrpcreturnvalue(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:grpcIMapProcessingPipeline.getDataForVisualizationResponse)
+  // @@protoc_insertion_point(class_scope:grpcIMapProcessingPipeline.getProcessingDataResponse)
  private:
   class _Internal;
 
@@ -2618,54 +2608,24 @@ inline void getStatusRequest::set_grpcservercompressionformat(int32_t value) {
   // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getStatusRequest.grpcServerCompressionFormat)
 }
 
-// bytes status = 2;
+// sint32 status = 2;
 inline void getStatusRequest::clear_status() {
-  _impl_.status_.ClearToEmpty();
+  _impl_.status_ = 0;
 }
-inline const std::string& getStatusRequest::status() const {
+inline int32_t getStatusRequest::_internal_status() const {
+  return _impl_.status_;
+}
+inline int32_t getStatusRequest::status() const {
   // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.getStatusRequest.status)
   return _internal_status();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getStatusRequest::set_status(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.status_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getStatusRequest::_internal_set_status(int32_t value) {
+  
+  _impl_.status_ = value;
+}
+inline void getStatusRequest::set_status(int32_t value) {
+  _internal_set_status(value);
   // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getStatusRequest.status)
-}
-inline std::string* getStatusRequest::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:grpcIMapProcessingPipeline.getStatusRequest.status)
-  return _s;
-}
-inline const std::string& getStatusRequest::_internal_status() const {
-  return _impl_.status_.Get();
-}
-inline void getStatusRequest::_internal_set_status(const std::string& value) {
-  
-  _impl_.status_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getStatusRequest::_internal_mutable_status() {
-  
-  return _impl_.status_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getStatusRequest::release_status() {
-  // @@protoc_insertion_point(field_release:grpcIMapProcessingPipeline.getStatusRequest.status)
-  return _impl_.status_.Release();
-}
-inline void getStatusRequest::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.status_.IsDefault()) {
-    _impl_.status_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIMapProcessingPipeline.getStatusRequest.status)
 }
 
 // float progress = 3;
@@ -2692,54 +2652,24 @@ inline void getStatusRequest::set_progress(float value) {
 
 // getStatusResponse
 
-// bytes status = 1;
+// sint32 status = 1;
 inline void getStatusResponse::clear_status() {
-  _impl_.status_.ClearToEmpty();
+  _impl_.status_ = 0;
 }
-inline const std::string& getStatusResponse::status() const {
+inline int32_t getStatusResponse::_internal_status() const {
+  return _impl_.status_;
+}
+inline int32_t getStatusResponse::status() const {
   // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.getStatusResponse.status)
   return _internal_status();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getStatusResponse::set_status(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.status_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void getStatusResponse::_internal_set_status(int32_t value) {
+  
+  _impl_.status_ = value;
+}
+inline void getStatusResponse::set_status(int32_t value) {
+  _internal_set_status(value);
   // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getStatusResponse.status)
-}
-inline std::string* getStatusResponse::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:grpcIMapProcessingPipeline.getStatusResponse.status)
-  return _s;
-}
-inline const std::string& getStatusResponse::_internal_status() const {
-  return _impl_.status_.Get();
-}
-inline void getStatusResponse::_internal_set_status(const std::string& value) {
-  
-  _impl_.status_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getStatusResponse::_internal_mutable_status() {
-  
-  return _impl_.status_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getStatusResponse::release_status() {
-  // @@protoc_insertion_point(field_release:grpcIMapProcessingPipeline.getStatusResponse.status)
-  return _impl_.status_.Release();
-}
-inline void getStatusResponse::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.status_.IsDefault()) {
-    _impl_.status_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIMapProcessingPipeline.getStatusResponse.status)
 }
 
 // float progress = 2;
@@ -2784,64 +2714,64 @@ inline void getStatusResponse::set_xpcfgrpcreturnvalue(int32_t value) {
 
 // -------------------------------------------------------------------
 
-// getDataForVisualizationRequest
+// getProcessingDataRequest
 
 // int32 grpcServerCompressionFormat = 1;
-inline void getDataForVisualizationRequest::clear_grpcservercompressionformat() {
+inline void getProcessingDataRequest::clear_grpcservercompressionformat() {
   _impl_.grpcservercompressionformat_ = 0;
 }
-inline int32_t getDataForVisualizationRequest::_internal_grpcservercompressionformat() const {
+inline int32_t getProcessingDataRequest::_internal_grpcservercompressionformat() const {
   return _impl_.grpcservercompressionformat_;
 }
-inline int32_t getDataForVisualizationRequest::grpcservercompressionformat() const {
-  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.getDataForVisualizationRequest.grpcServerCompressionFormat)
+inline int32_t getProcessingDataRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.getProcessingDataRequest.grpcServerCompressionFormat)
   return _internal_grpcservercompressionformat();
 }
-inline void getDataForVisualizationRequest::_internal_set_grpcservercompressionformat(int32_t value) {
+inline void getProcessingDataRequest::_internal_set_grpcservercompressionformat(int32_t value) {
   
   _impl_.grpcservercompressionformat_ = value;
 }
-inline void getDataForVisualizationRequest::set_grpcservercompressionformat(int32_t value) {
+inline void getProcessingDataRequest::set_grpcservercompressionformat(int32_t value) {
   _internal_set_grpcservercompressionformat(value);
-  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getDataForVisualizationRequest.grpcServerCompressionFormat)
+  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getProcessingDataRequest.grpcServerCompressionFormat)
 }
 
 // bytes pointCloud = 2;
-inline void getDataForVisualizationRequest::clear_pointcloud() {
+inline void getProcessingDataRequest::clear_pointcloud() {
   _impl_.pointcloud_.ClearToEmpty();
 }
-inline const std::string& getDataForVisualizationRequest::pointcloud() const {
-  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.getDataForVisualizationRequest.pointCloud)
+inline const std::string& getProcessingDataRequest::pointcloud() const {
+  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.getProcessingDataRequest.pointCloud)
   return _internal_pointcloud();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void getDataForVisualizationRequest::set_pointcloud(ArgT0&& arg0, ArgT... args) {
+void getProcessingDataRequest::set_pointcloud(ArgT0&& arg0, ArgT... args) {
  
  _impl_.pointcloud_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getDataForVisualizationRequest.pointCloud)
+  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getProcessingDataRequest.pointCloud)
 }
-inline std::string* getDataForVisualizationRequest::mutable_pointcloud() {
+inline std::string* getProcessingDataRequest::mutable_pointcloud() {
   std::string* _s = _internal_mutable_pointcloud();
-  // @@protoc_insertion_point(field_mutable:grpcIMapProcessingPipeline.getDataForVisualizationRequest.pointCloud)
+  // @@protoc_insertion_point(field_mutable:grpcIMapProcessingPipeline.getProcessingDataRequest.pointCloud)
   return _s;
 }
-inline const std::string& getDataForVisualizationRequest::_internal_pointcloud() const {
+inline const std::string& getProcessingDataRequest::_internal_pointcloud() const {
   return _impl_.pointcloud_.Get();
 }
-inline void getDataForVisualizationRequest::_internal_set_pointcloud(const std::string& value) {
+inline void getProcessingDataRequest::_internal_set_pointcloud(const std::string& value) {
   
   _impl_.pointcloud_.Set(value, GetArenaForAllocation());
 }
-inline std::string* getDataForVisualizationRequest::_internal_mutable_pointcloud() {
+inline std::string* getProcessingDataRequest::_internal_mutable_pointcloud() {
   
   return _impl_.pointcloud_.Mutable(GetArenaForAllocation());
 }
-inline std::string* getDataForVisualizationRequest::release_pointcloud() {
-  // @@protoc_insertion_point(field_release:grpcIMapProcessingPipeline.getDataForVisualizationRequest.pointCloud)
+inline std::string* getProcessingDataRequest::release_pointcloud() {
+  // @@protoc_insertion_point(field_release:grpcIMapProcessingPipeline.getProcessingDataRequest.pointCloud)
   return _impl_.pointcloud_.Release();
 }
-inline void getDataForVisualizationRequest::set_allocated_pointcloud(std::string* pointcloud) {
+inline void getProcessingDataRequest::set_allocated_pointcloud(std::string* pointcloud) {
   if (pointcloud != nullptr) {
     
   } else {
@@ -2853,45 +2783,45 @@ inline void getDataForVisualizationRequest::set_allocated_pointcloud(std::string
     _impl_.pointcloud_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIMapProcessingPipeline.getDataForVisualizationRequest.pointCloud)
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapProcessingPipeline.getProcessingDataRequest.pointCloud)
 }
 
 // bytes keyframePoses = 3;
-inline void getDataForVisualizationRequest::clear_keyframeposes() {
+inline void getProcessingDataRequest::clear_keyframeposes() {
   _impl_.keyframeposes_.ClearToEmpty();
 }
-inline const std::string& getDataForVisualizationRequest::keyframeposes() const {
-  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.getDataForVisualizationRequest.keyframePoses)
+inline const std::string& getProcessingDataRequest::keyframeposes() const {
+  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.getProcessingDataRequest.keyframePoses)
   return _internal_keyframeposes();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void getDataForVisualizationRequest::set_keyframeposes(ArgT0&& arg0, ArgT... args) {
+void getProcessingDataRequest::set_keyframeposes(ArgT0&& arg0, ArgT... args) {
  
  _impl_.keyframeposes_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getDataForVisualizationRequest.keyframePoses)
+  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getProcessingDataRequest.keyframePoses)
 }
-inline std::string* getDataForVisualizationRequest::mutable_keyframeposes() {
+inline std::string* getProcessingDataRequest::mutable_keyframeposes() {
   std::string* _s = _internal_mutable_keyframeposes();
-  // @@protoc_insertion_point(field_mutable:grpcIMapProcessingPipeline.getDataForVisualizationRequest.keyframePoses)
+  // @@protoc_insertion_point(field_mutable:grpcIMapProcessingPipeline.getProcessingDataRequest.keyframePoses)
   return _s;
 }
-inline const std::string& getDataForVisualizationRequest::_internal_keyframeposes() const {
+inline const std::string& getProcessingDataRequest::_internal_keyframeposes() const {
   return _impl_.keyframeposes_.Get();
 }
-inline void getDataForVisualizationRequest::_internal_set_keyframeposes(const std::string& value) {
+inline void getProcessingDataRequest::_internal_set_keyframeposes(const std::string& value) {
   
   _impl_.keyframeposes_.Set(value, GetArenaForAllocation());
 }
-inline std::string* getDataForVisualizationRequest::_internal_mutable_keyframeposes() {
+inline std::string* getProcessingDataRequest::_internal_mutable_keyframeposes() {
   
   return _impl_.keyframeposes_.Mutable(GetArenaForAllocation());
 }
-inline std::string* getDataForVisualizationRequest::release_keyframeposes() {
-  // @@protoc_insertion_point(field_release:grpcIMapProcessingPipeline.getDataForVisualizationRequest.keyframePoses)
+inline std::string* getProcessingDataRequest::release_keyframeposes() {
+  // @@protoc_insertion_point(field_release:grpcIMapProcessingPipeline.getProcessingDataRequest.keyframePoses)
   return _impl_.keyframeposes_.Release();
 }
-inline void getDataForVisualizationRequest::set_allocated_keyframeposes(std::string* keyframeposes) {
+inline void getProcessingDataRequest::set_allocated_keyframeposes(std::string* keyframeposes) {
   if (keyframeposes != nullptr) {
     
   } else {
@@ -2903,49 +2833,49 @@ inline void getDataForVisualizationRequest::set_allocated_keyframeposes(std::str
     _impl_.keyframeposes_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIMapProcessingPipeline.getDataForVisualizationRequest.keyframePoses)
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapProcessingPipeline.getProcessingDataRequest.keyframePoses)
 }
 
 // -------------------------------------------------------------------
 
-// getDataForVisualizationResponse
+// getProcessingDataResponse
 
 // bytes pointCloud = 1;
-inline void getDataForVisualizationResponse::clear_pointcloud() {
+inline void getProcessingDataResponse::clear_pointcloud() {
   _impl_.pointcloud_.ClearToEmpty();
 }
-inline const std::string& getDataForVisualizationResponse::pointcloud() const {
-  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.getDataForVisualizationResponse.pointCloud)
+inline const std::string& getProcessingDataResponse::pointcloud() const {
+  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.getProcessingDataResponse.pointCloud)
   return _internal_pointcloud();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void getDataForVisualizationResponse::set_pointcloud(ArgT0&& arg0, ArgT... args) {
+void getProcessingDataResponse::set_pointcloud(ArgT0&& arg0, ArgT... args) {
  
  _impl_.pointcloud_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getDataForVisualizationResponse.pointCloud)
+  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getProcessingDataResponse.pointCloud)
 }
-inline std::string* getDataForVisualizationResponse::mutable_pointcloud() {
+inline std::string* getProcessingDataResponse::mutable_pointcloud() {
   std::string* _s = _internal_mutable_pointcloud();
-  // @@protoc_insertion_point(field_mutable:grpcIMapProcessingPipeline.getDataForVisualizationResponse.pointCloud)
+  // @@protoc_insertion_point(field_mutable:grpcIMapProcessingPipeline.getProcessingDataResponse.pointCloud)
   return _s;
 }
-inline const std::string& getDataForVisualizationResponse::_internal_pointcloud() const {
+inline const std::string& getProcessingDataResponse::_internal_pointcloud() const {
   return _impl_.pointcloud_.Get();
 }
-inline void getDataForVisualizationResponse::_internal_set_pointcloud(const std::string& value) {
+inline void getProcessingDataResponse::_internal_set_pointcloud(const std::string& value) {
   
   _impl_.pointcloud_.Set(value, GetArenaForAllocation());
 }
-inline std::string* getDataForVisualizationResponse::_internal_mutable_pointcloud() {
+inline std::string* getProcessingDataResponse::_internal_mutable_pointcloud() {
   
   return _impl_.pointcloud_.Mutable(GetArenaForAllocation());
 }
-inline std::string* getDataForVisualizationResponse::release_pointcloud() {
-  // @@protoc_insertion_point(field_release:grpcIMapProcessingPipeline.getDataForVisualizationResponse.pointCloud)
+inline std::string* getProcessingDataResponse::release_pointcloud() {
+  // @@protoc_insertion_point(field_release:grpcIMapProcessingPipeline.getProcessingDataResponse.pointCloud)
   return _impl_.pointcloud_.Release();
 }
-inline void getDataForVisualizationResponse::set_allocated_pointcloud(std::string* pointcloud) {
+inline void getProcessingDataResponse::set_allocated_pointcloud(std::string* pointcloud) {
   if (pointcloud != nullptr) {
     
   } else {
@@ -2957,45 +2887,45 @@ inline void getDataForVisualizationResponse::set_allocated_pointcloud(std::strin
     _impl_.pointcloud_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIMapProcessingPipeline.getDataForVisualizationResponse.pointCloud)
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapProcessingPipeline.getProcessingDataResponse.pointCloud)
 }
 
 // bytes keyframePoses = 2;
-inline void getDataForVisualizationResponse::clear_keyframeposes() {
+inline void getProcessingDataResponse::clear_keyframeposes() {
   _impl_.keyframeposes_.ClearToEmpty();
 }
-inline const std::string& getDataForVisualizationResponse::keyframeposes() const {
-  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.getDataForVisualizationResponse.keyframePoses)
+inline const std::string& getProcessingDataResponse::keyframeposes() const {
+  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.getProcessingDataResponse.keyframePoses)
   return _internal_keyframeposes();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void getDataForVisualizationResponse::set_keyframeposes(ArgT0&& arg0, ArgT... args) {
+void getProcessingDataResponse::set_keyframeposes(ArgT0&& arg0, ArgT... args) {
  
  _impl_.keyframeposes_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getDataForVisualizationResponse.keyframePoses)
+  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getProcessingDataResponse.keyframePoses)
 }
-inline std::string* getDataForVisualizationResponse::mutable_keyframeposes() {
+inline std::string* getProcessingDataResponse::mutable_keyframeposes() {
   std::string* _s = _internal_mutable_keyframeposes();
-  // @@protoc_insertion_point(field_mutable:grpcIMapProcessingPipeline.getDataForVisualizationResponse.keyframePoses)
+  // @@protoc_insertion_point(field_mutable:grpcIMapProcessingPipeline.getProcessingDataResponse.keyframePoses)
   return _s;
 }
-inline const std::string& getDataForVisualizationResponse::_internal_keyframeposes() const {
+inline const std::string& getProcessingDataResponse::_internal_keyframeposes() const {
   return _impl_.keyframeposes_.Get();
 }
-inline void getDataForVisualizationResponse::_internal_set_keyframeposes(const std::string& value) {
+inline void getProcessingDataResponse::_internal_set_keyframeposes(const std::string& value) {
   
   _impl_.keyframeposes_.Set(value, GetArenaForAllocation());
 }
-inline std::string* getDataForVisualizationResponse::_internal_mutable_keyframeposes() {
+inline std::string* getProcessingDataResponse::_internal_mutable_keyframeposes() {
   
   return _impl_.keyframeposes_.Mutable(GetArenaForAllocation());
 }
-inline std::string* getDataForVisualizationResponse::release_keyframeposes() {
-  // @@protoc_insertion_point(field_release:grpcIMapProcessingPipeline.getDataForVisualizationResponse.keyframePoses)
+inline std::string* getProcessingDataResponse::release_keyframeposes() {
+  // @@protoc_insertion_point(field_release:grpcIMapProcessingPipeline.getProcessingDataResponse.keyframePoses)
   return _impl_.keyframeposes_.Release();
 }
-inline void getDataForVisualizationResponse::set_allocated_keyframeposes(std::string* keyframeposes) {
+inline void getProcessingDataResponse::set_allocated_keyframeposes(std::string* keyframeposes) {
   if (keyframeposes != nullptr) {
     
   } else {
@@ -3007,27 +2937,27 @@ inline void getDataForVisualizationResponse::set_allocated_keyframeposes(std::st
     _impl_.keyframeposes_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIMapProcessingPipeline.getDataForVisualizationResponse.keyframePoses)
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapProcessingPipeline.getProcessingDataResponse.keyframePoses)
 }
 
 // sint32 xpcfGrpcReturnValue = 3;
-inline void getDataForVisualizationResponse::clear_xpcfgrpcreturnvalue() {
+inline void getProcessingDataResponse::clear_xpcfgrpcreturnvalue() {
   _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline int32_t getDataForVisualizationResponse::_internal_xpcfgrpcreturnvalue() const {
+inline int32_t getProcessingDataResponse::_internal_xpcfgrpcreturnvalue() const {
   return _impl_.xpcfgrpcreturnvalue_;
 }
-inline int32_t getDataForVisualizationResponse::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.getDataForVisualizationResponse.xpcfGrpcReturnValue)
+inline int32_t getProcessingDataResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.getProcessingDataResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-inline void getDataForVisualizationResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
+inline void getProcessingDataResponse::_internal_set_xpcfgrpcreturnvalue(int32_t value) {
   
   _impl_.xpcfgrpcreturnvalue_ = value;
 }
-inline void getDataForVisualizationResponse::set_xpcfgrpcreturnvalue(int32_t value) {
+inline void getProcessingDataResponse::set_xpcfgrpcreturnvalue(int32_t value) {
   _internal_set_xpcfgrpcreturnvalue(value);
-  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getDataForVisualizationResponse.xpcfGrpcReturnValue)
+  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.getProcessingDataResponse.xpcfGrpcReturnValue)
 }
 
 // -------------------------------------------------------------------
