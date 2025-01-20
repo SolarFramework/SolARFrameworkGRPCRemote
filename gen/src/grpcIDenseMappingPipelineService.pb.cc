@@ -130,8 +130,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR getPointCloudRequest::getPointCloudRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.outputpointcloud_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_.status_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct getPointCloudRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR getPointCloudRequestDefaultTypeInternal()
@@ -145,7 +145,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR getPointCloudResponse::getPointCloudResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.outputpointcloud_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.status_)*/0
   , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct getPointCloudResponseDefaultTypeInternal {
@@ -160,8 +160,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR getMeshRequest::getMeshRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.outputmesh_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_.status_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct getMeshRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR getMeshRequestDefaultTypeInternal()
@@ -175,7 +175,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR getMeshResponse::getMeshResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.outputmesh_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.status_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.status_)*/0
   , /*decltype(_impl_.xpcfgrpcreturnvalue_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct getMeshResponseDefaultTypeInternal {
@@ -335,13 +335,13 @@ const char descriptor_table_protodef_grpcIDenseMappingPipelineService_2eproto[] 
   "ocessRequestResponse\022\033\n\023xpcfGrpcReturnVa"
   "lue\030\001 \001(\021\"e\n\024getPointCloudRequest\022#\n\033grp"
   "cServerCompressionFormat\030\001 \001(\005\022\030\n\020output"
-  "PointCloud\030\002 \001(\014\022\016\n\006status\030\003 \001(\014\"^\n\025getP"
+  "PointCloud\030\002 \001(\014\022\016\n\006status\030\003 \001(\021\"^\n\025getP"
   "ointCloudResponse\022\030\n\020outputPointCloud\030\001 "
-  "\001(\014\022\016\n\006status\030\002 \001(\014\022\033\n\023xpcfGrpcReturnVal"
+  "\001(\014\022\016\n\006status\030\002 \001(\021\022\033\n\023xpcfGrpcReturnVal"
   "ue\030\003 \001(\021\"Y\n\016getMeshRequest\022#\n\033grpcServer"
   "CompressionFormat\030\001 \001(\005\022\022\n\noutputMesh\030\002 "
-  "\001(\014\022\016\n\006status\030\003 \001(\014\"R\n\017getMeshResponse\022\022"
-  "\n\noutputMesh\030\001 \001(\014\022\016\n\006status\030\002 \001(\014\022\033\n\023xp"
+  "\001(\014\022\016\n\006status\030\003 \001(\021\"R\n\017getMeshResponse\022\022"
+  "\n\noutputMesh\030\001 \001(\014\022\016\n\006status\030\002 \001(\021\022\033\n\023xp"
   "cfGrpcReturnValue\030\003 \001(\0212\256\005\n grpcIDenseMa"
   "ppingPipelineService\022Y\n\004init\022&.grpcIDens"
   "eMappingPipeline.initRequest\032\'.grpcIDens"
@@ -1902,8 +1902,8 @@ getPointCloudRequest::getPointCloudRequest(const getPointCloudRequest& from)
   getPointCloudRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.outputpointcloud_){}
-    , decltype(_impl_.status_){}
     , decltype(_impl_.grpcservercompressionformat_){}
+    , decltype(_impl_.status_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -1915,15 +1915,9 @@ getPointCloudRequest::getPointCloudRequest(const getPointCloudRequest& from)
     _this->_impl_.outputpointcloud_.Set(from._internal_outputpointcloud(), 
       _this->GetArenaForAllocation());
   }
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_status().empty()) {
-    _this->_impl_.status_.Set(from._internal_status(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  ::memcpy(&_impl_.grpcservercompressionformat_, &from._impl_.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.status_) -
+    reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.status_));
   // @@protoc_insertion_point(copy_constructor:grpcIDenseMappingPipeline.getPointCloudRequest)
 }
 
@@ -1933,17 +1927,13 @@ inline void getPointCloudRequest::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.outputpointcloud_){}
-    , decltype(_impl_.status_){}
     , decltype(_impl_.grpcservercompressionformat_){0}
+    , decltype(_impl_.status_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.outputpointcloud_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.outputpointcloud_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -1959,7 +1949,6 @@ getPointCloudRequest::~getPointCloudRequest() {
 inline void getPointCloudRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.outputpointcloud_.Destroy();
-  _impl_.status_.Destroy();
 }
 
 void getPointCloudRequest::SetCachedSize(int size) const {
@@ -1973,8 +1962,9 @@ void getPointCloudRequest::Clear() {
   (void) cached_has_bits;
 
   _impl_.outputpointcloud_.ClearToEmpty();
-  _impl_.status_.ClearToEmpty();
-  _impl_.grpcservercompressionformat_ = 0;
+  ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.status_) -
+      reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.status_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2001,11 +1991,10 @@ const char* getPointCloudRequest::_InternalParse(const char* ptr, ::_pbi::ParseC
         } else
           goto handle_unusual;
         continue;
-      // bytes status = 3;
+      // sint32 status = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_status();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2051,10 +2040,10 @@ uint8_t* getPointCloudRequest::_InternalSerialize(
         2, this->_internal_outputpointcloud(), target);
   }
 
-  // bytes status = 3;
-  if (!this->_internal_status().empty()) {
-    target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_status(), target);
+  // sint32 status = 3;
+  if (this->_internal_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(3, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2080,16 +2069,14 @@ size_t getPointCloudRequest::ByteSizeLong() const {
         this->_internal_outputpointcloud());
   }
 
-  // bytes status = 3;
-  if (!this->_internal_status().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_status());
-  }
-
   // int32 grpcServerCompressionFormat = 1;
   if (this->_internal_grpcservercompressionformat() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
+  }
+
+  // sint32 status = 3;
+  if (this->_internal_status() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_status());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2113,11 +2100,11 @@ void getPointCloudRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, c
   if (!from._internal_outputpointcloud().empty()) {
     _this->_internal_set_outputpointcloud(from._internal_outputpointcloud());
   }
-  if (!from._internal_status().empty()) {
-    _this->_internal_set_status(from._internal_status());
-  }
   if (from._internal_grpcservercompressionformat() != 0) {
     _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+  if (from._internal_status() != 0) {
+    _this->_internal_set_status(from._internal_status());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2142,11 +2129,12 @@ void getPointCloudRequest::InternalSwap(getPointCloudRequest* other) {
       &_impl_.outputpointcloud_, lhs_arena,
       &other->_impl_.outputpointcloud_, rhs_arena
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.status_, lhs_arena,
-      &other->_impl_.status_, rhs_arena
-  );
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(getPointCloudRequest, _impl_.status_)
+      + sizeof(getPointCloudRequest::_impl_.status_)
+      - PROTOBUF_FIELD_OFFSET(getPointCloudRequest, _impl_.grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getPointCloudRequest::GetMetadata() const {
@@ -2185,15 +2173,9 @@ getPointCloudResponse::getPointCloudResponse(const getPointCloudResponse& from)
     _this->_impl_.outputpointcloud_.Set(from._internal_outputpointcloud(), 
       _this->GetArenaForAllocation());
   }
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_status().empty()) {
-    _this->_impl_.status_.Set(from._internal_status(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  ::memcpy(&_impl_.status_, &from._impl_.status_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.xpcfgrpcreturnvalue_) -
+    reinterpret_cast<char*>(&_impl_.status_)) + sizeof(_impl_.xpcfgrpcreturnvalue_));
   // @@protoc_insertion_point(copy_constructor:grpcIDenseMappingPipeline.getPointCloudResponse)
 }
 
@@ -2203,17 +2185,13 @@ inline void getPointCloudResponse::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.outputpointcloud_){}
-    , decltype(_impl_.status_){}
+    , decltype(_impl_.status_){0}
     , decltype(_impl_.xpcfgrpcreturnvalue_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.outputpointcloud_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.outputpointcloud_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -2229,7 +2207,6 @@ getPointCloudResponse::~getPointCloudResponse() {
 inline void getPointCloudResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.outputpointcloud_.Destroy();
-  _impl_.status_.Destroy();
 }
 
 void getPointCloudResponse::SetCachedSize(int size) const {
@@ -2243,8 +2220,9 @@ void getPointCloudResponse::Clear() {
   (void) cached_has_bits;
 
   _impl_.outputpointcloud_.ClearToEmpty();
-  _impl_.status_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  ::memset(&_impl_.status_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.xpcfgrpcreturnvalue_) -
+      reinterpret_cast<char*>(&_impl_.status_)) + sizeof(_impl_.xpcfgrpcreturnvalue_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2263,11 +2241,10 @@ const char* getPointCloudResponse::_InternalParse(const char* ptr, ::_pbi::Parse
         } else
           goto handle_unusual;
         continue;
-      // bytes status = 2;
+      // sint32 status = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_status();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2315,10 +2292,10 @@ uint8_t* getPointCloudResponse::_InternalSerialize(
         1, this->_internal_outputpointcloud(), target);
   }
 
-  // bytes status = 2;
-  if (!this->_internal_status().empty()) {
-    target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_status(), target);
+  // sint32 status = 2;
+  if (this->_internal_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(2, this->_internal_status(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 3;
@@ -2350,11 +2327,9 @@ size_t getPointCloudResponse::ByteSizeLong() const {
         this->_internal_outputpointcloud());
   }
 
-  // bytes status = 2;
-  if (!this->_internal_status().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_status());
+  // sint32 status = 2;
+  if (this->_internal_status() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_status());
   }
 
   // sint32 xpcfGrpcReturnValue = 3;
@@ -2383,7 +2358,7 @@ void getPointCloudResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, 
   if (!from._internal_outputpointcloud().empty()) {
     _this->_internal_set_outputpointcloud(from._internal_outputpointcloud());
   }
-  if (!from._internal_status().empty()) {
+  if (from._internal_status() != 0) {
     _this->_internal_set_status(from._internal_status());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
@@ -2412,11 +2387,12 @@ void getPointCloudResponse::InternalSwap(getPointCloudResponse* other) {
       &_impl_.outputpointcloud_, lhs_arena,
       &other->_impl_.outputpointcloud_, rhs_arena
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.status_, lhs_arena,
-      &other->_impl_.status_, rhs_arena
-  );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(getPointCloudResponse, _impl_.xpcfgrpcreturnvalue_)
+      + sizeof(getPointCloudResponse::_impl_.xpcfgrpcreturnvalue_)
+      - PROTOBUF_FIELD_OFFSET(getPointCloudResponse, _impl_.status_)>(
+          reinterpret_cast<char*>(&_impl_.status_),
+          reinterpret_cast<char*>(&other->_impl_.status_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getPointCloudResponse::GetMetadata() const {
@@ -2442,8 +2418,8 @@ getMeshRequest::getMeshRequest(const getMeshRequest& from)
   getMeshRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.outputmesh_){}
-    , decltype(_impl_.status_){}
     , decltype(_impl_.grpcservercompressionformat_){}
+    , decltype(_impl_.status_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -2455,15 +2431,9 @@ getMeshRequest::getMeshRequest(const getMeshRequest& from)
     _this->_impl_.outputmesh_.Set(from._internal_outputmesh(), 
       _this->GetArenaForAllocation());
   }
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_status().empty()) {
-    _this->_impl_.status_.Set(from._internal_status(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  ::memcpy(&_impl_.grpcservercompressionformat_, &from._impl_.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.status_) -
+    reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.status_));
   // @@protoc_insertion_point(copy_constructor:grpcIDenseMappingPipeline.getMeshRequest)
 }
 
@@ -2473,17 +2443,13 @@ inline void getMeshRequest::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.outputmesh_){}
-    , decltype(_impl_.status_){}
     , decltype(_impl_.grpcservercompressionformat_){0}
+    , decltype(_impl_.status_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.outputmesh_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.outputmesh_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -2499,7 +2465,6 @@ getMeshRequest::~getMeshRequest() {
 inline void getMeshRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.outputmesh_.Destroy();
-  _impl_.status_.Destroy();
 }
 
 void getMeshRequest::SetCachedSize(int size) const {
@@ -2513,8 +2478,9 @@ void getMeshRequest::Clear() {
   (void) cached_has_bits;
 
   _impl_.outputmesh_.ClearToEmpty();
-  _impl_.status_.ClearToEmpty();
-  _impl_.grpcservercompressionformat_ = 0;
+  ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.status_) -
+      reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.status_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2541,11 +2507,10 @@ const char* getMeshRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext
         } else
           goto handle_unusual;
         continue;
-      // bytes status = 3;
+      // sint32 status = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_status();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2591,10 +2556,10 @@ uint8_t* getMeshRequest::_InternalSerialize(
         2, this->_internal_outputmesh(), target);
   }
 
-  // bytes status = 3;
-  if (!this->_internal_status().empty()) {
-    target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_status(), target);
+  // sint32 status = 3;
+  if (this->_internal_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(3, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2620,16 +2585,14 @@ size_t getMeshRequest::ByteSizeLong() const {
         this->_internal_outputmesh());
   }
 
-  // bytes status = 3;
-  if (!this->_internal_status().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_status());
-  }
-
   // int32 grpcServerCompressionFormat = 1;
   if (this->_internal_grpcservercompressionformat() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
+  }
+
+  // sint32 status = 3;
+  if (this->_internal_status() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_status());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2653,11 +2616,11 @@ void getMeshRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
   if (!from._internal_outputmesh().empty()) {
     _this->_internal_set_outputmesh(from._internal_outputmesh());
   }
-  if (!from._internal_status().empty()) {
-    _this->_internal_set_status(from._internal_status());
-  }
   if (from._internal_grpcservercompressionformat() != 0) {
     _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
+  }
+  if (from._internal_status() != 0) {
+    _this->_internal_set_status(from._internal_status());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2682,11 +2645,12 @@ void getMeshRequest::InternalSwap(getMeshRequest* other) {
       &_impl_.outputmesh_, lhs_arena,
       &other->_impl_.outputmesh_, rhs_arena
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.status_, lhs_arena,
-      &other->_impl_.status_, rhs_arena
-  );
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(getMeshRequest, _impl_.status_)
+      + sizeof(getMeshRequest::_impl_.status_)
+      - PROTOBUF_FIELD_OFFSET(getMeshRequest, _impl_.grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getMeshRequest::GetMetadata() const {
@@ -2725,15 +2689,9 @@ getMeshResponse::getMeshResponse(const getMeshResponse& from)
     _this->_impl_.outputmesh_.Set(from._internal_outputmesh(), 
       _this->GetArenaForAllocation());
   }
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_status().empty()) {
-    _this->_impl_.status_.Set(from._internal_status(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  ::memcpy(&_impl_.status_, &from._impl_.status_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.xpcfgrpcreturnvalue_) -
+    reinterpret_cast<char*>(&_impl_.status_)) + sizeof(_impl_.xpcfgrpcreturnvalue_));
   // @@protoc_insertion_point(copy_constructor:grpcIDenseMappingPipeline.getMeshResponse)
 }
 
@@ -2743,17 +2701,13 @@ inline void getMeshResponse::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.outputmesh_){}
-    , decltype(_impl_.status_){}
+    , decltype(_impl_.status_){0}
     , decltype(_impl_.xpcfgrpcreturnvalue_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.outputmesh_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.outputmesh_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.status_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.status_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -2769,7 +2723,6 @@ getMeshResponse::~getMeshResponse() {
 inline void getMeshResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.outputmesh_.Destroy();
-  _impl_.status_.Destroy();
 }
 
 void getMeshResponse::SetCachedSize(int size) const {
@@ -2783,8 +2736,9 @@ void getMeshResponse::Clear() {
   (void) cached_has_bits;
 
   _impl_.outputmesh_.ClearToEmpty();
-  _impl_.status_.ClearToEmpty();
-  _impl_.xpcfgrpcreturnvalue_ = 0;
+  ::memset(&_impl_.status_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.xpcfgrpcreturnvalue_) -
+      reinterpret_cast<char*>(&_impl_.status_)) + sizeof(_impl_.xpcfgrpcreturnvalue_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2803,11 +2757,10 @@ const char* getMeshResponse::_InternalParse(const char* ptr, ::_pbi::ParseContex
         } else
           goto handle_unusual;
         continue;
-      // bytes status = 2;
+      // sint32 status = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_status();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2855,10 +2808,10 @@ uint8_t* getMeshResponse::_InternalSerialize(
         1, this->_internal_outputmesh(), target);
   }
 
-  // bytes status = 2;
-  if (!this->_internal_status().empty()) {
-    target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_status(), target);
+  // sint32 status = 2;
+  if (this->_internal_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(2, this->_internal_status(), target);
   }
 
   // sint32 xpcfGrpcReturnValue = 3;
@@ -2890,11 +2843,9 @@ size_t getMeshResponse::ByteSizeLong() const {
         this->_internal_outputmesh());
   }
 
-  // bytes status = 2;
-  if (!this->_internal_status().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_status());
+  // sint32 status = 2;
+  if (this->_internal_status() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(this->_internal_status());
   }
 
   // sint32 xpcfGrpcReturnValue = 3;
@@ -2923,7 +2874,7 @@ void getMeshResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   if (!from._internal_outputmesh().empty()) {
     _this->_internal_set_outputmesh(from._internal_outputmesh());
   }
-  if (!from._internal_status().empty()) {
+  if (from._internal_status() != 0) {
     _this->_internal_set_status(from._internal_status());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
@@ -2952,11 +2903,12 @@ void getMeshResponse::InternalSwap(getMeshResponse* other) {
       &_impl_.outputmesh_, lhs_arena,
       &other->_impl_.outputmesh_, rhs_arena
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.status_, lhs_arena,
-      &other->_impl_.status_, rhs_arena
-  );
-  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(getMeshResponse, _impl_.xpcfgrpcreturnvalue_)
+      + sizeof(getMeshResponse::_impl_.xpcfgrpcreturnvalue_)
+      - PROTOBUF_FIELD_OFFSET(getMeshResponse, _impl_.status_)>(
+          reinterpret_cast<char*>(&_impl_.status_),
+          reinterpret_cast<char*>(&other->_impl_.status_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getMeshResponse::GetMetadata() const {

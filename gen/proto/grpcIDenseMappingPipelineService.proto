@@ -50,13 +50,13 @@ message getPointCloudRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes outputPointCloud = 2;
-bytes status = 3;
+sint32 status = 3;
 }
 
 message getPointCloudResponse
 {
 bytes outputPointCloud = 1;
-bytes status = 2;
+sint32 status = 2;
 sint32 xpcfGrpcReturnValue = 3;
 }
 
@@ -64,13 +64,13 @@ message getMeshRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes outputMesh = 2;
-bytes status = 3;
+sint32 status = 3;
 }
 
 message getMeshResponse
 {
 bytes outputMesh = 1;
-bytes status = 2;
+sint32 status = 2;
 sint32 xpcfGrpcReturnValue = 3;
 }
 

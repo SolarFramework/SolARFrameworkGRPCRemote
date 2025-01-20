@@ -3106,9 +3106,9 @@ class mappingProcessRequest_grpc0Request final :
     kPosesFieldNumber = 3,
     kTransformFieldNumber = 5,
     kUpdatedTransformFieldNumber = 6,
-    kStatusFieldNumber = 7,
     kGrpcServerCompressionFormatFieldNumber = 1,
     kFixedPoseFieldNumber = 4,
+    kStatusFieldNumber = 7,
   };
   // bytes images = 2;
   void clear_images();
@@ -3166,20 +3166,6 @@ class mappingProcessRequest_grpc0Request final :
   std::string* _internal_mutable_updatedtransform();
   public:
 
-  // bytes status = 7;
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_NODISCARD std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
   // int32 grpcServerCompressionFormat = 1;
   void clear_grpcservercompressionformat();
   int32_t grpcservercompressionformat() const;
@@ -3198,6 +3184,15 @@ class mappingProcessRequest_grpc0Request final :
   void _internal_set_fixedpose(bool value);
   public:
 
+  // sint32 status = 7;
+  void clear_status();
+  int32_t status() const;
+  void set_status(int32_t value);
+  private:
+  int32_t _internal_status() const;
+  void _internal_set_status(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMappingPipeline.mappingProcessRequest_grpc0Request)
  private:
   class _Internal;
@@ -3210,9 +3205,9 @@ class mappingProcessRequest_grpc0Request final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr poses_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transform_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updatedtransform_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
     int32_t grpcservercompressionformat_;
     bool fixedpose_;
+    int32_t status_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -3359,18 +3354,13 @@ class mappingProcessRequest_grpc0Response final :
   std::string* _internal_mutable_updatedtransform();
   public:
 
-  // bytes status = 2;
+  // sint32 status = 2;
   void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_NODISCARD std::string* release_status();
-  void set_allocated_status(std::string* status);
+  int32_t status() const;
+  void set_status(int32_t value);
   private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
+  int32_t _internal_status() const;
+  void _internal_set_status(int32_t value);
   public:
 
   // sint32 xpcfGrpcReturnValue = 3;
@@ -3391,7 +3381,7 @@ class mappingProcessRequest_grpc0Response final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updatedtransform_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+    int32_t status_;
     int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -3523,9 +3513,9 @@ class mappingProcessRequest_grpc1Request final :
   enum : int {
     kImagesFieldNumber = 2,
     kPosesFieldNumber = 3,
-    kStatusFieldNumber = 5,
     kGrpcServerCompressionFormatFieldNumber = 1,
     kFixedPoseFieldNumber = 4,
+    kStatusFieldNumber = 5,
   };
   // bytes images = 2;
   void clear_images();
@@ -3555,20 +3545,6 @@ class mappingProcessRequest_grpc1Request final :
   std::string* _internal_mutable_poses();
   public:
 
-  // bytes status = 5;
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_NODISCARD std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
   // int32 grpcServerCompressionFormat = 1;
   void clear_grpcservercompressionformat();
   int32_t grpcservercompressionformat() const;
@@ -3587,6 +3563,15 @@ class mappingProcessRequest_grpc1Request final :
   void _internal_set_fixedpose(bool value);
   public:
 
+  // sint32 status = 5;
+  void clear_status();
+  int32_t status() const;
+  void set_status(int32_t value);
+  private:
+  int32_t _internal_status() const;
+  void _internal_set_status(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMappingPipeline.mappingProcessRequest_grpc1Request)
  private:
   class _Internal;
@@ -3597,9 +3582,9 @@ class mappingProcessRequest_grpc1Request final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr images_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr poses_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
     int32_t grpcservercompressionformat_;
     bool fixedpose_;
+    int32_t status_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -3731,18 +3716,13 @@ class mappingProcessRequest_grpc1Response final :
     kStatusFieldNumber = 1,
     kXpcfGrpcReturnValueFieldNumber = 2,
   };
-  // bytes status = 1;
+  // sint32 status = 1;
   void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_NODISCARD std::string* release_status();
-  void set_allocated_status(std::string* status);
+  int32_t status() const;
+  void set_status(int32_t value);
   private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
+  int32_t _internal_status() const;
+  void _internal_set_status(int32_t value);
   public:
 
   // sint32 xpcfGrpcReturnValue = 2;
@@ -3762,7 +3742,7 @@ class mappingProcessRequest_grpc1Response final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+    int32_t status_;
     int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -3895,9 +3875,9 @@ class mappingProcessRequest_grpc2Request final :
     kImagesFieldNumber = 2,
     kPosesFieldNumber = 3,
     kUpdatedTransformFieldNumber = 5,
-    kStatusFieldNumber = 6,
     kGrpcServerCompressionFormatFieldNumber = 1,
     kFixedPoseFieldNumber = 4,
+    kStatusFieldNumber = 6,
   };
   // bytes images = 2;
   void clear_images();
@@ -3941,20 +3921,6 @@ class mappingProcessRequest_grpc2Request final :
   std::string* _internal_mutable_updatedtransform();
   public:
 
-  // bytes status = 6;
-  void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_NODISCARD std::string* release_status();
-  void set_allocated_status(std::string* status);
-  private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
-  public:
-
   // int32 grpcServerCompressionFormat = 1;
   void clear_grpcservercompressionformat();
   int32_t grpcservercompressionformat() const;
@@ -3973,6 +3939,15 @@ class mappingProcessRequest_grpc2Request final :
   void _internal_set_fixedpose(bool value);
   public:
 
+  // sint32 status = 6;
+  void clear_status();
+  int32_t status() const;
+  void set_status(int32_t value);
+  private:
+  int32_t _internal_status() const;
+  void _internal_set_status(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMappingPipeline.mappingProcessRequest_grpc2Request)
  private:
   class _Internal;
@@ -3984,9 +3959,9 @@ class mappingProcessRequest_grpc2Request final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr images_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr poses_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updatedtransform_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
     int32_t grpcservercompressionformat_;
     bool fixedpose_;
+    int32_t status_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -4133,18 +4108,13 @@ class mappingProcessRequest_grpc2Response final :
   std::string* _internal_mutable_updatedtransform();
   public:
 
-  // bytes status = 2;
+  // sint32 status = 2;
   void clear_status();
-  const std::string& status() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_status(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_status();
-  PROTOBUF_NODISCARD std::string* release_status();
-  void set_allocated_status(std::string* status);
+  int32_t status() const;
+  void set_status(int32_t value);
   private:
-  const std::string& _internal_status() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_status(const std::string& value);
-  std::string* _internal_mutable_status();
+  int32_t _internal_status() const;
+  void _internal_set_status(int32_t value);
   public:
 
   // sint32 xpcfGrpcReturnValue = 3;
@@ -4165,7 +4135,7 @@ class mappingProcessRequest_grpc2Response final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr updatedtransform_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr status_;
+    int32_t status_;
     int32_t xpcfgrpcreturnvalue_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -5715,54 +5685,24 @@ inline void mappingProcessRequest_grpc0Request::set_allocated_updatedtransform(s
   // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc0Request.updatedTransform)
 }
 
-// bytes status = 7;
+// sint32 status = 7;
 inline void mappingProcessRequest_grpc0Request::clear_status() {
-  _impl_.status_.ClearToEmpty();
+  _impl_.status_ = 0;
 }
-inline const std::string& mappingProcessRequest_grpc0Request::status() const {
+inline int32_t mappingProcessRequest_grpc0Request::_internal_status() const {
+  return _impl_.status_;
+}
+inline int32_t mappingProcessRequest_grpc0Request::status() const {
   // @@protoc_insertion_point(field_get:grpcIMappingPipeline.mappingProcessRequest_grpc0Request.status)
   return _internal_status();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void mappingProcessRequest_grpc0Request::set_status(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.status_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void mappingProcessRequest_grpc0Request::_internal_set_status(int32_t value) {
+  
+  _impl_.status_ = value;
+}
+inline void mappingProcessRequest_grpc0Request::set_status(int32_t value) {
+  _internal_set_status(value);
   // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequest_grpc0Request.status)
-}
-inline std::string* mappingProcessRequest_grpc0Request::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:grpcIMappingPipeline.mappingProcessRequest_grpc0Request.status)
-  return _s;
-}
-inline const std::string& mappingProcessRequest_grpc0Request::_internal_status() const {
-  return _impl_.status_.Get();
-}
-inline void mappingProcessRequest_grpc0Request::_internal_set_status(const std::string& value) {
-  
-  _impl_.status_.Set(value, GetArenaForAllocation());
-}
-inline std::string* mappingProcessRequest_grpc0Request::_internal_mutable_status() {
-  
-  return _impl_.status_.Mutable(GetArenaForAllocation());
-}
-inline std::string* mappingProcessRequest_grpc0Request::release_status() {
-  // @@protoc_insertion_point(field_release:grpcIMappingPipeline.mappingProcessRequest_grpc0Request.status)
-  return _impl_.status_.Release();
-}
-inline void mappingProcessRequest_grpc0Request::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.status_.IsDefault()) {
-    _impl_.status_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc0Request.status)
 }
 
 // -------------------------------------------------------------------
@@ -5819,54 +5759,24 @@ inline void mappingProcessRequest_grpc0Response::set_allocated_updatedtransform(
   // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc0Response.updatedTransform)
 }
 
-// bytes status = 2;
+// sint32 status = 2;
 inline void mappingProcessRequest_grpc0Response::clear_status() {
-  _impl_.status_.ClearToEmpty();
+  _impl_.status_ = 0;
 }
-inline const std::string& mappingProcessRequest_grpc0Response::status() const {
+inline int32_t mappingProcessRequest_grpc0Response::_internal_status() const {
+  return _impl_.status_;
+}
+inline int32_t mappingProcessRequest_grpc0Response::status() const {
   // @@protoc_insertion_point(field_get:grpcIMappingPipeline.mappingProcessRequest_grpc0Response.status)
   return _internal_status();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void mappingProcessRequest_grpc0Response::set_status(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.status_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void mappingProcessRequest_grpc0Response::_internal_set_status(int32_t value) {
+  
+  _impl_.status_ = value;
+}
+inline void mappingProcessRequest_grpc0Response::set_status(int32_t value) {
+  _internal_set_status(value);
   // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequest_grpc0Response.status)
-}
-inline std::string* mappingProcessRequest_grpc0Response::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:grpcIMappingPipeline.mappingProcessRequest_grpc0Response.status)
-  return _s;
-}
-inline const std::string& mappingProcessRequest_grpc0Response::_internal_status() const {
-  return _impl_.status_.Get();
-}
-inline void mappingProcessRequest_grpc0Response::_internal_set_status(const std::string& value) {
-  
-  _impl_.status_.Set(value, GetArenaForAllocation());
-}
-inline std::string* mappingProcessRequest_grpc0Response::_internal_mutable_status() {
-  
-  return _impl_.status_.Mutable(GetArenaForAllocation());
-}
-inline std::string* mappingProcessRequest_grpc0Response::release_status() {
-  // @@protoc_insertion_point(field_release:grpcIMappingPipeline.mappingProcessRequest_grpc0Response.status)
-  return _impl_.status_.Release();
-}
-inline void mappingProcessRequest_grpc0Response::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.status_.IsDefault()) {
-    _impl_.status_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc0Response.status)
 }
 
 // sint32 xpcfGrpcReturnValue = 3;
@@ -6033,108 +5943,48 @@ inline void mappingProcessRequest_grpc1Request::set_fixedpose(bool value) {
   // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequest_grpc1Request.fixedPose)
 }
 
-// bytes status = 5;
+// sint32 status = 5;
 inline void mappingProcessRequest_grpc1Request::clear_status() {
-  _impl_.status_.ClearToEmpty();
+  _impl_.status_ = 0;
 }
-inline const std::string& mappingProcessRequest_grpc1Request::status() const {
+inline int32_t mappingProcessRequest_grpc1Request::_internal_status() const {
+  return _impl_.status_;
+}
+inline int32_t mappingProcessRequest_grpc1Request::status() const {
   // @@protoc_insertion_point(field_get:grpcIMappingPipeline.mappingProcessRequest_grpc1Request.status)
   return _internal_status();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void mappingProcessRequest_grpc1Request::set_status(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.status_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void mappingProcessRequest_grpc1Request::_internal_set_status(int32_t value) {
+  
+  _impl_.status_ = value;
+}
+inline void mappingProcessRequest_grpc1Request::set_status(int32_t value) {
+  _internal_set_status(value);
   // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequest_grpc1Request.status)
-}
-inline std::string* mappingProcessRequest_grpc1Request::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:grpcIMappingPipeline.mappingProcessRequest_grpc1Request.status)
-  return _s;
-}
-inline const std::string& mappingProcessRequest_grpc1Request::_internal_status() const {
-  return _impl_.status_.Get();
-}
-inline void mappingProcessRequest_grpc1Request::_internal_set_status(const std::string& value) {
-  
-  _impl_.status_.Set(value, GetArenaForAllocation());
-}
-inline std::string* mappingProcessRequest_grpc1Request::_internal_mutable_status() {
-  
-  return _impl_.status_.Mutable(GetArenaForAllocation());
-}
-inline std::string* mappingProcessRequest_grpc1Request::release_status() {
-  // @@protoc_insertion_point(field_release:grpcIMappingPipeline.mappingProcessRequest_grpc1Request.status)
-  return _impl_.status_.Release();
-}
-inline void mappingProcessRequest_grpc1Request::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.status_.IsDefault()) {
-    _impl_.status_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc1Request.status)
 }
 
 // -------------------------------------------------------------------
 
 // mappingProcessRequest_grpc1Response
 
-// bytes status = 1;
+// sint32 status = 1;
 inline void mappingProcessRequest_grpc1Response::clear_status() {
-  _impl_.status_.ClearToEmpty();
+  _impl_.status_ = 0;
 }
-inline const std::string& mappingProcessRequest_grpc1Response::status() const {
+inline int32_t mappingProcessRequest_grpc1Response::_internal_status() const {
+  return _impl_.status_;
+}
+inline int32_t mappingProcessRequest_grpc1Response::status() const {
   // @@protoc_insertion_point(field_get:grpcIMappingPipeline.mappingProcessRequest_grpc1Response.status)
   return _internal_status();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void mappingProcessRequest_grpc1Response::set_status(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.status_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void mappingProcessRequest_grpc1Response::_internal_set_status(int32_t value) {
+  
+  _impl_.status_ = value;
+}
+inline void mappingProcessRequest_grpc1Response::set_status(int32_t value) {
+  _internal_set_status(value);
   // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequest_grpc1Response.status)
-}
-inline std::string* mappingProcessRequest_grpc1Response::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:grpcIMappingPipeline.mappingProcessRequest_grpc1Response.status)
-  return _s;
-}
-inline const std::string& mappingProcessRequest_grpc1Response::_internal_status() const {
-  return _impl_.status_.Get();
-}
-inline void mappingProcessRequest_grpc1Response::_internal_set_status(const std::string& value) {
-  
-  _impl_.status_.Set(value, GetArenaForAllocation());
-}
-inline std::string* mappingProcessRequest_grpc1Response::_internal_mutable_status() {
-  
-  return _impl_.status_.Mutable(GetArenaForAllocation());
-}
-inline std::string* mappingProcessRequest_grpc1Response::release_status() {
-  // @@protoc_insertion_point(field_release:grpcIMappingPipeline.mappingProcessRequest_grpc1Response.status)
-  return _impl_.status_.Release();
-}
-inline void mappingProcessRequest_grpc1Response::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.status_.IsDefault()) {
-    _impl_.status_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc1Response.status)
 }
 
 // sint32 xpcfGrpcReturnValue = 2;
@@ -6351,54 +6201,24 @@ inline void mappingProcessRequest_grpc2Request::set_allocated_updatedtransform(s
   // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc2Request.updatedTransform)
 }
 
-// bytes status = 6;
+// sint32 status = 6;
 inline void mappingProcessRequest_grpc2Request::clear_status() {
-  _impl_.status_.ClearToEmpty();
+  _impl_.status_ = 0;
 }
-inline const std::string& mappingProcessRequest_grpc2Request::status() const {
+inline int32_t mappingProcessRequest_grpc2Request::_internal_status() const {
+  return _impl_.status_;
+}
+inline int32_t mappingProcessRequest_grpc2Request::status() const {
   // @@protoc_insertion_point(field_get:grpcIMappingPipeline.mappingProcessRequest_grpc2Request.status)
   return _internal_status();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void mappingProcessRequest_grpc2Request::set_status(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.status_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void mappingProcessRequest_grpc2Request::_internal_set_status(int32_t value) {
+  
+  _impl_.status_ = value;
+}
+inline void mappingProcessRequest_grpc2Request::set_status(int32_t value) {
+  _internal_set_status(value);
   // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequest_grpc2Request.status)
-}
-inline std::string* mappingProcessRequest_grpc2Request::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:grpcIMappingPipeline.mappingProcessRequest_grpc2Request.status)
-  return _s;
-}
-inline const std::string& mappingProcessRequest_grpc2Request::_internal_status() const {
-  return _impl_.status_.Get();
-}
-inline void mappingProcessRequest_grpc2Request::_internal_set_status(const std::string& value) {
-  
-  _impl_.status_.Set(value, GetArenaForAllocation());
-}
-inline std::string* mappingProcessRequest_grpc2Request::_internal_mutable_status() {
-  
-  return _impl_.status_.Mutable(GetArenaForAllocation());
-}
-inline std::string* mappingProcessRequest_grpc2Request::release_status() {
-  // @@protoc_insertion_point(field_release:grpcIMappingPipeline.mappingProcessRequest_grpc2Request.status)
-  return _impl_.status_.Release();
-}
-inline void mappingProcessRequest_grpc2Request::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.status_.IsDefault()) {
-    _impl_.status_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc2Request.status)
 }
 
 // -------------------------------------------------------------------
@@ -6455,54 +6275,24 @@ inline void mappingProcessRequest_grpc2Response::set_allocated_updatedtransform(
   // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc2Response.updatedTransform)
 }
 
-// bytes status = 2;
+// sint32 status = 2;
 inline void mappingProcessRequest_grpc2Response::clear_status() {
-  _impl_.status_.ClearToEmpty();
+  _impl_.status_ = 0;
 }
-inline const std::string& mappingProcessRequest_grpc2Response::status() const {
+inline int32_t mappingProcessRequest_grpc2Response::_internal_status() const {
+  return _impl_.status_;
+}
+inline int32_t mappingProcessRequest_grpc2Response::status() const {
   // @@protoc_insertion_point(field_get:grpcIMappingPipeline.mappingProcessRequest_grpc2Response.status)
   return _internal_status();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void mappingProcessRequest_grpc2Response::set_status(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.status_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void mappingProcessRequest_grpc2Response::_internal_set_status(int32_t value) {
+  
+  _impl_.status_ = value;
+}
+inline void mappingProcessRequest_grpc2Response::set_status(int32_t value) {
+  _internal_set_status(value);
   // @@protoc_insertion_point(field_set:grpcIMappingPipeline.mappingProcessRequest_grpc2Response.status)
-}
-inline std::string* mappingProcessRequest_grpc2Response::mutable_status() {
-  std::string* _s = _internal_mutable_status();
-  // @@protoc_insertion_point(field_mutable:grpcIMappingPipeline.mappingProcessRequest_grpc2Response.status)
-  return _s;
-}
-inline const std::string& mappingProcessRequest_grpc2Response::_internal_status() const {
-  return _impl_.status_.Get();
-}
-inline void mappingProcessRequest_grpc2Response::_internal_set_status(const std::string& value) {
-  
-  _impl_.status_.Set(value, GetArenaForAllocation());
-}
-inline std::string* mappingProcessRequest_grpc2Response::_internal_mutable_status() {
-  
-  return _impl_.status_.Mutable(GetArenaForAllocation());
-}
-inline std::string* mappingProcessRequest_grpc2Response::release_status() {
-  // @@protoc_insertion_point(field_release:grpcIMappingPipeline.mappingProcessRequest_grpc2Response.status)
-  return _impl_.status_.Release();
-}
-inline void mappingProcessRequest_grpc2Response::set_allocated_status(std::string* status) {
-  if (status != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.status_.SetAllocated(status, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.status_.IsDefault()) {
-    _impl_.status_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIMappingPipeline.mappingProcessRequest_grpc2Response.status)
 }
 
 // sint32 xpcfGrpcReturnValue = 3;

@@ -142,10 +142,10 @@ XPCFErrorCode IDenseMappingPipeline_grpcServer::onConfigured()
   std::cout << "====> IDenseMappingPipeline_grpcServer::getPointCloud request received at " << to_simple_string(start) << std::endl;
   #endif
   SRef<SolAR::datastructure::PointCloud> outputPointCloud = xpcf::deserialize<SRef<SolAR::datastructure::PointCloud>>(request->outputpointcloud());
-  SolAR::api::pipeline::DenseMappingStatus status = xpcf::deserialize<SolAR::api::pipeline::DenseMappingStatus>(request->status());
+  SolAR::api::pipeline::DenseMappingStatus status = static_cast<SolAR::api::pipeline::DenseMappingStatus>(request->status());
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getPointCloud(outputPointCloud, status);
   response->set_outputpointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(outputPointCloud));
-  response->set_status(xpcf::serialize<SolAR::api::pipeline::DenseMappingStatus>(status));
+  response->set_status(static_cast<int32_t>(status));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -168,10 +168,10 @@ XPCFErrorCode IDenseMappingPipeline_grpcServer::onConfigured()
   std::cout << "====> IDenseMappingPipeline_grpcServer::getMesh request received at " << to_simple_string(start) << std::endl;
   #endif
   SRef<SolAR::datastructure::Mesh> outputMesh = xpcf::deserialize<SRef<SolAR::datastructure::Mesh>>(request->outputmesh());
-  SolAR::api::pipeline::DenseMappingStatus status = xpcf::deserialize<SolAR::api::pipeline::DenseMappingStatus>(request->status());
+  SolAR::api::pipeline::DenseMappingStatus status = static_cast<SolAR::api::pipeline::DenseMappingStatus>(request->status());
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMesh(outputMesh, status);
   response->set_outputmesh(xpcf::serialize<SRef<SolAR::datastructure::Mesh>>(outputMesh));
-  response->set_status(xpcf::serialize<SolAR::api::pipeline::DenseMappingStatus>(status));
+  response->set_status(static_cast<int32_t>(status));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();

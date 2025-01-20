@@ -122,6 +122,74 @@ bytes pointCloud = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
+message registerMapProcessingServiceRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+sint32 processingType = 2;
+string serviceURL = 3;
+}
+
+message registerMapProcessingServiceResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message unregisterMapProcessingServiceRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+sint32 processingType = 2;
+string serviceURL = 3;
+}
+
+message unregisterMapProcessingServiceResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message requestMapProcessingRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+sint32 processingType = 3;
+}
+
+message requestMapProcessingResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getMapProcessingStatusRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+sint32 status = 3;
+float progress = 4;
+string resultingMapUUID = 5;
+}
+
+message getMapProcessingStatusResponse
+{
+sint32 status = 1;
+float progress = 2;
+string resultingMapUUID = 3;
+sint32 xpcfGrpcReturnValue = 4;
+}
+
+message getMapProcessingDataRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+bytes pointCloud = 3;
+bytes keyframePoses = 4;
+}
+
+message getMapProcessingDataResponse
+{
+bytes pointCloud = 1;
+bytes keyframePoses = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
 service grpcIMapsManagerService {
 rpc createMap(createMapRequest) returns(createMapResponse) {}
 rpc deleteMap(deleteMapRequest) returns(deleteMapResponse) {}
@@ -133,5 +201,10 @@ rpc decreaseMapClients(decreaseMapClientsRequest) returns(decreaseMapClientsResp
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc setMapRequest(setMapRequestRequest) returns(setMapRequestResponse) {}
 rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}
+rpc registerMapProcessingService(registerMapProcessingServiceRequest) returns(registerMapProcessingServiceResponse) {}
+rpc unregisterMapProcessingService(unregisterMapProcessingServiceRequest) returns(unregisterMapProcessingServiceResponse) {}
+rpc requestMapProcessing(requestMapProcessingRequest) returns(requestMapProcessingResponse) {}
+rpc getMapProcessingStatus(getMapProcessingStatusRequest) returns(getMapProcessingStatusResponse) {}
+rpc getMapProcessingData(getMapProcessingDataRequest) returns(getMapProcessingDataResponse) {}
 }
 

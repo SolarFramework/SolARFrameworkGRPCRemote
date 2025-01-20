@@ -176,7 +176,7 @@ SolAR::FrameworkReturnCode  IDenseMappingPipeline_grpcProxy::getPointCloud(SRef<
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_outputpointcloud(xpcf::serialize<SRef<SolAR::datastructure::PointCloud>>(outputPointCloud));
-  reqIn.set_status(xpcf::serialize<SolAR::api::pipeline::DenseMappingStatus>(status));
+  reqIn.set_status(static_cast<int32_t>(status));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IDenseMappingPipeline_grpcProxy::getPointCloud request sent at " << to_simple_string(start) << std::endl;
@@ -193,7 +193,7 @@ SolAR::FrameworkReturnCode  IDenseMappingPipeline_grpcProxy::getPointCloud(SRef<
   }
 
   outputPointCloud = xpcf::deserialize<SRef<SolAR::datastructure::PointCloud>>(respOut.outputpointcloud());
-  status = xpcf::deserialize<SolAR::api::pipeline::DenseMappingStatus>(respOut.status());
+  status = static_cast<SolAR::api::pipeline::DenseMappingStatus>(respOut.status());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
@@ -209,7 +209,7 @@ SolAR::FrameworkReturnCode  IDenseMappingPipeline_grpcProxy::getMesh(SRef<SolAR:
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_outputmesh(xpcf::serialize<SRef<SolAR::datastructure::Mesh>>(outputMesh));
-  reqIn.set_status(xpcf::serialize<SolAR::api::pipeline::DenseMappingStatus>(status));
+  reqIn.set_status(static_cast<int32_t>(status));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IDenseMappingPipeline_grpcProxy::getMesh request sent at " << to_simple_string(start) << std::endl;
@@ -226,7 +226,7 @@ SolAR::FrameworkReturnCode  IDenseMappingPipeline_grpcProxy::getMesh(SRef<SolAR:
   }
 
   outputMesh = xpcf::deserialize<SRef<SolAR::datastructure::Mesh>>(respOut.outputmesh());
-  status = xpcf::deserialize<SolAR::api::pipeline::DenseMappingStatus>(respOut.status());
+  status = static_cast<SolAR::api::pipeline::DenseMappingStatus>(respOut.status());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

@@ -112,13 +112,13 @@ bytes poses = 3;
 bool fixedPose = 4;
 bytes transform = 5;
 bytes updatedTransform = 6;
-bytes status = 7;
+sint32 status = 7;
 }
 
 message mappingProcessRequest_grpc0Response
 {
 bytes updatedTransform = 1;
-bytes status = 2;
+sint32 status = 2;
 sint32 xpcfGrpcReturnValue = 3;
 }
 
@@ -128,12 +128,12 @@ int32 grpcServerCompressionFormat  = 1;
 bytes images = 2;
 bytes poses = 3;
 bool fixedPose = 4;
-bytes status = 5;
+sint32 status = 5;
 }
 
 message mappingProcessRequest_grpc1Response
 {
-bytes status = 1;
+sint32 status = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
@@ -144,13 +144,13 @@ bytes images = 2;
 bytes poses = 3;
 bool fixedPose = 4;
 bytes updatedTransform = 5;
-bytes status = 6;
+sint32 status = 6;
 }
 
 message mappingProcessRequest_grpc2Response
 {
 bytes updatedTransform = 1;
-bytes status = 2;
+sint32 status = 2;
 sint32 xpcfGrpcReturnValue = 3;
 }
 
