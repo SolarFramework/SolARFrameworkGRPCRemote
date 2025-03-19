@@ -19,7 +19,7 @@ IMapsManager_grpcProxy::IMapsManager_grpcProxy():xpcf::ConfigurableBase(xpcf::to
   declareInterface<SolAR::api::service::IMapsManager>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(16);
+  m_grpcProxyCompressionConfig.resize(12);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -134,66 +134,6 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getAllMaps(std::vector<std::
   }
 
   mapUUIDList = xpcf::deserialize<std::vector<std::string>>(respOut.mapuuidlist());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
-}
-
-
-SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::registerMapUpdateService(std::string const& serviceURL)
-{
-  ::grpc::ClientContext context;
-  ::grpcIMapsManager::registerMapUpdateServiceRequest reqIn;
-  ::grpcIMapsManager::registerMapUpdateServiceResponse respOut;
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "registerMapUpdateService", m_methodCompressionInfosMap);
-  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
-  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
-  #endif
-  reqIn.set_serviceurl(serviceURL);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapsManager_grpcProxy::registerMapUpdateService request sent at " << to_simple_string(start) << std::endl;
-  #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->registerMapUpdateService(&context, reqIn, &respOut);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapsManager_grpcProxy::registerMapUpdateService response received at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "registerMapUpdateService rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIMapsManagerService","registerMapUpdateService",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
-}
-
-
-SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::unregisterMapUpdateService(std::string const& serviceURL)
-{
-  ::grpc::ClientContext context;
-  ::grpcIMapsManager::unregisterMapUpdateServiceRequest reqIn;
-  ::grpcIMapsManager::unregisterMapUpdateServiceResponse respOut;
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "unregisterMapUpdateService", m_methodCompressionInfosMap);
-  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
-  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
-  #endif
-  reqIn.set_serviceurl(serviceURL);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapsManager_grpcProxy::unregisterMapUpdateService request sent at " << to_simple_string(start) << std::endl;
-  #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->unregisterMapUpdateService(&context, reqIn, &respOut);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapsManager_grpcProxy::unregisterMapUpdateService response received at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "unregisterMapUpdateService rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIMapsManagerService","unregisterMapUpdateService",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
@@ -351,68 +291,6 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getPointCloudRequest(std::st
   }
 
   pointCloud = xpcf::deserialize<SRef<SolAR::datastructure::PointCloud>>(respOut.pointcloud());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
-}
-
-
-SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::registerMapProcessingService(SolAR::api::service::MapProcessingType const processingType, std::string const& serviceURL)
-{
-  ::grpc::ClientContext context;
-  ::grpcIMapsManager::registerMapProcessingServiceRequest reqIn;
-  ::grpcIMapsManager::registerMapProcessingServiceResponse respOut;
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "registerMapProcessingService", m_methodCompressionInfosMap);
-  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
-  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
-  #endif
-  reqIn.set_processingtype(static_cast<int32_t>(processingType));
-  reqIn.set_serviceurl(serviceURL);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapsManager_grpcProxy::registerMapProcessingService request sent at " << to_simple_string(start) << std::endl;
-  #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->registerMapProcessingService(&context, reqIn, &respOut);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapsManager_grpcProxy::registerMapProcessingService response received at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "registerMapProcessingService rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIMapsManagerService","registerMapProcessingService",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
-}
-
-
-SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::unregisterMapProcessingService(SolAR::api::service::MapProcessingType const processingType, std::string const& serviceURL)
-{
-  ::grpc::ClientContext context;
-  ::grpcIMapsManager::unregisterMapProcessingServiceRequest reqIn;
-  ::grpcIMapsManager::unregisterMapProcessingServiceResponse respOut;
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "unregisterMapProcessingService", m_methodCompressionInfosMap);
-  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
-  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
-  #endif
-  reqIn.set_processingtype(static_cast<int32_t>(processingType));
-  reqIn.set_serviceurl(serviceURL);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapsManager_grpcProxy::unregisterMapProcessingService request sent at " << to_simple_string(start) << std::endl;
-  #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->unregisterMapProcessingService(&context, reqIn, &respOut);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapsManager_grpcProxy::unregisterMapProcessingService response received at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "unregisterMapProcessingService rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIMapsManagerService","unregisterMapProcessingService",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

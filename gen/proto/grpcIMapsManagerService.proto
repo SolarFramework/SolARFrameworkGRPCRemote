@@ -38,28 +38,6 @@ bytes mapUUIDList = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-message registerMapUpdateServiceRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-string serviceURL = 2;
-}
-
-message registerMapUpdateServiceResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message unregisterMapUpdateServiceRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-string serviceURL = 2;
-}
-
-message unregisterMapUpdateServiceResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
 message increaseMapClientsRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -122,30 +100,6 @@ bytes pointCloud = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-message registerMapProcessingServiceRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-sint32 processingType = 2;
-string serviceURL = 3;
-}
-
-message registerMapProcessingServiceResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message unregisterMapProcessingServiceRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-sint32 processingType = 2;
-string serviceURL = 3;
-}
-
-message unregisterMapProcessingServiceResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
 message requestMapProcessingRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -194,15 +148,11 @@ service grpcIMapsManagerService {
 rpc createMap(createMapRequest) returns(createMapResponse) {}
 rpc deleteMap(deleteMapRequest) returns(deleteMapResponse) {}
 rpc getAllMaps(getAllMapsRequest) returns(getAllMapsResponse) {}
-rpc registerMapUpdateService(registerMapUpdateServiceRequest) returns(registerMapUpdateServiceResponse) {}
-rpc unregisterMapUpdateService(unregisterMapUpdateServiceRequest) returns(unregisterMapUpdateServiceResponse) {}
 rpc increaseMapClients(increaseMapClientsRequest) returns(increaseMapClientsResponse) {}
 rpc decreaseMapClients(decreaseMapClientsRequest) returns(decreaseMapClientsResponse) {}
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc setMapRequest(setMapRequestRequest) returns(setMapRequestResponse) {}
 rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}
-rpc registerMapProcessingService(registerMapProcessingServiceRequest) returns(registerMapProcessingServiceResponse) {}
-rpc unregisterMapProcessingService(unregisterMapProcessingServiceRequest) returns(unregisterMapProcessingServiceResponse) {}
 rpc requestMapProcessing(requestMapProcessingRequest) returns(requestMapProcessingResponse) {}
 rpc getMapProcessingStatus(getMapProcessingStatusRequest) returns(getMapProcessingStatusResponse) {}
 rpc getMapProcessingData(getMapProcessingDataRequest) returns(getMapProcessingDataResponse) {}
