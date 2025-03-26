@@ -25,6 +25,10 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="c80e2716-e78d-42c3-ae94-a57ac517bc50" name="IRelocalizationTrackablePipeline" description="The interface to define a relocalization processing pipeline based on trackable objects"/>
     </component>
+    <component uuid="b675a1c5-078e-4c7a-82f7-d75a7d3d6dbe" name="IClientContextManager_grpcProxy" description="IClientContextManager_grpcProxy">
+      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+      <interface uuid="d43f5a3b-f66b-4f27-a3b6-cb009a166994" name="IClientContextManager" description="The interface to define a Client Context Manager for services"/>
+    </component>
     <component uuid="91a569da-5695-11ec-bf63-0242ac130002" name="IFrontEnd_grpcProxy" description="IFrontEnd_grpcProxy">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="58389ff0-5695-11ec-bf63-0242ac130002" name="IFrontEnd" description="The interface to define a Front End for services"/>

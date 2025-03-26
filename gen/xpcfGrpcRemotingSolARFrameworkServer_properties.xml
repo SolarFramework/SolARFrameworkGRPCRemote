@@ -95,6 +95,30 @@
         <value>method|init|none|0</value>
       </property>
     </configure>
+    <configure component="IClientContextManager_grpcServer">
+      <property name="grpc_compress_server" type="string">
+        <value>service|none|0</value>
+        <value>method|registerClient|none|0</value>
+        <value>method|unregisterClient|none|0</value>
+        <value>method|getAllClientsUUID|none|0</value>
+        <value>method|getDeviceInfo|none|0</value>
+        <value>method|init|none|0</value>
+        <value>method|init|none|0</value>
+        <value>method|start|none|0</value>
+        <value>method|stop|none|0</value>
+        <value>method|getProcessingMode|none|0</value>
+        <value>method|setCameraParameters|none|0</value>
+        <value>method|setCameraParameters|none|0</value>
+        <value>method|setRectificationParameters|none|0</value>
+        <value>method|getCameraParameters|none|0</value>
+        <value>method|relocalizeProcessRequest|none|0</value>
+        <value>method|relocalizeProcessRequest|none|0</value>
+        <value>method|get3DTransformRequest|none|0</value>
+        <value>method|getMappingDataRequest|none|0</value>
+        <value>method|getLastPose|none|0</value>
+        <value>method|getClientMapUUID|none|0</value>
+      </property>
+    </configure>
     <configure component="IFrontEnd_grpcServer">
       <property name="grpc_compress_server" type="string">
         <value>service|none|0</value>
@@ -134,15 +158,11 @@
         <value>method|createMap|none|0</value>
         <value>method|deleteMap|none|0</value>
         <value>method|getAllMaps|none|0</value>
-        <value>method|registerMapUpdateService|none|0</value>
-        <value>method|unregisterMapUpdateService|none|0</value>
         <value>method|increaseMapClients|none|0</value>
         <value>method|decreaseMapClients|none|0</value>
         <value>method|getMapRequest|none|0</value>
         <value>method|setMapRequest|none|0</value>
         <value>method|getPointCloudRequest|none|0</value>
-        <value>method|registerMapProcessingService|none|0</value>
-        <value>method|unregisterMapProcessingService|none|0</value>
         <value>method|requestMapProcessing|none|0</value>
         <value>method|getMapProcessingStatus|none|0</value>
         <value>method|getMapProcessingData|none|0</value>
