@@ -22,9 +22,9 @@ class IClientContextManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
-    SolAR::FrameworkReturnCode registerClient(std::string const& accessToken, SolAR::api::service::DeviceInfo const& deviceInfo, std::string const& worldElementUUID, std::string& clientUUID)     override;
+    SolAR::FrameworkReturnCode registerClient(SolAR::api::service::DeviceInfo const& deviceInfo, std::string const& worldElementUUID, std::string& clientUUID)     override;
     SolAR::FrameworkReturnCode unregisterClient(std::string const& clientUUID)     override;
-    SolAR::FrameworkReturnCode getAllClientsUUID(std::string const& accessToken, std::vector<std::string>& clientUUIDList)     const     override;
+    SolAR::FrameworkReturnCode getAllClientsUUID(std::vector<std::string>& clientUUIDList)     const     override;
     SolAR::FrameworkReturnCode getDeviceInfo(std::string const& clientUUID, SolAR::api::service::DeviceInfo& deviceInfo)     const     override;
     SolAR::FrameworkReturnCode init(std::string const& clientUUID)     override;
     SolAR::FrameworkReturnCode init(std::string const& clientUUID, SolAR::api::service::PipelineMode pipelineMode)     override;

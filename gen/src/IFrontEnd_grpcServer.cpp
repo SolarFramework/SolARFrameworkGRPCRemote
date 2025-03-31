@@ -14,7 +14,7 @@ IFrontEnd_grpcServer::IFrontEnd_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::service::IFrontEnd>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(29);
+  m_grpcServerCompressionConfig.resize(30);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -688,6 +688,38 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
 }
 
 
+::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getMapInfo(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapInfoRequest* request, ::grpcIFrontEnd::getMapInfoResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getMapInfo", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::getMapInfo request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string accessToken = request->accesstoken();
+  std::string mapUUID = request->mapuuid();
+  SolAR::datastructure::DescriptorType descriptorType = static_cast<SolAR::datastructure::DescriptorType>(request->descriptortype());
+  uint32_t mapSupportedTypes = request->mapsupportedtypes();
+  uint32_t dataSize = request->datasize();
+  bool areImageSaved = request->areimagesaved();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapInfo(accessToken, mapUUID, descriptorType, mapSupportedTypes, dataSize, areImageSaved);
+  response->set_descriptortype(static_cast<int32_t>(descriptorType));
+  response->set_mapsupportedtypes(mapSupportedTypes);
+  response->set_datasize(dataSize);
+  response->set_areimagesaved(areImageSaved);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::getMapInfo response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::requestMapProcessing(::grpc::ServerContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpcIFrontEnd::requestMapProcessingResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -701,8 +733,9 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   #endif
   std::string accessToken = request->accesstoken();
   std::string mapUUID = request->mapuuid();
+  std::string resultMapUUID = request->resultmapuuid();
   SolAR::api::service::MapProcessingType processingType = static_cast<SolAR::api::service::MapProcessingType>(request->processingtype());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->requestMapProcessing(accessToken, mapUUID, processingType);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->requestMapProcessing(accessToken, mapUUID, resultMapUUID, processingType);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -725,14 +758,12 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getMapProcessingStatus request received at " << to_simple_string(start) << std::endl;
   #endif
   std::string accessToken = request->accesstoken();
-  std::string mapUUID = request->mapuuid();
+  std::string resultMapUUID = request->resultmapuuid();
   SolAR::api::service::MapProcessingStatus status = static_cast<SolAR::api::service::MapProcessingStatus>(request->status());
   float progress = request->progress();
-  std::string resultingMapUUID = request->resultingmapuuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapProcessingStatus(accessToken, mapUUID, status, progress, resultingMapUUID);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapProcessingStatus(accessToken, resultMapUUID, status, progress);
   response->set_status(static_cast<int32_t>(status));
   response->set_progress(progress);
-  response->set_resultingmapuuid(resultingMapUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -755,10 +786,10 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getMapProcessingData request received at " << to_simple_string(start) << std::endl;
   #endif
   std::string accessToken = request->accesstoken();
-  std::string mapUUID = request->mapuuid();
+  std::string resultMapUUID = request->resultmapuuid();
   std::vector<SRef<SolAR::datastructure::CloudPoint>> pointCloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->pointcloud());
   std::vector<SolAR::datastructure::Transform3Df> keyframePoses = xpcf::deserialize<std::vector<SolAR::datastructure::Transform3Df>>(request->keyframeposes());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapProcessingData(accessToken, mapUUID, pointCloud, keyframePoses);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapProcessingData(accessToken, resultMapUUID, pointCloud, keyframePoses);
   response->set_pointcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(pointCloud));
   response->set_keyframeposes(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(keyframePoses));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));

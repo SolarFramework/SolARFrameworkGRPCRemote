@@ -352,12 +352,33 @@ bytes pointCloud = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
+message getMapInfoRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string accessToken = 2;
+string mapUUID = 3;
+sint32 descriptorType = 4;
+uint32 mapSupportedTypes = 5;
+uint32 dataSize = 6;
+bool areImageSaved = 7;
+}
+
+message getMapInfoResponse
+{
+sint32 descriptorType = 1;
+uint32 mapSupportedTypes = 2;
+uint32 dataSize = 3;
+bool areImageSaved = 4;
+sint32 xpcfGrpcReturnValue = 5;
+}
+
 message requestMapProcessingRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string accessToken = 2;
 string mapUUID = 3;
-sint32 processingType = 4;
+string resultMapUUID = 4;
+sint32 processingType = 5;
 }
 
 message requestMapProcessingResponse
@@ -369,25 +390,23 @@ message getMapProcessingStatusRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string accessToken = 2;
-string mapUUID = 3;
+string resultMapUUID = 3;
 sint32 status = 4;
 float progress = 5;
-string resultingMapUUID = 6;
 }
 
 message getMapProcessingStatusResponse
 {
 sint32 status = 1;
 float progress = 2;
-string resultingMapUUID = 3;
-sint32 xpcfGrpcReturnValue = 4;
+sint32 xpcfGrpcReturnValue = 3;
 }
 
 message getMapProcessingDataRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string accessToken = 2;
-string mapUUID = 3;
+string resultMapUUID = 3;
 bytes pointCloud = 4;
 bytes keyframePoses = 5;
 }
@@ -425,6 +444,7 @@ rpc getClientMapUUID(getClientMapUUIDRequest) returns(getClientMapUUIDResponse) 
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc setMapRequest(setMapRequestRequest) returns(setMapRequestResponse) {}
 rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}
+rpc getMapInfo(getMapInfoRequest) returns(getMapInfoResponse) {}
 rpc requestMapProcessing(requestMapProcessingRequest) returns(requestMapProcessingResponse) {}
 rpc getMapProcessingStatus(getMapProcessingStatusRequest) returns(getMapProcessingStatusResponse) {}
 rpc getMapProcessingData(getMapProcessingDataRequest) returns(getMapProcessingDataResponse) {}

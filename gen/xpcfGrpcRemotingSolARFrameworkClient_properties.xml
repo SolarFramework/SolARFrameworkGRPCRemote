@@ -147,6 +147,7 @@
         <value>method|getMapRequest|none|none</value>
         <value>method|setMapRequest|none|none</value>
         <value>method|getPointCloudRequest|none|none</value>
+        <value>method|getMapInfo|none|none</value>
         <value>method|requestMapProcessing|none|none</value>
         <value>method|getMapProcessingStatus|none|none</value>
         <value>method|getMapProcessingData|none|none</value>
@@ -163,6 +164,7 @@
         <value>method|getMapRequest|none|none</value>
         <value>method|setMapRequest|none|none</value>
         <value>method|getPointCloudRequest|none|none</value>
+        <value>method|getMapInfo|none|none</value>
         <value>method|requestMapProcessing|none|none</value>
         <value>method|getMapProcessingStatus|none|none</value>
         <value>method|getMapProcessingData|none|none</value>

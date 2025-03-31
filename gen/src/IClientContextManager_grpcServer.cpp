@@ -51,11 +51,10 @@ XPCFErrorCode IClientContextManager_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IClientContextManager_grpcServer::registerClient request received at " << to_simple_string(start) << std::endl;
   #endif
-  std::string accessToken = request->accesstoken();
   SolAR::api::service::DeviceInfo deviceInfo = xpcf::deserialize<SolAR::api::service::DeviceInfo>(request->deviceinfo());
   std::string worldElementUUID = request->worldelementuuid();
   std::string clientUUID = request->clientuuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->registerClient(accessToken, deviceInfo, worldElementUUID, clientUUID);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->registerClient(deviceInfo, worldElementUUID, clientUUID);
   response->set_clientuuid(clientUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -101,9 +100,8 @@ XPCFErrorCode IClientContextManager_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IClientContextManager_grpcServer::getAllClientsUUID request received at " << to_simple_string(start) << std::endl;
   #endif
-  std::string accessToken = request->accesstoken();
   std::vector<std::string> clientUUIDList = xpcf::deserialize<std::vector<std::string>>(request->clientuuidlist());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getAllClientsUUID(accessToken, clientUUIDList);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getAllClientsUUID(clientUUIDList);
   response->set_clientuuidlist(xpcf::serialize<std::vector<std::string>>(clientUUIDList));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS

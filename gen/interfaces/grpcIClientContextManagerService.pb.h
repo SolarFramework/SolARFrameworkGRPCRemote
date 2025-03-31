@@ -326,27 +326,12 @@ class registerClientRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAccessTokenFieldNumber = 2,
-    kDeviceInfoFieldNumber = 3,
-    kWorldElementUUIDFieldNumber = 4,
-    kClientUUIDFieldNumber = 5,
+    kDeviceInfoFieldNumber = 2,
+    kWorldElementUUIDFieldNumber = 3,
+    kClientUUIDFieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string accessToken = 2;
-  void clear_accesstoken();
-  const std::string& accesstoken() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_accesstoken(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_accesstoken();
-  PROTOBUF_NODISCARD std::string* release_accesstoken();
-  void set_allocated_accesstoken(std::string* accesstoken);
-  private:
-  const std::string& _internal_accesstoken() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_accesstoken(const std::string& value);
-  std::string* _internal_mutable_accesstoken();
-  public:
-
-  // bytes deviceInfo = 3;
+  // bytes deviceInfo = 2;
   void clear_deviceinfo();
   const std::string& deviceinfo() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -360,7 +345,7 @@ class registerClientRequest final :
   std::string* _internal_mutable_deviceinfo();
   public:
 
-  // string worldElementUUID = 4;
+  // string worldElementUUID = 3;
   void clear_worldelementuuid();
   const std::string& worldelementuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -374,7 +359,7 @@ class registerClientRequest final :
   std::string* _internal_mutable_worldelementuuid();
   public:
 
-  // string clientUUID = 5;
+  // string clientUUID = 4;
   void clear_clientuuid();
   const std::string& clientuuid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -405,7 +390,6 @@ class registerClientRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr accesstoken_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr deviceinfo_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr worldelementuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuid_;
@@ -1014,25 +998,10 @@ class getAllClientsUUIDRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAccessTokenFieldNumber = 2,
-    kClientUUIDListFieldNumber = 3,
+    kClientUUIDListFieldNumber = 2,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
-  // string accessToken = 2;
-  void clear_accesstoken();
-  const std::string& accesstoken() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_accesstoken(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_accesstoken();
-  PROTOBUF_NODISCARD std::string* release_accesstoken();
-  void set_allocated_accesstoken(std::string* accesstoken);
-  private:
-  const std::string& _internal_accesstoken() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_accesstoken(const std::string& value);
-  std::string* _internal_mutable_accesstoken();
-  public:
-
-  // bytes clientUUIDList = 3;
+  // bytes clientUUIDList = 2;
   void clear_clientuuidlist();
   const std::string& clientuuidlist() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1063,7 +1032,6 @@ class getAllClientsUUIDRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr accesstoken_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr clientuuidlist_;
     int32_t grpcservercompressionformat_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -7058,57 +7026,7 @@ inline void registerClientRequest::set_grpcservercompressionformat(int32_t value
   // @@protoc_insertion_point(field_set:grpcIClientContextManager.registerClientRequest.grpcServerCompressionFormat)
 }
 
-// string accessToken = 2;
-inline void registerClientRequest::clear_accesstoken() {
-  _impl_.accesstoken_.ClearToEmpty();
-}
-inline const std::string& registerClientRequest::accesstoken() const {
-  // @@protoc_insertion_point(field_get:grpcIClientContextManager.registerClientRequest.accessToken)
-  return _internal_accesstoken();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void registerClientRequest::set_accesstoken(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.accesstoken_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIClientContextManager.registerClientRequest.accessToken)
-}
-inline std::string* registerClientRequest::mutable_accesstoken() {
-  std::string* _s = _internal_mutable_accesstoken();
-  // @@protoc_insertion_point(field_mutable:grpcIClientContextManager.registerClientRequest.accessToken)
-  return _s;
-}
-inline const std::string& registerClientRequest::_internal_accesstoken() const {
-  return _impl_.accesstoken_.Get();
-}
-inline void registerClientRequest::_internal_set_accesstoken(const std::string& value) {
-  
-  _impl_.accesstoken_.Set(value, GetArenaForAllocation());
-}
-inline std::string* registerClientRequest::_internal_mutable_accesstoken() {
-  
-  return _impl_.accesstoken_.Mutable(GetArenaForAllocation());
-}
-inline std::string* registerClientRequest::release_accesstoken() {
-  // @@protoc_insertion_point(field_release:grpcIClientContextManager.registerClientRequest.accessToken)
-  return _impl_.accesstoken_.Release();
-}
-inline void registerClientRequest::set_allocated_accesstoken(std::string* accesstoken) {
-  if (accesstoken != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.accesstoken_.SetAllocated(accesstoken, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.accesstoken_.IsDefault()) {
-    _impl_.accesstoken_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIClientContextManager.registerClientRequest.accessToken)
-}
-
-// bytes deviceInfo = 3;
+// bytes deviceInfo = 2;
 inline void registerClientRequest::clear_deviceinfo() {
   _impl_.deviceinfo_.ClearToEmpty();
 }
@@ -7158,7 +7076,7 @@ inline void registerClientRequest::set_allocated_deviceinfo(std::string* devicei
   // @@protoc_insertion_point(field_set_allocated:grpcIClientContextManager.registerClientRequest.deviceInfo)
 }
 
-// string worldElementUUID = 4;
+// string worldElementUUID = 3;
 inline void registerClientRequest::clear_worldelementuuid() {
   _impl_.worldelementuuid_.ClearToEmpty();
 }
@@ -7208,7 +7126,7 @@ inline void registerClientRequest::set_allocated_worldelementuuid(std::string* w
   // @@protoc_insertion_point(field_set_allocated:grpcIClientContextManager.registerClientRequest.worldElementUUID)
 }
 
-// string clientUUID = 5;
+// string clientUUID = 4;
 inline void registerClientRequest::clear_clientuuid() {
   _impl_.clientuuid_.ClearToEmpty();
 }
@@ -7454,57 +7372,7 @@ inline void getAllClientsUUIDRequest::set_grpcservercompressionformat(int32_t va
   // @@protoc_insertion_point(field_set:grpcIClientContextManager.getAllClientsUUIDRequest.grpcServerCompressionFormat)
 }
 
-// string accessToken = 2;
-inline void getAllClientsUUIDRequest::clear_accesstoken() {
-  _impl_.accesstoken_.ClearToEmpty();
-}
-inline const std::string& getAllClientsUUIDRequest::accesstoken() const {
-  // @@protoc_insertion_point(field_get:grpcIClientContextManager.getAllClientsUUIDRequest.accessToken)
-  return _internal_accesstoken();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void getAllClientsUUIDRequest::set_accesstoken(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.accesstoken_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:grpcIClientContextManager.getAllClientsUUIDRequest.accessToken)
-}
-inline std::string* getAllClientsUUIDRequest::mutable_accesstoken() {
-  std::string* _s = _internal_mutable_accesstoken();
-  // @@protoc_insertion_point(field_mutable:grpcIClientContextManager.getAllClientsUUIDRequest.accessToken)
-  return _s;
-}
-inline const std::string& getAllClientsUUIDRequest::_internal_accesstoken() const {
-  return _impl_.accesstoken_.Get();
-}
-inline void getAllClientsUUIDRequest::_internal_set_accesstoken(const std::string& value) {
-  
-  _impl_.accesstoken_.Set(value, GetArenaForAllocation());
-}
-inline std::string* getAllClientsUUIDRequest::_internal_mutable_accesstoken() {
-  
-  return _impl_.accesstoken_.Mutable(GetArenaForAllocation());
-}
-inline std::string* getAllClientsUUIDRequest::release_accesstoken() {
-  // @@protoc_insertion_point(field_release:grpcIClientContextManager.getAllClientsUUIDRequest.accessToken)
-  return _impl_.accesstoken_.Release();
-}
-inline void getAllClientsUUIDRequest::set_allocated_accesstoken(std::string* accesstoken) {
-  if (accesstoken != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.accesstoken_.SetAllocated(accesstoken, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.accesstoken_.IsDefault()) {
-    _impl_.accesstoken_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIClientContextManager.getAllClientsUUIDRequest.accessToken)
-}
-
-// bytes clientUUIDList = 3;
+// bytes clientUUIDList = 2;
 inline void getAllClientsUUIDRequest::clear_clientuuidlist() {
   _impl_.clientuuidlist_.ClearToEmpty();
 }

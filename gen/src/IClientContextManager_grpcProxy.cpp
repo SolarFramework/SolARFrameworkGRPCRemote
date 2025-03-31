@@ -47,7 +47,7 @@ XPCFErrorCode IClientContextManager_grpcProxy::onConfigured()
 }
 
 
-SolAR::FrameworkReturnCode  IClientContextManager_grpcProxy::registerClient(std::string const& accessToken, SolAR::api::service::DeviceInfo const& deviceInfo, std::string const& worldElementUUID, std::string& clientUUID)
+SolAR::FrameworkReturnCode  IClientContextManager_grpcProxy::registerClient(SolAR::api::service::DeviceInfo const& deviceInfo, std::string const& worldElementUUID, std::string& clientUUID)
 {
   ::grpc::ClientContext context;
   ::grpcIClientContextManager::registerClientRequest reqIn;
@@ -57,7 +57,6 @@ SolAR::FrameworkReturnCode  IClientContextManager_grpcProxy::registerClient(std:
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
-  reqIn.set_accesstoken(accessToken);
   reqIn.set_deviceinfo(xpcf::serialize<SolAR::api::service::DeviceInfo>(deviceInfo));
   reqIn.set_worldelementuuid(worldElementUUID);
   reqIn.set_clientuuid(clientUUID);
@@ -111,7 +110,7 @@ SolAR::FrameworkReturnCode  IClientContextManager_grpcProxy::unregisterClient(st
 }
 
 
-SolAR::FrameworkReturnCode  IClientContextManager_grpcProxy::getAllClientsUUID(std::string const& accessToken, std::vector<std::string>& clientUUIDList) const
+SolAR::FrameworkReturnCode  IClientContextManager_grpcProxy::getAllClientsUUID(std::vector<std::string>& clientUUIDList) const
 {
   ::grpc::ClientContext context;
   ::grpcIClientContextManager::getAllClientsUUIDRequest reqIn;
@@ -121,7 +120,6 @@ SolAR::FrameworkReturnCode  IClientContextManager_grpcProxy::getAllClientsUUID(s
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
-  reqIn.set_accesstoken(accessToken);
   reqIn.set_clientuuidlist(xpcf::serialize<std::vector<std::string>>(clientUUIDList));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();

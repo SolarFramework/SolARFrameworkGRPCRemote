@@ -7,10 +7,9 @@ package grpcIClientContextManager;
 message registerClientRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string accessToken = 2;
-bytes deviceInfo = 3;
-string worldElementUUID = 4;
-string clientUUID = 5;
+bytes deviceInfo = 2;
+string worldElementUUID = 3;
+string clientUUID = 4;
 }
 
 message registerClientResponse
@@ -33,8 +32,7 @@ sint32 xpcfGrpcReturnValue = 1;
 message getAllClientsUUIDRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string accessToken = 2;
-bytes clientUUIDList = 3;
+bytes clientUUIDList = 2;
 }
 
 message getAllClientsUUIDResponse
