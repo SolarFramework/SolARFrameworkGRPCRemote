@@ -1,0 +1,296 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIClientContextManager;
+
+message registerClientRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes deviceInfo = 2;
+string worldElementUUID = 3;
+string clientUUID = 4;
+}
+
+message registerClientResponse
+{
+string clientUUID = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message unregisterClientRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+}
+
+message unregisterClientResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getAllClientsUUIDRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes clientUUIDList = 2;
+}
+
+message getAllClientsUUIDResponse
+{
+bytes clientUUIDList = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getDeviceInfoRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+bytes deviceInfo = 3;
+}
+
+message getDeviceInfoResponse
+{
+bytes deviceInfo = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message init_grpc0Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+}
+
+message init_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message init_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+sint32 pipelineMode = 3;
+}
+
+message init_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message startRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+}
+
+message startResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+}
+
+message stopResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getProcessingModeRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+sint32 pipelineMode = 3;
+}
+
+message getProcessingModeResponse
+{
+sint32 pipelineMode = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message setCameraParameters_grpc0Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+bytes cameraParams = 3;
+}
+
+message setCameraParameters_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setCameraParameters_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+bytes cameraParams1 = 3;
+bytes cameraParams2 = 4;
+}
+
+message setCameraParameters_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setRectificationParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+bytes rectCam1 = 3;
+bytes rectCam2 = 4;
+}
+
+message setRectificationParametersResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getCameraParametersRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+bytes cameraParams = 3;
+}
+
+message getCameraParametersResponse
+{
+bytes cameraParams = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message relocalizeProcessRequest_grpc0Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+bytes images = 3;
+bytes poses = 4;
+bool fixedPose = 5;
+bytes worldTransform = 6;
+bytes timestamp = 7;
+sint32 transform3DStatus = 8;
+bytes transform3D = 9;
+bytes confidence = 10;
+sint32 mappingStatus = 11;
+}
+
+message relocalizeProcessRequest_grpc0Response
+{
+sint32 transform3DStatus = 1;
+bytes transform3D = 2;
+bytes confidence = 3;
+sint32 mappingStatus = 4;
+sint32 xpcfGrpcReturnValue = 5;
+}
+
+message relocalizeProcessRequest_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+bytes images = 3;
+bytes poses = 4;
+bool fixedPose = 5;
+bytes worldTransform = 6;
+bytes timestamp = 7;
+sint32 transform3DStatus = 8;
+bytes transform3D = 9;
+bytes confidence = 10;
+sint32 mappingStatus = 11;
+bytes detectedObjects = 12;
+}
+
+message relocalizeProcessRequest_grpc1Response
+{
+sint32 transform3DStatus = 1;
+bytes transform3D = 2;
+bytes confidence = 3;
+sint32 mappingStatus = 4;
+bytes detectedObjects = 5;
+sint32 xpcfGrpcReturnValue = 6;
+}
+
+message get3DTransformRequestRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+sint32 transform3DStatus = 3;
+bytes transform3D = 4;
+bytes confidence = 5;
+}
+
+message get3DTransformRequestResponse
+{
+sint32 transform3DStatus = 1;
+bytes transform3D = 2;
+bytes confidence = 3;
+sint32 xpcfGrpcReturnValue = 4;
+}
+
+message getMappingDataRequestRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+bytes outputPointClouds = 3;
+bytes keyframePoses = 4;
+}
+
+message getMappingDataRequestResponse
+{
+bytes outputPointClouds = 1;
+bytes keyframePoses = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+message getLastPoseRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+sint32 poseType = 3;
+bytes pose = 4;
+}
+
+message getLastPoseResponse
+{
+bytes pose = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message getClientMapUUIDRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+string mapUUID = 3;
+}
+
+message getClientMapUUIDResponse
+{
+string mapUUID = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIClientContextManagerService {
+rpc registerClient(registerClientRequest) returns(registerClientResponse) {}
+rpc unregisterClient(unregisterClientRequest) returns(unregisterClientResponse) {}
+rpc getAllClientsUUID(getAllClientsUUIDRequest) returns(getAllClientsUUIDResponse) {}
+rpc getDeviceInfo(getDeviceInfoRequest) returns(getDeviceInfoResponse) {}
+rpc init_grpc0(init_grpc0Request) returns(init_grpc0Response) {}
+rpc init_grpc1(init_grpc1Request) returns(init_grpc1Response) {}
+rpc start(startRequest) returns(startResponse) {}
+rpc stop(stopRequest) returns(stopResponse) {}
+rpc getProcessingMode(getProcessingModeRequest) returns(getProcessingModeResponse) {}
+rpc setCameraParameters_grpc0(setCameraParameters_grpc0Request) returns(setCameraParameters_grpc0Response) {}
+rpc setCameraParameters_grpc1(setCameraParameters_grpc1Request) returns(setCameraParameters_grpc1Response) {}
+rpc setRectificationParameters(setRectificationParametersRequest) returns(setRectificationParametersResponse) {}
+rpc getCameraParameters(getCameraParametersRequest) returns(getCameraParametersResponse) {}
+rpc relocalizeProcessRequest_grpc0(relocalizeProcessRequest_grpc0Request) returns(relocalizeProcessRequest_grpc0Response) {}
+rpc relocalizeProcessRequest_grpc1(relocalizeProcessRequest_grpc1Request) returns(relocalizeProcessRequest_grpc1Response) {}
+rpc get3DTransformRequest(get3DTransformRequestRequest) returns(get3DTransformRequestResponse) {}
+rpc getMappingDataRequest(getMappingDataRequestRequest) returns(getMappingDataRequestResponse) {}
+rpc getLastPose(getLastPoseRequest) returns(getLastPoseResponse) {}
+rpc getClientMapUUID(getClientMapUUIDRequest) returns(getClientMapUUIDResponse) {}
+}
+

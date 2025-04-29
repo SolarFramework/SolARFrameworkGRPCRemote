@@ -14,7 +14,7 @@ IFrontEnd_grpcServer::IFrontEnd_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::service::IFrontEnd>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(29);
+  m_grpcServerCompressionConfig.resize(30);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -78,8 +78,9 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::unregisterClient request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->unregisterClient(clientUUID);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->unregisterClient(accessToken, clientUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -126,9 +127,10 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::getDeviceInfo request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
   SolAR::api::service::DeviceInfo deviceInfo = xpcf::deserialize<SolAR::api::service::DeviceInfo>(request->deviceinfo());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getDeviceInfo(clientUUID, deviceInfo);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getDeviceInfo(accessToken, clientUUID, deviceInfo);
   response->set_deviceinfo(xpcf::serialize<SolAR::api::service::DeviceInfo>(deviceInfo));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -151,8 +153,9 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::init request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init(clientUUID);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init(accessToken, clientUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -174,9 +177,10 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::init request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
   SolAR::api::service::PipelineMode pipelineMode = static_cast<SolAR::api::service::PipelineMode>(request->pipelinemode());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init(clientUUID, pipelineMode);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init(accessToken, clientUUID, pipelineMode);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -198,8 +202,9 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::start request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->start(clientUUID);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->start(accessToken, clientUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -221,8 +226,9 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::stop request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->stop(clientUUID);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->stop(accessToken, clientUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -244,9 +250,10 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::getProcessingMode request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
   SolAR::api::service::PipelineMode pipelineMode = static_cast<SolAR::api::service::PipelineMode>(request->pipelinemode());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getProcessingMode(clientUUID, pipelineMode);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getProcessingMode(accessToken, clientUUID, pipelineMode);
   response->set_pipelinemode(static_cast<int32_t>(pipelineMode));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -269,9 +276,10 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::setCameraParameters request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
   SolAR::datastructure::CameraParameters cameraParams = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->cameraparams());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setCameraParameters(clientUUID, cameraParams);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setCameraParameters(accessToken, clientUUID, cameraParams);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -293,10 +301,11 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::setCameraParameters request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
   SolAR::datastructure::CameraParameters cameraParams1 = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->cameraparams1());
   SolAR::datastructure::CameraParameters cameraParams2 = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->cameraparams2());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setCameraParameters(clientUUID, cameraParams1, cameraParams2);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setCameraParameters(accessToken, clientUUID, cameraParams1, cameraParams2);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -318,10 +327,11 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::setRectificationParameters request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
   SolAR::datastructure::RectificationParameters rectCam1 = xpcf::deserialize<SolAR::datastructure::RectificationParameters>(request->rectcam1());
   SolAR::datastructure::RectificationParameters rectCam2 = xpcf::deserialize<SolAR::datastructure::RectificationParameters>(request->rectcam2());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setRectificationParameters(clientUUID, rectCam1, rectCam2);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setRectificationParameters(accessToken, clientUUID, rectCam1, rectCam2);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -343,9 +353,10 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::getCameraParameters request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
   SolAR::datastructure::CameraParameters cameraParams = xpcf::deserialize<SolAR::datastructure::CameraParameters>(request->cameraparams());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getCameraParameters(clientUUID, cameraParams);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getCameraParameters(accessToken, clientUUID, cameraParams);
   response->set_cameraparams(xpcf::serialize<SolAR::datastructure::CameraParameters>(cameraParams));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -368,6 +379,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::relocalizeProcessRequest request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
   std::vector<SRef<SolAR::datastructure::Image>> images = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::Image>>>(request->images());
   std::vector<SolAR::datastructure::Transform3Df> poses = xpcf::deserialize<std::vector<SolAR::datastructure::Transform3Df>>(request->poses());
@@ -378,7 +390,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   SolAR::datastructure::Transform3Df transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->transform3d());
   float_t confidence = xpcf::deserialize<float_t>(request->confidence());
   SolAR::api::pipeline::MappingStatus mappingStatus = static_cast<SolAR::api::pipeline::MappingStatus>(request->mappingstatus());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(clientUUID, images, poses, fixedPose, worldTransform, timestamp, transform3DStatus, transform3D, confidence, mappingStatus);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(accessToken, clientUUID, images, poses, fixedPose, worldTransform, timestamp, transform3DStatus, transform3D, confidence, mappingStatus);
   response->set_transform3dstatus(static_cast<int32_t>(transform3DStatus));
   response->set_transform3d(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform3D));
   response->set_confidence(xpcf::serialize<float_t>(confidence));
@@ -404,6 +416,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::relocalizeProcessRequest request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
   std::vector<SRef<SolAR::datastructure::Image>> images = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::Image>>>(request->images());
   std::vector<SolAR::datastructure::Transform3Df> poses = xpcf::deserialize<std::vector<SolAR::datastructure::Transform3Df>>(request->poses());
@@ -415,7 +428,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   float_t confidence = xpcf::deserialize<float_t>(request->confidence());
   SolAR::api::pipeline::MappingStatus mappingStatus = static_cast<SolAR::api::pipeline::MappingStatus>(request->mappingstatus());
   std::vector<SolAR::datastructure::DetectedObject> detectedObjects = xpcf::deserialize<std::vector<SolAR::datastructure::DetectedObject>>(request->detectedobjects());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(clientUUID, images, poses, fixedPose, worldTransform, timestamp, transform3DStatus, transform3D, confidence, mappingStatus, detectedObjects);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->relocalizeProcessRequest(accessToken, clientUUID, images, poses, fixedPose, worldTransform, timestamp, transform3DStatus, transform3D, confidence, mappingStatus, detectedObjects);
   response->set_transform3dstatus(static_cast<int32_t>(transform3DStatus));
   response->set_transform3d(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform3D));
   response->set_confidence(xpcf::serialize<float_t>(confidence));
@@ -442,11 +455,12 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::get3DTransformRequest request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
   SolAR::api::service::TransformStatus transform3DStatus = static_cast<SolAR::api::service::TransformStatus>(request->transform3dstatus());
   SolAR::datastructure::Transform3Df transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->transform3d());
   float_t confidence = xpcf::deserialize<float_t>(request->confidence());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->get3DTransformRequest(clientUUID, transform3DStatus, transform3D, confidence);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->get3DTransformRequest(accessToken, clientUUID, transform3DStatus, transform3D, confidence);
   response->set_transform3dstatus(static_cast<int32_t>(transform3DStatus));
   response->set_transform3d(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform3D));
   response->set_confidence(xpcf::serialize<float_t>(confidence));
@@ -471,10 +485,11 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::getMappingDataRequest request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
   std::vector<SRef<SolAR::datastructure::CloudPoint>> outputPointClouds = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->outputpointclouds());
   std::vector<SolAR::datastructure::Transform3Df> keyframePoses = xpcf::deserialize<std::vector<SolAR::datastructure::Transform3Df>>(request->keyframeposes());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMappingDataRequest(clientUUID, outputPointClouds, keyframePoses);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMappingDataRequest(accessToken, clientUUID, outputPointClouds, keyframePoses);
   response->set_outputpointclouds(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(outputPointClouds));
   response->set_keyframeposes(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(keyframePoses));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
@@ -498,10 +513,11 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::getLastPose request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
   SolAR::datastructure::Transform3Df pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(request->pose());
   SolAR::api::service::PoseType poseType = static_cast<SolAR::api::service::PoseType>(request->posetype());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getLastPose(clientUUID, pose, poseType);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getLastPose(accessToken, clientUUID, pose, poseType);
   response->set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -597,9 +613,10 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::getClientMapUUID request received at " << to_simple_string(start) << std::endl;
   #endif
+  std::string accessToken = request->accesstoken();
   std::string clientUUID = request->clientuuid();
   std::string mapUUID = request->mapuuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getClientMapUUID(clientUUID, mapUUID);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getClientMapUUID(accessToken, clientUUID, mapUUID);
   response->set_mapuuid(mapUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
@@ -688,6 +705,38 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
 }
 
 
+::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getMapInfo(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapInfoRequest* request, ::grpcIFrontEnd::getMapInfoResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getMapInfo", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::getMapInfo request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string accessToken = request->accesstoken();
+  std::string mapUUID = request->mapuuid();
+  SolAR::datastructure::DescriptorType descriptorType = static_cast<SolAR::datastructure::DescriptorType>(request->descriptortype());
+  uint32_t mapSupportedTypes = request->mapsupportedtypes();
+  uint32_t dataSize = request->datasize();
+  bool areImageSaved = request->areimagesaved();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapInfo(accessToken, mapUUID, descriptorType, mapSupportedTypes, dataSize, areImageSaved);
+  response->set_descriptortype(static_cast<int32_t>(descriptorType));
+  response->set_mapsupportedtypes(mapSupportedTypes);
+  response->set_datasize(dataSize);
+  response->set_areimagesaved(areImageSaved);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::getMapInfo response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::requestMapProcessing(::grpc::ServerContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpcIFrontEnd::requestMapProcessingResponse* response)
 {
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -701,8 +750,9 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   #endif
   std::string accessToken = request->accesstoken();
   std::string mapUUID = request->mapuuid();
+  std::string resultMapUUID = request->resultmapuuid();
   SolAR::api::service::MapProcessingType processingType = static_cast<SolAR::api::service::MapProcessingType>(request->processingtype());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->requestMapProcessing(accessToken, mapUUID, processingType);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->requestMapProcessing(accessToken, mapUUID, resultMapUUID, processingType);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -725,14 +775,12 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getMapProcessingStatus request received at " << to_simple_string(start) << std::endl;
   #endif
   std::string accessToken = request->accesstoken();
-  std::string mapUUID = request->mapuuid();
+  std::string resultMapUUID = request->resultmapuuid();
   SolAR::api::service::MapProcessingStatus status = static_cast<SolAR::api::service::MapProcessingStatus>(request->status());
   float progress = request->progress();
-  std::string resultingMapUUID = request->resultingmapuuid();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapProcessingStatus(accessToken, mapUUID, status, progress, resultingMapUUID);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapProcessingStatus(accessToken, resultMapUUID, status, progress);
   response->set_status(static_cast<int32_t>(status));
   response->set_progress(progress);
-  response->set_resultingmapuuid(resultingMapUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -755,10 +803,10 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getMapProcessingData request received at " << to_simple_string(start) << std::endl;
   #endif
   std::string accessToken = request->accesstoken();
-  std::string mapUUID = request->mapuuid();
+  std::string resultMapUUID = request->resultmapuuid();
   std::vector<SRef<SolAR::datastructure::CloudPoint>> pointCloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(request->pointcloud());
   std::vector<SolAR::datastructure::Transform3Df> keyframePoses = xpcf::deserialize<std::vector<SolAR::datastructure::Transform3Df>>(request->keyframeposes());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapProcessingData(accessToken, mapUUID, pointCloud, keyframePoses);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapProcessingData(accessToken, resultMapUUID, pointCloud, keyframePoses);
   response->set_pointcloud(xpcf::serialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(pointCloud));
   response->set_keyframeposes(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(keyframePoses));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
