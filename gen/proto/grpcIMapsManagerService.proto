@@ -38,28 +38,6 @@ bytes mapUUIDList = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-message registerMapUpdateServiceRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-string serviceURL = 2;
-}
-
-message registerMapUpdateServiceResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message unregisterMapUpdateServiceRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-string serviceURL = 2;
-}
-
-message unregisterMapUpdateServiceResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
-}
-
 message increaseMapClientsRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -122,35 +100,31 @@ bytes pointCloud = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-message registerMapProcessingServiceRequest
+message getMapInfoRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-sint32 processingType = 2;
-string serviceURL = 3;
+string mapUUID = 2;
+sint32 descriptorType = 3;
+uint32 mapSupportedTypes = 4;
+uint32 dataSize = 5;
+bool areImageSaved = 6;
 }
 
-message registerMapProcessingServiceResponse
+message getMapInfoResponse
 {
-sint32 xpcfGrpcReturnValue = 1;
-}
-
-message unregisterMapProcessingServiceRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-sint32 processingType = 2;
-string serviceURL = 3;
-}
-
-message unregisterMapProcessingServiceResponse
-{
-sint32 xpcfGrpcReturnValue = 1;
+sint32 descriptorType = 1;
+uint32 mapSupportedTypes = 2;
+uint32 dataSize = 3;
+bool areImageSaved = 4;
+sint32 xpcfGrpcReturnValue = 5;
 }
 
 message requestMapProcessingRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string mapUUID = 2;
-sint32 processingType = 3;
+string resultMapUUID = 3;
+sint32 processingType = 4;
 }
 
 message requestMapProcessingResponse
@@ -161,24 +135,22 @@ sint32 xpcfGrpcReturnValue = 1;
 message getMapProcessingStatusRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string mapUUID = 2;
+string resultMapUUID = 2;
 sint32 status = 3;
 float progress = 4;
-string resultingMapUUID = 5;
 }
 
 message getMapProcessingStatusResponse
 {
 sint32 status = 1;
 float progress = 2;
-string resultingMapUUID = 3;
-sint32 xpcfGrpcReturnValue = 4;
+sint32 xpcfGrpcReturnValue = 3;
 }
 
 message getMapProcessingDataRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-string mapUUID = 2;
+string resultMapUUID = 2;
 bytes pointCloud = 3;
 bytes keyframePoses = 4;
 }
@@ -194,15 +166,12 @@ service grpcIMapsManagerService {
 rpc createMap(createMapRequest) returns(createMapResponse) {}
 rpc deleteMap(deleteMapRequest) returns(deleteMapResponse) {}
 rpc getAllMaps(getAllMapsRequest) returns(getAllMapsResponse) {}
-rpc registerMapUpdateService(registerMapUpdateServiceRequest) returns(registerMapUpdateServiceResponse) {}
-rpc unregisterMapUpdateService(unregisterMapUpdateServiceRequest) returns(unregisterMapUpdateServiceResponse) {}
 rpc increaseMapClients(increaseMapClientsRequest) returns(increaseMapClientsResponse) {}
 rpc decreaseMapClients(decreaseMapClientsRequest) returns(decreaseMapClientsResponse) {}
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc setMapRequest(setMapRequestRequest) returns(setMapRequestResponse) {}
 rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}
-rpc registerMapProcessingService(registerMapProcessingServiceRequest) returns(registerMapProcessingServiceResponse) {}
-rpc unregisterMapProcessingService(unregisterMapProcessingServiceRequest) returns(unregisterMapProcessingServiceResponse) {}
+rpc getMapInfo(getMapInfoRequest) returns(getMapInfoResponse) {}
 rpc requestMapProcessing(requestMapProcessingRequest) returns(requestMapProcessingResponse) {}
 rpc getMapProcessingStatus(getMapProcessingStatusRequest) returns(getMapProcessingStatusResponse) {}
 rpc getMapProcessingData(getMapProcessingDataRequest) returns(getMapProcessingDataResponse) {}

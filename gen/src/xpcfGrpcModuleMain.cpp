@@ -68,6 +68,16 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
 
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIClientContextManager::IClientContextManager_grpcProxy>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
+    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIClientContextManager::IClientContextManager_grpcServer>(componentUUID,interfaceRef);
+  }
+
+  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
+
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIFrontEnd::IFrontEnd_grpcProxy>(componentUUID,interfaceRef);
   }
 
@@ -113,6 +123,8 @@ XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIRelocalizationPipeline::IRelocal
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIRelocalizationPipeline::IRelocalizationPipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIRelocalizationTrackablePipeline::IRelocalizationTrackablePipeline_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIRelocalizationTrackablePipeline::IRelocalizationTrackablePipeline_grpcServer)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIClientContextManager::IClientContextManager_grpcProxy)
+XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIClientContextManager::IClientContextManager_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIFrontEnd::IFrontEnd_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIFrontEnd::IFrontEnd_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapsManager::IMapsManager_grpcProxy)
