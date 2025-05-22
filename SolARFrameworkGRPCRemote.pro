@@ -48,6 +48,7 @@ unix {
 linux {
     QMAKE_CXXFLAGS += -Wno-attributes
     QMAKE_LFLAGS += -ldl
+    QMAKE_CXXFLAGS += -Werror=switch-enum
     LIBS += -ldl
     LIBS += -L/home/linuxbrew/.linuxbrew/lib # temporary fix caused by grpc with -lre2 ... without -L in grpc.pc
 }
