@@ -164,6 +164,7 @@ PROTOBUF_CONSTEXPR getMapRequestRequest::getMapRequestRequest(
     /*decltype(_impl_.mapuuid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.map_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.grpcservercompressionformat_)*/0
+  , /*decltype(_impl_.withkeyframeimages_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct getMapRequestRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR getMapRequestRequestDefaultTypeInternal()
@@ -463,6 +464,7 @@ const uint32_t TableStruct_grpcIMapsManagerService_2eproto::offsets[] PROTOBUF_S
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapRequestRequest, _impl_.grpcservercompressionformat_),
   PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapRequestRequest, _impl_.mapuuid_),
+  PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapRequestRequest, _impl_.withkeyframeimages_),
   PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapRequestRequest, _impl_.map_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapRequestResponse, _internal_metadata_),
@@ -596,19 +598,19 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 63, -1, -1, sizeof(::grpcIMapsManager::decreaseMapClientsRequest)},
   { 71, -1, -1, sizeof(::grpcIMapsManager::decreaseMapClientsResponse)},
   { 78, -1, -1, sizeof(::grpcIMapsManager::getMapRequestRequest)},
-  { 87, -1, -1, sizeof(::grpcIMapsManager::getMapRequestResponse)},
-  { 95, -1, -1, sizeof(::grpcIMapsManager::setMapRequestRequest)},
-  { 104, -1, -1, sizeof(::grpcIMapsManager::setMapRequestResponse)},
-  { 111, -1, -1, sizeof(::grpcIMapsManager::getPointCloudRequestRequest)},
-  { 120, -1, -1, sizeof(::grpcIMapsManager::getPointCloudRequestResponse)},
-  { 128, -1, -1, sizeof(::grpcIMapsManager::getMapInfoRequest)},
-  { 140, -1, -1, sizeof(::grpcIMapsManager::getMapInfoResponse)},
-  { 151, -1, -1, sizeof(::grpcIMapsManager::requestMapProcessingRequest)},
-  { 161, -1, -1, sizeof(::grpcIMapsManager::requestMapProcessingResponse)},
-  { 168, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingStatusRequest)},
-  { 178, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingStatusResponse)},
-  { 187, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingDataRequest)},
-  { 197, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingDataResponse)},
+  { 88, -1, -1, sizeof(::grpcIMapsManager::getMapRequestResponse)},
+  { 96, -1, -1, sizeof(::grpcIMapsManager::setMapRequestRequest)},
+  { 105, -1, -1, sizeof(::grpcIMapsManager::setMapRequestResponse)},
+  { 112, -1, -1, sizeof(::grpcIMapsManager::getPointCloudRequestRequest)},
+  { 121, -1, -1, sizeof(::grpcIMapsManager::getPointCloudRequestResponse)},
+  { 129, -1, -1, sizeof(::grpcIMapsManager::getMapInfoRequest)},
+  { 141, -1, -1, sizeof(::grpcIMapsManager::getMapInfoResponse)},
+  { 152, -1, -1, sizeof(::grpcIMapsManager::requestMapProcessingRequest)},
+  { 162, -1, -1, sizeof(::grpcIMapsManager::requestMapProcessingResponse)},
+  { 169, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingStatusRequest)},
+  { 179, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingStatusResponse)},
+  { 188, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingDataRequest)},
+  { 198, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingDataResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -659,83 +661,84 @@ const char descriptor_table_protodef_grpcIMapsManagerService_2eproto[] PROTOBUF_
   "sRequest\022#\n\033grpcServerCompressionFormat\030"
   "\001 \001(\005\022\017\n\007mapUUID\030\002 \001(\t\"9\n\032decreaseMapCli"
   "entsResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001("
-  "\021\"Y\n\024getMapRequestRequest\022#\n\033grpcServerC"
+  "\021\"u\n\024getMapRequestRequest\022#\n\033grpcServerC"
   "ompressionFormat\030\001 \001(\005\022\017\n\007mapUUID\030\002 \001(\t\022"
-  "\013\n\003map\030\003 \001(\014\"A\n\025getMapRequestResponse\022\013\n"
-  "\003map\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\""
-  "f\n\024setMapRequestRequest\022#\n\033grpcServerCom"
-  "pressionFormat\030\001 \001(\005\022\017\n\007mapUUID\030\002 \001(\t\022\030\n"
-  "\020mapDatastructure\030\003 \001(\014\"4\n\025setMapRequest"
-  "Response\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"g\n"
-  "\033getPointCloudRequestRequest\022#\n\033grpcServ"
-  "erCompressionFormat\030\001 \001(\005\022\017\n\007mapUUID\030\002 \001"
-  "(\t\022\022\n\npointCloud\030\003 \001(\014\"O\n\034getPointCloudR"
-  "equestResponse\022\022\n\npointCloud\030\001 \001(\014\022\033\n\023xp"
-  "cfGrpcReturnValue\030\002 \001(\021\"\245\001\n\021getMapInfoRe"
-  "quest\022#\n\033grpcServerCompressionFormat\030\001 \001"
-  "(\005\022\017\n\007mapUUID\030\002 \001(\t\022\026\n\016descriptorType\030\003 "
-  "\001(\021\022\031\n\021mapSupportedTypes\030\004 \001(\r\022\020\n\010dataSi"
-  "ze\030\005 \001(\r\022\025\n\rareImageSaved\030\006 \001(\010\"\215\001\n\022getM"
-  "apInfoResponse\022\026\n\016descriptorType\030\001 \001(\021\022\031"
-  "\n\021mapSupportedTypes\030\002 \001(\r\022\020\n\010dataSize\030\003 "
-  "\001(\r\022\025\n\rareImageSaved\030\004 \001(\010\022\033\n\023xpcfGrpcRe"
-  "turnValue\030\005 \001(\021\"\202\001\n\033requestMapProcessing"
-  "Request\022#\n\033grpcServerCompressionFormat\030\001"
-  " \001(\005\022\017\n\007mapUUID\030\002 \001(\t\022\025\n\rresultMapUUID\030\003"
-  " \001(\t\022\026\n\016processingType\030\004 \001(\021\";\n\034requestM"
-  "apProcessingResponse\022\033\n\023xpcfGrpcReturnVa"
-  "lue\030\001 \001(\021\"}\n\035getMapProcessingStatusReque"
-  "st\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\022"
-  "\025\n\rresultMapUUID\030\002 \001(\t\022\016\n\006status\030\003 \001(\021\022\020"
-  "\n\010progress\030\004 \001(\002\"_\n\036getMapProcessingStat"
-  "usResponse\022\016\n\006status\030\001 \001(\021\022\020\n\010progress\030\002"
-  " \001(\002\022\033\n\023xpcfGrpcReturnValue\030\003 \001(\021\"\204\001\n\033ge"
-  "tMapProcessingDataRequest\022#\n\033grpcServerC"
-  "ompressionFormat\030\001 \001(\005\022\025\n\rresultMapUUID\030"
-  "\002 \001(\t\022\022\n\npointCloud\030\003 \001(\014\022\025\n\rkeyframePos"
-  "es\030\004 \001(\014\"f\n\034getMapProcessingDataResponse"
-  "\022\022\n\npointCloud\030\001 \001(\014\022\025\n\rkeyframePoses\030\002 "
-  "\001(\014\022\033\n\023xpcfGrpcReturnValue\030\003 \001(\0212\227\n\n\027grp"
-  "cIMapsManagerService\022V\n\tcreateMap\022\".grpc"
-  "IMapsManager.createMapRequest\032#.grpcIMap"
-  "sManager.createMapResponse\"\000\022V\n\tdeleteMa"
-  "p\022\".grpcIMapsManager.deleteMapRequest\032#."
-  "grpcIMapsManager.deleteMapResponse\"\000\022Y\n\n"
-  "getAllMaps\022#.grpcIMapsManager.getAllMaps"
-  "Request\032$.grpcIMapsManager.getAllMapsRes"
-  "ponse\"\000\022q\n\022increaseMapClients\022+.grpcIMap"
-  "sManager.increaseMapClientsRequest\032,.grp"
-  "cIMapsManager.increaseMapClientsResponse"
-  "\"\000\022q\n\022decreaseMapClients\022+.grpcIMapsMana"
-  "ger.decreaseMapClientsRequest\032,.grpcIMap"
-  "sManager.decreaseMapClientsResponse\"\000\022b\n"
-  "\rgetMapRequest\022&.grpcIMapsManager.getMap"
-  "RequestRequest\032\'.grpcIMapsManager.getMap"
-  "RequestResponse\"\000\022b\n\rsetMapRequest\022&.grp"
-  "cIMapsManager.setMapRequestRequest\032\'.grp"
-  "cIMapsManager.setMapRequestResponse\"\000\022w\n"
-  "\024getPointCloudRequest\022-.grpcIMapsManager"
-  ".getPointCloudRequestRequest\032..grpcIMaps"
-  "Manager.getPointCloudRequestResponse\"\000\022Y"
-  "\n\ngetMapInfo\022#.grpcIMapsManager.getMapIn"
-  "foRequest\032$.grpcIMapsManager.getMapInfoR"
-  "esponse\"\000\022w\n\024requestMapProcessing\022-.grpc"
-  "IMapsManager.requestMapProcessingRequest"
-  "\032..grpcIMapsManager.requestMapProcessing"
-  "Response\"\000\022}\n\026getMapProcessingStatus\022/.g"
-  "rpcIMapsManager.getMapProcessingStatusRe"
-  "quest\0320.grpcIMapsManager.getMapProcessin"
-  "gStatusResponse\"\000\022w\n\024getMapProcessingDat"
-  "a\022-.grpcIMapsManager.getMapProcessingDat"
-  "aRequest\032..grpcIMapsManager.getMapProces"
-  "singDataResponse\"\000b\006proto3"
+  "\032\n\022withKeyframeImages\030\003 \001(\010\022\013\n\003map\030\004 \001(\014"
+  "\"A\n\025getMapRequestResponse\022\013\n\003map\030\001 \001(\014\022\033"
+  "\n\023xpcfGrpcReturnValue\030\002 \001(\021\"f\n\024setMapReq"
+  "uestRequest\022#\n\033grpcServerCompressionForm"
+  "at\030\001 \001(\005\022\017\n\007mapUUID\030\002 \001(\t\022\030\n\020mapDatastru"
+  "cture\030\003 \001(\014\"4\n\025setMapRequestResponse\022\033\n\023"
+  "xpcfGrpcReturnValue\030\001 \001(\021\"g\n\033getPointClo"
+  "udRequestRequest\022#\n\033grpcServerCompressio"
+  "nFormat\030\001 \001(\005\022\017\n\007mapUUID\030\002 \001(\t\022\022\n\npointC"
+  "loud\030\003 \001(\014\"O\n\034getPointCloudRequestRespon"
+  "se\022\022\n\npointCloud\030\001 \001(\014\022\033\n\023xpcfGrpcReturn"
+  "Value\030\002 \001(\021\"\245\001\n\021getMapInfoRequest\022#\n\033grp"
+  "cServerCompressionFormat\030\001 \001(\005\022\017\n\007mapUUI"
+  "D\030\002 \001(\t\022\026\n\016descriptorType\030\003 \001(\021\022\031\n\021mapSu"
+  "pportedTypes\030\004 \001(\r\022\020\n\010dataSize\030\005 \001(\r\022\025\n\r"
+  "areImageSaved\030\006 \001(\010\"\215\001\n\022getMapInfoRespon"
+  "se\022\026\n\016descriptorType\030\001 \001(\021\022\031\n\021mapSupport"
+  "edTypes\030\002 \001(\r\022\020\n\010dataSize\030\003 \001(\r\022\025\n\rareIm"
+  "ageSaved\030\004 \001(\010\022\033\n\023xpcfGrpcReturnValue\030\005 "
+  "\001(\021\"\202\001\n\033requestMapProcessingRequest\022#\n\033g"
+  "rpcServerCompressionFormat\030\001 \001(\005\022\017\n\007mapU"
+  "UID\030\002 \001(\t\022\025\n\rresultMapUUID\030\003 \001(\t\022\026\n\016proc"
+  "essingType\030\004 \001(\021\";\n\034requestMapProcessing"
+  "Response\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"}\n"
+  "\035getMapProcessingStatusRequest\022#\n\033grpcSe"
+  "rverCompressionFormat\030\001 \001(\005\022\025\n\rresultMap"
+  "UUID\030\002 \001(\t\022\016\n\006status\030\003 \001(\021\022\020\n\010progress\030\004"
+  " \001(\002\"_\n\036getMapProcessingStatusResponse\022\016"
+  "\n\006status\030\001 \001(\021\022\020\n\010progress\030\002 \001(\002\022\033\n\023xpcf"
+  "GrpcReturnValue\030\003 \001(\021\"\204\001\n\033getMapProcessi"
+  "ngDataRequest\022#\n\033grpcServerCompressionFo"
+  "rmat\030\001 \001(\005\022\025\n\rresultMapUUID\030\002 \001(\t\022\022\n\npoi"
+  "ntCloud\030\003 \001(\014\022\025\n\rkeyframePoses\030\004 \001(\014\"f\n\034"
+  "getMapProcessingDataResponse\022\022\n\npointClo"
+  "ud\030\001 \001(\014\022\025\n\rkeyframePoses\030\002 \001(\014\022\033\n\023xpcfG"
+  "rpcReturnValue\030\003 \001(\0212\227\n\n\027grpcIMapsManage"
+  "rService\022V\n\tcreateMap\022\".grpcIMapsManager"
+  ".createMapRequest\032#.grpcIMapsManager.cre"
+  "ateMapResponse\"\000\022V\n\tdeleteMap\022\".grpcIMap"
+  "sManager.deleteMapRequest\032#.grpcIMapsMan"
+  "ager.deleteMapResponse\"\000\022Y\n\ngetAllMaps\022#"
+  ".grpcIMapsManager.getAllMapsRequest\032$.gr"
+  "pcIMapsManager.getAllMapsResponse\"\000\022q\n\022i"
+  "ncreaseMapClients\022+.grpcIMapsManager.inc"
+  "reaseMapClientsRequest\032,.grpcIMapsManage"
+  "r.increaseMapClientsResponse\"\000\022q\n\022decrea"
+  "seMapClients\022+.grpcIMapsManager.decrease"
+  "MapClientsRequest\032,.grpcIMapsManager.dec"
+  "reaseMapClientsResponse\"\000\022b\n\rgetMapReque"
+  "st\022&.grpcIMapsManager.getMapRequestReque"
+  "st\032\'.grpcIMapsManager.getMapRequestRespo"
+  "nse\"\000\022b\n\rsetMapRequest\022&.grpcIMapsManage"
+  "r.setMapRequestRequest\032\'.grpcIMapsManage"
+  "r.setMapRequestResponse\"\000\022w\n\024getPointClo"
+  "udRequest\022-.grpcIMapsManager.getPointClo"
+  "udRequestRequest\032..grpcIMapsManager.getP"
+  "ointCloudRequestResponse\"\000\022Y\n\ngetMapInfo"
+  "\022#.grpcIMapsManager.getMapInfoRequest\032$."
+  "grpcIMapsManager.getMapInfoResponse\"\000\022w\n"
+  "\024requestMapProcessing\022-.grpcIMapsManager"
+  ".requestMapProcessingRequest\032..grpcIMaps"
+  "Manager.requestMapProcessingResponse\"\000\022}"
+  "\n\026getMapProcessingStatus\022/.grpcIMapsMana"
+  "ger.getMapProcessingStatusRequest\0320.grpc"
+  "IMapsManager.getMapProcessingStatusRespo"
+  "nse\"\000\022w\n\024getMapProcessingData\022-.grpcIMap"
+  "sManager.getMapProcessingDataRequest\032..g"
+  "rpcIMapsManager.getMapProcessingDataResp"
+  "onse\"\000b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_grpcIMapsManagerService_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_grpcIMapsManagerService_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_grpcIMapsManagerService_2eproto = {
-    false, false, 3586, descriptor_table_protodef_grpcIMapsManagerService_2eproto,
+    false, false, 3614, descriptor_table_protodef_grpcIMapsManagerService_2eproto,
     "grpcIMapsManagerService.proto",
     &descriptor_table_grpcIMapsManagerService_2eproto_once, descriptor_table_grpcIMapsManagerService_2eproto_deps, 1, 24,
     schemas, file_default_instances, TableStruct_grpcIMapsManagerService_2eproto::offsets,
@@ -2953,6 +2956,7 @@ getMapRequestRequest::getMapRequestRequest(const getMapRequestRequest& from)
       decltype(_impl_.mapuuid_){}
     , decltype(_impl_.map_){}
     , decltype(_impl_.grpcservercompressionformat_){}
+    , decltype(_impl_.withkeyframeimages_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -2972,7 +2976,9 @@ getMapRequestRequest::getMapRequestRequest(const getMapRequestRequest& from)
     _this->_impl_.map_.Set(from._internal_map(), 
       _this->GetArenaForAllocation());
   }
-  _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  ::memcpy(&_impl_.grpcservercompressionformat_, &from._impl_.grpcservercompressionformat_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.withkeyframeimages_) -
+    reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.withkeyframeimages_));
   // @@protoc_insertion_point(copy_constructor:grpcIMapsManager.getMapRequestRequest)
 }
 
@@ -2984,6 +2990,7 @@ inline void getMapRequestRequest::SharedCtor(
       decltype(_impl_.mapuuid_){}
     , decltype(_impl_.map_){}
     , decltype(_impl_.grpcservercompressionformat_){0}
+    , decltype(_impl_.withkeyframeimages_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.mapuuid_.InitDefault();
@@ -3023,7 +3030,9 @@ void getMapRequestRequest::Clear() {
 
   _impl_.mapuuid_.ClearToEmpty();
   _impl_.map_.ClearToEmpty();
-  _impl_.grpcservercompressionformat_ = 0;
+  ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.withkeyframeimages_) -
+      reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.withkeyframeimages_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3051,9 +3060,17 @@ const char* getMapRequestRequest::_InternalParse(const char* ptr, ::_pbi::ParseC
         } else
           goto handle_unusual;
         continue;
-      // bytes map = 3;
+      // bool withKeyframeImages = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.withkeyframeimages_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bytes map = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           auto str = _internal_mutable_map();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -3105,10 +3122,16 @@ uint8_t* getMapRequestRequest::_InternalSerialize(
         2, this->_internal_mapuuid(), target);
   }
 
-  // bytes map = 3;
+  // bool withKeyframeImages = 3;
+  if (this->_internal_withkeyframeimages() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_withkeyframeimages(), target);
+  }
+
+  // bytes map = 4;
   if (!this->_internal_map().empty()) {
     target = stream->WriteBytesMaybeAliased(
-        3, this->_internal_map(), target);
+        4, this->_internal_map(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3134,7 +3157,7 @@ size_t getMapRequestRequest::ByteSizeLong() const {
         this->_internal_mapuuid());
   }
 
-  // bytes map = 3;
+  // bytes map = 4;
   if (!this->_internal_map().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -3144,6 +3167,11 @@ size_t getMapRequestRequest::ByteSizeLong() const {
   // int32 grpcServerCompressionFormat = 1;
   if (this->_internal_grpcservercompressionformat() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_grpcservercompressionformat());
+  }
+
+  // bool withKeyframeImages = 3;
+  if (this->_internal_withkeyframeimages() != 0) {
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -3173,6 +3201,9 @@ void getMapRequestRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, c
   if (from._internal_grpcservercompressionformat() != 0) {
     _this->_internal_set_grpcservercompressionformat(from._internal_grpcservercompressionformat());
   }
+  if (from._internal_withkeyframeimages() != 0) {
+    _this->_internal_set_withkeyframeimages(from._internal_withkeyframeimages());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3200,7 +3231,12 @@ void getMapRequestRequest::InternalSwap(getMapRequestRequest* other) {
       &_impl_.map_, lhs_arena,
       &other->_impl_.map_, rhs_arena
   );
-  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(getMapRequestRequest, _impl_.withkeyframeimages_)
+      + sizeof(getMapRequestRequest::_impl_.withkeyframeimages_)
+      - PROTOBUF_FIELD_OFFSET(getMapRequestRequest, _impl_.grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata getMapRequestRequest::GetMetadata() const {

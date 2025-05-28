@@ -135,15 +135,14 @@
         <value>method|setCameraParameters|none|0</value>
         <value>method|setRectificationParameters|none|0</value>
         <value>method|getCameraParameters|none|0</value>
-        <value>method|relocalizeProcessRequest|none|0</value>
-        <value>method|relocalizeProcessRequest|none|0</value>
-        <value>method|get3DTransformRequest|none|0</value>
+        <value>method|imageProcessRequest|none|0</value>
         <value>method|getMappingDataRequest|none|0</value>
-        <value>method|getLastPose|none|0</value>
+        <value>method|getClientPose|none|0</value>
         <value>method|createMap|none|0</value>
         <value>method|deleteMap|none|0</value>
         <value>method|getAllMapsUUID|none|0</value>
         <value>method|getClientMapUUID|none|0</value>
+        <value>method|getClientInfoForMap|none|0</value>
         <value>method|getMapRequest|none|0</value>
         <value>method|setMapRequest|none|0</value>
         <value>method|getPointCloudRequest|none|0</value>

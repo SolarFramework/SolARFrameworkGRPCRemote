@@ -35,15 +35,14 @@ static const char* grpcIFrontEndService_method_names[] = {
   "/grpcIFrontEnd.grpcIFrontEndService/setCameraParameters_grpc1",
   "/grpcIFrontEnd.grpcIFrontEndService/setRectificationParameters",
   "/grpcIFrontEnd.grpcIFrontEndService/getCameraParameters",
-  "/grpcIFrontEnd.grpcIFrontEndService/relocalizeProcessRequest_grpc0",
-  "/grpcIFrontEnd.grpcIFrontEndService/relocalizeProcessRequest_grpc1",
-  "/grpcIFrontEnd.grpcIFrontEndService/get3DTransformRequest",
+  "/grpcIFrontEnd.grpcIFrontEndService/imageProcessRequest",
   "/grpcIFrontEnd.grpcIFrontEndService/getMappingDataRequest",
-  "/grpcIFrontEnd.grpcIFrontEndService/getLastPose",
+  "/grpcIFrontEnd.grpcIFrontEndService/getClientPose",
   "/grpcIFrontEnd.grpcIFrontEndService/createMap",
   "/grpcIFrontEnd.grpcIFrontEndService/deleteMap",
   "/grpcIFrontEnd.grpcIFrontEndService/getAllMapsUUID",
   "/grpcIFrontEnd.grpcIFrontEndService/getClientMapUUID",
+  "/grpcIFrontEnd.grpcIFrontEndService/getClientInfoForMap",
   "/grpcIFrontEnd.grpcIFrontEndService/getMapRequest",
   "/grpcIFrontEnd.grpcIFrontEndService/setMapRequest",
   "/grpcIFrontEnd.grpcIFrontEndService/getPointCloudRequest",
@@ -73,22 +72,21 @@ grpcIFrontEndService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface
   , rpcmethod_setCameraParameters_grpc1_(grpcIFrontEndService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_setRectificationParameters_(grpcIFrontEndService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getCameraParameters_(grpcIFrontEndService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_relocalizeProcessRequest_grpc0_(grpcIFrontEndService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_relocalizeProcessRequest_grpc1_(grpcIFrontEndService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_get3DTransformRequest_(grpcIFrontEndService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMappingDataRequest_(grpcIFrontEndService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getLastPose_(grpcIFrontEndService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_createMap_(grpcIFrontEndService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_deleteMap_(grpcIFrontEndService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getAllMapsUUID_(grpcIFrontEndService_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getClientMapUUID_(grpcIFrontEndService_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapRequest_(grpcIFrontEndService_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setMapRequest_(grpcIFrontEndService_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getPointCloudRequest_(grpcIFrontEndService_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapInfo_(grpcIFrontEndService_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_requestMapProcessing_(grpcIFrontEndService_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapProcessingStatus_(grpcIFrontEndService_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapProcessingData_(grpcIFrontEndService_method_names[28], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_imageProcessRequest_(grpcIFrontEndService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMappingDataRequest_(grpcIFrontEndService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getClientPose_(grpcIFrontEndService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_createMap_(grpcIFrontEndService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_deleteMap_(grpcIFrontEndService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAllMapsUUID_(grpcIFrontEndService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getClientMapUUID_(grpcIFrontEndService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getClientInfoForMap_(grpcIFrontEndService_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapRequest_(grpcIFrontEndService_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setMapRequest_(grpcIFrontEndService_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getPointCloudRequest_(grpcIFrontEndService_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapInfo_(grpcIFrontEndService_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_requestMapProcessing_(grpcIFrontEndService_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapProcessingStatus_(grpcIFrontEndService_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapProcessingData_(grpcIFrontEndService_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIFrontEndService::Stub::registerClient(::grpc::ClientContext* context, const ::grpcIFrontEnd::registerClientRequest& request, ::grpcIFrontEnd::registerClientResponse* response) {
@@ -390,71 +388,25 @@ void grpcIFrontEndService::Stub::async::getCameraParameters(::grpc::ClientContex
   return result;
 }
 
-::grpc::Status grpcIFrontEndService::Stub::relocalizeProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request& request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_relocalizeProcessRequest_grpc0_, context, request, response);
+::grpc::Status grpcIFrontEndService::Stub::imageProcessRequest(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageProcessRequestRequest& request, ::grpcIFrontEnd::imageProcessRequestResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::imageProcessRequestRequest, ::grpcIFrontEnd::imageProcessRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_imageProcessRequest_, context, request, response);
 }
 
-void grpcIFrontEndService::Stub::async::relocalizeProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request* request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_relocalizeProcessRequest_grpc0_, context, request, response, std::move(f));
+void grpcIFrontEndService::Stub::async::imageProcessRequest(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageProcessRequestRequest* request, ::grpcIFrontEnd::imageProcessRequestResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::imageProcessRequestRequest, ::grpcIFrontEnd::imageProcessRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_imageProcessRequest_, context, request, response, std::move(f));
 }
 
-void grpcIFrontEndService::Stub::async::relocalizeProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request* request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_relocalizeProcessRequest_grpc0_, context, request, response, reactor);
+void grpcIFrontEndService::Stub::async::imageProcessRequest(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageProcessRequestRequest* request, ::grpcIFrontEnd::imageProcessRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_imageProcessRequest_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response>* grpcIFrontEndService::Stub::PrepareAsyncrelocalizeProcessRequest_grpc0Raw(::grpc::ClientContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_relocalizeProcessRequest_grpc0_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::imageProcessRequestResponse>* grpcIFrontEndService::Stub::PrepareAsyncimageProcessRequestRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageProcessRequestRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::imageProcessRequestResponse, ::grpcIFrontEnd::imageProcessRequestRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_imageProcessRequest_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response>* grpcIFrontEndService::Stub::AsyncrelocalizeProcessRequest_grpc0Raw(::grpc::ClientContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::imageProcessRequestResponse>* grpcIFrontEndService::Stub::AsyncimageProcessRequestRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageProcessRequestRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncrelocalizeProcessRequest_grpc0Raw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status grpcIFrontEndService::Stub::relocalizeProcessRequest_grpc1(::grpc::ClientContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request& request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_relocalizeProcessRequest_grpc1_, context, request, response);
-}
-
-void grpcIFrontEndService::Stub::async::relocalizeProcessRequest_grpc1(::grpc::ClientContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request* request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_relocalizeProcessRequest_grpc1_, context, request, response, std::move(f));
-}
-
-void grpcIFrontEndService::Stub::async::relocalizeProcessRequest_grpc1(::grpc::ClientContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request* request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_relocalizeProcessRequest_grpc1_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response>* grpcIFrontEndService::Stub::PrepareAsyncrelocalizeProcessRequest_grpc1Raw(::grpc::ClientContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_relocalizeProcessRequest_grpc1_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response>* grpcIFrontEndService::Stub::AsyncrelocalizeProcessRequest_grpc1Raw(::grpc::ClientContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncrelocalizeProcessRequest_grpc1Raw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status grpcIFrontEndService::Stub::get3DTransformRequest(::grpc::ClientContext* context, const ::grpcIFrontEnd::get3DTransformRequestRequest& request, ::grpcIFrontEnd::get3DTransformRequestResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::get3DTransformRequestRequest, ::grpcIFrontEnd::get3DTransformRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_get3DTransformRequest_, context, request, response);
-}
-
-void grpcIFrontEndService::Stub::async::get3DTransformRequest(::grpc::ClientContext* context, const ::grpcIFrontEnd::get3DTransformRequestRequest* request, ::grpcIFrontEnd::get3DTransformRequestResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::get3DTransformRequestRequest, ::grpcIFrontEnd::get3DTransformRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_get3DTransformRequest_, context, request, response, std::move(f));
-}
-
-void grpcIFrontEndService::Stub::async::get3DTransformRequest(::grpc::ClientContext* context, const ::grpcIFrontEnd::get3DTransformRequestRequest* request, ::grpcIFrontEnd::get3DTransformRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_get3DTransformRequest_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::get3DTransformRequestResponse>* grpcIFrontEndService::Stub::PrepareAsyncget3DTransformRequestRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::get3DTransformRequestRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::get3DTransformRequestResponse, ::grpcIFrontEnd::get3DTransformRequestRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_get3DTransformRequest_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::get3DTransformRequestResponse>* grpcIFrontEndService::Stub::Asyncget3DTransformRequestRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::get3DTransformRequestRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncget3DTransformRequestRaw(context, request, cq);
+    this->PrepareAsyncimageProcessRequestRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -482,25 +434,25 @@ void grpcIFrontEndService::Stub::async::getMappingDataRequest(::grpc::ClientCont
   return result;
 }
 
-::grpc::Status grpcIFrontEndService::Stub::getLastPose(::grpc::ClientContext* context, const ::grpcIFrontEnd::getLastPoseRequest& request, ::grpcIFrontEnd::getLastPoseResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::getLastPoseRequest, ::grpcIFrontEnd::getLastPoseResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getLastPose_, context, request, response);
+::grpc::Status grpcIFrontEndService::Stub::getClientPose(::grpc::ClientContext* context, const ::grpcIFrontEnd::getClientPoseRequest& request, ::grpcIFrontEnd::getClientPoseResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::getClientPoseRequest, ::grpcIFrontEnd::getClientPoseResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getClientPose_, context, request, response);
 }
 
-void grpcIFrontEndService::Stub::async::getLastPose(::grpc::ClientContext* context, const ::grpcIFrontEnd::getLastPoseRequest* request, ::grpcIFrontEnd::getLastPoseResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::getLastPoseRequest, ::grpcIFrontEnd::getLastPoseResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getLastPose_, context, request, response, std::move(f));
+void grpcIFrontEndService::Stub::async::getClientPose(::grpc::ClientContext* context, const ::grpcIFrontEnd::getClientPoseRequest* request, ::grpcIFrontEnd::getClientPoseResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::getClientPoseRequest, ::grpcIFrontEnd::getClientPoseResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getClientPose_, context, request, response, std::move(f));
 }
 
-void grpcIFrontEndService::Stub::async::getLastPose(::grpc::ClientContext* context, const ::grpcIFrontEnd::getLastPoseRequest* request, ::grpcIFrontEnd::getLastPoseResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getLastPose_, context, request, response, reactor);
+void grpcIFrontEndService::Stub::async::getClientPose(::grpc::ClientContext* context, const ::grpcIFrontEnd::getClientPoseRequest* request, ::grpcIFrontEnd::getClientPoseResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getClientPose_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getLastPoseResponse>* grpcIFrontEndService::Stub::PrepareAsyncgetLastPoseRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getLastPoseRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::getLastPoseResponse, ::grpcIFrontEnd::getLastPoseRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getLastPose_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getClientPoseResponse>* grpcIFrontEndService::Stub::PrepareAsyncgetClientPoseRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getClientPoseRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::getClientPoseResponse, ::grpcIFrontEnd::getClientPoseRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getClientPose_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getLastPoseResponse>* grpcIFrontEndService::Stub::AsyncgetLastPoseRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getLastPoseRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getClientPoseResponse>* grpcIFrontEndService::Stub::AsyncgetClientPoseRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getClientPoseRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncgetLastPoseRaw(context, request, cq);
+    this->PrepareAsyncgetClientPoseRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -593,6 +545,29 @@ void grpcIFrontEndService::Stub::async::getClientMapUUID(::grpc::ClientContext* 
 ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getClientMapUUIDResponse>* grpcIFrontEndService::Stub::AsyncgetClientMapUUIDRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getClientMapUUIDRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncgetClientMapUUIDRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIFrontEndService::Stub::getClientInfoForMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::getClientInfoForMapRequest& request, ::grpcIFrontEnd::getClientInfoForMapResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::getClientInfoForMapRequest, ::grpcIFrontEnd::getClientInfoForMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getClientInfoForMap_, context, request, response);
+}
+
+void grpcIFrontEndService::Stub::async::getClientInfoForMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::getClientInfoForMapRequest* request, ::grpcIFrontEnd::getClientInfoForMapResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::getClientInfoForMapRequest, ::grpcIFrontEnd::getClientInfoForMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getClientInfoForMap_, context, request, response, std::move(f));
+}
+
+void grpcIFrontEndService::Stub::async::getClientInfoForMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::getClientInfoForMapRequest* request, ::grpcIFrontEnd::getClientInfoForMapResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getClientInfoForMap_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getClientInfoForMapResponse>* grpcIFrontEndService::Stub::PrepareAsyncgetClientInfoForMapRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getClientInfoForMapRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::getClientInfoForMapResponse, ::grpcIFrontEnd::getClientInfoForMapRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getClientInfoForMap_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getClientInfoForMapResponse>* grpcIFrontEndService::Stub::AsyncgetClientInfoForMapRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getClientInfoForMapRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetClientInfoForMapRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -892,35 +867,15 @@ grpcIFrontEndService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIFrontEndService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::imageProcessRequestRequest, ::grpcIFrontEnd::imageProcessRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request* req,
-             ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response* resp) {
-               return service->relocalizeProcessRequest_grpc0(ctx, req, resp);
+             const ::grpcIFrontEnd::imageProcessRequestRequest* req,
+             ::grpcIFrontEnd::imageProcessRequestResponse* resp) {
+               return service->imageProcessRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIFrontEndService_method_names[14],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcIFrontEndService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request* req,
-             ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response* resp) {
-               return service->relocalizeProcessRequest_grpc1(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[15],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::get3DTransformRequestRequest, ::grpcIFrontEnd::get3DTransformRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcIFrontEndService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcIFrontEnd::get3DTransformRequestRequest* req,
-             ::grpcIFrontEnd::get3DTransformRequestResponse* resp) {
-               return service->get3DTransformRequest(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMappingDataRequestRequest, ::grpcIFrontEnd::getMappingDataRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -930,17 +885,17 @@ grpcIFrontEndService::Service::Service() {
                return service->getMappingDataRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[17],
+      grpcIFrontEndService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getLastPoseRequest, ::grpcIFrontEnd::getLastPoseResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getClientPoseRequest, ::grpcIFrontEnd::getClientPoseResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::grpcIFrontEnd::getLastPoseRequest* req,
-             ::grpcIFrontEnd::getLastPoseResponse* resp) {
-               return service->getLastPose(ctx, req, resp);
+             const ::grpcIFrontEnd::getClientPoseRequest* req,
+             ::grpcIFrontEnd::getClientPoseResponse* resp) {
+               return service->getClientPose(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[18],
+      grpcIFrontEndService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::createMapRequest, ::grpcIFrontEnd::createMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -950,7 +905,7 @@ grpcIFrontEndService::Service::Service() {
                return service->createMap(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[19],
+      grpcIFrontEndService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::deleteMapRequest, ::grpcIFrontEnd::deleteMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -960,7 +915,7 @@ grpcIFrontEndService::Service::Service() {
                return service->deleteMap(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[20],
+      grpcIFrontEndService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getAllMapsUUIDRequest, ::grpcIFrontEnd::getAllMapsUUIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -970,7 +925,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getAllMapsUUID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[21],
+      grpcIFrontEndService_method_names[19],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getClientMapUUIDRequest, ::grpcIFrontEnd::getClientMapUUIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -980,7 +935,17 @@ grpcIFrontEndService::Service::Service() {
                return service->getClientMapUUID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[22],
+      grpcIFrontEndService_method_names[20],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getClientInfoForMapRequest, ::grpcIFrontEnd::getClientInfoForMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIFrontEndService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIFrontEnd::getClientInfoForMapRequest* req,
+             ::grpcIFrontEnd::getClientInfoForMapResponse* resp) {
+               return service->getClientInfoForMap(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIFrontEndService_method_names[21],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapRequestRequest, ::grpcIFrontEnd::getMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -990,7 +955,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getMapRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[23],
+      grpcIFrontEndService_method_names[22],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::setMapRequestRequest, ::grpcIFrontEnd::setMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1000,7 +965,7 @@ grpcIFrontEndService::Service::Service() {
                return service->setMapRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[24],
+      grpcIFrontEndService_method_names[23],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getPointCloudRequestRequest, ::grpcIFrontEnd::getPointCloudRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1010,7 +975,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getPointCloudRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[25],
+      grpcIFrontEndService_method_names[24],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapInfoRequest, ::grpcIFrontEnd::getMapInfoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1020,7 +985,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getMapInfo(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[26],
+      grpcIFrontEndService_method_names[25],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::requestMapProcessingRequest, ::grpcIFrontEnd::requestMapProcessingResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1030,7 +995,7 @@ grpcIFrontEndService::Service::Service() {
                return service->requestMapProcessing(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[27],
+      grpcIFrontEndService_method_names[26],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapProcessingStatusRequest, ::grpcIFrontEnd::getMapProcessingStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1040,7 +1005,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getMapProcessingStatus(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[28],
+      grpcIFrontEndService_method_names[27],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapProcessingDataRequest, ::grpcIFrontEnd::getMapProcessingDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1145,21 +1110,7 @@ grpcIFrontEndService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIFrontEndService::Service::relocalizeProcessRequest_grpc0(::grpc::ServerContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request* request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status grpcIFrontEndService::Service::relocalizeProcessRequest_grpc1(::grpc::ServerContext* context, const ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request* request, ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status grpcIFrontEndService::Service::get3DTransformRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::get3DTransformRequestRequest* request, ::grpcIFrontEnd::get3DTransformRequestResponse* response) {
+::grpc::Status grpcIFrontEndService::Service::imageProcessRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::imageProcessRequestRequest* request, ::grpcIFrontEnd::imageProcessRequestResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -1173,7 +1124,7 @@ grpcIFrontEndService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIFrontEndService::Service::getLastPose(::grpc::ServerContext* context, const ::grpcIFrontEnd::getLastPoseRequest* request, ::grpcIFrontEnd::getLastPoseResponse* response) {
+::grpc::Status grpcIFrontEndService::Service::getClientPose(::grpc::ServerContext* context, const ::grpcIFrontEnd::getClientPoseRequest* request, ::grpcIFrontEnd::getClientPoseResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -1202,6 +1153,13 @@ grpcIFrontEndService::Service::~Service() {
 }
 
 ::grpc::Status grpcIFrontEndService::Service::getClientMapUUID(::grpc::ServerContext* context, const ::grpcIFrontEnd::getClientMapUUIDRequest* request, ::grpcIFrontEnd::getClientMapUUIDResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIFrontEndService::Service::getClientInfoForMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::getClientInfoForMapRequest* request, ::grpcIFrontEnd::getClientInfoForMapResponse* response) {
   (void) context;
   (void) request;
   (void) response;

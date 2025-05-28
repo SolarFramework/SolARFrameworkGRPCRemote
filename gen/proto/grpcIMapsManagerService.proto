@@ -66,7 +66,8 @@ message getMapRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string mapUUID = 2;
-bytes map = 3;
+bool withKeyframeImages = 3;
+bytes map = 4;
 }
 
 message getMapRequestResponse

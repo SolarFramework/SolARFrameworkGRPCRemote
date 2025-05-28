@@ -1879,8 +1879,9 @@ class getMapRequestRequest final :
 
   enum : int {
     kMapUUIDFieldNumber = 2,
-    kMapFieldNumber = 3,
+    kMapFieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
+    kWithKeyframeImagesFieldNumber = 3,
   };
   // string mapUUID = 2;
   void clear_mapuuid();
@@ -1896,7 +1897,7 @@ class getMapRequestRequest final :
   std::string* _internal_mutable_mapuuid();
   public:
 
-  // bytes map = 3;
+  // bytes map = 4;
   void clear_map();
   const std::string& map() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1919,6 +1920,15 @@ class getMapRequestRequest final :
   void _internal_set_grpcservercompressionformat(int32_t value);
   public:
 
+  // bool withKeyframeImages = 3;
+  void clear_withkeyframeimages();
+  bool withkeyframeimages() const;
+  void set_withkeyframeimages(bool value);
+  private:
+  bool _internal_withkeyframeimages() const;
+  void _internal_set_withkeyframeimages(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:grpcIMapsManager.getMapRequestRequest)
  private:
   class _Internal;
@@ -1930,6 +1940,7 @@ class getMapRequestRequest final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr map_;
     int32_t grpcservercompressionformat_;
+    bool withkeyframeimages_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -4963,7 +4974,27 @@ inline void getMapRequestRequest::set_allocated_mapuuid(std::string* mapuuid) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.getMapRequestRequest.mapUUID)
 }
 
-// bytes map = 3;
+// bool withKeyframeImages = 3;
+inline void getMapRequestRequest::clear_withkeyframeimages() {
+  _impl_.withkeyframeimages_ = false;
+}
+inline bool getMapRequestRequest::_internal_withkeyframeimages() const {
+  return _impl_.withkeyframeimages_;
+}
+inline bool getMapRequestRequest::withkeyframeimages() const {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.getMapRequestRequest.withKeyframeImages)
+  return _internal_withkeyframeimages();
+}
+inline void getMapRequestRequest::_internal_set_withkeyframeimages(bool value) {
+  
+  _impl_.withkeyframeimages_ = value;
+}
+inline void getMapRequestRequest::set_withkeyframeimages(bool value) {
+  _internal_set_withkeyframeimages(value);
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.getMapRequestRequest.withKeyframeImages)
+}
+
+// bytes map = 4;
 inline void getMapRequestRequest::clear_map() {
   _impl_.map_.ClearToEmpty();
 }
