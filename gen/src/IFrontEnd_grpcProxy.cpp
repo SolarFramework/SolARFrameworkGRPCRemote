@@ -747,7 +747,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getClientInfoForMap(std::string
 }
 
 
-SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapRequest(std::string const& accessToken, std::string const& mapUUID, SRef<SolAR::datastructure::Map>& mapDatastructure, bool const withKeyframeImages) const
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapRequest(std::string const& accessToken, std::string const& mapUUID, SRef<SolAR::datastructure::Map>& mapDatastructure, SolAR::api::service::GetMapRequestOption const& keyframeImagesOption) const
 {
   ::grpc::ClientContext context;
   ::grpcIFrontEnd::getMapRequestRequest reqIn;
@@ -759,7 +759,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapRequest(std::string const
   #endif
   reqIn.set_accesstoken(accessToken);
   reqIn.set_mapuuid(mapUUID);
-  reqIn.set_withkeyframeimages(withKeyframeImages);
+  reqIn.set_keyframeimagesoption(static_cast<int32_t>(keyframeImagesOption));
   reqIn.set_mapdatastructure(xpcf::serialize<SRef<SolAR::datastructure::Map>>(mapDatastructure));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();

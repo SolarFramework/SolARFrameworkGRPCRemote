@@ -310,7 +310,7 @@ message getMapRequestRequest
 int32 grpcServerCompressionFormat  = 1;
 string accessToken = 2;
 string mapUUID = 3;
-bool withKeyframeImages = 4;
+sint32 keyframeImagesOption = 4;
 bytes mapDatastructure = 5;
 }
 

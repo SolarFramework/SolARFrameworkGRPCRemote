@@ -284,7 +284,7 @@ SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::mapUpdateRequest(SRef<
 }
 
 
-SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::getMapRequest(SRef<SolAR::datastructure::Map>& map, bool const withKeyframeImages) const
+SolAR::FrameworkReturnCode  IMapUpdatePipeline_grpcProxy::getMapRequest(SRef<SolAR::datastructure::Map>& map, bool withKeyframeImages) const
 {
   ::grpc::ClientContext context;
   ::grpcIMapUpdatePipeline::getMapRequestRequest reqIn;

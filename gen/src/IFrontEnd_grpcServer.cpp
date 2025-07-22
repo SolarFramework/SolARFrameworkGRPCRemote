@@ -607,8 +607,8 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::string accessToken = request->accesstoken();
   std::string mapUUID = request->mapuuid();
   SRef<SolAR::datastructure::Map> mapDatastructure = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->mapdatastructure());
-  bool withKeyframeImages = request->withkeyframeimages();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(accessToken, mapUUID, mapDatastructure, withKeyframeImages);
+  SolAR::api::service::GetMapRequestOption keyframeImagesOption = static_cast<SolAR::api::service::GetMapRequestOption>(request->keyframeimagesoption());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(accessToken, mapUUID, mapDatastructure, keyframeImagesOption);
   response->set_mapdatastructure(xpcf::serialize<SRef<SolAR::datastructure::Map>>(mapDatastructure));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS

@@ -8019,7 +8019,7 @@ class getMapRequestRequest final :
     kMapUUIDFieldNumber = 3,
     kMapDatastructureFieldNumber = 5,
     kGrpcServerCompressionFormatFieldNumber = 1,
-    kWithKeyframeImagesFieldNumber = 4,
+    kKeyframeImagesOptionFieldNumber = 4,
   };
   // string accessToken = 2;
   void clear_accesstoken();
@@ -8072,13 +8072,13 @@ class getMapRequestRequest final :
   void _internal_set_grpcservercompressionformat(int32_t value);
   public:
 
-  // bool withKeyframeImages = 4;
-  void clear_withkeyframeimages();
-  bool withkeyframeimages() const;
-  void set_withkeyframeimages(bool value);
+  // sint32 keyframeImagesOption = 4;
+  void clear_keyframeimagesoption();
+  int32_t keyframeimagesoption() const;
+  void set_keyframeimagesoption(int32_t value);
   private:
-  bool _internal_withkeyframeimages() const;
-  void _internal_set_withkeyframeimages(bool value);
+  int32_t _internal_keyframeimagesoption() const;
+  void _internal_set_keyframeimagesoption(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getMapRequestRequest)
@@ -8093,7 +8093,7 @@ class getMapRequestRequest final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapuuid_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mapdatastructure_;
     int32_t grpcservercompressionformat_;
-    bool withkeyframeimages_;
+    int32_t keyframeimagesoption_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -15861,24 +15861,24 @@ inline void getMapRequestRequest::set_allocated_mapuuid(std::string* mapuuid) {
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMapRequestRequest.mapUUID)
 }
 
-// bool withKeyframeImages = 4;
-inline void getMapRequestRequest::clear_withkeyframeimages() {
-  _impl_.withkeyframeimages_ = false;
+// sint32 keyframeImagesOption = 4;
+inline void getMapRequestRequest::clear_keyframeimagesoption() {
+  _impl_.keyframeimagesoption_ = 0;
 }
-inline bool getMapRequestRequest::_internal_withkeyframeimages() const {
-  return _impl_.withkeyframeimages_;
+inline int32_t getMapRequestRequest::_internal_keyframeimagesoption() const {
+  return _impl_.keyframeimagesoption_;
 }
-inline bool getMapRequestRequest::withkeyframeimages() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapRequestRequest.withKeyframeImages)
-  return _internal_withkeyframeimages();
+inline int32_t getMapRequestRequest::keyframeimagesoption() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapRequestRequest.keyframeImagesOption)
+  return _internal_keyframeimagesoption();
 }
-inline void getMapRequestRequest::_internal_set_withkeyframeimages(bool value) {
+inline void getMapRequestRequest::_internal_set_keyframeimagesoption(int32_t value) {
   
-  _impl_.withkeyframeimages_ = value;
+  _impl_.keyframeimagesoption_ = value;
 }
-inline void getMapRequestRequest::set_withkeyframeimages(bool value) {
-  _internal_set_withkeyframeimages(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapRequestRequest.withKeyframeImages)
+inline void getMapRequestRequest::set_keyframeimagesoption(int32_t value) {
+  _internal_set_keyframeimagesoption(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapRequestRequest.keyframeImagesOption)
 }
 
 // bytes mapDatastructure = 5;

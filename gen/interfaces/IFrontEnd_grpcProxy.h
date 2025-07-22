@@ -43,7 +43,7 @@ class IFrontEnd_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     SolAR::FrameworkReturnCode getAllMapsUUID(std::string const& accessToken, std::vector<std::string>& mapUUIDList)     const     override;
     SolAR::FrameworkReturnCode getClientMapUUID(std::string const& accessToken, std::string const& clientUUID, std::string& mapUUID)     const     override;
     SolAR::FrameworkReturnCode getClientInfoForMap(std::string const& accessToken, std::string const& mapUUID, std::vector<SolAR::api::service::ClientInfo>& clientInfoList)     const     override;
-    SolAR::FrameworkReturnCode getMapRequest(std::string const& accessToken, std::string const& mapUUID, SRef<SolAR::datastructure::Map>& mapDatastructure, bool const withKeyframeImages)     const     override;
+    SolAR::FrameworkReturnCode getMapRequest(std::string const& accessToken, std::string const& mapUUID, SRef<SolAR::datastructure::Map>& mapDatastructure, SolAR::api::service::GetMapRequestOption const& keyframeImagesOption)     const     override;
     SolAR::FrameworkReturnCode setMapRequest(std::string const& accessToken, std::string const& mapUUID, SRef<SolAR::datastructure::Map> const mapDatastructure)     override;
     SolAR::FrameworkReturnCode getPointCloudRequest(std::string const& accessToken, std::string const& mapUUID, SRef<SolAR::datastructure::PointCloud>& pointCloud)     const     override;
     SolAR::FrameworkReturnCode getMapInfo(std::string const& accessToken, std::string const& mapUUID, SolAR::datastructure::DescriptorType& descriptorType, uint32_t& mapSupportedTypes, uint32_t& dataSize, bool& areImageSaved)     const     override;
