@@ -176,32 +176,7 @@ bytes cameraParams = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
-message relocalizeProcessRequest_grpc0Request
-{
-int32 grpcServerCompressionFormat  = 1;
-string accessToken = 2;
-string clientUUID = 3;
-bytes images = 4;
-bytes poses = 5;
-bool fixedPose = 6;
-bytes worldTransform = 7;
-bytes timestamp = 8;
-sint32 transform3DStatus = 9;
-bytes transform3D = 10;
-bytes confidence = 11;
-sint32 mappingStatus = 12;
-}
-
-message relocalizeProcessRequest_grpc0Response
-{
-sint32 transform3DStatus = 1;
-bytes transform3D = 2;
-bytes confidence = 3;
-sint32 mappingStatus = 4;
-sint32 xpcfGrpcReturnValue = 5;
-}
-
-message relocalizeProcessRequest_grpc1Request
+message imageProcessRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string accessToken = 2;
@@ -218,7 +193,7 @@ sint32 mappingStatus = 12;
 bytes detectedObjects = 13;
 }
 
-message relocalizeProcessRequest_grpc1Response
+message imageProcessRequestResponse
 {
 sint32 transform3DStatus = 1;
 bytes transform3D = 2;
@@ -226,24 +201,6 @@ bytes confidence = 3;
 sint32 mappingStatus = 4;
 bytes detectedObjects = 5;
 sint32 xpcfGrpcReturnValue = 6;
-}
-
-message get3DTransformRequestRequest
-{
-int32 grpcServerCompressionFormat  = 1;
-string accessToken = 2;
-string clientUUID = 3;
-sint32 transform3DStatus = 4;
-bytes transform3D = 5;
-bytes confidence = 6;
-}
-
-message get3DTransformRequestResponse
-{
-sint32 transform3DStatus = 1;
-bytes transform3D = 2;
-bytes confidence = 3;
-sint32 xpcfGrpcReturnValue = 4;
 }
 
 message getMappingDataRequestRequest
@@ -262,19 +219,25 @@ bytes keyframePoses = 2;
 sint32 xpcfGrpcReturnValue = 3;
 }
 
-message getLastPoseRequest
+message getClientPoseRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string accessToken = 2;
 string clientUUID = 3;
 sint32 poseType = 4;
-bytes pose = 5;
+sint32 transform3DStatus = 5;
+bytes transform3D = 6;
+bytes confidence = 7;
+bytes pose = 8;
 }
 
-message getLastPoseResponse
+message getClientPoseResponse
 {
-bytes pose = 1;
-sint32 xpcfGrpcReturnValue = 2;
+sint32 transform3DStatus = 1;
+bytes transform3D = 2;
+bytes confidence = 3;
+bytes pose = 4;
+sint32 xpcfGrpcReturnValue = 5;
 }
 
 message createMapRequest
@@ -328,12 +291,27 @@ string mapUUID = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
+message getClientInfoForMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string accessToken = 2;
+string mapUUID = 3;
+bytes clientInfoList = 4;
+}
+
+message getClientInfoForMapResponse
+{
+bytes clientInfoList = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
 message getMapRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string accessToken = 2;
 string mapUUID = 3;
-bytes mapDatastructure = 4;
+sint32 keyframeImagesOption = 4;
+bytes mapDatastructure = 5;
 }
 
 message getMapRequestResponse
@@ -449,15 +427,14 @@ rpc setCameraParameters_grpc0(setCameraParameters_grpc0Request) returns(setCamer
 rpc setCameraParameters_grpc1(setCameraParameters_grpc1Request) returns(setCameraParameters_grpc1Response) {}
 rpc setRectificationParameters(setRectificationParametersRequest) returns(setRectificationParametersResponse) {}
 rpc getCameraParameters(getCameraParametersRequest) returns(getCameraParametersResponse) {}
-rpc relocalizeProcessRequest_grpc0(relocalizeProcessRequest_grpc0Request) returns(relocalizeProcessRequest_grpc0Response) {}
-rpc relocalizeProcessRequest_grpc1(relocalizeProcessRequest_grpc1Request) returns(relocalizeProcessRequest_grpc1Response) {}
-rpc get3DTransformRequest(get3DTransformRequestRequest) returns(get3DTransformRequestResponse) {}
+rpc imageProcessRequest(imageProcessRequestRequest) returns(imageProcessRequestResponse) {}
 rpc getMappingDataRequest(getMappingDataRequestRequest) returns(getMappingDataRequestResponse) {}
-rpc getLastPose(getLastPoseRequest) returns(getLastPoseResponse) {}
+rpc getClientPose(getClientPoseRequest) returns(getClientPoseResponse) {}
 rpc createMap(createMapRequest) returns(createMapResponse) {}
 rpc deleteMap(deleteMapRequest) returns(deleteMapResponse) {}
 rpc getAllMapsUUID(getAllMapsUUIDRequest) returns(getAllMapsUUIDResponse) {}
 rpc getClientMapUUID(getClientMapUUIDRequest) returns(getClientMapUUIDResponse) {}
+rpc getClientInfoForMap(getClientInfoForMapRequest) returns(getClientInfoForMapResponse) {}
 rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc setMapRequest(setMapRequestRequest) returns(setMapRequestResponse) {}
 rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}

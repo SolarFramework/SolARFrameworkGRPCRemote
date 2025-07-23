@@ -92,7 +92,8 @@ sint32 xpcfGrpcReturnValue = 1;
 message getMapRequestRequest
 {
 int32 grpcServerCompressionFormat  = 1;
-bytes map = 2;
+bool withKeyframeImages = 2;
+bytes map = 3;
 }
 
 message getMapRequestResponse
