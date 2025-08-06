@@ -233,7 +233,8 @@ XPCFErrorCode IMapUpdatePipeline_grpcServer::onConfigured()
   std::cout << "====> IMapUpdatePipeline_grpcServer::getMapRequest request received at " << to_simple_string(start) << std::endl;
   #endif
   SRef<SolAR::datastructure::Map> map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->map());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(map);
+  bool withKeyframeImages = request->withkeyframeimages();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(map, withKeyframeImages);
   response->set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS

@@ -19,7 +19,7 @@ IFrontEnd_grpcProxy::IFrontEnd_grpcProxy():xpcf::ConfigurableBase(xpcf::toMap<IF
   declareInterface<SolAR::api::service::IFrontEnd>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(30);
+  m_grpcProxyCompressionConfig.resize(29);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -466,57 +466,13 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getCameraParameters(std::string
 }
 
 
-SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::relocalizeProcessRequest(std::string const& accessToken, std::string const& clientUUID, std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, bool fixedPose, SolAR::datastructure::Transform3Df const& worldTransform, std::chrono::system_clock::time_point const& timestamp, SolAR::api::service::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence, SolAR::api::pipeline::MappingStatus& mappingStatus)
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::imageProcessRequest(std::string const& accessToken, std::string const& clientUUID, std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, bool fixedPose, SolAR::datastructure::Transform3Df const& worldTransform, std::chrono::system_clock::time_point const& timestamp, SolAR::api::service::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence, SolAR::api::pipeline::MappingStatus& mappingStatus, std::vector<SolAR::datastructure::DetectedObject>& detectedObjects)
 {
   ::grpc::ClientContext context;
-  ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Request reqIn;
-  ::grpcIFrontEnd::relocalizeProcessRequest_grpc0Response respOut;
+  ::grpcIFrontEnd::imageProcessRequestRequest reqIn;
+  ::grpcIFrontEnd::imageProcessRequestResponse respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "relocalizeProcessRequest", m_methodCompressionInfosMap);
-  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
-  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
-  #endif
-  reqIn.set_accesstoken(accessToken);
-  reqIn.set_clientuuid(clientUUID);
-  reqIn.set_images(xpcf::serialize<std::vector<SRef<SolAR::datastructure::Image>>>(images));
-  reqIn.set_poses(xpcf::serialize<std::vector<SolAR::datastructure::Transform3Df>>(poses));
-  reqIn.set_fixedpose(fixedPose);
-  reqIn.set_worldtransform(xpcf::serialize<SolAR::datastructure::Transform3Df>(worldTransform));
-  reqIn.set_timestamp(xpcf::serialize<std::chrono::system_clock::time_point>(timestamp));
-  reqIn.set_transform3dstatus(static_cast<int32_t>(transform3DStatus));
-  reqIn.set_transform3d(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform3D));
-  reqIn.set_confidence(xpcf::serialize<float_t>(confidence));
-  reqIn.set_mappingstatus(static_cast<int32_t>(mappingStatus));
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IFrontEnd_grpcProxy::relocalizeProcessRequest request sent at " << to_simple_string(start) << std::endl;
-  #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->relocalizeProcessRequest_grpc0(&context, reqIn, &respOut);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IFrontEnd_grpcProxy::relocalizeProcessRequest response received at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "relocalizeProcessRequest_grpc0 rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIFrontEndService","relocalizeProcessRequest_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
-  transform3DStatus = static_cast<SolAR::api::service::TransformStatus>(respOut.transform3dstatus());
-  transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.transform3d());
-  confidence = xpcf::deserialize<float_t>(respOut.confidence());
-  mappingStatus = static_cast<SolAR::api::pipeline::MappingStatus>(respOut.mappingstatus());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
-}
-
-
-SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::relocalizeProcessRequest(std::string const& accessToken, std::string const& clientUUID, std::vector<SRef<SolAR::datastructure::Image>> const& images, std::vector<SolAR::datastructure::Transform3Df> const& poses, bool fixedPose, SolAR::datastructure::Transform3Df const& worldTransform, std::chrono::system_clock::time_point const& timestamp, SolAR::api::service::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence, SolAR::api::pipeline::MappingStatus& mappingStatus, std::vector<SolAR::datastructure::DetectedObject>& detectedObjects)
-{
-  ::grpc::ClientContext context;
-  ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Request reqIn;
-  ::grpcIFrontEnd::relocalizeProcessRequest_grpc1Response respOut;
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "relocalizeProcessRequest", m_methodCompressionInfosMap);
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "imageProcessRequest", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
@@ -534,17 +490,17 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::relocalizeProcessRequest(std::s
   reqIn.set_detectedobjects(xpcf::serialize<std::vector<SolAR::datastructure::DetectedObject>>(detectedObjects));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IFrontEnd_grpcProxy::relocalizeProcessRequest request sent at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IFrontEnd_grpcProxy::imageProcessRequest request sent at " << to_simple_string(start) << std::endl;
   #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->relocalizeProcessRequest_grpc1(&context, reqIn, &respOut);
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->imageProcessRequest(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IFrontEnd_grpcProxy::relocalizeProcessRequest response received at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IFrontEnd_grpcProxy::imageProcessRequest response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "relocalizeProcessRequest_grpc1 rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIFrontEndService","relocalizeProcessRequest_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    std::cout << "imageProcessRequest rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIFrontEndService","imageProcessRequest",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   transform3DStatus = static_cast<SolAR::api::service::TransformStatus>(respOut.transform3dstatus());
@@ -552,43 +508,6 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::relocalizeProcessRequest(std::s
   confidence = xpcf::deserialize<float_t>(respOut.confidence());
   mappingStatus = static_cast<SolAR::api::pipeline::MappingStatus>(respOut.mappingstatus());
   detectedObjects = xpcf::deserialize<std::vector<SolAR::datastructure::DetectedObject>>(respOut.detectedobjects());
-  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
-}
-
-
-SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::get3DTransformRequest(std::string const& accessToken, std::string const& clientUUID, SolAR::api::service::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence)
-{
-  ::grpc::ClientContext context;
-  ::grpcIFrontEnd::get3DTransformRequestRequest reqIn;
-  ::grpcIFrontEnd::get3DTransformRequestResponse respOut;
-  #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "get3DTransformRequest", m_methodCompressionInfosMap);
-  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
-  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
-  #endif
-  reqIn.set_accesstoken(accessToken);
-  reqIn.set_clientuuid(clientUUID);
-  reqIn.set_transform3dstatus(static_cast<int32_t>(transform3DStatus));
-  reqIn.set_transform3d(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform3D));
-  reqIn.set_confidence(xpcf::serialize<float_t>(confidence));
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IFrontEnd_grpcProxy::get3DTransformRequest request sent at " << to_simple_string(start) << std::endl;
-  #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->get3DTransformRequest(&context, reqIn, &respOut);
-  #ifdef ENABLE_PROXY_TIMERS
-  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IFrontEnd_grpcProxy::get3DTransformRequest response received at " << to_simple_string(end) << std::endl;
-  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
-  #endif
-  if (!grpcRemoteStatus.ok())  {
-    std::cout << "get3DTransformRequest rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIFrontEndService","get3DTransformRequest",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
-  }
-
-  transform3DStatus = static_cast<SolAR::api::service::TransformStatus>(respOut.transform3dstatus());
-  transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.transform3d());
-  confidence = xpcf::deserialize<float_t>(respOut.confidence());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
@@ -628,35 +547,41 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMappingDataRequest(std::stri
 }
 
 
-SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getLastPose(std::string const& accessToken, std::string const& clientUUID, SolAR::datastructure::Transform3Df& pose, SolAR::api::service::PoseType const poseType) const
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getClientPose(std::string const& accessToken, std::string const& clientUUID, SolAR::api::service::TransformStatus& transform3DStatus, SolAR::datastructure::Transform3Df& transform3D, float_t& confidence, SolAR::datastructure::Transform3Df& pose, SolAR::api::service::PoseType const poseType)
 {
   ::grpc::ClientContext context;
-  ::grpcIFrontEnd::getLastPoseRequest reqIn;
-  ::grpcIFrontEnd::getLastPoseResponse respOut;
+  ::grpcIFrontEnd::getClientPoseRequest reqIn;
+  ::grpcIFrontEnd::getClientPoseResponse respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
-  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getLastPose", m_methodCompressionInfosMap);
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getClientPose", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_accesstoken(accessToken);
   reqIn.set_clientuuid(clientUUID);
   reqIn.set_posetype(static_cast<int32_t>(poseType));
+  reqIn.set_transform3dstatus(static_cast<int32_t>(transform3DStatus));
+  reqIn.set_transform3d(xpcf::serialize<SolAR::datastructure::Transform3Df>(transform3D));
+  reqIn.set_confidence(xpcf::serialize<float_t>(confidence));
   reqIn.set_pose(xpcf::serialize<SolAR::datastructure::Transform3Df>(pose));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IFrontEnd_grpcProxy::getLastPose request sent at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IFrontEnd_grpcProxy::getClientPose request sent at " << to_simple_string(start) << std::endl;
   #endif
-  ::grpc::Status grpcRemoteStatus = m_grpcStub->getLastPose(&context, reqIn, &respOut);
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getClientPose(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IFrontEnd_grpcProxy::getLastPose response received at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IFrontEnd_grpcProxy::getClientPose response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
-    std::cout << "getLastPose rpc failed." << std::endl;
-    throw xpcf::RemotingException("grpcIFrontEndService","getLastPose",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    std::cout << "getClientPose rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIFrontEndService","getClientPose",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  transform3DStatus = static_cast<SolAR::api::service::TransformStatus>(respOut.transform3dstatus());
+  transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.transform3d());
+  confidence = xpcf::deserialize<float_t>(respOut.confidence());
   pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.pose());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
@@ -789,7 +714,40 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getClientMapUUID(std::string co
 }
 
 
-SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapRequest(std::string const& accessToken, std::string const& mapUUID, SRef<SolAR::datastructure::Map>& mapDatastructure) const
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getClientInfoForMap(std::string const& accessToken, std::string const& mapUUID, std::vector<SolAR::api::service::ClientInfo>& clientInfoList) const
+{
+  ::grpc::ClientContext context;
+  ::grpcIFrontEnd::getClientInfoForMapRequest reqIn;
+  ::grpcIFrontEnd::getClientInfoForMapResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getClientInfoForMap", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_accesstoken(accessToken);
+  reqIn.set_mapuuid(mapUUID);
+  reqIn.set_clientinfolist(xpcf::serialize<std::vector<SolAR::api::service::ClientInfo>>(clientInfoList));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::getClientInfoForMap request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getClientInfoForMap(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::getClientInfoForMap response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getClientInfoForMap rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIFrontEndService","getClientInfoForMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  clientInfoList = xpcf::deserialize<std::vector<SolAR::api::service::ClientInfo>>(respOut.clientinfolist());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapRequest(std::string const& accessToken, std::string const& mapUUID, SRef<SolAR::datastructure::Map>& mapDatastructure, SolAR::api::service::GetMapRequestOption const& keyframeImagesOption) const
 {
   ::grpc::ClientContext context;
   ::grpcIFrontEnd::getMapRequestRequest reqIn;
@@ -801,6 +759,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapRequest(std::string const
   #endif
   reqIn.set_accesstoken(accessToken);
   reqIn.set_mapuuid(mapUUID);
+  reqIn.set_keyframeimagesoption(static_cast<int32_t>(keyframeImagesOption));
   reqIn.set_mapdatastructure(xpcf::serialize<SRef<SolAR::datastructure::Map>>(mapDatastructure));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();

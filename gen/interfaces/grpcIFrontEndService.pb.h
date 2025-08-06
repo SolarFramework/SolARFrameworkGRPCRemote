@@ -63,12 +63,6 @@ extern deleteMapRequestDefaultTypeInternal _deleteMapRequest_default_instance_;
 class deleteMapResponse;
 struct deleteMapResponseDefaultTypeInternal;
 extern deleteMapResponseDefaultTypeInternal _deleteMapResponse_default_instance_;
-class get3DTransformRequestRequest;
-struct get3DTransformRequestRequestDefaultTypeInternal;
-extern get3DTransformRequestRequestDefaultTypeInternal _get3DTransformRequestRequest_default_instance_;
-class get3DTransformRequestResponse;
-struct get3DTransformRequestResponseDefaultTypeInternal;
-extern get3DTransformRequestResponseDefaultTypeInternal _get3DTransformRequestResponse_default_instance_;
 class getAllClientsUUIDRequest;
 struct getAllClientsUUIDRequestDefaultTypeInternal;
 extern getAllClientsUUIDRequestDefaultTypeInternal _getAllClientsUUIDRequest_default_instance_;
@@ -87,24 +81,30 @@ extern getCameraParametersRequestDefaultTypeInternal _getCameraParametersRequest
 class getCameraParametersResponse;
 struct getCameraParametersResponseDefaultTypeInternal;
 extern getCameraParametersResponseDefaultTypeInternal _getCameraParametersResponse_default_instance_;
+class getClientInfoForMapRequest;
+struct getClientInfoForMapRequestDefaultTypeInternal;
+extern getClientInfoForMapRequestDefaultTypeInternal _getClientInfoForMapRequest_default_instance_;
+class getClientInfoForMapResponse;
+struct getClientInfoForMapResponseDefaultTypeInternal;
+extern getClientInfoForMapResponseDefaultTypeInternal _getClientInfoForMapResponse_default_instance_;
 class getClientMapUUIDRequest;
 struct getClientMapUUIDRequestDefaultTypeInternal;
 extern getClientMapUUIDRequestDefaultTypeInternal _getClientMapUUIDRequest_default_instance_;
 class getClientMapUUIDResponse;
 struct getClientMapUUIDResponseDefaultTypeInternal;
 extern getClientMapUUIDResponseDefaultTypeInternal _getClientMapUUIDResponse_default_instance_;
+class getClientPoseRequest;
+struct getClientPoseRequestDefaultTypeInternal;
+extern getClientPoseRequestDefaultTypeInternal _getClientPoseRequest_default_instance_;
+class getClientPoseResponse;
+struct getClientPoseResponseDefaultTypeInternal;
+extern getClientPoseResponseDefaultTypeInternal _getClientPoseResponse_default_instance_;
 class getDeviceInfoRequest;
 struct getDeviceInfoRequestDefaultTypeInternal;
 extern getDeviceInfoRequestDefaultTypeInternal _getDeviceInfoRequest_default_instance_;
 class getDeviceInfoResponse;
 struct getDeviceInfoResponseDefaultTypeInternal;
 extern getDeviceInfoResponseDefaultTypeInternal _getDeviceInfoResponse_default_instance_;
-class getLastPoseRequest;
-struct getLastPoseRequestDefaultTypeInternal;
-extern getLastPoseRequestDefaultTypeInternal _getLastPoseRequest_default_instance_;
-class getLastPoseResponse;
-struct getLastPoseResponseDefaultTypeInternal;
-extern getLastPoseResponseDefaultTypeInternal _getLastPoseResponse_default_instance_;
 class getMapInfoRequest;
 struct getMapInfoRequestDefaultTypeInternal;
 extern getMapInfoRequestDefaultTypeInternal _getMapInfoRequest_default_instance_;
@@ -147,6 +147,12 @@ extern getProcessingModeRequestDefaultTypeInternal _getProcessingModeRequest_def
 class getProcessingModeResponse;
 struct getProcessingModeResponseDefaultTypeInternal;
 extern getProcessingModeResponseDefaultTypeInternal _getProcessingModeResponse_default_instance_;
+class imageProcessRequestRequest;
+struct imageProcessRequestRequestDefaultTypeInternal;
+extern imageProcessRequestRequestDefaultTypeInternal _imageProcessRequestRequest_default_instance_;
+class imageProcessRequestResponse;
+struct imageProcessRequestResponseDefaultTypeInternal;
+extern imageProcessRequestResponseDefaultTypeInternal _imageProcessRequestResponse_default_instance_;
 class init_grpc0Request;
 struct init_grpc0RequestDefaultTypeInternal;
 extern init_grpc0RequestDefaultTypeInternal _init_grpc0Request_default_instance_;
@@ -165,18 +171,6 @@ extern registerClientRequestDefaultTypeInternal _registerClientRequest_default_i
 class registerClientResponse;
 struct registerClientResponseDefaultTypeInternal;
 extern registerClientResponseDefaultTypeInternal _registerClientResponse_default_instance_;
-class relocalizeProcessRequest_grpc0Request;
-struct relocalizeProcessRequest_grpc0RequestDefaultTypeInternal;
-extern relocalizeProcessRequest_grpc0RequestDefaultTypeInternal _relocalizeProcessRequest_grpc0Request_default_instance_;
-class relocalizeProcessRequest_grpc0Response;
-struct relocalizeProcessRequest_grpc0ResponseDefaultTypeInternal;
-extern relocalizeProcessRequest_grpc0ResponseDefaultTypeInternal _relocalizeProcessRequest_grpc0Response_default_instance_;
-class relocalizeProcessRequest_grpc1Request;
-struct relocalizeProcessRequest_grpc1RequestDefaultTypeInternal;
-extern relocalizeProcessRequest_grpc1RequestDefaultTypeInternal _relocalizeProcessRequest_grpc1Request_default_instance_;
-class relocalizeProcessRequest_grpc1Response;
-struct relocalizeProcessRequest_grpc1ResponseDefaultTypeInternal;
-extern relocalizeProcessRequest_grpc1ResponseDefaultTypeInternal _relocalizeProcessRequest_grpc1Response_default_instance_;
 class requestMapProcessingRequest;
 struct requestMapProcessingRequestDefaultTypeInternal;
 extern requestMapProcessingRequestDefaultTypeInternal _requestMapProcessingRequest_default_instance_;
@@ -1841,7 +1835,7 @@ class setMapRequestResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const setMapRequestResponse*>(
         &_setMapRequestResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 47;
+  static constexpr int kIndexInFileMessages = 45;
   friend void swap(setMapRequestResponse& a, setMapRequestResponse& b) { a.Swap(&b); }
   inline void Swap(setMapRequestResponse* other) {
     if (other == this) return;
@@ -2012,7 +2006,7 @@ class setMapRequestRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const setMapRequestRequest*>(
         &_setMapRequestRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 46;
+  static constexpr int kIndexInFileMessages = 44;
   friend void swap(setMapRequestRequest& a, setMapRequestRequest& b) { a.Swap(&b); }
   inline void Swap(setMapRequestRequest* other) {
     if (other == this) return;
@@ -3047,7 +3041,7 @@ class requestMapProcessingResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const requestMapProcessingResponse*>(
         &_requestMapProcessingResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 53;
+  static constexpr int kIndexInFileMessages = 51;
   friend void swap(requestMapProcessingResponse& a, requestMapProcessingResponse& b) { a.Swap(&b); }
   inline void Swap(requestMapProcessingResponse* other) {
     if (other == this) return;
@@ -3218,7 +3212,7 @@ class requestMapProcessingRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const requestMapProcessingRequest*>(
         &_requestMapProcessingRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 52;
+  static constexpr int kIndexInFileMessages = 50;
   friend void swap(requestMapProcessingRequest& a, requestMapProcessingRequest& b) { a.Swap(&b); }
   inline void Swap(requestMapProcessingRequest* other) {
     if (other == this) return;
@@ -3392,1206 +3386,6 @@ class requestMapProcessingRequest final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr resultmapuuid_;
     ::int32_t grpcservercompressionformat_;
     ::int32_t processingtype_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
-};
-// -------------------------------------------------------------------
-
-class relocalizeProcessRequest_grpc1Response final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response) */ {
- public:
-  inline relocalizeProcessRequest_grpc1Response() : relocalizeProcessRequest_grpc1Response(nullptr) {}
-  ~relocalizeProcessRequest_grpc1Response() override;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR relocalizeProcessRequest_grpc1Response(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline relocalizeProcessRequest_grpc1Response(const relocalizeProcessRequest_grpc1Response& from) : relocalizeProcessRequest_grpc1Response(nullptr, from) {}
-  inline relocalizeProcessRequest_grpc1Response(relocalizeProcessRequest_grpc1Response&& from) noexcept
-      : relocalizeProcessRequest_grpc1Response(nullptr, std::move(from)) {}
-  inline relocalizeProcessRequest_grpc1Response& operator=(const relocalizeProcessRequest_grpc1Response& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline relocalizeProcessRequest_grpc1Response& operator=(relocalizeProcessRequest_grpc1Response&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const relocalizeProcessRequest_grpc1Response& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const relocalizeProcessRequest_grpc1Response* internal_default_instance() {
-    return reinterpret_cast<const relocalizeProcessRequest_grpc1Response*>(
-        &_relocalizeProcessRequest_grpc1Response_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 29;
-  friend void swap(relocalizeProcessRequest_grpc1Response& a, relocalizeProcessRequest_grpc1Response& b) { a.Swap(&b); }
-  inline void Swap(relocalizeProcessRequest_grpc1Response* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(relocalizeProcessRequest_grpc1Response* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  relocalizeProcessRequest_grpc1Response* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return ::google::protobuf::Message::DefaultConstruct<relocalizeProcessRequest_grpc1Response>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const relocalizeProcessRequest_grpc1Response& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const relocalizeProcessRequest_grpc1Response& from) { relocalizeProcessRequest_grpc1Response::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(relocalizeProcessRequest_grpc1Response* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.relocalizeProcessRequest_grpc1Response"; }
-
- protected:
-  explicit relocalizeProcessRequest_grpc1Response(::google::protobuf::Arena* arena);
-  relocalizeProcessRequest_grpc1Response(::google::protobuf::Arena* arena, const relocalizeProcessRequest_grpc1Response& from);
-  relocalizeProcessRequest_grpc1Response(::google::protobuf::Arena* arena, relocalizeProcessRequest_grpc1Response&& from) noexcept
-      : relocalizeProcessRequest_grpc1Response(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::Message::ClassData* GetClassData() const final;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kTransform3DFieldNumber = 2,
-    kConfidenceFieldNumber = 3,
-    kDetectedObjectsFieldNumber = 5,
-    kTransform3DStatusFieldNumber = 1,
-    kMappingStatusFieldNumber = 4,
-    kXpcfGrpcReturnValueFieldNumber = 6,
-  };
-  // bytes transform3D = 2;
-  void clear_transform3d() ;
-  const std::string& transform3d() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_transform3d(Arg_&& arg, Args_... args);
-  std::string* mutable_transform3d();
-  PROTOBUF_NODISCARD std::string* release_transform3d();
-  void set_allocated_transform3d(std::string* value);
-
-  private:
-  const std::string& _internal_transform3d() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_transform3d(
-      const std::string& value);
-  std::string* _internal_mutable_transform3d();
-
-  public:
-  // bytes confidence = 3;
-  void clear_confidence() ;
-  const std::string& confidence() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_confidence(Arg_&& arg, Args_... args);
-  std::string* mutable_confidence();
-  PROTOBUF_NODISCARD std::string* release_confidence();
-  void set_allocated_confidence(std::string* value);
-
-  private:
-  const std::string& _internal_confidence() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_confidence(
-      const std::string& value);
-  std::string* _internal_mutable_confidence();
-
-  public:
-  // bytes detectedObjects = 5;
-  void clear_detectedobjects() ;
-  const std::string& detectedobjects() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_detectedobjects(Arg_&& arg, Args_... args);
-  std::string* mutable_detectedobjects();
-  PROTOBUF_NODISCARD std::string* release_detectedobjects();
-  void set_allocated_detectedobjects(std::string* value);
-
-  private:
-  const std::string& _internal_detectedobjects() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_detectedobjects(
-      const std::string& value);
-  std::string* _internal_mutable_detectedobjects();
-
-  public:
-  // sint32 transform3DStatus = 1;
-  void clear_transform3dstatus() ;
-  ::int32_t transform3dstatus() const;
-  void set_transform3dstatus(::int32_t value);
-
-  private:
-  ::int32_t _internal_transform3dstatus() const;
-  void _internal_set_transform3dstatus(::int32_t value);
-
-  public:
-  // sint32 mappingStatus = 4;
-  void clear_mappingstatus() ;
-  ::int32_t mappingstatus() const;
-  void set_mappingstatus(::int32_t value);
-
-  private:
-  ::int32_t _internal_mappingstatus() const;
-  void _internal_set_mappingstatus(::int32_t value);
-
-  public:
-  // sint32 xpcfGrpcReturnValue = 6;
-  void clear_xpcfgrpcreturnvalue() ;
-  ::int32_t xpcfgrpcreturnvalue() const;
-  void set_xpcfgrpcreturnvalue(::int32_t value);
-
-  private:
-  ::int32_t _internal_xpcfgrpcreturnvalue() const;
-  void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      3, 6, 0,
-      0, 2>
-      _table_;
-
-  static constexpr const void* _raw_default_instance_ =
-      &_relocalizeProcessRequest_grpc1Response_default_instance_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from,
-                          const relocalizeProcessRequest_grpc1Response& from_msg);
-    ::google::protobuf::internal::ArenaStringPtr transform3d_;
-    ::google::protobuf::internal::ArenaStringPtr confidence_;
-    ::google::protobuf::internal::ArenaStringPtr detectedobjects_;
-    ::int32_t transform3dstatus_;
-    ::int32_t mappingstatus_;
-    ::int32_t xpcfgrpcreturnvalue_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
-};
-// -------------------------------------------------------------------
-
-class relocalizeProcessRequest_grpc1Request final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request) */ {
- public:
-  inline relocalizeProcessRequest_grpc1Request() : relocalizeProcessRequest_grpc1Request(nullptr) {}
-  ~relocalizeProcessRequest_grpc1Request() override;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR relocalizeProcessRequest_grpc1Request(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline relocalizeProcessRequest_grpc1Request(const relocalizeProcessRequest_grpc1Request& from) : relocalizeProcessRequest_grpc1Request(nullptr, from) {}
-  inline relocalizeProcessRequest_grpc1Request(relocalizeProcessRequest_grpc1Request&& from) noexcept
-      : relocalizeProcessRequest_grpc1Request(nullptr, std::move(from)) {}
-  inline relocalizeProcessRequest_grpc1Request& operator=(const relocalizeProcessRequest_grpc1Request& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline relocalizeProcessRequest_grpc1Request& operator=(relocalizeProcessRequest_grpc1Request&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const relocalizeProcessRequest_grpc1Request& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const relocalizeProcessRequest_grpc1Request* internal_default_instance() {
-    return reinterpret_cast<const relocalizeProcessRequest_grpc1Request*>(
-        &_relocalizeProcessRequest_grpc1Request_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 28;
-  friend void swap(relocalizeProcessRequest_grpc1Request& a, relocalizeProcessRequest_grpc1Request& b) { a.Swap(&b); }
-  inline void Swap(relocalizeProcessRequest_grpc1Request* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(relocalizeProcessRequest_grpc1Request* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  relocalizeProcessRequest_grpc1Request* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return ::google::protobuf::Message::DefaultConstruct<relocalizeProcessRequest_grpc1Request>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const relocalizeProcessRequest_grpc1Request& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const relocalizeProcessRequest_grpc1Request& from) { relocalizeProcessRequest_grpc1Request::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(relocalizeProcessRequest_grpc1Request* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.relocalizeProcessRequest_grpc1Request"; }
-
- protected:
-  explicit relocalizeProcessRequest_grpc1Request(::google::protobuf::Arena* arena);
-  relocalizeProcessRequest_grpc1Request(::google::protobuf::Arena* arena, const relocalizeProcessRequest_grpc1Request& from);
-  relocalizeProcessRequest_grpc1Request(::google::protobuf::Arena* arena, relocalizeProcessRequest_grpc1Request&& from) noexcept
-      : relocalizeProcessRequest_grpc1Request(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::Message::ClassData* GetClassData() const final;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kAccessTokenFieldNumber = 2,
-    kClientUUIDFieldNumber = 3,
-    kImagesFieldNumber = 4,
-    kPosesFieldNumber = 5,
-    kWorldTransformFieldNumber = 7,
-    kTimestampFieldNumber = 8,
-    kTransform3DFieldNumber = 10,
-    kConfidenceFieldNumber = 11,
-    kDetectedObjectsFieldNumber = 13,
-    kGrpcServerCompressionFormatFieldNumber = 1,
-    kFixedPoseFieldNumber = 6,
-    kTransform3DStatusFieldNumber = 9,
-    kMappingStatusFieldNumber = 12,
-  };
-  // string accessToken = 2;
-  void clear_accesstoken() ;
-  const std::string& accesstoken() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_accesstoken(Arg_&& arg, Args_... args);
-  std::string* mutable_accesstoken();
-  PROTOBUF_NODISCARD std::string* release_accesstoken();
-  void set_allocated_accesstoken(std::string* value);
-
-  private:
-  const std::string& _internal_accesstoken() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_accesstoken(
-      const std::string& value);
-  std::string* _internal_mutable_accesstoken();
-
-  public:
-  // string clientUUID = 3;
-  void clear_clientuuid() ;
-  const std::string& clientuuid() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_clientuuid(Arg_&& arg, Args_... args);
-  std::string* mutable_clientuuid();
-  PROTOBUF_NODISCARD std::string* release_clientuuid();
-  void set_allocated_clientuuid(std::string* value);
-
-  private:
-  const std::string& _internal_clientuuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(
-      const std::string& value);
-  std::string* _internal_mutable_clientuuid();
-
-  public:
-  // bytes images = 4;
-  void clear_images() ;
-  const std::string& images() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_images(Arg_&& arg, Args_... args);
-  std::string* mutable_images();
-  PROTOBUF_NODISCARD std::string* release_images();
-  void set_allocated_images(std::string* value);
-
-  private:
-  const std::string& _internal_images() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_images(
-      const std::string& value);
-  std::string* _internal_mutable_images();
-
-  public:
-  // bytes poses = 5;
-  void clear_poses() ;
-  const std::string& poses() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_poses(Arg_&& arg, Args_... args);
-  std::string* mutable_poses();
-  PROTOBUF_NODISCARD std::string* release_poses();
-  void set_allocated_poses(std::string* value);
-
-  private:
-  const std::string& _internal_poses() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_poses(
-      const std::string& value);
-  std::string* _internal_mutable_poses();
-
-  public:
-  // bytes worldTransform = 7;
-  void clear_worldtransform() ;
-  const std::string& worldtransform() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_worldtransform(Arg_&& arg, Args_... args);
-  std::string* mutable_worldtransform();
-  PROTOBUF_NODISCARD std::string* release_worldtransform();
-  void set_allocated_worldtransform(std::string* value);
-
-  private:
-  const std::string& _internal_worldtransform() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_worldtransform(
-      const std::string& value);
-  std::string* _internal_mutable_worldtransform();
-
-  public:
-  // bytes timestamp = 8;
-  void clear_timestamp() ;
-  const std::string& timestamp() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_timestamp(Arg_&& arg, Args_... args);
-  std::string* mutable_timestamp();
-  PROTOBUF_NODISCARD std::string* release_timestamp();
-  void set_allocated_timestamp(std::string* value);
-
-  private:
-  const std::string& _internal_timestamp() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_timestamp(
-      const std::string& value);
-  std::string* _internal_mutable_timestamp();
-
-  public:
-  // bytes transform3D = 10;
-  void clear_transform3d() ;
-  const std::string& transform3d() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_transform3d(Arg_&& arg, Args_... args);
-  std::string* mutable_transform3d();
-  PROTOBUF_NODISCARD std::string* release_transform3d();
-  void set_allocated_transform3d(std::string* value);
-
-  private:
-  const std::string& _internal_transform3d() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_transform3d(
-      const std::string& value);
-  std::string* _internal_mutable_transform3d();
-
-  public:
-  // bytes confidence = 11;
-  void clear_confidence() ;
-  const std::string& confidence() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_confidence(Arg_&& arg, Args_... args);
-  std::string* mutable_confidence();
-  PROTOBUF_NODISCARD std::string* release_confidence();
-  void set_allocated_confidence(std::string* value);
-
-  private:
-  const std::string& _internal_confidence() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_confidence(
-      const std::string& value);
-  std::string* _internal_mutable_confidence();
-
-  public:
-  // bytes detectedObjects = 13;
-  void clear_detectedobjects() ;
-  const std::string& detectedobjects() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_detectedobjects(Arg_&& arg, Args_... args);
-  std::string* mutable_detectedobjects();
-  PROTOBUF_NODISCARD std::string* release_detectedobjects();
-  void set_allocated_detectedobjects(std::string* value);
-
-  private:
-  const std::string& _internal_detectedobjects() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_detectedobjects(
-      const std::string& value);
-  std::string* _internal_mutable_detectedobjects();
-
-  public:
-  // int32 grpcServerCompressionFormat = 1;
-  void clear_grpcservercompressionformat() ;
-  ::int32_t grpcservercompressionformat() const;
-  void set_grpcservercompressionformat(::int32_t value);
-
-  private:
-  ::int32_t _internal_grpcservercompressionformat() const;
-  void _internal_set_grpcservercompressionformat(::int32_t value);
-
-  public:
-  // bool fixedPose = 6;
-  void clear_fixedpose() ;
-  bool fixedpose() const;
-  void set_fixedpose(bool value);
-
-  private:
-  bool _internal_fixedpose() const;
-  void _internal_set_fixedpose(bool value);
-
-  public:
-  // sint32 transform3DStatus = 9;
-  void clear_transform3dstatus() ;
-  ::int32_t transform3dstatus() const;
-  void set_transform3dstatus(::int32_t value);
-
-  private:
-  ::int32_t _internal_transform3dstatus() const;
-  void _internal_set_transform3dstatus(::int32_t value);
-
-  public:
-  // sint32 mappingStatus = 12;
-  void clear_mappingstatus() ;
-  ::int32_t mappingstatus() const;
-  void set_mappingstatus(::int32_t value);
-
-  private:
-  ::int32_t _internal_mappingstatus() const;
-  void _internal_set_mappingstatus(::int32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      4, 13, 0,
-      89, 2>
-      _table_;
-
-  static constexpr const void* _raw_default_instance_ =
-      &_relocalizeProcessRequest_grpc1Request_default_instance_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from,
-                          const relocalizeProcessRequest_grpc1Request& from_msg);
-    ::google::protobuf::internal::ArenaStringPtr accesstoken_;
-    ::google::protobuf::internal::ArenaStringPtr clientuuid_;
-    ::google::protobuf::internal::ArenaStringPtr images_;
-    ::google::protobuf::internal::ArenaStringPtr poses_;
-    ::google::protobuf::internal::ArenaStringPtr worldtransform_;
-    ::google::protobuf::internal::ArenaStringPtr timestamp_;
-    ::google::protobuf::internal::ArenaStringPtr transform3d_;
-    ::google::protobuf::internal::ArenaStringPtr confidence_;
-    ::google::protobuf::internal::ArenaStringPtr detectedobjects_;
-    ::int32_t grpcservercompressionformat_;
-    bool fixedpose_;
-    ::int32_t transform3dstatus_;
-    ::int32_t mappingstatus_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
-};
-// -------------------------------------------------------------------
-
-class relocalizeProcessRequest_grpc0Response final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response) */ {
- public:
-  inline relocalizeProcessRequest_grpc0Response() : relocalizeProcessRequest_grpc0Response(nullptr) {}
-  ~relocalizeProcessRequest_grpc0Response() override;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR relocalizeProcessRequest_grpc0Response(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline relocalizeProcessRequest_grpc0Response(const relocalizeProcessRequest_grpc0Response& from) : relocalizeProcessRequest_grpc0Response(nullptr, from) {}
-  inline relocalizeProcessRequest_grpc0Response(relocalizeProcessRequest_grpc0Response&& from) noexcept
-      : relocalizeProcessRequest_grpc0Response(nullptr, std::move(from)) {}
-  inline relocalizeProcessRequest_grpc0Response& operator=(const relocalizeProcessRequest_grpc0Response& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline relocalizeProcessRequest_grpc0Response& operator=(relocalizeProcessRequest_grpc0Response&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const relocalizeProcessRequest_grpc0Response& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const relocalizeProcessRequest_grpc0Response* internal_default_instance() {
-    return reinterpret_cast<const relocalizeProcessRequest_grpc0Response*>(
-        &_relocalizeProcessRequest_grpc0Response_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 27;
-  friend void swap(relocalizeProcessRequest_grpc0Response& a, relocalizeProcessRequest_grpc0Response& b) { a.Swap(&b); }
-  inline void Swap(relocalizeProcessRequest_grpc0Response* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(relocalizeProcessRequest_grpc0Response* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  relocalizeProcessRequest_grpc0Response* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return ::google::protobuf::Message::DefaultConstruct<relocalizeProcessRequest_grpc0Response>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const relocalizeProcessRequest_grpc0Response& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const relocalizeProcessRequest_grpc0Response& from) { relocalizeProcessRequest_grpc0Response::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(relocalizeProcessRequest_grpc0Response* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.relocalizeProcessRequest_grpc0Response"; }
-
- protected:
-  explicit relocalizeProcessRequest_grpc0Response(::google::protobuf::Arena* arena);
-  relocalizeProcessRequest_grpc0Response(::google::protobuf::Arena* arena, const relocalizeProcessRequest_grpc0Response& from);
-  relocalizeProcessRequest_grpc0Response(::google::protobuf::Arena* arena, relocalizeProcessRequest_grpc0Response&& from) noexcept
-      : relocalizeProcessRequest_grpc0Response(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::Message::ClassData* GetClassData() const final;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kTransform3DFieldNumber = 2,
-    kConfidenceFieldNumber = 3,
-    kTransform3DStatusFieldNumber = 1,
-    kMappingStatusFieldNumber = 4,
-    kXpcfGrpcReturnValueFieldNumber = 5,
-  };
-  // bytes transform3D = 2;
-  void clear_transform3d() ;
-  const std::string& transform3d() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_transform3d(Arg_&& arg, Args_... args);
-  std::string* mutable_transform3d();
-  PROTOBUF_NODISCARD std::string* release_transform3d();
-  void set_allocated_transform3d(std::string* value);
-
-  private:
-  const std::string& _internal_transform3d() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_transform3d(
-      const std::string& value);
-  std::string* _internal_mutable_transform3d();
-
-  public:
-  // bytes confidence = 3;
-  void clear_confidence() ;
-  const std::string& confidence() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_confidence(Arg_&& arg, Args_... args);
-  std::string* mutable_confidence();
-  PROTOBUF_NODISCARD std::string* release_confidence();
-  void set_allocated_confidence(std::string* value);
-
-  private:
-  const std::string& _internal_confidence() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_confidence(
-      const std::string& value);
-  std::string* _internal_mutable_confidence();
-
-  public:
-  // sint32 transform3DStatus = 1;
-  void clear_transform3dstatus() ;
-  ::int32_t transform3dstatus() const;
-  void set_transform3dstatus(::int32_t value);
-
-  private:
-  ::int32_t _internal_transform3dstatus() const;
-  void _internal_set_transform3dstatus(::int32_t value);
-
-  public:
-  // sint32 mappingStatus = 4;
-  void clear_mappingstatus() ;
-  ::int32_t mappingstatus() const;
-  void set_mappingstatus(::int32_t value);
-
-  private:
-  ::int32_t _internal_mappingstatus() const;
-  void _internal_set_mappingstatus(::int32_t value);
-
-  public:
-  // sint32 xpcfGrpcReturnValue = 5;
-  void clear_xpcfgrpcreturnvalue() ;
-  ::int32_t xpcfgrpcreturnvalue() const;
-  void set_xpcfgrpcreturnvalue(::int32_t value);
-
-  private:
-  ::int32_t _internal_xpcfgrpcreturnvalue() const;
-  void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      3, 5, 0,
-      0, 2>
-      _table_;
-
-  static constexpr const void* _raw_default_instance_ =
-      &_relocalizeProcessRequest_grpc0Response_default_instance_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from,
-                          const relocalizeProcessRequest_grpc0Response& from_msg);
-    ::google::protobuf::internal::ArenaStringPtr transform3d_;
-    ::google::protobuf::internal::ArenaStringPtr confidence_;
-    ::int32_t transform3dstatus_;
-    ::int32_t mappingstatus_;
-    ::int32_t xpcfgrpcreturnvalue_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
-};
-// -------------------------------------------------------------------
-
-class relocalizeProcessRequest_grpc0Request final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request) */ {
- public:
-  inline relocalizeProcessRequest_grpc0Request() : relocalizeProcessRequest_grpc0Request(nullptr) {}
-  ~relocalizeProcessRequest_grpc0Request() override;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR relocalizeProcessRequest_grpc0Request(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline relocalizeProcessRequest_grpc0Request(const relocalizeProcessRequest_grpc0Request& from) : relocalizeProcessRequest_grpc0Request(nullptr, from) {}
-  inline relocalizeProcessRequest_grpc0Request(relocalizeProcessRequest_grpc0Request&& from) noexcept
-      : relocalizeProcessRequest_grpc0Request(nullptr, std::move(from)) {}
-  inline relocalizeProcessRequest_grpc0Request& operator=(const relocalizeProcessRequest_grpc0Request& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline relocalizeProcessRequest_grpc0Request& operator=(relocalizeProcessRequest_grpc0Request&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const relocalizeProcessRequest_grpc0Request& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const relocalizeProcessRequest_grpc0Request* internal_default_instance() {
-    return reinterpret_cast<const relocalizeProcessRequest_grpc0Request*>(
-        &_relocalizeProcessRequest_grpc0Request_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 26;
-  friend void swap(relocalizeProcessRequest_grpc0Request& a, relocalizeProcessRequest_grpc0Request& b) { a.Swap(&b); }
-  inline void Swap(relocalizeProcessRequest_grpc0Request* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(relocalizeProcessRequest_grpc0Request* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  relocalizeProcessRequest_grpc0Request* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return ::google::protobuf::Message::DefaultConstruct<relocalizeProcessRequest_grpc0Request>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const relocalizeProcessRequest_grpc0Request& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const relocalizeProcessRequest_grpc0Request& from) { relocalizeProcessRequest_grpc0Request::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(relocalizeProcessRequest_grpc0Request* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.relocalizeProcessRequest_grpc0Request"; }
-
- protected:
-  explicit relocalizeProcessRequest_grpc0Request(::google::protobuf::Arena* arena);
-  relocalizeProcessRequest_grpc0Request(::google::protobuf::Arena* arena, const relocalizeProcessRequest_grpc0Request& from);
-  relocalizeProcessRequest_grpc0Request(::google::protobuf::Arena* arena, relocalizeProcessRequest_grpc0Request&& from) noexcept
-      : relocalizeProcessRequest_grpc0Request(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::Message::ClassData* GetClassData() const final;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kAccessTokenFieldNumber = 2,
-    kClientUUIDFieldNumber = 3,
-    kImagesFieldNumber = 4,
-    kPosesFieldNumber = 5,
-    kWorldTransformFieldNumber = 7,
-    kTimestampFieldNumber = 8,
-    kTransform3DFieldNumber = 10,
-    kConfidenceFieldNumber = 11,
-    kGrpcServerCompressionFormatFieldNumber = 1,
-    kFixedPoseFieldNumber = 6,
-    kTransform3DStatusFieldNumber = 9,
-    kMappingStatusFieldNumber = 12,
-  };
-  // string accessToken = 2;
-  void clear_accesstoken() ;
-  const std::string& accesstoken() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_accesstoken(Arg_&& arg, Args_... args);
-  std::string* mutable_accesstoken();
-  PROTOBUF_NODISCARD std::string* release_accesstoken();
-  void set_allocated_accesstoken(std::string* value);
-
-  private:
-  const std::string& _internal_accesstoken() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_accesstoken(
-      const std::string& value);
-  std::string* _internal_mutable_accesstoken();
-
-  public:
-  // string clientUUID = 3;
-  void clear_clientuuid() ;
-  const std::string& clientuuid() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_clientuuid(Arg_&& arg, Args_... args);
-  std::string* mutable_clientuuid();
-  PROTOBUF_NODISCARD std::string* release_clientuuid();
-  void set_allocated_clientuuid(std::string* value);
-
-  private:
-  const std::string& _internal_clientuuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(
-      const std::string& value);
-  std::string* _internal_mutable_clientuuid();
-
-  public:
-  // bytes images = 4;
-  void clear_images() ;
-  const std::string& images() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_images(Arg_&& arg, Args_... args);
-  std::string* mutable_images();
-  PROTOBUF_NODISCARD std::string* release_images();
-  void set_allocated_images(std::string* value);
-
-  private:
-  const std::string& _internal_images() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_images(
-      const std::string& value);
-  std::string* _internal_mutable_images();
-
-  public:
-  // bytes poses = 5;
-  void clear_poses() ;
-  const std::string& poses() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_poses(Arg_&& arg, Args_... args);
-  std::string* mutable_poses();
-  PROTOBUF_NODISCARD std::string* release_poses();
-  void set_allocated_poses(std::string* value);
-
-  private:
-  const std::string& _internal_poses() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_poses(
-      const std::string& value);
-  std::string* _internal_mutable_poses();
-
-  public:
-  // bytes worldTransform = 7;
-  void clear_worldtransform() ;
-  const std::string& worldtransform() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_worldtransform(Arg_&& arg, Args_... args);
-  std::string* mutable_worldtransform();
-  PROTOBUF_NODISCARD std::string* release_worldtransform();
-  void set_allocated_worldtransform(std::string* value);
-
-  private:
-  const std::string& _internal_worldtransform() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_worldtransform(
-      const std::string& value);
-  std::string* _internal_mutable_worldtransform();
-
-  public:
-  // bytes timestamp = 8;
-  void clear_timestamp() ;
-  const std::string& timestamp() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_timestamp(Arg_&& arg, Args_... args);
-  std::string* mutable_timestamp();
-  PROTOBUF_NODISCARD std::string* release_timestamp();
-  void set_allocated_timestamp(std::string* value);
-
-  private:
-  const std::string& _internal_timestamp() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_timestamp(
-      const std::string& value);
-  std::string* _internal_mutable_timestamp();
-
-  public:
-  // bytes transform3D = 10;
-  void clear_transform3d() ;
-  const std::string& transform3d() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_transform3d(Arg_&& arg, Args_... args);
-  std::string* mutable_transform3d();
-  PROTOBUF_NODISCARD std::string* release_transform3d();
-  void set_allocated_transform3d(std::string* value);
-
-  private:
-  const std::string& _internal_transform3d() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_transform3d(
-      const std::string& value);
-  std::string* _internal_mutable_transform3d();
-
-  public:
-  // bytes confidence = 11;
-  void clear_confidence() ;
-  const std::string& confidence() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_confidence(Arg_&& arg, Args_... args);
-  std::string* mutable_confidence();
-  PROTOBUF_NODISCARD std::string* release_confidence();
-  void set_allocated_confidence(std::string* value);
-
-  private:
-  const std::string& _internal_confidence() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_confidence(
-      const std::string& value);
-  std::string* _internal_mutable_confidence();
-
-  public:
-  // int32 grpcServerCompressionFormat = 1;
-  void clear_grpcservercompressionformat() ;
-  ::int32_t grpcservercompressionformat() const;
-  void set_grpcservercompressionformat(::int32_t value);
-
-  private:
-  ::int32_t _internal_grpcservercompressionformat() const;
-  void _internal_set_grpcservercompressionformat(::int32_t value);
-
-  public:
-  // bool fixedPose = 6;
-  void clear_fixedpose() ;
-  bool fixedpose() const;
-  void set_fixedpose(bool value);
-
-  private:
-  bool _internal_fixedpose() const;
-  void _internal_set_fixedpose(bool value);
-
-  public:
-  // sint32 transform3DStatus = 9;
-  void clear_transform3dstatus() ;
-  ::int32_t transform3dstatus() const;
-  void set_transform3dstatus(::int32_t value);
-
-  private:
-  ::int32_t _internal_transform3dstatus() const;
-  void _internal_set_transform3dstatus(::int32_t value);
-
-  public:
-  // sint32 mappingStatus = 12;
-  void clear_mappingstatus() ;
-  ::int32_t mappingstatus() const;
-  void set_mappingstatus(::int32_t value);
-
-  private:
-  ::int32_t _internal_mappingstatus() const;
-  void _internal_set_mappingstatus(::int32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      4, 12, 0,
-      89, 2>
-      _table_;
-
-  static constexpr const void* _raw_default_instance_ =
-      &_relocalizeProcessRequest_grpc0Request_default_instance_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from,
-                          const relocalizeProcessRequest_grpc0Request& from_msg);
-    ::google::protobuf::internal::ArenaStringPtr accesstoken_;
-    ::google::protobuf::internal::ArenaStringPtr clientuuid_;
-    ::google::protobuf::internal::ArenaStringPtr images_;
-    ::google::protobuf::internal::ArenaStringPtr poses_;
-    ::google::protobuf::internal::ArenaStringPtr worldtransform_;
-    ::google::protobuf::internal::ArenaStringPtr timestamp_;
-    ::google::protobuf::internal::ArenaStringPtr transform3d_;
-    ::google::protobuf::internal::ArenaStringPtr confidence_;
-    ::int32_t grpcservercompressionformat_;
-    bool fixedpose_;
-    ::int32_t transform3dstatus_;
-    ::int32_t mappingstatus_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -5800,6 +4594,624 @@ class init_grpc0Request final : public ::google::protobuf::Message
 };
 // -------------------------------------------------------------------
 
+class imageProcessRequestResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.imageProcessRequestResponse) */ {
+ public:
+  inline imageProcessRequestResponse() : imageProcessRequestResponse(nullptr) {}
+  ~imageProcessRequestResponse() override;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR imageProcessRequestResponse(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline imageProcessRequestResponse(const imageProcessRequestResponse& from) : imageProcessRequestResponse(nullptr, from) {}
+  inline imageProcessRequestResponse(imageProcessRequestResponse&& from) noexcept
+      : imageProcessRequestResponse(nullptr, std::move(from)) {}
+  inline imageProcessRequestResponse& operator=(const imageProcessRequestResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline imageProcessRequestResponse& operator=(imageProcessRequestResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const imageProcessRequestResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const imageProcessRequestResponse* internal_default_instance() {
+    return reinterpret_cast<const imageProcessRequestResponse*>(
+        &_imageProcessRequestResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 27;
+  friend void swap(imageProcessRequestResponse& a, imageProcessRequestResponse& b) { a.Swap(&b); }
+  inline void Swap(imageProcessRequestResponse* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(imageProcessRequestResponse* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  imageProcessRequestResponse* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<imageProcessRequestResponse>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const imageProcessRequestResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const imageProcessRequestResponse& from) { imageProcessRequestResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(imageProcessRequestResponse* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.imageProcessRequestResponse"; }
+
+ protected:
+  explicit imageProcessRequestResponse(::google::protobuf::Arena* arena);
+  imageProcessRequestResponse(::google::protobuf::Arena* arena, const imageProcessRequestResponse& from);
+  imageProcessRequestResponse(::google::protobuf::Arena* arena, imageProcessRequestResponse&& from) noexcept
+      : imageProcessRequestResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::Message::ClassData* GetClassData() const final;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kTransform3DFieldNumber = 2,
+    kConfidenceFieldNumber = 3,
+    kDetectedObjectsFieldNumber = 5,
+    kTransform3DStatusFieldNumber = 1,
+    kMappingStatusFieldNumber = 4,
+    kXpcfGrpcReturnValueFieldNumber = 6,
+  };
+  // bytes transform3D = 2;
+  void clear_transform3d() ;
+  const std::string& transform3d() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_transform3d(Arg_&& arg, Args_... args);
+  std::string* mutable_transform3d();
+  PROTOBUF_NODISCARD std::string* release_transform3d();
+  void set_allocated_transform3d(std::string* value);
+
+  private:
+  const std::string& _internal_transform3d() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_transform3d(
+      const std::string& value);
+  std::string* _internal_mutable_transform3d();
+
+  public:
+  // bytes confidence = 3;
+  void clear_confidence() ;
+  const std::string& confidence() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_confidence(Arg_&& arg, Args_... args);
+  std::string* mutable_confidence();
+  PROTOBUF_NODISCARD std::string* release_confidence();
+  void set_allocated_confidence(std::string* value);
+
+  private:
+  const std::string& _internal_confidence() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_confidence(
+      const std::string& value);
+  std::string* _internal_mutable_confidence();
+
+  public:
+  // bytes detectedObjects = 5;
+  void clear_detectedobjects() ;
+  const std::string& detectedobjects() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_detectedobjects(Arg_&& arg, Args_... args);
+  std::string* mutable_detectedobjects();
+  PROTOBUF_NODISCARD std::string* release_detectedobjects();
+  void set_allocated_detectedobjects(std::string* value);
+
+  private:
+  const std::string& _internal_detectedobjects() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_detectedobjects(
+      const std::string& value);
+  std::string* _internal_mutable_detectedobjects();
+
+  public:
+  // sint32 transform3DStatus = 1;
+  void clear_transform3dstatus() ;
+  ::int32_t transform3dstatus() const;
+  void set_transform3dstatus(::int32_t value);
+
+  private:
+  ::int32_t _internal_transform3dstatus() const;
+  void _internal_set_transform3dstatus(::int32_t value);
+
+  public:
+  // sint32 mappingStatus = 4;
+  void clear_mappingstatus() ;
+  ::int32_t mappingstatus() const;
+  void set_mappingstatus(::int32_t value);
+
+  private:
+  ::int32_t _internal_mappingstatus() const;
+  void _internal_set_mappingstatus(::int32_t value);
+
+  public:
+  // sint32 xpcfGrpcReturnValue = 6;
+  void clear_xpcfgrpcreturnvalue() ;
+  ::int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::int32_t value);
+
+  private:
+  ::int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.imageProcessRequestResponse)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      3, 6, 0,
+      0, 2>
+      _table_;
+
+  static constexpr const void* _raw_default_instance_ =
+      &_imageProcessRequestResponse_default_instance_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const imageProcessRequestResponse& from_msg);
+    ::google::protobuf::internal::ArenaStringPtr transform3d_;
+    ::google::protobuf::internal::ArenaStringPtr confidence_;
+    ::google::protobuf::internal::ArenaStringPtr detectedobjects_;
+    ::int32_t transform3dstatus_;
+    ::int32_t mappingstatus_;
+    ::int32_t xpcfgrpcreturnvalue_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class imageProcessRequestRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.imageProcessRequestRequest) */ {
+ public:
+  inline imageProcessRequestRequest() : imageProcessRequestRequest(nullptr) {}
+  ~imageProcessRequestRequest() override;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR imageProcessRequestRequest(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline imageProcessRequestRequest(const imageProcessRequestRequest& from) : imageProcessRequestRequest(nullptr, from) {}
+  inline imageProcessRequestRequest(imageProcessRequestRequest&& from) noexcept
+      : imageProcessRequestRequest(nullptr, std::move(from)) {}
+  inline imageProcessRequestRequest& operator=(const imageProcessRequestRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline imageProcessRequestRequest& operator=(imageProcessRequestRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const imageProcessRequestRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const imageProcessRequestRequest* internal_default_instance() {
+    return reinterpret_cast<const imageProcessRequestRequest*>(
+        &_imageProcessRequestRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 26;
+  friend void swap(imageProcessRequestRequest& a, imageProcessRequestRequest& b) { a.Swap(&b); }
+  inline void Swap(imageProcessRequestRequest* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(imageProcessRequestRequest* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  imageProcessRequestRequest* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<imageProcessRequestRequest>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const imageProcessRequestRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const imageProcessRequestRequest& from) { imageProcessRequestRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(imageProcessRequestRequest* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.imageProcessRequestRequest"; }
+
+ protected:
+  explicit imageProcessRequestRequest(::google::protobuf::Arena* arena);
+  imageProcessRequestRequest(::google::protobuf::Arena* arena, const imageProcessRequestRequest& from);
+  imageProcessRequestRequest(::google::protobuf::Arena* arena, imageProcessRequestRequest&& from) noexcept
+      : imageProcessRequestRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::Message::ClassData* GetClassData() const final;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kAccessTokenFieldNumber = 2,
+    kClientUUIDFieldNumber = 3,
+    kImagesFieldNumber = 4,
+    kPosesFieldNumber = 5,
+    kWorldTransformFieldNumber = 7,
+    kTimestampFieldNumber = 8,
+    kTransform3DFieldNumber = 10,
+    kConfidenceFieldNumber = 11,
+    kDetectedObjectsFieldNumber = 13,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kFixedPoseFieldNumber = 6,
+    kTransform3DStatusFieldNumber = 9,
+    kMappingStatusFieldNumber = 12,
+  };
+  // string accessToken = 2;
+  void clear_accesstoken() ;
+  const std::string& accesstoken() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_accesstoken(Arg_&& arg, Args_... args);
+  std::string* mutable_accesstoken();
+  PROTOBUF_NODISCARD std::string* release_accesstoken();
+  void set_allocated_accesstoken(std::string* value);
+
+  private:
+  const std::string& _internal_accesstoken() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_accesstoken(
+      const std::string& value);
+  std::string* _internal_mutable_accesstoken();
+
+  public:
+  // string clientUUID = 3;
+  void clear_clientuuid() ;
+  const std::string& clientuuid() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_clientuuid(Arg_&& arg, Args_... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* value);
+
+  private:
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(
+      const std::string& value);
+  std::string* _internal_mutable_clientuuid();
+
+  public:
+  // bytes images = 4;
+  void clear_images() ;
+  const std::string& images() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_images(Arg_&& arg, Args_... args);
+  std::string* mutable_images();
+  PROTOBUF_NODISCARD std::string* release_images();
+  void set_allocated_images(std::string* value);
+
+  private:
+  const std::string& _internal_images() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_images(
+      const std::string& value);
+  std::string* _internal_mutable_images();
+
+  public:
+  // bytes poses = 5;
+  void clear_poses() ;
+  const std::string& poses() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_poses(Arg_&& arg, Args_... args);
+  std::string* mutable_poses();
+  PROTOBUF_NODISCARD std::string* release_poses();
+  void set_allocated_poses(std::string* value);
+
+  private:
+  const std::string& _internal_poses() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_poses(
+      const std::string& value);
+  std::string* _internal_mutable_poses();
+
+  public:
+  // bytes worldTransform = 7;
+  void clear_worldtransform() ;
+  const std::string& worldtransform() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_worldtransform(Arg_&& arg, Args_... args);
+  std::string* mutable_worldtransform();
+  PROTOBUF_NODISCARD std::string* release_worldtransform();
+  void set_allocated_worldtransform(std::string* value);
+
+  private:
+  const std::string& _internal_worldtransform() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_worldtransform(
+      const std::string& value);
+  std::string* _internal_mutable_worldtransform();
+
+  public:
+  // bytes timestamp = 8;
+  void clear_timestamp() ;
+  const std::string& timestamp() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_timestamp(Arg_&& arg, Args_... args);
+  std::string* mutable_timestamp();
+  PROTOBUF_NODISCARD std::string* release_timestamp();
+  void set_allocated_timestamp(std::string* value);
+
+  private:
+  const std::string& _internal_timestamp() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_timestamp(
+      const std::string& value);
+  std::string* _internal_mutable_timestamp();
+
+  public:
+  // bytes transform3D = 10;
+  void clear_transform3d() ;
+  const std::string& transform3d() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_transform3d(Arg_&& arg, Args_... args);
+  std::string* mutable_transform3d();
+  PROTOBUF_NODISCARD std::string* release_transform3d();
+  void set_allocated_transform3d(std::string* value);
+
+  private:
+  const std::string& _internal_transform3d() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_transform3d(
+      const std::string& value);
+  std::string* _internal_mutable_transform3d();
+
+  public:
+  // bytes confidence = 11;
+  void clear_confidence() ;
+  const std::string& confidence() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_confidence(Arg_&& arg, Args_... args);
+  std::string* mutable_confidence();
+  PROTOBUF_NODISCARD std::string* release_confidence();
+  void set_allocated_confidence(std::string* value);
+
+  private:
+  const std::string& _internal_confidence() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_confidence(
+      const std::string& value);
+  std::string* _internal_mutable_confidence();
+
+  public:
+  // bytes detectedObjects = 13;
+  void clear_detectedobjects() ;
+  const std::string& detectedobjects() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_detectedobjects(Arg_&& arg, Args_... args);
+  std::string* mutable_detectedobjects();
+  PROTOBUF_NODISCARD std::string* release_detectedobjects();
+  void set_allocated_detectedobjects(std::string* value);
+
+  private:
+  const std::string& _internal_detectedobjects() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_detectedobjects(
+      const std::string& value);
+  std::string* _internal_mutable_detectedobjects();
+
+  public:
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat() ;
+  ::int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::int32_t value);
+
+  private:
+  ::int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::int32_t value);
+
+  public:
+  // bool fixedPose = 6;
+  void clear_fixedpose() ;
+  bool fixedpose() const;
+  void set_fixedpose(bool value);
+
+  private:
+  bool _internal_fixedpose() const;
+  void _internal_set_fixedpose(bool value);
+
+  public:
+  // sint32 transform3DStatus = 9;
+  void clear_transform3dstatus() ;
+  ::int32_t transform3dstatus() const;
+  void set_transform3dstatus(::int32_t value);
+
+  private:
+  ::int32_t _internal_transform3dstatus() const;
+  void _internal_set_transform3dstatus(::int32_t value);
+
+  public:
+  // sint32 mappingStatus = 12;
+  void clear_mappingstatus() ;
+  ::int32_t mappingstatus() const;
+  void set_mappingstatus(::int32_t value);
+
+  private:
+  ::int32_t _internal_mappingstatus() const;
+  void _internal_set_mappingstatus(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.imageProcessRequestRequest)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      4, 13, 0,
+      78, 2>
+      _table_;
+
+  static constexpr const void* _raw_default_instance_ =
+      &_imageProcessRequestRequest_default_instance_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const imageProcessRequestRequest& from_msg);
+    ::google::protobuf::internal::ArenaStringPtr accesstoken_;
+    ::google::protobuf::internal::ArenaStringPtr clientuuid_;
+    ::google::protobuf::internal::ArenaStringPtr images_;
+    ::google::protobuf::internal::ArenaStringPtr poses_;
+    ::google::protobuf::internal::ArenaStringPtr worldtransform_;
+    ::google::protobuf::internal::ArenaStringPtr timestamp_;
+    ::google::protobuf::internal::ArenaStringPtr transform3d_;
+    ::google::protobuf::internal::ArenaStringPtr confidence_;
+    ::google::protobuf::internal::ArenaStringPtr detectedobjects_;
+    ::int32_t grpcservercompressionformat_;
+    bool fixedpose_;
+    ::int32_t transform3dstatus_;
+    ::int32_t mappingstatus_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getProcessingModeResponse final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.getProcessingModeResponse) */ {
  public:
@@ -6257,7 +5669,7 @@ class getPointCloudRequestResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const getPointCloudRequestResponse*>(
         &_getPointCloudRequestResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 49;
+  static constexpr int kIndexInFileMessages = 47;
   friend void swap(getPointCloudRequestResponse& a, getPointCloudRequestResponse& b) { a.Swap(&b); }
   inline void Swap(getPointCloudRequestResponse* other) {
     if (other == this) return;
@@ -6446,7 +5858,7 @@ class getPointCloudRequestRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const getPointCloudRequestRequest*>(
         &_getPointCloudRequestRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 48;
+  static constexpr int kIndexInFileMessages = 46;
   friend void swap(getPointCloudRequestRequest& a, getPointCloudRequestRequest& b) { a.Swap(&b); }
   inline void Swap(getPointCloudRequestRequest* other) {
     if (other == this) return;
@@ -6671,7 +6083,7 @@ class getMappingDataRequestResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const getMappingDataRequestResponse*>(
         &_getMappingDataRequestResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 33;
+  static constexpr int kIndexInFileMessages = 29;
   friend void swap(getMappingDataRequestResponse& a, getMappingDataRequestResponse& b) { a.Swap(&b); }
   inline void Swap(getMappingDataRequestResponse* other) {
     if (other == this) return;
@@ -6878,7 +6290,7 @@ class getMappingDataRequestRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const getMappingDataRequestRequest*>(
         &_getMappingDataRequestRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 32;
+  static constexpr int kIndexInFileMessages = 28;
   friend void swap(getMappingDataRequestRequest& a, getMappingDataRequestRequest& b) { a.Swap(&b); }
   inline void Swap(getMappingDataRequestRequest* other) {
     if (other == this) return;
@@ -7121,7 +6533,7 @@ class getMapRequestResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const getMapRequestResponse*>(
         &_getMapRequestResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 45;
+  static constexpr int kIndexInFileMessages = 43;
   friend void swap(getMapRequestResponse& a, getMapRequestResponse& b) { a.Swap(&b); }
   inline void Swap(getMapRequestResponse* other) {
     if (other == this) return;
@@ -7310,7 +6722,7 @@ class getMapRequestRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const getMapRequestRequest*>(
         &_getMapRequestRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 44;
+  static constexpr int kIndexInFileMessages = 42;
   friend void swap(getMapRequestRequest& a, getMapRequestRequest& b) { a.Swap(&b); }
   inline void Swap(getMapRequestRequest* other) {
     if (other == this) return;
@@ -7381,8 +6793,9 @@ class getMapRequestRequest final : public ::google::protobuf::Message
   enum : int {
     kAccessTokenFieldNumber = 2,
     kMapUUIDFieldNumber = 3,
-    kMapDatastructureFieldNumber = 4,
+    kMapDatastructureFieldNumber = 5,
     kGrpcServerCompressionFormatFieldNumber = 1,
+    kKeyframeImagesOptionFieldNumber = 4,
   };
   // string accessToken = 2;
   void clear_accesstoken() ;
@@ -7416,7 +6829,7 @@ class getMapRequestRequest final : public ::google::protobuf::Message
   std::string* _internal_mutable_mapuuid();
 
   public:
-  // bytes mapDatastructure = 4;
+  // bytes mapDatastructure = 5;
   void clear_mapdatastructure() ;
   const std::string& mapdatastructure() const;
   template <typename Arg_ = const std::string&, typename... Args_>
@@ -7442,12 +6855,22 @@ class getMapRequestRequest final : public ::google::protobuf::Message
   void _internal_set_grpcservercompressionformat(::int32_t value);
 
   public:
+  // sint32 keyframeImagesOption = 4;
+  void clear_keyframeimagesoption() ;
+  ::int32_t keyframeimagesoption() const;
+  void set_keyframeimagesoption(::int32_t value);
+
+  private:
+  ::int32_t _internal_keyframeimagesoption() const;
+  void _internal_set_keyframeimagesoption(::int32_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getMapRequestRequest)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      2, 4, 0,
+      3, 5, 0,
       61, 2>
       _table_;
 
@@ -7472,6 +6895,7 @@ class getMapRequestRequest final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr mapuuid_;
     ::google::protobuf::internal::ArenaStringPtr mapdatastructure_;
     ::int32_t grpcservercompressionformat_;
+    ::int32_t keyframeimagesoption_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -7535,7 +6959,7 @@ class getMapProcessingStatusResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const getMapProcessingStatusResponse*>(
         &_getMapProcessingStatusResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 55;
+  static constexpr int kIndexInFileMessages = 53;
   friend void swap(getMapProcessingStatusResponse& a, getMapProcessingStatusResponse& b) { a.Swap(&b); }
   inline void Swap(getMapProcessingStatusResponse* other) {
     if (other == this) return;
@@ -7730,7 +7154,7 @@ class getMapProcessingStatusRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const getMapProcessingStatusRequest*>(
         &_getMapProcessingStatusRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 54;
+  static constexpr int kIndexInFileMessages = 52;
   friend void swap(getMapProcessingStatusRequest& a, getMapProcessingStatusRequest& b) { a.Swap(&b); }
   inline void Swap(getMapProcessingStatusRequest* other) {
     if (other == this) return;
@@ -7961,7 +7385,7 @@ class getMapProcessingDataResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const getMapProcessingDataResponse*>(
         &_getMapProcessingDataResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 57;
+  static constexpr int kIndexInFileMessages = 55;
   friend void swap(getMapProcessingDataResponse& a, getMapProcessingDataResponse& b) { a.Swap(&b); }
   inline void Swap(getMapProcessingDataResponse* other) {
     if (other == this) return;
@@ -8168,7 +7592,7 @@ class getMapProcessingDataRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const getMapProcessingDataRequest*>(
         &_getMapProcessingDataRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 56;
+  static constexpr int kIndexInFileMessages = 54;
   friend void swap(getMapProcessingDataRequest& a, getMapProcessingDataRequest& b) { a.Swap(&b); }
   inline void Swap(getMapProcessingDataRequest* other) {
     if (other == this) return;
@@ -8411,7 +7835,7 @@ class getMapInfoResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const getMapInfoResponse*>(
         &_getMapInfoResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 51;
+  static constexpr int kIndexInFileMessages = 49;
   friend void swap(getMapInfoResponse& a, getMapInfoResponse& b) { a.Swap(&b); }
   inline void Swap(getMapInfoResponse* other) {
     if (other == this) return;
@@ -8630,7 +8054,7 @@ class getMapInfoRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const getMapInfoRequest*>(
         &_getMapInfoRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 50;
+  static constexpr int kIndexInFileMessages = 48;
   friend void swap(getMapInfoRequest& a, getMapInfoRequest& b) { a.Swap(&b); }
   inline void Swap(getMapInfoRequest* other) {
     if (other == this) return;
@@ -8822,432 +8246,6 @@ class getMapInfoRequest final : public ::google::protobuf::Message
     ::uint32_t mapsupportedtypes_;
     ::uint32_t datasize_;
     bool areimagesaved_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
-};
-// -------------------------------------------------------------------
-
-class getLastPoseResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.getLastPoseResponse) */ {
- public:
-  inline getLastPoseResponse() : getLastPoseResponse(nullptr) {}
-  ~getLastPoseResponse() override;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR getLastPoseResponse(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline getLastPoseResponse(const getLastPoseResponse& from) : getLastPoseResponse(nullptr, from) {}
-  inline getLastPoseResponse(getLastPoseResponse&& from) noexcept
-      : getLastPoseResponse(nullptr, std::move(from)) {}
-  inline getLastPoseResponse& operator=(const getLastPoseResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline getLastPoseResponse& operator=(getLastPoseResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const getLastPoseResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const getLastPoseResponse* internal_default_instance() {
-    return reinterpret_cast<const getLastPoseResponse*>(
-        &_getLastPoseResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 35;
-  friend void swap(getLastPoseResponse& a, getLastPoseResponse& b) { a.Swap(&b); }
-  inline void Swap(getLastPoseResponse* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(getLastPoseResponse* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  getLastPoseResponse* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return ::google::protobuf::Message::DefaultConstruct<getLastPoseResponse>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const getLastPoseResponse& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const getLastPoseResponse& from) { getLastPoseResponse::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(getLastPoseResponse* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.getLastPoseResponse"; }
-
- protected:
-  explicit getLastPoseResponse(::google::protobuf::Arena* arena);
-  getLastPoseResponse(::google::protobuf::Arena* arena, const getLastPoseResponse& from);
-  getLastPoseResponse(::google::protobuf::Arena* arena, getLastPoseResponse&& from) noexcept
-      : getLastPoseResponse(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::Message::ClassData* GetClassData() const final;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kPoseFieldNumber = 1,
-    kXpcfGrpcReturnValueFieldNumber = 2,
-  };
-  // bytes pose = 1;
-  void clear_pose() ;
-  const std::string& pose() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_pose(Arg_&& arg, Args_... args);
-  std::string* mutable_pose();
-  PROTOBUF_NODISCARD std::string* release_pose();
-  void set_allocated_pose(std::string* value);
-
-  private:
-  const std::string& _internal_pose() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_pose(
-      const std::string& value);
-  std::string* _internal_mutable_pose();
-
-  public:
-  // sint32 xpcfGrpcReturnValue = 2;
-  void clear_xpcfgrpcreturnvalue() ;
-  ::int32_t xpcfgrpcreturnvalue() const;
-  void set_xpcfgrpcreturnvalue(::int32_t value);
-
-  private:
-  ::int32_t _internal_xpcfgrpcreturnvalue() const;
-  void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getLastPoseResponse)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      1, 2, 0,
-      0, 2>
-      _table_;
-
-  static constexpr const void* _raw_default_instance_ =
-      &_getLastPoseResponse_default_instance_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from,
-                          const getLastPoseResponse& from_msg);
-    ::google::protobuf::internal::ArenaStringPtr pose_;
-    ::int32_t xpcfgrpcreturnvalue_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
-};
-// -------------------------------------------------------------------
-
-class getLastPoseRequest final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.getLastPoseRequest) */ {
- public:
-  inline getLastPoseRequest() : getLastPoseRequest(nullptr) {}
-  ~getLastPoseRequest() override;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR getLastPoseRequest(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline getLastPoseRequest(const getLastPoseRequest& from) : getLastPoseRequest(nullptr, from) {}
-  inline getLastPoseRequest(getLastPoseRequest&& from) noexcept
-      : getLastPoseRequest(nullptr, std::move(from)) {}
-  inline getLastPoseRequest& operator=(const getLastPoseRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline getLastPoseRequest& operator=(getLastPoseRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const getLastPoseRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const getLastPoseRequest* internal_default_instance() {
-    return reinterpret_cast<const getLastPoseRequest*>(
-        &_getLastPoseRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 34;
-  friend void swap(getLastPoseRequest& a, getLastPoseRequest& b) { a.Swap(&b); }
-  inline void Swap(getLastPoseRequest* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(getLastPoseRequest* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  getLastPoseRequest* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return ::google::protobuf::Message::DefaultConstruct<getLastPoseRequest>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const getLastPoseRequest& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const getLastPoseRequest& from) { getLastPoseRequest::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(getLastPoseRequest* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.getLastPoseRequest"; }
-
- protected:
-  explicit getLastPoseRequest(::google::protobuf::Arena* arena);
-  getLastPoseRequest(::google::protobuf::Arena* arena, const getLastPoseRequest& from);
-  getLastPoseRequest(::google::protobuf::Arena* arena, getLastPoseRequest&& from) noexcept
-      : getLastPoseRequest(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::Message::ClassData* GetClassData() const final;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kAccessTokenFieldNumber = 2,
-    kClientUUIDFieldNumber = 3,
-    kPoseFieldNumber = 5,
-    kGrpcServerCompressionFormatFieldNumber = 1,
-    kPoseTypeFieldNumber = 4,
-  };
-  // string accessToken = 2;
-  void clear_accesstoken() ;
-  const std::string& accesstoken() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_accesstoken(Arg_&& arg, Args_... args);
-  std::string* mutable_accesstoken();
-  PROTOBUF_NODISCARD std::string* release_accesstoken();
-  void set_allocated_accesstoken(std::string* value);
-
-  private:
-  const std::string& _internal_accesstoken() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_accesstoken(
-      const std::string& value);
-  std::string* _internal_mutable_accesstoken();
-
-  public:
-  // string clientUUID = 3;
-  void clear_clientuuid() ;
-  const std::string& clientuuid() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_clientuuid(Arg_&& arg, Args_... args);
-  std::string* mutable_clientuuid();
-  PROTOBUF_NODISCARD std::string* release_clientuuid();
-  void set_allocated_clientuuid(std::string* value);
-
-  private:
-  const std::string& _internal_clientuuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(
-      const std::string& value);
-  std::string* _internal_mutable_clientuuid();
-
-  public:
-  // bytes pose = 5;
-  void clear_pose() ;
-  const std::string& pose() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_pose(Arg_&& arg, Args_... args);
-  std::string* mutable_pose();
-  PROTOBUF_NODISCARD std::string* release_pose();
-  void set_allocated_pose(std::string* value);
-
-  private:
-  const std::string& _internal_pose() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_pose(
-      const std::string& value);
-  std::string* _internal_mutable_pose();
-
-  public:
-  // int32 grpcServerCompressionFormat = 1;
-  void clear_grpcservercompressionformat() ;
-  ::int32_t grpcservercompressionformat() const;
-  void set_grpcservercompressionformat(::int32_t value);
-
-  private:
-  ::int32_t _internal_grpcservercompressionformat() const;
-  void _internal_set_grpcservercompressionformat(::int32_t value);
-
-  public:
-  // sint32 poseType = 4;
-  void clear_posetype() ;
-  ::int32_t posetype() const;
-  void set_posetype(::int32_t value);
-
-  private:
-  ::int32_t _internal_posetype() const;
-  void _internal_set_posetype(::int32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getLastPoseRequest)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      3, 5, 0,
-      62, 2>
-      _table_;
-
-  static constexpr const void* _raw_default_instance_ =
-      &_getLastPoseRequest_default_instance_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from,
-                          const getLastPoseRequest& from_msg);
-    ::google::protobuf::internal::ArenaStringPtr accesstoken_;
-    ::google::protobuf::internal::ArenaStringPtr clientuuid_;
-    ::google::protobuf::internal::ArenaStringPtr pose_;
-    ::int32_t grpcservercompressionformat_;
-    ::int32_t posetype_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -9670,6 +8668,528 @@ class getDeviceInfoRequest final : public ::google::protobuf::Message
 };
 // -------------------------------------------------------------------
 
+class getClientPoseResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.getClientPoseResponse) */ {
+ public:
+  inline getClientPoseResponse() : getClientPoseResponse(nullptr) {}
+  ~getClientPoseResponse() override;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR getClientPoseResponse(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline getClientPoseResponse(const getClientPoseResponse& from) : getClientPoseResponse(nullptr, from) {}
+  inline getClientPoseResponse(getClientPoseResponse&& from) noexcept
+      : getClientPoseResponse(nullptr, std::move(from)) {}
+  inline getClientPoseResponse& operator=(const getClientPoseResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getClientPoseResponse& operator=(getClientPoseResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const getClientPoseResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getClientPoseResponse* internal_default_instance() {
+    return reinterpret_cast<const getClientPoseResponse*>(
+        &_getClientPoseResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 31;
+  friend void swap(getClientPoseResponse& a, getClientPoseResponse& b) { a.Swap(&b); }
+  inline void Swap(getClientPoseResponse* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getClientPoseResponse* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  getClientPoseResponse* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<getClientPoseResponse>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const getClientPoseResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const getClientPoseResponse& from) { getClientPoseResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(getClientPoseResponse* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.getClientPoseResponse"; }
+
+ protected:
+  explicit getClientPoseResponse(::google::protobuf::Arena* arena);
+  getClientPoseResponse(::google::protobuf::Arena* arena, const getClientPoseResponse& from);
+  getClientPoseResponse(::google::protobuf::Arena* arena, getClientPoseResponse&& from) noexcept
+      : getClientPoseResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::Message::ClassData* GetClassData() const final;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kTransform3DFieldNumber = 2,
+    kConfidenceFieldNumber = 3,
+    kPoseFieldNumber = 4,
+    kTransform3DStatusFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 5,
+  };
+  // bytes transform3D = 2;
+  void clear_transform3d() ;
+  const std::string& transform3d() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_transform3d(Arg_&& arg, Args_... args);
+  std::string* mutable_transform3d();
+  PROTOBUF_NODISCARD std::string* release_transform3d();
+  void set_allocated_transform3d(std::string* value);
+
+  private:
+  const std::string& _internal_transform3d() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_transform3d(
+      const std::string& value);
+  std::string* _internal_mutable_transform3d();
+
+  public:
+  // bytes confidence = 3;
+  void clear_confidence() ;
+  const std::string& confidence() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_confidence(Arg_&& arg, Args_... args);
+  std::string* mutable_confidence();
+  PROTOBUF_NODISCARD std::string* release_confidence();
+  void set_allocated_confidence(std::string* value);
+
+  private:
+  const std::string& _internal_confidence() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_confidence(
+      const std::string& value);
+  std::string* _internal_mutable_confidence();
+
+  public:
+  // bytes pose = 4;
+  void clear_pose() ;
+  const std::string& pose() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_pose(Arg_&& arg, Args_... args);
+  std::string* mutable_pose();
+  PROTOBUF_NODISCARD std::string* release_pose();
+  void set_allocated_pose(std::string* value);
+
+  private:
+  const std::string& _internal_pose() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_pose(
+      const std::string& value);
+  std::string* _internal_mutable_pose();
+
+  public:
+  // sint32 transform3DStatus = 1;
+  void clear_transform3dstatus() ;
+  ::int32_t transform3dstatus() const;
+  void set_transform3dstatus(::int32_t value);
+
+  private:
+  ::int32_t _internal_transform3dstatus() const;
+  void _internal_set_transform3dstatus(::int32_t value);
+
+  public:
+  // sint32 xpcfGrpcReturnValue = 5;
+  void clear_xpcfgrpcreturnvalue() ;
+  ::int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::int32_t value);
+
+  private:
+  ::int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getClientPoseResponse)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      3, 5, 0,
+      0, 2>
+      _table_;
+
+  static constexpr const void* _raw_default_instance_ =
+      &_getClientPoseResponse_default_instance_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const getClientPoseResponse& from_msg);
+    ::google::protobuf::internal::ArenaStringPtr transform3d_;
+    ::google::protobuf::internal::ArenaStringPtr confidence_;
+    ::google::protobuf::internal::ArenaStringPtr pose_;
+    ::int32_t transform3dstatus_;
+    ::int32_t xpcfgrpcreturnvalue_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getClientPoseRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.getClientPoseRequest) */ {
+ public:
+  inline getClientPoseRequest() : getClientPoseRequest(nullptr) {}
+  ~getClientPoseRequest() override;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR getClientPoseRequest(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline getClientPoseRequest(const getClientPoseRequest& from) : getClientPoseRequest(nullptr, from) {}
+  inline getClientPoseRequest(getClientPoseRequest&& from) noexcept
+      : getClientPoseRequest(nullptr, std::move(from)) {}
+  inline getClientPoseRequest& operator=(const getClientPoseRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getClientPoseRequest& operator=(getClientPoseRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const getClientPoseRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getClientPoseRequest* internal_default_instance() {
+    return reinterpret_cast<const getClientPoseRequest*>(
+        &_getClientPoseRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 30;
+  friend void swap(getClientPoseRequest& a, getClientPoseRequest& b) { a.Swap(&b); }
+  inline void Swap(getClientPoseRequest* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getClientPoseRequest* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  getClientPoseRequest* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<getClientPoseRequest>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const getClientPoseRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const getClientPoseRequest& from) { getClientPoseRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(getClientPoseRequest* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.getClientPoseRequest"; }
+
+ protected:
+  explicit getClientPoseRequest(::google::protobuf::Arena* arena);
+  getClientPoseRequest(::google::protobuf::Arena* arena, const getClientPoseRequest& from);
+  getClientPoseRequest(::google::protobuf::Arena* arena, getClientPoseRequest&& from) noexcept
+      : getClientPoseRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::Message::ClassData* GetClassData() const final;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kAccessTokenFieldNumber = 2,
+    kClientUUIDFieldNumber = 3,
+    kTransform3DFieldNumber = 6,
+    kConfidenceFieldNumber = 7,
+    kPoseFieldNumber = 8,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kPoseTypeFieldNumber = 4,
+    kTransform3DStatusFieldNumber = 5,
+  };
+  // string accessToken = 2;
+  void clear_accesstoken() ;
+  const std::string& accesstoken() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_accesstoken(Arg_&& arg, Args_... args);
+  std::string* mutable_accesstoken();
+  PROTOBUF_NODISCARD std::string* release_accesstoken();
+  void set_allocated_accesstoken(std::string* value);
+
+  private:
+  const std::string& _internal_accesstoken() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_accesstoken(
+      const std::string& value);
+  std::string* _internal_mutable_accesstoken();
+
+  public:
+  // string clientUUID = 3;
+  void clear_clientuuid() ;
+  const std::string& clientuuid() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_clientuuid(Arg_&& arg, Args_... args);
+  std::string* mutable_clientuuid();
+  PROTOBUF_NODISCARD std::string* release_clientuuid();
+  void set_allocated_clientuuid(std::string* value);
+
+  private:
+  const std::string& _internal_clientuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(
+      const std::string& value);
+  std::string* _internal_mutable_clientuuid();
+
+  public:
+  // bytes transform3D = 6;
+  void clear_transform3d() ;
+  const std::string& transform3d() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_transform3d(Arg_&& arg, Args_... args);
+  std::string* mutable_transform3d();
+  PROTOBUF_NODISCARD std::string* release_transform3d();
+  void set_allocated_transform3d(std::string* value);
+
+  private:
+  const std::string& _internal_transform3d() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_transform3d(
+      const std::string& value);
+  std::string* _internal_mutable_transform3d();
+
+  public:
+  // bytes confidence = 7;
+  void clear_confidence() ;
+  const std::string& confidence() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_confidence(Arg_&& arg, Args_... args);
+  std::string* mutable_confidence();
+  PROTOBUF_NODISCARD std::string* release_confidence();
+  void set_allocated_confidence(std::string* value);
+
+  private:
+  const std::string& _internal_confidence() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_confidence(
+      const std::string& value);
+  std::string* _internal_mutable_confidence();
+
+  public:
+  // bytes pose = 8;
+  void clear_pose() ;
+  const std::string& pose() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_pose(Arg_&& arg, Args_... args);
+  std::string* mutable_pose();
+  PROTOBUF_NODISCARD std::string* release_pose();
+  void set_allocated_pose(std::string* value);
+
+  private:
+  const std::string& _internal_pose() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_pose(
+      const std::string& value);
+  std::string* _internal_mutable_pose();
+
+  public:
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat() ;
+  ::int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::int32_t value);
+
+  private:
+  ::int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::int32_t value);
+
+  public:
+  // sint32 poseType = 4;
+  void clear_posetype() ;
+  ::int32_t posetype() const;
+  void set_posetype(::int32_t value);
+
+  private:
+  ::int32_t _internal_posetype() const;
+  void _internal_set_posetype(::int32_t value);
+
+  public:
+  // sint32 transform3DStatus = 5;
+  void clear_transform3dstatus() ;
+  ::int32_t transform3dstatus() const;
+  void set_transform3dstatus(::int32_t value);
+
+  private:
+  ::int32_t _internal_transform3dstatus() const;
+  void _internal_set_transform3dstatus(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getClientPoseRequest)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      3, 8, 0,
+      72, 2>
+      _table_;
+
+  static constexpr const void* _raw_default_instance_ =
+      &_getClientPoseRequest_default_instance_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const getClientPoseRequest& from_msg);
+    ::google::protobuf::internal::ArenaStringPtr accesstoken_;
+    ::google::protobuf::internal::ArenaStringPtr clientuuid_;
+    ::google::protobuf::internal::ArenaStringPtr transform3d_;
+    ::google::protobuf::internal::ArenaStringPtr confidence_;
+    ::google::protobuf::internal::ArenaStringPtr pose_;
+    ::int32_t grpcservercompressionformat_;
+    ::int32_t posetype_;
+    ::int32_t transform3dstatus_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class getClientMapUUIDResponse final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.getClientMapUUIDResponse) */ {
  public:
@@ -9725,7 +9245,7 @@ class getClientMapUUIDResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const getClientMapUUIDResponse*>(
         &_getClientMapUUIDResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 43;
+  static constexpr int kIndexInFileMessages = 39;
   friend void swap(getClientMapUUIDResponse& a, getClientMapUUIDResponse& b) { a.Swap(&b); }
   inline void Swap(getClientMapUUIDResponse* other) {
     if (other == this) return;
@@ -9914,7 +9434,7 @@ class getClientMapUUIDRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const getClientMapUUIDRequest*>(
         &_getClientMapUUIDRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 42;
+  static constexpr int kIndexInFileMessages = 38;
   friend void swap(getClientMapUUIDRequest& a, getClientMapUUIDRequest& b) { a.Swap(&b); }
   inline void Swap(getClientMapUUIDRequest* other) {
     if (other == this) return;
@@ -10075,6 +9595,420 @@ class getClientMapUUIDRequest final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr accesstoken_;
     ::google::protobuf::internal::ArenaStringPtr clientuuid_;
     ::google::protobuf::internal::ArenaStringPtr mapuuid_;
+    ::int32_t grpcservercompressionformat_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getClientInfoForMapResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.getClientInfoForMapResponse) */ {
+ public:
+  inline getClientInfoForMapResponse() : getClientInfoForMapResponse(nullptr) {}
+  ~getClientInfoForMapResponse() override;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR getClientInfoForMapResponse(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline getClientInfoForMapResponse(const getClientInfoForMapResponse& from) : getClientInfoForMapResponse(nullptr, from) {}
+  inline getClientInfoForMapResponse(getClientInfoForMapResponse&& from) noexcept
+      : getClientInfoForMapResponse(nullptr, std::move(from)) {}
+  inline getClientInfoForMapResponse& operator=(const getClientInfoForMapResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getClientInfoForMapResponse& operator=(getClientInfoForMapResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const getClientInfoForMapResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getClientInfoForMapResponse* internal_default_instance() {
+    return reinterpret_cast<const getClientInfoForMapResponse*>(
+        &_getClientInfoForMapResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 41;
+  friend void swap(getClientInfoForMapResponse& a, getClientInfoForMapResponse& b) { a.Swap(&b); }
+  inline void Swap(getClientInfoForMapResponse* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getClientInfoForMapResponse* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  getClientInfoForMapResponse* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<getClientInfoForMapResponse>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const getClientInfoForMapResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const getClientInfoForMapResponse& from) { getClientInfoForMapResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(getClientInfoForMapResponse* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.getClientInfoForMapResponse"; }
+
+ protected:
+  explicit getClientInfoForMapResponse(::google::protobuf::Arena* arena);
+  getClientInfoForMapResponse(::google::protobuf::Arena* arena, const getClientInfoForMapResponse& from);
+  getClientInfoForMapResponse(::google::protobuf::Arena* arena, getClientInfoForMapResponse&& from) noexcept
+      : getClientInfoForMapResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::Message::ClassData* GetClassData() const final;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kClientInfoListFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
+  };
+  // bytes clientInfoList = 1;
+  void clear_clientinfolist() ;
+  const std::string& clientinfolist() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_clientinfolist(Arg_&& arg, Args_... args);
+  std::string* mutable_clientinfolist();
+  PROTOBUF_NODISCARD std::string* release_clientinfolist();
+  void set_allocated_clientinfolist(std::string* value);
+
+  private:
+  const std::string& _internal_clientinfolist() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientinfolist(
+      const std::string& value);
+  std::string* _internal_mutable_clientinfolist();
+
+  public:
+  // sint32 xpcfGrpcReturnValue = 2;
+  void clear_xpcfgrpcreturnvalue() ;
+  ::int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::int32_t value);
+
+  private:
+  ::int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getClientInfoForMapResponse)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      1, 2, 0,
+      0, 2>
+      _table_;
+
+  static constexpr const void* _raw_default_instance_ =
+      &_getClientInfoForMapResponse_default_instance_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const getClientInfoForMapResponse& from_msg);
+    ::google::protobuf::internal::ArenaStringPtr clientinfolist_;
+    ::int32_t xpcfgrpcreturnvalue_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class getClientInfoForMapRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.getClientInfoForMapRequest) */ {
+ public:
+  inline getClientInfoForMapRequest() : getClientInfoForMapRequest(nullptr) {}
+  ~getClientInfoForMapRequest() override;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR getClientInfoForMapRequest(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline getClientInfoForMapRequest(const getClientInfoForMapRequest& from) : getClientInfoForMapRequest(nullptr, from) {}
+  inline getClientInfoForMapRequest(getClientInfoForMapRequest&& from) noexcept
+      : getClientInfoForMapRequest(nullptr, std::move(from)) {}
+  inline getClientInfoForMapRequest& operator=(const getClientInfoForMapRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getClientInfoForMapRequest& operator=(getClientInfoForMapRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const getClientInfoForMapRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const getClientInfoForMapRequest* internal_default_instance() {
+    return reinterpret_cast<const getClientInfoForMapRequest*>(
+        &_getClientInfoForMapRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 40;
+  friend void swap(getClientInfoForMapRequest& a, getClientInfoForMapRequest& b) { a.Swap(&b); }
+  inline void Swap(getClientInfoForMapRequest* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getClientInfoForMapRequest* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  getClientInfoForMapRequest* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<getClientInfoForMapRequest>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const getClientInfoForMapRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const getClientInfoForMapRequest& from) { getClientInfoForMapRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(getClientInfoForMapRequest* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.getClientInfoForMapRequest"; }
+
+ protected:
+  explicit getClientInfoForMapRequest(::google::protobuf::Arena* arena);
+  getClientInfoForMapRequest(::google::protobuf::Arena* arena, const getClientInfoForMapRequest& from);
+  getClientInfoForMapRequest(::google::protobuf::Arena* arena, getClientInfoForMapRequest&& from) noexcept
+      : getClientInfoForMapRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::Message::ClassData* GetClassData() const final;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kAccessTokenFieldNumber = 2,
+    kMapUUIDFieldNumber = 3,
+    kClientInfoListFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // string accessToken = 2;
+  void clear_accesstoken() ;
+  const std::string& accesstoken() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_accesstoken(Arg_&& arg, Args_... args);
+  std::string* mutable_accesstoken();
+  PROTOBUF_NODISCARD std::string* release_accesstoken();
+  void set_allocated_accesstoken(std::string* value);
+
+  private:
+  const std::string& _internal_accesstoken() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_accesstoken(
+      const std::string& value);
+  std::string* _internal_mutable_accesstoken();
+
+  public:
+  // string mapUUID = 3;
+  void clear_mapuuid() ;
+  const std::string& mapuuid() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_mapuuid(Arg_&& arg, Args_... args);
+  std::string* mutable_mapuuid();
+  PROTOBUF_NODISCARD std::string* release_mapuuid();
+  void set_allocated_mapuuid(std::string* value);
+
+  private:
+  const std::string& _internal_mapuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuid(
+      const std::string& value);
+  std::string* _internal_mutable_mapuuid();
+
+  public:
+  // bytes clientInfoList = 4;
+  void clear_clientinfolist() ;
+  const std::string& clientinfolist() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_clientinfolist(Arg_&& arg, Args_... args);
+  std::string* mutable_clientinfolist();
+  PROTOBUF_NODISCARD std::string* release_clientinfolist();
+  void set_allocated_clientinfolist(std::string* value);
+
+  private:
+  const std::string& _internal_clientinfolist() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientinfolist(
+      const std::string& value);
+  std::string* _internal_mutable_clientinfolist();
+
+  public:
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat() ;
+  ::int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::int32_t value);
+
+  private:
+  ::int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getClientInfoForMapRequest)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      2, 4, 0,
+      67, 2>
+      _table_;
+
+  static constexpr const void* _raw_default_instance_ =
+      &_getClientInfoForMapRequest_default_instance_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const getClientInfoForMapRequest& from_msg);
+    ::google::protobuf::internal::ArenaStringPtr accesstoken_;
+    ::google::protobuf::internal::ArenaStringPtr mapuuid_;
+    ::google::protobuf::internal::ArenaStringPtr clientinfolist_;
     ::int32_t grpcservercompressionformat_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -10553,7 +10487,7 @@ class getAllMapsUUIDResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const getAllMapsUUIDResponse*>(
         &_getAllMapsUUIDResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 41;
+  static constexpr int kIndexInFileMessages = 37;
   friend void swap(getAllMapsUUIDResponse& a, getAllMapsUUIDResponse& b) { a.Swap(&b); }
   inline void Swap(getAllMapsUUIDResponse* other) {
     if (other == this) return;
@@ -10742,7 +10676,7 @@ class getAllMapsUUIDRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const getAllMapsUUIDRequest*>(
         &_getAllMapsUUIDRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 40;
+  static constexpr int kIndexInFileMessages = 36;
   friend void swap(getAllMapsUUIDRequest& a, getAllMapsUUIDRequest& b) { a.Swap(&b); }
   inline void Swap(getAllMapsUUIDRequest* other) {
     if (other == this) return;
@@ -11290,480 +11224,6 @@ class getAllClientsUUIDRequest final : public ::google::protobuf::Message
 };
 // -------------------------------------------------------------------
 
-class get3DTransformRequestResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.get3DTransformRequestResponse) */ {
- public:
-  inline get3DTransformRequestResponse() : get3DTransformRequestResponse(nullptr) {}
-  ~get3DTransformRequestResponse() override;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR get3DTransformRequestResponse(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline get3DTransformRequestResponse(const get3DTransformRequestResponse& from) : get3DTransformRequestResponse(nullptr, from) {}
-  inline get3DTransformRequestResponse(get3DTransformRequestResponse&& from) noexcept
-      : get3DTransformRequestResponse(nullptr, std::move(from)) {}
-  inline get3DTransformRequestResponse& operator=(const get3DTransformRequestResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline get3DTransformRequestResponse& operator=(get3DTransformRequestResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const get3DTransformRequestResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const get3DTransformRequestResponse* internal_default_instance() {
-    return reinterpret_cast<const get3DTransformRequestResponse*>(
-        &_get3DTransformRequestResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 31;
-  friend void swap(get3DTransformRequestResponse& a, get3DTransformRequestResponse& b) { a.Swap(&b); }
-  inline void Swap(get3DTransformRequestResponse* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(get3DTransformRequestResponse* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  get3DTransformRequestResponse* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return ::google::protobuf::Message::DefaultConstruct<get3DTransformRequestResponse>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const get3DTransformRequestResponse& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const get3DTransformRequestResponse& from) { get3DTransformRequestResponse::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(get3DTransformRequestResponse* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.get3DTransformRequestResponse"; }
-
- protected:
-  explicit get3DTransformRequestResponse(::google::protobuf::Arena* arena);
-  get3DTransformRequestResponse(::google::protobuf::Arena* arena, const get3DTransformRequestResponse& from);
-  get3DTransformRequestResponse(::google::protobuf::Arena* arena, get3DTransformRequestResponse&& from) noexcept
-      : get3DTransformRequestResponse(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::Message::ClassData* GetClassData() const final;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kTransform3DFieldNumber = 2,
-    kConfidenceFieldNumber = 3,
-    kTransform3DStatusFieldNumber = 1,
-    kXpcfGrpcReturnValueFieldNumber = 4,
-  };
-  // bytes transform3D = 2;
-  void clear_transform3d() ;
-  const std::string& transform3d() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_transform3d(Arg_&& arg, Args_... args);
-  std::string* mutable_transform3d();
-  PROTOBUF_NODISCARD std::string* release_transform3d();
-  void set_allocated_transform3d(std::string* value);
-
-  private:
-  const std::string& _internal_transform3d() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_transform3d(
-      const std::string& value);
-  std::string* _internal_mutable_transform3d();
-
-  public:
-  // bytes confidence = 3;
-  void clear_confidence() ;
-  const std::string& confidence() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_confidence(Arg_&& arg, Args_... args);
-  std::string* mutable_confidence();
-  PROTOBUF_NODISCARD std::string* release_confidence();
-  void set_allocated_confidence(std::string* value);
-
-  private:
-  const std::string& _internal_confidence() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_confidence(
-      const std::string& value);
-  std::string* _internal_mutable_confidence();
-
-  public:
-  // sint32 transform3DStatus = 1;
-  void clear_transform3dstatus() ;
-  ::int32_t transform3dstatus() const;
-  void set_transform3dstatus(::int32_t value);
-
-  private:
-  ::int32_t _internal_transform3dstatus() const;
-  void _internal_set_transform3dstatus(::int32_t value);
-
-  public:
-  // sint32 xpcfGrpcReturnValue = 4;
-  void clear_xpcfgrpcreturnvalue() ;
-  ::int32_t xpcfgrpcreturnvalue() const;
-  void set_xpcfgrpcreturnvalue(::int32_t value);
-
-  private:
-  ::int32_t _internal_xpcfgrpcreturnvalue() const;
-  void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.get3DTransformRequestResponse)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      2, 4, 0,
-      0, 2>
-      _table_;
-
-  static constexpr const void* _raw_default_instance_ =
-      &_get3DTransformRequestResponse_default_instance_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from,
-                          const get3DTransformRequestResponse& from_msg);
-    ::google::protobuf::internal::ArenaStringPtr transform3d_;
-    ::google::protobuf::internal::ArenaStringPtr confidence_;
-    ::int32_t transform3dstatus_;
-    ::int32_t xpcfgrpcreturnvalue_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
-};
-// -------------------------------------------------------------------
-
-class get3DTransformRequestRequest final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.get3DTransformRequestRequest) */ {
- public:
-  inline get3DTransformRequestRequest() : get3DTransformRequestRequest(nullptr) {}
-  ~get3DTransformRequestRequest() override;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR get3DTransformRequestRequest(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline get3DTransformRequestRequest(const get3DTransformRequestRequest& from) : get3DTransformRequestRequest(nullptr, from) {}
-  inline get3DTransformRequestRequest(get3DTransformRequestRequest&& from) noexcept
-      : get3DTransformRequestRequest(nullptr, std::move(from)) {}
-  inline get3DTransformRequestRequest& operator=(const get3DTransformRequestRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline get3DTransformRequestRequest& operator=(get3DTransformRequestRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const get3DTransformRequestRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const get3DTransformRequestRequest* internal_default_instance() {
-    return reinterpret_cast<const get3DTransformRequestRequest*>(
-        &_get3DTransformRequestRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 30;
-  friend void swap(get3DTransformRequestRequest& a, get3DTransformRequestRequest& b) { a.Swap(&b); }
-  inline void Swap(get3DTransformRequestRequest* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(get3DTransformRequestRequest* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  get3DTransformRequestRequest* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return ::google::protobuf::Message::DefaultConstruct<get3DTransformRequestRequest>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const get3DTransformRequestRequest& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const get3DTransformRequestRequest& from) { get3DTransformRequestRequest::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(get3DTransformRequestRequest* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.get3DTransformRequestRequest"; }
-
- protected:
-  explicit get3DTransformRequestRequest(::google::protobuf::Arena* arena);
-  get3DTransformRequestRequest(::google::protobuf::Arena* arena, const get3DTransformRequestRequest& from);
-  get3DTransformRequestRequest(::google::protobuf::Arena* arena, get3DTransformRequestRequest&& from) noexcept
-      : get3DTransformRequestRequest(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::Message::ClassData* GetClassData() const final;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kAccessTokenFieldNumber = 2,
-    kClientUUIDFieldNumber = 3,
-    kTransform3DFieldNumber = 5,
-    kConfidenceFieldNumber = 6,
-    kGrpcServerCompressionFormatFieldNumber = 1,
-    kTransform3DStatusFieldNumber = 4,
-  };
-  // string accessToken = 2;
-  void clear_accesstoken() ;
-  const std::string& accesstoken() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_accesstoken(Arg_&& arg, Args_... args);
-  std::string* mutable_accesstoken();
-  PROTOBUF_NODISCARD std::string* release_accesstoken();
-  void set_allocated_accesstoken(std::string* value);
-
-  private:
-  const std::string& _internal_accesstoken() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_accesstoken(
-      const std::string& value);
-  std::string* _internal_mutable_accesstoken();
-
-  public:
-  // string clientUUID = 3;
-  void clear_clientuuid() ;
-  const std::string& clientuuid() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_clientuuid(Arg_&& arg, Args_... args);
-  std::string* mutable_clientuuid();
-  PROTOBUF_NODISCARD std::string* release_clientuuid();
-  void set_allocated_clientuuid(std::string* value);
-
-  private:
-  const std::string& _internal_clientuuid() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_clientuuid(
-      const std::string& value);
-  std::string* _internal_mutable_clientuuid();
-
-  public:
-  // bytes transform3D = 5;
-  void clear_transform3d() ;
-  const std::string& transform3d() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_transform3d(Arg_&& arg, Args_... args);
-  std::string* mutable_transform3d();
-  PROTOBUF_NODISCARD std::string* release_transform3d();
-  void set_allocated_transform3d(std::string* value);
-
-  private:
-  const std::string& _internal_transform3d() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_transform3d(
-      const std::string& value);
-  std::string* _internal_mutable_transform3d();
-
-  public:
-  // bytes confidence = 6;
-  void clear_confidence() ;
-  const std::string& confidence() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_confidence(Arg_&& arg, Args_... args);
-  std::string* mutable_confidence();
-  PROTOBUF_NODISCARD std::string* release_confidence();
-  void set_allocated_confidence(std::string* value);
-
-  private:
-  const std::string& _internal_confidence() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_confidence(
-      const std::string& value);
-  std::string* _internal_mutable_confidence();
-
-  public:
-  // int32 grpcServerCompressionFormat = 1;
-  void clear_grpcservercompressionformat() ;
-  ::int32_t grpcservercompressionformat() const;
-  void set_grpcservercompressionformat(::int32_t value);
-
-  private:
-  ::int32_t _internal_grpcservercompressionformat() const;
-  void _internal_set_grpcservercompressionformat(::int32_t value);
-
-  public:
-  // sint32 transform3DStatus = 4;
-  void clear_transform3dstatus() ;
-  ::int32_t transform3dstatus() const;
-  void set_transform3dstatus(::int32_t value);
-
-  private:
-  ::int32_t _internal_transform3dstatus() const;
-  void _internal_set_transform3dstatus(::int32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.get3DTransformRequestRequest)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      3, 6, 0,
-      72, 2>
-      _table_;
-
-  static constexpr const void* _raw_default_instance_ =
-      &_get3DTransformRequestRequest_default_instance_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from,
-                          const get3DTransformRequestRequest& from_msg);
-    ::google::protobuf::internal::ArenaStringPtr accesstoken_;
-    ::google::protobuf::internal::ArenaStringPtr clientuuid_;
-    ::google::protobuf::internal::ArenaStringPtr transform3d_;
-    ::google::protobuf::internal::ArenaStringPtr confidence_;
-    ::int32_t grpcservercompressionformat_;
-    ::int32_t transform3dstatus_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
-};
-// -------------------------------------------------------------------
-
 class deleteMapResponse final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.deleteMapResponse) */ {
  public:
@@ -11819,7 +11279,7 @@ class deleteMapResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const deleteMapResponse*>(
         &_deleteMapResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 39;
+  static constexpr int kIndexInFileMessages = 35;
   friend void swap(deleteMapResponse& a, deleteMapResponse& b) { a.Swap(&b); }
   inline void Swap(deleteMapResponse* other) {
     if (other == this) return;
@@ -11990,7 +11450,7 @@ class deleteMapRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const deleteMapRequest*>(
         &_deleteMapRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 38;
+  static constexpr int kIndexInFileMessages = 34;
   friend void swap(deleteMapRequest& a, deleteMapRequest& b) { a.Swap(&b); }
   inline void Swap(deleteMapRequest* other) {
     if (other == this) return;
@@ -12197,7 +11657,7 @@ class createMapResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const createMapResponse*>(
         &_createMapResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 37;
+  static constexpr int kIndexInFileMessages = 33;
   friend void swap(createMapResponse& a, createMapResponse& b) { a.Swap(&b); }
   inline void Swap(createMapResponse* other) {
     if (other == this) return;
@@ -12368,7 +11828,7 @@ class createMapRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const createMapRequest*>(
         &_createMapRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 36;
+  static constexpr int kIndexInFileMessages = 32;
   friend void swap(createMapRequest& a, createMapRequest& b) { a.Swap(&b); }
   inline void Swap(createMapRequest* other) {
     if (other == this) return;
@@ -15225,70 +14685,70 @@ inline void getCameraParametersResponse::_internal_set_xpcfgrpcreturnvalue(::int
 
 // -------------------------------------------------------------------
 
-// relocalizeProcessRequest_grpc0Request
+// imageProcessRequestRequest
 
 // int32 grpcServerCompressionFormat = 1;
-inline void relocalizeProcessRequest_grpc0Request::clear_grpcservercompressionformat() {
+inline void imageProcessRequestRequest::clear_grpcservercompressionformat() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.grpcservercompressionformat_ = 0;
 }
-inline ::int32_t relocalizeProcessRequest_grpc0Request::grpcservercompressionformat() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.grpcServerCompressionFormat)
+inline ::int32_t imageProcessRequestRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestRequest.grpcServerCompressionFormat)
   return _internal_grpcservercompressionformat();
 }
-inline void relocalizeProcessRequest_grpc0Request::set_grpcservercompressionformat(::int32_t value) {
+inline void imageProcessRequestRequest::set_grpcservercompressionformat(::int32_t value) {
   _internal_set_grpcservercompressionformat(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.grpcServerCompressionFormat)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestRequest.grpcServerCompressionFormat)
 }
-inline ::int32_t relocalizeProcessRequest_grpc0Request::_internal_grpcservercompressionformat() const {
+inline ::int32_t imageProcessRequestRequest::_internal_grpcservercompressionformat() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.grpcservercompressionformat_;
 }
-inline void relocalizeProcessRequest_grpc0Request::_internal_set_grpcservercompressionformat(::int32_t value) {
+inline void imageProcessRequestRequest::_internal_set_grpcservercompressionformat(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.grpcservercompressionformat_ = value;
 }
 
 // string accessToken = 2;
-inline void relocalizeProcessRequest_grpc0Request::clear_accesstoken() {
+inline void imageProcessRequestRequest::clear_accesstoken() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.accesstoken_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::accesstoken() const
+inline const std::string& imageProcessRequestRequest::accesstoken() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.accessToken)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestRequest.accessToken)
   return _internal_accesstoken();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc0Request::set_accesstoken(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void imageProcessRequestRequest::set_accesstoken(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.accesstoken_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.accessToken)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestRequest.accessToken)
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::mutable_accesstoken() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* imageProcessRequestRequest::mutable_accesstoken() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_accesstoken();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.accessToken)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.imageProcessRequestRequest.accessToken)
   return _s;
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_accesstoken() const {
+inline const std::string& imageProcessRequestRequest::_internal_accesstoken() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.accesstoken_.Get();
 }
-inline void relocalizeProcessRequest_grpc0Request::_internal_set_accesstoken(const std::string& value) {
+inline void imageProcessRequestRequest::_internal_set_accesstoken(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.accesstoken_.Set(value, GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_accesstoken() {
+inline std::string* imageProcessRequestRequest::_internal_mutable_accesstoken() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.accesstoken_.Mutable( GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::release_accesstoken() {
+inline std::string* imageProcessRequestRequest::release_accesstoken() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.accessToken)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.imageProcessRequestRequest.accessToken)
   return _impl_.accesstoken_.Release();
 }
-inline void relocalizeProcessRequest_grpc0Request::set_allocated_accesstoken(std::string* value) {
+inline void imageProcessRequestRequest::set_allocated_accesstoken(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.accesstoken_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -15296,49 +14756,49 @@ inline void relocalizeProcessRequest_grpc0Request::set_allocated_accesstoken(std
           _impl_.accesstoken_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.accessToken)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.imageProcessRequestRequest.accessToken)
 }
 
 // string clientUUID = 3;
-inline void relocalizeProcessRequest_grpc0Request::clear_clientuuid() {
+inline void imageProcessRequestRequest::clear_clientuuid() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::clientuuid() const
+inline const std::string& imageProcessRequestRequest::clientuuid() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.clientUUID)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestRequest.clientUUID)
   return _internal_clientuuid();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc0Request::set_clientuuid(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void imageProcessRequestRequest::set_clientuuid(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.clientuuid_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.clientUUID)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestRequest.clientUUID)
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::mutable_clientuuid() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* imageProcessRequestRequest::mutable_clientuuid() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_clientuuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.clientUUID)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.imageProcessRequestRequest.clientUUID)
   return _s;
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_clientuuid() const {
+inline const std::string& imageProcessRequestRequest::_internal_clientuuid() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.clientuuid_.Get();
 }
-inline void relocalizeProcessRequest_grpc0Request::_internal_set_clientuuid(const std::string& value) {
+inline void imageProcessRequestRequest::_internal_set_clientuuid(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.clientuuid_.Set(value, GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_clientuuid() {
+inline std::string* imageProcessRequestRequest::_internal_mutable_clientuuid() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.clientuuid_.Mutable( GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::release_clientuuid() {
+inline std::string* imageProcessRequestRequest::release_clientuuid() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.clientUUID)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.imageProcessRequestRequest.clientUUID)
   return _impl_.clientuuid_.Release();
 }
-inline void relocalizeProcessRequest_grpc0Request::set_allocated_clientuuid(std::string* value) {
+inline void imageProcessRequestRequest::set_allocated_clientuuid(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.clientuuid_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -15346,49 +14806,49 @@ inline void relocalizeProcessRequest_grpc0Request::set_allocated_clientuuid(std:
           _impl_.clientuuid_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.clientUUID)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.imageProcessRequestRequest.clientUUID)
 }
 
 // bytes images = 4;
-inline void relocalizeProcessRequest_grpc0Request::clear_images() {
+inline void imageProcessRequestRequest::clear_images() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.images_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::images() const
+inline const std::string& imageProcessRequestRequest::images() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.images)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestRequest.images)
   return _internal_images();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc0Request::set_images(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void imageProcessRequestRequest::set_images(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.images_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.images)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestRequest.images)
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::mutable_images() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* imageProcessRequestRequest::mutable_images() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_images();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.images)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.imageProcessRequestRequest.images)
   return _s;
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_images() const {
+inline const std::string& imageProcessRequestRequest::_internal_images() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.images_.Get();
 }
-inline void relocalizeProcessRequest_grpc0Request::_internal_set_images(const std::string& value) {
+inline void imageProcessRequestRequest::_internal_set_images(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.images_.Set(value, GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_images() {
+inline std::string* imageProcessRequestRequest::_internal_mutable_images() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.images_.Mutable( GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::release_images() {
+inline std::string* imageProcessRequestRequest::release_images() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.images)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.imageProcessRequestRequest.images)
   return _impl_.images_.Release();
 }
-inline void relocalizeProcessRequest_grpc0Request::set_allocated_images(std::string* value) {
+inline void imageProcessRequestRequest::set_allocated_images(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.images_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -15396,49 +14856,49 @@ inline void relocalizeProcessRequest_grpc0Request::set_allocated_images(std::str
           _impl_.images_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.images)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.imageProcessRequestRequest.images)
 }
 
 // bytes poses = 5;
-inline void relocalizeProcessRequest_grpc0Request::clear_poses() {
+inline void imageProcessRequestRequest::clear_poses() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.poses_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::poses() const
+inline const std::string& imageProcessRequestRequest::poses() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.poses)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestRequest.poses)
   return _internal_poses();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc0Request::set_poses(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void imageProcessRequestRequest::set_poses(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.poses_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.poses)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestRequest.poses)
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::mutable_poses() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* imageProcessRequestRequest::mutable_poses() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_poses();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.poses)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.imageProcessRequestRequest.poses)
   return _s;
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_poses() const {
+inline const std::string& imageProcessRequestRequest::_internal_poses() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.poses_.Get();
 }
-inline void relocalizeProcessRequest_grpc0Request::_internal_set_poses(const std::string& value) {
+inline void imageProcessRequestRequest::_internal_set_poses(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.poses_.Set(value, GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_poses() {
+inline std::string* imageProcessRequestRequest::_internal_mutable_poses() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.poses_.Mutable( GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::release_poses() {
+inline std::string* imageProcessRequestRequest::release_poses() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.poses)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.imageProcessRequestRequest.poses)
   return _impl_.poses_.Release();
 }
-inline void relocalizeProcessRequest_grpc0Request::set_allocated_poses(std::string* value) {
+inline void imageProcessRequestRequest::set_allocated_poses(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.poses_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -15446,71 +14906,71 @@ inline void relocalizeProcessRequest_grpc0Request::set_allocated_poses(std::stri
           _impl_.poses_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.poses)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.imageProcessRequestRequest.poses)
 }
 
 // bool fixedPose = 6;
-inline void relocalizeProcessRequest_grpc0Request::clear_fixedpose() {
+inline void imageProcessRequestRequest::clear_fixedpose() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.fixedpose_ = false;
 }
-inline bool relocalizeProcessRequest_grpc0Request::fixedpose() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.fixedPose)
+inline bool imageProcessRequestRequest::fixedpose() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestRequest.fixedPose)
   return _internal_fixedpose();
 }
-inline void relocalizeProcessRequest_grpc0Request::set_fixedpose(bool value) {
+inline void imageProcessRequestRequest::set_fixedpose(bool value) {
   _internal_set_fixedpose(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.fixedPose)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestRequest.fixedPose)
 }
-inline bool relocalizeProcessRequest_grpc0Request::_internal_fixedpose() const {
+inline bool imageProcessRequestRequest::_internal_fixedpose() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.fixedpose_;
 }
-inline void relocalizeProcessRequest_grpc0Request::_internal_set_fixedpose(bool value) {
+inline void imageProcessRequestRequest::_internal_set_fixedpose(bool value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.fixedpose_ = value;
 }
 
 // bytes worldTransform = 7;
-inline void relocalizeProcessRequest_grpc0Request::clear_worldtransform() {
+inline void imageProcessRequestRequest::clear_worldtransform() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.worldtransform_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::worldtransform() const
+inline const std::string& imageProcessRequestRequest::worldtransform() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.worldTransform)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestRequest.worldTransform)
   return _internal_worldtransform();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc0Request::set_worldtransform(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void imageProcessRequestRequest::set_worldtransform(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.worldtransform_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.worldTransform)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestRequest.worldTransform)
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::mutable_worldtransform() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* imageProcessRequestRequest::mutable_worldtransform() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_worldtransform();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.worldTransform)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.imageProcessRequestRequest.worldTransform)
   return _s;
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_worldtransform() const {
+inline const std::string& imageProcessRequestRequest::_internal_worldtransform() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.worldtransform_.Get();
 }
-inline void relocalizeProcessRequest_grpc0Request::_internal_set_worldtransform(const std::string& value) {
+inline void imageProcessRequestRequest::_internal_set_worldtransform(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.worldtransform_.Set(value, GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_worldtransform() {
+inline std::string* imageProcessRequestRequest::_internal_mutable_worldtransform() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.worldtransform_.Mutable( GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::release_worldtransform() {
+inline std::string* imageProcessRequestRequest::release_worldtransform() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.worldTransform)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.imageProcessRequestRequest.worldTransform)
   return _impl_.worldtransform_.Release();
 }
-inline void relocalizeProcessRequest_grpc0Request::set_allocated_worldtransform(std::string* value) {
+inline void imageProcessRequestRequest::set_allocated_worldtransform(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.worldtransform_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -15518,49 +14978,49 @@ inline void relocalizeProcessRequest_grpc0Request::set_allocated_worldtransform(
           _impl_.worldtransform_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.worldTransform)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.imageProcessRequestRequest.worldTransform)
 }
 
 // bytes timestamp = 8;
-inline void relocalizeProcessRequest_grpc0Request::clear_timestamp() {
+inline void imageProcessRequestRequest::clear_timestamp() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.timestamp_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::timestamp() const
+inline const std::string& imageProcessRequestRequest::timestamp() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.timestamp)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestRequest.timestamp)
   return _internal_timestamp();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc0Request::set_timestamp(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void imageProcessRequestRequest::set_timestamp(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.timestamp_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.timestamp)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestRequest.timestamp)
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::mutable_timestamp() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* imageProcessRequestRequest::mutable_timestamp() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_timestamp();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.timestamp)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.imageProcessRequestRequest.timestamp)
   return _s;
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_timestamp() const {
+inline const std::string& imageProcessRequestRequest::_internal_timestamp() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.timestamp_.Get();
 }
-inline void relocalizeProcessRequest_grpc0Request::_internal_set_timestamp(const std::string& value) {
+inline void imageProcessRequestRequest::_internal_set_timestamp(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.timestamp_.Set(value, GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_timestamp() {
+inline std::string* imageProcessRequestRequest::_internal_mutable_timestamp() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.timestamp_.Mutable( GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::release_timestamp() {
+inline std::string* imageProcessRequestRequest::release_timestamp() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.timestamp)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.imageProcessRequestRequest.timestamp)
   return _impl_.timestamp_.Release();
 }
-inline void relocalizeProcessRequest_grpc0Request::set_allocated_timestamp(std::string* value) {
+inline void imageProcessRequestRequest::set_allocated_timestamp(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.timestamp_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -15568,71 +15028,71 @@ inline void relocalizeProcessRequest_grpc0Request::set_allocated_timestamp(std::
           _impl_.timestamp_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.timestamp)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.imageProcessRequestRequest.timestamp)
 }
 
 // sint32 transform3DStatus = 9;
-inline void relocalizeProcessRequest_grpc0Request::clear_transform3dstatus() {
+inline void imageProcessRequestRequest::clear_transform3dstatus() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.transform3dstatus_ = 0;
 }
-inline ::int32_t relocalizeProcessRequest_grpc0Request::transform3dstatus() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3DStatus)
+inline ::int32_t imageProcessRequestRequest::transform3dstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestRequest.transform3DStatus)
   return _internal_transform3dstatus();
 }
-inline void relocalizeProcessRequest_grpc0Request::set_transform3dstatus(::int32_t value) {
+inline void imageProcessRequestRequest::set_transform3dstatus(::int32_t value) {
   _internal_set_transform3dstatus(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3DStatus)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestRequest.transform3DStatus)
 }
-inline ::int32_t relocalizeProcessRequest_grpc0Request::_internal_transform3dstatus() const {
+inline ::int32_t imageProcessRequestRequest::_internal_transform3dstatus() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.transform3dstatus_;
 }
-inline void relocalizeProcessRequest_grpc0Request::_internal_set_transform3dstatus(::int32_t value) {
+inline void imageProcessRequestRequest::_internal_set_transform3dstatus(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.transform3dstatus_ = value;
 }
 
 // bytes transform3D = 10;
-inline void relocalizeProcessRequest_grpc0Request::clear_transform3d() {
+inline void imageProcessRequestRequest::clear_transform3d() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.transform3d_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::transform3d() const
+inline const std::string& imageProcessRequestRequest::transform3d() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3D)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestRequest.transform3D)
   return _internal_transform3d();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc0Request::set_transform3d(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void imageProcessRequestRequest::set_transform3d(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.transform3d_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3D)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestRequest.transform3D)
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::mutable_transform3d() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* imageProcessRequestRequest::mutable_transform3d() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_transform3d();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3D)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.imageProcessRequestRequest.transform3D)
   return _s;
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_transform3d() const {
+inline const std::string& imageProcessRequestRequest::_internal_transform3d() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.transform3d_.Get();
 }
-inline void relocalizeProcessRequest_grpc0Request::_internal_set_transform3d(const std::string& value) {
+inline void imageProcessRequestRequest::_internal_set_transform3d(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.transform3d_.Set(value, GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_transform3d() {
+inline std::string* imageProcessRequestRequest::_internal_mutable_transform3d() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.transform3d_.Mutable( GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::release_transform3d() {
+inline std::string* imageProcessRequestRequest::release_transform3d() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3D)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.imageProcessRequestRequest.transform3D)
   return _impl_.transform3d_.Release();
 }
-inline void relocalizeProcessRequest_grpc0Request::set_allocated_transform3d(std::string* value) {
+inline void imageProcessRequestRequest::set_allocated_transform3d(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.transform3d_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -15640,49 +15100,49 @@ inline void relocalizeProcessRequest_grpc0Request::set_allocated_transform3d(std
           _impl_.transform3d_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.transform3D)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.imageProcessRequestRequest.transform3D)
 }
 
 // bytes confidence = 11;
-inline void relocalizeProcessRequest_grpc0Request::clear_confidence() {
+inline void imageProcessRequestRequest::clear_confidence() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.confidence_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::confidence() const
+inline const std::string& imageProcessRequestRequest::confidence() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.confidence)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestRequest.confidence)
   return _internal_confidence();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc0Request::set_confidence(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void imageProcessRequestRequest::set_confidence(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.confidence_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.confidence)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestRequest.confidence)
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::mutable_confidence() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* imageProcessRequestRequest::mutable_confidence() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_confidence();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.confidence)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.imageProcessRequestRequest.confidence)
   return _s;
 }
-inline const std::string& relocalizeProcessRequest_grpc0Request::_internal_confidence() const {
+inline const std::string& imageProcessRequestRequest::_internal_confidence() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.confidence_.Get();
 }
-inline void relocalizeProcessRequest_grpc0Request::_internal_set_confidence(const std::string& value) {
+inline void imageProcessRequestRequest::_internal_set_confidence(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.confidence_.Set(value, GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::_internal_mutable_confidence() {
+inline std::string* imageProcessRequestRequest::_internal_mutable_confidence() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.confidence_.Mutable( GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc0Request::release_confidence() {
+inline std::string* imageProcessRequestRequest::release_confidence() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.confidence)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.imageProcessRequestRequest.confidence)
   return _impl_.confidence_.Release();
 }
-inline void relocalizeProcessRequest_grpc0Request::set_allocated_confidence(std::string* value) {
+inline void imageProcessRequestRequest::set_allocated_confidence(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.confidence_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -15690,733 +15150,71 @@ inline void relocalizeProcessRequest_grpc0Request::set_allocated_confidence(std:
           _impl_.confidence_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.confidence)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.imageProcessRequestRequest.confidence)
 }
 
 // sint32 mappingStatus = 12;
-inline void relocalizeProcessRequest_grpc0Request::clear_mappingstatus() {
+inline void imageProcessRequestRequest::clear_mappingstatus() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.mappingstatus_ = 0;
 }
-inline ::int32_t relocalizeProcessRequest_grpc0Request::mappingstatus() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.mappingStatus)
+inline ::int32_t imageProcessRequestRequest::mappingstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestRequest.mappingStatus)
   return _internal_mappingstatus();
 }
-inline void relocalizeProcessRequest_grpc0Request::set_mappingstatus(::int32_t value) {
+inline void imageProcessRequestRequest::set_mappingstatus(::int32_t value) {
   _internal_set_mappingstatus(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Request.mappingStatus)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestRequest.mappingStatus)
 }
-inline ::int32_t relocalizeProcessRequest_grpc0Request::_internal_mappingstatus() const {
+inline ::int32_t imageProcessRequestRequest::_internal_mappingstatus() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.mappingstatus_;
 }
-inline void relocalizeProcessRequest_grpc0Request::_internal_set_mappingstatus(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.mappingstatus_ = value;
-}
-
-// -------------------------------------------------------------------
-
-// relocalizeProcessRequest_grpc0Response
-
-// sint32 transform3DStatus = 1;
-inline void relocalizeProcessRequest_grpc0Response::clear_transform3dstatus() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3dstatus_ = 0;
-}
-inline ::int32_t relocalizeProcessRequest_grpc0Response::transform3dstatus() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3DStatus)
-  return _internal_transform3dstatus();
-}
-inline void relocalizeProcessRequest_grpc0Response::set_transform3dstatus(::int32_t value) {
-  _internal_set_transform3dstatus(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3DStatus)
-}
-inline ::int32_t relocalizeProcessRequest_grpc0Response::_internal_transform3dstatus() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.transform3dstatus_;
-}
-inline void relocalizeProcessRequest_grpc0Response::_internal_set_transform3dstatus(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3dstatus_ = value;
-}
-
-// bytes transform3D = 2;
-inline void relocalizeProcessRequest_grpc0Response::clear_transform3d() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.ClearToEmpty();
-}
-inline const std::string& relocalizeProcessRequest_grpc0Response::transform3d() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3D)
-  return _internal_transform3d();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc0Response::set_transform3d(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3D)
-}
-inline std::string* relocalizeProcessRequest_grpc0Response::mutable_transform3d() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_transform3d();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3D)
-  return _s;
-}
-inline const std::string& relocalizeProcessRequest_grpc0Response::_internal_transform3d() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.transform3d_.Get();
-}
-inline void relocalizeProcessRequest_grpc0Response::_internal_set_transform3d(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.Set(value, GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc0Response::_internal_mutable_transform3d() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.transform3d_.Mutable( GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc0Response::release_transform3d() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3D)
-  return _impl_.transform3d_.Release();
-}
-inline void relocalizeProcessRequest_grpc0Response::set_allocated_transform3d(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.transform3d_.IsDefault()) {
-          _impl_.transform3d_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.transform3D)
-}
-
-// bytes confidence = 3;
-inline void relocalizeProcessRequest_grpc0Response::clear_confidence() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.ClearToEmpty();
-}
-inline const std::string& relocalizeProcessRequest_grpc0Response::confidence() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.confidence)
-  return _internal_confidence();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc0Response::set_confidence(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.confidence)
-}
-inline std::string* relocalizeProcessRequest_grpc0Response::mutable_confidence() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_confidence();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.confidence)
-  return _s;
-}
-inline const std::string& relocalizeProcessRequest_grpc0Response::_internal_confidence() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.confidence_.Get();
-}
-inline void relocalizeProcessRequest_grpc0Response::_internal_set_confidence(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.Set(value, GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc0Response::_internal_mutable_confidence() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.confidence_.Mutable( GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc0Response::release_confidence() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.confidence)
-  return _impl_.confidence_.Release();
-}
-inline void relocalizeProcessRequest_grpc0Response::set_allocated_confidence(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.confidence_.IsDefault()) {
-          _impl_.confidence_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.confidence)
-}
-
-// sint32 mappingStatus = 4;
-inline void relocalizeProcessRequest_grpc0Response::clear_mappingstatus() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.mappingstatus_ = 0;
-}
-inline ::int32_t relocalizeProcessRequest_grpc0Response::mappingstatus() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.mappingStatus)
-  return _internal_mappingstatus();
-}
-inline void relocalizeProcessRequest_grpc0Response::set_mappingstatus(::int32_t value) {
-  _internal_set_mappingstatus(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.mappingStatus)
-}
-inline ::int32_t relocalizeProcessRequest_grpc0Response::_internal_mappingstatus() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.mappingstatus_;
-}
-inline void relocalizeProcessRequest_grpc0Response::_internal_set_mappingstatus(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.mappingstatus_ = value;
-}
-
-// sint32 xpcfGrpcReturnValue = 5;
-inline void relocalizeProcessRequest_grpc0Response::clear_xpcfgrpcreturnvalue() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.xpcfgrpcreturnvalue_ = 0;
-}
-inline ::int32_t relocalizeProcessRequest_grpc0Response::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.xpcfGrpcReturnValue)
-  return _internal_xpcfgrpcreturnvalue();
-}
-inline void relocalizeProcessRequest_grpc0Response::set_xpcfgrpcreturnvalue(::int32_t value) {
-  _internal_set_xpcfgrpcreturnvalue(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc0Response.xpcfGrpcReturnValue)
-}
-inline ::int32_t relocalizeProcessRequest_grpc0Response::_internal_xpcfgrpcreturnvalue() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.xpcfgrpcreturnvalue_;
-}
-inline void relocalizeProcessRequest_grpc0Response::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.xpcfgrpcreturnvalue_ = value;
-}
-
-// -------------------------------------------------------------------
-
-// relocalizeProcessRequest_grpc1Request
-
-// int32 grpcServerCompressionFormat = 1;
-inline void relocalizeProcessRequest_grpc1Request::clear_grpcservercompressionformat() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.grpcservercompressionformat_ = 0;
-}
-inline ::int32_t relocalizeProcessRequest_grpc1Request::grpcservercompressionformat() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.grpcServerCompressionFormat)
-  return _internal_grpcservercompressionformat();
-}
-inline void relocalizeProcessRequest_grpc1Request::set_grpcservercompressionformat(::int32_t value) {
-  _internal_set_grpcservercompressionformat(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.grpcServerCompressionFormat)
-}
-inline ::int32_t relocalizeProcessRequest_grpc1Request::_internal_grpcservercompressionformat() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.grpcservercompressionformat_;
-}
-inline void relocalizeProcessRequest_grpc1Request::_internal_set_grpcservercompressionformat(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.grpcservercompressionformat_ = value;
-}
-
-// string accessToken = 2;
-inline void relocalizeProcessRequest_grpc1Request::clear_accesstoken() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.accesstoken_.ClearToEmpty();
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::accesstoken() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.accessToken)
-  return _internal_accesstoken();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc1Request::set_accesstoken(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.accesstoken_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.accessToken)
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::mutable_accesstoken() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_accesstoken();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.accessToken)
-  return _s;
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_accesstoken() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.accesstoken_.Get();
-}
-inline void relocalizeProcessRequest_grpc1Request::_internal_set_accesstoken(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.accesstoken_.Set(value, GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_accesstoken() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.accesstoken_.Mutable( GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::release_accesstoken() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.accessToken)
-  return _impl_.accesstoken_.Release();
-}
-inline void relocalizeProcessRequest_grpc1Request::set_allocated_accesstoken(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.accesstoken_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.accesstoken_.IsDefault()) {
-          _impl_.accesstoken_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.accessToken)
-}
-
-// string clientUUID = 3;
-inline void relocalizeProcessRequest_grpc1Request::clear_clientuuid() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.clientuuid_.ClearToEmpty();
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::clientuuid() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.clientUUID)
-  return _internal_clientuuid();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc1Request::set_clientuuid(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.clientuuid_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.clientUUID)
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::mutable_clientuuid() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_clientuuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.clientUUID)
-  return _s;
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_clientuuid() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.clientuuid_.Get();
-}
-inline void relocalizeProcessRequest_grpc1Request::_internal_set_clientuuid(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.clientuuid_.Set(value, GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_clientuuid() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.clientuuid_.Mutable( GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::release_clientuuid() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.clientUUID)
-  return _impl_.clientuuid_.Release();
-}
-inline void relocalizeProcessRequest_grpc1Request::set_allocated_clientuuid(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.clientuuid_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.clientuuid_.IsDefault()) {
-          _impl_.clientuuid_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.clientUUID)
-}
-
-// bytes images = 4;
-inline void relocalizeProcessRequest_grpc1Request::clear_images() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.images_.ClearToEmpty();
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::images() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.images)
-  return _internal_images();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc1Request::set_images(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.images_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.images)
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::mutable_images() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_images();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.images)
-  return _s;
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_images() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.images_.Get();
-}
-inline void relocalizeProcessRequest_grpc1Request::_internal_set_images(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.images_.Set(value, GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_images() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.images_.Mutable( GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::release_images() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.images)
-  return _impl_.images_.Release();
-}
-inline void relocalizeProcessRequest_grpc1Request::set_allocated_images(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.images_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.images_.IsDefault()) {
-          _impl_.images_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.images)
-}
-
-// bytes poses = 5;
-inline void relocalizeProcessRequest_grpc1Request::clear_poses() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.poses_.ClearToEmpty();
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::poses() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.poses)
-  return _internal_poses();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc1Request::set_poses(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.poses_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.poses)
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::mutable_poses() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_poses();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.poses)
-  return _s;
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_poses() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.poses_.Get();
-}
-inline void relocalizeProcessRequest_grpc1Request::_internal_set_poses(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.poses_.Set(value, GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_poses() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.poses_.Mutable( GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::release_poses() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.poses)
-  return _impl_.poses_.Release();
-}
-inline void relocalizeProcessRequest_grpc1Request::set_allocated_poses(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.poses_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.poses_.IsDefault()) {
-          _impl_.poses_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.poses)
-}
-
-// bool fixedPose = 6;
-inline void relocalizeProcessRequest_grpc1Request::clear_fixedpose() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.fixedpose_ = false;
-}
-inline bool relocalizeProcessRequest_grpc1Request::fixedpose() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.fixedPose)
-  return _internal_fixedpose();
-}
-inline void relocalizeProcessRequest_grpc1Request::set_fixedpose(bool value) {
-  _internal_set_fixedpose(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.fixedPose)
-}
-inline bool relocalizeProcessRequest_grpc1Request::_internal_fixedpose() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.fixedpose_;
-}
-inline void relocalizeProcessRequest_grpc1Request::_internal_set_fixedpose(bool value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.fixedpose_ = value;
-}
-
-// bytes worldTransform = 7;
-inline void relocalizeProcessRequest_grpc1Request::clear_worldtransform() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.worldtransform_.ClearToEmpty();
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::worldtransform() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.worldTransform)
-  return _internal_worldtransform();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc1Request::set_worldtransform(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.worldtransform_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.worldTransform)
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::mutable_worldtransform() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_worldtransform();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.worldTransform)
-  return _s;
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_worldtransform() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.worldtransform_.Get();
-}
-inline void relocalizeProcessRequest_grpc1Request::_internal_set_worldtransform(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.worldtransform_.Set(value, GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_worldtransform() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.worldtransform_.Mutable( GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::release_worldtransform() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.worldTransform)
-  return _impl_.worldtransform_.Release();
-}
-inline void relocalizeProcessRequest_grpc1Request::set_allocated_worldtransform(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.worldtransform_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.worldtransform_.IsDefault()) {
-          _impl_.worldtransform_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.worldTransform)
-}
-
-// bytes timestamp = 8;
-inline void relocalizeProcessRequest_grpc1Request::clear_timestamp() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.timestamp_.ClearToEmpty();
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::timestamp() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.timestamp)
-  return _internal_timestamp();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc1Request::set_timestamp(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.timestamp_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.timestamp)
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::mutable_timestamp() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_timestamp();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.timestamp)
-  return _s;
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_timestamp() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.timestamp_.Get();
-}
-inline void relocalizeProcessRequest_grpc1Request::_internal_set_timestamp(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.timestamp_.Set(value, GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_timestamp() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.timestamp_.Mutable( GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::release_timestamp() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.timestamp)
-  return _impl_.timestamp_.Release();
-}
-inline void relocalizeProcessRequest_grpc1Request::set_allocated_timestamp(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.timestamp_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.timestamp_.IsDefault()) {
-          _impl_.timestamp_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.timestamp)
-}
-
-// sint32 transform3DStatus = 9;
-inline void relocalizeProcessRequest_grpc1Request::clear_transform3dstatus() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3dstatus_ = 0;
-}
-inline ::int32_t relocalizeProcessRequest_grpc1Request::transform3dstatus() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3DStatus)
-  return _internal_transform3dstatus();
-}
-inline void relocalizeProcessRequest_grpc1Request::set_transform3dstatus(::int32_t value) {
-  _internal_set_transform3dstatus(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3DStatus)
-}
-inline ::int32_t relocalizeProcessRequest_grpc1Request::_internal_transform3dstatus() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.transform3dstatus_;
-}
-inline void relocalizeProcessRequest_grpc1Request::_internal_set_transform3dstatus(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3dstatus_ = value;
-}
-
-// bytes transform3D = 10;
-inline void relocalizeProcessRequest_grpc1Request::clear_transform3d() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.ClearToEmpty();
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::transform3d() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3D)
-  return _internal_transform3d();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc1Request::set_transform3d(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3D)
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::mutable_transform3d() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_transform3d();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3D)
-  return _s;
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_transform3d() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.transform3d_.Get();
-}
-inline void relocalizeProcessRequest_grpc1Request::_internal_set_transform3d(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.Set(value, GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_transform3d() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.transform3d_.Mutable( GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::release_transform3d() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3D)
-  return _impl_.transform3d_.Release();
-}
-inline void relocalizeProcessRequest_grpc1Request::set_allocated_transform3d(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.transform3d_.IsDefault()) {
-          _impl_.transform3d_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.transform3D)
-}
-
-// bytes confidence = 11;
-inline void relocalizeProcessRequest_grpc1Request::clear_confidence() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.ClearToEmpty();
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::confidence() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.confidence)
-  return _internal_confidence();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc1Request::set_confidence(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.confidence)
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::mutable_confidence() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_confidence();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.confidence)
-  return _s;
-}
-inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_confidence() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.confidence_.Get();
-}
-inline void relocalizeProcessRequest_grpc1Request::_internal_set_confidence(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.Set(value, GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_confidence() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.confidence_.Mutable( GetArena());
-}
-inline std::string* relocalizeProcessRequest_grpc1Request::release_confidence() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.confidence)
-  return _impl_.confidence_.Release();
-}
-inline void relocalizeProcessRequest_grpc1Request::set_allocated_confidence(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.confidence_.IsDefault()) {
-          _impl_.confidence_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.confidence)
-}
-
-// sint32 mappingStatus = 12;
-inline void relocalizeProcessRequest_grpc1Request::clear_mappingstatus() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.mappingstatus_ = 0;
-}
-inline ::int32_t relocalizeProcessRequest_grpc1Request::mappingstatus() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.mappingStatus)
-  return _internal_mappingstatus();
-}
-inline void relocalizeProcessRequest_grpc1Request::set_mappingstatus(::int32_t value) {
-  _internal_set_mappingstatus(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.mappingStatus)
-}
-inline ::int32_t relocalizeProcessRequest_grpc1Request::_internal_mappingstatus() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.mappingstatus_;
-}
-inline void relocalizeProcessRequest_grpc1Request::_internal_set_mappingstatus(::int32_t value) {
+inline void imageProcessRequestRequest::_internal_set_mappingstatus(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.mappingstatus_ = value;
 }
 
 // bytes detectedObjects = 13;
-inline void relocalizeProcessRequest_grpc1Request::clear_detectedobjects() {
+inline void imageProcessRequestRequest::clear_detectedobjects() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.detectedobjects_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequest_grpc1Request::detectedobjects() const
+inline const std::string& imageProcessRequestRequest::detectedobjects() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.detectedObjects)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestRequest.detectedObjects)
   return _internal_detectedobjects();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc1Request::set_detectedobjects(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void imageProcessRequestRequest::set_detectedobjects(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.detectedobjects_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.detectedObjects)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestRequest.detectedObjects)
 }
-inline std::string* relocalizeProcessRequest_grpc1Request::mutable_detectedobjects() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* imageProcessRequestRequest::mutable_detectedobjects() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_detectedobjects();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.detectedObjects)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.imageProcessRequestRequest.detectedObjects)
   return _s;
 }
-inline const std::string& relocalizeProcessRequest_grpc1Request::_internal_detectedobjects() const {
+inline const std::string& imageProcessRequestRequest::_internal_detectedobjects() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.detectedobjects_.Get();
 }
-inline void relocalizeProcessRequest_grpc1Request::_internal_set_detectedobjects(const std::string& value) {
+inline void imageProcessRequestRequest::_internal_set_detectedobjects(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.detectedobjects_.Set(value, GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc1Request::_internal_mutable_detectedobjects() {
+inline std::string* imageProcessRequestRequest::_internal_mutable_detectedobjects() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.detectedobjects_.Mutable( GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc1Request::release_detectedobjects() {
+inline std::string* imageProcessRequestRequest::release_detectedobjects() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.detectedObjects)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.imageProcessRequestRequest.detectedObjects)
   return _impl_.detectedobjects_.Release();
 }
-inline void relocalizeProcessRequest_grpc1Request::set_allocated_detectedobjects(std::string* value) {
+inline void imageProcessRequestRequest::set_allocated_detectedobjects(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.detectedobjects_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -16424,75 +15222,75 @@ inline void relocalizeProcessRequest_grpc1Request::set_allocated_detectedobjects
           _impl_.detectedobjects_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Request.detectedObjects)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.imageProcessRequestRequest.detectedObjects)
 }
 
 // -------------------------------------------------------------------
 
-// relocalizeProcessRequest_grpc1Response
+// imageProcessRequestResponse
 
 // sint32 transform3DStatus = 1;
-inline void relocalizeProcessRequest_grpc1Response::clear_transform3dstatus() {
+inline void imageProcessRequestResponse::clear_transform3dstatus() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.transform3dstatus_ = 0;
 }
-inline ::int32_t relocalizeProcessRequest_grpc1Response::transform3dstatus() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3DStatus)
+inline ::int32_t imageProcessRequestResponse::transform3dstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestResponse.transform3DStatus)
   return _internal_transform3dstatus();
 }
-inline void relocalizeProcessRequest_grpc1Response::set_transform3dstatus(::int32_t value) {
+inline void imageProcessRequestResponse::set_transform3dstatus(::int32_t value) {
   _internal_set_transform3dstatus(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3DStatus)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestResponse.transform3DStatus)
 }
-inline ::int32_t relocalizeProcessRequest_grpc1Response::_internal_transform3dstatus() const {
+inline ::int32_t imageProcessRequestResponse::_internal_transform3dstatus() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.transform3dstatus_;
 }
-inline void relocalizeProcessRequest_grpc1Response::_internal_set_transform3dstatus(::int32_t value) {
+inline void imageProcessRequestResponse::_internal_set_transform3dstatus(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.transform3dstatus_ = value;
 }
 
 // bytes transform3D = 2;
-inline void relocalizeProcessRequest_grpc1Response::clear_transform3d() {
+inline void imageProcessRequestResponse::clear_transform3d() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.transform3d_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequest_grpc1Response::transform3d() const
+inline const std::string& imageProcessRequestResponse::transform3d() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3D)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestResponse.transform3D)
   return _internal_transform3d();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc1Response::set_transform3d(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void imageProcessRequestResponse::set_transform3d(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.transform3d_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3D)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestResponse.transform3D)
 }
-inline std::string* relocalizeProcessRequest_grpc1Response::mutable_transform3d() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* imageProcessRequestResponse::mutable_transform3d() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_transform3d();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3D)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.imageProcessRequestResponse.transform3D)
   return _s;
 }
-inline const std::string& relocalizeProcessRequest_grpc1Response::_internal_transform3d() const {
+inline const std::string& imageProcessRequestResponse::_internal_transform3d() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.transform3d_.Get();
 }
-inline void relocalizeProcessRequest_grpc1Response::_internal_set_transform3d(const std::string& value) {
+inline void imageProcessRequestResponse::_internal_set_transform3d(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.transform3d_.Set(value, GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc1Response::_internal_mutable_transform3d() {
+inline std::string* imageProcessRequestResponse::_internal_mutable_transform3d() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.transform3d_.Mutable( GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc1Response::release_transform3d() {
+inline std::string* imageProcessRequestResponse::release_transform3d() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3D)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.imageProcessRequestResponse.transform3D)
   return _impl_.transform3d_.Release();
 }
-inline void relocalizeProcessRequest_grpc1Response::set_allocated_transform3d(std::string* value) {
+inline void imageProcessRequestResponse::set_allocated_transform3d(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.transform3d_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -16500,49 +15298,49 @@ inline void relocalizeProcessRequest_grpc1Response::set_allocated_transform3d(st
           _impl_.transform3d_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.transform3D)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.imageProcessRequestResponse.transform3D)
 }
 
 // bytes confidence = 3;
-inline void relocalizeProcessRequest_grpc1Response::clear_confidence() {
+inline void imageProcessRequestResponse::clear_confidence() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.confidence_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequest_grpc1Response::confidence() const
+inline const std::string& imageProcessRequestResponse::confidence() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.confidence)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestResponse.confidence)
   return _internal_confidence();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc1Response::set_confidence(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void imageProcessRequestResponse::set_confidence(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.confidence_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.confidence)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestResponse.confidence)
 }
-inline std::string* relocalizeProcessRequest_grpc1Response::mutable_confidence() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* imageProcessRequestResponse::mutable_confidence() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_confidence();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.confidence)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.imageProcessRequestResponse.confidence)
   return _s;
 }
-inline const std::string& relocalizeProcessRequest_grpc1Response::_internal_confidence() const {
+inline const std::string& imageProcessRequestResponse::_internal_confidence() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.confidence_.Get();
 }
-inline void relocalizeProcessRequest_grpc1Response::_internal_set_confidence(const std::string& value) {
+inline void imageProcessRequestResponse::_internal_set_confidence(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.confidence_.Set(value, GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc1Response::_internal_mutable_confidence() {
+inline std::string* imageProcessRequestResponse::_internal_mutable_confidence() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.confidence_.Mutable( GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc1Response::release_confidence() {
+inline std::string* imageProcessRequestResponse::release_confidence() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.confidence)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.imageProcessRequestResponse.confidence)
   return _impl_.confidence_.Release();
 }
-inline void relocalizeProcessRequest_grpc1Response::set_allocated_confidence(std::string* value) {
+inline void imageProcessRequestResponse::set_allocated_confidence(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.confidence_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -16550,71 +15348,71 @@ inline void relocalizeProcessRequest_grpc1Response::set_allocated_confidence(std
           _impl_.confidence_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.confidence)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.imageProcessRequestResponse.confidence)
 }
 
 // sint32 mappingStatus = 4;
-inline void relocalizeProcessRequest_grpc1Response::clear_mappingstatus() {
+inline void imageProcessRequestResponse::clear_mappingstatus() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.mappingstatus_ = 0;
 }
-inline ::int32_t relocalizeProcessRequest_grpc1Response::mappingstatus() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.mappingStatus)
+inline ::int32_t imageProcessRequestResponse::mappingstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestResponse.mappingStatus)
   return _internal_mappingstatus();
 }
-inline void relocalizeProcessRequest_grpc1Response::set_mappingstatus(::int32_t value) {
+inline void imageProcessRequestResponse::set_mappingstatus(::int32_t value) {
   _internal_set_mappingstatus(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.mappingStatus)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestResponse.mappingStatus)
 }
-inline ::int32_t relocalizeProcessRequest_grpc1Response::_internal_mappingstatus() const {
+inline ::int32_t imageProcessRequestResponse::_internal_mappingstatus() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.mappingstatus_;
 }
-inline void relocalizeProcessRequest_grpc1Response::_internal_set_mappingstatus(::int32_t value) {
+inline void imageProcessRequestResponse::_internal_set_mappingstatus(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.mappingstatus_ = value;
 }
 
 // bytes detectedObjects = 5;
-inline void relocalizeProcessRequest_grpc1Response::clear_detectedobjects() {
+inline void imageProcessRequestResponse::clear_detectedobjects() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.detectedobjects_.ClearToEmpty();
 }
-inline const std::string& relocalizeProcessRequest_grpc1Response::detectedobjects() const
+inline const std::string& imageProcessRequestResponse::detectedobjects() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.detectedObjects)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestResponse.detectedObjects)
   return _internal_detectedobjects();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void relocalizeProcessRequest_grpc1Response::set_detectedobjects(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void imageProcessRequestResponse::set_detectedobjects(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.detectedobjects_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.detectedObjects)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestResponse.detectedObjects)
 }
-inline std::string* relocalizeProcessRequest_grpc1Response::mutable_detectedobjects() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* imageProcessRequestResponse::mutable_detectedobjects() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_detectedobjects();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.detectedObjects)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.imageProcessRequestResponse.detectedObjects)
   return _s;
 }
-inline const std::string& relocalizeProcessRequest_grpc1Response::_internal_detectedobjects() const {
+inline const std::string& imageProcessRequestResponse::_internal_detectedobjects() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.detectedobjects_.Get();
 }
-inline void relocalizeProcessRequest_grpc1Response::_internal_set_detectedobjects(const std::string& value) {
+inline void imageProcessRequestResponse::_internal_set_detectedobjects(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.detectedobjects_.Set(value, GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc1Response::_internal_mutable_detectedobjects() {
+inline std::string* imageProcessRequestResponse::_internal_mutable_detectedobjects() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.detectedobjects_.Mutable( GetArena());
 }
-inline std::string* relocalizeProcessRequest_grpc1Response::release_detectedobjects() {
+inline std::string* imageProcessRequestResponse::release_detectedobjects() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.detectedObjects)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.imageProcessRequestResponse.detectedObjects)
   return _impl_.detectedobjects_.Release();
 }
-inline void relocalizeProcessRequest_grpc1Response::set_allocated_detectedobjects(std::string* value) {
+inline void imageProcessRequestResponse::set_allocated_detectedobjects(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.detectedobjects_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -16622,423 +15420,27 @@ inline void relocalizeProcessRequest_grpc1Response::set_allocated_detectedobject
           _impl_.detectedobjects_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.detectedObjects)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.imageProcessRequestResponse.detectedObjects)
 }
 
 // sint32 xpcfGrpcReturnValue = 6;
-inline void relocalizeProcessRequest_grpc1Response::clear_xpcfgrpcreturnvalue() {
+inline void imageProcessRequestResponse::clear_xpcfgrpcreturnvalue() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline ::int32_t relocalizeProcessRequest_grpc1Response::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.xpcfGrpcReturnValue)
+inline ::int32_t imageProcessRequestResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.imageProcessRequestResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-inline void relocalizeProcessRequest_grpc1Response::set_xpcfgrpcreturnvalue(::int32_t value) {
+inline void imageProcessRequestResponse::set_xpcfgrpcreturnvalue(::int32_t value) {
   _internal_set_xpcfgrpcreturnvalue(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.relocalizeProcessRequest_grpc1Response.xpcfGrpcReturnValue)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.imageProcessRequestResponse.xpcfGrpcReturnValue)
 }
-inline ::int32_t relocalizeProcessRequest_grpc1Response::_internal_xpcfgrpcreturnvalue() const {
+inline ::int32_t imageProcessRequestResponse::_internal_xpcfgrpcreturnvalue() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.xpcfgrpcreturnvalue_;
 }
-inline void relocalizeProcessRequest_grpc1Response::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.xpcfgrpcreturnvalue_ = value;
-}
-
-// -------------------------------------------------------------------
-
-// get3DTransformRequestRequest
-
-// int32 grpcServerCompressionFormat = 1;
-inline void get3DTransformRequestRequest::clear_grpcservercompressionformat() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.grpcservercompressionformat_ = 0;
-}
-inline ::int32_t get3DTransformRequestRequest::grpcservercompressionformat() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.get3DTransformRequestRequest.grpcServerCompressionFormat)
-  return _internal_grpcservercompressionformat();
-}
-inline void get3DTransformRequestRequest::set_grpcservercompressionformat(::int32_t value) {
-  _internal_set_grpcservercompressionformat(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.get3DTransformRequestRequest.grpcServerCompressionFormat)
-}
-inline ::int32_t get3DTransformRequestRequest::_internal_grpcservercompressionformat() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.grpcservercompressionformat_;
-}
-inline void get3DTransformRequestRequest::_internal_set_grpcservercompressionformat(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.grpcservercompressionformat_ = value;
-}
-
-// string accessToken = 2;
-inline void get3DTransformRequestRequest::clear_accesstoken() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.accesstoken_.ClearToEmpty();
-}
-inline const std::string& get3DTransformRequestRequest::accesstoken() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.get3DTransformRequestRequest.accessToken)
-  return _internal_accesstoken();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void get3DTransformRequestRequest::set_accesstoken(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.accesstoken_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.get3DTransformRequestRequest.accessToken)
-}
-inline std::string* get3DTransformRequestRequest::mutable_accesstoken() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_accesstoken();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.get3DTransformRequestRequest.accessToken)
-  return _s;
-}
-inline const std::string& get3DTransformRequestRequest::_internal_accesstoken() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.accesstoken_.Get();
-}
-inline void get3DTransformRequestRequest::_internal_set_accesstoken(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.accesstoken_.Set(value, GetArena());
-}
-inline std::string* get3DTransformRequestRequest::_internal_mutable_accesstoken() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.accesstoken_.Mutable( GetArena());
-}
-inline std::string* get3DTransformRequestRequest::release_accesstoken() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.get3DTransformRequestRequest.accessToken)
-  return _impl_.accesstoken_.Release();
-}
-inline void get3DTransformRequestRequest::set_allocated_accesstoken(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.accesstoken_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.accesstoken_.IsDefault()) {
-          _impl_.accesstoken_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.get3DTransformRequestRequest.accessToken)
-}
-
-// string clientUUID = 3;
-inline void get3DTransformRequestRequest::clear_clientuuid() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.clientuuid_.ClearToEmpty();
-}
-inline const std::string& get3DTransformRequestRequest::clientuuid() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.get3DTransformRequestRequest.clientUUID)
-  return _internal_clientuuid();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void get3DTransformRequestRequest::set_clientuuid(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.clientuuid_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.get3DTransformRequestRequest.clientUUID)
-}
-inline std::string* get3DTransformRequestRequest::mutable_clientuuid() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_clientuuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.get3DTransformRequestRequest.clientUUID)
-  return _s;
-}
-inline const std::string& get3DTransformRequestRequest::_internal_clientuuid() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.clientuuid_.Get();
-}
-inline void get3DTransformRequestRequest::_internal_set_clientuuid(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.clientuuid_.Set(value, GetArena());
-}
-inline std::string* get3DTransformRequestRequest::_internal_mutable_clientuuid() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.clientuuid_.Mutable( GetArena());
-}
-inline std::string* get3DTransformRequestRequest::release_clientuuid() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.get3DTransformRequestRequest.clientUUID)
-  return _impl_.clientuuid_.Release();
-}
-inline void get3DTransformRequestRequest::set_allocated_clientuuid(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.clientuuid_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.clientuuid_.IsDefault()) {
-          _impl_.clientuuid_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.get3DTransformRequestRequest.clientUUID)
-}
-
-// sint32 transform3DStatus = 4;
-inline void get3DTransformRequestRequest::clear_transform3dstatus() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3dstatus_ = 0;
-}
-inline ::int32_t get3DTransformRequestRequest::transform3dstatus() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.get3DTransformRequestRequest.transform3DStatus)
-  return _internal_transform3dstatus();
-}
-inline void get3DTransformRequestRequest::set_transform3dstatus(::int32_t value) {
-  _internal_set_transform3dstatus(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.get3DTransformRequestRequest.transform3DStatus)
-}
-inline ::int32_t get3DTransformRequestRequest::_internal_transform3dstatus() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.transform3dstatus_;
-}
-inline void get3DTransformRequestRequest::_internal_set_transform3dstatus(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3dstatus_ = value;
-}
-
-// bytes transform3D = 5;
-inline void get3DTransformRequestRequest::clear_transform3d() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.ClearToEmpty();
-}
-inline const std::string& get3DTransformRequestRequest::transform3d() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.get3DTransformRequestRequest.transform3D)
-  return _internal_transform3d();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void get3DTransformRequestRequest::set_transform3d(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.get3DTransformRequestRequest.transform3D)
-}
-inline std::string* get3DTransformRequestRequest::mutable_transform3d() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_transform3d();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.get3DTransformRequestRequest.transform3D)
-  return _s;
-}
-inline const std::string& get3DTransformRequestRequest::_internal_transform3d() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.transform3d_.Get();
-}
-inline void get3DTransformRequestRequest::_internal_set_transform3d(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.Set(value, GetArena());
-}
-inline std::string* get3DTransformRequestRequest::_internal_mutable_transform3d() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.transform3d_.Mutable( GetArena());
-}
-inline std::string* get3DTransformRequestRequest::release_transform3d() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.get3DTransformRequestRequest.transform3D)
-  return _impl_.transform3d_.Release();
-}
-inline void get3DTransformRequestRequest::set_allocated_transform3d(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.transform3d_.IsDefault()) {
-          _impl_.transform3d_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.get3DTransformRequestRequest.transform3D)
-}
-
-// bytes confidence = 6;
-inline void get3DTransformRequestRequest::clear_confidence() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.ClearToEmpty();
-}
-inline const std::string& get3DTransformRequestRequest::confidence() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.get3DTransformRequestRequest.confidence)
-  return _internal_confidence();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void get3DTransformRequestRequest::set_confidence(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.get3DTransformRequestRequest.confidence)
-}
-inline std::string* get3DTransformRequestRequest::mutable_confidence() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_confidence();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.get3DTransformRequestRequest.confidence)
-  return _s;
-}
-inline const std::string& get3DTransformRequestRequest::_internal_confidence() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.confidence_.Get();
-}
-inline void get3DTransformRequestRequest::_internal_set_confidence(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.Set(value, GetArena());
-}
-inline std::string* get3DTransformRequestRequest::_internal_mutable_confidence() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.confidence_.Mutable( GetArena());
-}
-inline std::string* get3DTransformRequestRequest::release_confidence() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.get3DTransformRequestRequest.confidence)
-  return _impl_.confidence_.Release();
-}
-inline void get3DTransformRequestRequest::set_allocated_confidence(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.confidence_.IsDefault()) {
-          _impl_.confidence_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.get3DTransformRequestRequest.confidence)
-}
-
-// -------------------------------------------------------------------
-
-// get3DTransformRequestResponse
-
-// sint32 transform3DStatus = 1;
-inline void get3DTransformRequestResponse::clear_transform3dstatus() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3dstatus_ = 0;
-}
-inline ::int32_t get3DTransformRequestResponse::transform3dstatus() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.get3DTransformRequestResponse.transform3DStatus)
-  return _internal_transform3dstatus();
-}
-inline void get3DTransformRequestResponse::set_transform3dstatus(::int32_t value) {
-  _internal_set_transform3dstatus(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.get3DTransformRequestResponse.transform3DStatus)
-}
-inline ::int32_t get3DTransformRequestResponse::_internal_transform3dstatus() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.transform3dstatus_;
-}
-inline void get3DTransformRequestResponse::_internal_set_transform3dstatus(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3dstatus_ = value;
-}
-
-// bytes transform3D = 2;
-inline void get3DTransformRequestResponse::clear_transform3d() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.ClearToEmpty();
-}
-inline const std::string& get3DTransformRequestResponse::transform3d() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.get3DTransformRequestResponse.transform3D)
-  return _internal_transform3d();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void get3DTransformRequestResponse::set_transform3d(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.get3DTransformRequestResponse.transform3D)
-}
-inline std::string* get3DTransformRequestResponse::mutable_transform3d() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_transform3d();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.get3DTransformRequestResponse.transform3D)
-  return _s;
-}
-inline const std::string& get3DTransformRequestResponse::_internal_transform3d() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.transform3d_.Get();
-}
-inline void get3DTransformRequestResponse::_internal_set_transform3d(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.Set(value, GetArena());
-}
-inline std::string* get3DTransformRequestResponse::_internal_mutable_transform3d() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.transform3d_.Mutable( GetArena());
-}
-inline std::string* get3DTransformRequestResponse::release_transform3d() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.get3DTransformRequestResponse.transform3D)
-  return _impl_.transform3d_.Release();
-}
-inline void get3DTransformRequestResponse::set_allocated_transform3d(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.transform3d_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.transform3d_.IsDefault()) {
-          _impl_.transform3d_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.get3DTransformRequestResponse.transform3D)
-}
-
-// bytes confidence = 3;
-inline void get3DTransformRequestResponse::clear_confidence() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.ClearToEmpty();
-}
-inline const std::string& get3DTransformRequestResponse::confidence() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.get3DTransformRequestResponse.confidence)
-  return _internal_confidence();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void get3DTransformRequestResponse::set_confidence(Arg_&& arg,
-                                                     Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.get3DTransformRequestResponse.confidence)
-}
-inline std::string* get3DTransformRequestResponse::mutable_confidence() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_confidence();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.get3DTransformRequestResponse.confidence)
-  return _s;
-}
-inline const std::string& get3DTransformRequestResponse::_internal_confidence() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.confidence_.Get();
-}
-inline void get3DTransformRequestResponse::_internal_set_confidence(const std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.Set(value, GetArena());
-}
-inline std::string* get3DTransformRequestResponse::_internal_mutable_confidence() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.confidence_.Mutable( GetArena());
-}
-inline std::string* get3DTransformRequestResponse::release_confidence() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.get3DTransformRequestResponse.confidence)
-  return _impl_.confidence_.Release();
-}
-inline void get3DTransformRequestResponse::set_allocated_confidence(std::string* value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.confidence_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.confidence_.IsDefault()) {
-          _impl_.confidence_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.get3DTransformRequestResponse.confidence)
-}
-
-// sint32 xpcfGrpcReturnValue = 4;
-inline void get3DTransformRequestResponse::clear_xpcfgrpcreturnvalue() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.xpcfgrpcreturnvalue_ = 0;
-}
-inline ::int32_t get3DTransformRequestResponse::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.get3DTransformRequestResponse.xpcfGrpcReturnValue)
-  return _internal_xpcfgrpcreturnvalue();
-}
-inline void get3DTransformRequestResponse::set_xpcfgrpcreturnvalue(::int32_t value) {
-  _internal_set_xpcfgrpcreturnvalue(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.get3DTransformRequestResponse.xpcfGrpcReturnValue)
-}
-inline ::int32_t get3DTransformRequestResponse::_internal_xpcfgrpcreturnvalue() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.xpcfgrpcreturnvalue_;
-}
-inline void get3DTransformRequestResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
+inline void imageProcessRequestResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.xpcfgrpcreturnvalue_ = value;
 }
@@ -17397,70 +15799,70 @@ inline void getMappingDataRequestResponse::_internal_set_xpcfgrpcreturnvalue(::i
 
 // -------------------------------------------------------------------
 
-// getLastPoseRequest
+// getClientPoseRequest
 
 // int32 grpcServerCompressionFormat = 1;
-inline void getLastPoseRequest::clear_grpcservercompressionformat() {
+inline void getClientPoseRequest::clear_grpcservercompressionformat() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.grpcservercompressionformat_ = 0;
 }
-inline ::int32_t getLastPoseRequest::grpcservercompressionformat() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getLastPoseRequest.grpcServerCompressionFormat)
+inline ::int32_t getClientPoseRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientPoseRequest.grpcServerCompressionFormat)
   return _internal_grpcservercompressionformat();
 }
-inline void getLastPoseRequest::set_grpcservercompressionformat(::int32_t value) {
+inline void getClientPoseRequest::set_grpcservercompressionformat(::int32_t value) {
   _internal_set_grpcservercompressionformat(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getLastPoseRequest.grpcServerCompressionFormat)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientPoseRequest.grpcServerCompressionFormat)
 }
-inline ::int32_t getLastPoseRequest::_internal_grpcservercompressionformat() const {
+inline ::int32_t getClientPoseRequest::_internal_grpcservercompressionformat() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.grpcservercompressionformat_;
 }
-inline void getLastPoseRequest::_internal_set_grpcservercompressionformat(::int32_t value) {
+inline void getClientPoseRequest::_internal_set_grpcservercompressionformat(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.grpcservercompressionformat_ = value;
 }
 
 // string accessToken = 2;
-inline void getLastPoseRequest::clear_accesstoken() {
+inline void getClientPoseRequest::clear_accesstoken() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.accesstoken_.ClearToEmpty();
 }
-inline const std::string& getLastPoseRequest::accesstoken() const
+inline const std::string& getClientPoseRequest::accesstoken() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getLastPoseRequest.accessToken)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientPoseRequest.accessToken)
   return _internal_accesstoken();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void getLastPoseRequest::set_accesstoken(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void getClientPoseRequest::set_accesstoken(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.accesstoken_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getLastPoseRequest.accessToken)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientPoseRequest.accessToken)
 }
-inline std::string* getLastPoseRequest::mutable_accesstoken() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* getClientPoseRequest::mutable_accesstoken() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_accesstoken();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getLastPoseRequest.accessToken)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getClientPoseRequest.accessToken)
   return _s;
 }
-inline const std::string& getLastPoseRequest::_internal_accesstoken() const {
+inline const std::string& getClientPoseRequest::_internal_accesstoken() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.accesstoken_.Get();
 }
-inline void getLastPoseRequest::_internal_set_accesstoken(const std::string& value) {
+inline void getClientPoseRequest::_internal_set_accesstoken(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.accesstoken_.Set(value, GetArena());
 }
-inline std::string* getLastPoseRequest::_internal_mutable_accesstoken() {
+inline std::string* getClientPoseRequest::_internal_mutable_accesstoken() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.accesstoken_.Mutable( GetArena());
 }
-inline std::string* getLastPoseRequest::release_accesstoken() {
+inline std::string* getClientPoseRequest::release_accesstoken() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getLastPoseRequest.accessToken)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getClientPoseRequest.accessToken)
   return _impl_.accesstoken_.Release();
 }
-inline void getLastPoseRequest::set_allocated_accesstoken(std::string* value) {
+inline void getClientPoseRequest::set_allocated_accesstoken(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.accesstoken_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -17468,49 +15870,49 @@ inline void getLastPoseRequest::set_allocated_accesstoken(std::string* value) {
           _impl_.accesstoken_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getLastPoseRequest.accessToken)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getClientPoseRequest.accessToken)
 }
 
 // string clientUUID = 3;
-inline void getLastPoseRequest::clear_clientuuid() {
+inline void getClientPoseRequest::clear_clientuuid() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.clientuuid_.ClearToEmpty();
 }
-inline const std::string& getLastPoseRequest::clientuuid() const
+inline const std::string& getClientPoseRequest::clientuuid() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getLastPoseRequest.clientUUID)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientPoseRequest.clientUUID)
   return _internal_clientuuid();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void getLastPoseRequest::set_clientuuid(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void getClientPoseRequest::set_clientuuid(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.clientuuid_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getLastPoseRequest.clientUUID)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientPoseRequest.clientUUID)
 }
-inline std::string* getLastPoseRequest::mutable_clientuuid() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* getClientPoseRequest::mutable_clientuuid() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_clientuuid();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getLastPoseRequest.clientUUID)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getClientPoseRequest.clientUUID)
   return _s;
 }
-inline const std::string& getLastPoseRequest::_internal_clientuuid() const {
+inline const std::string& getClientPoseRequest::_internal_clientuuid() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.clientuuid_.Get();
 }
-inline void getLastPoseRequest::_internal_set_clientuuid(const std::string& value) {
+inline void getClientPoseRequest::_internal_set_clientuuid(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.clientuuid_.Set(value, GetArena());
 }
-inline std::string* getLastPoseRequest::_internal_mutable_clientuuid() {
+inline std::string* getClientPoseRequest::_internal_mutable_clientuuid() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.clientuuid_.Mutable( GetArena());
 }
-inline std::string* getLastPoseRequest::release_clientuuid() {
+inline std::string* getClientPoseRequest::release_clientuuid() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getLastPoseRequest.clientUUID)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getClientPoseRequest.clientUUID)
   return _impl_.clientuuid_.Release();
 }
-inline void getLastPoseRequest::set_allocated_clientuuid(std::string* value) {
+inline void getClientPoseRequest::set_allocated_clientuuid(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.clientuuid_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -17518,71 +15920,193 @@ inline void getLastPoseRequest::set_allocated_clientuuid(std::string* value) {
           _impl_.clientuuid_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getLastPoseRequest.clientUUID)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getClientPoseRequest.clientUUID)
 }
 
 // sint32 poseType = 4;
-inline void getLastPoseRequest::clear_posetype() {
+inline void getClientPoseRequest::clear_posetype() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.posetype_ = 0;
 }
-inline ::int32_t getLastPoseRequest::posetype() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getLastPoseRequest.poseType)
+inline ::int32_t getClientPoseRequest::posetype() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientPoseRequest.poseType)
   return _internal_posetype();
 }
-inline void getLastPoseRequest::set_posetype(::int32_t value) {
+inline void getClientPoseRequest::set_posetype(::int32_t value) {
   _internal_set_posetype(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getLastPoseRequest.poseType)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientPoseRequest.poseType)
 }
-inline ::int32_t getLastPoseRequest::_internal_posetype() const {
+inline ::int32_t getClientPoseRequest::_internal_posetype() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.posetype_;
 }
-inline void getLastPoseRequest::_internal_set_posetype(::int32_t value) {
+inline void getClientPoseRequest::_internal_set_posetype(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.posetype_ = value;
 }
 
-// bytes pose = 5;
-inline void getLastPoseRequest::clear_pose() {
+// sint32 transform3DStatus = 5;
+inline void getClientPoseRequest::clear_transform3dstatus() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.transform3dstatus_ = 0;
+}
+inline ::int32_t getClientPoseRequest::transform3dstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientPoseRequest.transform3DStatus)
+  return _internal_transform3dstatus();
+}
+inline void getClientPoseRequest::set_transform3dstatus(::int32_t value) {
+  _internal_set_transform3dstatus(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientPoseRequest.transform3DStatus)
+}
+inline ::int32_t getClientPoseRequest::_internal_transform3dstatus() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.transform3dstatus_;
+}
+inline void getClientPoseRequest::_internal_set_transform3dstatus(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.transform3dstatus_ = value;
+}
+
+// bytes transform3D = 6;
+inline void getClientPoseRequest::clear_transform3d() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.transform3d_.ClearToEmpty();
+}
+inline const std::string& getClientPoseRequest::transform3d() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientPoseRequest.transform3D)
+  return _internal_transform3d();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void getClientPoseRequest::set_transform3d(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.transform3d_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientPoseRequest.transform3D)
+}
+inline std::string* getClientPoseRequest::mutable_transform3d() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_transform3d();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getClientPoseRequest.transform3D)
+  return _s;
+}
+inline const std::string& getClientPoseRequest::_internal_transform3d() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.transform3d_.Get();
+}
+inline void getClientPoseRequest::_internal_set_transform3d(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.transform3d_.Set(value, GetArena());
+}
+inline std::string* getClientPoseRequest::_internal_mutable_transform3d() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.transform3d_.Mutable( GetArena());
+}
+inline std::string* getClientPoseRequest::release_transform3d() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getClientPoseRequest.transform3D)
+  return _impl_.transform3d_.Release();
+}
+inline void getClientPoseRequest::set_allocated_transform3d(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.transform3d_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.transform3d_.IsDefault()) {
+          _impl_.transform3d_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getClientPoseRequest.transform3D)
+}
+
+// bytes confidence = 7;
+inline void getClientPoseRequest::clear_confidence() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.confidence_.ClearToEmpty();
+}
+inline const std::string& getClientPoseRequest::confidence() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientPoseRequest.confidence)
+  return _internal_confidence();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void getClientPoseRequest::set_confidence(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.confidence_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientPoseRequest.confidence)
+}
+inline std::string* getClientPoseRequest::mutable_confidence() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_confidence();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getClientPoseRequest.confidence)
+  return _s;
+}
+inline const std::string& getClientPoseRequest::_internal_confidence() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.confidence_.Get();
+}
+inline void getClientPoseRequest::_internal_set_confidence(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.confidence_.Set(value, GetArena());
+}
+inline std::string* getClientPoseRequest::_internal_mutable_confidence() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.confidence_.Mutable( GetArena());
+}
+inline std::string* getClientPoseRequest::release_confidence() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getClientPoseRequest.confidence)
+  return _impl_.confidence_.Release();
+}
+inline void getClientPoseRequest::set_allocated_confidence(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.confidence_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.confidence_.IsDefault()) {
+          _impl_.confidence_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getClientPoseRequest.confidence)
+}
+
+// bytes pose = 8;
+inline void getClientPoseRequest::clear_pose() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.pose_.ClearToEmpty();
 }
-inline const std::string& getLastPoseRequest::pose() const
+inline const std::string& getClientPoseRequest::pose() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getLastPoseRequest.pose)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientPoseRequest.pose)
   return _internal_pose();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void getLastPoseRequest::set_pose(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void getClientPoseRequest::set_pose(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.pose_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getLastPoseRequest.pose)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientPoseRequest.pose)
 }
-inline std::string* getLastPoseRequest::mutable_pose() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* getClientPoseRequest::mutable_pose() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_pose();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getLastPoseRequest.pose)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getClientPoseRequest.pose)
   return _s;
 }
-inline const std::string& getLastPoseRequest::_internal_pose() const {
+inline const std::string& getClientPoseRequest::_internal_pose() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.pose_.Get();
 }
-inline void getLastPoseRequest::_internal_set_pose(const std::string& value) {
+inline void getClientPoseRequest::_internal_set_pose(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.pose_.Set(value, GetArena());
 }
-inline std::string* getLastPoseRequest::_internal_mutable_pose() {
+inline std::string* getClientPoseRequest::_internal_mutable_pose() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.pose_.Mutable( GetArena());
 }
-inline std::string* getLastPoseRequest::release_pose() {
+inline std::string* getClientPoseRequest::release_pose() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getLastPoseRequest.pose)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getClientPoseRequest.pose)
   return _impl_.pose_.Release();
 }
-inline void getLastPoseRequest::set_allocated_pose(std::string* value) {
+inline void getClientPoseRequest::set_allocated_pose(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.pose_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -17590,53 +16114,175 @@ inline void getLastPoseRequest::set_allocated_pose(std::string* value) {
           _impl_.pose_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getLastPoseRequest.pose)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getClientPoseRequest.pose)
 }
 
 // -------------------------------------------------------------------
 
-// getLastPoseResponse
+// getClientPoseResponse
 
-// bytes pose = 1;
-inline void getLastPoseResponse::clear_pose() {
+// sint32 transform3DStatus = 1;
+inline void getClientPoseResponse::clear_transform3dstatus() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.transform3dstatus_ = 0;
+}
+inline ::int32_t getClientPoseResponse::transform3dstatus() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientPoseResponse.transform3DStatus)
+  return _internal_transform3dstatus();
+}
+inline void getClientPoseResponse::set_transform3dstatus(::int32_t value) {
+  _internal_set_transform3dstatus(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientPoseResponse.transform3DStatus)
+}
+inline ::int32_t getClientPoseResponse::_internal_transform3dstatus() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.transform3dstatus_;
+}
+inline void getClientPoseResponse::_internal_set_transform3dstatus(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.transform3dstatus_ = value;
+}
+
+// bytes transform3D = 2;
+inline void getClientPoseResponse::clear_transform3d() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.transform3d_.ClearToEmpty();
+}
+inline const std::string& getClientPoseResponse::transform3d() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientPoseResponse.transform3D)
+  return _internal_transform3d();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void getClientPoseResponse::set_transform3d(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.transform3d_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientPoseResponse.transform3D)
+}
+inline std::string* getClientPoseResponse::mutable_transform3d() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_transform3d();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getClientPoseResponse.transform3D)
+  return _s;
+}
+inline const std::string& getClientPoseResponse::_internal_transform3d() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.transform3d_.Get();
+}
+inline void getClientPoseResponse::_internal_set_transform3d(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.transform3d_.Set(value, GetArena());
+}
+inline std::string* getClientPoseResponse::_internal_mutable_transform3d() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.transform3d_.Mutable( GetArena());
+}
+inline std::string* getClientPoseResponse::release_transform3d() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getClientPoseResponse.transform3D)
+  return _impl_.transform3d_.Release();
+}
+inline void getClientPoseResponse::set_allocated_transform3d(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.transform3d_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.transform3d_.IsDefault()) {
+          _impl_.transform3d_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getClientPoseResponse.transform3D)
+}
+
+// bytes confidence = 3;
+inline void getClientPoseResponse::clear_confidence() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.confidence_.ClearToEmpty();
+}
+inline const std::string& getClientPoseResponse::confidence() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientPoseResponse.confidence)
+  return _internal_confidence();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void getClientPoseResponse::set_confidence(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.confidence_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientPoseResponse.confidence)
+}
+inline std::string* getClientPoseResponse::mutable_confidence() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_confidence();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getClientPoseResponse.confidence)
+  return _s;
+}
+inline const std::string& getClientPoseResponse::_internal_confidence() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.confidence_.Get();
+}
+inline void getClientPoseResponse::_internal_set_confidence(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.confidence_.Set(value, GetArena());
+}
+inline std::string* getClientPoseResponse::_internal_mutable_confidence() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.confidence_.Mutable( GetArena());
+}
+inline std::string* getClientPoseResponse::release_confidence() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getClientPoseResponse.confidence)
+  return _impl_.confidence_.Release();
+}
+inline void getClientPoseResponse::set_allocated_confidence(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.confidence_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.confidence_.IsDefault()) {
+          _impl_.confidence_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getClientPoseResponse.confidence)
+}
+
+// bytes pose = 4;
+inline void getClientPoseResponse::clear_pose() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.pose_.ClearToEmpty();
 }
-inline const std::string& getLastPoseResponse::pose() const
+inline const std::string& getClientPoseResponse::pose() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getLastPoseResponse.pose)
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientPoseResponse.pose)
   return _internal_pose();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void getLastPoseResponse::set_pose(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void getClientPoseResponse::set_pose(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.pose_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getLastPoseResponse.pose)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientPoseResponse.pose)
 }
-inline std::string* getLastPoseResponse::mutable_pose() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* getClientPoseResponse::mutable_pose() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_pose();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getLastPoseResponse.pose)
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getClientPoseResponse.pose)
   return _s;
 }
-inline const std::string& getLastPoseResponse::_internal_pose() const {
+inline const std::string& getClientPoseResponse::_internal_pose() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.pose_.Get();
 }
-inline void getLastPoseResponse::_internal_set_pose(const std::string& value) {
+inline void getClientPoseResponse::_internal_set_pose(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.pose_.Set(value, GetArena());
 }
-inline std::string* getLastPoseResponse::_internal_mutable_pose() {
+inline std::string* getClientPoseResponse::_internal_mutable_pose() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _impl_.pose_.Mutable( GetArena());
 }
-inline std::string* getLastPoseResponse::release_pose() {
+inline std::string* getClientPoseResponse::release_pose() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getLastPoseResponse.pose)
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getClientPoseResponse.pose)
   return _impl_.pose_.Release();
 }
-inline void getLastPoseResponse::set_allocated_pose(std::string* value) {
+inline void getClientPoseResponse::set_allocated_pose(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.pose_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -17644,27 +16290,27 @@ inline void getLastPoseResponse::set_allocated_pose(std::string* value) {
           _impl_.pose_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getLastPoseResponse.pose)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getClientPoseResponse.pose)
 }
 
-// sint32 xpcfGrpcReturnValue = 2;
-inline void getLastPoseResponse::clear_xpcfgrpcreturnvalue() {
+// sint32 xpcfGrpcReturnValue = 5;
+inline void getClientPoseResponse::clear_xpcfgrpcreturnvalue() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.xpcfgrpcreturnvalue_ = 0;
 }
-inline ::int32_t getLastPoseResponse::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getLastPoseResponse.xpcfGrpcReturnValue)
+inline ::int32_t getClientPoseResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientPoseResponse.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-inline void getLastPoseResponse::set_xpcfgrpcreturnvalue(::int32_t value) {
+inline void getClientPoseResponse::set_xpcfgrpcreturnvalue(::int32_t value) {
   _internal_set_xpcfgrpcreturnvalue(value);
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getLastPoseResponse.xpcfGrpcReturnValue)
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientPoseResponse.xpcfGrpcReturnValue)
 }
-inline ::int32_t getLastPoseResponse::_internal_xpcfgrpcreturnvalue() const {
+inline ::int32_t getClientPoseResponse::_internal_xpcfgrpcreturnvalue() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.xpcfgrpcreturnvalue_;
 }
-inline void getLastPoseResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
+inline void getClientPoseResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.xpcfgrpcreturnvalue_ = value;
 }
@@ -18429,6 +17075,258 @@ inline void getClientMapUUIDResponse::_internal_set_xpcfgrpcreturnvalue(::int32_
 
 // -------------------------------------------------------------------
 
+// getClientInfoForMapRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getClientInfoForMapRequest::clear_grpcservercompressionformat() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = 0;
+}
+inline ::int32_t getClientInfoForMapRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientInfoForMapRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getClientInfoForMapRequest::set_grpcservercompressionformat(::int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientInfoForMapRequest.grpcServerCompressionFormat)
+}
+inline ::int32_t getClientInfoForMapRequest::_internal_grpcservercompressionformat() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.grpcservercompressionformat_;
+}
+inline void getClientInfoForMapRequest::_internal_set_grpcservercompressionformat(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = value;
+}
+
+// string accessToken = 2;
+inline void getClientInfoForMapRequest::clear_accesstoken() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesstoken_.ClearToEmpty();
+}
+inline const std::string& getClientInfoForMapRequest::accesstoken() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientInfoForMapRequest.accessToken)
+  return _internal_accesstoken();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void getClientInfoForMapRequest::set_accesstoken(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesstoken_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientInfoForMapRequest.accessToken)
+}
+inline std::string* getClientInfoForMapRequest::mutable_accesstoken() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_accesstoken();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getClientInfoForMapRequest.accessToken)
+  return _s;
+}
+inline const std::string& getClientInfoForMapRequest::_internal_accesstoken() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.accesstoken_.Get();
+}
+inline void getClientInfoForMapRequest::_internal_set_accesstoken(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesstoken_.Set(value, GetArena());
+}
+inline std::string* getClientInfoForMapRequest::_internal_mutable_accesstoken() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.accesstoken_.Mutable( GetArena());
+}
+inline std::string* getClientInfoForMapRequest::release_accesstoken() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getClientInfoForMapRequest.accessToken)
+  return _impl_.accesstoken_.Release();
+}
+inline void getClientInfoForMapRequest::set_allocated_accesstoken(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesstoken_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.accesstoken_.IsDefault()) {
+          _impl_.accesstoken_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getClientInfoForMapRequest.accessToken)
+}
+
+// string mapUUID = 3;
+inline void getClientInfoForMapRequest::clear_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.ClearToEmpty();
+}
+inline const std::string& getClientInfoForMapRequest::mapuuid() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientInfoForMapRequest.mapUUID)
+  return _internal_mapuuid();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void getClientInfoForMapRequest::set_mapuuid(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientInfoForMapRequest.mapUUID)
+}
+inline std::string* getClientInfoForMapRequest::mutable_mapuuid() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_mapuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getClientInfoForMapRequest.mapUUID)
+  return _s;
+}
+inline const std::string& getClientInfoForMapRequest::_internal_mapuuid() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.mapuuid_.Get();
+}
+inline void getClientInfoForMapRequest::_internal_set_mapuuid(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.Set(value, GetArena());
+}
+inline std::string* getClientInfoForMapRequest::_internal_mutable_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.mapuuid_.Mutable( GetArena());
+}
+inline std::string* getClientInfoForMapRequest::release_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getClientInfoForMapRequest.mapUUID)
+  return _impl_.mapuuid_.Release();
+}
+inline void getClientInfoForMapRequest::set_allocated_mapuuid(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.mapuuid_.IsDefault()) {
+          _impl_.mapuuid_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getClientInfoForMapRequest.mapUUID)
+}
+
+// bytes clientInfoList = 4;
+inline void getClientInfoForMapRequest::clear_clientinfolist() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.clientinfolist_.ClearToEmpty();
+}
+inline const std::string& getClientInfoForMapRequest::clientinfolist() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientInfoForMapRequest.clientInfoList)
+  return _internal_clientinfolist();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void getClientInfoForMapRequest::set_clientinfolist(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.clientinfolist_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientInfoForMapRequest.clientInfoList)
+}
+inline std::string* getClientInfoForMapRequest::mutable_clientinfolist() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_clientinfolist();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getClientInfoForMapRequest.clientInfoList)
+  return _s;
+}
+inline const std::string& getClientInfoForMapRequest::_internal_clientinfolist() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.clientinfolist_.Get();
+}
+inline void getClientInfoForMapRequest::_internal_set_clientinfolist(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.clientinfolist_.Set(value, GetArena());
+}
+inline std::string* getClientInfoForMapRequest::_internal_mutable_clientinfolist() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.clientinfolist_.Mutable( GetArena());
+}
+inline std::string* getClientInfoForMapRequest::release_clientinfolist() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getClientInfoForMapRequest.clientInfoList)
+  return _impl_.clientinfolist_.Release();
+}
+inline void getClientInfoForMapRequest::set_allocated_clientinfolist(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.clientinfolist_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.clientinfolist_.IsDefault()) {
+          _impl_.clientinfolist_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getClientInfoForMapRequest.clientInfoList)
+}
+
+// -------------------------------------------------------------------
+
+// getClientInfoForMapResponse
+
+// bytes clientInfoList = 1;
+inline void getClientInfoForMapResponse::clear_clientinfolist() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.clientinfolist_.ClearToEmpty();
+}
+inline const std::string& getClientInfoForMapResponse::clientinfolist() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientInfoForMapResponse.clientInfoList)
+  return _internal_clientinfolist();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void getClientInfoForMapResponse::set_clientinfolist(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.clientinfolist_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientInfoForMapResponse.clientInfoList)
+}
+inline std::string* getClientInfoForMapResponse::mutable_clientinfolist() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_clientinfolist();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getClientInfoForMapResponse.clientInfoList)
+  return _s;
+}
+inline const std::string& getClientInfoForMapResponse::_internal_clientinfolist() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.clientinfolist_.Get();
+}
+inline void getClientInfoForMapResponse::_internal_set_clientinfolist(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.clientinfolist_.Set(value, GetArena());
+}
+inline std::string* getClientInfoForMapResponse::_internal_mutable_clientinfolist() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.clientinfolist_.Mutable( GetArena());
+}
+inline std::string* getClientInfoForMapResponse::release_clientinfolist() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getClientInfoForMapResponse.clientInfoList)
+  return _impl_.clientinfolist_.Release();
+}
+inline void getClientInfoForMapResponse::set_allocated_clientinfolist(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.clientinfolist_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.clientinfolist_.IsDefault()) {
+          _impl_.clientinfolist_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getClientInfoForMapResponse.clientInfoList)
+}
+
+// sint32 xpcfGrpcReturnValue = 2;
+inline void getClientInfoForMapResponse::clear_xpcfgrpcreturnvalue() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+}
+inline ::int32_t getClientInfoForMapResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getClientInfoForMapResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void getClientInfoForMapResponse::set_xpcfgrpcreturnvalue(::int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getClientInfoForMapResponse.xpcfGrpcReturnValue)
+}
+inline ::int32_t getClientInfoForMapResponse::_internal_xpcfgrpcreturnvalue() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline void getClientInfoForMapResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+
+// -------------------------------------------------------------------
+
 // getMapRequestRequest
 
 // int32 grpcServerCompressionFormat = 1;
@@ -18553,7 +17451,29 @@ inline void getMapRequestRequest::set_allocated_mapuuid(std::string* value) {
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMapRequestRequest.mapUUID)
 }
 
-// bytes mapDatastructure = 4;
+// sint32 keyframeImagesOption = 4;
+inline void getMapRequestRequest::clear_keyframeimagesoption() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.keyframeimagesoption_ = 0;
+}
+inline ::int32_t getMapRequestRequest::keyframeimagesoption() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapRequestRequest.keyframeImagesOption)
+  return _internal_keyframeimagesoption();
+}
+inline void getMapRequestRequest::set_keyframeimagesoption(::int32_t value) {
+  _internal_set_keyframeimagesoption(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapRequestRequest.keyframeImagesOption)
+}
+inline ::int32_t getMapRequestRequest::_internal_keyframeimagesoption() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.keyframeimagesoption_;
+}
+inline void getMapRequestRequest::_internal_set_keyframeimagesoption(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.keyframeimagesoption_ = value;
+}
+
+// bytes mapDatastructure = 5;
 inline void getMapRequestRequest::clear_mapdatastructure() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.mapdatastructure_.ClearToEmpty();

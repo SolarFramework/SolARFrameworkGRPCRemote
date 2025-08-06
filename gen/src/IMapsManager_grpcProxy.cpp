@@ -200,7 +200,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::decreaseMapClients(std::stri
 }
 
 
-SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapRequest(std::string const& mapUUID, SRef<SolAR::datastructure::Map>& map) const
+SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapRequest(std::string const& mapUUID, SRef<SolAR::datastructure::Map>& map, SolAR::api::service::GetMapRequestOption const& keyframeImagesOption) const
 {
   ::grpc::ClientContext context;
   ::grpcIMapsManager::getMapRequestRequest reqIn;
@@ -211,6 +211,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapRequest(std::string co
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_mapuuid(mapUUID);
+  reqIn.set_keyframeimagesoption(static_cast<int32_t>(keyframeImagesOption));
   reqIn.set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();

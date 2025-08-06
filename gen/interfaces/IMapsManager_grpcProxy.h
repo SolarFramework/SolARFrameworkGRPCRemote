@@ -27,7 +27,7 @@ class IMapsManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
     SolAR::FrameworkReturnCode getAllMaps(std::vector<std::string>& mapUUIDList)     const     override;
     SolAR::FrameworkReturnCode increaseMapClients(std::string const& mapUUID, std::string& serviceURL)     override;
     SolAR::FrameworkReturnCode decreaseMapClients(std::string const& mapUUID)     override;
-    SolAR::FrameworkReturnCode getMapRequest(std::string const& mapUUID, SRef<SolAR::datastructure::Map>& map)     const     override;
+    SolAR::FrameworkReturnCode getMapRequest(std::string const& mapUUID, SRef<SolAR::datastructure::Map>& map, SolAR::api::service::GetMapRequestOption const& keyframeImagesOption)     const     override;
     SolAR::FrameworkReturnCode setMapRequest(std::string const& mapUUID, SRef<SolAR::datastructure::Map> const mapDatastructure)     override;
     SolAR::FrameworkReturnCode getPointCloudRequest(std::string const& mapUUID, SRef<SolAR::datastructure::PointCloud>& pointCloud)     const     override;
     SolAR::FrameworkReturnCode getMapInfo(std::string const& mapUUID, SolAR::datastructure::DescriptorType& descriptorType, uint32_t& mapSupportedTypes, uint32_t& dataSize, bool& areImageSaved)     const     override;

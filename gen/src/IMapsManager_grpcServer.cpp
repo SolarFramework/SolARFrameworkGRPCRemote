@@ -171,7 +171,8 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   #endif
   std::string mapUUID = request->mapuuid();
   SRef<SolAR::datastructure::Map> map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->map());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(mapUUID, map);
+  SolAR::api::service::GetMapRequestOption keyframeImagesOption = static_cast<SolAR::api::service::GetMapRequestOption>(request->keyframeimagesoption());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapRequest(mapUUID, map, keyframeImagesOption);
   response->set_map(xpcf::serialize<SRef<SolAR::datastructure::Map>>(map));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS

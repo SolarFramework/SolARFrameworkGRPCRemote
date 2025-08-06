@@ -2010,8 +2010,9 @@ class getMapRequestRequest final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kMapUUIDFieldNumber = 2,
-    kMapFieldNumber = 3,
+    kMapFieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
+    kKeyframeImagesOptionFieldNumber = 3,
   };
   // string mapUUID = 2;
   void clear_mapuuid() ;
@@ -2029,7 +2030,7 @@ class getMapRequestRequest final : public ::google::protobuf::Message
   std::string* _internal_mutable_mapuuid();
 
   public:
-  // bytes map = 3;
+  // bytes map = 4;
   void clear_map() ;
   const std::string& map() const;
   template <typename Arg_ = const std::string&, typename... Args_>
@@ -2055,12 +2056,22 @@ class getMapRequestRequest final : public ::google::protobuf::Message
   void _internal_set_grpcservercompressionformat(::int32_t value);
 
   public:
+  // sint32 keyframeImagesOption = 3;
+  void clear_keyframeimagesoption() ;
+  ::int32_t keyframeimagesoption() const;
+  void set_keyframeimagesoption(::int32_t value);
+
+  private:
+  ::int32_t _internal_keyframeimagesoption() const;
+  void _internal_set_keyframeimagesoption(::int32_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:grpcIMapsManager.getMapRequestRequest)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      2, 3, 0,
+      2, 4, 0,
       53, 2>
       _table_;
 
@@ -2084,6 +2095,7 @@ class getMapRequestRequest final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr mapuuid_;
     ::google::protobuf::internal::ArenaStringPtr map_;
     ::int32_t grpcservercompressionformat_;
+    ::int32_t keyframeimagesoption_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -5593,7 +5605,29 @@ inline void getMapRequestRequest::set_allocated_mapuuid(std::string* value) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.getMapRequestRequest.mapUUID)
 }
 
-// bytes map = 3;
+// sint32 keyframeImagesOption = 3;
+inline void getMapRequestRequest::clear_keyframeimagesoption() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.keyframeimagesoption_ = 0;
+}
+inline ::int32_t getMapRequestRequest::keyframeimagesoption() const {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.getMapRequestRequest.keyframeImagesOption)
+  return _internal_keyframeimagesoption();
+}
+inline void getMapRequestRequest::set_keyframeimagesoption(::int32_t value) {
+  _internal_set_keyframeimagesoption(value);
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.getMapRequestRequest.keyframeImagesOption)
+}
+inline ::int32_t getMapRequestRequest::_internal_keyframeimagesoption() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.keyframeimagesoption_;
+}
+inline void getMapRequestRequest::_internal_set_keyframeimagesoption(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.keyframeimagesoption_ = value;
+}
+
+// bytes map = 4;
 inline void getMapRequestRequest::clear_map() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.map_.ClearToEmpty();
