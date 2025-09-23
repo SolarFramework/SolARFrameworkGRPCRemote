@@ -246,8 +246,8 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   #endif
   std::string mapUUID = request->mapuuid();
   std::string version = request->version();
-  datastructure::GlobalDescriptorType globalDescriptorType = static_cast<datastructure::GlobalDescriptorType>(request->globaldescriptortype());
-  datastructure::DescriptorType descriptorType = static_cast<datastructure::DescriptorType>(request->descriptortype());
+  SolAR::datastructure::GlobalDescriptorType globalDescriptorType = static_cast<SolAR::datastructure::GlobalDescriptorType>(request->globaldescriptortype());
+  SolAR::datastructure::DescriptorType descriptorType = static_cast<SolAR::datastructure::DescriptorType>(request->descriptortype());
   uint32_t dataSize = request->datasize();
   bool areImageSaved = request->areimagesaved();
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapInfo(mapUUID, version, globalDescriptorType, descriptorType, dataSize, areImageSaved);

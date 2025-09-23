@@ -296,7 +296,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getPointCloudRequest(std::st
 }
 
 
-SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapInfo(std::string const& mapUUID, std::string& version, datastructure::GlobalDescriptorType& globalDescriptorType, datastructure::DescriptorType& descriptorType, uint32_t& dataSize, bool& areImageSaved) const
+SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapInfo(std::string const& mapUUID, std::string& version, SolAR::datastructure::GlobalDescriptorType& globalDescriptorType, SolAR::datastructure::DescriptorType& descriptorType, uint32_t& dataSize, bool& areImageSaved) const
 {
   ::grpc::ClientContext context;
   ::grpcIMapsManager::getMapInfoRequest reqIn;
@@ -328,8 +328,8 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapInfo(std::string const
   }
 
   version = respOut.version();
-  globalDescriptorType = static_cast<datastructure::GlobalDescriptorType>(respOut.globaldescriptortype());
-  descriptorType = static_cast<datastructure::DescriptorType>(respOut.descriptortype());
+  globalDescriptorType = static_cast<SolAR::datastructure::GlobalDescriptorType>(respOut.globaldescriptortype());
+  descriptorType = static_cast<SolAR::datastructure::DescriptorType>(respOut.descriptortype());
   dataSize = respOut.datasize();
   areImageSaved = respOut.areimagesaved();
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
