@@ -296,7 +296,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getPointCloudRequest(std::st
 }
 
 
-SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapInfo(std::string const& mapUUID, SolAR::datastructure::DescriptorType& descriptorType, uint32_t& mapSupportedTypes, uint32_t& dataSize, bool& areImageSaved) const
+SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapInfo(std::string const& mapUUID, std::string& version, datastructure::GlobalDescriptorType& globalDescriptorType, datastructure::DescriptorType& descriptorType, uint32_t& dataSize, bool& areImageSaved) const
 {
   ::grpc::ClientContext context;
   ::grpcIMapsManager::getMapInfoRequest reqIn;
@@ -307,8 +307,9 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapInfo(std::string const
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_mapuuid(mapUUID);
+  reqIn.set_version(version);
+  reqIn.set_globaldescriptortype(static_cast<int32_t>(globalDescriptorType));
   reqIn.set_descriptortype(static_cast<int32_t>(descriptorType));
-  reqIn.set_mapsupportedtypes(mapSupportedTypes);
   reqIn.set_datasize(dataSize);
   reqIn.set_areimagesaved(areImageSaved);
   #ifdef ENABLE_PROXY_TIMERS
@@ -326,8 +327,9 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapInfo(std::string const
     throw xpcf::RemotingException("grpcIMapsManagerService","getMapInfo",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  descriptorType = static_cast<SolAR::datastructure::DescriptorType>(respOut.descriptortype());
-  mapSupportedTypes = respOut.mapsupportedtypes();
+  version = respOut.version();
+  globalDescriptorType = static_cast<datastructure::GlobalDescriptorType>(respOut.globaldescriptortype());
+  descriptorType = static_cast<datastructure::DescriptorType>(respOut.descriptortype());
   dataSize = respOut.datasize();
   areImageSaved = respOut.areimagesaved();
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());

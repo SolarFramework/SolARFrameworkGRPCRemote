@@ -105,19 +105,21 @@ message getMapInfoRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string mapUUID = 2;
-sint32 descriptorType = 3;
-uint32 mapSupportedTypes = 4;
-uint32 dataSize = 5;
-bool areImageSaved = 6;
+string version = 3;
+sint32 globalDescriptorType = 4;
+sint32 descriptorType = 5;
+uint32 dataSize = 6;
+bool areImageSaved = 7;
 }
 
 message getMapInfoResponse
 {
-sint32 descriptorType = 1;
-uint32 mapSupportedTypes = 2;
-uint32 dataSize = 3;
-bool areImageSaved = 4;
-sint32 xpcfGrpcReturnValue = 5;
+string version = 1;
+sint32 globalDescriptorType = 2;
+sint32 descriptorType = 3;
+uint32 dataSize = 4;
+bool areImageSaved = 5;
+sint32 xpcfGrpcReturnValue = 6;
 }
 
 message requestMapProcessingRequest

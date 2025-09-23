@@ -3068,13 +3068,40 @@ class getMapInfoResponse final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kDescriptorTypeFieldNumber = 1,
-    kMapSupportedTypesFieldNumber = 2,
-    kDataSizeFieldNumber = 3,
-    kAreImageSavedFieldNumber = 4,
-    kXpcfGrpcReturnValueFieldNumber = 5,
+    kVersionFieldNumber = 1,
+    kGlobalDescriptorTypeFieldNumber = 2,
+    kDescriptorTypeFieldNumber = 3,
+    kDataSizeFieldNumber = 4,
+    kAreImageSavedFieldNumber = 5,
+    kXpcfGrpcReturnValueFieldNumber = 6,
   };
-  // sint32 descriptorType = 1;
+  // string version = 1;
+  void clear_version() ;
+  const std::string& version() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_version(Arg_&& arg, Args_... args);
+  std::string* mutable_version();
+  PROTOBUF_NODISCARD std::string* release_version();
+  void set_allocated_version(std::string* value);
+
+  private:
+  const std::string& _internal_version() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_version(
+      const std::string& value);
+  std::string* _internal_mutable_version();
+
+  public:
+  // sint32 globalDescriptorType = 2;
+  void clear_globaldescriptortype() ;
+  ::int32_t globaldescriptortype() const;
+  void set_globaldescriptortype(::int32_t value);
+
+  private:
+  ::int32_t _internal_globaldescriptortype() const;
+  void _internal_set_globaldescriptortype(::int32_t value);
+
+  public:
+  // sint32 descriptorType = 3;
   void clear_descriptortype() ;
   ::int32_t descriptortype() const;
   void set_descriptortype(::int32_t value);
@@ -3084,17 +3111,7 @@ class getMapInfoResponse final : public ::google::protobuf::Message
   void _internal_set_descriptortype(::int32_t value);
 
   public:
-  // uint32 mapSupportedTypes = 2;
-  void clear_mapsupportedtypes() ;
-  ::uint32_t mapsupportedtypes() const;
-  void set_mapsupportedtypes(::uint32_t value);
-
-  private:
-  ::uint32_t _internal_mapsupportedtypes() const;
-  void _internal_set_mapsupportedtypes(::uint32_t value);
-
-  public:
-  // uint32 dataSize = 3;
+  // uint32 dataSize = 4;
   void clear_datasize() ;
   ::uint32_t datasize() const;
   void set_datasize(::uint32_t value);
@@ -3104,7 +3121,7 @@ class getMapInfoResponse final : public ::google::protobuf::Message
   void _internal_set_datasize(::uint32_t value);
 
   public:
-  // bool areImageSaved = 4;
+  // bool areImageSaved = 5;
   void clear_areimagesaved() ;
   bool areimagesaved() const;
   void set_areimagesaved(bool value);
@@ -3114,7 +3131,7 @@ class getMapInfoResponse final : public ::google::protobuf::Message
   void _internal_set_areimagesaved(bool value);
 
   public:
-  // sint32 xpcfGrpcReturnValue = 5;
+  // sint32 xpcfGrpcReturnValue = 6;
   void clear_xpcfgrpcreturnvalue() ;
   ::int32_t xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(::int32_t value);
@@ -3129,8 +3146,8 @@ class getMapInfoResponse final : public ::google::protobuf::Message
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      3, 5, 0,
-      0, 2>
+      3, 6, 0,
+      51, 2>
       _table_;
 
   static constexpr const void* _raw_default_instance_ =
@@ -3150,8 +3167,9 @@ class getMapInfoResponse final : public ::google::protobuf::Message
     inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                           ::google::protobuf::Arena* arena, const Impl_& from,
                           const getMapInfoResponse& from_msg);
+    ::google::protobuf::internal::ArenaStringPtr version_;
+    ::int32_t globaldescriptortype_;
     ::int32_t descriptortype_;
-    ::uint32_t mapsupportedtypes_;
     ::uint32_t datasize_;
     bool areimagesaved_;
     ::int32_t xpcfgrpcreturnvalue_;
@@ -3288,11 +3306,12 @@ class getMapInfoRequest final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kMapUUIDFieldNumber = 2,
+    kVersionFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
-    kDescriptorTypeFieldNumber = 3,
-    kMapSupportedTypesFieldNumber = 4,
-    kDataSizeFieldNumber = 5,
-    kAreImageSavedFieldNumber = 6,
+    kGlobalDescriptorTypeFieldNumber = 4,
+    kDescriptorTypeFieldNumber = 5,
+    kDataSizeFieldNumber = 6,
+    kAreImageSavedFieldNumber = 7,
   };
   // string mapUUID = 2;
   void clear_mapuuid() ;
@@ -3310,6 +3329,22 @@ class getMapInfoRequest final : public ::google::protobuf::Message
   std::string* _internal_mutable_mapuuid();
 
   public:
+  // string version = 3;
+  void clear_version() ;
+  const std::string& version() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_version(Arg_&& arg, Args_... args);
+  std::string* mutable_version();
+  PROTOBUF_NODISCARD std::string* release_version();
+  void set_allocated_version(std::string* value);
+
+  private:
+  const std::string& _internal_version() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_version(
+      const std::string& value);
+  std::string* _internal_mutable_version();
+
+  public:
   // int32 grpcServerCompressionFormat = 1;
   void clear_grpcservercompressionformat() ;
   ::int32_t grpcservercompressionformat() const;
@@ -3320,7 +3355,17 @@ class getMapInfoRequest final : public ::google::protobuf::Message
   void _internal_set_grpcservercompressionformat(::int32_t value);
 
   public:
-  // sint32 descriptorType = 3;
+  // sint32 globalDescriptorType = 4;
+  void clear_globaldescriptortype() ;
+  ::int32_t globaldescriptortype() const;
+  void set_globaldescriptortype(::int32_t value);
+
+  private:
+  ::int32_t _internal_globaldescriptortype() const;
+  void _internal_set_globaldescriptortype(::int32_t value);
+
+  public:
+  // sint32 descriptorType = 5;
   void clear_descriptortype() ;
   ::int32_t descriptortype() const;
   void set_descriptortype(::int32_t value);
@@ -3330,17 +3375,7 @@ class getMapInfoRequest final : public ::google::protobuf::Message
   void _internal_set_descriptortype(::int32_t value);
 
   public:
-  // uint32 mapSupportedTypes = 4;
-  void clear_mapsupportedtypes() ;
-  ::uint32_t mapsupportedtypes() const;
-  void set_mapsupportedtypes(::uint32_t value);
-
-  private:
-  ::uint32_t _internal_mapsupportedtypes() const;
-  void _internal_set_mapsupportedtypes(::uint32_t value);
-
-  public:
-  // uint32 dataSize = 5;
+  // uint32 dataSize = 6;
   void clear_datasize() ;
   ::uint32_t datasize() const;
   void set_datasize(::uint32_t value);
@@ -3350,7 +3385,7 @@ class getMapInfoRequest final : public ::google::protobuf::Message
   void _internal_set_datasize(::uint32_t value);
 
   public:
-  // bool areImageSaved = 6;
+  // bool areImageSaved = 7;
   void clear_areimagesaved() ;
   bool areimagesaved() const;
   void set_areimagesaved(bool value);
@@ -3365,8 +3400,8 @@ class getMapInfoRequest final : public ::google::protobuf::Message
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      3, 6, 0,
-      50, 2>
+      3, 7, 0,
+      57, 2>
       _table_;
 
   static constexpr const void* _raw_default_instance_ =
@@ -3387,9 +3422,10 @@ class getMapInfoRequest final : public ::google::protobuf::Message
                           ::google::protobuf::Arena* arena, const Impl_& from,
                           const getMapInfoRequest& from_msg);
     ::google::protobuf::internal::ArenaStringPtr mapuuid_;
+    ::google::protobuf::internal::ArenaStringPtr version_;
     ::int32_t grpcservercompressionformat_;
+    ::int32_t globaldescriptortype_;
     ::int32_t descriptortype_;
-    ::uint32_t mapsupportedtypes_;
     ::uint32_t datasize_;
     bool areimagesaved_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -6183,7 +6219,79 @@ inline void getMapInfoRequest::set_allocated_mapuuid(std::string* value) {
   // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.getMapInfoRequest.mapUUID)
 }
 
-// sint32 descriptorType = 3;
+// string version = 3;
+inline void getMapInfoRequest::clear_version() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.version_.ClearToEmpty();
+}
+inline const std::string& getMapInfoRequest::version() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.getMapInfoRequest.version)
+  return _internal_version();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void getMapInfoRequest::set_version(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.version_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.getMapInfoRequest.version)
+}
+inline std::string* getMapInfoRequest::mutable_version() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_version();
+  // @@protoc_insertion_point(field_mutable:grpcIMapsManager.getMapInfoRequest.version)
+  return _s;
+}
+inline const std::string& getMapInfoRequest::_internal_version() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.version_.Get();
+}
+inline void getMapInfoRequest::_internal_set_version(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.version_.Set(value, GetArena());
+}
+inline std::string* getMapInfoRequest::_internal_mutable_version() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.version_.Mutable( GetArena());
+}
+inline std::string* getMapInfoRequest::release_version() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapsManager.getMapInfoRequest.version)
+  return _impl_.version_.Release();
+}
+inline void getMapInfoRequest::set_allocated_version(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.version_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.version_.IsDefault()) {
+          _impl_.version_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.getMapInfoRequest.version)
+}
+
+// sint32 globalDescriptorType = 4;
+inline void getMapInfoRequest::clear_globaldescriptortype() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.globaldescriptortype_ = 0;
+}
+inline ::int32_t getMapInfoRequest::globaldescriptortype() const {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.getMapInfoRequest.globalDescriptorType)
+  return _internal_globaldescriptortype();
+}
+inline void getMapInfoRequest::set_globaldescriptortype(::int32_t value) {
+  _internal_set_globaldescriptortype(value);
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.getMapInfoRequest.globalDescriptorType)
+}
+inline ::int32_t getMapInfoRequest::_internal_globaldescriptortype() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.globaldescriptortype_;
+}
+inline void getMapInfoRequest::_internal_set_globaldescriptortype(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.globaldescriptortype_ = value;
+}
+
+// sint32 descriptorType = 5;
 inline void getMapInfoRequest::clear_descriptortype() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.descriptortype_ = 0;
@@ -6205,29 +6313,7 @@ inline void getMapInfoRequest::_internal_set_descriptortype(::int32_t value) {
   _impl_.descriptortype_ = value;
 }
 
-// uint32 mapSupportedTypes = 4;
-inline void getMapInfoRequest::clear_mapsupportedtypes() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.mapsupportedtypes_ = 0u;
-}
-inline ::uint32_t getMapInfoRequest::mapsupportedtypes() const {
-  // @@protoc_insertion_point(field_get:grpcIMapsManager.getMapInfoRequest.mapSupportedTypes)
-  return _internal_mapsupportedtypes();
-}
-inline void getMapInfoRequest::set_mapsupportedtypes(::uint32_t value) {
-  _internal_set_mapsupportedtypes(value);
-  // @@protoc_insertion_point(field_set:grpcIMapsManager.getMapInfoRequest.mapSupportedTypes)
-}
-inline ::uint32_t getMapInfoRequest::_internal_mapsupportedtypes() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.mapsupportedtypes_;
-}
-inline void getMapInfoRequest::_internal_set_mapsupportedtypes(::uint32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.mapsupportedtypes_ = value;
-}
-
-// uint32 dataSize = 5;
+// uint32 dataSize = 6;
 inline void getMapInfoRequest::clear_datasize() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.datasize_ = 0u;
@@ -6249,7 +6335,7 @@ inline void getMapInfoRequest::_internal_set_datasize(::uint32_t value) {
   _impl_.datasize_ = value;
 }
 
-// bool areImageSaved = 6;
+// bool areImageSaved = 7;
 inline void getMapInfoRequest::clear_areimagesaved() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.areimagesaved_ = false;
@@ -6275,7 +6361,79 @@ inline void getMapInfoRequest::_internal_set_areimagesaved(bool value) {
 
 // getMapInfoResponse
 
-// sint32 descriptorType = 1;
+// string version = 1;
+inline void getMapInfoResponse::clear_version() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.version_.ClearToEmpty();
+}
+inline const std::string& getMapInfoResponse::version() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.getMapInfoResponse.version)
+  return _internal_version();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void getMapInfoResponse::set_version(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.version_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.getMapInfoResponse.version)
+}
+inline std::string* getMapInfoResponse::mutable_version() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_version();
+  // @@protoc_insertion_point(field_mutable:grpcIMapsManager.getMapInfoResponse.version)
+  return _s;
+}
+inline const std::string& getMapInfoResponse::_internal_version() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.version_.Get();
+}
+inline void getMapInfoResponse::_internal_set_version(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.version_.Set(value, GetArena());
+}
+inline std::string* getMapInfoResponse::_internal_mutable_version() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.version_.Mutable( GetArena());
+}
+inline std::string* getMapInfoResponse::release_version() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapsManager.getMapInfoResponse.version)
+  return _impl_.version_.Release();
+}
+inline void getMapInfoResponse::set_allocated_version(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.version_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.version_.IsDefault()) {
+          _impl_.version_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.getMapInfoResponse.version)
+}
+
+// sint32 globalDescriptorType = 2;
+inline void getMapInfoResponse::clear_globaldescriptortype() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.globaldescriptortype_ = 0;
+}
+inline ::int32_t getMapInfoResponse::globaldescriptortype() const {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.getMapInfoResponse.globalDescriptorType)
+  return _internal_globaldescriptortype();
+}
+inline void getMapInfoResponse::set_globaldescriptortype(::int32_t value) {
+  _internal_set_globaldescriptortype(value);
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.getMapInfoResponse.globalDescriptorType)
+}
+inline ::int32_t getMapInfoResponse::_internal_globaldescriptortype() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.globaldescriptortype_;
+}
+inline void getMapInfoResponse::_internal_set_globaldescriptortype(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.globaldescriptortype_ = value;
+}
+
+// sint32 descriptorType = 3;
 inline void getMapInfoResponse::clear_descriptortype() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.descriptortype_ = 0;
@@ -6297,29 +6455,7 @@ inline void getMapInfoResponse::_internal_set_descriptortype(::int32_t value) {
   _impl_.descriptortype_ = value;
 }
 
-// uint32 mapSupportedTypes = 2;
-inline void getMapInfoResponse::clear_mapsupportedtypes() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.mapsupportedtypes_ = 0u;
-}
-inline ::uint32_t getMapInfoResponse::mapsupportedtypes() const {
-  // @@protoc_insertion_point(field_get:grpcIMapsManager.getMapInfoResponse.mapSupportedTypes)
-  return _internal_mapsupportedtypes();
-}
-inline void getMapInfoResponse::set_mapsupportedtypes(::uint32_t value) {
-  _internal_set_mapsupportedtypes(value);
-  // @@protoc_insertion_point(field_set:grpcIMapsManager.getMapInfoResponse.mapSupportedTypes)
-}
-inline ::uint32_t getMapInfoResponse::_internal_mapsupportedtypes() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.mapsupportedtypes_;
-}
-inline void getMapInfoResponse::_internal_set_mapsupportedtypes(::uint32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.mapsupportedtypes_ = value;
-}
-
-// uint32 dataSize = 3;
+// uint32 dataSize = 4;
 inline void getMapInfoResponse::clear_datasize() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.datasize_ = 0u;
@@ -6341,7 +6477,7 @@ inline void getMapInfoResponse::_internal_set_datasize(::uint32_t value) {
   _impl_.datasize_ = value;
 }
 
-// bool areImageSaved = 4;
+// bool areImageSaved = 5;
 inline void getMapInfoResponse::clear_areimagesaved() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.areimagesaved_ = false;
@@ -6363,7 +6499,7 @@ inline void getMapInfoResponse::_internal_set_areimagesaved(bool value) {
   _impl_.areimagesaved_ = value;
 }
 
-// sint32 xpcfGrpcReturnValue = 5;
+// sint32 xpcfGrpcReturnValue = 6;
 inline void getMapInfoResponse::clear_xpcfgrpcreturnvalue() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.xpcfgrpcreturnvalue_ = 0;

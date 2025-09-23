@@ -684,15 +684,11 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   #endif
   std::string accessToken = request->accesstoken();
   std::string mapUUID = request->mapuuid();
-  SolAR::datastructure::DescriptorType descriptorType = static_cast<SolAR::datastructure::DescriptorType>(request->descriptortype());
-  uint32_t mapSupportedTypes = request->mapsupportedtypes();
-  uint32_t dataSize = request->datasize();
-  bool areImageSaved = request->areimagesaved();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapInfo(accessToken, mapUUID, descriptorType, mapSupportedTypes, dataSize, areImageSaved);
-  response->set_descriptortype(static_cast<int32_t>(descriptorType));
-  response->set_mapsupportedtypes(mapSupportedTypes);
-  response->set_datasize(dataSize);
-  response->set_areimagesaved(areImageSaved);
+  std::string version = request->version();
+  datastructure::GlobalDescriptorType globalDescriptorType = static_cast<datastructure::GlobalDescriptorType>(request->globaldescriptortype());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapInfo(accessToken, mapUUID, version, globalDescriptorType);
+  response->set_version(version);
+  response->set_globaldescriptortype(static_cast<int32_t>(globalDescriptorType));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
