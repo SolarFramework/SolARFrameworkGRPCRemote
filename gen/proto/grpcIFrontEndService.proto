@@ -354,13 +354,19 @@ string accessToken = 2;
 string mapUUID = 3;
 string version = 4;
 sint32 globalDescriptorType = 5;
+sint32 descriptorType = 6;
+uint32 dataSize = 7;
+bool areImageSaved = 8;
 }
 
 message getMapInfoResponse
 {
 string version = 1;
 sint32 globalDescriptorType = 2;
-sint32 xpcfGrpcReturnValue = 3;
+sint32 descriptorType = 3;
+uint32 dataSize = 4;
+bool areImageSaved = 5;
+sint32 xpcfGrpcReturnValue = 6;
 }
 
 message requestMapProcessingRequest

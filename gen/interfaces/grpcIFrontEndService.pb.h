@@ -7906,7 +7906,10 @@ class getMapInfoResponse final : public ::google::protobuf::Message
   enum : int {
     kVersionFieldNumber = 1,
     kGlobalDescriptorTypeFieldNumber = 2,
-    kXpcfGrpcReturnValueFieldNumber = 3,
+    kDescriptorTypeFieldNumber = 3,
+    kDataSizeFieldNumber = 4,
+    kAreImageSavedFieldNumber = 5,
+    kXpcfGrpcReturnValueFieldNumber = 6,
   };
   // string version = 1;
   void clear_version() ;
@@ -7934,7 +7937,37 @@ class getMapInfoResponse final : public ::google::protobuf::Message
   void _internal_set_globaldescriptortype(::int32_t value);
 
   public:
-  // sint32 xpcfGrpcReturnValue = 3;
+  // sint32 descriptorType = 3;
+  void clear_descriptortype() ;
+  ::int32_t descriptortype() const;
+  void set_descriptortype(::int32_t value);
+
+  private:
+  ::int32_t _internal_descriptortype() const;
+  void _internal_set_descriptortype(::int32_t value);
+
+  public:
+  // uint32 dataSize = 4;
+  void clear_datasize() ;
+  ::uint32_t datasize() const;
+  void set_datasize(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_datasize() const;
+  void _internal_set_datasize(::uint32_t value);
+
+  public:
+  // bool areImageSaved = 5;
+  void clear_areimagesaved() ;
+  bool areimagesaved() const;
+  void set_areimagesaved(bool value);
+
+  private:
+  bool _internal_areimagesaved() const;
+  void _internal_set_areimagesaved(bool value);
+
+  public:
+  // sint32 xpcfGrpcReturnValue = 6;
   void clear_xpcfgrpcreturnvalue() ;
   ::int32_t xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(::int32_t value);
@@ -7949,7 +7982,7 @@ class getMapInfoResponse final : public ::google::protobuf::Message
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      2, 3, 0,
+      3, 6, 0,
       48, 2>
       _table_;
 
@@ -7972,6 +8005,9 @@ class getMapInfoResponse final : public ::google::protobuf::Message
                           const getMapInfoResponse& from_msg);
     ::google::protobuf::internal::ArenaStringPtr version_;
     ::int32_t globaldescriptortype_;
+    ::int32_t descriptortype_;
+    ::uint32_t datasize_;
+    bool areimagesaved_;
     ::int32_t xpcfgrpcreturnvalue_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -8110,6 +8146,9 @@ class getMapInfoRequest final : public ::google::protobuf::Message
     kVersionFieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
     kGlobalDescriptorTypeFieldNumber = 5,
+    kDescriptorTypeFieldNumber = 6,
+    kDataSizeFieldNumber = 7,
+    kAreImageSavedFieldNumber = 8,
   };
   // string accessToken = 2;
   void clear_accesstoken() ;
@@ -8179,13 +8218,43 @@ class getMapInfoRequest final : public ::google::protobuf::Message
   void _internal_set_globaldescriptortype(::int32_t value);
 
   public:
+  // sint32 descriptorType = 6;
+  void clear_descriptortype() ;
+  ::int32_t descriptortype() const;
+  void set_descriptortype(::int32_t value);
+
+  private:
+  ::int32_t _internal_descriptortype() const;
+  void _internal_set_descriptortype(::int32_t value);
+
+  public:
+  // uint32 dataSize = 7;
+  void clear_datasize() ;
+  ::uint32_t datasize() const;
+  void set_datasize(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_datasize() const;
+  void _internal_set_datasize(::uint32_t value);
+
+  public:
+  // bool areImageSaved = 8;
+  void clear_areimagesaved() ;
+  bool areimagesaved() const;
+  void set_areimagesaved(bool value);
+
+  private:
+  bool _internal_areimagesaved() const;
+  void _internal_set_areimagesaved(bool value);
+
+  public:
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getMapInfoRequest)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      3, 5, 0,
-      65, 2>
+      3, 8, 0,
+      73, 2>
       _table_;
 
   static constexpr const void* _raw_default_instance_ =
@@ -8210,6 +8279,9 @@ class getMapInfoRequest final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr version_;
     ::int32_t grpcservercompressionformat_;
     ::int32_t globaldescriptortype_;
+    ::int32_t descriptortype_;
+    ::uint32_t datasize_;
+    bool areimagesaved_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -18215,6 +18287,72 @@ inline void getMapInfoRequest::_internal_set_globaldescriptortype(::int32_t valu
   _impl_.globaldescriptortype_ = value;
 }
 
+// sint32 descriptorType = 6;
+inline void getMapInfoRequest::clear_descriptortype() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.descriptortype_ = 0;
+}
+inline ::int32_t getMapInfoRequest::descriptortype() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapInfoRequest.descriptorType)
+  return _internal_descriptortype();
+}
+inline void getMapInfoRequest::set_descriptortype(::int32_t value) {
+  _internal_set_descriptortype(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapInfoRequest.descriptorType)
+}
+inline ::int32_t getMapInfoRequest::_internal_descriptortype() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.descriptortype_;
+}
+inline void getMapInfoRequest::_internal_set_descriptortype(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.descriptortype_ = value;
+}
+
+// uint32 dataSize = 7;
+inline void getMapInfoRequest::clear_datasize() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.datasize_ = 0u;
+}
+inline ::uint32_t getMapInfoRequest::datasize() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapInfoRequest.dataSize)
+  return _internal_datasize();
+}
+inline void getMapInfoRequest::set_datasize(::uint32_t value) {
+  _internal_set_datasize(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapInfoRequest.dataSize)
+}
+inline ::uint32_t getMapInfoRequest::_internal_datasize() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.datasize_;
+}
+inline void getMapInfoRequest::_internal_set_datasize(::uint32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.datasize_ = value;
+}
+
+// bool areImageSaved = 8;
+inline void getMapInfoRequest::clear_areimagesaved() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.areimagesaved_ = false;
+}
+inline bool getMapInfoRequest::areimagesaved() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapInfoRequest.areImageSaved)
+  return _internal_areimagesaved();
+}
+inline void getMapInfoRequest::set_areimagesaved(bool value) {
+  _internal_set_areimagesaved(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapInfoRequest.areImageSaved)
+}
+inline bool getMapInfoRequest::_internal_areimagesaved() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.areimagesaved_;
+}
+inline void getMapInfoRequest::_internal_set_areimagesaved(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.areimagesaved_ = value;
+}
+
 // -------------------------------------------------------------------
 
 // getMapInfoResponse
@@ -18291,7 +18429,73 @@ inline void getMapInfoResponse::_internal_set_globaldescriptortype(::int32_t val
   _impl_.globaldescriptortype_ = value;
 }
 
-// sint32 xpcfGrpcReturnValue = 3;
+// sint32 descriptorType = 3;
+inline void getMapInfoResponse::clear_descriptortype() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.descriptortype_ = 0;
+}
+inline ::int32_t getMapInfoResponse::descriptortype() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapInfoResponse.descriptorType)
+  return _internal_descriptortype();
+}
+inline void getMapInfoResponse::set_descriptortype(::int32_t value) {
+  _internal_set_descriptortype(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapInfoResponse.descriptorType)
+}
+inline ::int32_t getMapInfoResponse::_internal_descriptortype() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.descriptortype_;
+}
+inline void getMapInfoResponse::_internal_set_descriptortype(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.descriptortype_ = value;
+}
+
+// uint32 dataSize = 4;
+inline void getMapInfoResponse::clear_datasize() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.datasize_ = 0u;
+}
+inline ::uint32_t getMapInfoResponse::datasize() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapInfoResponse.dataSize)
+  return _internal_datasize();
+}
+inline void getMapInfoResponse::set_datasize(::uint32_t value) {
+  _internal_set_datasize(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapInfoResponse.dataSize)
+}
+inline ::uint32_t getMapInfoResponse::_internal_datasize() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.datasize_;
+}
+inline void getMapInfoResponse::_internal_set_datasize(::uint32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.datasize_ = value;
+}
+
+// bool areImageSaved = 5;
+inline void getMapInfoResponse::clear_areimagesaved() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.areimagesaved_ = false;
+}
+inline bool getMapInfoResponse::areimagesaved() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapInfoResponse.areImageSaved)
+  return _internal_areimagesaved();
+}
+inline void getMapInfoResponse::set_areimagesaved(bool value) {
+  _internal_set_areimagesaved(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapInfoResponse.areImageSaved)
+}
+inline bool getMapInfoResponse::_internal_areimagesaved() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.areimagesaved_;
+}
+inline void getMapInfoResponse::_internal_set_areimagesaved(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.areimagesaved_ = value;
+}
+
+// sint32 xpcfGrpcReturnValue = 6;
 inline void getMapInfoResponse::clear_xpcfgrpcreturnvalue() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.xpcfgrpcreturnvalue_ = 0;
