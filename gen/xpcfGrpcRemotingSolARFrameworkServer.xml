@@ -5,6 +5,10 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
     </component>
+    <component uuid="40aede65-0170-4384-9623-6a9d320ae56d" name="IImageSegmentationPipeline_grpcServer" description="IImageSegmentationPipeline_grpcServer">
+      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+      <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
+    </component>
     <component uuid="2dffb653-4d96-41bc-a2f9-1cc850c7498b" name="IMapProcessingPipeline_grpcServer" description="IMapProcessingPipeline_grpcServer">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
@@ -46,6 +50,7 @@
     <bindings>
       <bind interface="org::bcom::xpcf::IGrpcService">
         <component to="IDenseMappingPipeline_grpcServer"/>
+        <component to="IImageSegmentationPipeline_grpcServer"/>
         <component to="IMapProcessingPipeline_grpcServer"/>
         <component to="IMapUpdatePipeline_grpcServer"/>
         <component to="IMappingPipeline_grpcServer"/>

@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package grpcIImageSegmentationPipeline;
+
+message initRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message initResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message startRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message startResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message stopRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+}
+
+message stopResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message segment_grpc0Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes image = 2;
+}
+
+message segment_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message segment_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes images = 2;
+bool temporalConsistency = 3;
+}
+
+message segment_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getStatusRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+sint32 status = 2;
+float progress = 3;
+}
+
+message getStatusResponse
+{
+sint32 status = 1;
+float progress = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+message getOutputMaskRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+bytes mask = 2;
+}
+
+message getOutputMaskResponse
+{
+bytes mask = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+service grpcIImageSegmentationPipelineService {
+rpc init(initRequest) returns(initResponse) {}
+rpc start(startRequest) returns(startResponse) {}
+rpc stop(stopRequest) returns(stopResponse) {}
+rpc segment_grpc0(segment_grpc0Request) returns(segment_grpc0Response) {}
+rpc segment_grpc1(segment_grpc1Request) returns(segment_grpc1Response) {}
+rpc getStatus(getStatusRequest) returns(getStatusResponse) {}
+rpc getOutputMask(getOutputMaskRequest) returns(getOutputMaskResponse) {}
+}
+

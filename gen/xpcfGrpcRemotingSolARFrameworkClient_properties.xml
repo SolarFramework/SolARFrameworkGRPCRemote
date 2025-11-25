@@ -12,6 +12,18 @@
         <value>method|getMesh|none|none</value>
       </property>
     </configure>
+    <configure component="IImageSegmentationPipeline_grpcProxy">
+      <property name="grpc_compress_proxy" type="string">
+        <value>service|none|none</value>
+        <value>method|init|none|none</value>
+        <value>method|start|none|none</value>
+        <value>method|stop|none|none</value>
+        <value>method|segment|none|none</value>
+        <value>method|segment|none|none</value>
+        <value>method|getStatus|none|none</value>
+        <value>method|getOutputMask|none|none</value>
+      </property>
+    </configure>
     <configure component="IMapProcessingPipeline_grpcProxy">
       <property name="grpc_compress_proxy" type="string">
         <value>service|none|none</value>
