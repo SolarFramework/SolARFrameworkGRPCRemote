@@ -33,8 +33,9 @@ then
 fi
 
 DEFAULT_VERSION_SOLAR="1.5.0"
-DEFAULT_VERSION_XPCF="2.10.0"
-DEFAULT_DATABASE_DIR="../SolARFramework/build/Desktop_Qt_6_5_3_GCC_64bit-Release"
+#DEFAULT_VERSION_XPCF="2.10.0"
+DEFAULT_VERSION_XPCF="0.0.0"
+DEFAULT_DATABASE_DIR="../SolARFramework/build/Desktop_Qt_6_10_0-Release"
 DEFAULT_SOLAR_FRAMEWORK_PATH="../SolARFramework"
 DEFAULT_MODULE_UUID="a0f522d1-b70e-4d0f-ad78-84e78a9af6bf"
 VERBOSE=false
@@ -166,7 +167,7 @@ sed -i "s/-isystem/-I/g" `realpath $DATABASE_DIR`/compile_commands.json
 
 rm -rf gen
 
-$XPCF_MODULE_ROOT/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/$LIB_TYPE/release/xpcf_grpc_gen \
+$XPCF_MODULE_ROOT/linux-gcc/xpcf_grpc_gen/${VERSION_XPCF}/bin/x86_64/$LIB_TYPE/release/xpcf_grpc_gen \
         --module_uuid $MODULE_UUID \
         --name SolARFramework \
         --project_version $VERSION_SOLAR \
