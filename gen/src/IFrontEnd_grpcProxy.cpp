@@ -1,16 +1,65 @@
 // GRPC Proxy Class implementation generated with xpcf_grpc_gen
 #include "IFrontEnd_grpcProxy.h"
+#include <core/Log.h>
 #include <cstddef>
 #include <boost/date_time.hpp>
+#include <opentelemetry/trace/provider.h>
+#include <opentelemetry/trace/span_startoptions.h>
 #include <xpcf/core/Exception.h>
 #include <xpcf/remoting/ISerializable.h>
 #include <grpcpp/client_context.h>
 #include <grpcpp/create_channel.h>
 #include <grpcpp/security/credentials.h>
 #include <boost/algorithm/string.hpp>
+
+
+#include "opentelemetry/context/context.h"
+#include "opentelemetry/context/propagation/global_propagator.h"
+#include "opentelemetry/context/propagation/text_map_propagator.h"
+#include "opentelemetry/context/runtime_context.h"
+
+#include "opentelemetry/trace/scope.h"
+#include "opentelemetry/trace/span.h"
+#include "opentelemetry/trace/span_metadata.h"
+#include "opentelemetry/trace/span_startoptions.h"
+#include "opentelemetry/trace/tracer.h"
+#include "opentelemetry/sdk/trace/exporter.h"
+#include "opentelemetry/semconv/incubating/rpc_attributes.h"
+#include "opentelemetry/semconv/network_attributes.h"
+
+namespace semconv = opentelemetry::semconv;
+
 namespace xpcf = org::bcom::xpcf;
 
 template<> org::bcom::xpcf::grpc::proxyIFrontEnd::IFrontEnd_grpcProxy* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::proxyIFrontEnd::IFrontEnd_grpcProxy>();
+
+
+namespace
+{
+class GrpcClientCarrier : public opentelemetry::context::propagation::TextMapCarrier
+{
+public:
+  GrpcClientCarrier(::grpc::ClientContext *context) : context_(context) {
+    std::cout << "JMH ctor\n";
+  }
+  GrpcClientCarrier() = default;
+  virtual opentelemetry::nostd::string_view Get(
+      opentelemetry::nostd::string_view /* key */) const noexcept override
+  {
+    return "";
+  }
+
+  virtual void Set(opentelemetry::nostd::string_view key,
+                   opentelemetry::nostd::string_view value) noexcept override
+  {
+    std::cout << " Client ::: Adding " << key << " " << value << "\n";
+    context_->AddMetadata(std::string(key), std::string(value));
+  }
+
+  ::grpc::ClientContext *context_ = nullptr;
+};
+}
+
 
 namespace org::bcom::xpcf::grpc::proxyIFrontEnd {
 
@@ -47,6 +96,8 @@ XPCFErrorCode IFrontEnd_grpcProxy::onConfigured()
 }
 
 
+
+
 SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::registerClient(std::string const& accessToken, SolAR::api::service::DeviceInfo const& deviceInfo, std::string const& worldElementUUID, std::string& clientUUID)
 {
   ::grpc::ClientContext context;
@@ -65,6 +116,13 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::registerClient(std::string cons
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcProxy::registerClient request sent at " << to_simple_string(start) << std::endl;
   #endif
+
+  // inject current context to grpc metadata
+  auto current_ctx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, current_ctx);
+
   ::grpc::Status grpcRemoteStatus = m_grpcStub->registerClient(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();

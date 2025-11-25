@@ -6,7 +6,65 @@
 #include <xpcf/remoting/GrpcHelper.h>
 namespace xpcf = org::bcom::xpcf;
 
+#include "opentelemetry/context/propagation/global_propagator.h"
+#include "opentelemetry/context/propagation/text_map_propagator.h"
+#include "opentelemetry/context/runtime_context.h"
+#include "opentelemetry/nostd/shared_ptr.h"
+#include "opentelemetry/nostd/string_view.h"
+#include "opentelemetry/nostd/variant.h"
+#include "opentelemetry/semconv/incubating/rpc_attributes.h"
+#include "opentelemetry/trace/context.h"
+#include "opentelemetry/trace/span.h"
+#include "opentelemetry/trace/span_context.h"
+#include "opentelemetry/trace/span_metadata.h"
+#include "opentelemetry/trace/span_startoptions.h"
+#include "opentelemetry/trace/tracer.h"
+#include "opentelemetry/trace/provider.h"
+
 template<> org::bcom::xpcf::grpc::serverIFrontEnd::IFrontEnd_grpcServer* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::serverIFrontEnd::IFrontEnd_grpcServer>();
+
+using Span        = opentelemetry::trace::Span;
+using SpanContext = opentelemetry::trace::SpanContext;
+using namespace opentelemetry::trace;
+
+namespace context = opentelemetry::context;
+namespace semconv = opentelemetry::semconv;
+
+namespace
+{
+
+class GrpcServerCarrier : public opentelemetry::context::propagation::TextMapCarrier
+{
+public:
+  GrpcServerCarrier(grpc::ServerContext *context) : context_(context) {}
+  GrpcServerCarrier() = default;
+  virtual opentelemetry::nostd::string_view Get(
+      opentelemetry::nostd::string_view key) const noexcept override
+  {
+    auto it = context_->client_metadata().find({key.data(), key.size()});
+    if (it != context_->client_metadata().end())
+    {
+      return opentelemetry::nostd::string_view(it->second.data(), it->second.size());
+    }
+    return "";
+  }
+
+  virtual void Set(opentelemetry::nostd::string_view /* key */,
+                   opentelemetry::nostd::string_view /* value */) noexcept override
+  {
+    // Not required for server
+  }
+
+  grpc::ServerContext *context_ = nullptr;
+};
+
+opentelemetry::nostd::shared_ptr<opentelemetry::trace::Tracer> get_tracer(std::string tracer_name)
+{
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  return provider->GetTracer(tracer_name);
+}
+
+}
 
 namespace org::bcom::xpcf::grpc::serverIFrontEnd {
 
@@ -42,6 +100,40 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::registerClient(::grpc::ServerContext* context, const ::grpcIFrontEnd::registerClientRequest* request, ::grpcIFrontEnd::registerClientResponse* response)
 {
+    std::cout << "JMH debug server register client\n";
+    for (const auto &elem : context->client_metadata())
+    {
+      std::cout << "ELEM: " << elem.first << " " << elem.second << "\n";
+    }
+
+
+
+    // extract context from grpc metadata
+    GrpcServerCarrier carrier(context);
+
+    auto prop        = context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+    auto current_ctx = context::RuntimeContext::GetCurrent();
+    auto new_context = prop->Extract(carrier, current_ctx);
+
+    // Create a SpanOptions object and set the kind to Server to inform OpenTel.
+    StartSpanOptions options;
+    options.kind = SpanKind::kServer;
+    options.parent = GetSpan(new_context)->GetContext();
+
+    std::string span_name = "RegisterClient";
+    auto span = get_tracer("grpc")->StartSpan("RegisterClient",
+                                                          {{semconv::rpc::kRpcSystem, "grpc"},
+                                                           {semconv::rpc::kRpcService, "IFrontend_grpcServer"},
+                                                           {semconv::rpc::kRpcMethod, "registerClient"},
+                                                           {semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                                          options);
+    auto scope= get_tracer("Overview")->WithActiveSpan(span);
+
+
+    // Fetch and parse whatever HTTP headers we can from the gRPC request.
+    span->AddEvent("IFrontend gRPC service wrapper for RegisterClient()");
+
+
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "registerClient", m_methodCompressionInfosMap);
@@ -56,6 +148,11 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::string worldElementUUID = request->worldelementuuid();
   std::string clientUUID = request->clientuuid();
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->registerClient(accessToken, deviceInfo, worldElementUUID, clientUUID);
+
+  span->AddEvent("IFrontend gRPC service wrapper for RegisterClient() done");
+
+  span->End();
+
   response->set_clientuuid(clientUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
