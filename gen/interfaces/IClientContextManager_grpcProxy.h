@@ -41,6 +41,10 @@ class IClientContextManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase
     SolAR::FrameworkReturnCode getMappingDataRequest(std::string const& clientUUID, std::vector<SRef<SolAR::datastructure::CloudPoint>>& outputPointClouds, std::vector<SolAR::datastructure::Transform3Df>& keyframePoses)     const     override;
     SolAR::FrameworkReturnCode getLastPose(std::string const& clientUUID, SolAR::datastructure::Transform3Df& pose, SolAR::api::service::PoseType const poseType)     const     override;
     SolAR::FrameworkReturnCode getClientMapUUID(std::string const& clientUUID, std::string& mapUUID)     const     override;
+    SolAR::FrameworkReturnCode imageSegmentationProcessRequest(std::string const& clientUUID, SRef<SolAR::datastructure::Image> image)     override;
+    SolAR::FrameworkReturnCode imageSegmentationProcessRequest(std::string const& clientUUID, std::vector<SRef<SolAR::datastructure::Image>> const& images, bool temporalConsistency)     override;
+    SolAR::FrameworkReturnCode getImageSegmentationProcessStatus(std::string const& clientUUID, SolAR::api::pipeline::IImageSegmentationPipeline::Status& status, float& progress)     const     override;
+    SolAR::FrameworkReturnCode getImageSegmentationProcessOutputMasks(std::string const& clientUUID, SRef<SolAR::datastructure::Mask2DCollection>& mask)     const     override;
 
 
   private:

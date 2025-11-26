@@ -129,6 +129,10 @@
         <value>method|getMappingDataRequest|none|none</value>
         <value>method|getLastPose|none|none</value>
         <value>method|getClientMapUUID|none|none</value>
+        <value>method|imageSegmentationProcessRequest|none|none</value>
+        <value>method|imageSegmentationProcessRequest|none|none</value>
+        <value>method|getImageSegmentationProcessStatus|none|none</value>
+        <value>method|getImageSegmentationProcessOutputMasks|none|none</value>
       </property>
     </configure>
     <configure component="IFrontEnd_grpcProxy">
@@ -150,6 +154,10 @@
         <value>method|imageProcessRequest|none|none</value>
         <value>method|getMappingDataRequest|none|none</value>
         <value>method|getClientPose|none|none</value>
+        <value>method|imageSegmentationProcessRequest|none|none</value>
+        <value>method|imageSegmentationProcessRequest|none|none</value>
+        <value>method|getImageSegmentationProcessStatus|none|none</value>
+        <value>method|getImageSegmentationProcessOutputMasks|none|none</value>
         <value>method|createMap|none|none</value>
         <value>method|deleteMap|none|none</value>
         <value>method|getAllMapsUUID|none|none</value>

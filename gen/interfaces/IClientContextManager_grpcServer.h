@@ -44,6 +44,10 @@ class IClientContextManager_grpcServer:  public org::bcom::xpcf::ConfigurableBas
         ::grpc::Status getMappingDataRequest(::grpc::ServerContext* context, const ::grpcIClientContextManager::getMappingDataRequestRequest* request, ::grpcIClientContextManager::getMappingDataRequestResponse* response) override;
         ::grpc::Status getLastPose(::grpc::ServerContext* context, const ::grpcIClientContextManager::getLastPoseRequest* request, ::grpcIClientContextManager::getLastPoseResponse* response) override;
         ::grpc::Status getClientMapUUID(::grpc::ServerContext* context, const ::grpcIClientContextManager::getClientMapUUIDRequest* request, ::grpcIClientContextManager::getClientMapUUIDResponse* response) override;
+        ::grpc::Status imageSegmentationProcessRequest_grpc0(::grpc::ServerContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request* request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response* response) override;
+        ::grpc::Status imageSegmentationProcessRequest_grpc1(::grpc::ServerContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request* request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response* response) override;
+        ::grpc::Status getImageSegmentationProcessStatus(::grpc::ServerContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessStatusRequest* request, ::grpcIClientContextManager::getImageSegmentationProcessStatusResponse* response) override;
+        ::grpc::Status getImageSegmentationProcessOutputMasks(::grpc::ServerContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest* request, ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse* response) override;
 
         SRef<SolAR::api::service::IClientContextManager> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;

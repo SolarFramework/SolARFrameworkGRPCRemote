@@ -19,7 +19,7 @@ IFrontEnd_grpcProxy::IFrontEnd_grpcProxy():xpcf::ConfigurableBase(xpcf::toMap<IF
   declareInterface<SolAR::api::service::IFrontEnd>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(29);
+  m_grpcProxyCompressionConfig.resize(33);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -583,6 +583,139 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getClientPose(std::string const
   transform3D = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.transform3d());
   confidence = xpcf::deserialize<float_t>(respOut.confidence());
   pose = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.pose());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::imageSegmentationProcessRequest(std::string const& accessToken, std::string const& clientUUID, SRef<SolAR::datastructure::Image> image)
+{
+  ::grpc::ClientContext context;
+  ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Request reqIn;
+  ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Response respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "imageSegmentationProcessRequest", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_accesstoken(accessToken);
+  reqIn.set_clientuuid(clientUUID);
+  reqIn.set_image(xpcf::serialize<SRef<SolAR::datastructure::Image>>(image));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::imageSegmentationProcessRequest request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->imageSegmentationProcessRequest_grpc0(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::imageSegmentationProcessRequest response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "imageSegmentationProcessRequest_grpc0 rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIFrontEndService","imageSegmentationProcessRequest_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::imageSegmentationProcessRequest(std::string const& accessToken, std::string const& clientUUID, std::vector<SRef<SolAR::datastructure::Image>> const& images, bool temporalConsistency)
+{
+  ::grpc::ClientContext context;
+  ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Request reqIn;
+  ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Response respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "imageSegmentationProcessRequest", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_accesstoken(accessToken);
+  reqIn.set_clientuuid(clientUUID);
+  reqIn.set_images(xpcf::serialize<std::vector<SRef<SolAR::datastructure::Image>>>(images));
+  reqIn.set_temporalconsistency(temporalConsistency);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::imageSegmentationProcessRequest request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->imageSegmentationProcessRequest_grpc1(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::imageSegmentationProcessRequest response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "imageSegmentationProcessRequest_grpc1 rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIFrontEndService","imageSegmentationProcessRequest_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getImageSegmentationProcessStatus(std::string const& accessToken, std::string const& clientUUID, SolAR::api::pipeline::IImageSegmentationPipeline::Status& status, float& progress) const
+{
+  ::grpc::ClientContext context;
+  ::grpcIFrontEnd::getImageSegmentationProcessStatusRequest reqIn;
+  ::grpcIFrontEnd::getImageSegmentationProcessStatusResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getImageSegmentationProcessStatus", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_accesstoken(accessToken);
+  reqIn.set_clientuuid(clientUUID);
+  reqIn.set_status(static_cast<int32_t>(status));
+  reqIn.set_progress(progress);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::getImageSegmentationProcessStatus request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getImageSegmentationProcessStatus(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::getImageSegmentationProcessStatus response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getImageSegmentationProcessStatus rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIFrontEndService","getImageSegmentationProcessStatus",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  status = static_cast<SolAR::api::pipeline::IImageSegmentationPipeline::Status>(respOut.status());
+  progress = respOut.progress();
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getImageSegmentationProcessOutputMasks(std::string const& accessToken, std::string const& clientUUID, SRef<SolAR::datastructure::Mask2DCollection>& mask) const
+{
+  ::grpc::ClientContext context;
+  ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksRequest reqIn;
+  ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getImageSegmentationProcessOutputMasks", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_accesstoken(accessToken);
+  reqIn.set_clientuuid(clientUUID);
+  reqIn.set_mask(xpcf::serialize<SRef<SolAR::datastructure::Mask2DCollection>>(mask));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::getImageSegmentationProcessOutputMasks request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getImageSegmentationProcessOutputMasks(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::getImageSegmentationProcessOutputMasks response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getImageSegmentationProcessOutputMasks rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIFrontEndService","getImageSegmentationProcessOutputMasks",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  mask = xpcf::deserialize<SRef<SolAR::datastructure::Mask2DCollection>>(respOut.mask());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

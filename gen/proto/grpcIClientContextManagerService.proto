@@ -272,6 +272,59 @@ string mapUUID = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
+message imageSegmentationProcessRequest_grpc0Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+bytes image = 3;
+}
+
+message imageSegmentationProcessRequest_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message imageSegmentationProcessRequest_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+bytes images = 3;
+bool temporalConsistency = 4;
+}
+
+message imageSegmentationProcessRequest_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getImageSegmentationProcessStatusRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+sint32 status = 3;
+float progress = 4;
+}
+
+message getImageSegmentationProcessStatusResponse
+{
+sint32 status = 1;
+float progress = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+message getImageSegmentationProcessOutputMasksRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string clientUUID = 2;
+bytes mask = 3;
+}
+
+message getImageSegmentationProcessOutputMasksResponse
+{
+bytes mask = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
 service grpcIClientContextManagerService {
 rpc registerClient(registerClientRequest) returns(registerClientResponse) {}
 rpc unregisterClient(unregisterClientRequest) returns(unregisterClientResponse) {}
@@ -292,5 +345,9 @@ rpc get3DTransformRequest(get3DTransformRequestRequest) returns(get3DTransformRe
 rpc getMappingDataRequest(getMappingDataRequestRequest) returns(getMappingDataRequestResponse) {}
 rpc getLastPose(getLastPoseRequest) returns(getLastPoseResponse) {}
 rpc getClientMapUUID(getClientMapUUIDRequest) returns(getClientMapUUIDResponse) {}
+rpc imageSegmentationProcessRequest_grpc0(imageSegmentationProcessRequest_grpc0Request) returns(imageSegmentationProcessRequest_grpc0Response) {}
+rpc imageSegmentationProcessRequest_grpc1(imageSegmentationProcessRequest_grpc1Request) returns(imageSegmentationProcessRequest_grpc1Response) {}
+rpc getImageSegmentationProcessStatus(getImageSegmentationProcessStatusRequest) returns(getImageSegmentationProcessStatusResponse) {}
+rpc getImageSegmentationProcessOutputMasks(getImageSegmentationProcessOutputMasksRequest) returns(getImageSegmentationProcessOutputMasksResponse) {}
 }
 

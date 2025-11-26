@@ -14,7 +14,7 @@ IClientContextManager_grpcServer::IClientContextManager_grpcServer():xpcf::Confi
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::service::IClientContextManager>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(20);
+  m_grpcServerCompressionConfig.resize(24);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -530,6 +530,107 @@ XPCFErrorCode IClientContextManager_grpcServer::onConfigured()
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IClientContextManager_grpcServer::getClientMapUUID response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IClientContextManager_grpcServer::grpcIClientContextManagerServiceImpl::imageSegmentationProcessRequest_grpc0(::grpc::ServerContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request* request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "imageSegmentationProcessRequest", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IClientContextManager_grpcServer::imageSegmentationProcessRequest request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string clientUUID = request->clientuuid();
+  SRef<SolAR::datastructure::Image> image = xpcf::deserialize<SRef<SolAR::datastructure::Image>>(request->image());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->imageSegmentationProcessRequest(clientUUID, image);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IClientContextManager_grpcServer::imageSegmentationProcessRequest response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IClientContextManager_grpcServer::grpcIClientContextManagerServiceImpl::imageSegmentationProcessRequest_grpc1(::grpc::ServerContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request* request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "imageSegmentationProcessRequest", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IClientContextManager_grpcServer::imageSegmentationProcessRequest request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string clientUUID = request->clientuuid();
+  std::vector<SRef<SolAR::datastructure::Image>> images = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::Image>>>(request->images());
+  bool temporalConsistency = request->temporalconsistency();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->imageSegmentationProcessRequest(clientUUID, images, temporalConsistency);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IClientContextManager_grpcServer::imageSegmentationProcessRequest response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IClientContextManager_grpcServer::grpcIClientContextManagerServiceImpl::getImageSegmentationProcessStatus(::grpc::ServerContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessStatusRequest* request, ::grpcIClientContextManager::getImageSegmentationProcessStatusResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getImageSegmentationProcessStatus", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IClientContextManager_grpcServer::getImageSegmentationProcessStatus request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string clientUUID = request->clientuuid();
+  SolAR::api::pipeline::IImageSegmentationPipeline::Status status = static_cast<SolAR::api::pipeline::IImageSegmentationPipeline::Status>(request->status());
+  float progress = request->progress();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getImageSegmentationProcessStatus(clientUUID, status, progress);
+  response->set_status(static_cast<int32_t>(status));
+  response->set_progress(progress);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IClientContextManager_grpcServer::getImageSegmentationProcessStatus response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IClientContextManager_grpcServer::grpcIClientContextManagerServiceImpl::getImageSegmentationProcessOutputMasks(::grpc::ServerContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest* request, ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getImageSegmentationProcessOutputMasks", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IClientContextManager_grpcServer::getImageSegmentationProcessOutputMasks request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string clientUUID = request->clientuuid();
+  SRef<SolAR::datastructure::Mask2DCollection> mask = xpcf::deserialize<SRef<SolAR::datastructure::Mask2DCollection>>(request->mask());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getImageSegmentationProcessOutputMasks(clientUUID, mask);
+  response->set_mask(xpcf::serialize<SRef<SolAR::datastructure::Mask2DCollection>>(mask));
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IClientContextManager_grpcServer::getImageSegmentationProcessOutputMasks response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;

@@ -240,6 +240,63 @@ bytes pose = 4;
 sint32 xpcfGrpcReturnValue = 5;
 }
 
+message imageSegmentationProcessRequest_grpc0Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string accessToken = 2;
+string clientUUID = 3;
+bytes image = 4;
+}
+
+message imageSegmentationProcessRequest_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message imageSegmentationProcessRequest_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string accessToken = 2;
+string clientUUID = 3;
+bytes images = 4;
+bool temporalConsistency = 5;
+}
+
+message imageSegmentationProcessRequest_grpc1Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message getImageSegmentationProcessStatusRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string accessToken = 2;
+string clientUUID = 3;
+sint32 status = 4;
+float progress = 5;
+}
+
+message getImageSegmentationProcessStatusResponse
+{
+sint32 status = 1;
+float progress = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
+message getImageSegmentationProcessOutputMasksRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string accessToken = 2;
+string clientUUID = 3;
+bytes mask = 4;
+}
+
+message getImageSegmentationProcessOutputMasksResponse
+{
+bytes mask = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
 message createMapRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -432,6 +489,10 @@ rpc getCameraParameters(getCameraParametersRequest) returns(getCameraParametersR
 rpc imageProcessRequest(imageProcessRequestRequest) returns(imageProcessRequestResponse) {}
 rpc getMappingDataRequest(getMappingDataRequestRequest) returns(getMappingDataRequestResponse) {}
 rpc getClientPose(getClientPoseRequest) returns(getClientPoseResponse) {}
+rpc imageSegmentationProcessRequest_grpc0(imageSegmentationProcessRequest_grpc0Request) returns(imageSegmentationProcessRequest_grpc0Response) {}
+rpc imageSegmentationProcessRequest_grpc1(imageSegmentationProcessRequest_grpc1Request) returns(imageSegmentationProcessRequest_grpc1Response) {}
+rpc getImageSegmentationProcessStatus(getImageSegmentationProcessStatusRequest) returns(getImageSegmentationProcessStatusResponse) {}
+rpc getImageSegmentationProcessOutputMasks(getImageSegmentationProcessOutputMasksRequest) returns(getImageSegmentationProcessOutputMasksResponse) {}
 rpc createMap(createMapRequest) returns(createMapResponse) {}
 rpc deleteMap(deleteMapRequest) returns(deleteMapResponse) {}
 rpc getAllMapsUUID(getAllMapsUUIDRequest) returns(getAllMapsUUIDResponse) {}

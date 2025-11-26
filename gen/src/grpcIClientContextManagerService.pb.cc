@@ -565,6 +565,95 @@ struct init_grpc0RequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 init_grpc0RequestDefaultTypeInternal _init_grpc0Request_default_instance_;
 
+inline constexpr imageSegmentationProcessRequest_grpc1Response::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : xpcfgrpcreturnvalue_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR imageSegmentationProcessRequest_grpc1Response::imageSegmentationProcessRequest_grpc1Response(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct imageSegmentationProcessRequest_grpc1ResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR imageSegmentationProcessRequest_grpc1ResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~imageSegmentationProcessRequest_grpc1ResponseDefaultTypeInternal() {}
+  union {
+    imageSegmentationProcessRequest_grpc1Response _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 imageSegmentationProcessRequest_grpc1ResponseDefaultTypeInternal _imageSegmentationProcessRequest_grpc1Response_default_instance_;
+
+inline constexpr imageSegmentationProcessRequest_grpc1Request::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : clientuuid_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        images_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        grpcservercompressionformat_{0},
+        temporalconsistency_{false},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR imageSegmentationProcessRequest_grpc1Request::imageSegmentationProcessRequest_grpc1Request(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct imageSegmentationProcessRequest_grpc1RequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR imageSegmentationProcessRequest_grpc1RequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~imageSegmentationProcessRequest_grpc1RequestDefaultTypeInternal() {}
+  union {
+    imageSegmentationProcessRequest_grpc1Request _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 imageSegmentationProcessRequest_grpc1RequestDefaultTypeInternal _imageSegmentationProcessRequest_grpc1Request_default_instance_;
+
+inline constexpr imageSegmentationProcessRequest_grpc0Response::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : xpcfgrpcreturnvalue_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR imageSegmentationProcessRequest_grpc0Response::imageSegmentationProcessRequest_grpc0Response(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct imageSegmentationProcessRequest_grpc0ResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR imageSegmentationProcessRequest_grpc0ResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~imageSegmentationProcessRequest_grpc0ResponseDefaultTypeInternal() {}
+  union {
+    imageSegmentationProcessRequest_grpc0Response _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 imageSegmentationProcessRequest_grpc0ResponseDefaultTypeInternal _imageSegmentationProcessRequest_grpc0Response_default_instance_;
+
+inline constexpr imageSegmentationProcessRequest_grpc0Request::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : clientuuid_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        image_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        grpcservercompressionformat_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR imageSegmentationProcessRequest_grpc0Request::imageSegmentationProcessRequest_grpc0Request(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct imageSegmentationProcessRequest_grpc0RequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR imageSegmentationProcessRequest_grpc0RequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~imageSegmentationProcessRequest_grpc0RequestDefaultTypeInternal() {}
+  union {
+    imageSegmentationProcessRequest_grpc0Request _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 imageSegmentationProcessRequest_grpc0RequestDefaultTypeInternal _imageSegmentationProcessRequest_grpc0Request_default_instance_;
+
 inline constexpr getProcessingModeResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : pipelinemode_{0},
@@ -708,6 +797,98 @@ struct getLastPoseRequestDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getLastPoseRequestDefaultTypeInternal _getLastPoseRequest_default_instance_;
+
+inline constexpr getImageSegmentationProcessStatusResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : status_{0},
+        progress_{0},
+        xpcfgrpcreturnvalue_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR getImageSegmentationProcessStatusResponse::getImageSegmentationProcessStatusResponse(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct getImageSegmentationProcessStatusResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR getImageSegmentationProcessStatusResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~getImageSegmentationProcessStatusResponseDefaultTypeInternal() {}
+  union {
+    getImageSegmentationProcessStatusResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getImageSegmentationProcessStatusResponseDefaultTypeInternal _getImageSegmentationProcessStatusResponse_default_instance_;
+
+inline constexpr getImageSegmentationProcessStatusRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : clientuuid_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        grpcservercompressionformat_{0},
+        status_{0},
+        progress_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR getImageSegmentationProcessStatusRequest::getImageSegmentationProcessStatusRequest(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct getImageSegmentationProcessStatusRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR getImageSegmentationProcessStatusRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~getImageSegmentationProcessStatusRequestDefaultTypeInternal() {}
+  union {
+    getImageSegmentationProcessStatusRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getImageSegmentationProcessStatusRequestDefaultTypeInternal _getImageSegmentationProcessStatusRequest_default_instance_;
+
+inline constexpr getImageSegmentationProcessOutputMasksResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : mask_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        xpcfgrpcreturnvalue_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR getImageSegmentationProcessOutputMasksResponse::getImageSegmentationProcessOutputMasksResponse(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct getImageSegmentationProcessOutputMasksResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR getImageSegmentationProcessOutputMasksResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~getImageSegmentationProcessOutputMasksResponseDefaultTypeInternal() {}
+  union {
+    getImageSegmentationProcessOutputMasksResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getImageSegmentationProcessOutputMasksResponseDefaultTypeInternal _getImageSegmentationProcessOutputMasksResponse_default_instance_;
+
+inline constexpr getImageSegmentationProcessOutputMasksRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : clientuuid_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        mask_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        grpcservercompressionformat_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR getImageSegmentationProcessOutputMasksRequest::getImageSegmentationProcessOutputMasksRequest(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct getImageSegmentationProcessOutputMasksRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR getImageSegmentationProcessOutputMasksRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~getImageSegmentationProcessOutputMasksRequestDefaultTypeInternal() {}
+  union {
+    getImageSegmentationProcessOutputMasksRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getImageSegmentationProcessOutputMasksRequestDefaultTypeInternal _getImageSegmentationProcessOutputMasksRequest_default_instance_;
 
 inline constexpr getDeviceInfoResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -1376,6 +1557,91 @@ const ::uint32_t
         ~0u,  // no sizeof(Split)
         PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getClientMapUUIDResponse, _impl_.mapuuid_),
         PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getClientMapUUIDResponse, _impl_.xpcfgrpcreturnvalue_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request, _impl_.grpcservercompressionformat_),
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request, _impl_.clientuuid_),
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request, _impl_.image_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response, _impl_.xpcfgrpcreturnvalue_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request, _impl_.grpcservercompressionformat_),
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request, _impl_.clientuuid_),
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request, _impl_.images_),
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request, _impl_.temporalconsistency_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response, _impl_.xpcfgrpcreturnvalue_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessStatusRequest, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessStatusRequest, _impl_.grpcservercompressionformat_),
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessStatusRequest, _impl_.clientuuid_),
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessStatusRequest, _impl_.status_),
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessStatusRequest, _impl_.progress_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessStatusResponse, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessStatusResponse, _impl_.status_),
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessStatusResponse, _impl_.progress_),
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessStatusResponse, _impl_.xpcfgrpcreturnvalue_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest, _impl_.grpcservercompressionformat_),
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest, _impl_.clientuuid_),
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest, _impl_.mask_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse, _impl_.mask_),
+        PROTOBUF_FIELD_OFFSET(::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse, _impl_.xpcfgrpcreturnvalue_),
 };
 
 static const ::_pbi::MigrationSchema
@@ -1418,6 +1684,14 @@ static const ::_pbi::MigrationSchema
         {389, -1, -1, sizeof(::grpcIClientContextManager::getLastPoseResponse)},
         {399, -1, -1, sizeof(::grpcIClientContextManager::getClientMapUUIDRequest)},
         {410, -1, -1, sizeof(::grpcIClientContextManager::getClientMapUUIDResponse)},
+        {420, -1, -1, sizeof(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request)},
+        {431, -1, -1, sizeof(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response)},
+        {440, -1, -1, sizeof(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request)},
+        {452, -1, -1, sizeof(::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response)},
+        {461, -1, -1, sizeof(::grpcIClientContextManager::getImageSegmentationProcessStatusRequest)},
+        {473, -1, -1, sizeof(::grpcIClientContextManager::getImageSegmentationProcessStatusResponse)},
+        {484, -1, -1, sizeof(::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest)},
+        {495, -1, -1, sizeof(::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse)},
 };
 static const ::_pb::Message* const file_default_instances[] = {
     &::grpcIClientContextManager::_registerClientRequest_default_instance_._instance,
@@ -1458,6 +1732,14 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::grpcIClientContextManager::_getLastPoseResponse_default_instance_._instance,
     &::grpcIClientContextManager::_getClientMapUUIDRequest_default_instance_._instance,
     &::grpcIClientContextManager::_getClientMapUUIDResponse_default_instance_._instance,
+    &::grpcIClientContextManager::_imageSegmentationProcessRequest_grpc0Request_default_instance_._instance,
+    &::grpcIClientContextManager::_imageSegmentationProcessRequest_grpc0Response_default_instance_._instance,
+    &::grpcIClientContextManager::_imageSegmentationProcessRequest_grpc1Request_default_instance_._instance,
+    &::grpcIClientContextManager::_imageSegmentationProcessRequest_grpc1Response_default_instance_._instance,
+    &::grpcIClientContextManager::_getImageSegmentationProcessStatusRequest_default_instance_._instance,
+    &::grpcIClientContextManager::_getImageSegmentationProcessStatusResponse_default_instance_._instance,
+    &::grpcIClientContextManager::_getImageSegmentationProcessOutputMasksRequest_default_instance_._instance,
+    &::grpcIClientContextManager::_getImageSegmentationProcessOutputMasksResponse_default_instance_._instance,
 };
 const char descriptor_table_protodef_grpcIClientContextManagerService_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
@@ -1563,71 +1845,112 @@ const char descriptor_table_protodef_grpcIClientContextManagerService_2eproto[] 
     "ServerCompressionFormat\030\001 \001(\005\022\022\n\nclientU"
     "UID\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\"H\n\030getClientM"
     "apUUIDResponse\022\017\n\007mapUUID\030\001 \001(\t\022\033\n\023xpcfG"
-    "rpcReturnValue\030\002 \001(\0212\347\023\n grpcIClientCont"
-    "extManagerService\022w\n\016registerClient\0220.gr"
-    "pcIClientContextManager.registerClientRe"
-    "quest\0321.grpcIClientContextManager.regist"
-    "erClientResponse\"\000\022}\n\020unregisterClient\0222"
-    ".grpcIClientContextManager.unregisterCli"
-    "entRequest\0323.grpcIClientContextManager.u"
-    "nregisterClientResponse\"\000\022\200\001\n\021getAllClie"
-    "ntsUUID\0223.grpcIClientContextManager.getA"
-    "llClientsUUIDRequest\0324.grpcIClientContex"
-    "tManager.getAllClientsUUIDResponse\"\000\022t\n\r"
-    "getDeviceInfo\022/.grpcIClientContextManage"
-    "r.getDeviceInfoRequest\0320.grpcIClientCont"
-    "extManager.getDeviceInfoResponse\"\000\022k\n\nin"
-    "it_grpc0\022,.grpcIClientContextManager.ini"
-    "t_grpc0Request\032-.grpcIClientContextManag"
-    "er.init_grpc0Response\"\000\022k\n\ninit_grpc1\022,."
-    "grpcIClientContextManager.init_grpc1Requ"
-    "est\032-.grpcIClientContextManager.init_grp"
-    "c1Response\"\000\022\\\n\005start\022\'.grpcIClientConte"
-    "xtManager.startRequest\032(.grpcIClientCont"
-    "extManager.startResponse\"\000\022Y\n\004stop\022&.grp"
-    "cIClientContextManager.stopRequest\032\'.grp"
-    "cIClientContextManager.stopResponse\"\000\022\200\001"
-    "\n\021getProcessingMode\0223.grpcIClientContext"
-    "Manager.getProcessingModeRequest\0324.grpcI"
-    "ClientContextManager.getProcessingModeRe"
-    "sponse\"\000\022\230\001\n\031setCameraParameters_grpc0\022;"
-    ".grpcIClientContextManager.setCameraPara"
-    "meters_grpc0Request\032<.grpcIClientContext"
-    "Manager.setCameraParameters_grpc0Respons"
-    "e\"\000\022\230\001\n\031setCameraParameters_grpc1\022;.grpc"
-    "IClientContextManager.setCameraParameter"
-    "s_grpc1Request\032<.grpcIClientContextManag"
-    "er.setCameraParameters_grpc1Response\"\000\022\233"
-    "\001\n\032setRectificationParameters\022<.grpcICli"
-    "entContextManager.setRectificationParame"
-    "tersRequest\032=.grpcIClientContextManager."
-    "setRectificationParametersResponse\"\000\022\206\001\n"
-    "\023getCameraParameters\0225.grpcIClientContex"
-    "tManager.getCameraParametersRequest\0326.gr"
-    "pcIClientContextManager.getCameraParamet"
-    "ersResponse\"\000\022\247\001\n\036relocalizeProcessReque"
-    "st_grpc0\022@.grpcIClientContextManager.rel"
-    "ocalizeProcessRequest_grpc0Request\032A.grp"
-    "cIClientContextManager.relocalizeProcess"
-    "Request_grpc0Response\"\000\022\247\001\n\036relocalizePr"
-    "ocessRequest_grpc1\022@.grpcIClientContextM"
-    "anager.relocalizeProcessRequest_grpc1Req"
-    "uest\032A.grpcIClientContextManager.relocal"
-    "izeProcessRequest_grpc1Response\"\000\022\214\001\n\025ge"
-    "t3DTransformRequest\0227.grpcIClientContext"
-    "Manager.get3DTransformRequestRequest\0328.g"
-    "rpcIClientContextManager.get3DTransformR"
-    "equestResponse\"\000\022\214\001\n\025getMappingDataReque"
-    "st\0227.grpcIClientContextManager.getMappin"
-    "gDataRequestRequest\0328.grpcIClientContext"
-    "Manager.getMappingDataRequestResponse\"\000\022"
-    "n\n\013getLastPose\022-.grpcIClientContextManag"
-    "er.getLastPoseRequest\032..grpcIClientConte"
-    "xtManager.getLastPoseResponse\"\000\022}\n\020getCl"
-    "ientMapUUID\0222.grpcIClientContextManager."
-    "getClientMapUUIDRequest\0323.grpcIClientCon"
-    "textManager.getClientMapUUIDResponse\"\000b\006"
-    "proto3"
+    "rpcReturnValue\030\002 \001(\021\"v\n,imageSegmentatio"
+    "nProcessRequest_grpc0Request\022#\n\033grpcServ"
+    "erCompressionFormat\030\001 \001(\005\022\022\n\nclientUUID\030"
+    "\002 \001(\t\022\r\n\005image\030\003 \001(\014\"L\n-imageSegmentatio"
+    "nProcessRequest_grpc0Response\022\033\n\023xpcfGrp"
+    "cReturnValue\030\001 \001(\021\"\224\001\n,imageSegmentation"
+    "ProcessRequest_grpc1Request\022#\n\033grpcServe"
+    "rCompressionFormat\030\001 \001(\005\022\022\n\nclientUUID\030\002"
+    " \001(\t\022\016\n\006images\030\003 \001(\014\022\033\n\023temporalConsiste"
+    "ncy\030\004 \001(\010\"L\n-imageSegmentationProcessReq"
+    "uest_grpc1Response\022\033\n\023xpcfGrpcReturnValu"
+    "e\030\001 \001(\021\"\205\001\n(getImageSegmentationProcessS"
+    "tatusRequest\022#\n\033grpcServerCompressionFor"
+    "mat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\022\016\n\006status\030"
+    "\003 \001(\021\022\020\n\010progress\030\004 \001(\002\"j\n)getImageSegme"
+    "ntationProcessStatusResponse\022\016\n\006status\030\001"
+    " \001(\021\022\020\n\010progress\030\002 \001(\002\022\033\n\023xpcfGrpcReturn"
+    "Value\030\003 \001(\021\"v\n-getImageSegmentationProce"
+    "ssOutputMasksRequest\022#\n\033grpcServerCompre"
+    "ssionFormat\030\001 \001(\005\022\022\n\nclientUUID\030\002 \001(\t\022\014\n"
+    "\004mask\030\003 \001(\014\"[\n.getImageSegmentationProce"
+    "ssOutputMasksResponse\022\014\n\004mask\030\001 \001(\014\022\033\n\023x"
+    "pcfGrpcReturnValue\030\002 \001(\0212\332\031\n grpcIClient"
+    "ContextManagerService\022w\n\016registerClient\022"
+    "0.grpcIClientContextManager.registerClie"
+    "ntRequest\0321.grpcIClientContextManager.re"
+    "gisterClientResponse\"\000\022}\n\020unregisterClie"
+    "nt\0222.grpcIClientContextManager.unregiste"
+    "rClientRequest\0323.grpcIClientContextManag"
+    "er.unregisterClientResponse\"\000\022\200\001\n\021getAll"
+    "ClientsUUID\0223.grpcIClientContextManager."
+    "getAllClientsUUIDRequest\0324.grpcIClientCo"
+    "ntextManager.getAllClientsUUIDResponse\"\000"
+    "\022t\n\rgetDeviceInfo\022/.grpcIClientContextMa"
+    "nager.getDeviceInfoRequest\0320.grpcIClient"
+    "ContextManager.getDeviceInfoResponse\"\000\022k"
+    "\n\ninit_grpc0\022,.grpcIClientContextManager"
+    ".init_grpc0Request\032-.grpcIClientContextM"
+    "anager.init_grpc0Response\"\000\022k\n\ninit_grpc"
+    "1\022,.grpcIClientContextManager.init_grpc1"
+    "Request\032-.grpcIClientContextManager.init"
+    "_grpc1Response\"\000\022\\\n\005start\022\'.grpcIClientC"
+    "ontextManager.startRequest\032(.grpcIClient"
+    "ContextManager.startResponse\"\000\022Y\n\004stop\022&"
+    ".grpcIClientContextManager.stopRequest\032\'"
+    ".grpcIClientContextManager.stopResponse\""
+    "\000\022\200\001\n\021getProcessingMode\0223.grpcIClientCon"
+    "textManager.getProcessingModeRequest\0324.g"
+    "rpcIClientContextManager.getProcessingMo"
+    "deResponse\"\000\022\230\001\n\031setCameraParameters_grp"
+    "c0\022;.grpcIClientContextManager.setCamera"
+    "Parameters_grpc0Request\032<.grpcIClientCon"
+    "textManager.setCameraParameters_grpc0Res"
+    "ponse\"\000\022\230\001\n\031setCameraParameters_grpc1\022;."
+    "grpcIClientContextManager.setCameraParam"
+    "eters_grpc1Request\032<.grpcIClientContextM"
+    "anager.setCameraParameters_grpc1Response"
+    "\"\000\022\233\001\n\032setRectificationParameters\022<.grpc"
+    "IClientContextManager.setRectificationPa"
+    "rametersRequest\032=.grpcIClientContextMana"
+    "ger.setRectificationParametersResponse\"\000"
+    "\022\206\001\n\023getCameraParameters\0225.grpcIClientCo"
+    "ntextManager.getCameraParametersRequest\032"
+    "6.grpcIClientContextManager.getCameraPar"
+    "ametersResponse\"\000\022\247\001\n\036relocalizeProcessR"
+    "equest_grpc0\022@.grpcIClientContextManager"
+    ".relocalizeProcessRequest_grpc0Request\032A"
+    ".grpcIClientContextManager.relocalizePro"
+    "cessRequest_grpc0Response\"\000\022\247\001\n\036relocali"
+    "zeProcessRequest_grpc1\022@.grpcIClientCont"
+    "extManager.relocalizeProcessRequest_grpc"
+    "1Request\032A.grpcIClientContextManager.rel"
+    "ocalizeProcessRequest_grpc1Response\"\000\022\214\001"
+    "\n\025get3DTransformRequest\0227.grpcIClientCon"
+    "textManager.get3DTransformRequestRequest"
+    "\0328.grpcIClientContextManager.get3DTransf"
+    "ormRequestResponse\"\000\022\214\001\n\025getMappingDataR"
+    "equest\0227.grpcIClientContextManager.getMa"
+    "ppingDataRequestRequest\0328.grpcIClientCon"
+    "textManager.getMappingDataRequestRespons"
+    "e\"\000\022n\n\013getLastPose\022-.grpcIClientContextM"
+    "anager.getLastPoseRequest\032..grpcIClientC"
+    "ontextManager.getLastPoseResponse\"\000\022}\n\020g"
+    "etClientMapUUID\0222.grpcIClientContextMana"
+    "ger.getClientMapUUIDRequest\0323.grpcIClien"
+    "tContextManager.getClientMapUUIDResponse"
+    "\"\000\022\274\001\n%imageSegmentationProcessRequest_g"
+    "rpc0\022G.grpcIClientContextManager.imageSe"
+    "gmentationProcessRequest_grpc0Request\032H."
+    "grpcIClientContextManager.imageSegmentat"
+    "ionProcessRequest_grpc0Response\"\000\022\274\001\n%im"
+    "ageSegmentationProcessRequest_grpc1\022G.gr"
+    "pcIClientContextManager.imageSegmentatio"
+    "nProcessRequest_grpc1Request\032H.grpcIClie"
+    "ntContextManager.imageSegmentationProces"
+    "sRequest_grpc1Response\"\000\022\260\001\n!getImageSeg"
+    "mentationProcessStatus\022C.grpcIClientCont"
+    "extManager.getImageSegmentationProcessSt"
+    "atusRequest\032D.grpcIClientContextManager."
+    "getImageSegmentationProcessStatusRespons"
+    "e\"\000\022\277\001\n&getImageSegmentationProcessOutpu"
+    "tMasks\022H.grpcIClientContextManager.getIm"
+    "ageSegmentationProcessOutputMasksRequest"
+    "\032I.grpcIClientContextManager.getImageSeg"
+    "mentationProcessOutputMasksResponse\"\000b\006p"
+    "roto3"
 };
 static const ::_pbi::DescriptorTable* const descriptor_table_grpcIClientContextManagerService_2eproto_deps[1] =
     {
@@ -1637,13 +1960,13 @@ static ::absl::once_flag descriptor_table_grpcIClientContextManagerService_2epro
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_grpcIClientContextManagerService_2eproto = {
     false,
     false,
-    6646,
+    8285,
     descriptor_table_protodef_grpcIClientContextManagerService_2eproto,
     "grpcIClientContextManagerService.proto",
     &descriptor_table_grpcIClientContextManagerService_2eproto_once,
     descriptor_table_grpcIClientContextManagerService_2eproto_deps,
     1,
-    38,
+    46,
     schemas,
     file_default_instances,
     TableStruct_grpcIClientContextManagerService_2eproto::offsets,
@@ -10916,6 +11239,1879 @@ void getClientMapUUIDResponse::InternalSwap(getClientMapUUIDResponse* PROTOBUF_R
 }
 
 ::google::protobuf::Metadata getClientMapUUIDResponse::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class imageSegmentationProcessRequest_grpc0Request::_Internal {
+ public:
+};
+
+imageSegmentationProcessRequest_grpc0Request::imageSegmentationProcessRequest_grpc0Request(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Request)
+}
+inline PROTOBUF_NDEBUG_INLINE imageSegmentationProcessRequest_grpc0Request::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request& from_msg)
+      : clientuuid_(arena, from.clientuuid_),
+        image_(arena, from.image_),
+        _cached_size_{0} {}
+
+imageSegmentationProcessRequest_grpc0Request::imageSegmentationProcessRequest_grpc0Request(
+    ::google::protobuf::Arena* arena,
+    const imageSegmentationProcessRequest_grpc0Request& from)
+    : ::google::protobuf::Message(arena) {
+  imageSegmentationProcessRequest_grpc0Request* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+
+  // @@protoc_insertion_point(copy_constructor:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Request)
+}
+inline PROTOBUF_NDEBUG_INLINE imageSegmentationProcessRequest_grpc0Request::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : clientuuid_(arena),
+        image_(arena),
+        _cached_size_{0} {}
+
+inline void imageSegmentationProcessRequest_grpc0Request::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.grpcservercompressionformat_ = {};
+}
+imageSegmentationProcessRequest_grpc0Request::~imageSegmentationProcessRequest_grpc0Request() {
+  // @@protoc_insertion_point(destructor:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Request)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void imageSegmentationProcessRequest_grpc0Request::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.clientuuid_.Destroy();
+  _impl_.image_.Destroy();
+  _impl_.~Impl_();
+}
+
+const ::google::protobuf::MessageLite::ClassData*
+imageSegmentationProcessRequest_grpc0Request::GetClassData() const {
+  PROTOBUF_CONSTINIT static const ::google::protobuf::MessageLite::
+      ClassDataFull _data_ = {
+          {
+              &_table_.header,
+              nullptr,  // OnDemandRegisterArenaDtor
+              nullptr,  // IsInitialized
+              PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc0Request, _impl_._cached_size_),
+              false,
+          },
+          &imageSegmentationProcessRequest_grpc0Request::MergeImpl,
+          &imageSegmentationProcessRequest_grpc0Request::kDescriptorMethods,
+          &descriptor_table_grpcIClientContextManagerService_2eproto,
+          nullptr,  // tracker
+      };
+  ::google::protobuf::internal::PrefetchToLocalCache(&_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_data_.tc_table);
+  return _data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 0, 89, 2> imageSegmentationProcessRequest_grpc0Request::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_imageSegmentationProcessRequest_grpc0Request_default_instance_._instance,
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // int32 grpcServerCompressionFormat = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(imageSegmentationProcessRequest_grpc0Request, _impl_.grpcservercompressionformat_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc0Request, _impl_.grpcservercompressionformat_)}},
+    // string clientUUID = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc0Request, _impl_.clientuuid_)}},
+    // bytes image = 3;
+    {::_pbi::TcParser::FastBS1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc0Request, _impl_.image_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int32 grpcServerCompressionFormat = 1;
+    {PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc0Request, _impl_.grpcservercompressionformat_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
+    // string clientUUID = 2;
+    {PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc0Request, _impl_.clientuuid_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bytes image = 3;
+    {PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc0Request, _impl_.image_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\106\0\12\0\0\0\0\0"
+    "grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Request"
+    "clientUUID"
+  }},
+};
+
+PROTOBUF_NOINLINE void imageSegmentationProcessRequest_grpc0Request::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Request)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.clientuuid_.ClearToEmpty();
+  _impl_.image_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+::uint8_t* imageSegmentationProcessRequest_grpc0Request::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Request)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<1>(
+            stream, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // string clientUUID = 2;
+  if (!this->_internal_clientuuid().empty()) {
+    const std::string& _s = this->_internal_clientuuid();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Request.clientUUID");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
+  }
+
+  // bytes image = 3;
+  if (!this->_internal_image().empty()) {
+    const std::string& _s = this->_internal_image();
+    target = stream->WriteBytesMaybeAliased(3, _s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Request)
+  return target;
+}
+
+::size_t imageSegmentationProcessRequest_grpc0Request::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Request)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(reinterpret_cast<const void*>(this));
+  // string clientUUID = 2;
+  if (!this->_internal_clientuuid().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_clientuuid());
+  }
+
+  // bytes image = 3;
+  if (!this->_internal_image().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_image());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+
+void imageSegmentationProcessRequest_grpc0Request::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<imageSegmentationProcessRequest_grpc0Request*>(&to_msg);
+  auto& from = static_cast<const imageSegmentationProcessRequest_grpc0Request&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Request)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_clientuuid().empty()) {
+    _this->_internal_set_clientuuid(from._internal_clientuuid());
+  }
+  if (!from._internal_image().empty()) {
+    _this->_internal_set_image(from._internal_image());
+  }
+  if (from._internal_grpcservercompressionformat() != 0) {
+    _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void imageSegmentationProcessRequest_grpc0Request::CopyFrom(const imageSegmentationProcessRequest_grpc0Request& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Request)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void imageSegmentationProcessRequest_grpc0Request::InternalSwap(imageSegmentationProcessRequest_grpc0Request* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.clientuuid_, &other->_impl_.clientuuid_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.image_, &other->_impl_.image_, arena);
+        swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+}
+
+::google::protobuf::Metadata imageSegmentationProcessRequest_grpc0Request::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class imageSegmentationProcessRequest_grpc0Response::_Internal {
+ public:
+};
+
+imageSegmentationProcessRequest_grpc0Response::imageSegmentationProcessRequest_grpc0Response(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Response)
+}
+imageSegmentationProcessRequest_grpc0Response::imageSegmentationProcessRequest_grpc0Response(
+    ::google::protobuf::Arena* arena, const imageSegmentationProcessRequest_grpc0Response& from)
+    : imageSegmentationProcessRequest_grpc0Response(arena) {
+  MergeFrom(from);
+}
+inline PROTOBUF_NDEBUG_INLINE imageSegmentationProcessRequest_grpc0Response::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
+
+inline void imageSegmentationProcessRequest_grpc0Response::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.xpcfgrpcreturnvalue_ = {};
+}
+imageSegmentationProcessRequest_grpc0Response::~imageSegmentationProcessRequest_grpc0Response() {
+  // @@protoc_insertion_point(destructor:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Response)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void imageSegmentationProcessRequest_grpc0Response::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+const ::google::protobuf::MessageLite::ClassData*
+imageSegmentationProcessRequest_grpc0Response::GetClassData() const {
+  PROTOBUF_CONSTINIT static const ::google::protobuf::MessageLite::
+      ClassDataFull _data_ = {
+          {
+              &_table_.header,
+              nullptr,  // OnDemandRegisterArenaDtor
+              nullptr,  // IsInitialized
+              PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc0Response, _impl_._cached_size_),
+              false,
+          },
+          &imageSegmentationProcessRequest_grpc0Response::MergeImpl,
+          &imageSegmentationProcessRequest_grpc0Response::kDescriptorMethods,
+          &descriptor_table_grpcIClientContextManagerService_2eproto,
+          nullptr,  // tracker
+      };
+  ::google::protobuf::internal::PrefetchToLocalCache(&_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_data_.tc_table);
+  return _data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 0, 2> imageSegmentationProcessRequest_grpc0Response::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_imageSegmentationProcessRequest_grpc0Response_default_instance_._instance,
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // sint32 xpcfGrpcReturnValue = 1;
+    {::_pbi::TcParser::FastZ32S1,
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc0Response, _impl_.xpcfgrpcreturnvalue_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // sint32 xpcfGrpcReturnValue = 1;
+    {PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc0Response, _impl_.xpcfgrpcreturnvalue_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kSInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+PROTOBUF_NOINLINE void imageSegmentationProcessRequest_grpc0Response::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Response)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+::uint8_t* imageSegmentationProcessRequest_grpc0Response::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Response)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // sint32 xpcfGrpcReturnValue = 1;
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+        1, this->_internal_xpcfgrpcreturnvalue(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Response)
+  return target;
+}
+
+::size_t imageSegmentationProcessRequest_grpc0Response::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Response)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // sint32 xpcfGrpcReturnValue = 1;
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+        this->_internal_xpcfgrpcreturnvalue());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+
+void imageSegmentationProcessRequest_grpc0Response::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<imageSegmentationProcessRequest_grpc0Response*>(&to_msg);
+  auto& from = static_cast<const imageSegmentationProcessRequest_grpc0Response&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Response)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+    _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void imageSegmentationProcessRequest_grpc0Response::CopyFrom(const imageSegmentationProcessRequest_grpc0Response& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc0Response)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void imageSegmentationProcessRequest_grpc0Response::InternalSwap(imageSegmentationProcessRequest_grpc0Response* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+        swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+}
+
+::google::protobuf::Metadata imageSegmentationProcessRequest_grpc0Response::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class imageSegmentationProcessRequest_grpc1Request::_Internal {
+ public:
+};
+
+imageSegmentationProcessRequest_grpc1Request::imageSegmentationProcessRequest_grpc1Request(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Request)
+}
+inline PROTOBUF_NDEBUG_INLINE imageSegmentationProcessRequest_grpc1Request::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request& from_msg)
+      : clientuuid_(arena, from.clientuuid_),
+        images_(arena, from.images_),
+        _cached_size_{0} {}
+
+imageSegmentationProcessRequest_grpc1Request::imageSegmentationProcessRequest_grpc1Request(
+    ::google::protobuf::Arena* arena,
+    const imageSegmentationProcessRequest_grpc1Request& from)
+    : ::google::protobuf::Message(arena) {
+  imageSegmentationProcessRequest_grpc1Request* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           offsetof(Impl_, temporalconsistency_) -
+               offsetof(Impl_, grpcservercompressionformat_) +
+               sizeof(Impl_::temporalconsistency_));
+
+  // @@protoc_insertion_point(copy_constructor:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Request)
+}
+inline PROTOBUF_NDEBUG_INLINE imageSegmentationProcessRequest_grpc1Request::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : clientuuid_(arena),
+        images_(arena),
+        _cached_size_{0} {}
+
+inline void imageSegmentationProcessRequest_grpc1Request::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           0,
+           offsetof(Impl_, temporalconsistency_) -
+               offsetof(Impl_, grpcservercompressionformat_) +
+               sizeof(Impl_::temporalconsistency_));
+}
+imageSegmentationProcessRequest_grpc1Request::~imageSegmentationProcessRequest_grpc1Request() {
+  // @@protoc_insertion_point(destructor:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Request)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void imageSegmentationProcessRequest_grpc1Request::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.clientuuid_.Destroy();
+  _impl_.images_.Destroy();
+  _impl_.~Impl_();
+}
+
+const ::google::protobuf::MessageLite::ClassData*
+imageSegmentationProcessRequest_grpc1Request::GetClassData() const {
+  PROTOBUF_CONSTINIT static const ::google::protobuf::MessageLite::
+      ClassDataFull _data_ = {
+          {
+              &_table_.header,
+              nullptr,  // OnDemandRegisterArenaDtor
+              nullptr,  // IsInitialized
+              PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc1Request, _impl_._cached_size_),
+              false,
+          },
+          &imageSegmentationProcessRequest_grpc1Request::MergeImpl,
+          &imageSegmentationProcessRequest_grpc1Request::kDescriptorMethods,
+          &descriptor_table_grpcIClientContextManagerService_2eproto,
+          nullptr,  // tracker
+      };
+  ::google::protobuf::internal::PrefetchToLocalCache(&_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_data_.tc_table);
+  return _data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 0, 89, 2> imageSegmentationProcessRequest_grpc1Request::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_imageSegmentationProcessRequest_grpc1Request_default_instance_._instance,
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // bool temporalConsistency = 4;
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(imageSegmentationProcessRequest_grpc1Request, _impl_.temporalconsistency_), 63>(),
+     {32, 63, 0, PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc1Request, _impl_.temporalconsistency_)}},
+    // int32 grpcServerCompressionFormat = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(imageSegmentationProcessRequest_grpc1Request, _impl_.grpcservercompressionformat_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc1Request, _impl_.grpcservercompressionformat_)}},
+    // string clientUUID = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc1Request, _impl_.clientuuid_)}},
+    // bytes images = 3;
+    {::_pbi::TcParser::FastBS1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc1Request, _impl_.images_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int32 grpcServerCompressionFormat = 1;
+    {PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc1Request, _impl_.grpcservercompressionformat_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
+    // string clientUUID = 2;
+    {PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc1Request, _impl_.clientuuid_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bytes images = 3;
+    {PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc1Request, _impl_.images_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bool temporalConsistency = 4;
+    {PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc1Request, _impl_.temporalconsistency_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
+  }},
+  // no aux_entries
+  {{
+    "\106\0\12\0\0\0\0\0"
+    "grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Request"
+    "clientUUID"
+  }},
+};
+
+PROTOBUF_NOINLINE void imageSegmentationProcessRequest_grpc1Request::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Request)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.clientuuid_.ClearToEmpty();
+  _impl_.images_.ClearToEmpty();
+  ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.temporalconsistency_) -
+      reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.temporalconsistency_));
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+::uint8_t* imageSegmentationProcessRequest_grpc1Request::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Request)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<1>(
+            stream, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // string clientUUID = 2;
+  if (!this->_internal_clientuuid().empty()) {
+    const std::string& _s = this->_internal_clientuuid();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Request.clientUUID");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
+  }
+
+  // bytes images = 3;
+  if (!this->_internal_images().empty()) {
+    const std::string& _s = this->_internal_images();
+    target = stream->WriteBytesMaybeAliased(3, _s, target);
+  }
+
+  // bool temporalConsistency = 4;
+  if (this->_internal_temporalconsistency() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        4, this->_internal_temporalconsistency(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Request)
+  return target;
+}
+
+::size_t imageSegmentationProcessRequest_grpc1Request::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Request)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(reinterpret_cast<const void*>(this));
+  // string clientUUID = 2;
+  if (!this->_internal_clientuuid().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_clientuuid());
+  }
+
+  // bytes images = 3;
+  if (!this->_internal_images().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_images());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // bool temporalConsistency = 4;
+  if (this->_internal_temporalconsistency() != 0) {
+    total_size += 2;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+
+void imageSegmentationProcessRequest_grpc1Request::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<imageSegmentationProcessRequest_grpc1Request*>(&to_msg);
+  auto& from = static_cast<const imageSegmentationProcessRequest_grpc1Request&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Request)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_clientuuid().empty()) {
+    _this->_internal_set_clientuuid(from._internal_clientuuid());
+  }
+  if (!from._internal_images().empty()) {
+    _this->_internal_set_images(from._internal_images());
+  }
+  if (from._internal_grpcservercompressionformat() != 0) {
+    _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  }
+  if (from._internal_temporalconsistency() != 0) {
+    _this->_impl_.temporalconsistency_ = from._impl_.temporalconsistency_;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void imageSegmentationProcessRequest_grpc1Request::CopyFrom(const imageSegmentationProcessRequest_grpc1Request& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Request)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void imageSegmentationProcessRequest_grpc1Request::InternalSwap(imageSegmentationProcessRequest_grpc1Request* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.clientuuid_, &other->_impl_.clientuuid_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.images_, &other->_impl_.images_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc1Request, _impl_.temporalconsistency_)
+      + sizeof(imageSegmentationProcessRequest_grpc1Request::_impl_.temporalconsistency_)
+      - PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc1Request, _impl_.grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
+}
+
+::google::protobuf::Metadata imageSegmentationProcessRequest_grpc1Request::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class imageSegmentationProcessRequest_grpc1Response::_Internal {
+ public:
+};
+
+imageSegmentationProcessRequest_grpc1Response::imageSegmentationProcessRequest_grpc1Response(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Response)
+}
+imageSegmentationProcessRequest_grpc1Response::imageSegmentationProcessRequest_grpc1Response(
+    ::google::protobuf::Arena* arena, const imageSegmentationProcessRequest_grpc1Response& from)
+    : imageSegmentationProcessRequest_grpc1Response(arena) {
+  MergeFrom(from);
+}
+inline PROTOBUF_NDEBUG_INLINE imageSegmentationProcessRequest_grpc1Response::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
+
+inline void imageSegmentationProcessRequest_grpc1Response::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.xpcfgrpcreturnvalue_ = {};
+}
+imageSegmentationProcessRequest_grpc1Response::~imageSegmentationProcessRequest_grpc1Response() {
+  // @@protoc_insertion_point(destructor:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Response)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void imageSegmentationProcessRequest_grpc1Response::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+const ::google::protobuf::MessageLite::ClassData*
+imageSegmentationProcessRequest_grpc1Response::GetClassData() const {
+  PROTOBUF_CONSTINIT static const ::google::protobuf::MessageLite::
+      ClassDataFull _data_ = {
+          {
+              &_table_.header,
+              nullptr,  // OnDemandRegisterArenaDtor
+              nullptr,  // IsInitialized
+              PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc1Response, _impl_._cached_size_),
+              false,
+          },
+          &imageSegmentationProcessRequest_grpc1Response::MergeImpl,
+          &imageSegmentationProcessRequest_grpc1Response::kDescriptorMethods,
+          &descriptor_table_grpcIClientContextManagerService_2eproto,
+          nullptr,  // tracker
+      };
+  ::google::protobuf::internal::PrefetchToLocalCache(&_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_data_.tc_table);
+  return _data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 0, 2> imageSegmentationProcessRequest_grpc1Response::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_imageSegmentationProcessRequest_grpc1Response_default_instance_._instance,
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // sint32 xpcfGrpcReturnValue = 1;
+    {::_pbi::TcParser::FastZ32S1,
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc1Response, _impl_.xpcfgrpcreturnvalue_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // sint32 xpcfGrpcReturnValue = 1;
+    {PROTOBUF_FIELD_OFFSET(imageSegmentationProcessRequest_grpc1Response, _impl_.xpcfgrpcreturnvalue_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kSInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+PROTOBUF_NOINLINE void imageSegmentationProcessRequest_grpc1Response::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Response)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+::uint8_t* imageSegmentationProcessRequest_grpc1Response::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Response)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // sint32 xpcfGrpcReturnValue = 1;
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+        1, this->_internal_xpcfgrpcreturnvalue(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Response)
+  return target;
+}
+
+::size_t imageSegmentationProcessRequest_grpc1Response::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Response)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // sint32 xpcfGrpcReturnValue = 1;
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+        this->_internal_xpcfgrpcreturnvalue());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+
+void imageSegmentationProcessRequest_grpc1Response::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<imageSegmentationProcessRequest_grpc1Response*>(&to_msg);
+  auto& from = static_cast<const imageSegmentationProcessRequest_grpc1Response&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Response)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+    _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void imageSegmentationProcessRequest_grpc1Response::CopyFrom(const imageSegmentationProcessRequest_grpc1Response& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIClientContextManager.imageSegmentationProcessRequest_grpc1Response)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void imageSegmentationProcessRequest_grpc1Response::InternalSwap(imageSegmentationProcessRequest_grpc1Response* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+        swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+}
+
+::google::protobuf::Metadata imageSegmentationProcessRequest_grpc1Response::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class getImageSegmentationProcessStatusRequest::_Internal {
+ public:
+};
+
+getImageSegmentationProcessStatusRequest::getImageSegmentationProcessStatusRequest(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIClientContextManager.getImageSegmentationProcessStatusRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE getImageSegmentationProcessStatusRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::grpcIClientContextManager::getImageSegmentationProcessStatusRequest& from_msg)
+      : clientuuid_(arena, from.clientuuid_),
+        _cached_size_{0} {}
+
+getImageSegmentationProcessStatusRequest::getImageSegmentationProcessStatusRequest(
+    ::google::protobuf::Arena* arena,
+    const getImageSegmentationProcessStatusRequest& from)
+    : ::google::protobuf::Message(arena) {
+  getImageSegmentationProcessStatusRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           offsetof(Impl_, progress_) -
+               offsetof(Impl_, grpcservercompressionformat_) +
+               sizeof(Impl_::progress_));
+
+  // @@protoc_insertion_point(copy_constructor:grpcIClientContextManager.getImageSegmentationProcessStatusRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE getImageSegmentationProcessStatusRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : clientuuid_(arena),
+        _cached_size_{0} {}
+
+inline void getImageSegmentationProcessStatusRequest::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           0,
+           offsetof(Impl_, progress_) -
+               offsetof(Impl_, grpcservercompressionformat_) +
+               sizeof(Impl_::progress_));
+}
+getImageSegmentationProcessStatusRequest::~getImageSegmentationProcessStatusRequest() {
+  // @@protoc_insertion_point(destructor:grpcIClientContextManager.getImageSegmentationProcessStatusRequest)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void getImageSegmentationProcessStatusRequest::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.clientuuid_.Destroy();
+  _impl_.~Impl_();
+}
+
+const ::google::protobuf::MessageLite::ClassData*
+getImageSegmentationProcessStatusRequest::GetClassData() const {
+  PROTOBUF_CONSTINIT static const ::google::protobuf::MessageLite::
+      ClassDataFull _data_ = {
+          {
+              &_table_.header,
+              nullptr,  // OnDemandRegisterArenaDtor
+              nullptr,  // IsInitialized
+              PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusRequest, _impl_._cached_size_),
+              false,
+          },
+          &getImageSegmentationProcessStatusRequest::MergeImpl,
+          &getImageSegmentationProcessStatusRequest::kDescriptorMethods,
+          &descriptor_table_grpcIClientContextManagerService_2eproto,
+          nullptr,  // tracker
+      };
+  ::google::protobuf::internal::PrefetchToLocalCache(&_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_data_.tc_table);
+  return _data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 0, 85, 2> getImageSegmentationProcessStatusRequest::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_getImageSegmentationProcessStatusRequest_default_instance_._instance,
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIClientContextManager::getImageSegmentationProcessStatusRequest>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // float progress = 4;
+    {::_pbi::TcParser::FastF32S1,
+     {37, 63, 0, PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusRequest, _impl_.progress_)}},
+    // int32 grpcServerCompressionFormat = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(getImageSegmentationProcessStatusRequest, _impl_.grpcservercompressionformat_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusRequest, _impl_.grpcservercompressionformat_)}},
+    // string clientUUID = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusRequest, _impl_.clientuuid_)}},
+    // sint32 status = 3;
+    {::_pbi::TcParser::FastZ32S1,
+     {24, 63, 0, PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusRequest, _impl_.status_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int32 grpcServerCompressionFormat = 1;
+    {PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusRequest, _impl_.grpcservercompressionformat_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
+    // string clientUUID = 2;
+    {PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusRequest, _impl_.clientuuid_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // sint32 status = 3;
+    {PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusRequest, _impl_.status_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kSInt32)},
+    // float progress = 4;
+    {PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusRequest, _impl_.progress_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
+  }},
+  // no aux_entries
+  {{
+    "\102\0\12\0\0\0\0\0"
+    "grpcIClientContextManager.getImageSegmentationProcessStatusRequest"
+    "clientUUID"
+  }},
+};
+
+PROTOBUF_NOINLINE void getImageSegmentationProcessStatusRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIClientContextManager.getImageSegmentationProcessStatusRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.clientuuid_.ClearToEmpty();
+  ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.progress_) -
+      reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.progress_));
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+::uint8_t* getImageSegmentationProcessStatusRequest::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIClientContextManager.getImageSegmentationProcessStatusRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<1>(
+            stream, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // string clientUUID = 2;
+  if (!this->_internal_clientuuid().empty()) {
+    const std::string& _s = this->_internal_clientuuid();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIClientContextManager.getImageSegmentationProcessStatusRequest.clientUUID");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
+  }
+
+  // sint32 status = 3;
+  if (this->_internal_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+        3, this->_internal_status(), target);
+  }
+
+  // float progress = 4;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_progress = this->_internal_progress();
+  ::uint32_t raw_progress;
+  memcpy(&raw_progress, &tmp_progress, sizeof(tmp_progress));
+  if (raw_progress != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        4, this->_internal_progress(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIClientContextManager.getImageSegmentationProcessStatusRequest)
+  return target;
+}
+
+::size_t getImageSegmentationProcessStatusRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIClientContextManager.getImageSegmentationProcessStatusRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(reinterpret_cast<const void*>(this));
+  // string clientUUID = 2;
+  if (!this->_internal_clientuuid().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_clientuuid());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  // sint32 status = 3;
+  if (this->_internal_status() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+        this->_internal_status());
+  }
+
+  // float progress = 4;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_progress = this->_internal_progress();
+  ::uint32_t raw_progress;
+  memcpy(&raw_progress, &tmp_progress, sizeof(tmp_progress));
+  if (raw_progress != 0) {
+    total_size += 5;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+
+void getImageSegmentationProcessStatusRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<getImageSegmentationProcessStatusRequest*>(&to_msg);
+  auto& from = static_cast<const getImageSegmentationProcessStatusRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIClientContextManager.getImageSegmentationProcessStatusRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_clientuuid().empty()) {
+    _this->_internal_set_clientuuid(from._internal_clientuuid());
+  }
+  if (from._internal_grpcservercompressionformat() != 0) {
+    _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  }
+  if (from._internal_status() != 0) {
+    _this->_impl_.status_ = from._impl_.status_;
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_progress = from._internal_progress();
+  ::uint32_t raw_progress;
+  memcpy(&raw_progress, &tmp_progress, sizeof(tmp_progress));
+  if (raw_progress != 0) {
+    _this->_impl_.progress_ = from._impl_.progress_;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getImageSegmentationProcessStatusRequest::CopyFrom(const getImageSegmentationProcessStatusRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIClientContextManager.getImageSegmentationProcessStatusRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void getImageSegmentationProcessStatusRequest::InternalSwap(getImageSegmentationProcessStatusRequest* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.clientuuid_, &other->_impl_.clientuuid_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusRequest, _impl_.progress_)
+      + sizeof(getImageSegmentationProcessStatusRequest::_impl_.progress_)
+      - PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusRequest, _impl_.grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
+}
+
+::google::protobuf::Metadata getImageSegmentationProcessStatusRequest::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class getImageSegmentationProcessStatusResponse::_Internal {
+ public:
+};
+
+getImageSegmentationProcessStatusResponse::getImageSegmentationProcessStatusResponse(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIClientContextManager.getImageSegmentationProcessStatusResponse)
+}
+getImageSegmentationProcessStatusResponse::getImageSegmentationProcessStatusResponse(
+    ::google::protobuf::Arena* arena, const getImageSegmentationProcessStatusResponse& from)
+    : getImageSegmentationProcessStatusResponse(arena) {
+  MergeFrom(from);
+}
+inline PROTOBUF_NDEBUG_INLINE getImageSegmentationProcessStatusResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
+
+inline void getImageSegmentationProcessStatusResponse::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, status_),
+           0,
+           offsetof(Impl_, xpcfgrpcreturnvalue_) -
+               offsetof(Impl_, status_) +
+               sizeof(Impl_::xpcfgrpcreturnvalue_));
+}
+getImageSegmentationProcessStatusResponse::~getImageSegmentationProcessStatusResponse() {
+  // @@protoc_insertion_point(destructor:grpcIClientContextManager.getImageSegmentationProcessStatusResponse)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void getImageSegmentationProcessStatusResponse::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+const ::google::protobuf::MessageLite::ClassData*
+getImageSegmentationProcessStatusResponse::GetClassData() const {
+  PROTOBUF_CONSTINIT static const ::google::protobuf::MessageLite::
+      ClassDataFull _data_ = {
+          {
+              &_table_.header,
+              nullptr,  // OnDemandRegisterArenaDtor
+              nullptr,  // IsInitialized
+              PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusResponse, _impl_._cached_size_),
+              false,
+          },
+          &getImageSegmentationProcessStatusResponse::MergeImpl,
+          &getImageSegmentationProcessStatusResponse::kDescriptorMethods,
+          &descriptor_table_grpcIClientContextManagerService_2eproto,
+          nullptr,  // tracker
+      };
+  ::google::protobuf::internal::PrefetchToLocalCache(&_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_data_.tc_table);
+  return _data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 0, 0, 2> getImageSegmentationProcessStatusResponse::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_getImageSegmentationProcessStatusResponse_default_instance_._instance,
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIClientContextManager::getImageSegmentationProcessStatusResponse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // sint32 status = 1;
+    {::_pbi::TcParser::FastZ32S1,
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusResponse, _impl_.status_)}},
+    // float progress = 2;
+    {::_pbi::TcParser::FastF32S1,
+     {21, 63, 0, PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusResponse, _impl_.progress_)}},
+    // sint32 xpcfGrpcReturnValue = 3;
+    {::_pbi::TcParser::FastZ32S1,
+     {24, 63, 0, PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusResponse, _impl_.xpcfgrpcreturnvalue_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // sint32 status = 1;
+    {PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusResponse, _impl_.status_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kSInt32)},
+    // float progress = 2;
+    {PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusResponse, _impl_.progress_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
+    // sint32 xpcfGrpcReturnValue = 3;
+    {PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusResponse, _impl_.xpcfgrpcreturnvalue_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kSInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+PROTOBUF_NOINLINE void getImageSegmentationProcessStatusResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIClientContextManager.getImageSegmentationProcessStatusResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.status_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.xpcfgrpcreturnvalue_) -
+      reinterpret_cast<char*>(&_impl_.status_)) + sizeof(_impl_.xpcfgrpcreturnvalue_));
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+::uint8_t* getImageSegmentationProcessStatusResponse::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIClientContextManager.getImageSegmentationProcessStatusResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // sint32 status = 1;
+  if (this->_internal_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+        1, this->_internal_status(), target);
+  }
+
+  // float progress = 2;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_progress = this->_internal_progress();
+  ::uint32_t raw_progress;
+  memcpy(&raw_progress, &tmp_progress, sizeof(tmp_progress));
+  if (raw_progress != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_progress(), target);
+  }
+
+  // sint32 xpcfGrpcReturnValue = 3;
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+        3, this->_internal_xpcfgrpcreturnvalue(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIClientContextManager.getImageSegmentationProcessStatusResponse)
+  return target;
+}
+
+::size_t getImageSegmentationProcessStatusResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIClientContextManager.getImageSegmentationProcessStatusResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(reinterpret_cast<const void*>(this));
+  // sint32 status = 1;
+  if (this->_internal_status() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+        this->_internal_status());
+  }
+
+  // float progress = 2;
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_progress = this->_internal_progress();
+  ::uint32_t raw_progress;
+  memcpy(&raw_progress, &tmp_progress, sizeof(tmp_progress));
+  if (raw_progress != 0) {
+    total_size += 5;
+  }
+
+  // sint32 xpcfGrpcReturnValue = 3;
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+        this->_internal_xpcfgrpcreturnvalue());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+
+void getImageSegmentationProcessStatusResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<getImageSegmentationProcessStatusResponse*>(&to_msg);
+  auto& from = static_cast<const getImageSegmentationProcessStatusResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIClientContextManager.getImageSegmentationProcessStatusResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_status() != 0) {
+    _this->_impl_.status_ = from._impl_.status_;
+  }
+  static_assert(sizeof(::uint32_t) == sizeof(float),
+                "Code assumes ::uint32_t and float are the same size.");
+  float tmp_progress = from._internal_progress();
+  ::uint32_t raw_progress;
+  memcpy(&raw_progress, &tmp_progress, sizeof(tmp_progress));
+  if (raw_progress != 0) {
+    _this->_impl_.progress_ = from._impl_.progress_;
+  }
+  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+    _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getImageSegmentationProcessStatusResponse::CopyFrom(const getImageSegmentationProcessStatusResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIClientContextManager.getImageSegmentationProcessStatusResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void getImageSegmentationProcessStatusResponse::InternalSwap(getImageSegmentationProcessStatusResponse* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusResponse, _impl_.xpcfgrpcreturnvalue_)
+      + sizeof(getImageSegmentationProcessStatusResponse::_impl_.xpcfgrpcreturnvalue_)
+      - PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessStatusResponse, _impl_.status_)>(
+          reinterpret_cast<char*>(&_impl_.status_),
+          reinterpret_cast<char*>(&other->_impl_.status_));
+}
+
+::google::protobuf::Metadata getImageSegmentationProcessStatusResponse::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class getImageSegmentationProcessOutputMasksRequest::_Internal {
+ public:
+};
+
+getImageSegmentationProcessOutputMasksRequest::getImageSegmentationProcessOutputMasksRequest(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIClientContextManager.getImageSegmentationProcessOutputMasksRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE getImageSegmentationProcessOutputMasksRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest& from_msg)
+      : clientuuid_(arena, from.clientuuid_),
+        mask_(arena, from.mask_),
+        _cached_size_{0} {}
+
+getImageSegmentationProcessOutputMasksRequest::getImageSegmentationProcessOutputMasksRequest(
+    ::google::protobuf::Arena* arena,
+    const getImageSegmentationProcessOutputMasksRequest& from)
+    : ::google::protobuf::Message(arena) {
+  getImageSegmentationProcessOutputMasksRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+
+  // @@protoc_insertion_point(copy_constructor:grpcIClientContextManager.getImageSegmentationProcessOutputMasksRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE getImageSegmentationProcessOutputMasksRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : clientuuid_(arena),
+        mask_(arena),
+        _cached_size_{0} {}
+
+inline void getImageSegmentationProcessOutputMasksRequest::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.grpcservercompressionformat_ = {};
+}
+getImageSegmentationProcessOutputMasksRequest::~getImageSegmentationProcessOutputMasksRequest() {
+  // @@protoc_insertion_point(destructor:grpcIClientContextManager.getImageSegmentationProcessOutputMasksRequest)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void getImageSegmentationProcessOutputMasksRequest::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.clientuuid_.Destroy();
+  _impl_.mask_.Destroy();
+  _impl_.~Impl_();
+}
+
+const ::google::protobuf::MessageLite::ClassData*
+getImageSegmentationProcessOutputMasksRequest::GetClassData() const {
+  PROTOBUF_CONSTINIT static const ::google::protobuf::MessageLite::
+      ClassDataFull _data_ = {
+          {
+              &_table_.header,
+              nullptr,  // OnDemandRegisterArenaDtor
+              nullptr,  // IsInitialized
+              PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessOutputMasksRequest, _impl_._cached_size_),
+              false,
+          },
+          &getImageSegmentationProcessOutputMasksRequest::MergeImpl,
+          &getImageSegmentationProcessOutputMasksRequest::kDescriptorMethods,
+          &descriptor_table_grpcIClientContextManagerService_2eproto,
+          nullptr,  // tracker
+      };
+  ::google::protobuf::internal::PrefetchToLocalCache(&_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_data_.tc_table);
+  return _data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 0, 90, 2> getImageSegmentationProcessOutputMasksRequest::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_getImageSegmentationProcessOutputMasksRequest_default_instance_._instance,
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // int32 grpcServerCompressionFormat = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(getImageSegmentationProcessOutputMasksRequest, _impl_.grpcservercompressionformat_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessOutputMasksRequest, _impl_.grpcservercompressionformat_)}},
+    // string clientUUID = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessOutputMasksRequest, _impl_.clientuuid_)}},
+    // bytes mask = 3;
+    {::_pbi::TcParser::FastBS1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessOutputMasksRequest, _impl_.mask_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int32 grpcServerCompressionFormat = 1;
+    {PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessOutputMasksRequest, _impl_.grpcservercompressionformat_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
+    // string clientUUID = 2;
+    {PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessOutputMasksRequest, _impl_.clientuuid_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bytes mask = 3;
+    {PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessOutputMasksRequest, _impl_.mask_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\107\0\12\0\0\0\0\0"
+    "grpcIClientContextManager.getImageSegmentationProcessOutputMasksRequest"
+    "clientUUID"
+  }},
+};
+
+PROTOBUF_NOINLINE void getImageSegmentationProcessOutputMasksRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIClientContextManager.getImageSegmentationProcessOutputMasksRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.clientuuid_.ClearToEmpty();
+  _impl_.mask_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+::uint8_t* getImageSegmentationProcessOutputMasksRequest::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIClientContextManager.getImageSegmentationProcessOutputMasksRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<1>(
+            stream, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // string clientUUID = 2;
+  if (!this->_internal_clientuuid().empty()) {
+    const std::string& _s = this->_internal_clientuuid();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIClientContextManager.getImageSegmentationProcessOutputMasksRequest.clientUUID");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
+  }
+
+  // bytes mask = 3;
+  if (!this->_internal_mask().empty()) {
+    const std::string& _s = this->_internal_mask();
+    target = stream->WriteBytesMaybeAliased(3, _s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIClientContextManager.getImageSegmentationProcessOutputMasksRequest)
+  return target;
+}
+
+::size_t getImageSegmentationProcessOutputMasksRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIClientContextManager.getImageSegmentationProcessOutputMasksRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(reinterpret_cast<const void*>(this));
+  // string clientUUID = 2;
+  if (!this->_internal_clientuuid().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_clientuuid());
+  }
+
+  // bytes mask = 3;
+  if (!this->_internal_mask().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_mask());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+
+void getImageSegmentationProcessOutputMasksRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<getImageSegmentationProcessOutputMasksRequest*>(&to_msg);
+  auto& from = static_cast<const getImageSegmentationProcessOutputMasksRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIClientContextManager.getImageSegmentationProcessOutputMasksRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_clientuuid().empty()) {
+    _this->_internal_set_clientuuid(from._internal_clientuuid());
+  }
+  if (!from._internal_mask().empty()) {
+    _this->_internal_set_mask(from._internal_mask());
+  }
+  if (from._internal_grpcservercompressionformat() != 0) {
+    _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getImageSegmentationProcessOutputMasksRequest::CopyFrom(const getImageSegmentationProcessOutputMasksRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIClientContextManager.getImageSegmentationProcessOutputMasksRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void getImageSegmentationProcessOutputMasksRequest::InternalSwap(getImageSegmentationProcessOutputMasksRequest* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.clientuuid_, &other->_impl_.clientuuid_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.mask_, &other->_impl_.mask_, arena);
+        swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+}
+
+::google::protobuf::Metadata getImageSegmentationProcessOutputMasksRequest::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class getImageSegmentationProcessOutputMasksResponse::_Internal {
+ public:
+};
+
+getImageSegmentationProcessOutputMasksResponse::getImageSegmentationProcessOutputMasksResponse(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIClientContextManager.getImageSegmentationProcessOutputMasksResponse)
+}
+inline PROTOBUF_NDEBUG_INLINE getImageSegmentationProcessOutputMasksResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse& from_msg)
+      : mask_(arena, from.mask_),
+        _cached_size_{0} {}
+
+getImageSegmentationProcessOutputMasksResponse::getImageSegmentationProcessOutputMasksResponse(
+    ::google::protobuf::Arena* arena,
+    const getImageSegmentationProcessOutputMasksResponse& from)
+    : ::google::protobuf::Message(arena) {
+  getImageSegmentationProcessOutputMasksResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+
+  // @@protoc_insertion_point(copy_constructor:grpcIClientContextManager.getImageSegmentationProcessOutputMasksResponse)
+}
+inline PROTOBUF_NDEBUG_INLINE getImageSegmentationProcessOutputMasksResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : mask_(arena),
+        _cached_size_{0} {}
+
+inline void getImageSegmentationProcessOutputMasksResponse::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.xpcfgrpcreturnvalue_ = {};
+}
+getImageSegmentationProcessOutputMasksResponse::~getImageSegmentationProcessOutputMasksResponse() {
+  // @@protoc_insertion_point(destructor:grpcIClientContextManager.getImageSegmentationProcessOutputMasksResponse)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void getImageSegmentationProcessOutputMasksResponse::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.mask_.Destroy();
+  _impl_.~Impl_();
+}
+
+const ::google::protobuf::MessageLite::ClassData*
+getImageSegmentationProcessOutputMasksResponse::GetClassData() const {
+  PROTOBUF_CONSTINIT static const ::google::protobuf::MessageLite::
+      ClassDataFull _data_ = {
+          {
+              &_table_.header,
+              nullptr,  // OnDemandRegisterArenaDtor
+              nullptr,  // IsInitialized
+              PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessOutputMasksResponse, _impl_._cached_size_),
+              false,
+          },
+          &getImageSegmentationProcessOutputMasksResponse::MergeImpl,
+          &getImageSegmentationProcessOutputMasksResponse::kDescriptorMethods,
+          &descriptor_table_grpcIClientContextManagerService_2eproto,
+          nullptr,  // tracker
+      };
+  ::google::protobuf::internal::PrefetchToLocalCache(&_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_data_.tc_table);
+  return _data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 0, 2> getImageSegmentationProcessOutputMasksResponse::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_getImageSegmentationProcessOutputMasksResponse_default_instance_._instance,
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // sint32 xpcfGrpcReturnValue = 2;
+    {::_pbi::TcParser::FastZ32S1,
+     {16, 63, 0, PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessOutputMasksResponse, _impl_.xpcfgrpcreturnvalue_)}},
+    // bytes mask = 1;
+    {::_pbi::TcParser::FastBS1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessOutputMasksResponse, _impl_.mask_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // bytes mask = 1;
+    {PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessOutputMasksResponse, _impl_.mask_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // sint32 xpcfGrpcReturnValue = 2;
+    {PROTOBUF_FIELD_OFFSET(getImageSegmentationProcessOutputMasksResponse, _impl_.xpcfgrpcreturnvalue_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kSInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+PROTOBUF_NOINLINE void getImageSegmentationProcessOutputMasksResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIClientContextManager.getImageSegmentationProcessOutputMasksResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.mask_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+::uint8_t* getImageSegmentationProcessOutputMasksResponse::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIClientContextManager.getImageSegmentationProcessOutputMasksResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // bytes mask = 1;
+  if (!this->_internal_mask().empty()) {
+    const std::string& _s = this->_internal_mask();
+    target = stream->WriteBytesMaybeAliased(1, _s, target);
+  }
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+        2, this->_internal_xpcfgrpcreturnvalue(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIClientContextManager.getImageSegmentationProcessOutputMasksResponse)
+  return target;
+}
+
+::size_t getImageSegmentationProcessOutputMasksResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIClientContextManager.getImageSegmentationProcessOutputMasksResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(reinterpret_cast<const void*>(this));
+  // bytes mask = 1;
+  if (!this->_internal_mask().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_mask());
+  }
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+        this->_internal_xpcfgrpcreturnvalue());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+
+void getImageSegmentationProcessOutputMasksResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<getImageSegmentationProcessOutputMasksResponse*>(&to_msg);
+  auto& from = static_cast<const getImageSegmentationProcessOutputMasksResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIClientContextManager.getImageSegmentationProcessOutputMasksResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_mask().empty()) {
+    _this->_internal_set_mask(from._internal_mask());
+  }
+  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+    _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getImageSegmentationProcessOutputMasksResponse::CopyFrom(const getImageSegmentationProcessOutputMasksResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIClientContextManager.getImageSegmentationProcessOutputMasksResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void getImageSegmentationProcessOutputMasksResponse::InternalSwap(getImageSegmentationProcessOutputMasksResponse* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.mask_, &other->_impl_.mask_, arena);
+        swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+}
+
+::google::protobuf::Metadata getImageSegmentationProcessOutputMasksResponse::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // @@protoc_insertion_point(namespace_scope)

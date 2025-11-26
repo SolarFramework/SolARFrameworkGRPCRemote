@@ -41,6 +41,10 @@ static const char* grpcIClientContextManagerService_method_names[] = {
   "/grpcIClientContextManager.grpcIClientContextManagerService/getMappingDataRequest",
   "/grpcIClientContextManager.grpcIClientContextManagerService/getLastPose",
   "/grpcIClientContextManager.grpcIClientContextManagerService/getClientMapUUID",
+  "/grpcIClientContextManager.grpcIClientContextManagerService/imageSegmentationProcessRequest_grpc0",
+  "/grpcIClientContextManager.grpcIClientContextManagerService/imageSegmentationProcessRequest_grpc1",
+  "/grpcIClientContextManager.grpcIClientContextManagerService/getImageSegmentationProcessStatus",
+  "/grpcIClientContextManager.grpcIClientContextManagerService/getImageSegmentationProcessOutputMasks",
 };
 
 std::unique_ptr< grpcIClientContextManagerService::Stub> grpcIClientContextManagerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -69,6 +73,10 @@ grpcIClientContextManagerService::Stub::Stub(const std::shared_ptr< ::grpc::Chan
   , rpcmethod_getMappingDataRequest_(grpcIClientContextManagerService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getLastPose_(grpcIClientContextManagerService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getClientMapUUID_(grpcIClientContextManagerService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_imageSegmentationProcessRequest_grpc0_(grpcIClientContextManagerService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_imageSegmentationProcessRequest_grpc1_(grpcIClientContextManagerService_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getImageSegmentationProcessStatus_(grpcIClientContextManagerService_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getImageSegmentationProcessOutputMasks_(grpcIClientContextManagerService_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIClientContextManagerService::Stub::registerClient(::grpc::ClientContext* context, const ::grpcIClientContextManager::registerClientRequest& request, ::grpcIClientContextManager::registerClientResponse* response) {
@@ -508,6 +516,98 @@ void grpcIClientContextManagerService::Stub::async::getClientMapUUID(::grpc::Cli
   return result;
 }
 
+::grpc::Status grpcIClientContextManagerService::Stub::imageSegmentationProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request& request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_imageSegmentationProcessRequest_grpc0_, context, request, response);
+}
+
+void grpcIClientContextManagerService::Stub::async::imageSegmentationProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request* request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_imageSegmentationProcessRequest_grpc0_, context, request, response, std::move(f));
+}
+
+void grpcIClientContextManagerService::Stub::async::imageSegmentationProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request* request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_imageSegmentationProcessRequest_grpc0_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response>* grpcIClientContextManagerService::Stub::PrepareAsyncimageSegmentationProcessRequest_grpc0Raw(::grpc::ClientContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_imageSegmentationProcessRequest_grpc0_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response>* grpcIClientContextManagerService::Stub::AsyncimageSegmentationProcessRequest_grpc0Raw(::grpc::ClientContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncimageSegmentationProcessRequest_grpc0Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIClientContextManagerService::Stub::imageSegmentationProcessRequest_grpc1(::grpc::ClientContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request& request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_imageSegmentationProcessRequest_grpc1_, context, request, response);
+}
+
+void grpcIClientContextManagerService::Stub::async::imageSegmentationProcessRequest_grpc1(::grpc::ClientContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request* request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_imageSegmentationProcessRequest_grpc1_, context, request, response, std::move(f));
+}
+
+void grpcIClientContextManagerService::Stub::async::imageSegmentationProcessRequest_grpc1(::grpc::ClientContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request* request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_imageSegmentationProcessRequest_grpc1_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response>* grpcIClientContextManagerService::Stub::PrepareAsyncimageSegmentationProcessRequest_grpc1Raw(::grpc::ClientContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_imageSegmentationProcessRequest_grpc1_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response>* grpcIClientContextManagerService::Stub::AsyncimageSegmentationProcessRequest_grpc1Raw(::grpc::ClientContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncimageSegmentationProcessRequest_grpc1Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIClientContextManagerService::Stub::getImageSegmentationProcessStatus(::grpc::ClientContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessStatusRequest& request, ::grpcIClientContextManager::getImageSegmentationProcessStatusResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIClientContextManager::getImageSegmentationProcessStatusRequest, ::grpcIClientContextManager::getImageSegmentationProcessStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getImageSegmentationProcessStatus_, context, request, response);
+}
+
+void grpcIClientContextManagerService::Stub::async::getImageSegmentationProcessStatus(::grpc::ClientContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessStatusRequest* request, ::grpcIClientContextManager::getImageSegmentationProcessStatusResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIClientContextManager::getImageSegmentationProcessStatusRequest, ::grpcIClientContextManager::getImageSegmentationProcessStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getImageSegmentationProcessStatus_, context, request, response, std::move(f));
+}
+
+void grpcIClientContextManagerService::Stub::async::getImageSegmentationProcessStatus(::grpc::ClientContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessStatusRequest* request, ::grpcIClientContextManager::getImageSegmentationProcessStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getImageSegmentationProcessStatus_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIClientContextManager::getImageSegmentationProcessStatusResponse>* grpcIClientContextManagerService::Stub::PrepareAsyncgetImageSegmentationProcessStatusRaw(::grpc::ClientContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessStatusRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIClientContextManager::getImageSegmentationProcessStatusResponse, ::grpcIClientContextManager::getImageSegmentationProcessStatusRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getImageSegmentationProcessStatus_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIClientContextManager::getImageSegmentationProcessStatusResponse>* grpcIClientContextManagerService::Stub::AsyncgetImageSegmentationProcessStatusRaw(::grpc::ClientContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessStatusRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetImageSegmentationProcessStatusRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIClientContextManagerService::Stub::getImageSegmentationProcessOutputMasks(::grpc::ClientContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest& request, ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest, ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getImageSegmentationProcessOutputMasks_, context, request, response);
+}
+
+void grpcIClientContextManagerService::Stub::async::getImageSegmentationProcessOutputMasks(::grpc::ClientContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest* request, ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest, ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getImageSegmentationProcessOutputMasks_, context, request, response, std::move(f));
+}
+
+void grpcIClientContextManagerService::Stub::async::getImageSegmentationProcessOutputMasks(::grpc::ClientContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest* request, ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getImageSegmentationProcessOutputMasks_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse>* grpcIClientContextManagerService::Stub::PrepareAsyncgetImageSegmentationProcessOutputMasksRaw(::grpc::ClientContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse, ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getImageSegmentationProcessOutputMasks_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse>* grpcIClientContextManagerService::Stub::AsyncgetImageSegmentationProcessOutputMasksRaw(::grpc::ClientContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetImageSegmentationProcessOutputMasksRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 grpcIClientContextManagerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIClientContextManagerService_method_names[0],
@@ -699,6 +799,46 @@ grpcIClientContextManagerService::Service::Service() {
              ::grpcIClientContextManager::getClientMapUUIDResponse* resp) {
                return service->getClientMapUUID(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIClientContextManagerService_method_names[19],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIClientContextManagerService::Service, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIClientContextManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request* req,
+             ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response* resp) {
+               return service->imageSegmentationProcessRequest_grpc0(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIClientContextManagerService_method_names[20],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIClientContextManagerService::Service, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIClientContextManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request* req,
+             ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response* resp) {
+               return service->imageSegmentationProcessRequest_grpc1(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIClientContextManagerService_method_names[21],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIClientContextManagerService::Service, ::grpcIClientContextManager::getImageSegmentationProcessStatusRequest, ::grpcIClientContextManager::getImageSegmentationProcessStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIClientContextManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIClientContextManager::getImageSegmentationProcessStatusRequest* req,
+             ::grpcIClientContextManager::getImageSegmentationProcessStatusResponse* resp) {
+               return service->getImageSegmentationProcessStatus(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIClientContextManagerService_method_names[22],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIClientContextManagerService::Service, ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest, ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIClientContextManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest* req,
+             ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse* resp) {
+               return service->getImageSegmentationProcessOutputMasks(ctx, req, resp);
+             }, this)));
 }
 
 grpcIClientContextManagerService::Service::~Service() {
@@ -831,6 +971,34 @@ grpcIClientContextManagerService::Service::~Service() {
 }
 
 ::grpc::Status grpcIClientContextManagerService::Service::getClientMapUUID(::grpc::ServerContext* context, const ::grpcIClientContextManager::getClientMapUUIDRequest* request, ::grpcIClientContextManager::getClientMapUUIDResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIClientContextManagerService::Service::imageSegmentationProcessRequest_grpc0(::grpc::ServerContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Request* request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc0Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIClientContextManagerService::Service::imageSegmentationProcessRequest_grpc1(::grpc::ServerContext* context, const ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Request* request, ::grpcIClientContextManager::imageSegmentationProcessRequest_grpc1Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIClientContextManagerService::Service::getImageSegmentationProcessStatus(::grpc::ServerContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessStatusRequest* request, ::grpcIClientContextManager::getImageSegmentationProcessStatusResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIClientContextManagerService::Service::getImageSegmentationProcessOutputMasks(::grpc::ServerContext* context, const ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksRequest* request, ::grpcIClientContextManager::getImageSegmentationProcessOutputMasksResponse* response) {
   (void) context;
   (void) request;
   (void) response;

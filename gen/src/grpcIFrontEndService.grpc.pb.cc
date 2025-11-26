@@ -38,6 +38,10 @@ static const char* grpcIFrontEndService_method_names[] = {
   "/grpcIFrontEnd.grpcIFrontEndService/imageProcessRequest",
   "/grpcIFrontEnd.grpcIFrontEndService/getMappingDataRequest",
   "/grpcIFrontEnd.grpcIFrontEndService/getClientPose",
+  "/grpcIFrontEnd.grpcIFrontEndService/imageSegmentationProcessRequest_grpc0",
+  "/grpcIFrontEnd.grpcIFrontEndService/imageSegmentationProcessRequest_grpc1",
+  "/grpcIFrontEnd.grpcIFrontEndService/getImageSegmentationProcessStatus",
+  "/grpcIFrontEnd.grpcIFrontEndService/getImageSegmentationProcessOutputMasks",
   "/grpcIFrontEnd.grpcIFrontEndService/createMap",
   "/grpcIFrontEnd.grpcIFrontEndService/deleteMap",
   "/grpcIFrontEnd.grpcIFrontEndService/getAllMapsUUID",
@@ -75,18 +79,22 @@ grpcIFrontEndService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface
   , rpcmethod_imageProcessRequest_(grpcIFrontEndService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getMappingDataRequest_(grpcIFrontEndService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getClientPose_(grpcIFrontEndService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_createMap_(grpcIFrontEndService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_deleteMap_(grpcIFrontEndService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getAllMapsUUID_(grpcIFrontEndService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getClientMapUUID_(grpcIFrontEndService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getClientInfoForMap_(grpcIFrontEndService_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapRequest_(grpcIFrontEndService_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setMapRequest_(grpcIFrontEndService_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getPointCloudRequest_(grpcIFrontEndService_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapInfo_(grpcIFrontEndService_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_requestMapProcessing_(grpcIFrontEndService_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapProcessingStatus_(grpcIFrontEndService_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapProcessingData_(grpcIFrontEndService_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_imageSegmentationProcessRequest_grpc0_(grpcIFrontEndService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_imageSegmentationProcessRequest_grpc1_(grpcIFrontEndService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getImageSegmentationProcessStatus_(grpcIFrontEndService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getImageSegmentationProcessOutputMasks_(grpcIFrontEndService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_createMap_(grpcIFrontEndService_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_deleteMap_(grpcIFrontEndService_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAllMapsUUID_(grpcIFrontEndService_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getClientMapUUID_(grpcIFrontEndService_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getClientInfoForMap_(grpcIFrontEndService_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapRequest_(grpcIFrontEndService_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setMapRequest_(grpcIFrontEndService_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getPointCloudRequest_(grpcIFrontEndService_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapInfo_(grpcIFrontEndService_method_names[28], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_requestMapProcessing_(grpcIFrontEndService_method_names[29], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapProcessingStatus_(grpcIFrontEndService_method_names[30], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapProcessingData_(grpcIFrontEndService_method_names[31], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIFrontEndService::Stub::registerClient(::grpc::ClientContext* context, const ::grpcIFrontEnd::registerClientRequest& request, ::grpcIFrontEnd::registerClientResponse* response) {
@@ -453,6 +461,98 @@ void grpcIFrontEndService::Stub::async::getClientPose(::grpc::ClientContext* con
 ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getClientPoseResponse>* grpcIFrontEndService::Stub::AsyncgetClientPoseRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getClientPoseRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncgetClientPoseRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIFrontEndService::Stub::imageSegmentationProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Request& request, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Request, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_imageSegmentationProcessRequest_grpc0_, context, request, response);
+}
+
+void grpcIFrontEndService::Stub::async::imageSegmentationProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Request* request, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Request, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_imageSegmentationProcessRequest_grpc0_, context, request, response, std::move(f));
+}
+
+void grpcIFrontEndService::Stub::async::imageSegmentationProcessRequest_grpc0(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Request* request, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_imageSegmentationProcessRequest_grpc0_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Response>* grpcIFrontEndService::Stub::PrepareAsyncimageSegmentationProcessRequest_grpc0Raw(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Response, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_imageSegmentationProcessRequest_grpc0_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Response>* grpcIFrontEndService::Stub::AsyncimageSegmentationProcessRequest_grpc0Raw(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncimageSegmentationProcessRequest_grpc0Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIFrontEndService::Stub::imageSegmentationProcessRequest_grpc1(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Request& request, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Response* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Request, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_imageSegmentationProcessRequest_grpc1_, context, request, response);
+}
+
+void grpcIFrontEndService::Stub::async::imageSegmentationProcessRequest_grpc1(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Request* request, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Request, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_imageSegmentationProcessRequest_grpc1_, context, request, response, std::move(f));
+}
+
+void grpcIFrontEndService::Stub::async::imageSegmentationProcessRequest_grpc1(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Request* request, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_imageSegmentationProcessRequest_grpc1_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Response>* grpcIFrontEndService::Stub::PrepareAsyncimageSegmentationProcessRequest_grpc1Raw(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Response, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_imageSegmentationProcessRequest_grpc1_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Response>* grpcIFrontEndService::Stub::AsyncimageSegmentationProcessRequest_grpc1Raw(::grpc::ClientContext* context, const ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Request& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncimageSegmentationProcessRequest_grpc1Raw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIFrontEndService::Stub::getImageSegmentationProcessStatus(::grpc::ClientContext* context, const ::grpcIFrontEnd::getImageSegmentationProcessStatusRequest& request, ::grpcIFrontEnd::getImageSegmentationProcessStatusResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::getImageSegmentationProcessStatusRequest, ::grpcIFrontEnd::getImageSegmentationProcessStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getImageSegmentationProcessStatus_, context, request, response);
+}
+
+void grpcIFrontEndService::Stub::async::getImageSegmentationProcessStatus(::grpc::ClientContext* context, const ::grpcIFrontEnd::getImageSegmentationProcessStatusRequest* request, ::grpcIFrontEnd::getImageSegmentationProcessStatusResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::getImageSegmentationProcessStatusRequest, ::grpcIFrontEnd::getImageSegmentationProcessStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getImageSegmentationProcessStatus_, context, request, response, std::move(f));
+}
+
+void grpcIFrontEndService::Stub::async::getImageSegmentationProcessStatus(::grpc::ClientContext* context, const ::grpcIFrontEnd::getImageSegmentationProcessStatusRequest* request, ::grpcIFrontEnd::getImageSegmentationProcessStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getImageSegmentationProcessStatus_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getImageSegmentationProcessStatusResponse>* grpcIFrontEndService::Stub::PrepareAsyncgetImageSegmentationProcessStatusRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getImageSegmentationProcessStatusRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::getImageSegmentationProcessStatusResponse, ::grpcIFrontEnd::getImageSegmentationProcessStatusRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getImageSegmentationProcessStatus_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getImageSegmentationProcessStatusResponse>* grpcIFrontEndService::Stub::AsyncgetImageSegmentationProcessStatusRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getImageSegmentationProcessStatusRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetImageSegmentationProcessStatusRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIFrontEndService::Stub::getImageSegmentationProcessOutputMasks(::grpc::ClientContext* context, const ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksRequest& request, ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksRequest, ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getImageSegmentationProcessOutputMasks_, context, request, response);
+}
+
+void grpcIFrontEndService::Stub::async::getImageSegmentationProcessOutputMasks(::grpc::ClientContext* context, const ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksRequest* request, ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksRequest, ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getImageSegmentationProcessOutputMasks_, context, request, response, std::move(f));
+}
+
+void grpcIFrontEndService::Stub::async::getImageSegmentationProcessOutputMasks(::grpc::ClientContext* context, const ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksRequest* request, ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getImageSegmentationProcessOutputMasks_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksResponse>* grpcIFrontEndService::Stub::PrepareAsyncgetImageSegmentationProcessOutputMasksRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksResponse, ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getImageSegmentationProcessOutputMasks_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksResponse>* grpcIFrontEndService::Stub::AsyncgetImageSegmentationProcessOutputMasksRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetImageSegmentationProcessOutputMasksRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -897,6 +997,46 @@ grpcIFrontEndService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIFrontEndService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Request, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIFrontEndService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Request* req,
+             ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Response* resp) {
+               return service->imageSegmentationProcessRequest_grpc0(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIFrontEndService_method_names[17],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Request, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIFrontEndService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Request* req,
+             ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Response* resp) {
+               return service->imageSegmentationProcessRequest_grpc1(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIFrontEndService_method_names[18],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getImageSegmentationProcessStatusRequest, ::grpcIFrontEnd::getImageSegmentationProcessStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIFrontEndService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIFrontEnd::getImageSegmentationProcessStatusRequest* req,
+             ::grpcIFrontEnd::getImageSegmentationProcessStatusResponse* resp) {
+               return service->getImageSegmentationProcessStatus(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIFrontEndService_method_names[19],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksRequest, ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIFrontEndService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksRequest* req,
+             ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksResponse* resp) {
+               return service->getImageSegmentationProcessOutputMasks(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIFrontEndService_method_names[20],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::createMapRequest, ::grpcIFrontEnd::createMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -905,7 +1045,7 @@ grpcIFrontEndService::Service::Service() {
                return service->createMap(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[17],
+      grpcIFrontEndService_method_names[21],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::deleteMapRequest, ::grpcIFrontEnd::deleteMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -915,7 +1055,7 @@ grpcIFrontEndService::Service::Service() {
                return service->deleteMap(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[18],
+      grpcIFrontEndService_method_names[22],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getAllMapsUUIDRequest, ::grpcIFrontEnd::getAllMapsUUIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -925,7 +1065,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getAllMapsUUID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[19],
+      grpcIFrontEndService_method_names[23],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getClientMapUUIDRequest, ::grpcIFrontEnd::getClientMapUUIDResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -935,7 +1075,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getClientMapUUID(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[20],
+      grpcIFrontEndService_method_names[24],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getClientInfoForMapRequest, ::grpcIFrontEnd::getClientInfoForMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -945,7 +1085,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getClientInfoForMap(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[21],
+      grpcIFrontEndService_method_names[25],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapRequestRequest, ::grpcIFrontEnd::getMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -955,7 +1095,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getMapRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[22],
+      grpcIFrontEndService_method_names[26],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::setMapRequestRequest, ::grpcIFrontEnd::setMapRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -965,7 +1105,7 @@ grpcIFrontEndService::Service::Service() {
                return service->setMapRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[23],
+      grpcIFrontEndService_method_names[27],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getPointCloudRequestRequest, ::grpcIFrontEnd::getPointCloudRequestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -975,7 +1115,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getPointCloudRequest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[24],
+      grpcIFrontEndService_method_names[28],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapInfoRequest, ::grpcIFrontEnd::getMapInfoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -985,7 +1125,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getMapInfo(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[25],
+      grpcIFrontEndService_method_names[29],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::requestMapProcessingRequest, ::grpcIFrontEnd::requestMapProcessingResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -995,7 +1135,7 @@ grpcIFrontEndService::Service::Service() {
                return service->requestMapProcessing(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[26],
+      grpcIFrontEndService_method_names[30],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapProcessingStatusRequest, ::grpcIFrontEnd::getMapProcessingStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1005,7 +1145,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getMapProcessingStatus(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[27],
+      grpcIFrontEndService_method_names[31],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapProcessingDataRequest, ::grpcIFrontEnd::getMapProcessingDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1125,6 +1265,34 @@ grpcIFrontEndService::Service::~Service() {
 }
 
 ::grpc::Status grpcIFrontEndService::Service::getClientPose(::grpc::ServerContext* context, const ::grpcIFrontEnd::getClientPoseRequest* request, ::grpcIFrontEnd::getClientPoseResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIFrontEndService::Service::imageSegmentationProcessRequest_grpc0(::grpc::ServerContext* context, const ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Request* request, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc0Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIFrontEndService::Service::imageSegmentationProcessRequest_grpc1(::grpc::ServerContext* context, const ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Request* request, ::grpcIFrontEnd::imageSegmentationProcessRequest_grpc1Response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIFrontEndService::Service::getImageSegmentationProcessStatus(::grpc::ServerContext* context, const ::grpcIFrontEnd::getImageSegmentationProcessStatusRequest* request, ::grpcIFrontEnd::getImageSegmentationProcessStatusResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIFrontEndService::Service::getImageSegmentationProcessOutputMasks(::grpc::ServerContext* context, const ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksRequest* request, ::grpcIFrontEnd::getImageSegmentationProcessOutputMasksResponse* response) {
   (void) context;
   (void) request;
   (void) response;
