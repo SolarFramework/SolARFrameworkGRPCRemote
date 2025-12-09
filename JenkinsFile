@@ -1,4 +1,5 @@
 SolArModulePipeline {
     moduleName="SolARFrameworkGRPCRemote"
     dirName="SolARBuild"
+    buildDir="."
 }
