@@ -4,6 +4,10 @@ gen/interfaces/IDenseMappingPipeline_grpcProxy.h \
 gen/interfaces/IDenseMappingPipeline_grpcServer.h \
 gen/interfaces/grpcIDenseMappingPipelineService.pb.h \
 gen/interfaces/grpcIDenseMappingPipelineService.grpc.pb.h \
+gen/interfaces/IImageSegmentationPipeline_grpcProxy.h \
+gen/interfaces/IImageSegmentationPipeline_grpcServer.h \
+gen/interfaces/grpcIImageSegmentationPipelineService.pb.h \
+gen/interfaces/grpcIImageSegmentationPipelineService.grpc.pb.h \
 gen/interfaces/IMapProcessingPipeline_grpcProxy.h \
 gen/interfaces/IMapProcessingPipeline_grpcServer.h \
 gen/interfaces/grpcIMapProcessingPipelineService.pb.h \
@@ -47,6 +51,10 @@ gen/src/IDenseMappingPipeline_grpcProxy.cpp \
 gen/src/IDenseMappingPipeline_grpcServer.cpp \
 gen/src/grpcIDenseMappingPipelineService.pb.cc \
 gen/src/grpcIDenseMappingPipelineService.grpc.pb.cc \
+gen/src/IImageSegmentationPipeline_grpcProxy.cpp \
+gen/src/IImageSegmentationPipeline_grpcServer.cpp \
+gen/src/grpcIImageSegmentationPipelineService.pb.cc \
+gen/src/grpcIImageSegmentationPipelineService.grpc.pb.cc \
 gen/src/IMapProcessingPipeline_grpcProxy.cpp \
 gen/src/IMapProcessingPipeline_grpcServer.cpp \
 gen/src/grpcIMapProcessingPipelineService.pb.cc \

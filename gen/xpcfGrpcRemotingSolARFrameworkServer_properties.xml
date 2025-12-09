@@ -12,6 +12,18 @@
         <value>method|getMesh|none|0</value>
       </property>
     </configure>
+    <configure component="IImageSegmentationPipeline_grpcServer">
+      <property name="grpc_compress_server" type="string">
+        <value>service|none|0</value>
+        <value>method|init|none|0</value>
+        <value>method|start|none|0</value>
+        <value>method|stop|none|0</value>
+        <value>method|segment|none|0</value>
+        <value>method|segment|none|0</value>
+        <value>method|getStatus|none|0</value>
+        <value>method|getOutputMask|none|0</value>
+      </property>
+    </configure>
     <configure component="IMapProcessingPipeline_grpcServer">
       <property name="grpc_compress_server" type="string">
         <value>service|none|0</value>
