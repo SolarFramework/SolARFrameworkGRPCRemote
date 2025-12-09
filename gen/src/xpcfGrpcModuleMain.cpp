@@ -8,16 +8,6 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
   xpcf::XPCFErrorCode errCode = xpcf::XPCFErrorCode::_FAIL;
   if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
 
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIDenseMappingPipeline::IDenseMappingPipeline_grpcProxy>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
-    errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::serverIDenseMappingPipeline::IDenseMappingPipeline_grpcServer>(componentUUID,interfaceRef);
-  }
-
-  if (errCode != xpcf::XPCFErrorCode::_SUCCESS)   {
-
     errCode = xpcf::tryCreateComponent<org::bcom::xpcf::grpc::proxyIImageSegmentationPipeline::IImageSegmentationPipeline_grpcProxy>(componentUUID,interfaceRef);
   }
 
@@ -121,8 +111,6 @@ extern "C" XPCF_MODULEHOOKS_API xpcf::XPCFErrorCode XPCF_getComponent(const boos
 
 
 XPCF_BEGIN_COMPONENTS_DECLARATION
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIDenseMappingPipeline::IDenseMappingPipeline_grpcProxy)
-XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIDenseMappingPipeline::IDenseMappingPipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIImageSegmentationPipeline::IImageSegmentationPipeline_grpcProxy)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::serverIImageSegmentationPipeline::IImageSegmentationPipeline_grpcServer)
 XPCF_ADD_COMPONENT(org::bcom::xpcf::grpc::proxyIMapProcessingPipeline::IMapProcessingPipeline_grpcProxy)

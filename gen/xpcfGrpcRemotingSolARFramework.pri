@@ -1,9 +1,5 @@
 
 HEADERS += \
-gen/interfaces/IDenseMappingPipeline_grpcProxy.h \
-gen/interfaces/IDenseMappingPipeline_grpcServer.h \
-gen/interfaces/grpcIDenseMappingPipelineService.pb.h \
-gen/interfaces/grpcIDenseMappingPipelineService.grpc.pb.h \
 gen/interfaces/IImageSegmentationPipeline_grpcProxy.h \
 gen/interfaces/IImageSegmentationPipeline_grpcServer.h \
 gen/interfaces/grpcIImageSegmentationPipelineService.pb.h \
@@ -47,10 +43,6 @@ gen/interfaces/grpcIServiceManagerService.grpc.pb.h \
 gen/interfaces/xpcfGrpcModuleMain.h
 
 SOURCES += \
-gen/src/IDenseMappingPipeline_grpcProxy.cpp \
-gen/src/IDenseMappingPipeline_grpcServer.cpp \
-gen/src/grpcIDenseMappingPipelineService.pb.cc \
-gen/src/grpcIDenseMappingPipelineService.grpc.pb.cc \
 gen/src/IImageSegmentationPipeline_grpcProxy.cpp \
 gen/src/IImageSegmentationPipeline_grpcServer.cpp \
 gen/src/grpcIImageSegmentationPipelineService.pb.cc \

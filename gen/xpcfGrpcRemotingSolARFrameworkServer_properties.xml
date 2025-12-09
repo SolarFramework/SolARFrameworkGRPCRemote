@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <xpcf-configuration>
   <properties>
-    <configure component="IDenseMappingPipeline_grpcServer">
-      <property name="grpc_compress_server" type="string">
-        <value>service|none|0</value>
-        <value>method|init|none|0</value>
-        <value>method|start|none|0</value>
-        <value>method|stop|none|0</value>
-        <value>method|denseMappingProcessRequest|none|0</value>
-        <value>method|getPointCloud|none|0</value>
-        <value>method|getMesh|none|0</value>
-      </property>
-    </configure>
     <configure component="IImageSegmentationPipeline_grpcServer">
       <property name="grpc_compress_server" type="string">
         <value>service|none|0</value>

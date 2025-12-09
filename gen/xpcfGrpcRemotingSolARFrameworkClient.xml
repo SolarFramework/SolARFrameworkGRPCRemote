@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <xpcf-registry>
   <module uuid="a0f522d1-b70e-4d0f-ad78-84e78a9af6bf" name="xpcfGrpcRemotingSolARFramework" description="xpcf remoting module for project SolARFramework" path="$REMAKENROOT/modules">
-    <component uuid="54fc1ed0-480b-11ed-b878-0242ac120002" name="IDenseMappingPipeline_grpcProxy" description="IDenseMappingPipeline_grpcProxy">
-      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
-      <interface uuid="34ab0434-480b-11ed-b878-0242ac120002" name="IDenseMappingPipeline" description="The interface to define a dense mapping processing pipeline"/>
-    </component>
     <component uuid="2215b6ef-e6fa-455c-84c6-820d95630eb5" name="IImageSegmentationPipeline_grpcProxy" description="IImageSegmentationPipeline_grpcProxy">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="0a897dee-74f1-42de-a6c1-f7855e0f0bbb" name="IImageSegmentationPipeline" description="The interface to define an image segmentation pipeline"/>

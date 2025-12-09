@@ -3,8 +3,6 @@
 
 #ifndef XPCFGRPCMODULEMAIN_H
 #define XPCFGRPCMODULEMAIN_H
-#include "IDenseMappingPipeline_grpcProxy.h"
-#include "IDenseMappingPipeline_grpcServer.h"
 #include "IImageSegmentationPipeline_grpcProxy.h"
 #include "IImageSegmentationPipeline_grpcServer.h"
 #include "IMapProcessingPipeline_grpcProxy.h"
