@@ -1,3 +1,5 @@
-xpcf|2.10.0|xpcf%XPCF_SHARED_DEPS|@github|https://github.com/SolarFramework/binaries/releases/download
-xpcf_static_deps|2.10.0|xpcf_static_deps%XPCF_STATIC_DEPS|@github|https://github.com/SolarFramework/binaries/releases/download
+xpcf|2.11.1|xpcf%XPCF_SHARED_DEPS|@github|https://github.com/b-com-software-basis/xpcf/releases/download
+xpcf_static_deps|2.11.1|xpcf_static_deps%XPCF_STATIC_DEPS|@github|https://github.com/b-com-software-basis/xpcf/releases/download
+opentelemetry-cpp|1.22.0|opentelemetry-cpp-api%XPCF_SHARED_DEPS|conan|conan-center|default|protobuf:shared=True
+opentelemetry-cpp|1.22.0|opentelemetry-cpp-api%XPCF_STATIC_DEPS|conan|conan-center|default
 SolARFramework|1.6.0|SolARFramework|SolARBuild@github|https://github.com/SolarFramework/SolARFramework/releases/download
