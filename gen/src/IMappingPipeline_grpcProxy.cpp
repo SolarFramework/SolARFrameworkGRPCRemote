@@ -8,7 +8,41 @@
 #include <grpcpp/create_channel.h>
 #include <grpcpp/security/credentials.h>
 #include <boost/algorithm/string.hpp>
+
+#include <opentelemetry/context/propagation/global_propagator.h>
+#include <opentelemetry/context/propagation/text_map_propagator.h>
+#include <opentelemetry/context/runtime_context.h>
+#include <opentelemetry/trace/provider.h>
+#include <opentelemetry/semconv/incubating/rpc_attributes.h>
+#include <opentelemetry/semconv/network_attributes.h>
+#include <opentelemetry/trace/span_metadata.h>
+#include <opentelemetry/trace/span_startoptions.h>
+
 namespace xpcf = org::bcom::xpcf;
+
+namespace
+{
+class GrpcClientCarrier : public opentelemetry::context::propagation::TextMapCarrier
+{
+public:
+  explicit GrpcClientCarrier(::grpc::ClientContext *context) : context_(context) {}
+  GrpcClientCarrier() = default;
+  virtual opentelemetry::nostd::string_view Get(
+      opentelemetry::nostd::string_view /* key */) const noexcept override
+  {
+    return "";
+  }
+
+  virtual void Set(opentelemetry::nostd::string_view key,
+                   opentelemetry::nostd::string_view value) noexcept override
+  {
+    context_->AddMetadata(std::string(key), std::string(value));
+  }
+
+private:
+  ::grpc::ClientContext *context_ = nullptr;
+};
+} // namespace
 
 template<> org::bcom::xpcf::grpc::proxyIMappingPipeline::IMappingPipeline_grpcProxy* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::proxyIMappingPipeline::IMappingPipeline_grpcProxy>();
 
@@ -60,6 +94,33 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::init()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::init request sent at " << to_simple_string(start) << std::endl;
   #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMappingPipeline_grpcProxy.init",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "init_grpc0"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
   ::grpc::Status grpcRemoteStatus = m_grpcStub->init_grpc0(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -68,9 +129,15 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::init()
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "init_grpc0 rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMappingPipelineService.init_grpc0() rpc failed.");
+    span->End();
     throw xpcf::RemotingException("grpcIMappingPipelineService","init_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
@@ -89,6 +156,33 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::start()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::start request sent at " << to_simple_string(start) << std::endl;
   #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMappingPipeline_grpcProxy.start",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "start"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
   ::grpc::Status grpcRemoteStatus = m_grpcStub->start(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -97,9 +191,15 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::start()
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "start rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMappingPipelineService.start() rpc failed.");
+    span->End();
     throw xpcf::RemotingException("grpcIMappingPipelineService","start",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
@@ -118,6 +218,33 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::stop()
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::stop request sent at " << to_simple_string(start) << std::endl;
   #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMappingPipeline_grpcProxy.stop",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "stop"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
   ::grpc::Status grpcRemoteStatus = m_grpcStub->stop(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -126,9 +253,15 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::stop()
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "stop rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMappingPipelineService.stop() rpc failed.");
+    span->End();
     throw xpcf::RemotingException("grpcIMappingPipelineService","stop",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
@@ -148,6 +281,33 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::init(std::string const& 
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::init request sent at " << to_simple_string(start) << std::endl;
   #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMappingPipeline_grpcProxy.init",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "init_grpc1"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
   ::grpc::Status grpcRemoteStatus = m_grpcStub->init_grpc1(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -156,9 +316,15 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::init(std::string const& 
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "init_grpc1 rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMappingPipelineService.init_grpc1() rpc failed.");
+    span->End();
     throw xpcf::RemotingException("grpcIMappingPipelineService","init_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
@@ -180,6 +346,33 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::init(std::string const& 
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::init request sent at " << to_simple_string(start) << std::endl;
   #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMappingPipeline_grpcProxy.init",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "init_grpc2"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
   ::grpc::Status grpcRemoteStatus = m_grpcStub->init_grpc2(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -188,9 +381,15 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::init(std::string const& 
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "init_grpc2 rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMappingPipelineService.init_grpc2() rpc failed.");
+    span->End();
     throw xpcf::RemotingException("grpcIMappingPipelineService","init_grpc2",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
@@ -210,6 +409,33 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::setCameraParameters(SolA
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::setCameraParameters request sent at " << to_simple_string(start) << std::endl;
   #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMappingPipeline_grpcProxy.setCameraParameters",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "setCameraParameters_grpc0"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters_grpc0(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -218,9 +444,15 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::setCameraParameters(SolA
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "setCameraParameters_grpc0 rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMappingPipelineService.setCameraParameters_grpc0() rpc failed.");
+    span->End();
     throw xpcf::RemotingException("grpcIMappingPipelineService","setCameraParameters_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
@@ -241,6 +473,33 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::setCameraParameters(SolA
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::setCameraParameters request sent at " << to_simple_string(start) << std::endl;
   #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMappingPipeline_grpcProxy.setCameraParameters",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "setCameraParameters_grpc1"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setCameraParameters_grpc1(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -249,9 +508,15 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::setCameraParameters(SolA
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "setCameraParameters_grpc1 rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMappingPipelineService.setCameraParameters_grpc1() rpc failed.");
+    span->End();
     throw xpcf::RemotingException("grpcIMappingPipelineService","setCameraParameters_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
@@ -272,6 +537,33 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::setRectificationParamete
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::setRectificationParameters request sent at " << to_simple_string(start) << std::endl;
   #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMappingPipeline_grpcProxy.setRectificationParameters",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "setRectificationParameters"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
   ::grpc::Status grpcRemoteStatus = m_grpcStub->setRectificationParameters(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -280,9 +572,15 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::setRectificationParamete
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "setRectificationParameters rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMappingPipelineService.setRectificationParameters() rpc failed.");
+    span->End();
     throw xpcf::RemotingException("grpcIMappingPipelineService","setRectificationParameters",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
@@ -302,6 +600,33 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::set3DTransformSolARToWor
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::set3DTransformSolARToWorld request sent at " << to_simple_string(start) << std::endl;
   #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMappingPipeline_grpcProxy.set3DTransformSolARToWorld",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "set3DTransformSolARToWorld"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
   ::grpc::Status grpcRemoteStatus = m_grpcStub->set3DTransformSolARToWorld(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -310,9 +635,15 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::set3DTransformSolARToWor
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "set3DTransformSolARToWorld rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMappingPipelineService.set3DTransformSolARToWorld() rpc failed.");
+    span->End();
     throw xpcf::RemotingException("grpcIMappingPipelineService","set3DTransformSolARToWorld",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
@@ -337,6 +668,33 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(st
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::mappingProcessRequest request sent at " << to_simple_string(start) << std::endl;
   #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMappingPipeline_grpcProxy.mappingProcessRequest",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "mappingProcessRequest_grpc0"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
   ::grpc::Status grpcRemoteStatus = m_grpcStub->mappingProcessRequest_grpc0(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -345,9 +703,15 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(st
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "mappingProcessRequest_grpc0 rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMappingPipelineService.mappingProcessRequest_grpc0() rpc failed.");
+    span->End();
     throw xpcf::RemotingException("grpcIMappingPipelineService","mappingProcessRequest_grpc0",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
   updatedTransform = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.updatedtransform());
   status = static_cast<SolAR::api::pipeline::MappingStatus>(respOut.status());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
@@ -372,6 +736,33 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(st
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::mappingProcessRequest request sent at " << to_simple_string(start) << std::endl;
   #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMappingPipeline_grpcProxy.mappingProcessRequest",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "mappingProcessRequest_grpc1"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
   ::grpc::Status grpcRemoteStatus = m_grpcStub->mappingProcessRequest_grpc1(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -380,9 +771,15 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(st
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "mappingProcessRequest_grpc1 rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMappingPipelineService.mappingProcessRequest_grpc1() rpc failed.");
+    span->End();
     throw xpcf::RemotingException("grpcIMappingPipelineService","mappingProcessRequest_grpc1",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
   status = static_cast<SolAR::api::pipeline::MappingStatus>(respOut.status());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
@@ -407,6 +804,33 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(st
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::mappingProcessRequest request sent at " << to_simple_string(start) << std::endl;
   #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMappingPipeline_grpcProxy.mappingProcessRequest",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "mappingProcessRequest_grpc2"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
   ::grpc::Status grpcRemoteStatus = m_grpcStub->mappingProcessRequest_grpc2(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -415,9 +839,15 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::mappingProcessRequest(st
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "mappingProcessRequest_grpc2 rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMappingPipelineService.mappingProcessRequest_grpc2() rpc failed.");
+    span->End();
     throw xpcf::RemotingException("grpcIMappingPipelineService","mappingProcessRequest_grpc2",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
   updatedTransform = xpcf::deserialize<SolAR::datastructure::Transform3Df>(respOut.updatedtransform());
   status = static_cast<SolAR::api::pipeline::MappingStatus>(respOut.status());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
@@ -440,6 +870,33 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::getDataForVisualization(
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMappingPipeline_grpcProxy::getDataForVisualization request sent at " << to_simple_string(start) << std::endl;
   #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMappingPipeline_grpcProxy.getDataForVisualization",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getDataForVisualization"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
   ::grpc::Status grpcRemoteStatus = m_grpcStub->getDataForVisualization(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -448,9 +905,15 @@ SolAR::FrameworkReturnCode  IMappingPipeline_grpcProxy::getDataForVisualization(
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "getDataForVisualization rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMappingPipelineService.getDataForVisualization() rpc failed.");
+    span->End();
     throw xpcf::RemotingException("grpcIMappingPipelineService","getDataForVisualization",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
   outputPointClouds = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(respOut.outputpointclouds());
   keyframePoses = xpcf::deserialize<std::vector<SolAR::datastructure::Transform3Df>>(respOut.keyframeposes());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());

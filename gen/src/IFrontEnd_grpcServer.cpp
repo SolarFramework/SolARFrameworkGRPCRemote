@@ -4,6 +4,50 @@
 #include <boost/date_time.hpp>
 #include <xpcf/remoting/ISerializable.h>
 #include <xpcf/remoting/GrpcHelper.h>
+
+#include <opentelemetry/context/propagation/global_propagator.h>
+#include <opentelemetry/context/propagation/text_map_propagator.h>
+#include <opentelemetry/context/runtime_context.h>
+#include <opentelemetry/nostd/shared_ptr.h>
+#include <opentelemetry/nostd/string_view.h>
+#include <opentelemetry/nostd/variant.h>
+#include <opentelemetry/semconv/incubating/rpc_attributes.h>
+#include <opentelemetry/trace/context.h>
+#include <opentelemetry/trace/provider.h>
+#include <opentelemetry/trace/span.h>
+#include <opentelemetry/trace/span_metadata.h>
+#include <opentelemetry/trace/span_startoptions.h>
+#include <opentelemetry/trace/tracer.h>
+
+namespace
+{
+
+class GrpcServerCarrier : public opentelemetry::context::propagation::TextMapCarrier
+{
+public:
+  explicit GrpcServerCarrier(grpc::ServerContext *context) : context_(context) {}
+  GrpcServerCarrier() = default;
+  virtual opentelemetry::nostd::string_view Get(
+      opentelemetry::nostd::string_view key) const noexcept override
+  {
+    auto it = context_->client_metadata().find({key.data(), key.size()});
+    if (it != context_->client_metadata().end())
+    {
+      return opentelemetry::nostd::string_view(it->second.data(), it->second.size());
+    }
+    return "";
+  }
+
+  virtual void Set(opentelemetry::nostd::string_view /* key */,
+                   opentelemetry::nostd::string_view /* value */) noexcept override
+  {
+    // Not required for server
+  }
+
+  grpc::ServerContext *context_ = nullptr;
+};
+} // namespace
+
 namespace xpcf = org::bcom::xpcf;
 
 template<> org::bcom::xpcf::grpc::serverIFrontEnd::IFrontEnd_grpcServer* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::serverIFrontEnd::IFrontEnd_grpcServer>();
@@ -42,6 +86,25 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::registerClient(::grpc::ServerContext* context, const ::grpcIFrontEnd::registerClientRequest* request, ::grpcIFrontEnd::registerClientResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.registerClient",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "registerClient"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "registerClient", m_methodCompressionInfosMap);
@@ -63,12 +126,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::registerClient response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::unregisterClient(::grpc::ServerContext* context, const ::grpcIFrontEnd::unregisterClientRequest* request, ::grpcIFrontEnd::unregisterClientResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.unregisterClient",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "unregisterClient"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "unregisterClient", m_methodCompressionInfosMap);
@@ -87,12 +169,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::unregisterClient response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getAllClientsUUID(::grpc::ServerContext* context, const ::grpcIFrontEnd::getAllClientsUUIDRequest* request, ::grpcIFrontEnd::getAllClientsUUIDResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getAllClientsUUID",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getAllClientsUUID"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getAllClientsUUID", m_methodCompressionInfosMap);
@@ -112,12 +213,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getAllClientsUUID response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getDeviceInfo(::grpc::ServerContext* context, const ::grpcIFrontEnd::getDeviceInfoRequest* request, ::grpcIFrontEnd::getDeviceInfoResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getDeviceInfo",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getDeviceInfo"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getDeviceInfo", m_methodCompressionInfosMap);
@@ -138,12 +258,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getDeviceInfo response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::init_grpc0(::grpc::ServerContext* context, const ::grpcIFrontEnd::init_grpc0Request* request, ::grpcIFrontEnd::init_grpc0Response* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.init",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "init_grpc0"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "init", m_methodCompressionInfosMap);
@@ -162,12 +301,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::init response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::init_grpc1(::grpc::ServerContext* context, const ::grpcIFrontEnd::init_grpc1Request* request, ::grpcIFrontEnd::init_grpc1Response* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.init",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "init_grpc1"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "init", m_methodCompressionInfosMap);
@@ -187,12 +345,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::init response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::start(::grpc::ServerContext* context, const ::grpcIFrontEnd::startRequest* request, ::grpcIFrontEnd::startResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.start",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "start"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "start", m_methodCompressionInfosMap);
@@ -211,12 +388,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::start response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::stop(::grpc::ServerContext* context, const ::grpcIFrontEnd::stopRequest* request, ::grpcIFrontEnd::stopResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.stop",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "stop"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "stop", m_methodCompressionInfosMap);
@@ -235,12 +431,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::stop response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getProcessingMode(::grpc::ServerContext* context, const ::grpcIFrontEnd::getProcessingModeRequest* request, ::grpcIFrontEnd::getProcessingModeResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getProcessingMode",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getProcessingMode"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getProcessingMode", m_methodCompressionInfosMap);
@@ -261,12 +476,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getProcessingMode response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::setCameraParameters_grpc0(::grpc::ServerContext* context, const ::grpcIFrontEnd::setCameraParameters_grpc0Request* request, ::grpcIFrontEnd::setCameraParameters_grpc0Response* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.setCameraParameters",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "setCameraParameters_grpc0"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "setCameraParameters", m_methodCompressionInfosMap);
@@ -286,12 +520,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::setCameraParameters response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::setCameraParameters_grpc1(::grpc::ServerContext* context, const ::grpcIFrontEnd::setCameraParameters_grpc1Request* request, ::grpcIFrontEnd::setCameraParameters_grpc1Response* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.setCameraParameters",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "setCameraParameters_grpc1"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "setCameraParameters", m_methodCompressionInfosMap);
@@ -312,12 +565,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::setCameraParameters response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::setRectificationParameters(::grpc::ServerContext* context, const ::grpcIFrontEnd::setRectificationParametersRequest* request, ::grpcIFrontEnd::setRectificationParametersResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.setRectificationParameters",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "setRectificationParameters"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "setRectificationParameters", m_methodCompressionInfosMap);
@@ -338,12 +610,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::setRectificationParameters response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getCameraParameters(::grpc::ServerContext* context, const ::grpcIFrontEnd::getCameraParametersRequest* request, ::grpcIFrontEnd::getCameraParametersResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getCameraParameters",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getCameraParameters"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getCameraParameters", m_methodCompressionInfosMap);
@@ -364,12 +655,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getCameraParameters response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::imageProcessRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::imageProcessRequestRequest* request, ::grpcIFrontEnd::imageProcessRequestResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.imageProcessRequest",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "imageProcessRequest"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "imageProcessRequest", m_methodCompressionInfosMap);
@@ -403,12 +713,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::imageProcessRequest response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getMappingDataRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMappingDataRequestRequest* request, ::grpcIFrontEnd::getMappingDataRequestResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getMappingDataRequest",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getMappingDataRequest"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getMappingDataRequest", m_methodCompressionInfosMap);
@@ -431,12 +760,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getMappingDataRequest response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getClientPose(::grpc::ServerContext* context, const ::grpcIFrontEnd::getClientPoseRequest* request, ::grpcIFrontEnd::getClientPoseResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getClientPose",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getClientPose"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getClientPose", m_methodCompressionInfosMap);
@@ -464,12 +812,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getClientPose response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::createMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::createMapRequest* request, ::grpcIFrontEnd::createMapResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.createMap",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "createMap"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "createMap", m_methodCompressionInfosMap);
@@ -488,12 +855,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::createMap response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::deleteMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::deleteMapRequest* request, ::grpcIFrontEnd::deleteMapResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.deleteMap",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "deleteMap"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "deleteMap", m_methodCompressionInfosMap);
@@ -512,12 +898,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::deleteMap response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getAllMapsUUID(::grpc::ServerContext* context, const ::grpcIFrontEnd::getAllMapsUUIDRequest* request, ::grpcIFrontEnd::getAllMapsUUIDResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getAllMapsUUID",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getAllMapsUUID"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getAllMapsUUID", m_methodCompressionInfosMap);
@@ -537,12 +942,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getAllMapsUUID response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getClientMapUUID(::grpc::ServerContext* context, const ::grpcIFrontEnd::getClientMapUUIDRequest* request, ::grpcIFrontEnd::getClientMapUUIDResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getClientMapUUID",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getClientMapUUID"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getClientMapUUID", m_methodCompressionInfosMap);
@@ -563,12 +987,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getClientMapUUID response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getClientInfoForMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::getClientInfoForMapRequest* request, ::grpcIFrontEnd::getClientInfoForMapResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getClientInfoForMap",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getClientInfoForMap"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getClientInfoForMap", m_methodCompressionInfosMap);
@@ -589,12 +1032,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getClientInfoForMap response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getMapRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapRequestRequest* request, ::grpcIFrontEnd::getMapRequestResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getMapRequest",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getMapRequest"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getMapRequest", m_methodCompressionInfosMap);
@@ -616,12 +1078,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getMapRequest response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::setMapRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::setMapRequestRequest* request, ::grpcIFrontEnd::setMapRequestResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.setMapRequest",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "setMapRequest"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "setMapRequest", m_methodCompressionInfosMap);
@@ -641,12 +1122,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::setMapRequest response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getPointCloudRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::getPointCloudRequestRequest* request, ::grpcIFrontEnd::getPointCloudRequestResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getPointCloudRequest",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getPointCloudRequest"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getPointCloudRequest", m_methodCompressionInfosMap);
@@ -667,12 +1167,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getPointCloudRequest response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getMapInfo(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapInfoRequest* request, ::grpcIFrontEnd::getMapInfoResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getMapInfo",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getMapInfo"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getMapInfo", m_methodCompressionInfosMap);
@@ -701,12 +1220,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getMapInfo response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::requestMapProcessing(::grpc::ServerContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpcIFrontEnd::requestMapProcessingResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.requestMapProcessing",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "requestMapProcessing"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "requestMapProcessing", m_methodCompressionInfosMap);
@@ -727,12 +1265,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::requestMapProcessing response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getMapProcessingStatus(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapProcessingStatusRequest* request, ::grpcIFrontEnd::getMapProcessingStatusResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getMapProcessingStatus",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getMapProcessingStatus"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getMapProcessingStatus", m_methodCompressionInfosMap);
@@ -757,12 +1314,31 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getMapProcessingStatus response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getMapProcessingData(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapProcessingDataRequest* request, ::grpcIFrontEnd::getMapProcessingDataResponse* response)
 {
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getMapProcessingData",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getMapProcessingData"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  auto scope= tracer->WithActiveSpan(span);
+  
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
   xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getMapProcessingData", m_methodCompressionInfosMap);
@@ -785,7 +1361,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::getMapProcessingData response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  return ::grpc::Status::OK;
+  span->End();  return ::grpc::Status::OK;
 }
 
 

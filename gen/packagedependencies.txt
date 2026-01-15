@@ -1,3 +1,3 @@
-xpcf|2.10.0|xpcf%XPCF_SHARED_DEPS|@github|https://github.com/SolarFramework/binaries/releases/download
-xpcf_static_deps|2.10.0|xpcf_static_deps%XPCF_STATIC_DEPS|@github|https://github.com/SolarFramework/binaries/releases/download
+xpcf|2.11.0|xpcf%XPCF_SHARED_DEPS|@github|https://github.com/SolarFramework/binaries/releases/download
+xpcf_static_deps|2.11.0|xpcf_static_deps%XPCF_STATIC_DEPS|@github|https://github.com/SolarFramework/binaries/releases/download
 SolARFramework|1.6.0|SolARFramework|SolARBuild@github|https://github.com/SolarFramework/SolARFramework/releases/download
