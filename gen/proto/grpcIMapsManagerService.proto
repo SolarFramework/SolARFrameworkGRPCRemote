@@ -140,14 +140,16 @@ message getMapProcessingStatusRequest
 int32 grpcServerCompressionFormat  = 1;
 string resultMapUUID = 2;
 sint32 status = 3;
-float progress = 4;
+sint32 processingType = 4;
+float progress = 5;
 }
 
 message getMapProcessingStatusResponse
 {
 sint32 status = 1;
-float progress = 2;
-sint32 xpcfGrpcReturnValue = 3;
+sint32 processingType = 2;
+float progress = 3;
+sint32 xpcfGrpcReturnValue = 4;
 }
 
 message getMapProcessingDataRequest

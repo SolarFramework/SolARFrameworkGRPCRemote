@@ -368,7 +368,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::requestMapProcessing(std::st
 }
 
 
-SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapProcessingStatus(std::string const& resultMapUUID, SolAR::api::service::MapProcessingStatus& status, float& progress)
+SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapProcessingStatus(std::string const& resultMapUUID, SolAR::api::service::MapProcessingStatus& status, SolAR::api::service::MapProcessingType& processingType, float& progress)
 {
   ::grpc::ClientContext context;
   ::grpcIMapsManager::getMapProcessingStatusRequest reqIn;
@@ -380,6 +380,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapProcessingStatus(std::
   #endif
   reqIn.set_resultmapuuid(resultMapUUID);
   reqIn.set_status(static_cast<int32_t>(status));
+  reqIn.set_processingtype(static_cast<int32_t>(processingType));
   reqIn.set_progress(progress);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
@@ -397,6 +398,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapProcessingStatus(std::
   }
 
   status = static_cast<SolAR::api::service::MapProcessingStatus>(respOut.status());
+  processingType = static_cast<SolAR::api::service::MapProcessingType>(respOut.processingtype());
   progress = respOut.progress();
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
