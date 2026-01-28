@@ -304,9 +304,11 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   #endif
   std::string resultMapUUID = request->resultmapuuid();
   SolAR::api::service::MapProcessingStatus status = static_cast<SolAR::api::service::MapProcessingStatus>(request->status());
+  SolAR::api::service::MapProcessingType processingType = static_cast<SolAR::api::service::MapProcessingType>(request->processingtype());
   float progress = request->progress();
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapProcessingStatus(resultMapUUID, status, progress);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapProcessingStatus(resultMapUUID, status, processingType, progress);
   response->set_status(static_cast<int32_t>(status));
+  response->set_processingtype(static_cast<int32_t>(processingType));
   response->set_progress(progress);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS

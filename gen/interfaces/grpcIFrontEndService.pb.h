@@ -7029,8 +7029,9 @@ class getMapProcessingStatusResponse final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kStatusFieldNumber = 1,
-    kProgressFieldNumber = 2,
-    kXpcfGrpcReturnValueFieldNumber = 3,
+    kProcessingTypeFieldNumber = 2,
+    kProgressFieldNumber = 3,
+    kXpcfGrpcReturnValueFieldNumber = 4,
   };
   // sint32 status = 1;
   void clear_status() ;
@@ -7042,7 +7043,17 @@ class getMapProcessingStatusResponse final : public ::google::protobuf::Message
   void _internal_set_status(::int32_t value);
 
   public:
-  // float progress = 2;
+  // sint32 processingType = 2;
+  void clear_processingtype() ;
+  ::int32_t processingtype() const;
+  void set_processingtype(::int32_t value);
+
+  private:
+  ::int32_t _internal_processingtype() const;
+  void _internal_set_processingtype(::int32_t value);
+
+  public:
+  // float progress = 3;
   void clear_progress() ;
   float progress() const;
   void set_progress(float value);
@@ -7052,7 +7063,7 @@ class getMapProcessingStatusResponse final : public ::google::protobuf::Message
   void _internal_set_progress(float value);
 
   public:
-  // sint32 xpcfGrpcReturnValue = 3;
+  // sint32 xpcfGrpcReturnValue = 4;
   void clear_xpcfgrpcreturnvalue() ;
   ::int32_t xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(::int32_t value);
@@ -7067,7 +7078,7 @@ class getMapProcessingStatusResponse final : public ::google::protobuf::Message
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      2, 3, 0,
+      2, 4, 0,
       0, 2>
       _table_;
 
@@ -7089,6 +7100,7 @@ class getMapProcessingStatusResponse final : public ::google::protobuf::Message
                           ::google::protobuf::Arena* arena, const Impl_& from,
                           const getMapProcessingStatusResponse& from_msg);
     ::int32_t status_;
+    ::int32_t processingtype_;
     float progress_;
     ::int32_t xpcfgrpcreturnvalue_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -7227,7 +7239,8 @@ class getMapProcessingStatusRequest final : public ::google::protobuf::Message
     kResultMapUUIDFieldNumber = 3,
     kGrpcServerCompressionFormatFieldNumber = 1,
     kStatusFieldNumber = 4,
-    kProgressFieldNumber = 5,
+    kProcessingTypeFieldNumber = 5,
+    kProgressFieldNumber = 6,
   };
   // string accessToken = 2;
   void clear_accesstoken() ;
@@ -7281,7 +7294,17 @@ class getMapProcessingStatusRequest final : public ::google::protobuf::Message
   void _internal_set_status(::int32_t value);
 
   public:
-  // float progress = 5;
+  // sint32 processingType = 5;
+  void clear_processingtype() ;
+  ::int32_t processingtype() const;
+  void set_processingtype(::int32_t value);
+
+  private:
+  ::int32_t _internal_processingtype() const;
+  void _internal_set_processingtype(::int32_t value);
+
+  public:
+  // float progress = 6;
   void clear_progress() ;
   float progress() const;
   void set_progress(float value);
@@ -7296,7 +7319,7 @@ class getMapProcessingStatusRequest final : public ::google::protobuf::Message
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      3, 5, 0,
+      3, 6, 0,
       76, 2>
       _table_;
 
@@ -7321,6 +7344,7 @@ class getMapProcessingStatusRequest final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr resultmapuuid_;
     ::int32_t grpcservercompressionformat_;
     ::int32_t status_;
+    ::int32_t processingtype_;
     float progress_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -18889,7 +18913,29 @@ inline void getMapProcessingStatusRequest::_internal_set_status(::int32_t value)
   _impl_.status_ = value;
 }
 
-// float progress = 5;
+// sint32 processingType = 5;
+inline void getMapProcessingStatusRequest::clear_processingtype() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.processingtype_ = 0;
+}
+inline ::int32_t getMapProcessingStatusRequest::processingtype() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapProcessingStatusRequest.processingType)
+  return _internal_processingtype();
+}
+inline void getMapProcessingStatusRequest::set_processingtype(::int32_t value) {
+  _internal_set_processingtype(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapProcessingStatusRequest.processingType)
+}
+inline ::int32_t getMapProcessingStatusRequest::_internal_processingtype() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.processingtype_;
+}
+inline void getMapProcessingStatusRequest::_internal_set_processingtype(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.processingtype_ = value;
+}
+
+// float progress = 6;
 inline void getMapProcessingStatusRequest::clear_progress() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.progress_ = 0;
@@ -18937,7 +18983,29 @@ inline void getMapProcessingStatusResponse::_internal_set_status(::int32_t value
   _impl_.status_ = value;
 }
 
-// float progress = 2;
+// sint32 processingType = 2;
+inline void getMapProcessingStatusResponse::clear_processingtype() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.processingtype_ = 0;
+}
+inline ::int32_t getMapProcessingStatusResponse::processingtype() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapProcessingStatusResponse.processingType)
+  return _internal_processingtype();
+}
+inline void getMapProcessingStatusResponse::set_processingtype(::int32_t value) {
+  _internal_set_processingtype(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapProcessingStatusResponse.processingType)
+}
+inline ::int32_t getMapProcessingStatusResponse::_internal_processingtype() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.processingtype_;
+}
+inline void getMapProcessingStatusResponse::_internal_set_processingtype(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.processingtype_ = value;
+}
+
+// float progress = 3;
 inline void getMapProcessingStatusResponse::clear_progress() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.progress_ = 0;
@@ -18959,7 +19027,7 @@ inline void getMapProcessingStatusResponse::_internal_set_progress(float value) 
   _impl_.progress_ = value;
 }
 
-// sint32 xpcfGrpcReturnValue = 3;
+// sint32 xpcfGrpcReturnValue = 4;
 inline void getMapProcessingStatusResponse::clear_xpcfgrpcreturnvalue() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.xpcfgrpcreturnvalue_ = 0;
