@@ -10,6 +10,7 @@
 #include <opentelemetry/context/runtime_context.h>
 #include <opentelemetry/nostd/shared_ptr.h>
 #include <opentelemetry/nostd/string_view.h>
+#include <opentelemetry/nostd/unique_ptr.h>
 #include <opentelemetry/nostd/variant.h>
 #include <opentelemetry/semconv/incubating/rpc_attributes.h>
 #include <opentelemetry/trace/context.h>
@@ -45,6 +46,42 @@ public:
   }
 
   grpc::ServerContext *context_ = nullptr;
+};
+
+class ContextScope {
+public:
+    explicit ContextScope(const opentelemetry::context::Context& context) {
+        m_token = opentelemetry::context::RuntimeContext::Attach(context);
+    }
+
+    ~ContextScope() {
+        if (m_token) {
+            opentelemetry::context::RuntimeContext::Detach(*m_token);
+        }
+    }
+
+    ContextScope(const ContextScope&) = delete;
+    ContextScope& operator=(const ContextScope&) = delete;
+
+private:
+    opentelemetry::nostd::unique_ptr<opentelemetry::context::Token> m_token;
+};
+
+class SpanScope {
+public:
+    explicit SpanScope(const opentelemetry::nostd::shared_ptr<opentelemetry::trace::Span> span) : m_span(span){}
+
+    ~SpanScope() {
+      if (m_span) {
+        m_span->End();
+      }
+    }
+
+    SpanScope(const ContextScope&) = delete;
+    SpanScope& operator=(const SpanScope&) = delete;
+
+private:
+    opentelemetry::nostd::shared_ptr<opentelemetry::trace::Span> m_span;
 };
 } // namespace
 
@@ -90,6 +127,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -103,6 +141,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "init"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -121,7 +160,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
   std::cout << "====> IImageSegmentationPipeline_grpcServer::init response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -131,6 +170,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -144,6 +184,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "start"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -162,7 +203,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
   std::cout << "====> IImageSegmentationPipeline_grpcServer::start response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -172,6 +213,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -185,6 +227,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "stop"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -203,7 +246,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
   std::cout << "====> IImageSegmentationPipeline_grpcServer::stop response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -213,6 +256,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -226,6 +270,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "segment_grpc0"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -245,7 +290,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
   std::cout << "====> IImageSegmentationPipeline_grpcServer::segment response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -255,6 +300,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -268,6 +314,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "segment_grpc1"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -288,7 +335,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
   std::cout << "====> IImageSegmentationPipeline_grpcServer::segment response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -298,6 +345,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -311,6 +359,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "getStatus"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -333,7 +382,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
   std::cout << "====> IImageSegmentationPipeline_grpcServer::getStatus response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -343,6 +392,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -356,6 +406,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "getOutputMask"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -376,7 +427,7 @@ XPCFErrorCode IImageSegmentationPipeline_grpcServer::onConfigured()
   std::cout << "====> IImageSegmentationPipeline_grpcServer::getOutputMask response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 

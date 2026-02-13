@@ -10,6 +10,7 @@
 #include <opentelemetry/context/runtime_context.h>
 #include <opentelemetry/nostd/shared_ptr.h>
 #include <opentelemetry/nostd/string_view.h>
+#include <opentelemetry/nostd/unique_ptr.h>
 #include <opentelemetry/nostd/variant.h>
 #include <opentelemetry/semconv/incubating/rpc_attributes.h>
 #include <opentelemetry/trace/context.h>
@@ -45,6 +46,42 @@ public:
   }
 
   grpc::ServerContext *context_ = nullptr;
+};
+
+class ContextScope {
+public:
+    explicit ContextScope(const opentelemetry::context::Context& context) {
+        m_token = opentelemetry::context::RuntimeContext::Attach(context);
+    }
+
+    ~ContextScope() {
+        if (m_token) {
+            opentelemetry::context::RuntimeContext::Detach(*m_token);
+        }
+    }
+
+    ContextScope(const ContextScope&) = delete;
+    ContextScope& operator=(const ContextScope&) = delete;
+
+private:
+    opentelemetry::nostd::unique_ptr<opentelemetry::context::Token> m_token;
+};
+
+class SpanScope {
+public:
+    explicit SpanScope(const opentelemetry::nostd::shared_ptr<opentelemetry::trace::Span> span) : m_span(span){}
+
+    ~SpanScope() {
+      if (m_span) {
+        m_span->End();
+      }
+    }
+
+    SpanScope(const ContextScope&) = delete;
+    SpanScope& operator=(const SpanScope&) = delete;
+
+private:
+    opentelemetry::nostd::shared_ptr<opentelemetry::trace::Span> m_span;
 };
 } // namespace
 
@@ -90,6 +127,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -103,6 +141,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "createMap"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -122,7 +161,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::cout << "====> IMapsManager_grpcServer::createMap response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -132,6 +171,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -145,6 +185,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "deleteMap"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -164,7 +205,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::cout << "====> IMapsManager_grpcServer::deleteMap response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -174,6 +215,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -187,6 +229,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "getAllMaps"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -207,7 +250,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::cout << "====> IMapsManager_grpcServer::getAllMaps response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -217,6 +260,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -230,6 +274,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "increaseMapClients"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -251,7 +296,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::cout << "====> IMapsManager_grpcServer::increaseMapClients response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -261,6 +306,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -274,6 +320,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "decreaseMapClients"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -293,7 +340,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::cout << "====> IMapsManager_grpcServer::decreaseMapClients response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -303,6 +350,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -316,6 +364,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "getMapRequest"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -338,7 +387,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::cout << "====> IMapsManager_grpcServer::getMapRequest response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -348,6 +397,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -361,6 +411,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "setMapRequest"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -381,7 +432,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::cout << "====> IMapsManager_grpcServer::setMapRequest response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -391,6 +442,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -404,6 +456,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "getPointCloudRequest"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -425,7 +478,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::cout << "====> IMapsManager_grpcServer::getPointCloudRequest response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -435,6 +488,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -448,6 +502,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "getMapInfo"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -477,7 +532,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::cout << "====> IMapsManager_grpcServer::getMapInfo response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -487,6 +542,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -500,6 +556,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "requestMapProcessing"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -521,7 +578,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::cout << "====> IMapsManager_grpcServer::requestMapProcessing response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -531,6 +588,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -544,6 +602,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "getMapProcessingStatus"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -569,7 +628,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::cout << "====> IMapsManager_grpcServer::getMapProcessingStatus response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
@@ -579,6 +638,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
   GrpcServerCarrier carrier(context);
   auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
   
   opentelemetry::trace::StartSpanOptions options;
   options.kind = opentelemetry::trace::SpanKind::kServer;
@@ -592,6 +652,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
                                  {opentelemetry::semconv::rpc::kRpcMethod, "getMapProcessingData"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
+  SpanScope spanScope(span);
   auto scope= tracer->WithActiveSpan(span);
   
   #ifndef DISABLE_GRPC_COMPRESSION
@@ -615,7 +676,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::cout << "====> IMapsManager_grpcServer::getMapProcessingData response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
-  span->End();  return ::grpc::Status::OK;
+  return ::grpc::Status::OK;
 }
 
 
