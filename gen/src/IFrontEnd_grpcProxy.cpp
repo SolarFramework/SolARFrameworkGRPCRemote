@@ -101,7 +101,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::registerClient(std::string cons
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -166,7 +166,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::unregisterClient(std::string co
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -230,7 +230,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getAllClientsUUID(std::string c
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -296,7 +296,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getDeviceInfo(std::string const
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -361,7 +361,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::init(std::string const& accessT
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -426,7 +426,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::init(std::string const& accessT
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -490,7 +490,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::start(std::string const& access
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -554,7 +554,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::stop(std::string const& accessT
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -619,7 +619,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getProcessingMode(std::string c
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -685,7 +685,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::setCameraParameters(std::string
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -751,7 +751,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::setCameraParameters(std::string
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -817,7 +817,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::setRectificationParameters(std:
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -882,7 +882,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getCameraParameters(std::string
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -957,7 +957,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::imageProcessRequest(std::string
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -1028,7 +1028,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMappingDataRequest(std::stri
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -1099,7 +1099,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getClientPose(std::string const
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -1167,7 +1167,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::createMap(std::string const& ac
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -1231,7 +1231,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::deleteMap(std::string const& ac
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -1295,7 +1295,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getAllMapsUUID(std::string cons
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -1361,7 +1361,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getClientMapUUID(std::string co
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -1427,7 +1427,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getClientInfoForMap(std::string
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -1494,7 +1494,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapRequest(std::string const
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -1560,7 +1560,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::setMapRequest(std::string const
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -1625,7 +1625,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getPointCloudRequest(std::strin
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -1695,7 +1695,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapInfo(std::string const& a
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -1766,7 +1766,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::requestMapProcessing(std::strin
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -1833,7 +1833,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapProcessingStatus(std::str
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');
@@ -1902,7 +1902,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapProcessingData(std::strin
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   
   // TODO: safer parsing with error handling
   auto const pos = m_channelUrl.find_last_of(':');

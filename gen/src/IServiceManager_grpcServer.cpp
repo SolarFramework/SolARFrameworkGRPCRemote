@@ -134,7 +134,7 @@ XPCFErrorCode IServiceManager_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IServiceManager_grpcServer.registerService",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIServiceManager.grpcIServiceManagerService"},
@@ -179,7 +179,7 @@ XPCFErrorCode IServiceManager_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IServiceManager_grpcServer.unregisterService",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIServiceManager.grpcIServiceManagerService"},
@@ -224,7 +224,7 @@ XPCFErrorCode IServiceManager_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IServiceManager_grpcServer.getService",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIServiceManager.grpcIServiceManagerService"},
@@ -270,7 +270,7 @@ XPCFErrorCode IServiceManager_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IServiceManager_grpcServer.getAndLockService",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIServiceManager.grpcIServiceManagerService"},
@@ -317,7 +317,7 @@ XPCFErrorCode IServiceManager_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IServiceManager_grpcServer.unlockService",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIServiceManager.grpcIServiceManagerService"},

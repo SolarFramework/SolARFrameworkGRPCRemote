@@ -134,7 +134,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IMappingPipeline_grpcServer.init",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
@@ -177,7 +177,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IMappingPipeline_grpcServer.start",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
@@ -220,7 +220,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IMappingPipeline_grpcServer.stop",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
@@ -263,7 +263,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IMappingPipeline_grpcServer.init",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
@@ -307,7 +307,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IMappingPipeline_grpcServer.init",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
@@ -353,7 +353,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IMappingPipeline_grpcServer.setCameraParameters",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
@@ -397,7 +397,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IMappingPipeline_grpcServer.setCameraParameters",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
@@ -442,7 +442,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IMappingPipeline_grpcServer.setRectificationParameters",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
@@ -487,7 +487,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IMappingPipeline_grpcServer.set3DTransformSolARToWorld",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
@@ -531,7 +531,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IMappingPipeline_grpcServer.mappingProcessRequest",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
@@ -582,7 +582,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IMappingPipeline_grpcServer.mappingProcessRequest",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
@@ -630,7 +630,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IMappingPipeline_grpcServer.mappingProcessRequest",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
@@ -680,7 +680,7 @@ XPCFErrorCode IMappingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.5.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
   auto span = tracer->StartSpan("IMappingPipeline_grpcServer.getDataForVisualization",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMappingPipeline.grpcIMappingPipelineService"},
