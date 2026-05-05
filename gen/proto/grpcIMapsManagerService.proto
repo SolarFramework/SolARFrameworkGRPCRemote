@@ -122,6 +122,49 @@ bool areImageSaved = 5;
 sint32 xpcfGrpcReturnValue = 6;
 }
 
+message backupMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+bytes map_information = 3;
+bytes cameraParameters = 4;
+bytes coordinate = 5;
+bytes covisibility_graph = 6;
+bytes identification = 7;
+bytes keyframes = 8;
+bytes pointcloud = 9;
+}
+
+message backupMapResponse
+{
+bytes map_information = 1;
+bytes cameraParameters = 2;
+bytes coordinate = 3;
+bytes covisibility_graph = 4;
+bytes identification = 5;
+bytes keyframes = 6;
+bytes pointcloud = 7;
+sint32 xpcfGrpcReturnValue = 8;
+}
+
+message restoreMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+bytes map_information = 3;
+bytes cameraParameters = 4;
+bytes coordinate = 5;
+bytes covisibility_graph = 6;
+bytes identification = 7;
+bytes keyframes = 8;
+bytes pointcloud = 9;
+}
+
+message restoreMapResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 message requestMapProcessingRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -177,6 +220,8 @@ rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc setMapRequest(setMapRequestRequest) returns(setMapRequestResponse) {}
 rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}
 rpc getMapInfo(getMapInfoRequest) returns(getMapInfoResponse) {}
+rpc backupMap(backupMapRequest) returns(backupMapResponse) {}
+rpc restoreMap(restoreMapRequest) returns(restoreMapResponse) {}
 rpc requestMapProcessing(requestMapProcessingRequest) returns(requestMapProcessingResponse) {}
 rpc getMapProcessingStatus(getMapProcessingStatusRequest) returns(getMapProcessingStatusResponse) {}
 rpc getMapProcessingData(getMapProcessingDataRequest) returns(getMapProcessingDataResponse) {}

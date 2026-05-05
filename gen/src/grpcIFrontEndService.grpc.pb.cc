@@ -47,6 +47,8 @@ static const char* grpcIFrontEndService_method_names[] = {
   "/grpcIFrontEnd.grpcIFrontEndService/setMapRequest",
   "/grpcIFrontEnd.grpcIFrontEndService/getPointCloudRequest",
   "/grpcIFrontEnd.grpcIFrontEndService/getMapInfo",
+  "/grpcIFrontEnd.grpcIFrontEndService/backupMap",
+  "/grpcIFrontEnd.grpcIFrontEndService/restoreMap",
   "/grpcIFrontEnd.grpcIFrontEndService/requestMapProcessing",
   "/grpcIFrontEnd.grpcIFrontEndService/getMapProcessingStatus",
   "/grpcIFrontEnd.grpcIFrontEndService/getMapProcessingData",
@@ -84,9 +86,11 @@ grpcIFrontEndService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface
   , rpcmethod_setMapRequest_(grpcIFrontEndService_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getPointCloudRequest_(grpcIFrontEndService_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getMapInfo_(grpcIFrontEndService_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_requestMapProcessing_(grpcIFrontEndService_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapProcessingStatus_(grpcIFrontEndService_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapProcessingData_(grpcIFrontEndService_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_backupMap_(grpcIFrontEndService_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_restoreMap_(grpcIFrontEndService_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_requestMapProcessing_(grpcIFrontEndService_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapProcessingStatus_(grpcIFrontEndService_method_names[28], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapProcessingData_(grpcIFrontEndService_method_names[29], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIFrontEndService::Stub::registerClient(::grpc::ClientContext* context, const ::grpcIFrontEnd::registerClientRequest& request, ::grpcIFrontEnd::registerClientResponse* response) {
@@ -664,6 +668,52 @@ void grpcIFrontEndService::Stub::async::getMapInfo(::grpc::ClientContext* contex
   return result;
 }
 
+::grpc::Status grpcIFrontEndService::Stub::backupMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest& request, ::grpcIFrontEnd::backupMapResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::backupMapRequest, ::grpcIFrontEnd::backupMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_backupMap_, context, request, response);
+}
+
+void grpcIFrontEndService::Stub::async::backupMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest* request, ::grpcIFrontEnd::backupMapResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::backupMapRequest, ::grpcIFrontEnd::backupMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_backupMap_, context, request, response, std::move(f));
+}
+
+void grpcIFrontEndService::Stub::async::backupMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest* request, ::grpcIFrontEnd::backupMapResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_backupMap_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::backupMapResponse>* grpcIFrontEndService::Stub::PrepareAsyncbackupMapRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::backupMapResponse, ::grpcIFrontEnd::backupMapRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_backupMap_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::backupMapResponse>* grpcIFrontEndService::Stub::AsyncbackupMapRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncbackupMapRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIFrontEndService::Stub::restoreMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest& request, ::grpcIFrontEnd::restoreMapResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::restoreMapRequest, ::grpcIFrontEnd::restoreMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_restoreMap_, context, request, response);
+}
+
+void grpcIFrontEndService::Stub::async::restoreMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest* request, ::grpcIFrontEnd::restoreMapResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::restoreMapRequest, ::grpcIFrontEnd::restoreMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_restoreMap_, context, request, response, std::move(f));
+}
+
+void grpcIFrontEndService::Stub::async::restoreMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest* request, ::grpcIFrontEnd::restoreMapResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_restoreMap_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::restoreMapResponse>* grpcIFrontEndService::Stub::PrepareAsyncrestoreMapRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::restoreMapResponse, ::grpcIFrontEnd::restoreMapRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_restoreMap_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::restoreMapResponse>* grpcIFrontEndService::Stub::AsyncrestoreMapRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncrestoreMapRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status grpcIFrontEndService::Stub::requestMapProcessing(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest& request, ::grpcIFrontEnd::requestMapProcessingResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::requestMapProcessingRequest, ::grpcIFrontEnd::requestMapProcessingResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_requestMapProcessing_, context, request, response);
 }
@@ -987,6 +1037,26 @@ grpcIFrontEndService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIFrontEndService_method_names[25],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::backupMapRequest, ::grpcIFrontEnd::backupMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIFrontEndService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIFrontEnd::backupMapRequest* req,
+             ::grpcIFrontEnd::backupMapResponse* resp) {
+               return service->backupMap(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIFrontEndService_method_names[26],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::restoreMapRequest, ::grpcIFrontEnd::restoreMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIFrontEndService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIFrontEnd::restoreMapRequest* req,
+             ::grpcIFrontEnd::restoreMapResponse* resp) {
+               return service->restoreMap(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIFrontEndService_method_names[27],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::requestMapProcessingRequest, ::grpcIFrontEnd::requestMapProcessingResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -995,7 +1065,7 @@ grpcIFrontEndService::Service::Service() {
                return service->requestMapProcessing(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[26],
+      grpcIFrontEndService_method_names[28],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapProcessingStatusRequest, ::grpcIFrontEnd::getMapProcessingStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1005,7 +1075,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getMapProcessingStatus(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[27],
+      grpcIFrontEndService_method_names[29],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapProcessingDataRequest, ::grpcIFrontEnd::getMapProcessingDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1188,6 +1258,20 @@ grpcIFrontEndService::Service::~Service() {
 }
 
 ::grpc::Status grpcIFrontEndService::Service::getMapInfo(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapInfoRequest* request, ::grpcIFrontEnd::getMapInfoResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIFrontEndService::Service::backupMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::backupMapRequest* request, ::grpcIFrontEnd::backupMapResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIFrontEndService::Service::restoreMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::restoreMapRequest* request, ::grpcIFrontEnd::restoreMapResponse* response) {
   (void) context;
   (void) request;
   (void) response;

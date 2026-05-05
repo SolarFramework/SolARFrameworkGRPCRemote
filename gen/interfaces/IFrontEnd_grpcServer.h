@@ -50,6 +50,8 @@ class IFrontEnd_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual p
         ::grpc::Status setMapRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::setMapRequestRequest* request, ::grpcIFrontEnd::setMapRequestResponse* response) override;
         ::grpc::Status getPointCloudRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::getPointCloudRequestRequest* request, ::grpcIFrontEnd::getPointCloudRequestResponse* response) override;
         ::grpc::Status getMapInfo(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapInfoRequest* request, ::grpcIFrontEnd::getMapInfoResponse* response) override;
+        ::grpc::Status backupMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::backupMapRequest* request, ::grpcIFrontEnd::backupMapResponse* response) override;
+        ::grpc::Status restoreMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::restoreMapRequest* request, ::grpcIFrontEnd::restoreMapResponse* response) override;
         ::grpc::Status requestMapProcessing(::grpc::ServerContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpcIFrontEnd::requestMapProcessingResponse* response) override;
         ::grpc::Status getMapProcessingStatus(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapProcessingStatusRequest* request, ::grpcIFrontEnd::getMapProcessingStatusResponse* response) override;
         ::grpc::Status getMapProcessingData(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapProcessingDataRequest* request, ::grpcIFrontEnd::getMapProcessingDataResponse* response) override;

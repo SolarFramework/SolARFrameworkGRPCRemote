@@ -69,6 +69,68 @@ struct setMapRequestRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 setMapRequestRequestDefaultTypeInternal _setMapRequestRequest_default_instance_;
 
+inline constexpr restoreMapResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : xpcfgrpcreturnvalue_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR restoreMapResponse::restoreMapResponse(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct restoreMapResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR restoreMapResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~restoreMapResponseDefaultTypeInternal() {}
+  union {
+    restoreMapResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 restoreMapResponseDefaultTypeInternal _restoreMapResponse_default_instance_;
+
+inline constexpr restoreMapRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : mapuuid_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        map_information_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        cameraparameters_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        coordinate_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        covisibility_graph_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        identification_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        keyframes_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        pointcloud_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        grpcservercompressionformat_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR restoreMapRequest::restoreMapRequest(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct restoreMapRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR restoreMapRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~restoreMapRequestDefaultTypeInternal() {}
+  union {
+    restoreMapRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 restoreMapRequestDefaultTypeInternal _restoreMapRequest_default_instance_;
+
 inline constexpr requestMapProcessingResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : xpcfgrpcreturnvalue_{0},
@@ -577,6 +639,89 @@ struct createMapRequestDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 createMapRequestDefaultTypeInternal _createMapRequest_default_instance_;
+
+inline constexpr backupMapResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : map_information_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        cameraparameters_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        coordinate_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        covisibility_graph_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        identification_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        keyframes_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        pointcloud_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        xpcfgrpcreturnvalue_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR backupMapResponse::backupMapResponse(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct backupMapResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR backupMapResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~backupMapResponseDefaultTypeInternal() {}
+  union {
+    backupMapResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 backupMapResponseDefaultTypeInternal _backupMapResponse_default_instance_;
+
+inline constexpr backupMapRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : mapuuid_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        map_information_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        cameraparameters_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        coordinate_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        covisibility_graph_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        identification_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        keyframes_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        pointcloud_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        grpcservercompressionformat_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR backupMapRequest::backupMapRequest(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct backupMapRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR backupMapRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~backupMapRequestDefaultTypeInternal() {}
+  union {
+    backupMapRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 backupMapRequestDefaultTypeInternal _backupMapRequest_default_instance_;
 }  // namespace grpcIMapsManager
 static constexpr const ::_pb::EnumDescriptor**
     file_level_enum_descriptors_grpcIMapsManagerService_2eproto = nullptr;
@@ -776,6 +921,65 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapInfoResponse, _impl_.areimagesaved_),
         PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapInfoResponse, _impl_.xpcfgrpcreturnvalue_),
         ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapRequest, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapRequest, _impl_.grpcservercompressionformat_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapRequest, _impl_.mapuuid_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapRequest, _impl_.map_information_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapRequest, _impl_.cameraparameters_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapRequest, _impl_.coordinate_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapRequest, _impl_.covisibility_graph_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapRequest, _impl_.identification_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapRequest, _impl_.keyframes_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapRequest, _impl_.pointcloud_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapResponse, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapResponse, _impl_.map_information_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapResponse, _impl_.cameraparameters_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapResponse, _impl_.coordinate_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapResponse, _impl_.covisibility_graph_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapResponse, _impl_.identification_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapResponse, _impl_.keyframes_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapResponse, _impl_.pointcloud_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapResponse, _impl_.xpcfgrpcreturnvalue_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::restoreMapRequest, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::restoreMapRequest, _impl_.grpcservercompressionformat_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::restoreMapRequest, _impl_.mapuuid_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::restoreMapRequest, _impl_.map_information_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::restoreMapRequest, _impl_.cameraparameters_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::restoreMapRequest, _impl_.coordinate_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::restoreMapRequest, _impl_.covisibility_graph_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::restoreMapRequest, _impl_.identification_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::restoreMapRequest, _impl_.keyframes_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::restoreMapRequest, _impl_.pointcloud_),
+        ~0u,  // no _has_bits_
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::restoreMapResponse, _internal_metadata_),
+        ~0u,  // no _extensions_
+        ~0u,  // no _oneof_case_
+        ~0u,  // no _weak_field_map_
+        ~0u,  // no _inlined_string_donated_
+        ~0u,  // no _split_
+        ~0u,  // no sizeof(Split)
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::restoreMapResponse, _impl_.xpcfgrpcreturnvalue_),
+        ~0u,  // no _has_bits_
         PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::requestMapProcessingRequest, _internal_metadata_),
         ~0u,  // no _extensions_
         ~0u,  // no _oneof_case_
@@ -866,12 +1070,16 @@ static const ::_pbi::MigrationSchema
         {151, -1, -1, sizeof(::grpcIMapsManager::getPointCloudRequestResponse)},
         {161, -1, -1, sizeof(::grpcIMapsManager::getMapInfoRequest)},
         {176, -1, -1, sizeof(::grpcIMapsManager::getMapInfoResponse)},
-        {190, -1, -1, sizeof(::grpcIMapsManager::requestMapProcessingRequest)},
-        {202, -1, -1, sizeof(::grpcIMapsManager::requestMapProcessingResponse)},
-        {211, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingStatusRequest)},
-        {224, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingStatusResponse)},
-        {236, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingDataRequest)},
-        {248, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingDataResponse)},
+        {190, -1, -1, sizeof(::grpcIMapsManager::backupMapRequest)},
+        {207, -1, -1, sizeof(::grpcIMapsManager::backupMapResponse)},
+        {223, -1, -1, sizeof(::grpcIMapsManager::restoreMapRequest)},
+        {240, -1, -1, sizeof(::grpcIMapsManager::restoreMapResponse)},
+        {249, -1, -1, sizeof(::grpcIMapsManager::requestMapProcessingRequest)},
+        {261, -1, -1, sizeof(::grpcIMapsManager::requestMapProcessingResponse)},
+        {270, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingStatusRequest)},
+        {283, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingStatusResponse)},
+        {295, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingDataRequest)},
+        {307, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingDataResponse)},
 };
 static const ::_pb::Message* const file_default_instances[] = {
     &::grpcIMapsManager::_createMapRequest_default_instance_._instance,
@@ -892,6 +1100,10 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::grpcIMapsManager::_getPointCloudRequestResponse_default_instance_._instance,
     &::grpcIMapsManager::_getMapInfoRequest_default_instance_._instance,
     &::grpcIMapsManager::_getMapInfoResponse_default_instance_._instance,
+    &::grpcIMapsManager::_backupMapRequest_default_instance_._instance,
+    &::grpcIMapsManager::_backupMapResponse_default_instance_._instance,
+    &::grpcIMapsManager::_restoreMapRequest_default_instance_._instance,
+    &::grpcIMapsManager::_restoreMapResponse_default_instance_._instance,
     &::grpcIMapsManager::_requestMapProcessingRequest_default_instance_._instance,
     &::grpcIMapsManager::_requestMapProcessingResponse_default_instance_._instance,
     &::grpcIMapsManager::_getMapProcessingStatusRequest_default_instance_._instance,
@@ -943,57 +1155,80 @@ const char descriptor_table_protodef_grpcIMapsManagerService_2eproto[] ABSL_ATTR
     "\t\022\034\n\024globalDescriptorType\030\002 \001(\021\022\026\n\016descr"
     "iptorType\030\003 \001(\021\022\020\n\010dataSize\030\004 \001(\r\022\025\n\rare"
     "ImageSaved\030\005 \001(\010\022\033\n\023xpcfGrpcReturnValue\030"
-    "\006 \001(\021\"\202\001\n\033requestMapProcessingRequest\022#\n"
+    "\006 \001(\021\"\352\001\n\020backupMapRequest\022#\n\033grpcServer"
+    "CompressionFormat\030\001 \001(\005\022\017\n\007mapUUID\030\002 \001(\t"
+    "\022\027\n\017map_information\030\003 \001(\014\022\030\n\020cameraParam"
+    "eters\030\004 \001(\014\022\022\n\ncoordinate\030\005 \001(\014\022\032\n\022covis"
+    "ibility_graph\030\006 \001(\014\022\026\n\016identification\030\007 "
+    "\001(\014\022\021\n\tkeyframes\030\010 \001(\014\022\022\n\npointcloud\030\t \001"
+    "(\014\"\322\001\n\021backupMapResponse\022\027\n\017map_informat"
+    "ion\030\001 \001(\014\022\030\n\020cameraParameters\030\002 \001(\014\022\022\n\nc"
+    "oordinate\030\003 \001(\014\022\032\n\022covisibility_graph\030\004 "
+    "\001(\014\022\026\n\016identification\030\005 \001(\014\022\021\n\tkeyframes"
+    "\030\006 \001(\014\022\022\n\npointcloud\030\007 \001(\014\022\033\n\023xpcfGrpcRe"
+    "turnValue\030\010 \001(\021\"\353\001\n\021restoreMapRequest\022#\n"
     "\033grpcServerCompressionFormat\030\001 \001(\005\022\017\n\007ma"
-    "pUUID\030\002 \001(\t\022\025\n\rresultMapUUID\030\003 \001(\t\022\026\n\016pr"
-    "ocessingType\030\004 \001(\021\";\n\034requestMapProcessi"
-    "ngResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\""
-    "\225\001\n\035getMapProcessingStatusRequest\022#\n\033grp"
-    "cServerCompressionFormat\030\001 \001(\005\022\025\n\rresult"
-    "MapUUID\030\002 \001(\t\022\016\n\006status\030\003 \001(\021\022\026\n\016process"
-    "ingType\030\004 \001(\021\022\020\n\010progress\030\005 \001(\002\"w\n\036getMa"
-    "pProcessingStatusResponse\022\016\n\006status\030\001 \001("
-    "\021\022\026\n\016processingType\030\002 \001(\021\022\020\n\010progress\030\003 "
-    "\001(\002\022\033\n\023xpcfGrpcReturnValue\030\004 \001(\021\"\204\001\n\033get"
-    "MapProcessingDataRequest\022#\n\033grpcServerCo"
-    "mpressionFormat\030\001 \001(\005\022\025\n\rresultMapUUID\030\002"
-    " \001(\t\022\022\n\npointCloud\030\003 \001(\014\022\025\n\rkeyframePose"
-    "s\030\004 \001(\014\"f\n\034getMapProcessingDataResponse\022"
-    "\022\n\npointCloud\030\001 \001(\014\022\025\n\rkeyframePoses\030\002 \001"
-    "(\014\022\033\n\023xpcfGrpcReturnValue\030\003 \001(\0212\227\n\n\027grpc"
-    "IMapsManagerService\022V\n\tcreateMap\022\".grpcI"
-    "MapsManager.createMapRequest\032#.grpcIMaps"
-    "Manager.createMapResponse\"\000\022V\n\tdeleteMap"
-    "\022\".grpcIMapsManager.deleteMapRequest\032#.g"
-    "rpcIMapsManager.deleteMapResponse\"\000\022Y\n\ng"
-    "etAllMaps\022#.grpcIMapsManager.getAllMapsR"
-    "equest\032$.grpcIMapsManager.getAllMapsResp"
-    "onse\"\000\022q\n\022increaseMapClients\022+.grpcIMaps"
-    "Manager.increaseMapClientsRequest\032,.grpc"
-    "IMapsManager.increaseMapClientsResponse\""
-    "\000\022q\n\022decreaseMapClients\022+.grpcIMapsManag"
-    "er.decreaseMapClientsRequest\032,.grpcIMaps"
-    "Manager.decreaseMapClientsResponse\"\000\022b\n\r"
-    "getMapRequest\022&.grpcIMapsManager.getMapR"
-    "equestRequest\032\'.grpcIMapsManager.getMapR"
-    "equestResponse\"\000\022b\n\rsetMapRequest\022&.grpc"
-    "IMapsManager.setMapRequestRequest\032\'.grpc"
-    "IMapsManager.setMapRequestResponse\"\000\022w\n\024"
-    "getPointCloudRequest\022-.grpcIMapsManager."
-    "getPointCloudRequestRequest\032..grpcIMapsM"
-    "anager.getPointCloudRequestResponse\"\000\022Y\n"
-    "\ngetMapInfo\022#.grpcIMapsManager.getMapInf"
-    "oRequest\032$.grpcIMapsManager.getMapInfoRe"
-    "sponse\"\000\022w\n\024requestMapProcessing\022-.grpcI"
-    "MapsManager.requestMapProcessingRequest\032"
-    "..grpcIMapsManager.requestMapProcessingR"
-    "esponse\"\000\022}\n\026getMapProcessingStatus\022/.gr"
-    "pcIMapsManager.getMapProcessingStatusReq"
-    "uest\0320.grpcIMapsManager.getMapProcessing"
-    "StatusResponse\"\000\022w\n\024getMapProcessingData"
-    "\022-.grpcIMapsManager.getMapProcessingData"
-    "Request\032..grpcIMapsManager.getMapProcess"
-    "ingDataResponse\"\000b\006proto3"
+    "pUUID\030\002 \001(\t\022\027\n\017map_information\030\003 \001(\014\022\030\n\020"
+    "cameraParameters\030\004 \001(\014\022\022\n\ncoordinate\030\005 \001"
+    "(\014\022\032\n\022covisibility_graph\030\006 \001(\014\022\026\n\016identi"
+    "fication\030\007 \001(\014\022\021\n\tkeyframes\030\010 \001(\014\022\022\n\npoi"
+    "ntcloud\030\t \001(\014\"1\n\022restoreMapResponse\022\033\n\023x"
+    "pcfGrpcReturnValue\030\001 \001(\021\"\202\001\n\033requestMapP"
+    "rocessingRequest\022#\n\033grpcServerCompressio"
+    "nFormat\030\001 \001(\005\022\017\n\007mapUUID\030\002 \001(\t\022\025\n\rresult"
+    "MapUUID\030\003 \001(\t\022\026\n\016processingType\030\004 \001(\021\";\n"
+    "\034requestMapProcessingResponse\022\033\n\023xpcfGrp"
+    "cReturnValue\030\001 \001(\021\"\225\001\n\035getMapProcessingS"
+    "tatusRequest\022#\n\033grpcServerCompressionFor"
+    "mat\030\001 \001(\005\022\025\n\rresultMapUUID\030\002 \001(\t\022\016\n\006stat"
+    "us\030\003 \001(\021\022\026\n\016processingType\030\004 \001(\021\022\020\n\010prog"
+    "ress\030\005 \001(\002\"w\n\036getMapProcessingStatusResp"
+    "onse\022\016\n\006status\030\001 \001(\021\022\026\n\016processingType\030\002"
+    " \001(\021\022\020\n\010progress\030\003 \001(\002\022\033\n\023xpcfGrpcReturn"
+    "Value\030\004 \001(\021\"\204\001\n\033getMapProcessingDataRequ"
+    "est\022#\n\033grpcServerCompressionFormat\030\001 \001(\005"
+    "\022\025\n\rresultMapUUID\030\002 \001(\t\022\022\n\npointCloud\030\003 "
+    "\001(\014\022\025\n\rkeyframePoses\030\004 \001(\014\"f\n\034getMapProc"
+    "essingDataResponse\022\022\n\npointCloud\030\001 \001(\014\022\025"
+    "\n\rkeyframePoses\030\002 \001(\014\022\033\n\023xpcfGrpcReturnV"
+    "alue\030\003 \001(\0212\312\013\n\027grpcIMapsManagerService\022V"
+    "\n\tcreateMap\022\".grpcIMapsManager.createMap"
+    "Request\032#.grpcIMapsManager.createMapResp"
+    "onse\"\000\022V\n\tdeleteMap\022\".grpcIMapsManager.d"
+    "eleteMapRequest\032#.grpcIMapsManager.delet"
+    "eMapResponse\"\000\022Y\n\ngetAllMaps\022#.grpcIMaps"
+    "Manager.getAllMapsRequest\032$.grpcIMapsMan"
+    "ager.getAllMapsResponse\"\000\022q\n\022increaseMap"
+    "Clients\022+.grpcIMapsManager.increaseMapCl"
+    "ientsRequest\032,.grpcIMapsManager.increase"
+    "MapClientsResponse\"\000\022q\n\022decreaseMapClien"
+    "ts\022+.grpcIMapsManager.decreaseMapClients"
+    "Request\032,.grpcIMapsManager.decreaseMapCl"
+    "ientsResponse\"\000\022b\n\rgetMapRequest\022&.grpcI"
+    "MapsManager.getMapRequestRequest\032\'.grpcI"
+    "MapsManager.getMapRequestResponse\"\000\022b\n\rs"
+    "etMapRequest\022&.grpcIMapsManager.setMapRe"
+    "questRequest\032\'.grpcIMapsManager.setMapRe"
+    "questResponse\"\000\022w\n\024getPointCloudRequest\022"
+    "-.grpcIMapsManager.getPointCloudRequestR"
+    "equest\032..grpcIMapsManager.getPointCloudR"
+    "equestResponse\"\000\022Y\n\ngetMapInfo\022#.grpcIMa"
+    "psManager.getMapInfoRequest\032$.grpcIMapsM"
+    "anager.getMapInfoResponse\"\000\022V\n\tbackupMap"
+    "\022\".grpcIMapsManager.backupMapRequest\032#.g"
+    "rpcIMapsManager.backupMapResponse\"\000\022Y\n\nr"
+    "estoreMap\022#.grpcIMapsManager.restoreMapR"
+    "equest\032$.grpcIMapsManager.restoreMapResp"
+    "onse\"\000\022w\n\024requestMapProcessing\022-.grpcIMa"
+    "psManager.requestMapProcessingRequest\032.."
+    "grpcIMapsManager.requestMapProcessingRes"
+    "ponse\"\000\022}\n\026getMapProcessingStatus\022/.grpc"
+    "IMapsManager.getMapProcessingStatusReque"
+    "st\0320.grpcIMapsManager.getMapProcessingSt"
+    "atusResponse\"\000\022w\n\024getMapProcessingData\022-"
+    ".grpcIMapsManager.getMapProcessingDataRe"
+    "quest\032..grpcIMapsManager.getMapProcessin"
+    "gDataResponse\"\000b\006proto3"
 };
 static const ::_pbi::DescriptorTable* const descriptor_table_grpcIMapsManagerService_2eproto_deps[1] =
     {
@@ -1003,13 +1238,13 @@ static ::absl::once_flag descriptor_table_grpcIMapsManagerService_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_grpcIMapsManagerService_2eproto = {
     false,
     false,
-    3705,
+    4623,
     descriptor_table_protodef_grpcIMapsManagerService_2eproto,
     "grpcIMapsManagerService.proto",
     &descriptor_table_grpcIMapsManagerService_2eproto_once,
     descriptor_table_grpcIMapsManagerService_2eproto_deps,
     1,
-    24,
+    28,
     schemas,
     file_default_instances,
     TableStruct_grpcIMapsManagerService_2eproto::offsets,
@@ -5141,6 +5376,1364 @@ void getMapInfoResponse::InternalSwap(getMapInfoResponse* PROTOBUF_RESTRICT othe
 }
 
 ::google::protobuf::Metadata getMapInfoResponse::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class backupMapRequest::_Internal {
+ public:
+};
+
+backupMapRequest::backupMapRequest(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIMapsManager.backupMapRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE backupMapRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::grpcIMapsManager::backupMapRequest& from_msg)
+      : mapuuid_(arena, from.mapuuid_),
+        map_information_(arena, from.map_information_),
+        cameraparameters_(arena, from.cameraparameters_),
+        coordinate_(arena, from.coordinate_),
+        covisibility_graph_(arena, from.covisibility_graph_),
+        identification_(arena, from.identification_),
+        keyframes_(arena, from.keyframes_),
+        pointcloud_(arena, from.pointcloud_),
+        _cached_size_{0} {}
+
+backupMapRequest::backupMapRequest(
+    ::google::protobuf::Arena* arena,
+    const backupMapRequest& from)
+    : ::google::protobuf::Message(arena) {
+  backupMapRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+
+  // @@protoc_insertion_point(copy_constructor:grpcIMapsManager.backupMapRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE backupMapRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : mapuuid_(arena),
+        map_information_(arena),
+        cameraparameters_(arena),
+        coordinate_(arena),
+        covisibility_graph_(arena),
+        identification_(arena),
+        keyframes_(arena),
+        pointcloud_(arena),
+        _cached_size_{0} {}
+
+inline void backupMapRequest::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.grpcservercompressionformat_ = {};
+}
+backupMapRequest::~backupMapRequest() {
+  // @@protoc_insertion_point(destructor:grpcIMapsManager.backupMapRequest)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void backupMapRequest::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.mapuuid_.Destroy();
+  _impl_.map_information_.Destroy();
+  _impl_.cameraparameters_.Destroy();
+  _impl_.coordinate_.Destroy();
+  _impl_.covisibility_graph_.Destroy();
+  _impl_.identification_.Destroy();
+  _impl_.keyframes_.Destroy();
+  _impl_.pointcloud_.Destroy();
+  _impl_.~Impl_();
+}
+
+const ::google::protobuf::MessageLite::ClassData*
+backupMapRequest::GetClassData() const {
+  PROTOBUF_CONSTINIT static const ::google::protobuf::MessageLite::
+      ClassDataFull _data_ = {
+          {
+              &_table_.header,
+              nullptr,  // OnDemandRegisterArenaDtor
+              nullptr,  // IsInitialized
+              PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_._cached_size_),
+              false,
+          },
+          &backupMapRequest::MergeImpl,
+          &backupMapRequest::kDescriptorMethods,
+          &descriptor_table_grpcIMapsManagerService_2eproto,
+          nullptr,  // tracker
+      };
+  ::google::protobuf::internal::PrefetchToLocalCache(&_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_data_.tc_table);
+  return _data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<4, 9, 0, 57, 2> backupMapRequest::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    9, 120,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294966784,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    9,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_backupMapRequest_default_instance_._instance,
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIMapsManager::backupMapRequest>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // int32 grpcServerCompressionFormat = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(backupMapRequest, _impl_.grpcservercompressionformat_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.grpcservercompressionformat_)}},
+    // string mapUUID = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.mapuuid_)}},
+    // bytes map_information = 3;
+    {::_pbi::TcParser::FastBS1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.map_information_)}},
+    // bytes cameraParameters = 4;
+    {::_pbi::TcParser::FastBS1,
+     {34, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.cameraparameters_)}},
+    // bytes coordinate = 5;
+    {::_pbi::TcParser::FastBS1,
+     {42, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.coordinate_)}},
+    // bytes covisibility_graph = 6;
+    {::_pbi::TcParser::FastBS1,
+     {50, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.covisibility_graph_)}},
+    // bytes identification = 7;
+    {::_pbi::TcParser::FastBS1,
+     {58, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.identification_)}},
+    // bytes keyframes = 8;
+    {::_pbi::TcParser::FastBS1,
+     {66, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.keyframes_)}},
+    // bytes pointcloud = 9;
+    {::_pbi::TcParser::FastBS1,
+     {74, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.pointcloud_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int32 grpcServerCompressionFormat = 1;
+    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.grpcservercompressionformat_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
+    // string mapUUID = 2;
+    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.mapuuid_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bytes map_information = 3;
+    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.map_information_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes cameraParameters = 4;
+    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.cameraparameters_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes coordinate = 5;
+    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.coordinate_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes covisibility_graph = 6;
+    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.covisibility_graph_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes identification = 7;
+    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.identification_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes keyframes = 8;
+    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.keyframes_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes pointcloud = 9;
+    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.pointcloud_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\41\0\7\0\0\0\0\0\0\0\0\0\0\0\0\0"
+    "grpcIMapsManager.backupMapRequest"
+    "mapUUID"
+  }},
+};
+
+PROTOBUF_NOINLINE void backupMapRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIMapsManager.backupMapRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.mapuuid_.ClearToEmpty();
+  _impl_.map_information_.ClearToEmpty();
+  _impl_.cameraparameters_.ClearToEmpty();
+  _impl_.coordinate_.ClearToEmpty();
+  _impl_.covisibility_graph_.ClearToEmpty();
+  _impl_.identification_.ClearToEmpty();
+  _impl_.keyframes_.ClearToEmpty();
+  _impl_.pointcloud_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+::uint8_t* backupMapRequest::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIMapsManager.backupMapRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<1>(
+            stream, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // string mapUUID = 2;
+  if (!this->_internal_mapuuid().empty()) {
+    const std::string& _s = this->_internal_mapuuid();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIMapsManager.backupMapRequest.mapUUID");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
+  }
+
+  // bytes map_information = 3;
+  if (!this->_internal_map_information().empty()) {
+    const std::string& _s = this->_internal_map_information();
+    target = stream->WriteBytesMaybeAliased(3, _s, target);
+  }
+
+  // bytes cameraParameters = 4;
+  if (!this->_internal_cameraparameters().empty()) {
+    const std::string& _s = this->_internal_cameraparameters();
+    target = stream->WriteBytesMaybeAliased(4, _s, target);
+  }
+
+  // bytes coordinate = 5;
+  if (!this->_internal_coordinate().empty()) {
+    const std::string& _s = this->_internal_coordinate();
+    target = stream->WriteBytesMaybeAliased(5, _s, target);
+  }
+
+  // bytes covisibility_graph = 6;
+  if (!this->_internal_covisibility_graph().empty()) {
+    const std::string& _s = this->_internal_covisibility_graph();
+    target = stream->WriteBytesMaybeAliased(6, _s, target);
+  }
+
+  // bytes identification = 7;
+  if (!this->_internal_identification().empty()) {
+    const std::string& _s = this->_internal_identification();
+    target = stream->WriteBytesMaybeAliased(7, _s, target);
+  }
+
+  // bytes keyframes = 8;
+  if (!this->_internal_keyframes().empty()) {
+    const std::string& _s = this->_internal_keyframes();
+    target = stream->WriteBytesMaybeAliased(8, _s, target);
+  }
+
+  // bytes pointcloud = 9;
+  if (!this->_internal_pointcloud().empty()) {
+    const std::string& _s = this->_internal_pointcloud();
+    target = stream->WriteBytesMaybeAliased(9, _s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIMapsManager.backupMapRequest)
+  return target;
+}
+
+::size_t backupMapRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIMapsManager.backupMapRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(reinterpret_cast<const void*>(this));
+  // string mapUUID = 2;
+  if (!this->_internal_mapuuid().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_mapuuid());
+  }
+
+  // bytes map_information = 3;
+  if (!this->_internal_map_information().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_map_information());
+  }
+
+  // bytes cameraParameters = 4;
+  if (!this->_internal_cameraparameters().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_cameraparameters());
+  }
+
+  // bytes coordinate = 5;
+  if (!this->_internal_coordinate().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_coordinate());
+  }
+
+  // bytes covisibility_graph = 6;
+  if (!this->_internal_covisibility_graph().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_covisibility_graph());
+  }
+
+  // bytes identification = 7;
+  if (!this->_internal_identification().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_identification());
+  }
+
+  // bytes keyframes = 8;
+  if (!this->_internal_keyframes().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_keyframes());
+  }
+
+  // bytes pointcloud = 9;
+  if (!this->_internal_pointcloud().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_pointcloud());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+
+void backupMapRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<backupMapRequest*>(&to_msg);
+  auto& from = static_cast<const backupMapRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIMapsManager.backupMapRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_mapuuid().empty()) {
+    _this->_internal_set_mapuuid(from._internal_mapuuid());
+  }
+  if (!from._internal_map_information().empty()) {
+    _this->_internal_set_map_information(from._internal_map_information());
+  }
+  if (!from._internal_cameraparameters().empty()) {
+    _this->_internal_set_cameraparameters(from._internal_cameraparameters());
+  }
+  if (!from._internal_coordinate().empty()) {
+    _this->_internal_set_coordinate(from._internal_coordinate());
+  }
+  if (!from._internal_covisibility_graph().empty()) {
+    _this->_internal_set_covisibility_graph(from._internal_covisibility_graph());
+  }
+  if (!from._internal_identification().empty()) {
+    _this->_internal_set_identification(from._internal_identification());
+  }
+  if (!from._internal_keyframes().empty()) {
+    _this->_internal_set_keyframes(from._internal_keyframes());
+  }
+  if (!from._internal_pointcloud().empty()) {
+    _this->_internal_set_pointcloud(from._internal_pointcloud());
+  }
+  if (from._internal_grpcservercompressionformat() != 0) {
+    _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void backupMapRequest::CopyFrom(const backupMapRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIMapsManager.backupMapRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void backupMapRequest::InternalSwap(backupMapRequest* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.mapuuid_, &other->_impl_.mapuuid_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.map_information_, &other->_impl_.map_information_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.cameraparameters_, &other->_impl_.cameraparameters_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.coordinate_, &other->_impl_.coordinate_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.covisibility_graph_, &other->_impl_.covisibility_graph_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.identification_, &other->_impl_.identification_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.keyframes_, &other->_impl_.keyframes_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.pointcloud_, &other->_impl_.pointcloud_, arena);
+        swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+}
+
+::google::protobuf::Metadata backupMapRequest::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class backupMapResponse::_Internal {
+ public:
+};
+
+backupMapResponse::backupMapResponse(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIMapsManager.backupMapResponse)
+}
+inline PROTOBUF_NDEBUG_INLINE backupMapResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::grpcIMapsManager::backupMapResponse& from_msg)
+      : map_information_(arena, from.map_information_),
+        cameraparameters_(arena, from.cameraparameters_),
+        coordinate_(arena, from.coordinate_),
+        covisibility_graph_(arena, from.covisibility_graph_),
+        identification_(arena, from.identification_),
+        keyframes_(arena, from.keyframes_),
+        pointcloud_(arena, from.pointcloud_),
+        _cached_size_{0} {}
+
+backupMapResponse::backupMapResponse(
+    ::google::protobuf::Arena* arena,
+    const backupMapResponse& from)
+    : ::google::protobuf::Message(arena) {
+  backupMapResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+
+  // @@protoc_insertion_point(copy_constructor:grpcIMapsManager.backupMapResponse)
+}
+inline PROTOBUF_NDEBUG_INLINE backupMapResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : map_information_(arena),
+        cameraparameters_(arena),
+        coordinate_(arena),
+        covisibility_graph_(arena),
+        identification_(arena),
+        keyframes_(arena),
+        pointcloud_(arena),
+        _cached_size_{0} {}
+
+inline void backupMapResponse::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.xpcfgrpcreturnvalue_ = {};
+}
+backupMapResponse::~backupMapResponse() {
+  // @@protoc_insertion_point(destructor:grpcIMapsManager.backupMapResponse)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void backupMapResponse::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.map_information_.Destroy();
+  _impl_.cameraparameters_.Destroy();
+  _impl_.coordinate_.Destroy();
+  _impl_.covisibility_graph_.Destroy();
+  _impl_.identification_.Destroy();
+  _impl_.keyframes_.Destroy();
+  _impl_.pointcloud_.Destroy();
+  _impl_.~Impl_();
+}
+
+const ::google::protobuf::MessageLite::ClassData*
+backupMapResponse::GetClassData() const {
+  PROTOBUF_CONSTINIT static const ::google::protobuf::MessageLite::
+      ClassDataFull _data_ = {
+          {
+              &_table_.header,
+              nullptr,  // OnDemandRegisterArenaDtor
+              nullptr,  // IsInitialized
+              PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_._cached_size_),
+              false,
+          },
+          &backupMapResponse::MergeImpl,
+          &backupMapResponse::kDescriptorMethods,
+          &descriptor_table_grpcIMapsManagerService_2eproto,
+          nullptr,  // tracker
+      };
+  ::google::protobuf::internal::PrefetchToLocalCache(&_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_data_.tc_table);
+  return _data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 8, 0, 0, 2> backupMapResponse::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    8, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967040,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    8,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_backupMapResponse_default_instance_._instance,
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIMapsManager::backupMapResponse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // sint32 xpcfGrpcReturnValue = 8;
+    {::_pbi::TcParser::FastZ32S1,
+     {64, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.xpcfgrpcreturnvalue_)}},
+    // bytes map_information = 1;
+    {::_pbi::TcParser::FastBS1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.map_information_)}},
+    // bytes cameraParameters = 2;
+    {::_pbi::TcParser::FastBS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.cameraparameters_)}},
+    // bytes coordinate = 3;
+    {::_pbi::TcParser::FastBS1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.coordinate_)}},
+    // bytes covisibility_graph = 4;
+    {::_pbi::TcParser::FastBS1,
+     {34, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.covisibility_graph_)}},
+    // bytes identification = 5;
+    {::_pbi::TcParser::FastBS1,
+     {42, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.identification_)}},
+    // bytes keyframes = 6;
+    {::_pbi::TcParser::FastBS1,
+     {50, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.keyframes_)}},
+    // bytes pointcloud = 7;
+    {::_pbi::TcParser::FastBS1,
+     {58, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.pointcloud_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // bytes map_information = 1;
+    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.map_information_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes cameraParameters = 2;
+    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.cameraparameters_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes coordinate = 3;
+    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.coordinate_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes covisibility_graph = 4;
+    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.covisibility_graph_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes identification = 5;
+    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.identification_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes keyframes = 6;
+    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.keyframes_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes pointcloud = 7;
+    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.pointcloud_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // sint32 xpcfGrpcReturnValue = 8;
+    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.xpcfgrpcreturnvalue_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kSInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+PROTOBUF_NOINLINE void backupMapResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIMapsManager.backupMapResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.map_information_.ClearToEmpty();
+  _impl_.cameraparameters_.ClearToEmpty();
+  _impl_.coordinate_.ClearToEmpty();
+  _impl_.covisibility_graph_.ClearToEmpty();
+  _impl_.identification_.ClearToEmpty();
+  _impl_.keyframes_.ClearToEmpty();
+  _impl_.pointcloud_.ClearToEmpty();
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+::uint8_t* backupMapResponse::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIMapsManager.backupMapResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // bytes map_information = 1;
+  if (!this->_internal_map_information().empty()) {
+    const std::string& _s = this->_internal_map_information();
+    target = stream->WriteBytesMaybeAliased(1, _s, target);
+  }
+
+  // bytes cameraParameters = 2;
+  if (!this->_internal_cameraparameters().empty()) {
+    const std::string& _s = this->_internal_cameraparameters();
+    target = stream->WriteBytesMaybeAliased(2, _s, target);
+  }
+
+  // bytes coordinate = 3;
+  if (!this->_internal_coordinate().empty()) {
+    const std::string& _s = this->_internal_coordinate();
+    target = stream->WriteBytesMaybeAliased(3, _s, target);
+  }
+
+  // bytes covisibility_graph = 4;
+  if (!this->_internal_covisibility_graph().empty()) {
+    const std::string& _s = this->_internal_covisibility_graph();
+    target = stream->WriteBytesMaybeAliased(4, _s, target);
+  }
+
+  // bytes identification = 5;
+  if (!this->_internal_identification().empty()) {
+    const std::string& _s = this->_internal_identification();
+    target = stream->WriteBytesMaybeAliased(5, _s, target);
+  }
+
+  // bytes keyframes = 6;
+  if (!this->_internal_keyframes().empty()) {
+    const std::string& _s = this->_internal_keyframes();
+    target = stream->WriteBytesMaybeAliased(6, _s, target);
+  }
+
+  // bytes pointcloud = 7;
+  if (!this->_internal_pointcloud().empty()) {
+    const std::string& _s = this->_internal_pointcloud();
+    target = stream->WriteBytesMaybeAliased(7, _s, target);
+  }
+
+  // sint32 xpcfGrpcReturnValue = 8;
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+        8, this->_internal_xpcfgrpcreturnvalue(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIMapsManager.backupMapResponse)
+  return target;
+}
+
+::size_t backupMapResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIMapsManager.backupMapResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(reinterpret_cast<const void*>(this));
+  // bytes map_information = 1;
+  if (!this->_internal_map_information().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_map_information());
+  }
+
+  // bytes cameraParameters = 2;
+  if (!this->_internal_cameraparameters().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_cameraparameters());
+  }
+
+  // bytes coordinate = 3;
+  if (!this->_internal_coordinate().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_coordinate());
+  }
+
+  // bytes covisibility_graph = 4;
+  if (!this->_internal_covisibility_graph().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_covisibility_graph());
+  }
+
+  // bytes identification = 5;
+  if (!this->_internal_identification().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_identification());
+  }
+
+  // bytes keyframes = 6;
+  if (!this->_internal_keyframes().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_keyframes());
+  }
+
+  // bytes pointcloud = 7;
+  if (!this->_internal_pointcloud().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_pointcloud());
+  }
+
+  // sint32 xpcfGrpcReturnValue = 8;
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+        this->_internal_xpcfgrpcreturnvalue());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+
+void backupMapResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<backupMapResponse*>(&to_msg);
+  auto& from = static_cast<const backupMapResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIMapsManager.backupMapResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_map_information().empty()) {
+    _this->_internal_set_map_information(from._internal_map_information());
+  }
+  if (!from._internal_cameraparameters().empty()) {
+    _this->_internal_set_cameraparameters(from._internal_cameraparameters());
+  }
+  if (!from._internal_coordinate().empty()) {
+    _this->_internal_set_coordinate(from._internal_coordinate());
+  }
+  if (!from._internal_covisibility_graph().empty()) {
+    _this->_internal_set_covisibility_graph(from._internal_covisibility_graph());
+  }
+  if (!from._internal_identification().empty()) {
+    _this->_internal_set_identification(from._internal_identification());
+  }
+  if (!from._internal_keyframes().empty()) {
+    _this->_internal_set_keyframes(from._internal_keyframes());
+  }
+  if (!from._internal_pointcloud().empty()) {
+    _this->_internal_set_pointcloud(from._internal_pointcloud());
+  }
+  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+    _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void backupMapResponse::CopyFrom(const backupMapResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIMapsManager.backupMapResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void backupMapResponse::InternalSwap(backupMapResponse* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.map_information_, &other->_impl_.map_information_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.cameraparameters_, &other->_impl_.cameraparameters_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.coordinate_, &other->_impl_.coordinate_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.covisibility_graph_, &other->_impl_.covisibility_graph_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.identification_, &other->_impl_.identification_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.keyframes_, &other->_impl_.keyframes_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.pointcloud_, &other->_impl_.pointcloud_, arena);
+        swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+}
+
+::google::protobuf::Metadata backupMapResponse::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class restoreMapRequest::_Internal {
+ public:
+};
+
+restoreMapRequest::restoreMapRequest(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIMapsManager.restoreMapRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE restoreMapRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from, const ::grpcIMapsManager::restoreMapRequest& from_msg)
+      : mapuuid_(arena, from.mapuuid_),
+        map_information_(arena, from.map_information_),
+        cameraparameters_(arena, from.cameraparameters_),
+        coordinate_(arena, from.coordinate_),
+        covisibility_graph_(arena, from.covisibility_graph_),
+        identification_(arena, from.identification_),
+        keyframes_(arena, from.keyframes_),
+        pointcloud_(arena, from.pointcloud_),
+        _cached_size_{0} {}
+
+restoreMapRequest::restoreMapRequest(
+    ::google::protobuf::Arena* arena,
+    const restoreMapRequest& from)
+    : ::google::protobuf::Message(arena) {
+  restoreMapRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+
+  // @@protoc_insertion_point(copy_constructor:grpcIMapsManager.restoreMapRequest)
+}
+inline PROTOBUF_NDEBUG_INLINE restoreMapRequest::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : mapuuid_(arena),
+        map_information_(arena),
+        cameraparameters_(arena),
+        coordinate_(arena),
+        covisibility_graph_(arena),
+        identification_(arena),
+        keyframes_(arena),
+        pointcloud_(arena),
+        _cached_size_{0} {}
+
+inline void restoreMapRequest::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.grpcservercompressionformat_ = {};
+}
+restoreMapRequest::~restoreMapRequest() {
+  // @@protoc_insertion_point(destructor:grpcIMapsManager.restoreMapRequest)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void restoreMapRequest::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.mapuuid_.Destroy();
+  _impl_.map_information_.Destroy();
+  _impl_.cameraparameters_.Destroy();
+  _impl_.coordinate_.Destroy();
+  _impl_.covisibility_graph_.Destroy();
+  _impl_.identification_.Destroy();
+  _impl_.keyframes_.Destroy();
+  _impl_.pointcloud_.Destroy();
+  _impl_.~Impl_();
+}
+
+const ::google::protobuf::MessageLite::ClassData*
+restoreMapRequest::GetClassData() const {
+  PROTOBUF_CONSTINIT static const ::google::protobuf::MessageLite::
+      ClassDataFull _data_ = {
+          {
+              &_table_.header,
+              nullptr,  // OnDemandRegisterArenaDtor
+              nullptr,  // IsInitialized
+              PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_._cached_size_),
+              false,
+          },
+          &restoreMapRequest::MergeImpl,
+          &restoreMapRequest::kDescriptorMethods,
+          &descriptor_table_grpcIMapsManagerService_2eproto,
+          nullptr,  // tracker
+      };
+  ::google::protobuf::internal::PrefetchToLocalCache(&_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_data_.tc_table);
+  return _data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<4, 9, 0, 58, 2> restoreMapRequest::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    9, 120,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294966784,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    9,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_restoreMapRequest_default_instance_._instance,
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIMapsManager::restoreMapRequest>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // int32 grpcServerCompressionFormat = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(restoreMapRequest, _impl_.grpcservercompressionformat_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.grpcservercompressionformat_)}},
+    // string mapUUID = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.mapuuid_)}},
+    // bytes map_information = 3;
+    {::_pbi::TcParser::FastBS1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.map_information_)}},
+    // bytes cameraParameters = 4;
+    {::_pbi::TcParser::FastBS1,
+     {34, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.cameraparameters_)}},
+    // bytes coordinate = 5;
+    {::_pbi::TcParser::FastBS1,
+     {42, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.coordinate_)}},
+    // bytes covisibility_graph = 6;
+    {::_pbi::TcParser::FastBS1,
+     {50, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.covisibility_graph_)}},
+    // bytes identification = 7;
+    {::_pbi::TcParser::FastBS1,
+     {58, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.identification_)}},
+    // bytes keyframes = 8;
+    {::_pbi::TcParser::FastBS1,
+     {66, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.keyframes_)}},
+    // bytes pointcloud = 9;
+    {::_pbi::TcParser::FastBS1,
+     {74, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.pointcloud_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int32 grpcServerCompressionFormat = 1;
+    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.grpcservercompressionformat_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
+    // string mapUUID = 2;
+    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.mapuuid_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bytes map_information = 3;
+    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.map_information_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes cameraParameters = 4;
+    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.cameraparameters_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes coordinate = 5;
+    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.coordinate_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes covisibility_graph = 6;
+    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.covisibility_graph_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes identification = 7;
+    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.identification_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes keyframes = 8;
+    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.keyframes_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // bytes pointcloud = 9;
+    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.pointcloud_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\42\0\7\0\0\0\0\0\0\0\0\0\0\0\0\0"
+    "grpcIMapsManager.restoreMapRequest"
+    "mapUUID"
+  }},
+};
+
+PROTOBUF_NOINLINE void restoreMapRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIMapsManager.restoreMapRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.mapuuid_.ClearToEmpty();
+  _impl_.map_information_.ClearToEmpty();
+  _impl_.cameraparameters_.ClearToEmpty();
+  _impl_.coordinate_.ClearToEmpty();
+  _impl_.covisibility_graph_.ClearToEmpty();
+  _impl_.identification_.ClearToEmpty();
+  _impl_.keyframes_.ClearToEmpty();
+  _impl_.pointcloud_.ClearToEmpty();
+  _impl_.grpcservercompressionformat_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+::uint8_t* restoreMapRequest::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIMapsManager.restoreMapRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<1>(
+            stream, this->_internal_grpcservercompressionformat(), target);
+  }
+
+  // string mapUUID = 2;
+  if (!this->_internal_mapuuid().empty()) {
+    const std::string& _s = this->_internal_mapuuid();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIMapsManager.restoreMapRequest.mapUUID");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
+  }
+
+  // bytes map_information = 3;
+  if (!this->_internal_map_information().empty()) {
+    const std::string& _s = this->_internal_map_information();
+    target = stream->WriteBytesMaybeAliased(3, _s, target);
+  }
+
+  // bytes cameraParameters = 4;
+  if (!this->_internal_cameraparameters().empty()) {
+    const std::string& _s = this->_internal_cameraparameters();
+    target = stream->WriteBytesMaybeAliased(4, _s, target);
+  }
+
+  // bytes coordinate = 5;
+  if (!this->_internal_coordinate().empty()) {
+    const std::string& _s = this->_internal_coordinate();
+    target = stream->WriteBytesMaybeAliased(5, _s, target);
+  }
+
+  // bytes covisibility_graph = 6;
+  if (!this->_internal_covisibility_graph().empty()) {
+    const std::string& _s = this->_internal_covisibility_graph();
+    target = stream->WriteBytesMaybeAliased(6, _s, target);
+  }
+
+  // bytes identification = 7;
+  if (!this->_internal_identification().empty()) {
+    const std::string& _s = this->_internal_identification();
+    target = stream->WriteBytesMaybeAliased(7, _s, target);
+  }
+
+  // bytes keyframes = 8;
+  if (!this->_internal_keyframes().empty()) {
+    const std::string& _s = this->_internal_keyframes();
+    target = stream->WriteBytesMaybeAliased(8, _s, target);
+  }
+
+  // bytes pointcloud = 9;
+  if (!this->_internal_pointcloud().empty()) {
+    const std::string& _s = this->_internal_pointcloud();
+    target = stream->WriteBytesMaybeAliased(9, _s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIMapsManager.restoreMapRequest)
+  return target;
+}
+
+::size_t restoreMapRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIMapsManager.restoreMapRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(reinterpret_cast<const void*>(this));
+  // string mapUUID = 2;
+  if (!this->_internal_mapuuid().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_mapuuid());
+  }
+
+  // bytes map_information = 3;
+  if (!this->_internal_map_information().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_map_information());
+  }
+
+  // bytes cameraParameters = 4;
+  if (!this->_internal_cameraparameters().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_cameraparameters());
+  }
+
+  // bytes coordinate = 5;
+  if (!this->_internal_coordinate().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_coordinate());
+  }
+
+  // bytes covisibility_graph = 6;
+  if (!this->_internal_covisibility_graph().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_covisibility_graph());
+  }
+
+  // bytes identification = 7;
+  if (!this->_internal_identification().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_identification());
+  }
+
+  // bytes keyframes = 8;
+  if (!this->_internal_keyframes().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_keyframes());
+  }
+
+  // bytes pointcloud = 9;
+  if (!this->_internal_pointcloud().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_pointcloud());
+  }
+
+  // int32 grpcServerCompressionFormat = 1;
+  if (this->_internal_grpcservercompressionformat() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_grpcservercompressionformat());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+
+void restoreMapRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<restoreMapRequest*>(&to_msg);
+  auto& from = static_cast<const restoreMapRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIMapsManager.restoreMapRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_mapuuid().empty()) {
+    _this->_internal_set_mapuuid(from._internal_mapuuid());
+  }
+  if (!from._internal_map_information().empty()) {
+    _this->_internal_set_map_information(from._internal_map_information());
+  }
+  if (!from._internal_cameraparameters().empty()) {
+    _this->_internal_set_cameraparameters(from._internal_cameraparameters());
+  }
+  if (!from._internal_coordinate().empty()) {
+    _this->_internal_set_coordinate(from._internal_coordinate());
+  }
+  if (!from._internal_covisibility_graph().empty()) {
+    _this->_internal_set_covisibility_graph(from._internal_covisibility_graph());
+  }
+  if (!from._internal_identification().empty()) {
+    _this->_internal_set_identification(from._internal_identification());
+  }
+  if (!from._internal_keyframes().empty()) {
+    _this->_internal_set_keyframes(from._internal_keyframes());
+  }
+  if (!from._internal_pointcloud().empty()) {
+    _this->_internal_set_pointcloud(from._internal_pointcloud());
+  }
+  if (from._internal_grpcservercompressionformat() != 0) {
+    _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void restoreMapRequest::CopyFrom(const restoreMapRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIMapsManager.restoreMapRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void restoreMapRequest::InternalSwap(restoreMapRequest* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.mapuuid_, &other->_impl_.mapuuid_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.map_information_, &other->_impl_.map_information_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.cameraparameters_, &other->_impl_.cameraparameters_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.coordinate_, &other->_impl_.coordinate_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.covisibility_graph_, &other->_impl_.covisibility_graph_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.identification_, &other->_impl_.identification_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.keyframes_, &other->_impl_.keyframes_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.pointcloud_, &other->_impl_.pointcloud_, arena);
+        swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+}
+
+::google::protobuf::Metadata restoreMapRequest::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class restoreMapResponse::_Internal {
+ public:
+};
+
+restoreMapResponse::restoreMapResponse(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIMapsManager.restoreMapResponse)
+}
+restoreMapResponse::restoreMapResponse(
+    ::google::protobuf::Arena* arena, const restoreMapResponse& from)
+    : restoreMapResponse(arena) {
+  MergeFrom(from);
+}
+inline PROTOBUF_NDEBUG_INLINE restoreMapResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
+
+inline void restoreMapResponse::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.xpcfgrpcreturnvalue_ = {};
+}
+restoreMapResponse::~restoreMapResponse() {
+  // @@protoc_insertion_point(destructor:grpcIMapsManager.restoreMapResponse)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void restoreMapResponse::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+const ::google::protobuf::MessageLite::ClassData*
+restoreMapResponse::GetClassData() const {
+  PROTOBUF_CONSTINIT static const ::google::protobuf::MessageLite::
+      ClassDataFull _data_ = {
+          {
+              &_table_.header,
+              nullptr,  // OnDemandRegisterArenaDtor
+              nullptr,  // IsInitialized
+              PROTOBUF_FIELD_OFFSET(restoreMapResponse, _impl_._cached_size_),
+              false,
+          },
+          &restoreMapResponse::MergeImpl,
+          &restoreMapResponse::kDescriptorMethods,
+          &descriptor_table_grpcIMapsManagerService_2eproto,
+          nullptr,  // tracker
+      };
+  ::google::protobuf::internal::PrefetchToLocalCache(&_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(_data_.tc_table);
+  return _data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 0, 2> restoreMapResponse::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_restoreMapResponse_default_instance_._instance,
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIMapsManager::restoreMapResponse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // sint32 xpcfGrpcReturnValue = 1;
+    {::_pbi::TcParser::FastZ32S1,
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapResponse, _impl_.xpcfgrpcreturnvalue_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // sint32 xpcfGrpcReturnValue = 1;
+    {PROTOBUF_FIELD_OFFSET(restoreMapResponse, _impl_.xpcfgrpcreturnvalue_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kSInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+PROTOBUF_NOINLINE void restoreMapResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIMapsManager.restoreMapResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+::uint8_t* restoreMapResponse::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIMapsManager.restoreMapResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // sint32 xpcfGrpcReturnValue = 1;
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+        1, this->_internal_xpcfgrpcreturnvalue(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIMapsManager.restoreMapResponse)
+  return target;
+}
+
+::size_t restoreMapResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:grpcIMapsManager.restoreMapResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // sint32 xpcfGrpcReturnValue = 1;
+  if (this->_internal_xpcfgrpcreturnvalue() != 0) {
+    total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+        this->_internal_xpcfgrpcreturnvalue());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+
+void restoreMapResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<restoreMapResponse*>(&to_msg);
+  auto& from = static_cast<const restoreMapResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIMapsManager.restoreMapResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_xpcfgrpcreturnvalue() != 0) {
+    _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void restoreMapResponse::CopyFrom(const restoreMapResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIMapsManager.restoreMapResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void restoreMapResponse::InternalSwap(restoreMapResponse* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+        swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+}
+
+::google::protobuf::Metadata restoreMapResponse::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================

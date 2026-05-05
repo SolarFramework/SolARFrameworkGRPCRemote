@@ -19,7 +19,7 @@ IFrontEnd_grpcProxy::IFrontEnd_grpcProxy():xpcf::ConfigurableBase(xpcf::toMap<IF
   declareInterface<SolAR::api::service::IFrontEnd>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(29);
+  m_grpcProxyCompressionConfig.resize(31);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -883,6 +883,89 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapInfo(std::string const& a
   descriptorType = static_cast<SolAR::datastructure::DescriptorType>(respOut.descriptortype());
   dataSize = respOut.datasize();
   areImageSaved = respOut.areimagesaved();
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::backupMap(std::string const& accessToken, std::string const& mapUUID, std::vector<unsigned char>& map_information, std::vector<unsigned char>& cameraParameters, std::vector<unsigned char>& coordinate, std::vector<unsigned char>& covisibility_graph, std::vector<unsigned char>& identification, std::vector<unsigned char>& keyframes, std::vector<unsigned char>& pointcloud) const
+{
+  ::grpc::ClientContext context;
+  ::grpcIFrontEnd::backupMapRequest reqIn;
+  ::grpcIFrontEnd::backupMapResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "backupMap", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_accesstoken(accessToken);
+  reqIn.set_mapuuid(mapUUID);
+  reqIn.set_map_information(xpcf::serialize<std::vector<unsigned char>>(map_information));
+  reqIn.set_cameraparameters(xpcf::serialize<std::vector<unsigned char>>(cameraParameters));
+  reqIn.set_coordinate(xpcf::serialize<std::vector<unsigned char>>(coordinate));
+  reqIn.set_covisibility_graph(xpcf::serialize<std::vector<unsigned char>>(covisibility_graph));
+  reqIn.set_identification(xpcf::serialize<std::vector<unsigned char>>(identification));
+  reqIn.set_keyframes(xpcf::serialize<std::vector<unsigned char>>(keyframes));
+  reqIn.set_pointcloud(xpcf::serialize<std::vector<unsigned char>>(pointcloud));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::backupMap request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->backupMap(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::backupMap response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "backupMap rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIFrontEndService","backupMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  map_information = xpcf::deserialize<std::vector<unsigned char>>(respOut.map_information());
+  cameraParameters = xpcf::deserialize<std::vector<unsigned char>>(respOut.cameraparameters());
+  coordinate = xpcf::deserialize<std::vector<unsigned char>>(respOut.coordinate());
+  covisibility_graph = xpcf::deserialize<std::vector<unsigned char>>(respOut.covisibility_graph());
+  identification = xpcf::deserialize<std::vector<unsigned char>>(respOut.identification());
+  keyframes = xpcf::deserialize<std::vector<unsigned char>>(respOut.keyframes());
+  pointcloud = xpcf::deserialize<std::vector<unsigned char>>(respOut.pointcloud());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::restoreMap(std::string const& accessToken, std::string const& mapUUID, std::vector<unsigned char> const& map_information, std::vector<unsigned char> const& cameraParameters, std::vector<unsigned char> const& coordinate, std::vector<unsigned char> const& covisibility_graph, std::vector<unsigned char> const& identification, std::vector<unsigned char> const& keyframes, std::vector<unsigned char> const& pointcloud)
+{
+  ::grpc::ClientContext context;
+  ::grpcIFrontEnd::restoreMapRequest reqIn;
+  ::grpcIFrontEnd::restoreMapResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "restoreMap", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_accesstoken(accessToken);
+  reqIn.set_mapuuid(mapUUID);
+  reqIn.set_map_information(xpcf::serialize<std::vector<unsigned char>>(map_information));
+  reqIn.set_cameraparameters(xpcf::serialize<std::vector<unsigned char>>(cameraParameters));
+  reqIn.set_coordinate(xpcf::serialize<std::vector<unsigned char>>(coordinate));
+  reqIn.set_covisibility_graph(xpcf::serialize<std::vector<unsigned char>>(covisibility_graph));
+  reqIn.set_identification(xpcf::serialize<std::vector<unsigned char>>(identification));
+  reqIn.set_keyframes(xpcf::serialize<std::vector<unsigned char>>(keyframes));
+  reqIn.set_pointcloud(xpcf::serialize<std::vector<unsigned char>>(pointcloud));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::restoreMap request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->restoreMap(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::restoreMap response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "restoreMap rpc failed." << std::endl;
+    throw xpcf::RemotingException("grpcIFrontEndService","restoreMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

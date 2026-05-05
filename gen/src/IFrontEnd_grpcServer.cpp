@@ -14,7 +14,7 @@ IFrontEnd_grpcServer::IFrontEnd_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::service::IFrontEnd>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(29);
+  m_grpcServerCompressionConfig.resize(31);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -699,6 +699,75 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcServer::getMapInfo response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::backupMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::backupMapRequest* request, ::grpcIFrontEnd::backupMapResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "backupMap", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::backupMap request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string accessToken = request->accesstoken();
+  std::string mapUUID = request->mapuuid();
+  std::vector<unsigned char> map_information = xpcf::deserialize<std::vector<unsigned char>>(request->map_information());
+  std::vector<unsigned char> cameraParameters = xpcf::deserialize<std::vector<unsigned char>>(request->cameraparameters());
+  std::vector<unsigned char> coordinate = xpcf::deserialize<std::vector<unsigned char>>(request->coordinate());
+  std::vector<unsigned char> covisibility_graph = xpcf::deserialize<std::vector<unsigned char>>(request->covisibility_graph());
+  std::vector<unsigned char> identification = xpcf::deserialize<std::vector<unsigned char>>(request->identification());
+  std::vector<unsigned char> keyframes = xpcf::deserialize<std::vector<unsigned char>>(request->keyframes());
+  std::vector<unsigned char> pointcloud = xpcf::deserialize<std::vector<unsigned char>>(request->pointcloud());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->backupMap(accessToken, mapUUID, map_information, cameraParameters, coordinate, covisibility_graph, identification, keyframes, pointcloud);
+  response->set_map_information(xpcf::serialize<std::vector<unsigned char>>(map_information));
+  response->set_cameraparameters(xpcf::serialize<std::vector<unsigned char>>(cameraParameters));
+  response->set_coordinate(xpcf::serialize<std::vector<unsigned char>>(coordinate));
+  response->set_covisibility_graph(xpcf::serialize<std::vector<unsigned char>>(covisibility_graph));
+  response->set_identification(xpcf::serialize<std::vector<unsigned char>>(identification));
+  response->set_keyframes(xpcf::serialize<std::vector<unsigned char>>(keyframes));
+  response->set_pointcloud(xpcf::serialize<std::vector<unsigned char>>(pointcloud));
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::backupMap response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::restoreMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::restoreMapRequest* request, ::grpcIFrontEnd::restoreMapResponse* response)
+{
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "restoreMap", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::restoreMap request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string accessToken = request->accesstoken();
+  std::string mapUUID = request->mapuuid();
+  std::vector<unsigned char> map_information = xpcf::deserialize<std::vector<unsigned char>>(request->map_information());
+  std::vector<unsigned char> cameraParameters = xpcf::deserialize<std::vector<unsigned char>>(request->cameraparameters());
+  std::vector<unsigned char> coordinate = xpcf::deserialize<std::vector<unsigned char>>(request->coordinate());
+  std::vector<unsigned char> covisibility_graph = xpcf::deserialize<std::vector<unsigned char>>(request->covisibility_graph());
+  std::vector<unsigned char> identification = xpcf::deserialize<std::vector<unsigned char>>(request->identification());
+  std::vector<unsigned char> keyframes = xpcf::deserialize<std::vector<unsigned char>>(request->keyframes());
+  std::vector<unsigned char> pointcloud = xpcf::deserialize<std::vector<unsigned char>>(request->pointcloud());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->restoreMap(accessToken, mapUUID, map_information, cameraParameters, coordinate, covisibility_graph, identification, keyframes, pointcloud);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::restoreMap response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
