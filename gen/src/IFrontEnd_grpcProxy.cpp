@@ -887,7 +887,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapInfo(std::string const& a
 }
 
 
-SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::backupMap(std::string const& accessToken, std::string const& mapUUID, std::vector<unsigned char>& map_information, std::vector<unsigned char>& cameraParameters, std::vector<unsigned char>& coordinate, std::vector<unsigned char>& covisibility_graph, std::vector<unsigned char>& identification, std::vector<unsigned char>& keyframes, std::vector<unsigned char>& pointcloud) const
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::backupMap(std::string const& accessToken, std::string const& mapUUID, std::vector<unsigned char>& compressed_zip_data) const
 {
   ::grpc::ClientContext context;
   ::grpcIFrontEnd::backupMapRequest reqIn;
@@ -899,13 +899,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::backupMap(std::string const& ac
   #endif
   reqIn.set_accesstoken(accessToken);
   reqIn.set_mapuuid(mapUUID);
-  reqIn.set_map_information(xpcf::serialize<std::vector<unsigned char>>(map_information));
-  reqIn.set_cameraparameters(xpcf::serialize<std::vector<unsigned char>>(cameraParameters));
-  reqIn.set_coordinate(xpcf::serialize<std::vector<unsigned char>>(coordinate));
-  reqIn.set_covisibility_graph(xpcf::serialize<std::vector<unsigned char>>(covisibility_graph));
-  reqIn.set_identification(xpcf::serialize<std::vector<unsigned char>>(identification));
-  reqIn.set_keyframes(xpcf::serialize<std::vector<unsigned char>>(keyframes));
-  reqIn.set_pointcloud(xpcf::serialize<std::vector<unsigned char>>(pointcloud));
+  reqIn.set_compressed_zip_data(xpcf::serialize<std::vector<unsigned char>>(compressed_zip_data));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcProxy::backupMap request sent at " << to_simple_string(start) << std::endl;
@@ -921,18 +915,12 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::backupMap(std::string const& ac
     throw xpcf::RemotingException("grpcIFrontEndService","backupMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  map_information = xpcf::deserialize<std::vector<unsigned char>>(respOut.map_information());
-  cameraParameters = xpcf::deserialize<std::vector<unsigned char>>(respOut.cameraparameters());
-  coordinate = xpcf::deserialize<std::vector<unsigned char>>(respOut.coordinate());
-  covisibility_graph = xpcf::deserialize<std::vector<unsigned char>>(respOut.covisibility_graph());
-  identification = xpcf::deserialize<std::vector<unsigned char>>(respOut.identification());
-  keyframes = xpcf::deserialize<std::vector<unsigned char>>(respOut.keyframes());
-  pointcloud = xpcf::deserialize<std::vector<unsigned char>>(respOut.pointcloud());
+  compressed_zip_data = xpcf::deserialize<std::vector<unsigned char>>(respOut.compressed_zip_data());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
-SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::restoreMap(std::string const& accessToken, std::string const& mapUUID, std::vector<unsigned char> const& map_information, std::vector<unsigned char> const& cameraParameters, std::vector<unsigned char> const& coordinate, std::vector<unsigned char> const& covisibility_graph, std::vector<unsigned char> const& identification, std::vector<unsigned char> const& keyframes, std::vector<unsigned char> const& pointcloud)
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::restoreMap(std::string const& accessToken, std::string const& mapUUID, std::vector<unsigned char> const& compressed_zip_data)
 {
   ::grpc::ClientContext context;
   ::grpcIFrontEnd::restoreMapRequest reqIn;
@@ -944,13 +932,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::restoreMap(std::string const& a
   #endif
   reqIn.set_accesstoken(accessToken);
   reqIn.set_mapuuid(mapUUID);
-  reqIn.set_map_information(xpcf::serialize<std::vector<unsigned char>>(map_information));
-  reqIn.set_cameraparameters(xpcf::serialize<std::vector<unsigned char>>(cameraParameters));
-  reqIn.set_coordinate(xpcf::serialize<std::vector<unsigned char>>(coordinate));
-  reqIn.set_covisibility_graph(xpcf::serialize<std::vector<unsigned char>>(covisibility_graph));
-  reqIn.set_identification(xpcf::serialize<std::vector<unsigned char>>(identification));
-  reqIn.set_keyframes(xpcf::serialize<std::vector<unsigned char>>(keyframes));
-  reqIn.set_pointcloud(xpcf::serialize<std::vector<unsigned char>>(pointcloud));
+  reqIn.set_compressed_zip_data(xpcf::serialize<std::vector<unsigned char>>(compressed_zip_data));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcProxy::restoreMap request sent at " << to_simple_string(start) << std::endl;

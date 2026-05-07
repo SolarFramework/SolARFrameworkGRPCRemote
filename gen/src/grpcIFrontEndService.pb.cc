@@ -378,25 +378,7 @@ inline constexpr restoreMapRequest::Impl_::Impl_(
         mapuuid_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        map_information_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        cameraparameters_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        coordinate_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        covisibility_graph_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        identification_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        keyframes_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        pointcloud_(
+        compressed_zip_data_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         grpcservercompressionformat_{0},
@@ -1501,25 +1483,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
 
 inline constexpr backupMapResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
-      : map_information_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        cameraparameters_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        coordinate_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        covisibility_graph_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        identification_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        keyframes_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        pointcloud_(
+      : compressed_zip_data_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         xpcfgrpcreturnvalue_{0},
@@ -1547,25 +1511,7 @@ inline constexpr backupMapRequest::Impl_::Impl_(
         mapuuid_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        map_information_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        cameraparameters_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        coordinate_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        covisibility_graph_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        identification_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        keyframes_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        pointcloud_(
+        compressed_zip_data_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         grpcservercompressionformat_{0},
@@ -2168,13 +2114,7 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapRequest, _impl_.grpcservercompressionformat_),
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapRequest, _impl_.accesstoken_),
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapRequest, _impl_.mapuuid_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapRequest, _impl_.map_information_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapRequest, _impl_.cameraparameters_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapRequest, _impl_.coordinate_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapRequest, _impl_.covisibility_graph_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapRequest, _impl_.identification_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapRequest, _impl_.keyframes_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapRequest, _impl_.pointcloud_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapRequest, _impl_.compressed_zip_data_),
         ~0u,  // no _has_bits_
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapResponse, _internal_metadata_),
         ~0u,  // no _extensions_
@@ -2183,13 +2123,7 @@ const ::uint32_t
         ~0u,  // no _inlined_string_donated_
         ~0u,  // no _split_
         ~0u,  // no sizeof(Split)
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapResponse, _impl_.map_information_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapResponse, _impl_.cameraparameters_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapResponse, _impl_.coordinate_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapResponse, _impl_.covisibility_graph_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapResponse, _impl_.identification_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapResponse, _impl_.keyframes_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapResponse, _impl_.pointcloud_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapResponse, _impl_.compressed_zip_data_),
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::backupMapResponse, _impl_.xpcfgrpcreturnvalue_),
         ~0u,  // no _has_bits_
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::restoreMapRequest, _internal_metadata_),
@@ -2202,13 +2136,7 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::restoreMapRequest, _impl_.grpcservercompressionformat_),
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::restoreMapRequest, _impl_.accesstoken_),
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::restoreMapRequest, _impl_.mapuuid_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::restoreMapRequest, _impl_.map_information_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::restoreMapRequest, _impl_.cameraparameters_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::restoreMapRequest, _impl_.coordinate_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::restoreMapRequest, _impl_.covisibility_graph_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::restoreMapRequest, _impl_.identification_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::restoreMapRequest, _impl_.keyframes_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::restoreMapRequest, _impl_.pointcloud_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::restoreMapRequest, _impl_.compressed_zip_data_),
         ~0u,  // no _has_bits_
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::restoreMapResponse, _internal_metadata_),
         ~0u,  // no _extensions_
@@ -2345,15 +2273,15 @@ static const ::_pbi::MigrationSchema
         {535, -1, -1, sizeof(::grpcIFrontEnd::getMapInfoRequest)},
         {551, -1, -1, sizeof(::grpcIFrontEnd::getMapInfoResponse)},
         {565, -1, -1, sizeof(::grpcIFrontEnd::backupMapRequest)},
-        {583, -1, -1, sizeof(::grpcIFrontEnd::backupMapResponse)},
-        {599, -1, -1, sizeof(::grpcIFrontEnd::restoreMapRequest)},
-        {617, -1, -1, sizeof(::grpcIFrontEnd::restoreMapResponse)},
-        {626, -1, -1, sizeof(::grpcIFrontEnd::requestMapProcessingRequest)},
-        {639, -1, -1, sizeof(::grpcIFrontEnd::requestMapProcessingResponse)},
-        {648, -1, -1, sizeof(::grpcIFrontEnd::getMapProcessingStatusRequest)},
-        {662, -1, -1, sizeof(::grpcIFrontEnd::getMapProcessingStatusResponse)},
-        {674, -1, -1, sizeof(::grpcIFrontEnd::getMapProcessingDataRequest)},
-        {687, -1, -1, sizeof(::grpcIFrontEnd::getMapProcessingDataResponse)},
+        {577, -1, -1, sizeof(::grpcIFrontEnd::backupMapResponse)},
+        {587, -1, -1, sizeof(::grpcIFrontEnd::restoreMapRequest)},
+        {599, -1, -1, sizeof(::grpcIFrontEnd::restoreMapResponse)},
+        {608, -1, -1, sizeof(::grpcIFrontEnd::requestMapProcessingRequest)},
+        {621, -1, -1, sizeof(::grpcIFrontEnd::requestMapProcessingResponse)},
+        {630, -1, -1, sizeof(::grpcIFrontEnd::getMapProcessingStatusRequest)},
+        {644, -1, -1, sizeof(::grpcIFrontEnd::getMapProcessingStatusResponse)},
+        {656, -1, -1, sizeof(::grpcIFrontEnd::getMapProcessingDataRequest)},
+        {669, -1, -1, sizeof(::grpcIFrontEnd::getMapProcessingDataResponse)},
 };
 static const ::_pb::Message* const file_default_instances[] = {
     &::grpcIFrontEnd::_registerClientRequest_default_instance_._instance,
@@ -2556,122 +2484,112 @@ const char descriptor_table_protodef_grpcIFrontEndService_2eproto[] ABSL_ATTRIBU
     "\n\007version\030\001 \001(\t\022\034\n\024globalDescriptorType\030"
     "\002 \001(\021\022\026\n\016descriptorType\030\003 \001(\021\022\020\n\010dataSiz"
     "e\030\004 \001(\r\022\025\n\rareImageSaved\030\005 \001(\010\022\033\n\023xpcfGr"
-    "pcReturnValue\030\006 \001(\021\"\377\001\n\020backupMapRequest"
-    "\022#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\023\n"
-    "\013accessToken\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\022\027\n\017m"
-    "ap_information\030\004 \001(\014\022\030\n\020cameraParameters"
-    "\030\005 \001(\014\022\022\n\ncoordinate\030\006 \001(\014\022\032\n\022covisibili"
-    "ty_graph\030\007 \001(\014\022\026\n\016identification\030\010 \001(\014\022\021"
-    "\n\tkeyframes\030\t \001(\014\022\022\n\npointcloud\030\n \001(\014\"\322\001"
-    "\n\021backupMapResponse\022\027\n\017map_information\030\001"
-    " \001(\014\022\030\n\020cameraParameters\030\002 \001(\014\022\022\n\ncoordi"
-    "nate\030\003 \001(\014\022\032\n\022covisibility_graph\030\004 \001(\014\022\026"
-    "\n\016identification\030\005 \001(\014\022\021\n\tkeyframes\030\006 \001("
-    "\014\022\022\n\npointcloud\030\007 \001(\014\022\033\n\023xpcfGrpcReturnV"
-    "alue\030\010 \001(\021\"\200\002\n\021restoreMapRequest\022#\n\033grpc"
-    "ServerCompressionFormat\030\001 \001(\005\022\023\n\013accessT"
-    "oken\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\022\027\n\017map_infor"
-    "mation\030\004 \001(\014\022\030\n\020cameraParameters\030\005 \001(\014\022\022"
-    "\n\ncoordinate\030\006 \001(\014\022\032\n\022covisibility_graph"
-    "\030\007 \001(\014\022\026\n\016identification\030\010 \001(\014\022\021\n\tkeyfra"
-    "mes\030\t \001(\014\022\022\n\npointcloud\030\n \001(\014\"1\n\022restore"
-    "MapResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021"
-    "\"\227\001\n\033requestMapProcessingRequest\022#\n\033grpc"
-    "ServerCompressionFormat\030\001 \001(\005\022\023\n\013accessT"
-    "oken\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\022\025\n\rresultMap"
-    "UUID\030\004 \001(\t\022\026\n\016processingType\030\005 \001(\021\";\n\034re"
-    "questMapProcessingResponse\022\033\n\023xpcfGrpcRe"
-    "turnValue\030\001 \001(\021\"\252\001\n\035getMapProcessingStat"
-    "usRequest\022#\n\033grpcServerCompressionFormat"
-    "\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t\022\025\n\rresultMap"
-    "UUID\030\003 \001(\t\022\016\n\006status\030\004 \001(\021\022\026\n\016processing"
-    "Type\030\005 \001(\021\022\020\n\010progress\030\006 \001(\002\"w\n\036getMapPr"
-    "ocessingStatusResponse\022\016\n\006status\030\001 \001(\021\022\026"
-    "\n\016processingType\030\002 \001(\021\022\020\n\010progress\030\003 \001(\002"
-    "\022\033\n\023xpcfGrpcReturnValue\030\004 \001(\021\"\231\001\n\033getMap"
-    "ProcessingDataRequest\022#\n\033grpcServerCompr"
-    "essionFormat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t\022"
-    "\025\n\rresultMapUUID\030\003 \001(\t\022\022\n\npointCloud\030\004 \001"
-    "(\014\022\025\n\rkeyframePoses\030\005 \001(\014\"f\n\034getMapProce"
-    "ssingDataResponse\022\022\n\npointCloud\030\001 \001(\014\022\025\n"
-    "\rkeyframePoses\030\002 \001(\014\022\033\n\023xpcfGrpcReturnVa"
-    "lue\030\003 \001(\0212\351\027\n\024grpcIFrontEndService\022_\n\016re"
-    "gisterClient\022$.grpcIFrontEnd.registerCli"
-    "entRequest\032%.grpcIFrontEnd.registerClien"
-    "tResponse\"\000\022e\n\020unregisterClient\022&.grpcIF"
-    "rontEnd.unregisterClientRequest\032\'.grpcIF"
-    "rontEnd.unregisterClientResponse\"\000\022h\n\021ge"
-    "tAllClientsUUID\022\'.grpcIFrontEnd.getAllCl"
-    "ientsUUIDRequest\032(.grpcIFrontEnd.getAllC"
-    "lientsUUIDResponse\"\000\022\\\n\rgetDeviceInfo\022#."
-    "grpcIFrontEnd.getDeviceInfoRequest\032$.grp"
-    "cIFrontEnd.getDeviceInfoResponse\"\000\022S\n\nin"
-    "it_grpc0\022 .grpcIFrontEnd.init_grpc0Reque"
-    "st\032!.grpcIFrontEnd.init_grpc0Response\"\000\022"
-    "S\n\ninit_grpc1\022 .grpcIFrontEnd.init_grpc1"
-    "Request\032!.grpcIFrontEnd.init_grpc1Respon"
-    "se\"\000\022D\n\005start\022\033.grpcIFrontEnd.startReque"
-    "st\032\034.grpcIFrontEnd.startResponse\"\000\022A\n\004st"
-    "op\022\032.grpcIFrontEnd.stopRequest\032\033.grpcIFr"
-    "ontEnd.stopResponse\"\000\022h\n\021getProcessingMo"
-    "de\022\'.grpcIFrontEnd.getProcessingModeRequ"
-    "est\032(.grpcIFrontEnd.getProcessingModeRes"
-    "ponse\"\000\022\200\001\n\031setCameraParameters_grpc0\022/."
-    "grpcIFrontEnd.setCameraParameters_grpc0R"
-    "equest\0320.grpcIFrontEnd.setCameraParamete"
-    "rs_grpc0Response\"\000\022\200\001\n\031setCameraParamete"
-    "rs_grpc1\022/.grpcIFrontEnd.setCameraParame"
-    "ters_grpc1Request\0320.grpcIFrontEnd.setCam"
-    "eraParameters_grpc1Response\"\000\022\203\001\n\032setRec"
-    "tificationParameters\0220.grpcIFrontEnd.set"
-    "RectificationParametersRequest\0321.grpcIFr"
-    "ontEnd.setRectificationParametersRespons"
-    "e\"\000\022n\n\023getCameraParameters\022).grpcIFrontE"
-    "nd.getCameraParametersRequest\032*.grpcIFro"
-    "ntEnd.getCameraParametersResponse\"\000\022n\n\023i"
-    "mageProcessRequest\022).grpcIFrontEnd.image"
-    "ProcessRequestRequest\032*.grpcIFrontEnd.im"
-    "ageProcessRequestResponse\"\000\022t\n\025getMappin"
-    "gDataRequest\022+.grpcIFrontEnd.getMappingD"
-    "ataRequestRequest\032,.grpcIFrontEnd.getMap"
-    "pingDataRequestResponse\"\000\022\\\n\rgetClientPo"
-    "se\022#.grpcIFrontEnd.getClientPoseRequest\032"
-    "$.grpcIFrontEnd.getClientPoseResponse\"\000\022"
-    "P\n\tcreateMap\022\037.grpcIFrontEnd.createMapRe"
-    "quest\032 .grpcIFrontEnd.createMapResponse\""
-    "\000\022P\n\tdeleteMap\022\037.grpcIFrontEnd.deleteMap"
-    "Request\032 .grpcIFrontEnd.deleteMapRespons"
-    "e\"\000\022_\n\016getAllMapsUUID\022$.grpcIFrontEnd.ge"
-    "tAllMapsUUIDRequest\032%.grpcIFrontEnd.getA"
-    "llMapsUUIDResponse\"\000\022e\n\020getClientMapUUID"
-    "\022&.grpcIFrontEnd.getClientMapUUIDRequest"
-    "\032\'.grpcIFrontEnd.getClientMapUUIDRespons"
-    "e\"\000\022n\n\023getClientInfoForMap\022).grpcIFrontE"
-    "nd.getClientInfoForMapRequest\032*.grpcIFro"
-    "ntEnd.getClientInfoForMapResponse\"\000\022\\\n\rg"
-    "etMapRequest\022#.grpcIFrontEnd.getMapReque"
-    "stRequest\032$.grpcIFrontEnd.getMapRequestR"
-    "esponse\"\000\022\\\n\rsetMapRequest\022#.grpcIFrontE"
-    "nd.setMapRequestRequest\032$.grpcIFrontEnd."
-    "setMapRequestResponse\"\000\022q\n\024getPointCloud"
-    "Request\022*.grpcIFrontEnd.getPointCloudReq"
-    "uestRequest\032+.grpcIFrontEnd.getPointClou"
-    "dRequestResponse\"\000\022S\n\ngetMapInfo\022 .grpcI"
-    "FrontEnd.getMapInfoRequest\032!.grpcIFrontE"
-    "nd.getMapInfoResponse\"\000\022P\n\tbackupMap\022\037.g"
-    "rpcIFrontEnd.backupMapRequest\032 .grpcIFro"
-    "ntEnd.backupMapResponse\"\000\022S\n\nrestoreMap\022"
-    " .grpcIFrontEnd.restoreMapRequest\032!.grpc"
-    "IFrontEnd.restoreMapResponse\"\000\022q\n\024reques"
-    "tMapProcessing\022*.grpcIFrontEnd.requestMa"
-    "pProcessingRequest\032+.grpcIFrontEnd.reque"
-    "stMapProcessingResponse\"\000\022w\n\026getMapProce"
-    "ssingStatus\022,.grpcIFrontEnd.getMapProces"
-    "singStatusRequest\032-.grpcIFrontEnd.getMap"
-    "ProcessingStatusResponse\"\000\022q\n\024getMapProc"
-    "essingData\022*.grpcIFrontEnd.getMapProcess"
-    "ingDataRequest\032+.grpcIFrontEnd.getMapPro"
-    "cessingDataResponse\"\000b\006proto3"
+    "pcReturnValue\030\006 \001(\021\"z\n\020backupMapRequest\022"
+    "#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\023\n\013"
+    "accessToken\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\022\033\n\023co"
+    "mpressed_zip_data\030\004 \001(\014\"M\n\021backupMapResp"
+    "onse\022\033\n\023compressed_zip_data\030\001 \001(\014\022\033\n\023xpc"
+    "fGrpcReturnValue\030\002 \001(\021\"{\n\021restoreMapRequ"
+    "est\022#\n\033grpcServerCompressionFormat\030\001 \001(\005"
+    "\022\023\n\013accessToken\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\022\033"
+    "\n\023compressed_zip_data\030\004 \001(\014\"1\n\022restoreMa"
+    "pResponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"\227"
+    "\001\n\033requestMapProcessingRequest\022#\n\033grpcSe"
+    "rverCompressionFormat\030\001 \001(\005\022\023\n\013accessTok"
+    "en\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\022\025\n\rresultMapUU"
+    "ID\030\004 \001(\t\022\026\n\016processingType\030\005 \001(\021\";\n\034requ"
+    "estMapProcessingResponse\022\033\n\023xpcfGrpcRetu"
+    "rnValue\030\001 \001(\021\"\252\001\n\035getMapProcessingStatus"
+    "Request\022#\n\033grpcServerCompressionFormat\030\001"
+    " \001(\005\022\023\n\013accessToken\030\002 \001(\t\022\025\n\rresultMapUU"
+    "ID\030\003 \001(\t\022\016\n\006status\030\004 \001(\021\022\026\n\016processingTy"
+    "pe\030\005 \001(\021\022\020\n\010progress\030\006 \001(\002\"w\n\036getMapProc"
+    "essingStatusResponse\022\016\n\006status\030\001 \001(\021\022\026\n\016"
+    "processingType\030\002 \001(\021\022\020\n\010progress\030\003 \001(\002\022\033"
+    "\n\023xpcfGrpcReturnValue\030\004 \001(\021\"\231\001\n\033getMapPr"
+    "ocessingDataRequest\022#\n\033grpcServerCompres"
+    "sionFormat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t\022\025\n"
+    "\rresultMapUUID\030\003 \001(\t\022\022\n\npointCloud\030\004 \001(\014"
+    "\022\025\n\rkeyframePoses\030\005 \001(\014\"f\n\034getMapProcess"
+    "ingDataResponse\022\022\n\npointCloud\030\001 \001(\014\022\025\n\rk"
+    "eyframePoses\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValu"
+    "e\030\003 \001(\0212\351\027\n\024grpcIFrontEndService\022_\n\016regi"
+    "sterClient\022$.grpcIFrontEnd.registerClien"
+    "tRequest\032%.grpcIFrontEnd.registerClientR"
+    "esponse\"\000\022e\n\020unregisterClient\022&.grpcIFro"
+    "ntEnd.unregisterClientRequest\032\'.grpcIFro"
+    "ntEnd.unregisterClientResponse\"\000\022h\n\021getA"
+    "llClientsUUID\022\'.grpcIFrontEnd.getAllClie"
+    "ntsUUIDRequest\032(.grpcIFrontEnd.getAllCli"
+    "entsUUIDResponse\"\000\022\\\n\rgetDeviceInfo\022#.gr"
+    "pcIFrontEnd.getDeviceInfoRequest\032$.grpcI"
+    "FrontEnd.getDeviceInfoResponse\"\000\022S\n\ninit"
+    "_grpc0\022 .grpcIFrontEnd.init_grpc0Request"
+    "\032!.grpcIFrontEnd.init_grpc0Response\"\000\022S\n"
+    "\ninit_grpc1\022 .grpcIFrontEnd.init_grpc1Re"
+    "quest\032!.grpcIFrontEnd.init_grpc1Response"
+    "\"\000\022D\n\005start\022\033.grpcIFrontEnd.startRequest"
+    "\032\034.grpcIFrontEnd.startResponse\"\000\022A\n\004stop"
+    "\022\032.grpcIFrontEnd.stopRequest\032\033.grpcIFron"
+    "tEnd.stopResponse\"\000\022h\n\021getProcessingMode"
+    "\022\'.grpcIFrontEnd.getProcessingModeReques"
+    "t\032(.grpcIFrontEnd.getProcessingModeRespo"
+    "nse\"\000\022\200\001\n\031setCameraParameters_grpc0\022/.gr"
+    "pcIFrontEnd.setCameraParameters_grpc0Req"
+    "uest\0320.grpcIFrontEnd.setCameraParameters"
+    "_grpc0Response\"\000\022\200\001\n\031setCameraParameters"
+    "_grpc1\022/.grpcIFrontEnd.setCameraParamete"
+    "rs_grpc1Request\0320.grpcIFrontEnd.setCamer"
+    "aParameters_grpc1Response\"\000\022\203\001\n\032setRecti"
+    "ficationParameters\0220.grpcIFrontEnd.setRe"
+    "ctificationParametersRequest\0321.grpcIFron"
+    "tEnd.setRectificationParametersResponse\""
+    "\000\022n\n\023getCameraParameters\022).grpcIFrontEnd"
+    ".getCameraParametersRequest\032*.grpcIFront"
+    "End.getCameraParametersResponse\"\000\022n\n\023ima"
+    "geProcessRequest\022).grpcIFrontEnd.imagePr"
+    "ocessRequestRequest\032*.grpcIFrontEnd.imag"
+    "eProcessRequestResponse\"\000\022t\n\025getMappingD"
+    "ataRequest\022+.grpcIFrontEnd.getMappingDat"
+    "aRequestRequest\032,.grpcIFrontEnd.getMappi"
+    "ngDataRequestResponse\"\000\022\\\n\rgetClientPose"
+    "\022#.grpcIFrontEnd.getClientPoseRequest\032$."
+    "grpcIFrontEnd.getClientPoseResponse\"\000\022P\n"
+    "\tcreateMap\022\037.grpcIFrontEnd.createMapRequ"
+    "est\032 .grpcIFrontEnd.createMapResponse\"\000\022"
+    "P\n\tdeleteMap\022\037.grpcIFrontEnd.deleteMapRe"
+    "quest\032 .grpcIFrontEnd.deleteMapResponse\""
+    "\000\022_\n\016getAllMapsUUID\022$.grpcIFrontEnd.getA"
+    "llMapsUUIDRequest\032%.grpcIFrontEnd.getAll"
+    "MapsUUIDResponse\"\000\022e\n\020getClientMapUUID\022&"
+    ".grpcIFrontEnd.getClientMapUUIDRequest\032\'"
+    ".grpcIFrontEnd.getClientMapUUIDResponse\""
+    "\000\022n\n\023getClientInfoForMap\022).grpcIFrontEnd"
+    ".getClientInfoForMapRequest\032*.grpcIFront"
+    "End.getClientInfoForMapResponse\"\000\022\\\n\rget"
+    "MapRequest\022#.grpcIFrontEnd.getMapRequest"
+    "Request\032$.grpcIFrontEnd.getMapRequestRes"
+    "ponse\"\000\022\\\n\rsetMapRequest\022#.grpcIFrontEnd"
+    ".setMapRequestRequest\032$.grpcIFrontEnd.se"
+    "tMapRequestResponse\"\000\022q\n\024getPointCloudRe"
+    "quest\022*.grpcIFrontEnd.getPointCloudReque"
+    "stRequest\032+.grpcIFrontEnd.getPointCloudR"
+    "equestResponse\"\000\022S\n\ngetMapInfo\022 .grpcIFr"
+    "ontEnd.getMapInfoRequest\032!.grpcIFrontEnd"
+    ".getMapInfoResponse\"\000\022P\n\tbackupMap\022\037.grp"
+    "cIFrontEnd.backupMapRequest\032 .grpcIFront"
+    "End.backupMapResponse\"\000\022S\n\nrestoreMap\022 ."
+    "grpcIFrontEnd.restoreMapRequest\032!.grpcIF"
+    "rontEnd.restoreMapResponse\"\000\022q\n\024requestM"
+    "apProcessing\022*.grpcIFrontEnd.requestMapP"
+    "rocessingRequest\032+.grpcIFrontEnd.request"
+    "MapProcessingResponse\"\000\022w\n\026getMapProcess"
+    "ingStatus\022,.grpcIFrontEnd.getMapProcessi"
+    "ngStatusRequest\032-.grpcIFrontEnd.getMapPr"
+    "ocessingStatusResponse\"\000\022q\n\024getMapProces"
+    "singData\022*.grpcIFrontEnd.getMapProcessin"
+    "gDataRequest\032+.grpcIFrontEnd.getMapProce"
+    "ssingDataResponse\"\000b\006proto3"
 };
 static const ::_pbi::DescriptorTable* const descriptor_table_grpcIFrontEndService_2eproto_deps[1] =
     {
@@ -2681,7 +2599,7 @@ static ::absl::once_flag descriptor_table_grpcIFrontEndService_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_grpcIFrontEndService_2eproto = {
     false,
     false,
-    10109,
+    9707,
     descriptor_table_protodef_grpcIFrontEndService_2eproto,
     "grpcIFrontEndService.proto",
     &descriptor_table_grpcIFrontEndService_2eproto_once,
@@ -15253,13 +15171,7 @@ inline PROTOBUF_NDEBUG_INLINE backupMapRequest::Impl_::Impl_(
     const Impl_& from, const ::grpcIFrontEnd::backupMapRequest& from_msg)
       : accesstoken_(arena, from.accesstoken_),
         mapuuid_(arena, from.mapuuid_),
-        map_information_(arena, from.map_information_),
-        cameraparameters_(arena, from.cameraparameters_),
-        coordinate_(arena, from.coordinate_),
-        covisibility_graph_(arena, from.covisibility_graph_),
-        identification_(arena, from.identification_),
-        keyframes_(arena, from.keyframes_),
-        pointcloud_(arena, from.pointcloud_),
+        compressed_zip_data_(arena, from.compressed_zip_data_),
         _cached_size_{0} {}
 
 backupMapRequest::backupMapRequest(
@@ -15280,13 +15192,7 @@ inline PROTOBUF_NDEBUG_INLINE backupMapRequest::Impl_::Impl_(
     ::google::protobuf::Arena* arena)
       : accesstoken_(arena),
         mapuuid_(arena),
-        map_information_(arena),
-        cameraparameters_(arena),
-        coordinate_(arena),
-        covisibility_graph_(arena),
-        identification_(arena),
-        keyframes_(arena),
-        pointcloud_(arena),
+        compressed_zip_data_(arena),
         _cached_size_{0} {}
 
 inline void backupMapRequest::SharedCtor(::_pb::Arena* arena) {
@@ -15302,13 +15208,7 @@ inline void backupMapRequest::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
   _impl_.accesstoken_.Destroy();
   _impl_.mapuuid_.Destroy();
-  _impl_.map_information_.Destroy();
-  _impl_.cameraparameters_.Destroy();
-  _impl_.coordinate_.Destroy();
-  _impl_.covisibility_graph_.Destroy();
-  _impl_.identification_.Destroy();
-  _impl_.keyframes_.Destroy();
-  _impl_.pointcloud_.Destroy();
+  _impl_.compressed_zip_data_.Destroy();
   _impl_.~Impl_();
 }
 
@@ -15333,15 +15233,15 @@ backupMapRequest::GetClassData() const {
   return _data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<4, 10, 0, 65, 2> backupMapRequest::_table_ = {
+const ::_pbi::TcParseTable<2, 4, 0, 57, 2> backupMapRequest::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
-    10, 120,  // max_field_number, fast_idx_mask
+    4, 24,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294966272,  // skipmap
+    4294967280,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    10,  // num_field_entries
+    4,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     &_backupMapRequest_default_instance_._instance,
@@ -15351,7 +15251,9 @@ const ::_pbi::TcParseTable<4, 10, 0, 65, 2> backupMapRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::grpcIFrontEnd::backupMapRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    {::_pbi::TcParser::MiniParse, {}},
+    // bytes compressed_zip_data = 4;
+    {::_pbi::TcParser::FastBS1,
+     {34, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.compressed_zip_data_)}},
     // int32 grpcServerCompressionFormat = 1;
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(backupMapRequest, _impl_.grpcservercompressionformat_), 63>(),
      {8, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.grpcservercompressionformat_)}},
@@ -15361,32 +15263,6 @@ const ::_pbi::TcParseTable<4, 10, 0, 65, 2> backupMapRequest::_table_ = {
     // string mapUUID = 3;
     {::_pbi::TcParser::FastUS1,
      {26, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.mapuuid_)}},
-    // bytes map_information = 4;
-    {::_pbi::TcParser::FastBS1,
-     {34, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.map_information_)}},
-    // bytes cameraParameters = 5;
-    {::_pbi::TcParser::FastBS1,
-     {42, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.cameraparameters_)}},
-    // bytes coordinate = 6;
-    {::_pbi::TcParser::FastBS1,
-     {50, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.coordinate_)}},
-    // bytes covisibility_graph = 7;
-    {::_pbi::TcParser::FastBS1,
-     {58, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.covisibility_graph_)}},
-    // bytes identification = 8;
-    {::_pbi::TcParser::FastBS1,
-     {66, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.identification_)}},
-    // bytes keyframes = 9;
-    {::_pbi::TcParser::FastBS1,
-     {74, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.keyframes_)}},
-    // bytes pointcloud = 10;
-    {::_pbi::TcParser::FastBS1,
-     {82, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.pointcloud_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
   }}, {{
@@ -15399,31 +15275,13 @@ const ::_pbi::TcParseTable<4, 10, 0, 65, 2> backupMapRequest::_table_ = {
     // string mapUUID = 3;
     {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.mapuuid_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // bytes map_information = 4;
-    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.map_information_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes cameraParameters = 5;
-    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.cameraparameters_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes coordinate = 6;
-    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.coordinate_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes covisibility_graph = 7;
-    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.covisibility_graph_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes identification = 8;
-    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.identification_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes keyframes = 9;
-    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.keyframes_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes pointcloud = 10;
-    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.pointcloud_), 0, 0,
+    // bytes compressed_zip_data = 4;
+    {PROTOBUF_FIELD_OFFSET(backupMapRequest, _impl_.compressed_zip_data_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\36\0\13\7\0\0\0\0\0\0\0\0\0\0\0\0"
+    "\36\0\13\7\0\0\0\0"
     "grpcIFrontEnd.backupMapRequest"
     "accessToken"
     "mapUUID"
@@ -15439,13 +15297,7 @@ PROTOBUF_NOINLINE void backupMapRequest::Clear() {
 
   _impl_.accesstoken_.ClearToEmpty();
   _impl_.mapuuid_.ClearToEmpty();
-  _impl_.map_information_.ClearToEmpty();
-  _impl_.cameraparameters_.ClearToEmpty();
-  _impl_.coordinate_.ClearToEmpty();
-  _impl_.covisibility_graph_.ClearToEmpty();
-  _impl_.identification_.ClearToEmpty();
-  _impl_.keyframes_.ClearToEmpty();
-  _impl_.pointcloud_.ClearToEmpty();
+  _impl_.compressed_zip_data_.ClearToEmpty();
   _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -15480,46 +15332,10 @@ PROTOBUF_NOINLINE void backupMapRequest::Clear() {
     target = stream->WriteStringMaybeAliased(3, _s, target);
   }
 
-  // bytes map_information = 4;
-  if (!this->_internal_map_information().empty()) {
-    const std::string& _s = this->_internal_map_information();
+  // bytes compressed_zip_data = 4;
+  if (!this->_internal_compressed_zip_data().empty()) {
+    const std::string& _s = this->_internal_compressed_zip_data();
     target = stream->WriteBytesMaybeAliased(4, _s, target);
-  }
-
-  // bytes cameraParameters = 5;
-  if (!this->_internal_cameraparameters().empty()) {
-    const std::string& _s = this->_internal_cameraparameters();
-    target = stream->WriteBytesMaybeAliased(5, _s, target);
-  }
-
-  // bytes coordinate = 6;
-  if (!this->_internal_coordinate().empty()) {
-    const std::string& _s = this->_internal_coordinate();
-    target = stream->WriteBytesMaybeAliased(6, _s, target);
-  }
-
-  // bytes covisibility_graph = 7;
-  if (!this->_internal_covisibility_graph().empty()) {
-    const std::string& _s = this->_internal_covisibility_graph();
-    target = stream->WriteBytesMaybeAliased(7, _s, target);
-  }
-
-  // bytes identification = 8;
-  if (!this->_internal_identification().empty()) {
-    const std::string& _s = this->_internal_identification();
-    target = stream->WriteBytesMaybeAliased(8, _s, target);
-  }
-
-  // bytes keyframes = 9;
-  if (!this->_internal_keyframes().empty()) {
-    const std::string& _s = this->_internal_keyframes();
-    target = stream->WriteBytesMaybeAliased(9, _s, target);
-  }
-
-  // bytes pointcloud = 10;
-  if (!this->_internal_pointcloud().empty()) {
-    const std::string& _s = this->_internal_pointcloud();
-    target = stream->WriteBytesMaybeAliased(10, _s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -15552,46 +15368,10 @@ PROTOBUF_NOINLINE void backupMapRequest::Clear() {
                                     this->_internal_mapuuid());
   }
 
-  // bytes map_information = 4;
-  if (!this->_internal_map_information().empty()) {
+  // bytes compressed_zip_data = 4;
+  if (!this->_internal_compressed_zip_data().empty()) {
     total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_map_information());
-  }
-
-  // bytes cameraParameters = 5;
-  if (!this->_internal_cameraparameters().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_cameraparameters());
-  }
-
-  // bytes coordinate = 6;
-  if (!this->_internal_coordinate().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_coordinate());
-  }
-
-  // bytes covisibility_graph = 7;
-  if (!this->_internal_covisibility_graph().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_covisibility_graph());
-  }
-
-  // bytes identification = 8;
-  if (!this->_internal_identification().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_identification());
-  }
-
-  // bytes keyframes = 9;
-  if (!this->_internal_keyframes().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_keyframes());
-  }
-
-  // bytes pointcloud = 10;
-  if (!this->_internal_pointcloud().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_pointcloud());
+                                    this->_internal_compressed_zip_data());
   }
 
   // int32 grpcServerCompressionFormat = 1;
@@ -15618,26 +15398,8 @@ void backupMapRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const 
   if (!from._internal_mapuuid().empty()) {
     _this->_internal_set_mapuuid(from._internal_mapuuid());
   }
-  if (!from._internal_map_information().empty()) {
-    _this->_internal_set_map_information(from._internal_map_information());
-  }
-  if (!from._internal_cameraparameters().empty()) {
-    _this->_internal_set_cameraparameters(from._internal_cameraparameters());
-  }
-  if (!from._internal_coordinate().empty()) {
-    _this->_internal_set_coordinate(from._internal_coordinate());
-  }
-  if (!from._internal_covisibility_graph().empty()) {
-    _this->_internal_set_covisibility_graph(from._internal_covisibility_graph());
-  }
-  if (!from._internal_identification().empty()) {
-    _this->_internal_set_identification(from._internal_identification());
-  }
-  if (!from._internal_keyframes().empty()) {
-    _this->_internal_set_keyframes(from._internal_keyframes());
-  }
-  if (!from._internal_pointcloud().empty()) {
-    _this->_internal_set_pointcloud(from._internal_pointcloud());
+  if (!from._internal_compressed_zip_data().empty()) {
+    _this->_internal_set_compressed_zip_data(from._internal_compressed_zip_data());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
     _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
@@ -15660,13 +15422,7 @@ void backupMapRequest::InternalSwap(backupMapRequest* PROTOBUF_RESTRICT other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.accesstoken_, &other->_impl_.accesstoken_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.mapuuid_, &other->_impl_.mapuuid_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.map_information_, &other->_impl_.map_information_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.cameraparameters_, &other->_impl_.cameraparameters_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.coordinate_, &other->_impl_.coordinate_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.covisibility_graph_, &other->_impl_.covisibility_graph_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.identification_, &other->_impl_.identification_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.keyframes_, &other->_impl_.keyframes_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.pointcloud_, &other->_impl_.pointcloud_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.compressed_zip_data_, &other->_impl_.compressed_zip_data_, arena);
         swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 
@@ -15687,13 +15443,7 @@ backupMapResponse::backupMapResponse(::google::protobuf::Arena* arena)
 inline PROTOBUF_NDEBUG_INLINE backupMapResponse::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from, const ::grpcIFrontEnd::backupMapResponse& from_msg)
-      : map_information_(arena, from.map_information_),
-        cameraparameters_(arena, from.cameraparameters_),
-        coordinate_(arena, from.coordinate_),
-        covisibility_graph_(arena, from.covisibility_graph_),
-        identification_(arena, from.identification_),
-        keyframes_(arena, from.keyframes_),
-        pointcloud_(arena, from.pointcloud_),
+      : compressed_zip_data_(arena, from.compressed_zip_data_),
         _cached_size_{0} {}
 
 backupMapResponse::backupMapResponse(
@@ -15712,13 +15462,7 @@ backupMapResponse::backupMapResponse(
 inline PROTOBUF_NDEBUG_INLINE backupMapResponse::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
-      : map_information_(arena),
-        cameraparameters_(arena),
-        coordinate_(arena),
-        covisibility_graph_(arena),
-        identification_(arena),
-        keyframes_(arena),
-        pointcloud_(arena),
+      : compressed_zip_data_(arena),
         _cached_size_{0} {}
 
 inline void backupMapResponse::SharedCtor(::_pb::Arena* arena) {
@@ -15732,13 +15476,7 @@ backupMapResponse::~backupMapResponse() {
 }
 inline void backupMapResponse::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
-  _impl_.map_information_.Destroy();
-  _impl_.cameraparameters_.Destroy();
-  _impl_.coordinate_.Destroy();
-  _impl_.covisibility_graph_.Destroy();
-  _impl_.identification_.Destroy();
-  _impl_.keyframes_.Destroy();
-  _impl_.pointcloud_.Destroy();
+  _impl_.compressed_zip_data_.Destroy();
   _impl_.~Impl_();
 }
 
@@ -15763,15 +15501,15 @@ backupMapResponse::GetClassData() const {
   return _data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 8, 0, 0, 2> backupMapResponse::_table_ = {
+const ::_pbi::TcParseTable<1, 2, 0, 0, 2> backupMapResponse::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
-    8, 56,  // max_field_number, fast_idx_mask
+    2, 8,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967040,  // skipmap
+    4294967292,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    8,  // num_field_entries
+    2,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     &_backupMapResponse_default_instance_._instance,
@@ -15781,55 +15519,19 @@ const ::_pbi::TcParseTable<3, 8, 0, 0, 2> backupMapResponse::_table_ = {
     ::_pbi::TcParser::GetTable<::grpcIFrontEnd::backupMapResponse>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // sint32 xpcfGrpcReturnValue = 8;
+    // sint32 xpcfGrpcReturnValue = 2;
     {::_pbi::TcParser::FastZ32S1,
-     {64, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.xpcfgrpcreturnvalue_)}},
-    // bytes map_information = 1;
+     {16, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.xpcfgrpcreturnvalue_)}},
+    // bytes compressed_zip_data = 1;
     {::_pbi::TcParser::FastBS1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.map_information_)}},
-    // bytes cameraParameters = 2;
-    {::_pbi::TcParser::FastBS1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.cameraparameters_)}},
-    // bytes coordinate = 3;
-    {::_pbi::TcParser::FastBS1,
-     {26, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.coordinate_)}},
-    // bytes covisibility_graph = 4;
-    {::_pbi::TcParser::FastBS1,
-     {34, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.covisibility_graph_)}},
-    // bytes identification = 5;
-    {::_pbi::TcParser::FastBS1,
-     {42, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.identification_)}},
-    // bytes keyframes = 6;
-    {::_pbi::TcParser::FastBS1,
-     {50, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.keyframes_)}},
-    // bytes pointcloud = 7;
-    {::_pbi::TcParser::FastBS1,
-     {58, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.pointcloud_)}},
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.compressed_zip_data_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // bytes map_information = 1;
-    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.map_information_), 0, 0,
+    // bytes compressed_zip_data = 1;
+    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.compressed_zip_data_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes cameraParameters = 2;
-    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.cameraparameters_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes coordinate = 3;
-    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.coordinate_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes covisibility_graph = 4;
-    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.covisibility_graph_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes identification = 5;
-    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.identification_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes keyframes = 6;
-    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.keyframes_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes pointcloud = 7;
-    {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.pointcloud_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // sint32 xpcfGrpcReturnValue = 8;
+    // sint32 xpcfGrpcReturnValue = 2;
     {PROTOBUF_FIELD_OFFSET(backupMapResponse, _impl_.xpcfgrpcreturnvalue_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kSInt32)},
   }},
@@ -15845,13 +15547,7 @@ PROTOBUF_NOINLINE void backupMapResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.map_information_.ClearToEmpty();
-  _impl_.cameraparameters_.ClearToEmpty();
-  _impl_.coordinate_.ClearToEmpty();
-  _impl_.covisibility_graph_.ClearToEmpty();
-  _impl_.identification_.ClearToEmpty();
-  _impl_.keyframes_.ClearToEmpty();
-  _impl_.pointcloud_.ClearToEmpty();
+  _impl_.compressed_zip_data_.ClearToEmpty();
   _impl_.xpcfgrpcreturnvalue_ = 0;
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -15863,53 +15559,17 @@ PROTOBUF_NOINLINE void backupMapResponse::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // bytes map_information = 1;
-  if (!this->_internal_map_information().empty()) {
-    const std::string& _s = this->_internal_map_information();
+  // bytes compressed_zip_data = 1;
+  if (!this->_internal_compressed_zip_data().empty()) {
+    const std::string& _s = this->_internal_compressed_zip_data();
     target = stream->WriteBytesMaybeAliased(1, _s, target);
   }
 
-  // bytes cameraParameters = 2;
-  if (!this->_internal_cameraparameters().empty()) {
-    const std::string& _s = this->_internal_cameraparameters();
-    target = stream->WriteBytesMaybeAliased(2, _s, target);
-  }
-
-  // bytes coordinate = 3;
-  if (!this->_internal_coordinate().empty()) {
-    const std::string& _s = this->_internal_coordinate();
-    target = stream->WriteBytesMaybeAliased(3, _s, target);
-  }
-
-  // bytes covisibility_graph = 4;
-  if (!this->_internal_covisibility_graph().empty()) {
-    const std::string& _s = this->_internal_covisibility_graph();
-    target = stream->WriteBytesMaybeAliased(4, _s, target);
-  }
-
-  // bytes identification = 5;
-  if (!this->_internal_identification().empty()) {
-    const std::string& _s = this->_internal_identification();
-    target = stream->WriteBytesMaybeAliased(5, _s, target);
-  }
-
-  // bytes keyframes = 6;
-  if (!this->_internal_keyframes().empty()) {
-    const std::string& _s = this->_internal_keyframes();
-    target = stream->WriteBytesMaybeAliased(6, _s, target);
-  }
-
-  // bytes pointcloud = 7;
-  if (!this->_internal_pointcloud().empty()) {
-    const std::string& _s = this->_internal_pointcloud();
-    target = stream->WriteBytesMaybeAliased(7, _s, target);
-  }
-
-  // sint32 xpcfGrpcReturnValue = 8;
+  // sint32 xpcfGrpcReturnValue = 2;
   if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
-        8, this->_internal_xpcfgrpcreturnvalue(), target);
+        2, this->_internal_xpcfgrpcreturnvalue(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -15930,49 +15590,13 @@ PROTOBUF_NOINLINE void backupMapResponse::Clear() {
   (void) cached_has_bits;
 
   ::_pbi::Prefetch5LinesFrom7Lines(reinterpret_cast<const void*>(this));
-  // bytes map_information = 1;
-  if (!this->_internal_map_information().empty()) {
+  // bytes compressed_zip_data = 1;
+  if (!this->_internal_compressed_zip_data().empty()) {
     total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_map_information());
+                                    this->_internal_compressed_zip_data());
   }
 
-  // bytes cameraParameters = 2;
-  if (!this->_internal_cameraparameters().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_cameraparameters());
-  }
-
-  // bytes coordinate = 3;
-  if (!this->_internal_coordinate().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_coordinate());
-  }
-
-  // bytes covisibility_graph = 4;
-  if (!this->_internal_covisibility_graph().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_covisibility_graph());
-  }
-
-  // bytes identification = 5;
-  if (!this->_internal_identification().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_identification());
-  }
-
-  // bytes keyframes = 6;
-  if (!this->_internal_keyframes().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_keyframes());
-  }
-
-  // bytes pointcloud = 7;
-  if (!this->_internal_pointcloud().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_pointcloud());
-  }
-
-  // sint32 xpcfGrpcReturnValue = 8;
+  // sint32 xpcfGrpcReturnValue = 2;
   if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
         this->_internal_xpcfgrpcreturnvalue());
@@ -15990,26 +15614,8 @@ void backupMapResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_map_information().empty()) {
-    _this->_internal_set_map_information(from._internal_map_information());
-  }
-  if (!from._internal_cameraparameters().empty()) {
-    _this->_internal_set_cameraparameters(from._internal_cameraparameters());
-  }
-  if (!from._internal_coordinate().empty()) {
-    _this->_internal_set_coordinate(from._internal_coordinate());
-  }
-  if (!from._internal_covisibility_graph().empty()) {
-    _this->_internal_set_covisibility_graph(from._internal_covisibility_graph());
-  }
-  if (!from._internal_identification().empty()) {
-    _this->_internal_set_identification(from._internal_identification());
-  }
-  if (!from._internal_keyframes().empty()) {
-    _this->_internal_set_keyframes(from._internal_keyframes());
-  }
-  if (!from._internal_pointcloud().empty()) {
-    _this->_internal_set_pointcloud(from._internal_pointcloud());
+  if (!from._internal_compressed_zip_data().empty()) {
+    _this->_internal_set_compressed_zip_data(from._internal_compressed_zip_data());
   }
   if (from._internal_xpcfgrpcreturnvalue() != 0) {
     _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
@@ -16030,13 +15636,7 @@ void backupMapResponse::InternalSwap(backupMapResponse* PROTOBUF_RESTRICT other)
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.map_information_, &other->_impl_.map_information_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.cameraparameters_, &other->_impl_.cameraparameters_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.coordinate_, &other->_impl_.coordinate_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.covisibility_graph_, &other->_impl_.covisibility_graph_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.identification_, &other->_impl_.identification_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.keyframes_, &other->_impl_.keyframes_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.pointcloud_, &other->_impl_.pointcloud_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.compressed_zip_data_, &other->_impl_.compressed_zip_data_, arena);
         swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
 }
 
@@ -16059,13 +15659,7 @@ inline PROTOBUF_NDEBUG_INLINE restoreMapRequest::Impl_::Impl_(
     const Impl_& from, const ::grpcIFrontEnd::restoreMapRequest& from_msg)
       : accesstoken_(arena, from.accesstoken_),
         mapuuid_(arena, from.mapuuid_),
-        map_information_(arena, from.map_information_),
-        cameraparameters_(arena, from.cameraparameters_),
-        coordinate_(arena, from.coordinate_),
-        covisibility_graph_(arena, from.covisibility_graph_),
-        identification_(arena, from.identification_),
-        keyframes_(arena, from.keyframes_),
-        pointcloud_(arena, from.pointcloud_),
+        compressed_zip_data_(arena, from.compressed_zip_data_),
         _cached_size_{0} {}
 
 restoreMapRequest::restoreMapRequest(
@@ -16086,13 +15680,7 @@ inline PROTOBUF_NDEBUG_INLINE restoreMapRequest::Impl_::Impl_(
     ::google::protobuf::Arena* arena)
       : accesstoken_(arena),
         mapuuid_(arena),
-        map_information_(arena),
-        cameraparameters_(arena),
-        coordinate_(arena),
-        covisibility_graph_(arena),
-        identification_(arena),
-        keyframes_(arena),
-        pointcloud_(arena),
+        compressed_zip_data_(arena),
         _cached_size_{0} {}
 
 inline void restoreMapRequest::SharedCtor(::_pb::Arena* arena) {
@@ -16108,13 +15696,7 @@ inline void restoreMapRequest::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
   _impl_.accesstoken_.Destroy();
   _impl_.mapuuid_.Destroy();
-  _impl_.map_information_.Destroy();
-  _impl_.cameraparameters_.Destroy();
-  _impl_.coordinate_.Destroy();
-  _impl_.covisibility_graph_.Destroy();
-  _impl_.identification_.Destroy();
-  _impl_.keyframes_.Destroy();
-  _impl_.pointcloud_.Destroy();
+  _impl_.compressed_zip_data_.Destroy();
   _impl_.~Impl_();
 }
 
@@ -16139,15 +15721,15 @@ restoreMapRequest::GetClassData() const {
   return _data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<4, 10, 0, 66, 2> restoreMapRequest::_table_ = {
+const ::_pbi::TcParseTable<2, 4, 0, 58, 2> restoreMapRequest::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
-    10, 120,  // max_field_number, fast_idx_mask
+    4, 24,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294966272,  // skipmap
+    4294967280,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    10,  // num_field_entries
+    4,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     &_restoreMapRequest_default_instance_._instance,
@@ -16157,7 +15739,9 @@ const ::_pbi::TcParseTable<4, 10, 0, 66, 2> restoreMapRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::grpcIFrontEnd::restoreMapRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    {::_pbi::TcParser::MiniParse, {}},
+    // bytes compressed_zip_data = 4;
+    {::_pbi::TcParser::FastBS1,
+     {34, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.compressed_zip_data_)}},
     // int32 grpcServerCompressionFormat = 1;
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(restoreMapRequest, _impl_.grpcservercompressionformat_), 63>(),
      {8, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.grpcservercompressionformat_)}},
@@ -16167,32 +15751,6 @@ const ::_pbi::TcParseTable<4, 10, 0, 66, 2> restoreMapRequest::_table_ = {
     // string mapUUID = 3;
     {::_pbi::TcParser::FastUS1,
      {26, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.mapuuid_)}},
-    // bytes map_information = 4;
-    {::_pbi::TcParser::FastBS1,
-     {34, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.map_information_)}},
-    // bytes cameraParameters = 5;
-    {::_pbi::TcParser::FastBS1,
-     {42, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.cameraparameters_)}},
-    // bytes coordinate = 6;
-    {::_pbi::TcParser::FastBS1,
-     {50, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.coordinate_)}},
-    // bytes covisibility_graph = 7;
-    {::_pbi::TcParser::FastBS1,
-     {58, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.covisibility_graph_)}},
-    // bytes identification = 8;
-    {::_pbi::TcParser::FastBS1,
-     {66, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.identification_)}},
-    // bytes keyframes = 9;
-    {::_pbi::TcParser::FastBS1,
-     {74, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.keyframes_)}},
-    // bytes pointcloud = 10;
-    {::_pbi::TcParser::FastBS1,
-     {82, 63, 0, PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.pointcloud_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
   }}, {{
@@ -16205,31 +15763,13 @@ const ::_pbi::TcParseTable<4, 10, 0, 66, 2> restoreMapRequest::_table_ = {
     // string mapUUID = 3;
     {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.mapuuid_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // bytes map_information = 4;
-    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.map_information_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes cameraParameters = 5;
-    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.cameraparameters_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes coordinate = 6;
-    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.coordinate_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes covisibility_graph = 7;
-    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.covisibility_graph_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes identification = 8;
-    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.identification_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes keyframes = 9;
-    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.keyframes_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
-    // bytes pointcloud = 10;
-    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.pointcloud_), 0, 0,
+    // bytes compressed_zip_data = 4;
+    {PROTOBUF_FIELD_OFFSET(restoreMapRequest, _impl_.compressed_zip_data_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\37\0\13\7\0\0\0\0\0\0\0\0\0\0\0\0"
+    "\37\0\13\7\0\0\0\0"
     "grpcIFrontEnd.restoreMapRequest"
     "accessToken"
     "mapUUID"
@@ -16245,13 +15785,7 @@ PROTOBUF_NOINLINE void restoreMapRequest::Clear() {
 
   _impl_.accesstoken_.ClearToEmpty();
   _impl_.mapuuid_.ClearToEmpty();
-  _impl_.map_information_.ClearToEmpty();
-  _impl_.cameraparameters_.ClearToEmpty();
-  _impl_.coordinate_.ClearToEmpty();
-  _impl_.covisibility_graph_.ClearToEmpty();
-  _impl_.identification_.ClearToEmpty();
-  _impl_.keyframes_.ClearToEmpty();
-  _impl_.pointcloud_.ClearToEmpty();
+  _impl_.compressed_zip_data_.ClearToEmpty();
   _impl_.grpcservercompressionformat_ = 0;
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -16286,46 +15820,10 @@ PROTOBUF_NOINLINE void restoreMapRequest::Clear() {
     target = stream->WriteStringMaybeAliased(3, _s, target);
   }
 
-  // bytes map_information = 4;
-  if (!this->_internal_map_information().empty()) {
-    const std::string& _s = this->_internal_map_information();
+  // bytes compressed_zip_data = 4;
+  if (!this->_internal_compressed_zip_data().empty()) {
+    const std::string& _s = this->_internal_compressed_zip_data();
     target = stream->WriteBytesMaybeAliased(4, _s, target);
-  }
-
-  // bytes cameraParameters = 5;
-  if (!this->_internal_cameraparameters().empty()) {
-    const std::string& _s = this->_internal_cameraparameters();
-    target = stream->WriteBytesMaybeAliased(5, _s, target);
-  }
-
-  // bytes coordinate = 6;
-  if (!this->_internal_coordinate().empty()) {
-    const std::string& _s = this->_internal_coordinate();
-    target = stream->WriteBytesMaybeAliased(6, _s, target);
-  }
-
-  // bytes covisibility_graph = 7;
-  if (!this->_internal_covisibility_graph().empty()) {
-    const std::string& _s = this->_internal_covisibility_graph();
-    target = stream->WriteBytesMaybeAliased(7, _s, target);
-  }
-
-  // bytes identification = 8;
-  if (!this->_internal_identification().empty()) {
-    const std::string& _s = this->_internal_identification();
-    target = stream->WriteBytesMaybeAliased(8, _s, target);
-  }
-
-  // bytes keyframes = 9;
-  if (!this->_internal_keyframes().empty()) {
-    const std::string& _s = this->_internal_keyframes();
-    target = stream->WriteBytesMaybeAliased(9, _s, target);
-  }
-
-  // bytes pointcloud = 10;
-  if (!this->_internal_pointcloud().empty()) {
-    const std::string& _s = this->_internal_pointcloud();
-    target = stream->WriteBytesMaybeAliased(10, _s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -16358,46 +15856,10 @@ PROTOBUF_NOINLINE void restoreMapRequest::Clear() {
                                     this->_internal_mapuuid());
   }
 
-  // bytes map_information = 4;
-  if (!this->_internal_map_information().empty()) {
+  // bytes compressed_zip_data = 4;
+  if (!this->_internal_compressed_zip_data().empty()) {
     total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_map_information());
-  }
-
-  // bytes cameraParameters = 5;
-  if (!this->_internal_cameraparameters().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_cameraparameters());
-  }
-
-  // bytes coordinate = 6;
-  if (!this->_internal_coordinate().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_coordinate());
-  }
-
-  // bytes covisibility_graph = 7;
-  if (!this->_internal_covisibility_graph().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_covisibility_graph());
-  }
-
-  // bytes identification = 8;
-  if (!this->_internal_identification().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_identification());
-  }
-
-  // bytes keyframes = 9;
-  if (!this->_internal_keyframes().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_keyframes());
-  }
-
-  // bytes pointcloud = 10;
-  if (!this->_internal_pointcloud().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
-                                    this->_internal_pointcloud());
+                                    this->_internal_compressed_zip_data());
   }
 
   // int32 grpcServerCompressionFormat = 1;
@@ -16424,26 +15886,8 @@ void restoreMapRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const
   if (!from._internal_mapuuid().empty()) {
     _this->_internal_set_mapuuid(from._internal_mapuuid());
   }
-  if (!from._internal_map_information().empty()) {
-    _this->_internal_set_map_information(from._internal_map_information());
-  }
-  if (!from._internal_cameraparameters().empty()) {
-    _this->_internal_set_cameraparameters(from._internal_cameraparameters());
-  }
-  if (!from._internal_coordinate().empty()) {
-    _this->_internal_set_coordinate(from._internal_coordinate());
-  }
-  if (!from._internal_covisibility_graph().empty()) {
-    _this->_internal_set_covisibility_graph(from._internal_covisibility_graph());
-  }
-  if (!from._internal_identification().empty()) {
-    _this->_internal_set_identification(from._internal_identification());
-  }
-  if (!from._internal_keyframes().empty()) {
-    _this->_internal_set_keyframes(from._internal_keyframes());
-  }
-  if (!from._internal_pointcloud().empty()) {
-    _this->_internal_set_pointcloud(from._internal_pointcloud());
+  if (!from._internal_compressed_zip_data().empty()) {
+    _this->_internal_set_compressed_zip_data(from._internal_compressed_zip_data());
   }
   if (from._internal_grpcservercompressionformat() != 0) {
     _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
@@ -16466,13 +15910,7 @@ void restoreMapRequest::InternalSwap(restoreMapRequest* PROTOBUF_RESTRICT other)
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.accesstoken_, &other->_impl_.accesstoken_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.mapuuid_, &other->_impl_.mapuuid_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.map_information_, &other->_impl_.map_information_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.cameraparameters_, &other->_impl_.cameraparameters_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.coordinate_, &other->_impl_.coordinate_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.covisibility_graph_, &other->_impl_.covisibility_graph_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.identification_, &other->_impl_.identification_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.keyframes_, &other->_impl_.keyframes_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.pointcloud_, &other->_impl_.pointcloud_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.compressed_zip_data_, &other->_impl_.compressed_zip_data_, arena);
         swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
 }
 

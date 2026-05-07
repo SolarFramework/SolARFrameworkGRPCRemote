@@ -374,25 +374,13 @@ message backupMapRequest
 int32 grpcServerCompressionFormat  = 1;
 string accessToken = 2;
 string mapUUID = 3;
-bytes map_information = 4;
-bytes cameraParameters = 5;
-bytes coordinate = 6;
-bytes covisibility_graph = 7;
-bytes identification = 8;
-bytes keyframes = 9;
-bytes pointcloud = 10;
+bytes compressed_zip_data = 4;
 }
 
 message backupMapResponse
 {
-bytes map_information = 1;
-bytes cameraParameters = 2;
-bytes coordinate = 3;
-bytes covisibility_graph = 4;
-bytes identification = 5;
-bytes keyframes = 6;
-bytes pointcloud = 7;
-sint32 xpcfGrpcReturnValue = 8;
+bytes compressed_zip_data = 1;
+sint32 xpcfGrpcReturnValue = 2;
 }
 
 message restoreMapRequest
@@ -400,13 +388,7 @@ message restoreMapRequest
 int32 grpcServerCompressionFormat  = 1;
 string accessToken = 2;
 string mapUUID = 3;
-bytes map_information = 4;
-bytes cameraParameters = 5;
-bytes coordinate = 6;
-bytes covisibility_graph = 7;
-bytes identification = 8;
-bytes keyframes = 9;
-bytes pointcloud = 10;
+bytes compressed_zip_data = 4;
 }
 
 message restoreMapResponse

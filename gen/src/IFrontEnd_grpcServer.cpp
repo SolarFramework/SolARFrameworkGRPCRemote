@@ -718,21 +718,9 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   #endif
   std::string accessToken = request->accesstoken();
   std::string mapUUID = request->mapuuid();
-  std::vector<unsigned char> map_information = xpcf::deserialize<std::vector<unsigned char>>(request->map_information());
-  std::vector<unsigned char> cameraParameters = xpcf::deserialize<std::vector<unsigned char>>(request->cameraparameters());
-  std::vector<unsigned char> coordinate = xpcf::deserialize<std::vector<unsigned char>>(request->coordinate());
-  std::vector<unsigned char> covisibility_graph = xpcf::deserialize<std::vector<unsigned char>>(request->covisibility_graph());
-  std::vector<unsigned char> identification = xpcf::deserialize<std::vector<unsigned char>>(request->identification());
-  std::vector<unsigned char> keyframes = xpcf::deserialize<std::vector<unsigned char>>(request->keyframes());
-  std::vector<unsigned char> pointcloud = xpcf::deserialize<std::vector<unsigned char>>(request->pointcloud());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->backupMap(accessToken, mapUUID, map_information, cameraParameters, coordinate, covisibility_graph, identification, keyframes, pointcloud);
-  response->set_map_information(xpcf::serialize<std::vector<unsigned char>>(map_information));
-  response->set_cameraparameters(xpcf::serialize<std::vector<unsigned char>>(cameraParameters));
-  response->set_coordinate(xpcf::serialize<std::vector<unsigned char>>(coordinate));
-  response->set_covisibility_graph(xpcf::serialize<std::vector<unsigned char>>(covisibility_graph));
-  response->set_identification(xpcf::serialize<std::vector<unsigned char>>(identification));
-  response->set_keyframes(xpcf::serialize<std::vector<unsigned char>>(keyframes));
-  response->set_pointcloud(xpcf::serialize<std::vector<unsigned char>>(pointcloud));
+  std::vector<unsigned char> compressed_zip_data = xpcf::deserialize<std::vector<unsigned char>>(request->compressed_zip_data());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->backupMap(accessToken, mapUUID, compressed_zip_data);
+  response->set_compressed_zip_data(xpcf::serialize<std::vector<unsigned char>>(compressed_zip_data));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -756,14 +744,8 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   #endif
   std::string accessToken = request->accesstoken();
   std::string mapUUID = request->mapuuid();
-  std::vector<unsigned char> map_information = xpcf::deserialize<std::vector<unsigned char>>(request->map_information());
-  std::vector<unsigned char> cameraParameters = xpcf::deserialize<std::vector<unsigned char>>(request->cameraparameters());
-  std::vector<unsigned char> coordinate = xpcf::deserialize<std::vector<unsigned char>>(request->coordinate());
-  std::vector<unsigned char> covisibility_graph = xpcf::deserialize<std::vector<unsigned char>>(request->covisibility_graph());
-  std::vector<unsigned char> identification = xpcf::deserialize<std::vector<unsigned char>>(request->identification());
-  std::vector<unsigned char> keyframes = xpcf::deserialize<std::vector<unsigned char>>(request->keyframes());
-  std::vector<unsigned char> pointcloud = xpcf::deserialize<std::vector<unsigned char>>(request->pointcloud());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->restoreMap(accessToken, mapUUID, map_information, cameraParameters, coordinate, covisibility_graph, identification, keyframes, pointcloud);
+  std::vector<unsigned char> compressed_zip_data = xpcf::deserialize<std::vector<unsigned char>>(request->compressed_zip_data());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->restoreMap(accessToken, mapUUID, compressed_zip_data);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
