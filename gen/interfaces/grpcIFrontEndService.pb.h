@@ -3330,20 +3330,20 @@ class restoreMapRequest final : public ::google::protobuf::Message
   std::string* _internal_mutable_mapuuid();
 
   public:
-  // bytes compressed_zip_data = 4;
-  void clear_compressed_zip_data() ;
-  const std::string& compressed_zip_data() const;
+  // bytes compressedZipData = 4;
+  void clear_compressedzipdata() ;
+  const std::string& compressedzipdata() const;
   template <typename Arg_ = const std::string&, typename... Args_>
-  void set_compressed_zip_data(Arg_&& arg, Args_... args);
-  std::string* mutable_compressed_zip_data();
-  PROTOBUF_NODISCARD std::string* release_compressed_zip_data();
-  void set_allocated_compressed_zip_data(std::string* value);
+  void set_compressedzipdata(Arg_&& arg, Args_... args);
+  std::string* mutable_compressedzipdata();
+  PROTOBUF_NODISCARD std::string* release_compressedzipdata();
+  void set_allocated_compressedzipdata(std::string* value);
 
   private:
-  const std::string& _internal_compressed_zip_data() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_compressed_zip_data(
+  const std::string& _internal_compressedzipdata() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_compressedzipdata(
       const std::string& value);
-  std::string* _internal_mutable_compressed_zip_data();
+  std::string* _internal_mutable_compressedzipdata();
 
   public:
   // int32 grpcServerCompressionFormat = 1;
@@ -3384,7 +3384,7 @@ class restoreMapRequest final : public ::google::protobuf::Message
                           const restoreMapRequest& from_msg);
     ::google::protobuf::internal::ArenaStringPtr accesstoken_;
     ::google::protobuf::internal::ArenaStringPtr mapuuid_;
-    ::google::protobuf::internal::ArenaStringPtr compressed_zip_data_;
+    ::google::protobuf::internal::ArenaStringPtr compressedzipdata_;
     ::int32_t grpcservercompressionformat_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -12575,20 +12575,20 @@ class backupMapResponse final : public ::google::protobuf::Message
     kCompressedZipDataFieldNumber = 1,
     kXpcfGrpcReturnValueFieldNumber = 2,
   };
-  // bytes compressed_zip_data = 1;
-  void clear_compressed_zip_data() ;
-  const std::string& compressed_zip_data() const;
+  // bytes compressedZipData = 1;
+  void clear_compressedzipdata() ;
+  const std::string& compressedzipdata() const;
   template <typename Arg_ = const std::string&, typename... Args_>
-  void set_compressed_zip_data(Arg_&& arg, Args_... args);
-  std::string* mutable_compressed_zip_data();
-  PROTOBUF_NODISCARD std::string* release_compressed_zip_data();
-  void set_allocated_compressed_zip_data(std::string* value);
+  void set_compressedzipdata(Arg_&& arg, Args_... args);
+  std::string* mutable_compressedzipdata();
+  PROTOBUF_NODISCARD std::string* release_compressedzipdata();
+  void set_allocated_compressedzipdata(std::string* value);
 
   private:
-  const std::string& _internal_compressed_zip_data() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_compressed_zip_data(
+  const std::string& _internal_compressedzipdata() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_compressedzipdata(
       const std::string& value);
-  std::string* _internal_mutable_compressed_zip_data();
+  std::string* _internal_mutable_compressedzipdata();
 
   public:
   // sint32 xpcfGrpcReturnValue = 2;
@@ -12627,7 +12627,7 @@ class backupMapResponse final : public ::google::protobuf::Message
     inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                           ::google::protobuf::Arena* arena, const Impl_& from,
                           const backupMapResponse& from_msg);
-    ::google::protobuf::internal::ArenaStringPtr compressed_zip_data_;
+    ::google::protobuf::internal::ArenaStringPtr compressedzipdata_;
     ::int32_t xpcfgrpcreturnvalue_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -12798,20 +12798,20 @@ class backupMapRequest final : public ::google::protobuf::Message
   std::string* _internal_mutable_mapuuid();
 
   public:
-  // bytes compressed_zip_data = 4;
-  void clear_compressed_zip_data() ;
-  const std::string& compressed_zip_data() const;
+  // bytes compressedZipData = 4;
+  void clear_compressedzipdata() ;
+  const std::string& compressedzipdata() const;
   template <typename Arg_ = const std::string&, typename... Args_>
-  void set_compressed_zip_data(Arg_&& arg, Args_... args);
-  std::string* mutable_compressed_zip_data();
-  PROTOBUF_NODISCARD std::string* release_compressed_zip_data();
-  void set_allocated_compressed_zip_data(std::string* value);
+  void set_compressedzipdata(Arg_&& arg, Args_... args);
+  std::string* mutable_compressedzipdata();
+  PROTOBUF_NODISCARD std::string* release_compressedzipdata();
+  void set_allocated_compressedzipdata(std::string* value);
 
   private:
-  const std::string& _internal_compressed_zip_data() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_compressed_zip_data(
+  const std::string& _internal_compressedzipdata() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_compressedzipdata(
       const std::string& value);
-  std::string* _internal_mutable_compressed_zip_data();
+  std::string* _internal_mutable_compressedzipdata();
 
   public:
   // int32 grpcServerCompressionFormat = 1;
@@ -12852,7 +12852,7 @@ class backupMapRequest final : public ::google::protobuf::Message
                           const backupMapRequest& from_msg);
     ::google::protobuf::internal::ArenaStringPtr accesstoken_;
     ::google::protobuf::internal::ArenaStringPtr mapuuid_;
-    ::google::protobuf::internal::ArenaStringPtr compressed_zip_data_;
+    ::google::protobuf::internal::ArenaStringPtr compressedzipdata_;
     ::int32_t grpcservercompressionformat_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -19489,108 +19489,108 @@ inline void backupMapRequest::set_allocated_mapuuid(std::string* value) {
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.backupMapRequest.mapUUID)
 }
 
-// bytes compressed_zip_data = 4;
-inline void backupMapRequest::clear_compressed_zip_data() {
+// bytes compressedZipData = 4;
+inline void backupMapRequest::clear_compressedzipdata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.compressed_zip_data_.ClearToEmpty();
+  _impl_.compressedzipdata_.ClearToEmpty();
 }
-inline const std::string& backupMapRequest::compressed_zip_data() const
+inline const std::string& backupMapRequest::compressedzipdata() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.backupMapRequest.compressed_zip_data)
-  return _internal_compressed_zip_data();
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.backupMapRequest.compressedZipData)
+  return _internal_compressedzipdata();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void backupMapRequest::set_compressed_zip_data(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void backupMapRequest::set_compressedzipdata(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.compressed_zip_data_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.backupMapRequest.compressed_zip_data)
+  _impl_.compressedzipdata_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.backupMapRequest.compressedZipData)
 }
-inline std::string* backupMapRequest::mutable_compressed_zip_data() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_compressed_zip_data();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.backupMapRequest.compressed_zip_data)
+inline std::string* backupMapRequest::mutable_compressedzipdata() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_compressedzipdata();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.backupMapRequest.compressedZipData)
   return _s;
 }
-inline const std::string& backupMapRequest::_internal_compressed_zip_data() const {
+inline const std::string& backupMapRequest::_internal_compressedzipdata() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.compressed_zip_data_.Get();
+  return _impl_.compressedzipdata_.Get();
 }
-inline void backupMapRequest::_internal_set_compressed_zip_data(const std::string& value) {
+inline void backupMapRequest::_internal_set_compressedzipdata(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.compressed_zip_data_.Set(value, GetArena());
+  _impl_.compressedzipdata_.Set(value, GetArena());
 }
-inline std::string* backupMapRequest::_internal_mutable_compressed_zip_data() {
+inline std::string* backupMapRequest::_internal_mutable_compressedzipdata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.compressed_zip_data_.Mutable( GetArena());
+  return _impl_.compressedzipdata_.Mutable( GetArena());
 }
-inline std::string* backupMapRequest::release_compressed_zip_data() {
+inline std::string* backupMapRequest::release_compressedzipdata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.backupMapRequest.compressed_zip_data)
-  return _impl_.compressed_zip_data_.Release();
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.backupMapRequest.compressedZipData)
+  return _impl_.compressedzipdata_.Release();
 }
-inline void backupMapRequest::set_allocated_compressed_zip_data(std::string* value) {
+inline void backupMapRequest::set_allocated_compressedzipdata(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.compressed_zip_data_.SetAllocated(value, GetArena());
+  _impl_.compressedzipdata_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.compressed_zip_data_.IsDefault()) {
-          _impl_.compressed_zip_data_.Set("", GetArena());
+        if (_impl_.compressedzipdata_.IsDefault()) {
+          _impl_.compressedzipdata_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.backupMapRequest.compressed_zip_data)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.backupMapRequest.compressedZipData)
 }
 
 // -------------------------------------------------------------------
 
 // backupMapResponse
 
-// bytes compressed_zip_data = 1;
-inline void backupMapResponse::clear_compressed_zip_data() {
+// bytes compressedZipData = 1;
+inline void backupMapResponse::clear_compressedzipdata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.compressed_zip_data_.ClearToEmpty();
+  _impl_.compressedzipdata_.ClearToEmpty();
 }
-inline const std::string& backupMapResponse::compressed_zip_data() const
+inline const std::string& backupMapResponse::compressedzipdata() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.backupMapResponse.compressed_zip_data)
-  return _internal_compressed_zip_data();
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.backupMapResponse.compressedZipData)
+  return _internal_compressedzipdata();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void backupMapResponse::set_compressed_zip_data(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void backupMapResponse::set_compressedzipdata(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.compressed_zip_data_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.backupMapResponse.compressed_zip_data)
+  _impl_.compressedzipdata_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.backupMapResponse.compressedZipData)
 }
-inline std::string* backupMapResponse::mutable_compressed_zip_data() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_compressed_zip_data();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.backupMapResponse.compressed_zip_data)
+inline std::string* backupMapResponse::mutable_compressedzipdata() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_compressedzipdata();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.backupMapResponse.compressedZipData)
   return _s;
 }
-inline const std::string& backupMapResponse::_internal_compressed_zip_data() const {
+inline const std::string& backupMapResponse::_internal_compressedzipdata() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.compressed_zip_data_.Get();
+  return _impl_.compressedzipdata_.Get();
 }
-inline void backupMapResponse::_internal_set_compressed_zip_data(const std::string& value) {
+inline void backupMapResponse::_internal_set_compressedzipdata(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.compressed_zip_data_.Set(value, GetArena());
+  _impl_.compressedzipdata_.Set(value, GetArena());
 }
-inline std::string* backupMapResponse::_internal_mutable_compressed_zip_data() {
+inline std::string* backupMapResponse::_internal_mutable_compressedzipdata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.compressed_zip_data_.Mutable( GetArena());
+  return _impl_.compressedzipdata_.Mutable( GetArena());
 }
-inline std::string* backupMapResponse::release_compressed_zip_data() {
+inline std::string* backupMapResponse::release_compressedzipdata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.backupMapResponse.compressed_zip_data)
-  return _impl_.compressed_zip_data_.Release();
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.backupMapResponse.compressedZipData)
+  return _impl_.compressedzipdata_.Release();
 }
-inline void backupMapResponse::set_allocated_compressed_zip_data(std::string* value) {
+inline void backupMapResponse::set_allocated_compressedzipdata(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.compressed_zip_data_.SetAllocated(value, GetArena());
+  _impl_.compressedzipdata_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.compressed_zip_data_.IsDefault()) {
-          _impl_.compressed_zip_data_.Set("", GetArena());
+        if (_impl_.compressedzipdata_.IsDefault()) {
+          _impl_.compressedzipdata_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.backupMapResponse.compressed_zip_data)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.backupMapResponse.compressedZipData)
 }
 
 // sint32 xpcfGrpcReturnValue = 2;
@@ -19741,54 +19741,54 @@ inline void restoreMapRequest::set_allocated_mapuuid(std::string* value) {
   // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.restoreMapRequest.mapUUID)
 }
 
-// bytes compressed_zip_data = 4;
-inline void restoreMapRequest::clear_compressed_zip_data() {
+// bytes compressedZipData = 4;
+inline void restoreMapRequest::clear_compressedzipdata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.compressed_zip_data_.ClearToEmpty();
+  _impl_.compressedzipdata_.ClearToEmpty();
 }
-inline const std::string& restoreMapRequest::compressed_zip_data() const
+inline const std::string& restoreMapRequest::compressedzipdata() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIFrontEnd.restoreMapRequest.compressed_zip_data)
-  return _internal_compressed_zip_data();
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.restoreMapRequest.compressedZipData)
+  return _internal_compressedzipdata();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void restoreMapRequest::set_compressed_zip_data(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void restoreMapRequest::set_compressedzipdata(Arg_&& arg,
                                                      Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.compressed_zip_data_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIFrontEnd.restoreMapRequest.compressed_zip_data)
+  _impl_.compressedzipdata_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.restoreMapRequest.compressedZipData)
 }
-inline std::string* restoreMapRequest::mutable_compressed_zip_data() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_compressed_zip_data();
-  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.restoreMapRequest.compressed_zip_data)
+inline std::string* restoreMapRequest::mutable_compressedzipdata() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_compressedzipdata();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.restoreMapRequest.compressedZipData)
   return _s;
 }
-inline const std::string& restoreMapRequest::_internal_compressed_zip_data() const {
+inline const std::string& restoreMapRequest::_internal_compressedzipdata() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.compressed_zip_data_.Get();
+  return _impl_.compressedzipdata_.Get();
 }
-inline void restoreMapRequest::_internal_set_compressed_zip_data(const std::string& value) {
+inline void restoreMapRequest::_internal_set_compressedzipdata(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.compressed_zip_data_.Set(value, GetArena());
+  _impl_.compressedzipdata_.Set(value, GetArena());
 }
-inline std::string* restoreMapRequest::_internal_mutable_compressed_zip_data() {
+inline std::string* restoreMapRequest::_internal_mutable_compressedzipdata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.compressed_zip_data_.Mutable( GetArena());
+  return _impl_.compressedzipdata_.Mutable( GetArena());
 }
-inline std::string* restoreMapRequest::release_compressed_zip_data() {
+inline std::string* restoreMapRequest::release_compressedzipdata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIFrontEnd.restoreMapRequest.compressed_zip_data)
-  return _impl_.compressed_zip_data_.Release();
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.restoreMapRequest.compressedZipData)
+  return _impl_.compressedzipdata_.Release();
 }
-inline void restoreMapRequest::set_allocated_compressed_zip_data(std::string* value) {
+inline void restoreMapRequest::set_allocated_compressedzipdata(std::string* value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.compressed_zip_data_.SetAllocated(value, GetArena());
+  _impl_.compressedzipdata_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.compressed_zip_data_.IsDefault()) {
-          _impl_.compressed_zip_data_.Set("", GetArena());
+        if (_impl_.compressedzipdata_.IsDefault()) {
+          _impl_.compressedzipdata_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.restoreMapRequest.compressed_zip_data)
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.restoreMapRequest.compressedZipData)
 }
 
 // -------------------------------------------------------------------

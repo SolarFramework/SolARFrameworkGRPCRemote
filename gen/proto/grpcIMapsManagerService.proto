@@ -126,12 +126,12 @@ message backupMapRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string mapUUID = 2;
-bytes compressed_zip_data = 3;
+bytes compressedZipData = 3;
 }
 
 message backupMapResponse
 {
-bytes compressed_zip_data = 1;
+bytes compressedZipData = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
@@ -139,7 +139,7 @@ message restoreMapRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string mapUUID = 2;
-bytes compressed_zip_data = 3;
+bytes compressedZipData = 3;
 }
 
 message restoreMapResponse

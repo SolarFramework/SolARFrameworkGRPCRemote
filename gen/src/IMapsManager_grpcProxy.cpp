@@ -336,7 +336,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapInfo(std::string const
 }
 
 
-SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::backupMap(std::string const& mapUUID, std::vector<unsigned char>& compressed_zip_data) const
+SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::backupMap(std::string const& mapUUID, std::vector<std::byte>& compressedZipData) const
 {
   ::grpc::ClientContext context;
   ::grpcIMapsManager::backupMapRequest reqIn;
@@ -347,7 +347,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::backupMap(std::string const&
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_mapuuid(mapUUID);
-  reqIn.set_compressed_zip_data(xpcf::serialize<std::vector<unsigned char>>(compressed_zip_data));
+  reqIn.set_compressedzipdata(xpcf::serialize<std::vector<std::byte>>(compressedZipData));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMapsManager_grpcProxy::backupMap request sent at " << to_simple_string(start) << std::endl;
@@ -363,12 +363,12 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::backupMap(std::string const&
     throw xpcf::RemotingException("grpcIMapsManagerService","backupMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
-  compressed_zip_data = xpcf::deserialize<std::vector<unsigned char>>(respOut.compressed_zip_data());
+  compressedZipData = xpcf::deserialize<std::vector<std::byte>>(respOut.compressedzipdata());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 
 
-SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::restoreMap(std::string const& mapUUID, std::vector<unsigned char> const& compressed_zip_data)
+SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::restoreMap(std::string const& mapUUID, std::vector<std::byte> const& compressedZipData)
 {
   ::grpc::ClientContext context;
   ::grpcIMapsManager::restoreMapRequest reqIn;
@@ -379,7 +379,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::restoreMap(std::string const
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_mapuuid(mapUUID);
-  reqIn.set_compressed_zip_data(xpcf::serialize<std::vector<unsigned char>>(compressed_zip_data));
+  reqIn.set_compressedzipdata(xpcf::serialize<std::vector<std::byte>>(compressedZipData));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMapsManager_grpcProxy::restoreMap request sent at " << to_simple_string(start) << std::endl;

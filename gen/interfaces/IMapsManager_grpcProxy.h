@@ -31,8 +31,8 @@ class IMapsManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
     SolAR::FrameworkReturnCode setMapRequest(std::string const& mapUUID, SRef<SolAR::datastructure::Map> const mapDatastructure)     override;
     SolAR::FrameworkReturnCode getPointCloudRequest(std::string const& mapUUID, SRef<SolAR::datastructure::PointCloud>& pointCloud)     const     override;
     SolAR::FrameworkReturnCode getMapInfo(std::string const& mapUUID, std::string& version, SolAR::datastructure::GlobalDescriptorType& globalDescriptorType, SolAR::datastructure::DescriptorType& descriptorType, uint32_t& dataSize, bool& areImageSaved)     const     override;
-    SolAR::FrameworkReturnCode backupMap(std::string const& mapUUID, std::vector<unsigned char>& compressed_zip_data)     const     override;
-    SolAR::FrameworkReturnCode restoreMap(std::string const& mapUUID, std::vector<unsigned char> const& compressed_zip_data)     override;
+    SolAR::FrameworkReturnCode backupMap(std::string const& mapUUID, std::vector<std::byte>& compressedZipData)     const     override;
+    SolAR::FrameworkReturnCode restoreMap(std::string const& mapUUID, std::vector<std::byte> const& compressedZipData)     override;
     SolAR::FrameworkReturnCode requestMapProcessing(std::string const& mapUUID, std::string const& resultMapUUID, SolAR::api::service::MapProcessingType const processingType)     override;
     SolAR::FrameworkReturnCode getMapProcessingStatus(std::string const& resultMapUUID, SolAR::api::service::MapProcessingStatus& status, SolAR::api::service::MapProcessingType& processingType, float& progress)     override;
     SolAR::FrameworkReturnCode getMapProcessingData(std::string const& resultMapUUID, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pointCloud, std::vector<SolAR::datastructure::Transform3Df>& keyframePoses)     override;

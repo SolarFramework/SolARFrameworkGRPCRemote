@@ -278,9 +278,9 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::cout << "====> IMapsManager_grpcServer::backupMap request received at " << to_simple_string(start) << std::endl;
   #endif
   std::string mapUUID = request->mapuuid();
-  std::vector<unsigned char> compressed_zip_data = xpcf::deserialize<std::vector<unsigned char>>(request->compressed_zip_data());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->backupMap(mapUUID, compressed_zip_data);
-  response->set_compressed_zip_data(xpcf::serialize<std::vector<unsigned char>>(compressed_zip_data));
+  std::vector<std::byte> compressedZipData = xpcf::deserialize<std::vector<std::byte>>(request->compressedzipdata());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->backupMap(mapUUID, compressedZipData);
+  response->set_compressedzipdata(xpcf::serialize<std::vector<std::byte>>(compressedZipData));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -303,8 +303,8 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::cout << "====> IMapsManager_grpcServer::restoreMap request received at " << to_simple_string(start) << std::endl;
   #endif
   std::string mapUUID = request->mapuuid();
-  std::vector<unsigned char> compressed_zip_data = xpcf::deserialize<std::vector<unsigned char>>(request->compressed_zip_data());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->restoreMap(mapUUID, compressed_zip_data);
+  std::vector<std::byte> compressedZipData = xpcf::deserialize<std::vector<std::byte>>(request->compressedzipdata());
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->restoreMap(mapUUID, compressedZipData);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();

@@ -374,12 +374,12 @@ message backupMapRequest
 int32 grpcServerCompressionFormat  = 1;
 string accessToken = 2;
 string mapUUID = 3;
-bytes compressed_zip_data = 4;
+bytes compressedZipData = 4;
 }
 
 message backupMapResponse
 {
-bytes compressed_zip_data = 1;
+bytes compressedZipData = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
@@ -388,7 +388,7 @@ message restoreMapRequest
 int32 grpcServerCompressionFormat  = 1;
 string accessToken = 2;
 string mapUUID = 3;
-bytes compressed_zip_data = 4;
+bytes compressedZipData = 4;
 }
 
 message restoreMapResponse
