@@ -718,9 +718,9 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   #endif
   std::string accessToken = request->accesstoken();
   std::string mapUUID = request->mapuuid();
-  std::vector<std::byte> compressedZipData = xpcf::deserialize<std::vector<std::byte>>(request->compressedzipdata());
+  std::vector<unsigned char> compressedZipData = xpcf::deserialize<std::vector<unsigned char>>(request->compressedzipdata());
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->backupMap(accessToken, mapUUID, compressedZipData);
-  response->set_compressedzipdata(xpcf::serialize<std::vector<std::byte>>(compressedZipData));
+  response->set_compressedzipdata(xpcf::serialize<std::vector<unsigned char>>(compressedZipData));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -744,7 +744,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   #endif
   std::string accessToken = request->accesstoken();
   std::string mapUUID = request->mapuuid();
-  std::vector<std::byte> compressedZipData = xpcf::deserialize<std::vector<std::byte>>(request->compressedzipdata());
+  std::vector<unsigned char> compressedZipData = xpcf::deserialize<std::vector<unsigned char>>(request->compressedzipdata());
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->restoreMap(accessToken, mapUUID, compressedZipData);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
