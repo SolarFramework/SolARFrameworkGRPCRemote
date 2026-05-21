@@ -369,6 +369,33 @@ bool areImageSaved = 5;
 sint32 xpcfGrpcReturnValue = 6;
 }
 
+message backupMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string accessToken = 2;
+string mapUUID = 3;
+bytes compressedZipData = 4;
+}
+
+message backupMapResponse
+{
+bytes compressedZipData = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message restoreMapRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string accessToken = 2;
+string mapUUID = 3;
+bytes compressedZipData = 4;
+}
+
+message restoreMapResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 message requestMapProcessingRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -443,6 +470,8 @@ rpc getMapRequest(getMapRequestRequest) returns(getMapRequestResponse) {}
 rpc setMapRequest(setMapRequestRequest) returns(setMapRequestResponse) {}
 rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudRequestResponse) {}
 rpc getMapInfo(getMapInfoRequest) returns(getMapInfoResponse) {}
+rpc backupMap(backupMapRequest) returns(backupMapResponse) {}
+rpc restoreMap(restoreMapRequest) returns(restoreMapResponse) {}
 rpc requestMapProcessing(requestMapProcessingRequest) returns(requestMapProcessingResponse) {}
 rpc getMapProcessingStatus(getMapProcessingStatusRequest) returns(getMapProcessingStatusResponse) {}
 rpc getMapProcessingData(getMapProcessingDataRequest) returns(getMapProcessingDataResponse) {}

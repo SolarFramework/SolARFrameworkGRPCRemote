@@ -211,6 +211,20 @@ class grpcIFrontEndService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getMapInfoResponse>> PrepareAsyncgetMapInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapInfoRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getMapInfoResponse>>(PrepareAsyncgetMapInfoRaw(context, request, cq));
     }
+    virtual ::grpc::Status backupMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest& request, ::grpcIFrontEnd::backupMapResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::backupMapResponse>> AsyncbackupMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::backupMapResponse>>(AsyncbackupMapRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::backupMapResponse>> PrepareAsyncbackupMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::backupMapResponse>>(PrepareAsyncbackupMapRaw(context, request, cq));
+    }
+    virtual ::grpc::Status restoreMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest& request, ::grpcIFrontEnd::restoreMapResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::restoreMapResponse>> AsyncrestoreMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::restoreMapResponse>>(AsyncrestoreMapRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::restoreMapResponse>> PrepareAsyncrestoreMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::restoreMapResponse>>(PrepareAsyncrestoreMapRaw(context, request, cq));
+    }
     virtual ::grpc::Status requestMapProcessing(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest& request, ::grpcIFrontEnd::requestMapProcessingResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::requestMapProcessingResponse>> AsyncrequestMapProcessing(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::requestMapProcessingResponse>>(AsyncrequestMapProcessingRaw(context, request, cq));
@@ -285,6 +299,10 @@ class grpcIFrontEndService final {
       virtual void getPointCloudRequest(::grpc::ClientContext* context, const ::grpcIFrontEnd::getPointCloudRequestRequest* request, ::grpcIFrontEnd::getPointCloudRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void getMapInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapInfoRequest* request, ::grpcIFrontEnd::getMapInfoResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void getMapInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapInfoRequest* request, ::grpcIFrontEnd::getMapInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void backupMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest* request, ::grpcIFrontEnd::backupMapResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void backupMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest* request, ::grpcIFrontEnd::backupMapResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void restoreMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest* request, ::grpcIFrontEnd::restoreMapResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void restoreMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest* request, ::grpcIFrontEnd::restoreMapResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void requestMapProcessing(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpcIFrontEnd::requestMapProcessingResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void requestMapProcessing(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpcIFrontEnd::requestMapProcessingResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void getMapProcessingStatus(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapProcessingStatusRequest* request, ::grpcIFrontEnd::getMapProcessingStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -346,6 +364,10 @@ class grpcIFrontEndService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getPointCloudRequestResponse>* PrepareAsyncgetPointCloudRequestRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getPointCloudRequestRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getMapInfoResponse>* AsyncgetMapInfoRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getMapInfoResponse>* PrepareAsyncgetMapInfoRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapInfoRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::backupMapResponse>* AsyncbackupMapRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::backupMapResponse>* PrepareAsyncbackupMapRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::restoreMapResponse>* AsyncrestoreMapRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::restoreMapResponse>* PrepareAsyncrestoreMapRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::requestMapProcessingResponse>* AsyncrequestMapProcessingRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::requestMapProcessingResponse>* PrepareAsyncrequestMapProcessingRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::grpcIFrontEnd::getMapProcessingStatusResponse>* AsyncgetMapProcessingStatusRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapProcessingStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -531,6 +553,20 @@ class grpcIFrontEndService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getMapInfoResponse>> PrepareAsyncgetMapInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapInfoRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getMapInfoResponse>>(PrepareAsyncgetMapInfoRaw(context, request, cq));
     }
+    ::grpc::Status backupMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest& request, ::grpcIFrontEnd::backupMapResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::backupMapResponse>> AsyncbackupMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::backupMapResponse>>(AsyncbackupMapRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::backupMapResponse>> PrepareAsyncbackupMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::backupMapResponse>>(PrepareAsyncbackupMapRaw(context, request, cq));
+    }
+    ::grpc::Status restoreMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest& request, ::grpcIFrontEnd::restoreMapResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::restoreMapResponse>> AsyncrestoreMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::restoreMapResponse>>(AsyncrestoreMapRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::restoreMapResponse>> PrepareAsyncrestoreMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::restoreMapResponse>>(PrepareAsyncrestoreMapRaw(context, request, cq));
+    }
     ::grpc::Status requestMapProcessing(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest& request, ::grpcIFrontEnd::requestMapProcessingResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::requestMapProcessingResponse>> AsyncrequestMapProcessing(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::requestMapProcessingResponse>>(AsyncrequestMapProcessingRaw(context, request, cq));
@@ -605,6 +641,10 @@ class grpcIFrontEndService final {
       void getPointCloudRequest(::grpc::ClientContext* context, const ::grpcIFrontEnd::getPointCloudRequestRequest* request, ::grpcIFrontEnd::getPointCloudRequestResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void getMapInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapInfoRequest* request, ::grpcIFrontEnd::getMapInfoResponse* response, std::function<void(::grpc::Status)>) override;
       void getMapInfo(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapInfoRequest* request, ::grpcIFrontEnd::getMapInfoResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void backupMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest* request, ::grpcIFrontEnd::backupMapResponse* response, std::function<void(::grpc::Status)>) override;
+      void backupMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest* request, ::grpcIFrontEnd::backupMapResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void restoreMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest* request, ::grpcIFrontEnd::restoreMapResponse* response, std::function<void(::grpc::Status)>) override;
+      void restoreMap(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest* request, ::grpcIFrontEnd::restoreMapResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void requestMapProcessing(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpcIFrontEnd::requestMapProcessingResponse* response, std::function<void(::grpc::Status)>) override;
       void requestMapProcessing(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpcIFrontEnd::requestMapProcessingResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void getMapProcessingStatus(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapProcessingStatusRequest* request, ::grpcIFrontEnd::getMapProcessingStatusResponse* response, std::function<void(::grpc::Status)>) override;
@@ -672,6 +712,10 @@ class grpcIFrontEndService final {
     ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getPointCloudRequestResponse>* PrepareAsyncgetPointCloudRequestRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getPointCloudRequestRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getMapInfoResponse>* AsyncgetMapInfoRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapInfoRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getMapInfoResponse>* PrepareAsyncgetMapInfoRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapInfoRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::backupMapResponse>* AsyncbackupMapRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::backupMapResponse>* PrepareAsyncbackupMapRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::backupMapRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::restoreMapResponse>* AsyncrestoreMapRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::restoreMapResponse>* PrepareAsyncrestoreMapRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::restoreMapRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::requestMapProcessingResponse>* AsyncrequestMapProcessingRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::requestMapProcessingResponse>* PrepareAsyncrequestMapProcessingRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getMapProcessingStatusResponse>* AsyncgetMapProcessingStatusRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapProcessingStatusRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -703,6 +747,8 @@ class grpcIFrontEndService final {
     const ::grpc::internal::RpcMethod rpcmethod_setMapRequest_;
     const ::grpc::internal::RpcMethod rpcmethod_getPointCloudRequest_;
     const ::grpc::internal::RpcMethod rpcmethod_getMapInfo_;
+    const ::grpc::internal::RpcMethod rpcmethod_backupMap_;
+    const ::grpc::internal::RpcMethod rpcmethod_restoreMap_;
     const ::grpc::internal::RpcMethod rpcmethod_requestMapProcessing_;
     const ::grpc::internal::RpcMethod rpcmethod_getMapProcessingStatus_;
     const ::grpc::internal::RpcMethod rpcmethod_getMapProcessingData_;
@@ -738,6 +784,8 @@ class grpcIFrontEndService final {
     virtual ::grpc::Status setMapRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::setMapRequestRequest* request, ::grpcIFrontEnd::setMapRequestResponse* response);
     virtual ::grpc::Status getPointCloudRequest(::grpc::ServerContext* context, const ::grpcIFrontEnd::getPointCloudRequestRequest* request, ::grpcIFrontEnd::getPointCloudRequestResponse* response);
     virtual ::grpc::Status getMapInfo(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapInfoRequest* request, ::grpcIFrontEnd::getMapInfoResponse* response);
+    virtual ::grpc::Status backupMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::backupMapRequest* request, ::grpcIFrontEnd::backupMapResponse* response);
+    virtual ::grpc::Status restoreMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::restoreMapRequest* request, ::grpcIFrontEnd::restoreMapResponse* response);
     virtual ::grpc::Status requestMapProcessing(::grpc::ServerContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpcIFrontEnd::requestMapProcessingResponse* response);
     virtual ::grpc::Status getMapProcessingStatus(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapProcessingStatusRequest* request, ::grpcIFrontEnd::getMapProcessingStatusResponse* response);
     virtual ::grpc::Status getMapProcessingData(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapProcessingDataRequest* request, ::grpcIFrontEnd::getMapProcessingDataResponse* response);
@@ -1243,12 +1291,52 @@ class grpcIFrontEndService final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_backupMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_backupMap() {
+      ::grpc::Service::MarkMethodAsync(25);
+    }
+    ~WithAsyncMethod_backupMap() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status backupMap(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::backupMapRequest* /*request*/, ::grpcIFrontEnd::backupMapResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestbackupMap(::grpc::ServerContext* context, ::grpcIFrontEnd::backupMapRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::backupMapResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_restoreMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_restoreMap() {
+      ::grpc::Service::MarkMethodAsync(26);
+    }
+    ~WithAsyncMethod_restoreMap() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status restoreMap(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::restoreMapRequest* /*request*/, ::grpcIFrontEnd::restoreMapResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestrestoreMap(::grpc::ServerContext* context, ::grpcIFrontEnd::restoreMapRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::restoreMapResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_requestMapProcessing : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_requestMapProcessing() {
-      ::grpc::Service::MarkMethodAsync(25);
+      ::grpc::Service::MarkMethodAsync(27);
     }
     ~WithAsyncMethod_requestMapProcessing() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1259,7 +1347,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestrequestMapProcessing(::grpc::ServerContext* context, ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::requestMapProcessingResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1268,7 +1356,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getMapProcessingStatus() {
-      ::grpc::Service::MarkMethodAsync(26);
+      ::grpc::Service::MarkMethodAsync(28);
     }
     ~WithAsyncMethod_getMapProcessingStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1279,7 +1367,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetMapProcessingStatus(::grpc::ServerContext* context, ::grpcIFrontEnd::getMapProcessingStatusRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::getMapProcessingStatusResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1288,7 +1376,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_getMapProcessingData() {
-      ::grpc::Service::MarkMethodAsync(27);
+      ::grpc::Service::MarkMethodAsync(29);
     }
     ~WithAsyncMethod_getMapProcessingData() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1299,10 +1387,10 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetMapProcessingData(::grpc::ServerContext* context, ::grpcIFrontEnd::getMapProcessingDataRequest* request, ::grpc::ServerAsyncResponseWriter< ::grpcIFrontEnd::getMapProcessingDataResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_registerClient<WithAsyncMethod_unregisterClient<WithAsyncMethod_getAllClientsUUID<WithAsyncMethod_getDeviceInfo<WithAsyncMethod_init_grpc0<WithAsyncMethod_init_grpc1<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_getProcessingMode<WithAsyncMethod_setCameraParameters_grpc0<WithAsyncMethod_setCameraParameters_grpc1<WithAsyncMethod_setRectificationParameters<WithAsyncMethod_getCameraParameters<WithAsyncMethod_imageProcessRequest<WithAsyncMethod_getMappingDataRequest<WithAsyncMethod_getClientPose<WithAsyncMethod_createMap<WithAsyncMethod_deleteMap<WithAsyncMethod_getAllMapsUUID<WithAsyncMethod_getClientMapUUID<WithAsyncMethod_getClientInfoForMap<WithAsyncMethod_getMapRequest<WithAsyncMethod_setMapRequest<WithAsyncMethod_getPointCloudRequest<WithAsyncMethod_getMapInfo<WithAsyncMethod_requestMapProcessing<WithAsyncMethod_getMapProcessingStatus<WithAsyncMethod_getMapProcessingData<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_registerClient<WithAsyncMethod_unregisterClient<WithAsyncMethod_getAllClientsUUID<WithAsyncMethod_getDeviceInfo<WithAsyncMethod_init_grpc0<WithAsyncMethod_init_grpc1<WithAsyncMethod_start<WithAsyncMethod_stop<WithAsyncMethod_getProcessingMode<WithAsyncMethod_setCameraParameters_grpc0<WithAsyncMethod_setCameraParameters_grpc1<WithAsyncMethod_setRectificationParameters<WithAsyncMethod_getCameraParameters<WithAsyncMethod_imageProcessRequest<WithAsyncMethod_getMappingDataRequest<WithAsyncMethod_getClientPose<WithAsyncMethod_createMap<WithAsyncMethod_deleteMap<WithAsyncMethod_getAllMapsUUID<WithAsyncMethod_getClientMapUUID<WithAsyncMethod_getClientInfoForMap<WithAsyncMethod_getMapRequest<WithAsyncMethod_setMapRequest<WithAsyncMethod_getPointCloudRequest<WithAsyncMethod_getMapInfo<WithAsyncMethod_backupMap<WithAsyncMethod_restoreMap<WithAsyncMethod_requestMapProcessing<WithAsyncMethod_getMapProcessingStatus<WithAsyncMethod_getMapProcessingData<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_registerClient : public BaseClass {
    private:
@@ -1979,18 +2067,72 @@ class grpcIFrontEndService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpcIFrontEnd::getMapInfoRequest* /*request*/, ::grpcIFrontEnd::getMapInfoResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithCallbackMethod_backupMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_backupMap() {
+      ::grpc::Service::MarkMethodCallback(25,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::backupMapRequest, ::grpcIFrontEnd::backupMapResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::backupMapRequest* request, ::grpcIFrontEnd::backupMapResponse* response) { return this->backupMap(context, request, response); }));}
+    void SetMessageAllocatorFor_backupMap(
+        ::grpc::MessageAllocator< ::grpcIFrontEnd::backupMapRequest, ::grpcIFrontEnd::backupMapResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(25);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::backupMapRequest, ::grpcIFrontEnd::backupMapResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_backupMap() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status backupMap(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::backupMapRequest* /*request*/, ::grpcIFrontEnd::backupMapResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* backupMap(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIFrontEnd::backupMapRequest* /*request*/, ::grpcIFrontEnd::backupMapResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_restoreMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_restoreMap() {
+      ::grpc::Service::MarkMethodCallback(26,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::restoreMapRequest, ::grpcIFrontEnd::restoreMapResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::restoreMapRequest* request, ::grpcIFrontEnd::restoreMapResponse* response) { return this->restoreMap(context, request, response); }));}
+    void SetMessageAllocatorFor_restoreMap(
+        ::grpc::MessageAllocator< ::grpcIFrontEnd::restoreMapRequest, ::grpcIFrontEnd::restoreMapResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(26);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::restoreMapRequest, ::grpcIFrontEnd::restoreMapResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_restoreMap() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status restoreMap(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::restoreMapRequest* /*request*/, ::grpcIFrontEnd::restoreMapResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* restoreMap(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpcIFrontEnd::restoreMapRequest* /*request*/, ::grpcIFrontEnd::restoreMapResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithCallbackMethod_requestMapProcessing : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_requestMapProcessing() {
-      ::grpc::Service::MarkMethodCallback(25,
+      ::grpc::Service::MarkMethodCallback(27,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::requestMapProcessingRequest, ::grpcIFrontEnd::requestMapProcessingResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpcIFrontEnd::requestMapProcessingResponse* response) { return this->requestMapProcessing(context, request, response); }));}
     void SetMessageAllocatorFor_requestMapProcessing(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::requestMapProcessingRequest, ::grpcIFrontEnd::requestMapProcessingResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(25);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(27);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::requestMapProcessingRequest, ::grpcIFrontEnd::requestMapProcessingResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2011,13 +2153,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_getMapProcessingStatus() {
-      ::grpc::Service::MarkMethodCallback(26,
+      ::grpc::Service::MarkMethodCallback(28,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getMapProcessingStatusRequest, ::grpcIFrontEnd::getMapProcessingStatusResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::getMapProcessingStatusRequest* request, ::grpcIFrontEnd::getMapProcessingStatusResponse* response) { return this->getMapProcessingStatus(context, request, response); }));}
     void SetMessageAllocatorFor_getMapProcessingStatus(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::getMapProcessingStatusRequest, ::grpcIFrontEnd::getMapProcessingStatusResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(26);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(28);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getMapProcessingStatusRequest, ::grpcIFrontEnd::getMapProcessingStatusResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2038,13 +2180,13 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_getMapProcessingData() {
-      ::grpc::Service::MarkMethodCallback(27,
+      ::grpc::Service::MarkMethodCallback(29,
           new ::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getMapProcessingDataRequest, ::grpcIFrontEnd::getMapProcessingDataResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpcIFrontEnd::getMapProcessingDataRequest* request, ::grpcIFrontEnd::getMapProcessingDataResponse* response) { return this->getMapProcessingData(context, request, response); }));}
     void SetMessageAllocatorFor_getMapProcessingData(
         ::grpc::MessageAllocator< ::grpcIFrontEnd::getMapProcessingDataRequest, ::grpcIFrontEnd::getMapProcessingDataResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(27);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(29);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::grpcIFrontEnd::getMapProcessingDataRequest, ::grpcIFrontEnd::getMapProcessingDataResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2059,7 +2201,7 @@ class grpcIFrontEndService final {
     virtual ::grpc::ServerUnaryReactor* getMapProcessingData(
       ::grpc::CallbackServerContext* /*context*/, const ::grpcIFrontEnd::getMapProcessingDataRequest* /*request*/, ::grpcIFrontEnd::getMapProcessingDataResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_registerClient<WithCallbackMethod_unregisterClient<WithCallbackMethod_getAllClientsUUID<WithCallbackMethod_getDeviceInfo<WithCallbackMethod_init_grpc0<WithCallbackMethod_init_grpc1<WithCallbackMethod_start<WithCallbackMethod_stop<WithCallbackMethod_getProcessingMode<WithCallbackMethod_setCameraParameters_grpc0<WithCallbackMethod_setCameraParameters_grpc1<WithCallbackMethod_setRectificationParameters<WithCallbackMethod_getCameraParameters<WithCallbackMethod_imageProcessRequest<WithCallbackMethod_getMappingDataRequest<WithCallbackMethod_getClientPose<WithCallbackMethod_createMap<WithCallbackMethod_deleteMap<WithCallbackMethod_getAllMapsUUID<WithCallbackMethod_getClientMapUUID<WithCallbackMethod_getClientInfoForMap<WithCallbackMethod_getMapRequest<WithCallbackMethod_setMapRequest<WithCallbackMethod_getPointCloudRequest<WithCallbackMethod_getMapInfo<WithCallbackMethod_requestMapProcessing<WithCallbackMethod_getMapProcessingStatus<WithCallbackMethod_getMapProcessingData<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef WithCallbackMethod_registerClient<WithCallbackMethod_unregisterClient<WithCallbackMethod_getAllClientsUUID<WithCallbackMethod_getDeviceInfo<WithCallbackMethod_init_grpc0<WithCallbackMethod_init_grpc1<WithCallbackMethod_start<WithCallbackMethod_stop<WithCallbackMethod_getProcessingMode<WithCallbackMethod_setCameraParameters_grpc0<WithCallbackMethod_setCameraParameters_grpc1<WithCallbackMethod_setRectificationParameters<WithCallbackMethod_getCameraParameters<WithCallbackMethod_imageProcessRequest<WithCallbackMethod_getMappingDataRequest<WithCallbackMethod_getClientPose<WithCallbackMethod_createMap<WithCallbackMethod_deleteMap<WithCallbackMethod_getAllMapsUUID<WithCallbackMethod_getClientMapUUID<WithCallbackMethod_getClientInfoForMap<WithCallbackMethod_getMapRequest<WithCallbackMethod_setMapRequest<WithCallbackMethod_getPointCloudRequest<WithCallbackMethod_getMapInfo<WithCallbackMethod_backupMap<WithCallbackMethod_restoreMap<WithCallbackMethod_requestMapProcessing<WithCallbackMethod_getMapProcessingStatus<WithCallbackMethod_getMapProcessingData<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_registerClient : public BaseClass {
@@ -2487,12 +2629,46 @@ class grpcIFrontEndService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_backupMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_backupMap() {
+      ::grpc::Service::MarkMethodGeneric(25);
+    }
+    ~WithGenericMethod_backupMap() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status backupMap(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::backupMapRequest* /*request*/, ::grpcIFrontEnd::backupMapResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_restoreMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_restoreMap() {
+      ::grpc::Service::MarkMethodGeneric(26);
+    }
+    ~WithGenericMethod_restoreMap() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status restoreMap(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::restoreMapRequest* /*request*/, ::grpcIFrontEnd::restoreMapResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_requestMapProcessing : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_requestMapProcessing() {
-      ::grpc::Service::MarkMethodGeneric(25);
+      ::grpc::Service::MarkMethodGeneric(27);
     }
     ~WithGenericMethod_requestMapProcessing() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2509,7 +2685,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getMapProcessingStatus() {
-      ::grpc::Service::MarkMethodGeneric(26);
+      ::grpc::Service::MarkMethodGeneric(28);
     }
     ~WithGenericMethod_getMapProcessingStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2526,7 +2702,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_getMapProcessingData() {
-      ::grpc::Service::MarkMethodGeneric(27);
+      ::grpc::Service::MarkMethodGeneric(29);
     }
     ~WithGenericMethod_getMapProcessingData() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3038,12 +3214,52 @@ class grpcIFrontEndService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_backupMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_backupMap() {
+      ::grpc::Service::MarkMethodRaw(25);
+    }
+    ~WithRawMethod_backupMap() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status backupMap(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::backupMapRequest* /*request*/, ::grpcIFrontEnd::backupMapResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestbackupMap(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_restoreMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_restoreMap() {
+      ::grpc::Service::MarkMethodRaw(26);
+    }
+    ~WithRawMethod_restoreMap() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status restoreMap(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::restoreMapRequest* /*request*/, ::grpcIFrontEnd::restoreMapResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestrestoreMap(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_requestMapProcessing : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_requestMapProcessing() {
-      ::grpc::Service::MarkMethodRaw(25);
+      ::grpc::Service::MarkMethodRaw(27);
     }
     ~WithRawMethod_requestMapProcessing() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3054,7 +3270,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestrequestMapProcessing(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3063,7 +3279,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getMapProcessingStatus() {
-      ::grpc::Service::MarkMethodRaw(26);
+      ::grpc::Service::MarkMethodRaw(28);
     }
     ~WithRawMethod_getMapProcessingStatus() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3074,7 +3290,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetMapProcessingStatus(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3083,7 +3299,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_getMapProcessingData() {
-      ::grpc::Service::MarkMethodRaw(27);
+      ::grpc::Service::MarkMethodRaw(29);
     }
     ~WithRawMethod_getMapProcessingData() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3094,7 +3310,7 @@ class grpcIFrontEndService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestgetMapProcessingData(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3648,12 +3864,56 @@ class grpcIFrontEndService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_backupMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_backupMap() {
+      ::grpc::Service::MarkMethodRawCallback(25,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->backupMap(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_backupMap() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status backupMap(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::backupMapRequest* /*request*/, ::grpcIFrontEnd::backupMapResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* backupMap(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_restoreMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_restoreMap() {
+      ::grpc::Service::MarkMethodRawCallback(26,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->restoreMap(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_restoreMap() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status restoreMap(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::restoreMapRequest* /*request*/, ::grpcIFrontEnd::restoreMapResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* restoreMap(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_requestMapProcessing : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_requestMapProcessing() {
-      ::grpc::Service::MarkMethodRawCallback(25,
+      ::grpc::Service::MarkMethodRawCallback(27,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->requestMapProcessing(context, request, response); }));
@@ -3675,7 +3935,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_getMapProcessingStatus() {
-      ::grpc::Service::MarkMethodRawCallback(26,
+      ::grpc::Service::MarkMethodRawCallback(28,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getMapProcessingStatus(context, request, response); }));
@@ -3697,7 +3957,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_getMapProcessingData() {
-      ::grpc::Service::MarkMethodRawCallback(27,
+      ::grpc::Service::MarkMethodRawCallback(29,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->getMapProcessingData(context, request, response); }));
@@ -4389,12 +4649,66 @@ class grpcIFrontEndService final {
     virtual ::grpc::Status StreamedgetMapInfo(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIFrontEnd::getMapInfoRequest,::grpcIFrontEnd::getMapInfoResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_backupMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_backupMap() {
+      ::grpc::Service::MarkMethodStreamed(25,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIFrontEnd::backupMapRequest, ::grpcIFrontEnd::backupMapResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIFrontEnd::backupMapRequest, ::grpcIFrontEnd::backupMapResponse>* streamer) {
+                       return this->StreamedbackupMap(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_backupMap() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status backupMap(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::backupMapRequest* /*request*/, ::grpcIFrontEnd::backupMapResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedbackupMap(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIFrontEnd::backupMapRequest,::grpcIFrontEnd::backupMapResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_restoreMap : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_restoreMap() {
+      ::grpc::Service::MarkMethodStreamed(26,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::grpcIFrontEnd::restoreMapRequest, ::grpcIFrontEnd::restoreMapResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::grpcIFrontEnd::restoreMapRequest, ::grpcIFrontEnd::restoreMapResponse>* streamer) {
+                       return this->StreamedrestoreMap(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_restoreMap() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status restoreMap(::grpc::ServerContext* /*context*/, const ::grpcIFrontEnd::restoreMapRequest* /*request*/, ::grpcIFrontEnd::restoreMapResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedrestoreMap(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIFrontEnd::restoreMapRequest,::grpcIFrontEnd::restoreMapResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_requestMapProcessing : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_requestMapProcessing() {
-      ::grpc::Service::MarkMethodStreamed(25,
+      ::grpc::Service::MarkMethodStreamed(27,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::requestMapProcessingRequest, ::grpcIFrontEnd::requestMapProcessingResponse>(
             [this](::grpc::ServerContext* context,
@@ -4421,7 +4735,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getMapProcessingStatus() {
-      ::grpc::Service::MarkMethodStreamed(26,
+      ::grpc::Service::MarkMethodStreamed(28,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::getMapProcessingStatusRequest, ::grpcIFrontEnd::getMapProcessingStatusResponse>(
             [this](::grpc::ServerContext* context,
@@ -4448,7 +4762,7 @@ class grpcIFrontEndService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_getMapProcessingData() {
-      ::grpc::Service::MarkMethodStreamed(27,
+      ::grpc::Service::MarkMethodStreamed(29,
         new ::grpc::internal::StreamedUnaryHandler<
           ::grpcIFrontEnd::getMapProcessingDataRequest, ::grpcIFrontEnd::getMapProcessingDataResponse>(
             [this](::grpc::ServerContext* context,
@@ -4469,9 +4783,9 @@ class grpcIFrontEndService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedgetMapProcessingData(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::grpcIFrontEnd::getMapProcessingDataRequest,::grpcIFrontEnd::getMapProcessingDataResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_registerClient<WithStreamedUnaryMethod_unregisterClient<WithStreamedUnaryMethod_getAllClientsUUID<WithStreamedUnaryMethod_getDeviceInfo<WithStreamedUnaryMethod_init_grpc0<WithStreamedUnaryMethod_init_grpc1<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_getProcessingMode<WithStreamedUnaryMethod_setCameraParameters_grpc0<WithStreamedUnaryMethod_setCameraParameters_grpc1<WithStreamedUnaryMethod_setRectificationParameters<WithStreamedUnaryMethod_getCameraParameters<WithStreamedUnaryMethod_imageProcessRequest<WithStreamedUnaryMethod_getMappingDataRequest<WithStreamedUnaryMethod_getClientPose<WithStreamedUnaryMethod_createMap<WithStreamedUnaryMethod_deleteMap<WithStreamedUnaryMethod_getAllMapsUUID<WithStreamedUnaryMethod_getClientMapUUID<WithStreamedUnaryMethod_getClientInfoForMap<WithStreamedUnaryMethod_getMapRequest<WithStreamedUnaryMethod_setMapRequest<WithStreamedUnaryMethod_getPointCloudRequest<WithStreamedUnaryMethod_getMapInfo<WithStreamedUnaryMethod_requestMapProcessing<WithStreamedUnaryMethod_getMapProcessingStatus<WithStreamedUnaryMethod_getMapProcessingData<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_registerClient<WithStreamedUnaryMethod_unregisterClient<WithStreamedUnaryMethod_getAllClientsUUID<WithStreamedUnaryMethod_getDeviceInfo<WithStreamedUnaryMethod_init_grpc0<WithStreamedUnaryMethod_init_grpc1<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_getProcessingMode<WithStreamedUnaryMethod_setCameraParameters_grpc0<WithStreamedUnaryMethod_setCameraParameters_grpc1<WithStreamedUnaryMethod_setRectificationParameters<WithStreamedUnaryMethod_getCameraParameters<WithStreamedUnaryMethod_imageProcessRequest<WithStreamedUnaryMethod_getMappingDataRequest<WithStreamedUnaryMethod_getClientPose<WithStreamedUnaryMethod_createMap<WithStreamedUnaryMethod_deleteMap<WithStreamedUnaryMethod_getAllMapsUUID<WithStreamedUnaryMethod_getClientMapUUID<WithStreamedUnaryMethod_getClientInfoForMap<WithStreamedUnaryMethod_getMapRequest<WithStreamedUnaryMethod_setMapRequest<WithStreamedUnaryMethod_getPointCloudRequest<WithStreamedUnaryMethod_getMapInfo<WithStreamedUnaryMethod_backupMap<WithStreamedUnaryMethod_restoreMap<WithStreamedUnaryMethod_requestMapProcessing<WithStreamedUnaryMethod_getMapProcessingStatus<WithStreamedUnaryMethod_getMapProcessingData<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_registerClient<WithStreamedUnaryMethod_unregisterClient<WithStreamedUnaryMethod_getAllClientsUUID<WithStreamedUnaryMethod_getDeviceInfo<WithStreamedUnaryMethod_init_grpc0<WithStreamedUnaryMethod_init_grpc1<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_getProcessingMode<WithStreamedUnaryMethod_setCameraParameters_grpc0<WithStreamedUnaryMethod_setCameraParameters_grpc1<WithStreamedUnaryMethod_setRectificationParameters<WithStreamedUnaryMethod_getCameraParameters<WithStreamedUnaryMethod_imageProcessRequest<WithStreamedUnaryMethod_getMappingDataRequest<WithStreamedUnaryMethod_getClientPose<WithStreamedUnaryMethod_createMap<WithStreamedUnaryMethod_deleteMap<WithStreamedUnaryMethod_getAllMapsUUID<WithStreamedUnaryMethod_getClientMapUUID<WithStreamedUnaryMethod_getClientInfoForMap<WithStreamedUnaryMethod_getMapRequest<WithStreamedUnaryMethod_setMapRequest<WithStreamedUnaryMethod_getPointCloudRequest<WithStreamedUnaryMethod_getMapInfo<WithStreamedUnaryMethod_requestMapProcessing<WithStreamedUnaryMethod_getMapProcessingStatus<WithStreamedUnaryMethod_getMapProcessingData<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_registerClient<WithStreamedUnaryMethod_unregisterClient<WithStreamedUnaryMethod_getAllClientsUUID<WithStreamedUnaryMethod_getDeviceInfo<WithStreamedUnaryMethod_init_grpc0<WithStreamedUnaryMethod_init_grpc1<WithStreamedUnaryMethod_start<WithStreamedUnaryMethod_stop<WithStreamedUnaryMethod_getProcessingMode<WithStreamedUnaryMethod_setCameraParameters_grpc0<WithStreamedUnaryMethod_setCameraParameters_grpc1<WithStreamedUnaryMethod_setRectificationParameters<WithStreamedUnaryMethod_getCameraParameters<WithStreamedUnaryMethod_imageProcessRequest<WithStreamedUnaryMethod_getMappingDataRequest<WithStreamedUnaryMethod_getClientPose<WithStreamedUnaryMethod_createMap<WithStreamedUnaryMethod_deleteMap<WithStreamedUnaryMethod_getAllMapsUUID<WithStreamedUnaryMethod_getClientMapUUID<WithStreamedUnaryMethod_getClientInfoForMap<WithStreamedUnaryMethod_getMapRequest<WithStreamedUnaryMethod_setMapRequest<WithStreamedUnaryMethod_getPointCloudRequest<WithStreamedUnaryMethod_getMapInfo<WithStreamedUnaryMethod_backupMap<WithStreamedUnaryMethod_restoreMap<WithStreamedUnaryMethod_requestMapProcessing<WithStreamedUnaryMethod_getMapProcessingStatus<WithStreamedUnaryMethod_getMapProcessingData<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace grpcIFrontEnd

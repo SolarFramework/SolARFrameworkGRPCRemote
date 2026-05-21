@@ -51,6 +51,12 @@ struct TableStruct_grpcIFrontEndService_2eproto {
 extern const ::google::protobuf::internal::DescriptorTable
     descriptor_table_grpcIFrontEndService_2eproto;
 namespace grpcIFrontEnd {
+class backupMapRequest;
+struct backupMapRequestDefaultTypeInternal;
+extern backupMapRequestDefaultTypeInternal _backupMapRequest_default_instance_;
+class backupMapResponse;
+struct backupMapResponseDefaultTypeInternal;
+extern backupMapResponseDefaultTypeInternal _backupMapResponse_default_instance_;
 class createMapRequest;
 struct createMapRequestDefaultTypeInternal;
 extern createMapRequestDefaultTypeInternal _createMapRequest_default_instance_;
@@ -177,6 +183,12 @@ extern requestMapProcessingRequestDefaultTypeInternal _requestMapProcessingReque
 class requestMapProcessingResponse;
 struct requestMapProcessingResponseDefaultTypeInternal;
 extern requestMapProcessingResponseDefaultTypeInternal _requestMapProcessingResponse_default_instance_;
+class restoreMapRequest;
+struct restoreMapRequestDefaultTypeInternal;
+extern restoreMapRequestDefaultTypeInternal _restoreMapRequest_default_instance_;
+class restoreMapResponse;
+struct restoreMapResponseDefaultTypeInternal;
+extern restoreMapResponseDefaultTypeInternal _restoreMapResponse_default_instance_;
 class setCameraParameters_grpc0Request;
 struct setCameraParameters_grpc0RequestDefaultTypeInternal;
 extern setCameraParameters_grpc0RequestDefaultTypeInternal _setCameraParameters_grpc0Request_default_instance_;
@@ -2986,6 +2998,402 @@ class setCameraParameters_grpc0Request final : public ::google::protobuf::Messag
 };
 // -------------------------------------------------------------------
 
+class restoreMapResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.restoreMapResponse) */ {
+ public:
+  inline restoreMapResponse() : restoreMapResponse(nullptr) {}
+  ~restoreMapResponse() override;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR restoreMapResponse(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline restoreMapResponse(const restoreMapResponse& from) : restoreMapResponse(nullptr, from) {}
+  inline restoreMapResponse(restoreMapResponse&& from) noexcept
+      : restoreMapResponse(nullptr, std::move(from)) {}
+  inline restoreMapResponse& operator=(const restoreMapResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline restoreMapResponse& operator=(restoreMapResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const restoreMapResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const restoreMapResponse* internal_default_instance() {
+    return reinterpret_cast<const restoreMapResponse*>(
+        &_restoreMapResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 53;
+  friend void swap(restoreMapResponse& a, restoreMapResponse& b) { a.Swap(&b); }
+  inline void Swap(restoreMapResponse* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(restoreMapResponse* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  restoreMapResponse* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<restoreMapResponse>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const restoreMapResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const restoreMapResponse& from) { restoreMapResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(restoreMapResponse* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.restoreMapResponse"; }
+
+ protected:
+  explicit restoreMapResponse(::google::protobuf::Arena* arena);
+  restoreMapResponse(::google::protobuf::Arena* arena, const restoreMapResponse& from);
+  restoreMapResponse(::google::protobuf::Arena* arena, restoreMapResponse&& from) noexcept
+      : restoreMapResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::Message::ClassData* GetClassData() const final;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // sint32 xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue() ;
+  ::int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::int32_t value);
+
+  private:
+  ::int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.restoreMapResponse)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      0, 1, 0,
+      0, 2>
+      _table_;
+
+  static constexpr const void* _raw_default_instance_ =
+      &_restoreMapResponse_default_instance_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const restoreMapResponse& from_msg);
+    ::int32_t xpcfgrpcreturnvalue_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class restoreMapRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.restoreMapRequest) */ {
+ public:
+  inline restoreMapRequest() : restoreMapRequest(nullptr) {}
+  ~restoreMapRequest() override;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR restoreMapRequest(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline restoreMapRequest(const restoreMapRequest& from) : restoreMapRequest(nullptr, from) {}
+  inline restoreMapRequest(restoreMapRequest&& from) noexcept
+      : restoreMapRequest(nullptr, std::move(from)) {}
+  inline restoreMapRequest& operator=(const restoreMapRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline restoreMapRequest& operator=(restoreMapRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const restoreMapRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const restoreMapRequest* internal_default_instance() {
+    return reinterpret_cast<const restoreMapRequest*>(
+        &_restoreMapRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 52;
+  friend void swap(restoreMapRequest& a, restoreMapRequest& b) { a.Swap(&b); }
+  inline void Swap(restoreMapRequest* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(restoreMapRequest* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  restoreMapRequest* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<restoreMapRequest>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const restoreMapRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const restoreMapRequest& from) { restoreMapRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(restoreMapRequest* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.restoreMapRequest"; }
+
+ protected:
+  explicit restoreMapRequest(::google::protobuf::Arena* arena);
+  restoreMapRequest(::google::protobuf::Arena* arena, const restoreMapRequest& from);
+  restoreMapRequest(::google::protobuf::Arena* arena, restoreMapRequest&& from) noexcept
+      : restoreMapRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::Message::ClassData* GetClassData() const final;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kAccessTokenFieldNumber = 2,
+    kMapUUIDFieldNumber = 3,
+    kCompressedZipDataFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // string accessToken = 2;
+  void clear_accesstoken() ;
+  const std::string& accesstoken() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_accesstoken(Arg_&& arg, Args_... args);
+  std::string* mutable_accesstoken();
+  PROTOBUF_NODISCARD std::string* release_accesstoken();
+  void set_allocated_accesstoken(std::string* value);
+
+  private:
+  const std::string& _internal_accesstoken() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_accesstoken(
+      const std::string& value);
+  std::string* _internal_mutable_accesstoken();
+
+  public:
+  // string mapUUID = 3;
+  void clear_mapuuid() ;
+  const std::string& mapuuid() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_mapuuid(Arg_&& arg, Args_... args);
+  std::string* mutable_mapuuid();
+  PROTOBUF_NODISCARD std::string* release_mapuuid();
+  void set_allocated_mapuuid(std::string* value);
+
+  private:
+  const std::string& _internal_mapuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuid(
+      const std::string& value);
+  std::string* _internal_mutable_mapuuid();
+
+  public:
+  // bytes compressedZipData = 4;
+  void clear_compressedzipdata() ;
+  const std::string& compressedzipdata() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_compressedzipdata(Arg_&& arg, Args_... args);
+  std::string* mutable_compressedzipdata();
+  PROTOBUF_NODISCARD std::string* release_compressedzipdata();
+  void set_allocated_compressedzipdata(std::string* value);
+
+  private:
+  const std::string& _internal_compressedzipdata() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_compressedzipdata(
+      const std::string& value);
+  std::string* _internal_mutable_compressedzipdata();
+
+  public:
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat() ;
+  ::int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::int32_t value);
+
+  private:
+  ::int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.restoreMapRequest)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      2, 4, 0,
+      58, 2>
+      _table_;
+
+  static constexpr const void* _raw_default_instance_ =
+      &_restoreMapRequest_default_instance_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const restoreMapRequest& from_msg);
+    ::google::protobuf::internal::ArenaStringPtr accesstoken_;
+    ::google::protobuf::internal::ArenaStringPtr mapuuid_;
+    ::google::protobuf::internal::ArenaStringPtr compressedzipdata_;
+    ::int32_t grpcservercompressionformat_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
 class requestMapProcessingResponse final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:grpcIFrontEnd.requestMapProcessingResponse) */ {
  public:
@@ -3041,7 +3449,7 @@ class requestMapProcessingResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const requestMapProcessingResponse*>(
         &_requestMapProcessingResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 51;
+  static constexpr int kIndexInFileMessages = 55;
   friend void swap(requestMapProcessingResponse& a, requestMapProcessingResponse& b) { a.Swap(&b); }
   inline void Swap(requestMapProcessingResponse* other) {
     if (other == this) return;
@@ -3212,7 +3620,7 @@ class requestMapProcessingRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const requestMapProcessingRequest*>(
         &_requestMapProcessingRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 50;
+  static constexpr int kIndexInFileMessages = 54;
   friend void swap(requestMapProcessingRequest& a, requestMapProcessingRequest& b) { a.Swap(&b); }
   inline void Swap(requestMapProcessingRequest* other) {
     if (other == this) return;
@@ -6959,7 +7367,7 @@ class getMapProcessingStatusResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const getMapProcessingStatusResponse*>(
         &_getMapProcessingStatusResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 53;
+  static constexpr int kIndexInFileMessages = 57;
   friend void swap(getMapProcessingStatusResponse& a, getMapProcessingStatusResponse& b) { a.Swap(&b); }
   inline void Swap(getMapProcessingStatusResponse* other) {
     if (other == this) return;
@@ -7166,7 +7574,7 @@ class getMapProcessingStatusRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const getMapProcessingStatusRequest*>(
         &_getMapProcessingStatusRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 52;
+  static constexpr int kIndexInFileMessages = 56;
   friend void swap(getMapProcessingStatusRequest& a, getMapProcessingStatusRequest& b) { a.Swap(&b); }
   inline void Swap(getMapProcessingStatusRequest* other) {
     if (other == this) return;
@@ -7409,7 +7817,7 @@ class getMapProcessingDataResponse final : public ::google::protobuf::Message
     return reinterpret_cast<const getMapProcessingDataResponse*>(
         &_getMapProcessingDataResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 55;
+  static constexpr int kIndexInFileMessages = 59;
   friend void swap(getMapProcessingDataResponse& a, getMapProcessingDataResponse& b) { a.Swap(&b); }
   inline void Swap(getMapProcessingDataResponse* other) {
     if (other == this) return;
@@ -7616,7 +8024,7 @@ class getMapProcessingDataRequest final : public ::google::protobuf::Message
     return reinterpret_cast<const getMapProcessingDataRequest*>(
         &_getMapProcessingDataRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 54;
+  static constexpr int kIndexInFileMessages = 58;
   friend void swap(getMapProcessingDataRequest& a, getMapProcessingDataRequest& b) { a.Swap(&b); }
   inline void Swap(getMapProcessingDataRequest* other) {
     if (other == this) return;
@@ -12031,6 +12439,420 @@ class createMapRequest final : public ::google::protobuf::Message
                           const createMapRequest& from_msg);
     ::google::protobuf::internal::ArenaStringPtr accesstoken_;
     ::google::protobuf::internal::ArenaStringPtr mapuuid_;
+    ::int32_t grpcservercompressionformat_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class backupMapResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.backupMapResponse) */ {
+ public:
+  inline backupMapResponse() : backupMapResponse(nullptr) {}
+  ~backupMapResponse() override;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR backupMapResponse(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline backupMapResponse(const backupMapResponse& from) : backupMapResponse(nullptr, from) {}
+  inline backupMapResponse(backupMapResponse&& from) noexcept
+      : backupMapResponse(nullptr, std::move(from)) {}
+  inline backupMapResponse& operator=(const backupMapResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline backupMapResponse& operator=(backupMapResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const backupMapResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const backupMapResponse* internal_default_instance() {
+    return reinterpret_cast<const backupMapResponse*>(
+        &_backupMapResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 51;
+  friend void swap(backupMapResponse& a, backupMapResponse& b) { a.Swap(&b); }
+  inline void Swap(backupMapResponse* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(backupMapResponse* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  backupMapResponse* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<backupMapResponse>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const backupMapResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const backupMapResponse& from) { backupMapResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(backupMapResponse* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.backupMapResponse"; }
+
+ protected:
+  explicit backupMapResponse(::google::protobuf::Arena* arena);
+  backupMapResponse(::google::protobuf::Arena* arena, const backupMapResponse& from);
+  backupMapResponse(::google::protobuf::Arena* arena, backupMapResponse&& from) noexcept
+      : backupMapResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::Message::ClassData* GetClassData() const final;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kCompressedZipDataFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
+  };
+  // bytes compressedZipData = 1;
+  void clear_compressedzipdata() ;
+  const std::string& compressedzipdata() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_compressedzipdata(Arg_&& arg, Args_... args);
+  std::string* mutable_compressedzipdata();
+  PROTOBUF_NODISCARD std::string* release_compressedzipdata();
+  void set_allocated_compressedzipdata(std::string* value);
+
+  private:
+  const std::string& _internal_compressedzipdata() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_compressedzipdata(
+      const std::string& value);
+  std::string* _internal_mutable_compressedzipdata();
+
+  public:
+  // sint32 xpcfGrpcReturnValue = 2;
+  void clear_xpcfgrpcreturnvalue() ;
+  ::int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::int32_t value);
+
+  private:
+  ::int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.backupMapResponse)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      1, 2, 0,
+      0, 2>
+      _table_;
+
+  static constexpr const void* _raw_default_instance_ =
+      &_backupMapResponse_default_instance_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const backupMapResponse& from_msg);
+    ::google::protobuf::internal::ArenaStringPtr compressedzipdata_;
+    ::int32_t xpcfgrpcreturnvalue_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIFrontEndService_2eproto;
+};
+// -------------------------------------------------------------------
+
+class backupMapRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIFrontEnd.backupMapRequest) */ {
+ public:
+  inline backupMapRequest() : backupMapRequest(nullptr) {}
+  ~backupMapRequest() override;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR backupMapRequest(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline backupMapRequest(const backupMapRequest& from) : backupMapRequest(nullptr, from) {}
+  inline backupMapRequest(backupMapRequest&& from) noexcept
+      : backupMapRequest(nullptr, std::move(from)) {}
+  inline backupMapRequest& operator=(const backupMapRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline backupMapRequest& operator=(backupMapRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const backupMapRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const backupMapRequest* internal_default_instance() {
+    return reinterpret_cast<const backupMapRequest*>(
+        &_backupMapRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 50;
+  friend void swap(backupMapRequest& a, backupMapRequest& b) { a.Swap(&b); }
+  inline void Swap(backupMapRequest* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(backupMapRequest* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  backupMapRequest* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<backupMapRequest>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const backupMapRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const backupMapRequest& from) { backupMapRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(backupMapRequest* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "grpcIFrontEnd.backupMapRequest"; }
+
+ protected:
+  explicit backupMapRequest(::google::protobuf::Arena* arena);
+  backupMapRequest(::google::protobuf::Arena* arena, const backupMapRequest& from);
+  backupMapRequest(::google::protobuf::Arena* arena, backupMapRequest&& from) noexcept
+      : backupMapRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::Message::ClassData* GetClassData() const final;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kAccessTokenFieldNumber = 2,
+    kMapUUIDFieldNumber = 3,
+    kCompressedZipDataFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // string accessToken = 2;
+  void clear_accesstoken() ;
+  const std::string& accesstoken() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_accesstoken(Arg_&& arg, Args_... args);
+  std::string* mutable_accesstoken();
+  PROTOBUF_NODISCARD std::string* release_accesstoken();
+  void set_allocated_accesstoken(std::string* value);
+
+  private:
+  const std::string& _internal_accesstoken() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_accesstoken(
+      const std::string& value);
+  std::string* _internal_mutable_accesstoken();
+
+  public:
+  // string mapUUID = 3;
+  void clear_mapuuid() ;
+  const std::string& mapuuid() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_mapuuid(Arg_&& arg, Args_... args);
+  std::string* mutable_mapuuid();
+  PROTOBUF_NODISCARD std::string* release_mapuuid();
+  void set_allocated_mapuuid(std::string* value);
+
+  private:
+  const std::string& _internal_mapuuid() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuid(
+      const std::string& value);
+  std::string* _internal_mutable_mapuuid();
+
+  public:
+  // bytes compressedZipData = 4;
+  void clear_compressedzipdata() ;
+  const std::string& compressedzipdata() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_compressedzipdata(Arg_&& arg, Args_... args);
+  std::string* mutable_compressedzipdata();
+  PROTOBUF_NODISCARD std::string* release_compressedzipdata();
+  void set_allocated_compressedzipdata(std::string* value);
+
+  private:
+  const std::string& _internal_compressedzipdata() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_compressedzipdata(
+      const std::string& value);
+  std::string* _internal_mutable_compressedzipdata();
+
+  public:
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat() ;
+  ::int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::int32_t value);
+
+  private:
+  ::int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIFrontEnd.backupMapRequest)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      2, 4, 0,
+      57, 2>
+      _table_;
+
+  static constexpr const void* _raw_default_instance_ =
+      &_backupMapRequest_default_instance_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from,
+                          const backupMapRequest& from_msg);
+    ::google::protobuf::internal::ArenaStringPtr accesstoken_;
+    ::google::protobuf::internal::ArenaStringPtr mapuuid_;
+    ::google::protobuf::internal::ArenaStringPtr compressedzipdata_;
     ::int32_t grpcservercompressionformat_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -18537,6 +19359,460 @@ inline ::int32_t getMapInfoResponse::_internal_xpcfgrpcreturnvalue() const {
   return _impl_.xpcfgrpcreturnvalue_;
 }
 inline void getMapInfoResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// backupMapRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void backupMapRequest::clear_grpcservercompressionformat() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = 0;
+}
+inline ::int32_t backupMapRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.backupMapRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void backupMapRequest::set_grpcservercompressionformat(::int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.backupMapRequest.grpcServerCompressionFormat)
+}
+inline ::int32_t backupMapRequest::_internal_grpcservercompressionformat() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.grpcservercompressionformat_;
+}
+inline void backupMapRequest::_internal_set_grpcservercompressionformat(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = value;
+}
+
+// string accessToken = 2;
+inline void backupMapRequest::clear_accesstoken() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesstoken_.ClearToEmpty();
+}
+inline const std::string& backupMapRequest::accesstoken() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.backupMapRequest.accessToken)
+  return _internal_accesstoken();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void backupMapRequest::set_accesstoken(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesstoken_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.backupMapRequest.accessToken)
+}
+inline std::string* backupMapRequest::mutable_accesstoken() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_accesstoken();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.backupMapRequest.accessToken)
+  return _s;
+}
+inline const std::string& backupMapRequest::_internal_accesstoken() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.accesstoken_.Get();
+}
+inline void backupMapRequest::_internal_set_accesstoken(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesstoken_.Set(value, GetArena());
+}
+inline std::string* backupMapRequest::_internal_mutable_accesstoken() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.accesstoken_.Mutable( GetArena());
+}
+inline std::string* backupMapRequest::release_accesstoken() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.backupMapRequest.accessToken)
+  return _impl_.accesstoken_.Release();
+}
+inline void backupMapRequest::set_allocated_accesstoken(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesstoken_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.accesstoken_.IsDefault()) {
+          _impl_.accesstoken_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.backupMapRequest.accessToken)
+}
+
+// string mapUUID = 3;
+inline void backupMapRequest::clear_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.ClearToEmpty();
+}
+inline const std::string& backupMapRequest::mapuuid() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.backupMapRequest.mapUUID)
+  return _internal_mapuuid();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void backupMapRequest::set_mapuuid(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.backupMapRequest.mapUUID)
+}
+inline std::string* backupMapRequest::mutable_mapuuid() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_mapuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.backupMapRequest.mapUUID)
+  return _s;
+}
+inline const std::string& backupMapRequest::_internal_mapuuid() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.mapuuid_.Get();
+}
+inline void backupMapRequest::_internal_set_mapuuid(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.Set(value, GetArena());
+}
+inline std::string* backupMapRequest::_internal_mutable_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.mapuuid_.Mutable( GetArena());
+}
+inline std::string* backupMapRequest::release_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.backupMapRequest.mapUUID)
+  return _impl_.mapuuid_.Release();
+}
+inline void backupMapRequest::set_allocated_mapuuid(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.mapuuid_.IsDefault()) {
+          _impl_.mapuuid_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.backupMapRequest.mapUUID)
+}
+
+// bytes compressedZipData = 4;
+inline void backupMapRequest::clear_compressedzipdata() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipdata_.ClearToEmpty();
+}
+inline const std::string& backupMapRequest::compressedzipdata() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.backupMapRequest.compressedZipData)
+  return _internal_compressedzipdata();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void backupMapRequest::set_compressedzipdata(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipdata_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.backupMapRequest.compressedZipData)
+}
+inline std::string* backupMapRequest::mutable_compressedzipdata() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_compressedzipdata();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.backupMapRequest.compressedZipData)
+  return _s;
+}
+inline const std::string& backupMapRequest::_internal_compressedzipdata() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.compressedzipdata_.Get();
+}
+inline void backupMapRequest::_internal_set_compressedzipdata(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipdata_.Set(value, GetArena());
+}
+inline std::string* backupMapRequest::_internal_mutable_compressedzipdata() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.compressedzipdata_.Mutable( GetArena());
+}
+inline std::string* backupMapRequest::release_compressedzipdata() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.backupMapRequest.compressedZipData)
+  return _impl_.compressedzipdata_.Release();
+}
+inline void backupMapRequest::set_allocated_compressedzipdata(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipdata_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.compressedzipdata_.IsDefault()) {
+          _impl_.compressedzipdata_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.backupMapRequest.compressedZipData)
+}
+
+// -------------------------------------------------------------------
+
+// backupMapResponse
+
+// bytes compressedZipData = 1;
+inline void backupMapResponse::clear_compressedzipdata() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipdata_.ClearToEmpty();
+}
+inline const std::string& backupMapResponse::compressedzipdata() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.backupMapResponse.compressedZipData)
+  return _internal_compressedzipdata();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void backupMapResponse::set_compressedzipdata(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipdata_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.backupMapResponse.compressedZipData)
+}
+inline std::string* backupMapResponse::mutable_compressedzipdata() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_compressedzipdata();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.backupMapResponse.compressedZipData)
+  return _s;
+}
+inline const std::string& backupMapResponse::_internal_compressedzipdata() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.compressedzipdata_.Get();
+}
+inline void backupMapResponse::_internal_set_compressedzipdata(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipdata_.Set(value, GetArena());
+}
+inline std::string* backupMapResponse::_internal_mutable_compressedzipdata() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.compressedzipdata_.Mutable( GetArena());
+}
+inline std::string* backupMapResponse::release_compressedzipdata() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.backupMapResponse.compressedZipData)
+  return _impl_.compressedzipdata_.Release();
+}
+inline void backupMapResponse::set_allocated_compressedzipdata(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipdata_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.compressedzipdata_.IsDefault()) {
+          _impl_.compressedzipdata_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.backupMapResponse.compressedZipData)
+}
+
+// sint32 xpcfGrpcReturnValue = 2;
+inline void backupMapResponse::clear_xpcfgrpcreturnvalue() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+}
+inline ::int32_t backupMapResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.backupMapResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void backupMapResponse::set_xpcfgrpcreturnvalue(::int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.backupMapResponse.xpcfGrpcReturnValue)
+}
+inline ::int32_t backupMapResponse::_internal_xpcfgrpcreturnvalue() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline void backupMapResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// restoreMapRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void restoreMapRequest::clear_grpcservercompressionformat() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = 0;
+}
+inline ::int32_t restoreMapRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.restoreMapRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void restoreMapRequest::set_grpcservercompressionformat(::int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.restoreMapRequest.grpcServerCompressionFormat)
+}
+inline ::int32_t restoreMapRequest::_internal_grpcservercompressionformat() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.grpcservercompressionformat_;
+}
+inline void restoreMapRequest::_internal_set_grpcservercompressionformat(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = value;
+}
+
+// string accessToken = 2;
+inline void restoreMapRequest::clear_accesstoken() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesstoken_.ClearToEmpty();
+}
+inline const std::string& restoreMapRequest::accesstoken() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.restoreMapRequest.accessToken)
+  return _internal_accesstoken();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void restoreMapRequest::set_accesstoken(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesstoken_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.restoreMapRequest.accessToken)
+}
+inline std::string* restoreMapRequest::mutable_accesstoken() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_accesstoken();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.restoreMapRequest.accessToken)
+  return _s;
+}
+inline const std::string& restoreMapRequest::_internal_accesstoken() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.accesstoken_.Get();
+}
+inline void restoreMapRequest::_internal_set_accesstoken(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesstoken_.Set(value, GetArena());
+}
+inline std::string* restoreMapRequest::_internal_mutable_accesstoken() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.accesstoken_.Mutable( GetArena());
+}
+inline std::string* restoreMapRequest::release_accesstoken() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.restoreMapRequest.accessToken)
+  return _impl_.accesstoken_.Release();
+}
+inline void restoreMapRequest::set_allocated_accesstoken(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesstoken_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.accesstoken_.IsDefault()) {
+          _impl_.accesstoken_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.restoreMapRequest.accessToken)
+}
+
+// string mapUUID = 3;
+inline void restoreMapRequest::clear_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.ClearToEmpty();
+}
+inline const std::string& restoreMapRequest::mapuuid() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.restoreMapRequest.mapUUID)
+  return _internal_mapuuid();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void restoreMapRequest::set_mapuuid(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.restoreMapRequest.mapUUID)
+}
+inline std::string* restoreMapRequest::mutable_mapuuid() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_mapuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.restoreMapRequest.mapUUID)
+  return _s;
+}
+inline const std::string& restoreMapRequest::_internal_mapuuid() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.mapuuid_.Get();
+}
+inline void restoreMapRequest::_internal_set_mapuuid(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.Set(value, GetArena());
+}
+inline std::string* restoreMapRequest::_internal_mutable_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.mapuuid_.Mutable( GetArena());
+}
+inline std::string* restoreMapRequest::release_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.restoreMapRequest.mapUUID)
+  return _impl_.mapuuid_.Release();
+}
+inline void restoreMapRequest::set_allocated_mapuuid(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.mapuuid_.IsDefault()) {
+          _impl_.mapuuid_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.restoreMapRequest.mapUUID)
+}
+
+// bytes compressedZipData = 4;
+inline void restoreMapRequest::clear_compressedzipdata() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipdata_.ClearToEmpty();
+}
+inline const std::string& restoreMapRequest::compressedzipdata() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.restoreMapRequest.compressedZipData)
+  return _internal_compressedzipdata();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void restoreMapRequest::set_compressedzipdata(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipdata_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.restoreMapRequest.compressedZipData)
+}
+inline std::string* restoreMapRequest::mutable_compressedzipdata() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_compressedzipdata();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.restoreMapRequest.compressedZipData)
+  return _s;
+}
+inline const std::string& restoreMapRequest::_internal_compressedzipdata() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.compressedzipdata_.Get();
+}
+inline void restoreMapRequest::_internal_set_compressedzipdata(const std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipdata_.Set(value, GetArena());
+}
+inline std::string* restoreMapRequest::_internal_mutable_compressedzipdata() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.compressedzipdata_.Mutable( GetArena());
+}
+inline std::string* restoreMapRequest::release_compressedzipdata() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.restoreMapRequest.compressedZipData)
+  return _impl_.compressedzipdata_.Release();
+}
+inline void restoreMapRequest::set_allocated_compressedzipdata(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipdata_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.compressedzipdata_.IsDefault()) {
+          _impl_.compressedzipdata_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.restoreMapRequest.compressedZipData)
+}
+
+// -------------------------------------------------------------------
+
+// restoreMapResponse
+
+// sint32 xpcfGrpcReturnValue = 1;
+inline void restoreMapResponse::clear_xpcfgrpcreturnvalue() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+}
+inline ::int32_t restoreMapResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIFrontEnd.restoreMapResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void restoreMapResponse::set_xpcfgrpcreturnvalue(::int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  // @@protoc_insertion_point(field_set:grpcIFrontEnd.restoreMapResponse.xpcfGrpcReturnValue)
+}
+inline ::int32_t restoreMapResponse::_internal_xpcfgrpcreturnvalue() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline void restoreMapResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.xpcfgrpcreturnvalue_ = value;
 }
