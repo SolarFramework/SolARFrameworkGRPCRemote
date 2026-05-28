@@ -8337,11 +8337,11 @@ class getMapInfoResponse final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kVersionFieldNumber = 1,
+    kMapProcessingHistoryFieldNumber = 6,
     kGlobalDescriptorTypeFieldNumber = 2,
     kDescriptorTypeFieldNumber = 3,
     kDataSizeFieldNumber = 4,
     kAreImageSavedFieldNumber = 5,
-    kMapProcessingHistoryFieldNumber = 6,
     kXpcfGrpcReturnValueFieldNumber = 7,
   };
   // string version = 1;
@@ -8358,6 +8358,22 @@ class getMapInfoResponse final : public ::google::protobuf::Message
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_version(
       const std::string& value);
   std::string* _internal_mutable_version();
+
+  public:
+  // bytes mapProcessingHistory = 6;
+  void clear_mapprocessinghistory() ;
+  const std::string& mapprocessinghistory() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_mapprocessinghistory(Arg_&& arg, Args_... args);
+  std::string* mutable_mapprocessinghistory();
+  PROTOBUF_NODISCARD std::string* release_mapprocessinghistory();
+  void set_allocated_mapprocessinghistory(std::string* value);
+
+  private:
+  const std::string& _internal_mapprocessinghistory() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapprocessinghistory(
+      const std::string& value);
+  std::string* _internal_mutable_mapprocessinghistory();
 
   public:
   // sint32 globalDescriptorType = 2;
@@ -8400,16 +8416,6 @@ class getMapInfoResponse final : public ::google::protobuf::Message
   void _internal_set_areimagesaved(bool value);
 
   public:
-  // sint32 mapProcessingHistory = 6;
-  void clear_mapprocessinghistory() ;
-  ::int32_t mapprocessinghistory() const;
-  void set_mapprocessinghistory(::int32_t value);
-
-  private:
-  ::int32_t _internal_mapprocessinghistory() const;
-  void _internal_set_mapprocessinghistory(::int32_t value);
-
-  public:
   // sint32 xpcfGrpcReturnValue = 7;
   void clear_xpcfgrpcreturnvalue() ;
   ::int32_t xpcfgrpcreturnvalue() const;
@@ -8447,11 +8453,11 @@ class getMapInfoResponse final : public ::google::protobuf::Message
                           ::google::protobuf::Arena* arena, const Impl_& from,
                           const getMapInfoResponse& from_msg);
     ::google::protobuf::internal::ArenaStringPtr version_;
+    ::google::protobuf::internal::ArenaStringPtr mapprocessinghistory_;
     ::int32_t globaldescriptortype_;
     ::int32_t descriptortype_;
     ::uint32_t datasize_;
     bool areimagesaved_;
-    ::int32_t mapprocessinghistory_;
     ::int32_t xpcfgrpcreturnvalue_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -8588,12 +8594,12 @@ class getMapInfoRequest final : public ::google::protobuf::Message
     kAccessTokenFieldNumber = 2,
     kMapUUIDFieldNumber = 3,
     kVersionFieldNumber = 4,
+    kMapProcessingHistoryFieldNumber = 9,
     kGrpcServerCompressionFormatFieldNumber = 1,
     kGlobalDescriptorTypeFieldNumber = 5,
     kDescriptorTypeFieldNumber = 6,
     kDataSizeFieldNumber = 7,
     kAreImageSavedFieldNumber = 8,
-    kMapProcessingHistoryFieldNumber = 9,
   };
   // string accessToken = 2;
   void clear_accesstoken() ;
@@ -8641,6 +8647,22 @@ class getMapInfoRequest final : public ::google::protobuf::Message
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_version(
       const std::string& value);
   std::string* _internal_mutable_version();
+
+  public:
+  // bytes mapProcessingHistory = 9;
+  void clear_mapprocessinghistory() ;
+  const std::string& mapprocessinghistory() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_mapprocessinghistory(Arg_&& arg, Args_... args);
+  std::string* mutable_mapprocessinghistory();
+  PROTOBUF_NODISCARD std::string* release_mapprocessinghistory();
+  void set_allocated_mapprocessinghistory(std::string* value);
+
+  private:
+  const std::string& _internal_mapprocessinghistory() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_mapprocessinghistory(
+      const std::string& value);
+  std::string* _internal_mutable_mapprocessinghistory();
 
   public:
   // int32 grpcServerCompressionFormat = 1;
@@ -8693,16 +8715,6 @@ class getMapInfoRequest final : public ::google::protobuf::Message
   void _internal_set_areimagesaved(bool value);
 
   public:
-  // sint32 mapProcessingHistory = 9;
-  void clear_mapprocessinghistory() ;
-  ::int32_t mapprocessinghistory() const;
-  void set_mapprocessinghistory(::int32_t value);
-
-  private:
-  ::int32_t _internal_mapprocessinghistory() const;
-  void _internal_set_mapprocessinghistory(::int32_t value);
-
-  public:
   // @@protoc_insertion_point(class_scope:grpcIFrontEnd.getMapInfoRequest)
  private:
   class _Internal;
@@ -8732,12 +8744,12 @@ class getMapInfoRequest final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr accesstoken_;
     ::google::protobuf::internal::ArenaStringPtr mapuuid_;
     ::google::protobuf::internal::ArenaStringPtr version_;
+    ::google::protobuf::internal::ArenaStringPtr mapprocessinghistory_;
     ::int32_t grpcservercompressionformat_;
     ::int32_t globaldescriptortype_;
     ::int32_t descriptortype_;
     ::uint32_t datasize_;
     bool areimagesaved_;
-    ::int32_t mapprocessinghistory_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -19223,26 +19235,54 @@ inline void getMapInfoRequest::_internal_set_areimagesaved(bool value) {
   _impl_.areimagesaved_ = value;
 }
 
-// sint32 mapProcessingHistory = 9;
+// bytes mapProcessingHistory = 9;
 inline void getMapInfoRequest::clear_mapprocessinghistory() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.mapprocessinghistory_ = 0;
+  _impl_.mapprocessinghistory_.ClearToEmpty();
 }
-inline ::int32_t getMapInfoRequest::mapprocessinghistory() const {
+inline const std::string& getMapInfoRequest::mapprocessinghistory() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapInfoRequest.mapProcessingHistory)
   return _internal_mapprocessinghistory();
 }
-inline void getMapInfoRequest::set_mapprocessinghistory(::int32_t value) {
-  _internal_set_mapprocessinghistory(value);
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void getMapInfoRequest::set_mapprocessinghistory(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapprocessinghistory_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapInfoRequest.mapProcessingHistory)
 }
-inline ::int32_t getMapInfoRequest::_internal_mapprocessinghistory() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.mapprocessinghistory_;
+inline std::string* getMapInfoRequest::mutable_mapprocessinghistory() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_mapprocessinghistory();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getMapInfoRequest.mapProcessingHistory)
+  return _s;
 }
-inline void getMapInfoRequest::_internal_set_mapprocessinghistory(::int32_t value) {
+inline const std::string& getMapInfoRequest::_internal_mapprocessinghistory() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.mapprocessinghistory_.Get();
+}
+inline void getMapInfoRequest::_internal_set_mapprocessinghistory(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.mapprocessinghistory_ = value;
+  _impl_.mapprocessinghistory_.Set(value, GetArena());
+}
+inline std::string* getMapInfoRequest::_internal_mutable_mapprocessinghistory() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.mapprocessinghistory_.Mutable( GetArena());
+}
+inline std::string* getMapInfoRequest::release_mapprocessinghistory() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getMapInfoRequest.mapProcessingHistory)
+  return _impl_.mapprocessinghistory_.Release();
+}
+inline void getMapInfoRequest::set_allocated_mapprocessinghistory(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapprocessinghistory_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.mapprocessinghistory_.IsDefault()) {
+          _impl_.mapprocessinghistory_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMapInfoRequest.mapProcessingHistory)
 }
 
 // -------------------------------------------------------------------
@@ -19387,26 +19427,54 @@ inline void getMapInfoResponse::_internal_set_areimagesaved(bool value) {
   _impl_.areimagesaved_ = value;
 }
 
-// sint32 mapProcessingHistory = 6;
+// bytes mapProcessingHistory = 6;
 inline void getMapInfoResponse::clear_mapprocessinghistory() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.mapprocessinghistory_ = 0;
+  _impl_.mapprocessinghistory_.ClearToEmpty();
 }
-inline ::int32_t getMapInfoResponse::mapprocessinghistory() const {
+inline const std::string& getMapInfoResponse::mapprocessinghistory() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:grpcIFrontEnd.getMapInfoResponse.mapProcessingHistory)
   return _internal_mapprocessinghistory();
 }
-inline void getMapInfoResponse::set_mapprocessinghistory(::int32_t value) {
-  _internal_set_mapprocessinghistory(value);
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void getMapInfoResponse::set_mapprocessinghistory(Arg_&& arg,
+                                                     Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapprocessinghistory_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:grpcIFrontEnd.getMapInfoResponse.mapProcessingHistory)
 }
-inline ::int32_t getMapInfoResponse::_internal_mapprocessinghistory() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.mapprocessinghistory_;
+inline std::string* getMapInfoResponse::mutable_mapprocessinghistory() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_mapprocessinghistory();
+  // @@protoc_insertion_point(field_mutable:grpcIFrontEnd.getMapInfoResponse.mapProcessingHistory)
+  return _s;
 }
-inline void getMapInfoResponse::_internal_set_mapprocessinghistory(::int32_t value) {
+inline const std::string& getMapInfoResponse::_internal_mapprocessinghistory() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.mapprocessinghistory_.Get();
+}
+inline void getMapInfoResponse::_internal_set_mapprocessinghistory(const std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.mapprocessinghistory_ = value;
+  _impl_.mapprocessinghistory_.Set(value, GetArena());
+}
+inline std::string* getMapInfoResponse::_internal_mutable_mapprocessinghistory() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.mapprocessinghistory_.Mutable( GetArena());
+}
+inline std::string* getMapInfoResponse::release_mapprocessinghistory() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIFrontEnd.getMapInfoResponse.mapProcessingHistory)
+  return _impl_.mapprocessinghistory_.Release();
+}
+inline void getMapInfoResponse::set_allocated_mapprocessinghistory(std::string* value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapprocessinghistory_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.mapprocessinghistory_.IsDefault()) {
+          _impl_.mapprocessinghistory_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:grpcIFrontEnd.getMapInfoResponse.mapProcessingHistory)
 }
 
 // sint32 xpcfGrpcReturnValue = 7;

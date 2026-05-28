@@ -357,7 +357,7 @@ sint32 globalDescriptorType = 5;
 sint32 descriptorType = 6;
 uint32 dataSize = 7;
 bool areImageSaved = 8;
-sint32 mapProcessingHistory = 9;
+bytes mapProcessingHistory = 9;
 }
 
 message getMapInfoResponse
@@ -367,7 +367,7 @@ sint32 globalDescriptorType = 2;
 sint32 descriptorType = 3;
 uint32 dataSize = 4;
 bool areImageSaved = 5;
-sint32 mapProcessingHistory = 6;
+bytes mapProcessingHistory = 6;
 sint32 xpcfGrpcReturnValue = 7;
 }
 

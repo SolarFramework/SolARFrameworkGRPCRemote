@@ -846,7 +846,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getPointCloudRequest(std::strin
 }
 
 
-SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapInfo(std::string const& accessToken, std::string const& mapUUID, std::string& version, SolAR::datastructure::GlobalDescriptorType& globalDescriptorType, SolAR::datastructure::DescriptorType& descriptorType, uint32_t& dataSize, bool& areImageSaved, int& mapProcessingHistory) const
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapInfo(std::string const& accessToken, std::string const& mapUUID, std::string& version, SolAR::datastructure::GlobalDescriptorType& globalDescriptorType, SolAR::datastructure::DescriptorType& descriptorType, uint32_t& dataSize, bool& areImageSaved, std::vector<SolAR::datastructure::MapProcessingStep>& mapProcessingHistory) const
 {
   ::grpc::ClientContext context;
   ::grpcIFrontEnd::getMapInfoRequest reqIn;
@@ -863,7 +863,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapInfo(std::string const& a
   reqIn.set_descriptortype(static_cast<int32_t>(descriptorType));
   reqIn.set_datasize(dataSize);
   reqIn.set_areimagesaved(areImageSaved);
-  reqIn.set_mapprocessinghistory(mapProcessingHistory);
+  reqIn.set_mapprocessinghistory(xpcf::serialize<std::vector<SolAR::datastructure::MapProcessingStep>>(mapProcessingHistory));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IFrontEnd_grpcProxy::getMapInfo request sent at " << to_simple_string(start) << std::endl;
@@ -884,7 +884,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getMapInfo(std::string const& a
   descriptorType = static_cast<SolAR::datastructure::DescriptorType>(respOut.descriptortype());
   dataSize = respOut.datasize();
   areImageSaved = respOut.areimagesaved();
-  mapProcessingHistory = respOut.mapprocessinghistory();
+  mapProcessingHistory = xpcf::deserialize<std::vector<SolAR::datastructure::MapProcessingStep>>(respOut.mapprocessinghistory());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

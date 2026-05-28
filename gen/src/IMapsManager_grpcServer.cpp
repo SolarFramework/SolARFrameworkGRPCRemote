@@ -250,14 +250,14 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   SolAR::datastructure::DescriptorType descriptorType = static_cast<SolAR::datastructure::DescriptorType>(request->descriptortype());
   uint32_t dataSize = request->datasize();
   bool areImageSaved = request->areimagesaved();
-  int mapProcessingHistory = request->mapprocessinghistory();
+  std::vector<SolAR::datastructure::MapProcessingStep> mapProcessingHistory = xpcf::deserialize<std::vector<SolAR::datastructure::MapProcessingStep>>(request->mapprocessinghistory());
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getMapInfo(mapUUID, version, globalDescriptorType, descriptorType, dataSize, areImageSaved, mapProcessingHistory);
   response->set_version(version);
   response->set_globaldescriptortype(static_cast<int32_t>(globalDescriptorType));
   response->set_descriptortype(static_cast<int32_t>(descriptorType));
   response->set_datasize(dataSize);
   response->set_areimagesaved(areImageSaved);
-  response->set_mapprocessinghistory(mapProcessingHistory);
+  response->set_mapprocessinghistory(xpcf::serialize<std::vector<SolAR::datastructure::MapProcessingStep>>(mapProcessingHistory));
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
