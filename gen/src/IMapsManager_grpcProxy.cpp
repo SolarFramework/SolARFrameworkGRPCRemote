@@ -296,7 +296,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getPointCloudRequest(std::st
 }
 
 
-SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapInfo(std::string const& mapUUID, std::string& version, SolAR::datastructure::GlobalDescriptorType& globalDescriptorType, SolAR::datastructure::DescriptorType& descriptorType, uint32_t& dataSize, bool& areImageSaved) const
+SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapInfo(std::string const& mapUUID, std::string& version, SolAR::datastructure::GlobalDescriptorType& globalDescriptorType, SolAR::datastructure::DescriptorType& descriptorType, uint32_t& dataSize, bool& areImageSaved, std::vector<SolAR::datastructure::MapProcessingStep>& mapProcessingHistory) const
 {
   ::grpc::ClientContext context;
   ::grpcIMapsManager::getMapInfoRequest reqIn;
@@ -312,6 +312,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapInfo(std::string const
   reqIn.set_descriptortype(static_cast<int32_t>(descriptorType));
   reqIn.set_datasize(dataSize);
   reqIn.set_areimagesaved(areImageSaved);
+  reqIn.set_mapprocessinghistory(xpcf::serialize<std::vector<SolAR::datastructure::MapProcessingStep>>(mapProcessingHistory));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
   std::cout << "====> IMapsManager_grpcProxy::getMapInfo request sent at " << to_simple_string(start) << std::endl;
@@ -332,6 +333,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapInfo(std::string const
   descriptorType = static_cast<SolAR::datastructure::DescriptorType>(respOut.descriptortype());
   dataSize = respOut.datasize();
   areImageSaved = respOut.areimagesaved();
+  mapProcessingHistory = xpcf::deserialize<std::vector<SolAR::datastructure::MapProcessingStep>>(respOut.mapprocessinghistory());
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

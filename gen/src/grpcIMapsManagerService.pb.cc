@@ -405,6 +405,9 @@ inline constexpr getMapInfoResponse::Impl_::Impl_(
       : version_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        mapprocessinghistory_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
         globaldescriptortype_{0},
         descriptortype_{0},
         datasize_{0u},
@@ -432,6 +435,9 @@ inline constexpr getMapInfoRequest::Impl_::Impl_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         version_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        mapprocessinghistory_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         grpcservercompressionformat_{0},
@@ -852,6 +858,7 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapInfoRequest, _impl_.descriptortype_),
         PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapInfoRequest, _impl_.datasize_),
         PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapInfoRequest, _impl_.areimagesaved_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapInfoRequest, _impl_.mapprocessinghistory_),
         ~0u,  // no _has_bits_
         PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapInfoResponse, _internal_metadata_),
         ~0u,  // no _extensions_
@@ -865,6 +872,7 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapInfoResponse, _impl_.descriptortype_),
         PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapInfoResponse, _impl_.datasize_),
         PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapInfoResponse, _impl_.areimagesaved_),
+        PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapInfoResponse, _impl_.mapprocessinghistory_),
         PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::getMapInfoResponse, _impl_.xpcfgrpcreturnvalue_),
         ~0u,  // no _has_bits_
         PROTOBUF_FIELD_OFFSET(::grpcIMapsManager::backupMapRequest, _internal_metadata_),
@@ -997,17 +1005,17 @@ static const ::_pbi::MigrationSchema
         {140, -1, -1, sizeof(::grpcIMapsManager::getPointCloudRequestRequest)},
         {151, -1, -1, sizeof(::grpcIMapsManager::getPointCloudRequestResponse)},
         {161, -1, -1, sizeof(::grpcIMapsManager::getMapInfoRequest)},
-        {176, -1, -1, sizeof(::grpcIMapsManager::getMapInfoResponse)},
-        {190, -1, -1, sizeof(::grpcIMapsManager::backupMapRequest)},
-        {201, -1, -1, sizeof(::grpcIMapsManager::backupMapResponse)},
-        {211, -1, -1, sizeof(::grpcIMapsManager::restoreMapRequest)},
-        {222, -1, -1, sizeof(::grpcIMapsManager::restoreMapResponse)},
-        {231, -1, -1, sizeof(::grpcIMapsManager::requestMapProcessingRequest)},
-        {243, -1, -1, sizeof(::grpcIMapsManager::requestMapProcessingResponse)},
-        {252, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingStatusRequest)},
-        {265, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingStatusResponse)},
-        {277, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingDataRequest)},
-        {289, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingDataResponse)},
+        {177, -1, -1, sizeof(::grpcIMapsManager::getMapInfoResponse)},
+        {192, -1, -1, sizeof(::grpcIMapsManager::backupMapRequest)},
+        {203, -1, -1, sizeof(::grpcIMapsManager::backupMapResponse)},
+        {213, -1, -1, sizeof(::grpcIMapsManager::restoreMapRequest)},
+        {224, -1, -1, sizeof(::grpcIMapsManager::restoreMapResponse)},
+        {233, -1, -1, sizeof(::grpcIMapsManager::requestMapProcessingRequest)},
+        {245, -1, -1, sizeof(::grpcIMapsManager::requestMapProcessingResponse)},
+        {254, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingStatusRequest)},
+        {267, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingStatusResponse)},
+        {279, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingDataRequest)},
+        {291, -1, -1, sizeof(::grpcIMapsManager::getMapProcessingDataResponse)},
 };
 static const ::_pb::Message* const file_default_instances[] = {
     &::grpcIMapsManager::_createMapRequest_default_instance_._instance,
@@ -1074,79 +1082,80 @@ const char descriptor_table_protodef_grpcIMapsManagerService_2eproto[] ABSL_ATTR
     "ionFormat\030\001 \001(\005\022\017\n\007mapUUID\030\002 \001(\t\022\022\n\npoin"
     "tCloud\030\003 \001(\014\"O\n\034getPointCloudRequestResp"
     "onse\022\022\n\npointCloud\030\001 \001(\014\022\033\n\023xpcfGrpcRetu"
-    "rnValue\030\002 \001(\021\"\271\001\n\021getMapInfoRequest\022#\n\033g"
+    "rnValue\030\002 \001(\021\"\327\001\n\021getMapInfoRequest\022#\n\033g"
     "rpcServerCompressionFormat\030\001 \001(\005\022\017\n\007mapU"
     "UID\030\002 \001(\t\022\017\n\007version\030\003 \001(\t\022\034\n\024globalDesc"
     "riptorType\030\004 \001(\021\022\026\n\016descriptorType\030\005 \001(\021"
     "\022\020\n\010dataSize\030\006 \001(\r\022\025\n\rareImageSaved\030\007 \001("
-    "\010\"\241\001\n\022getMapInfoResponse\022\017\n\007version\030\001 \001("
-    "\t\022\034\n\024globalDescriptorType\030\002 \001(\021\022\026\n\016descr"
-    "iptorType\030\003 \001(\021\022\020\n\010dataSize\030\004 \001(\r\022\025\n\rare"
-    "ImageSaved\030\005 \001(\010\022\033\n\023xpcfGrpcReturnValue\030"
-    "\006 \001(\021\"c\n\020backupMapRequest\022#\n\033grpcServerC"
-    "ompressionFormat\030\001 \001(\005\022\017\n\007mapUUID\030\002 \001(\t\022"
-    "\031\n\021compressedZipData\030\003 \001(\014\"K\n\021backupMapR"
-    "esponse\022\031\n\021compressedZipData\030\001 \001(\014\022\033\n\023xp"
-    "cfGrpcReturnValue\030\002 \001(\021\"d\n\021restoreMapReq"
-    "uest\022#\n\033grpcServerCompressionFormat\030\001 \001("
-    "\005\022\017\n\007mapUUID\030\002 \001(\t\022\031\n\021compressedZipData\030"
-    "\003 \001(\014\"1\n\022restoreMapResponse\022\033\n\023xpcfGrpcR"
-    "eturnValue\030\001 \001(\021\"\202\001\n\033requestMapProcessin"
-    "gRequest\022#\n\033grpcServerCompressionFormat\030"
-    "\001 \001(\005\022\017\n\007mapUUID\030\002 \001(\t\022\025\n\rresultMapUUID\030"
-    "\003 \001(\t\022\026\n\016processingType\030\004 \001(\021\";\n\034request"
-    "MapProcessingResponse\022\033\n\023xpcfGrpcReturnV"
-    "alue\030\001 \001(\021\"\225\001\n\035getMapProcessingStatusReq"
-    "uest\022#\n\033grpcServerCompressionFormat\030\001 \001("
-    "\005\022\025\n\rresultMapUUID\030\002 \001(\t\022\016\n\006status\030\003 \001(\021"
-    "\022\026\n\016processingType\030\004 \001(\021\022\020\n\010progress\030\005 \001"
-    "(\002\"w\n\036getMapProcessingStatusResponse\022\016\n\006"
-    "status\030\001 \001(\021\022\026\n\016processingType\030\002 \001(\021\022\020\n\010"
-    "progress\030\003 \001(\002\022\033\n\023xpcfGrpcReturnValue\030\004 "
-    "\001(\021\"\204\001\n\033getMapProcessingDataRequest\022#\n\033g"
-    "rpcServerCompressionFormat\030\001 \001(\005\022\025\n\rresu"
-    "ltMapUUID\030\002 \001(\t\022\022\n\npointCloud\030\003 \001(\014\022\025\n\rk"
-    "eyframePoses\030\004 \001(\014\"f\n\034getMapProcessingDa"
-    "taResponse\022\022\n\npointCloud\030\001 \001(\014\022\025\n\rkeyfra"
-    "mePoses\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\003 \001"
-    "(\0212\312\013\n\027grpcIMapsManagerService\022V\n\tcreate"
-    "Map\022\".grpcIMapsManager.createMapRequest\032"
-    "#.grpcIMapsManager.createMapResponse\"\000\022V"
-    "\n\tdeleteMap\022\".grpcIMapsManager.deleteMap"
-    "Request\032#.grpcIMapsManager.deleteMapResp"
-    "onse\"\000\022Y\n\ngetAllMaps\022#.grpcIMapsManager."
-    "getAllMapsRequest\032$.grpcIMapsManager.get"
-    "AllMapsResponse\"\000\022q\n\022increaseMapClients\022"
-    "+.grpcIMapsManager.increaseMapClientsReq"
-    "uest\032,.grpcIMapsManager.increaseMapClien"
-    "tsResponse\"\000\022q\n\022decreaseMapClients\022+.grp"
-    "cIMapsManager.decreaseMapClientsRequest\032"
-    ",.grpcIMapsManager.decreaseMapClientsRes"
-    "ponse\"\000\022b\n\rgetMapRequest\022&.grpcIMapsMana"
-    "ger.getMapRequestRequest\032\'.grpcIMapsMana"
-    "ger.getMapRequestResponse\"\000\022b\n\rsetMapReq"
-    "uest\022&.grpcIMapsManager.setMapRequestReq"
-    "uest\032\'.grpcIMapsManager.setMapRequestRes"
-    "ponse\"\000\022w\n\024getPointCloudRequest\022-.grpcIM"
-    "apsManager.getPointCloudRequestRequest\032."
-    ".grpcIMapsManager.getPointCloudRequestRe"
-    "sponse\"\000\022Y\n\ngetMapInfo\022#.grpcIMapsManage"
-    "r.getMapInfoRequest\032$.grpcIMapsManager.g"
-    "etMapInfoResponse\"\000\022V\n\tbackupMap\022\".grpcI"
-    "MapsManager.backupMapRequest\032#.grpcIMaps"
-    "Manager.backupMapResponse\"\000\022Y\n\nrestoreMa"
-    "p\022#.grpcIMapsManager.restoreMapRequest\032$"
-    ".grpcIMapsManager.restoreMapResponse\"\000\022w"
-    "\n\024requestMapProcessing\022-.grpcIMapsManage"
-    "r.requestMapProcessingRequest\032..grpcIMap"
-    "sManager.requestMapProcessingResponse\"\000\022"
-    "}\n\026getMapProcessingStatus\022/.grpcIMapsMan"
-    "ager.getMapProcessingStatusRequest\0320.grp"
-    "cIMapsManager.getMapProcessingStatusResp"
-    "onse\"\000\022w\n\024getMapProcessingData\022-.grpcIMa"
-    "psManager.getMapProcessingDataRequest\032.."
-    "grpcIMapsManager.getMapProcessingDataRes"
-    "ponse\"\000b\006proto3"
+    "\010\022\034\n\024mapProcessingHistory\030\010 \001(\014\"\277\001\n\022getM"
+    "apInfoResponse\022\017\n\007version\030\001 \001(\t\022\034\n\024globa"
+    "lDescriptorType\030\002 \001(\021\022\026\n\016descriptorType\030"
+    "\003 \001(\021\022\020\n\010dataSize\030\004 \001(\r\022\025\n\rareImageSaved"
+    "\030\005 \001(\010\022\034\n\024mapProcessingHistory\030\006 \001(\014\022\033\n\023"
+    "xpcfGrpcReturnValue\030\007 \001(\021\"c\n\020backupMapRe"
+    "quest\022#\n\033grpcServerCompressionFormat\030\001 \001"
+    "(\005\022\017\n\007mapUUID\030\002 \001(\t\022\031\n\021compressedZipData"
+    "\030\003 \001(\014\"K\n\021backupMapResponse\022\031\n\021compresse"
+    "dZipData\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002 "
+    "\001(\021\"d\n\021restoreMapRequest\022#\n\033grpcServerCo"
+    "mpressionFormat\030\001 \001(\005\022\017\n\007mapUUID\030\002 \001(\t\022\031"
+    "\n\021compressedZipData\030\003 \001(\014\"1\n\022restoreMapR"
+    "esponse\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"\202\001\n"
+    "\033requestMapProcessingRequest\022#\n\033grpcServ"
+    "erCompressionFormat\030\001 \001(\005\022\017\n\007mapUUID\030\002 \001"
+    "(\t\022\025\n\rresultMapUUID\030\003 \001(\t\022\026\n\016processingT"
+    "ype\030\004 \001(\021\";\n\034requestMapProcessingRespons"
+    "e\022\033\n\023xpcfGrpcReturnValue\030\001 \001(\021\"\225\001\n\035getMa"
+    "pProcessingStatusRequest\022#\n\033grpcServerCo"
+    "mpressionFormat\030\001 \001(\005\022\025\n\rresultMapUUID\030\002"
+    " \001(\t\022\016\n\006status\030\003 \001(\021\022\026\n\016processingType\030\004"
+    " \001(\021\022\020\n\010progress\030\005 \001(\002\"w\n\036getMapProcessi"
+    "ngStatusResponse\022\016\n\006status\030\001 \001(\021\022\026\n\016proc"
+    "essingType\030\002 \001(\021\022\020\n\010progress\030\003 \001(\002\022\033\n\023xp"
+    "cfGrpcReturnValue\030\004 \001(\021\"\204\001\n\033getMapProces"
+    "singDataRequest\022#\n\033grpcServerCompression"
+    "Format\030\001 \001(\005\022\025\n\rresultMapUUID\030\002 \001(\t\022\022\n\np"
+    "ointCloud\030\003 \001(\014\022\025\n\rkeyframePoses\030\004 \001(\014\"f"
+    "\n\034getMapProcessingDataResponse\022\022\n\npointC"
+    "loud\030\001 \001(\014\022\025\n\rkeyframePoses\030\002 \001(\014\022\033\n\023xpc"
+    "fGrpcReturnValue\030\003 \001(\0212\312\013\n\027grpcIMapsMana"
+    "gerService\022V\n\tcreateMap\022\".grpcIMapsManag"
+    "er.createMapRequest\032#.grpcIMapsManager.c"
+    "reateMapResponse\"\000\022V\n\tdeleteMap\022\".grpcIM"
+    "apsManager.deleteMapRequest\032#.grpcIMapsM"
+    "anager.deleteMapResponse\"\000\022Y\n\ngetAllMaps"
+    "\022#.grpcIMapsManager.getAllMapsRequest\032$."
+    "grpcIMapsManager.getAllMapsResponse\"\000\022q\n"
+    "\022increaseMapClients\022+.grpcIMapsManager.i"
+    "ncreaseMapClientsRequest\032,.grpcIMapsMana"
+    "ger.increaseMapClientsResponse\"\000\022q\n\022decr"
+    "easeMapClients\022+.grpcIMapsManager.decrea"
+    "seMapClientsRequest\032,.grpcIMapsManager.d"
+    "ecreaseMapClientsResponse\"\000\022b\n\rgetMapReq"
+    "uest\022&.grpcIMapsManager.getMapRequestReq"
+    "uest\032\'.grpcIMapsManager.getMapRequestRes"
+    "ponse\"\000\022b\n\rsetMapRequest\022&.grpcIMapsMana"
+    "ger.setMapRequestRequest\032\'.grpcIMapsMana"
+    "ger.setMapRequestResponse\"\000\022w\n\024getPointC"
+    "loudRequest\022-.grpcIMapsManager.getPointC"
+    "loudRequestRequest\032..grpcIMapsManager.ge"
+    "tPointCloudRequestResponse\"\000\022Y\n\ngetMapIn"
+    "fo\022#.grpcIMapsManager.getMapInfoRequest\032"
+    "$.grpcIMapsManager.getMapInfoResponse\"\000\022"
+    "V\n\tbackupMap\022\".grpcIMapsManager.backupMa"
+    "pRequest\032#.grpcIMapsManager.backupMapRes"
+    "ponse\"\000\022Y\n\nrestoreMap\022#.grpcIMapsManager"
+    ".restoreMapRequest\032$.grpcIMapsManager.re"
+    "storeMapResponse\"\000\022w\n\024requestMapProcessi"
+    "ng\022-.grpcIMapsManager.requestMapProcessi"
+    "ngRequest\032..grpcIMapsManager.requestMapP"
+    "rocessingResponse\"\000\022}\n\026getMapProcessingS"
+    "tatus\022/.grpcIMapsManager.getMapProcessin"
+    "gStatusRequest\0320.grpcIMapsManager.getMap"
+    "ProcessingStatusResponse\"\000\022w\n\024getMapProc"
+    "essingData\022-.grpcIMapsManager.getMapProc"
+    "essingDataRequest\032..grpcIMapsManager.get"
+    "MapProcessingDataResponse\"\000b\006proto3"
 };
 static const ::_pbi::DescriptorTable* const descriptor_table_grpcIMapsManagerService_2eproto_deps[1] =
     {
@@ -1156,7 +1165,7 @@ static ::absl::once_flag descriptor_table_grpcIMapsManagerService_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_grpcIMapsManagerService_2eproto = {
     false,
     false,
-    4215,
+    4275,
     descriptor_table_protodef_grpcIMapsManagerService_2eproto,
     "grpcIMapsManagerService.proto",
     &descriptor_table_grpcIMapsManagerService_2eproto_once,
@@ -4632,6 +4641,7 @@ inline PROTOBUF_NDEBUG_INLINE getMapInfoRequest::Impl_::Impl_(
     const Impl_& from, const ::grpcIMapsManager::getMapInfoRequest& from_msg)
       : mapuuid_(arena, from.mapuuid_),
         version_(arena, from.version_),
+        mapprocessinghistory_(arena, from.mapprocessinghistory_),
         _cached_size_{0} {}
 
 getMapInfoRequest::getMapInfoRequest(
@@ -4658,6 +4668,7 @@ inline PROTOBUF_NDEBUG_INLINE getMapInfoRequest::Impl_::Impl_(
     ::google::protobuf::Arena* arena)
       : mapuuid_(arena),
         version_(arena),
+        mapprocessinghistory_(arena),
         _cached_size_{0} {}
 
 inline void getMapInfoRequest::SharedCtor(::_pb::Arena* arena) {
@@ -4678,6 +4689,7 @@ inline void getMapInfoRequest::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
   _impl_.mapuuid_.Destroy();
   _impl_.version_.Destroy();
+  _impl_.mapprocessinghistory_.Destroy();
   _impl_.~Impl_();
 }
 
@@ -4702,15 +4714,15 @@ getMapInfoRequest::GetClassData() const {
   return _data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 7, 0, 57, 2> getMapInfoRequest::_table_ = {
+const ::_pbi::TcParseTable<3, 8, 0, 65, 2> getMapInfoRequest::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
-    7, 56,  // max_field_number, fast_idx_mask
+    8, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967168,  // skipmap
+    4294967040,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    7,  // num_field_entries
+    8,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     &_getMapInfoRequest_default_instance_._instance,
@@ -4720,7 +4732,9 @@ const ::_pbi::TcParseTable<3, 7, 0, 57, 2> getMapInfoRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::grpcIMapsManager::getMapInfoRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    {::_pbi::TcParser::MiniParse, {}},
+    // bytes mapProcessingHistory = 8;
+    {::_pbi::TcParser::FastBS1,
+     {66, 63, 0, PROTOBUF_FIELD_OFFSET(getMapInfoRequest, _impl_.mapprocessinghistory_)}},
     // int32 grpcServerCompressionFormat = 1;
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(getMapInfoRequest, _impl_.grpcservercompressionformat_), 63>(),
      {8, 63, 0, PROTOBUF_FIELD_OFFSET(getMapInfoRequest, _impl_.grpcservercompressionformat_)}},
@@ -4766,10 +4780,13 @@ const ::_pbi::TcParseTable<3, 7, 0, 57, 2> getMapInfoRequest::_table_ = {
     // bool areImageSaved = 7;
     {PROTOBUF_FIELD_OFFSET(getMapInfoRequest, _impl_.areimagesaved_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kBool)},
+    // bytes mapProcessingHistory = 8;
+    {PROTOBUF_FIELD_OFFSET(getMapInfoRequest, _impl_.mapprocessinghistory_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\42\0\7\7\0\0\0\0"
+    "\42\0\7\7\0\0\0\0\0\0\0\0\0\0\0\0"
     "grpcIMapsManager.getMapInfoRequest"
     "mapUUID"
     "version"
@@ -4785,6 +4802,7 @@ PROTOBUF_NOINLINE void getMapInfoRequest::Clear() {
 
   _impl_.mapuuid_.ClearToEmpty();
   _impl_.version_.ClearToEmpty();
+  _impl_.mapprocessinghistory_.ClearToEmpty();
   ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<::size_t>(
       reinterpret_cast<char*>(&_impl_.areimagesaved_) -
       reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.areimagesaved_));
@@ -4849,6 +4867,12 @@ PROTOBUF_NOINLINE void getMapInfoRequest::Clear() {
         7, this->_internal_areimagesaved(), target);
   }
 
+  // bytes mapProcessingHistory = 8;
+  if (!this->_internal_mapprocessinghistory().empty()) {
+    const std::string& _s = this->_internal_mapprocessinghistory();
+    target = stream->WriteBytesMaybeAliased(8, _s, target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target =
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -4877,6 +4901,12 @@ PROTOBUF_NOINLINE void getMapInfoRequest::Clear() {
   if (!this->_internal_version().empty()) {
     total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                     this->_internal_version());
+  }
+
+  // bytes mapProcessingHistory = 8;
+  if (!this->_internal_mapprocessinghistory().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_mapprocessinghistory());
   }
 
   // int32 grpcServerCompressionFormat = 1;
@@ -4926,6 +4956,9 @@ void getMapInfoRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const
   if (!from._internal_version().empty()) {
     _this->_internal_set_version(from._internal_version());
   }
+  if (!from._internal_mapprocessinghistory().empty()) {
+    _this->_internal_set_mapprocessinghistory(from._internal_mapprocessinghistory());
+  }
   if (from._internal_grpcservercompressionformat() != 0) {
     _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
   }
@@ -4959,6 +4992,7 @@ void getMapInfoRequest::InternalSwap(getMapInfoRequest* PROTOBUF_RESTRICT other)
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.mapuuid_, &other->_impl_.mapuuid_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.version_, &other->_impl_.version_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.mapprocessinghistory_, &other->_impl_.mapprocessinghistory_, arena);
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(getMapInfoRequest, _impl_.areimagesaved_)
       + sizeof(getMapInfoRequest::_impl_.areimagesaved_)
@@ -4985,6 +5019,7 @@ inline PROTOBUF_NDEBUG_INLINE getMapInfoResponse::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from, const ::grpcIMapsManager::getMapInfoResponse& from_msg)
       : version_(arena, from.version_),
+        mapprocessinghistory_(arena, from.mapprocessinghistory_),
         _cached_size_{0} {}
 
 getMapInfoResponse::getMapInfoResponse(
@@ -5010,6 +5045,7 @@ inline PROTOBUF_NDEBUG_INLINE getMapInfoResponse::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
       : version_(arena),
+        mapprocessinghistory_(arena),
         _cached_size_{0} {}
 
 inline void getMapInfoResponse::SharedCtor(::_pb::Arena* arena) {
@@ -5029,6 +5065,7 @@ getMapInfoResponse::~getMapInfoResponse() {
 inline void getMapInfoResponse::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
   _impl_.version_.Destroy();
+  _impl_.mapprocessinghistory_.Destroy();
   _impl_.~Impl_();
 }
 
@@ -5053,15 +5090,15 @@ getMapInfoResponse::GetClassData() const {
   return _data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 6, 0, 51, 2> getMapInfoResponse::_table_ = {
+const ::_pbi::TcParseTable<3, 7, 0, 51, 2> getMapInfoResponse::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
-    6, 56,  // max_field_number, fast_idx_mask
+    7, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967232,  // skipmap
+    4294967168,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    6,  // num_field_entries
+    7,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     &_getMapInfoResponse_default_instance_._instance,
@@ -5087,10 +5124,12 @@ const ::_pbi::TcParseTable<3, 6, 0, 51, 2> getMapInfoResponse::_table_ = {
     // bool areImageSaved = 5;
     {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(getMapInfoResponse, _impl_.areimagesaved_), 63>(),
      {40, 63, 0, PROTOBUF_FIELD_OFFSET(getMapInfoResponse, _impl_.areimagesaved_)}},
-    // sint32 xpcfGrpcReturnValue = 6;
+    // bytes mapProcessingHistory = 6;
+    {::_pbi::TcParser::FastBS1,
+     {50, 63, 0, PROTOBUF_FIELD_OFFSET(getMapInfoResponse, _impl_.mapprocessinghistory_)}},
+    // sint32 xpcfGrpcReturnValue = 7;
     {::_pbi::TcParser::FastZ32S1,
-     {48, 63, 0, PROTOBUF_FIELD_OFFSET(getMapInfoResponse, _impl_.xpcfgrpcreturnvalue_)}},
-    {::_pbi::TcParser::MiniParse, {}},
+     {56, 63, 0, PROTOBUF_FIELD_OFFSET(getMapInfoResponse, _impl_.xpcfgrpcreturnvalue_)}},
   }}, {{
     65535, 65535
   }}, {{
@@ -5109,7 +5148,10 @@ const ::_pbi::TcParseTable<3, 6, 0, 51, 2> getMapInfoResponse::_table_ = {
     // bool areImageSaved = 5;
     {PROTOBUF_FIELD_OFFSET(getMapInfoResponse, _impl_.areimagesaved_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kBool)},
-    // sint32 xpcfGrpcReturnValue = 6;
+    // bytes mapProcessingHistory = 6;
+    {PROTOBUF_FIELD_OFFSET(getMapInfoResponse, _impl_.mapprocessinghistory_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kBytes | ::_fl::kRepAString)},
+    // sint32 xpcfGrpcReturnValue = 7;
     {PROTOBUF_FIELD_OFFSET(getMapInfoResponse, _impl_.xpcfgrpcreturnvalue_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kSInt32)},
   }},
@@ -5129,6 +5171,7 @@ PROTOBUF_NOINLINE void getMapInfoResponse::Clear() {
   (void) cached_has_bits;
 
   _impl_.version_.ClearToEmpty();
+  _impl_.mapprocessinghistory_.ClearToEmpty();
   ::memset(&_impl_.globaldescriptortype_, 0, static_cast<::size_t>(
       reinterpret_cast<char*>(&_impl_.xpcfgrpcreturnvalue_) -
       reinterpret_cast<char*>(&_impl_.globaldescriptortype_)) + sizeof(_impl_.xpcfgrpcreturnvalue_));
@@ -5178,11 +5221,17 @@ PROTOBUF_NOINLINE void getMapInfoResponse::Clear() {
         5, this->_internal_areimagesaved(), target);
   }
 
-  // sint32 xpcfGrpcReturnValue = 6;
+  // bytes mapProcessingHistory = 6;
+  if (!this->_internal_mapprocessinghistory().empty()) {
+    const std::string& _s = this->_internal_mapprocessinghistory();
+    target = stream->WriteBytesMaybeAliased(6, _s, target);
+  }
+
+  // sint32 xpcfGrpcReturnValue = 7;
   if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
-        6, this->_internal_xpcfgrpcreturnvalue(), target);
+        7, this->_internal_xpcfgrpcreturnvalue(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5209,6 +5258,12 @@ PROTOBUF_NOINLINE void getMapInfoResponse::Clear() {
                                     this->_internal_version());
   }
 
+  // bytes mapProcessingHistory = 6;
+  if (!this->_internal_mapprocessinghistory().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_mapprocessinghistory());
+  }
+
   // sint32 globalDescriptorType = 2;
   if (this->_internal_globaldescriptortype() != 0) {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
@@ -5232,7 +5287,7 @@ PROTOBUF_NOINLINE void getMapInfoResponse::Clear() {
     total_size += 2;
   }
 
-  // sint32 xpcfGrpcReturnValue = 6;
+  // sint32 xpcfGrpcReturnValue = 7;
   if (this->_internal_xpcfgrpcreturnvalue() != 0) {
     total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
         this->_internal_xpcfgrpcreturnvalue());
@@ -5252,6 +5307,9 @@ void getMapInfoResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, cons
 
   if (!from._internal_version().empty()) {
     _this->_internal_set_version(from._internal_version());
+  }
+  if (!from._internal_mapprocessinghistory().empty()) {
+    _this->_internal_set_mapprocessinghistory(from._internal_mapprocessinghistory());
   }
   if (from._internal_globaldescriptortype() != 0) {
     _this->_impl_.globaldescriptortype_ = from._impl_.globaldescriptortype_;
@@ -5285,6 +5343,7 @@ void getMapInfoResponse::InternalSwap(getMapInfoResponse* PROTOBUF_RESTRICT othe
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.version_, &other->_impl_.version_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.mapprocessinghistory_, &other->_impl_.mapprocessinghistory_, arena);
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(getMapInfoResponse, _impl_.xpcfgrpcreturnvalue_)
       + sizeof(getMapInfoResponse::_impl_.xpcfgrpcreturnvalue_)
