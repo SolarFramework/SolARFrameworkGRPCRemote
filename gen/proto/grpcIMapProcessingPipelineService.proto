@@ -34,13 +34,25 @@ message stopResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-message setMapToProcessRequest
+message setMapToProcess_grpc0Request
 {
 int32 grpcServerCompressionFormat  = 1;
 bytes map = 2;
 }
 
-message setMapToProcessResponse
+message setMapToProcess_grpc0Response
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
+message setMapToProcess_grpc1Request
+{
+int32 grpcServerCompressionFormat  = 1;
+string mapUUID = 2;
+string resultMapUUID = 3;
+}
+
+message setMapToProcess_grpc1Response
 {
 sint32 xpcfGrpcReturnValue = 1;
 }
@@ -89,7 +101,8 @@ service grpcIMapProcessingPipelineService {
 rpc init(initRequest) returns(initResponse) {}
 rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}
-rpc setMapToProcess(setMapToProcessRequest) returns(setMapToProcessResponse) {}
+rpc setMapToProcess_grpc0(setMapToProcess_grpc0Request) returns(setMapToProcess_grpc0Response) {}
+rpc setMapToProcess_grpc1(setMapToProcess_grpc1Request) returns(setMapToProcess_grpc1Response) {}
 rpc getStatus(getStatusRequest) returns(getStatusResponse) {}
 rpc getProcessingData(getProcessingDataRequest) returns(getProcessingDataResponse) {}
 rpc getProcessedMap(getProcessedMapRequest) returns(getProcessedMapResponse) {}

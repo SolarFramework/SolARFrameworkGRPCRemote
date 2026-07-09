@@ -95,7 +95,7 @@ IMapProcessingPipeline_grpcServer::IMapProcessingPipeline_grpcServer():xpcf::Con
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::pipeline::IMapProcessingPipeline>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(8);
+  m_grpcServerCompressionConfig.resize(9);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -250,7 +250,7 @@ XPCFErrorCode IMapProcessingPipeline_grpcServer::onConfigured()
 }
 
 
-::grpc::Status IMapProcessingPipeline_grpcServer::grpcIMapProcessingPipelineServiceImpl::setMapToProcess(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::setMapToProcessRequest* request, ::grpcIMapProcessingPipeline::setMapToProcessResponse* response)
+::grpc::Status IMapProcessingPipeline_grpcServer::grpcIMapProcessingPipelineServiceImpl::setMapToProcess_grpc0(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Request* request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Response* response)
 {
   auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
@@ -267,7 +267,7 @@ XPCFErrorCode IMapProcessingPipeline_grpcServer::onConfigured()
   auto span = tracer->StartSpan("IMapProcessingPipeline_grpcServer.setMapToProcess",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService"},
-                                 {opentelemetry::semconv::rpc::kRpcMethod, "setMapToProcess"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "setMapToProcess_grpc0"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
   SpanScope spanScope(span);
@@ -284,6 +284,51 @@ XPCFErrorCode IMapProcessingPipeline_grpcServer::onConfigured()
   #endif
   SRef<SolAR::datastructure::Map> map = xpcf::deserialize<SRef<SolAR::datastructure::Map>>(request->map());
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setMapToProcess(map);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapProcessingPipeline_grpcServer::setMapToProcess response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IMapProcessingPipeline_grpcServer::grpcIMapProcessingPipelineServiceImpl::setMapToProcess_grpc1(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Request* request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Response* response)
+{
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto span = tracer->StartSpan("IMapProcessingPipeline_grpcServer.setMapToProcess",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "setMapToProcess_grpc1"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  SpanScope spanScope(span);
+  auto scope= tracer->WithActiveSpan(span);
+  
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "setMapToProcess", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapProcessingPipeline_grpcServer::setMapToProcess request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string mapUUID = request->mapuuid();
+  std::string resultMapUUID = request->resultmapuuid();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->setMapToProcess(mapUUID, resultMapUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();

@@ -86,14 +86,22 @@ class initResponse;
 struct initResponseDefaultTypeInternal;
 extern initResponseDefaultTypeInternal _initResponse_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull initResponse_class_data_;
-class setMapToProcessRequest;
-struct setMapToProcessRequestDefaultTypeInternal;
-extern setMapToProcessRequestDefaultTypeInternal _setMapToProcessRequest_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull setMapToProcessRequest_class_data_;
-class setMapToProcessResponse;
-struct setMapToProcessResponseDefaultTypeInternal;
-extern setMapToProcessResponseDefaultTypeInternal _setMapToProcessResponse_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull setMapToProcessResponse_class_data_;
+class setMapToProcess_grpc0Request;
+struct setMapToProcess_grpc0RequestDefaultTypeInternal;
+extern setMapToProcess_grpc0RequestDefaultTypeInternal _setMapToProcess_grpc0Request_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull setMapToProcess_grpc0Request_class_data_;
+class setMapToProcess_grpc0Response;
+struct setMapToProcess_grpc0ResponseDefaultTypeInternal;
+extern setMapToProcess_grpc0ResponseDefaultTypeInternal _setMapToProcess_grpc0Response_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull setMapToProcess_grpc0Response_class_data_;
+class setMapToProcess_grpc1Request;
+struct setMapToProcess_grpc1RequestDefaultTypeInternal;
+extern setMapToProcess_grpc1RequestDefaultTypeInternal _setMapToProcess_grpc1Request_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull setMapToProcess_grpc1Request_class_data_;
+class setMapToProcess_grpc1Response;
+struct setMapToProcess_grpc1ResponseDefaultTypeInternal;
+extern setMapToProcess_grpc1ResponseDefaultTypeInternal _setMapToProcess_grpc1Response_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull setMapToProcess_grpc1Response_class_data_;
 class startRequest;
 struct startRequestDefaultTypeInternal;
 extern startRequestDefaultTypeInternal _startRequest_default_instance_;
@@ -887,30 +895,30 @@ class startRequest final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull startRequest_class_data_;
 // -------------------------------------------------------------------
 
-class setMapToProcessResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:grpcIMapProcessingPipeline.setMapToProcessResponse) */ {
+class setMapToProcess_grpc1Response final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIMapProcessingPipeline.setMapToProcess_grpc1Response) */ {
  public:
-  inline setMapToProcessResponse() : setMapToProcessResponse(nullptr) {}
-  ~setMapToProcessResponse() PROTOBUF_FINAL;
+  inline setMapToProcess_grpc1Response() : setMapToProcess_grpc1Response(nullptr) {}
+  ~setMapToProcess_grpc1Response() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(setMapToProcessResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+  void operator delete(setMapToProcess_grpc1Response* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
     SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(setMapToProcessResponse));
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(setMapToProcess_grpc1Response));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR setMapToProcessResponse(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR setMapToProcess_grpc1Response(::google::protobuf::internal::ConstantInitialized);
 
-  inline setMapToProcessResponse(const setMapToProcessResponse& from) : setMapToProcessResponse(nullptr, from) {}
-  inline setMapToProcessResponse(setMapToProcessResponse&& from) noexcept
-      : setMapToProcessResponse(nullptr, ::std::move(from)) {}
-  inline setMapToProcessResponse& operator=(const setMapToProcessResponse& from) {
+  inline setMapToProcess_grpc1Response(const setMapToProcess_grpc1Response& from) : setMapToProcess_grpc1Response(nullptr, from) {}
+  inline setMapToProcess_grpc1Response(setMapToProcess_grpc1Response&& from) noexcept
+      : setMapToProcess_grpc1Response(nullptr, ::std::move(from)) {}
+  inline setMapToProcess_grpc1Response& operator=(const setMapToProcess_grpc1Response& from) {
     CopyFrom(from);
     return *this;
   }
-  inline setMapToProcessResponse& operator=(setMapToProcessResponse&& from) noexcept {
+  inline setMapToProcess_grpc1Response& operator=(setMapToProcess_grpc1Response&& from) noexcept {
     if (this == &from) return *this;
     if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
@@ -938,13 +946,13 @@ class setMapToProcessResponse final : public ::google::protobuf::Message
   static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const setMapToProcessResponse& default_instance() {
-    return *reinterpret_cast<const setMapToProcessResponse*>(
-        &_setMapToProcessResponse_default_instance_);
+  static const setMapToProcess_grpc1Response& default_instance() {
+    return *reinterpret_cast<const setMapToProcess_grpc1Response*>(
+        &_setMapToProcess_grpc1Response_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 7;
-  friend void swap(setMapToProcessResponse& a, setMapToProcessResponse& b) { a.Swap(&b); }
-  inline void Swap(setMapToProcessResponse* PROTOBUF_NONNULL other) {
+  static constexpr int kIndexInFileMessages = 9;
+  friend void swap(setMapToProcess_grpc1Response& a, setMapToProcess_grpc1Response& b) { a.Swap(&b); }
+  inline void Swap(setMapToProcess_grpc1Response* PROTOBUF_NONNULL other) {
     if (other == this) return;
     if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
@@ -952,7 +960,7 @@ class setMapToProcessResponse final : public ::google::protobuf::Message
       ::google::protobuf::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(setMapToProcessResponse* PROTOBUF_NONNULL other) {
+  void UnsafeArenaSwap(setMapToProcess_grpc1Response* PROTOBUF_NONNULL other) {
     if (other == this) return;
     ABSL_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -960,13 +968,13 @@ class setMapToProcessResponse final : public ::google::protobuf::Message
 
   // implements Message ----------------------------------------------
 
-  setMapToProcessResponse* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<setMapToProcessResponse>(arena);
+  setMapToProcess_grpc1Response* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<setMapToProcess_grpc1Response>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const setMapToProcessResponse& from);
+  void CopyFrom(const setMapToProcess_grpc1Response& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const setMapToProcessResponse& from) { setMapToProcessResponse::MergeImpl(*this, from); }
+  void MergeFrom(const setMapToProcess_grpc1Response& from) { setMapToProcess_grpc1Response::MergeImpl(*this, from); }
 
   private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -1002,18 +1010,18 @@ class setMapToProcessResponse final : public ::google::protobuf::Message
   private:
   void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static void SharedDtor(MessageLite& self);
-  void InternalSwap(setMapToProcessResponse* PROTOBUF_NONNULL other);
+  void InternalSwap(setMapToProcess_grpc1Response* PROTOBUF_NONNULL other);
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "grpcIMapProcessingPipeline.setMapToProcessResponse"; }
+  static ::absl::string_view FullMessageName() { return "grpcIMapProcessingPipeline.setMapToProcess_grpc1Response"; }
 
  protected:
-  explicit setMapToProcessResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  setMapToProcessResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const setMapToProcessResponse& from);
-  setMapToProcessResponse(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, setMapToProcessResponse&& from) noexcept
-      : setMapToProcessResponse(arena) {
+  explicit setMapToProcess_grpc1Response(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  setMapToProcess_grpc1Response(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const setMapToProcess_grpc1Response& from);
+  setMapToProcess_grpc1Response(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, setMapToProcess_grpc1Response&& from) noexcept
+      : setMapToProcess_grpc1Response(arena) {
     *this = ::std::move(from);
   }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
@@ -1042,7 +1050,7 @@ class setMapToProcessResponse final : public ::google::protobuf::Message
   void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
 
   public:
-  // @@protoc_insertion_point(class_scope:grpcIMapProcessingPipeline.setMapToProcessResponse)
+  // @@protoc_insertion_point(class_scope:grpcIMapProcessingPipeline.setMapToProcess_grpc1Response)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
@@ -1065,7 +1073,7 @@ class setMapToProcessResponse final : public ::google::protobuf::Message
     inline explicit Impl_(
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const setMapToProcessResponse& from_msg);
+        const setMapToProcess_grpc1Response& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::int32_t xpcfgrpcreturnvalue_;
@@ -1075,33 +1083,33 @@ class setMapToProcessResponse final : public ::google::protobuf::Message
   friend struct ::TableStruct_grpcIMapProcessingPipelineService_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull setMapToProcessResponse_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull setMapToProcess_grpc1Response_class_data_;
 // -------------------------------------------------------------------
 
-class setMapToProcessRequest final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:grpcIMapProcessingPipeline.setMapToProcessRequest) */ {
+class setMapToProcess_grpc1Request final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIMapProcessingPipeline.setMapToProcess_grpc1Request) */ {
  public:
-  inline setMapToProcessRequest() : setMapToProcessRequest(nullptr) {}
-  ~setMapToProcessRequest() PROTOBUF_FINAL;
+  inline setMapToProcess_grpc1Request() : setMapToProcess_grpc1Request(nullptr) {}
+  ~setMapToProcess_grpc1Request() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(setMapToProcessRequest* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+  void operator delete(setMapToProcess_grpc1Request* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
     SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(setMapToProcessRequest));
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(setMapToProcess_grpc1Request));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR setMapToProcessRequest(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR setMapToProcess_grpc1Request(::google::protobuf::internal::ConstantInitialized);
 
-  inline setMapToProcessRequest(const setMapToProcessRequest& from) : setMapToProcessRequest(nullptr, from) {}
-  inline setMapToProcessRequest(setMapToProcessRequest&& from) noexcept
-      : setMapToProcessRequest(nullptr, ::std::move(from)) {}
-  inline setMapToProcessRequest& operator=(const setMapToProcessRequest& from) {
+  inline setMapToProcess_grpc1Request(const setMapToProcess_grpc1Request& from) : setMapToProcess_grpc1Request(nullptr, from) {}
+  inline setMapToProcess_grpc1Request(setMapToProcess_grpc1Request&& from) noexcept
+      : setMapToProcess_grpc1Request(nullptr, ::std::move(from)) {}
+  inline setMapToProcess_grpc1Request& operator=(const setMapToProcess_grpc1Request& from) {
     CopyFrom(from);
     return *this;
   }
-  inline setMapToProcessRequest& operator=(setMapToProcessRequest&& from) noexcept {
+  inline setMapToProcess_grpc1Request& operator=(setMapToProcess_grpc1Request&& from) noexcept {
     if (this == &from) return *this;
     if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
@@ -1129,13 +1137,13 @@ class setMapToProcessRequest final : public ::google::protobuf::Message
   static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const setMapToProcessRequest& default_instance() {
-    return *reinterpret_cast<const setMapToProcessRequest*>(
-        &_setMapToProcessRequest_default_instance_);
+  static const setMapToProcess_grpc1Request& default_instance() {
+    return *reinterpret_cast<const setMapToProcess_grpc1Request*>(
+        &_setMapToProcess_grpc1Request_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 6;
-  friend void swap(setMapToProcessRequest& a, setMapToProcessRequest& b) { a.Swap(&b); }
-  inline void Swap(setMapToProcessRequest* PROTOBUF_NONNULL other) {
+  static constexpr int kIndexInFileMessages = 8;
+  friend void swap(setMapToProcess_grpc1Request& a, setMapToProcess_grpc1Request& b) { a.Swap(&b); }
+  inline void Swap(setMapToProcess_grpc1Request* PROTOBUF_NONNULL other) {
     if (other == this) return;
     if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
@@ -1143,7 +1151,7 @@ class setMapToProcessRequest final : public ::google::protobuf::Message
       ::google::protobuf::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(setMapToProcessRequest* PROTOBUF_NONNULL other) {
+  void UnsafeArenaSwap(setMapToProcess_grpc1Request* PROTOBUF_NONNULL other) {
     if (other == this) return;
     ABSL_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -1151,13 +1159,13 @@ class setMapToProcessRequest final : public ::google::protobuf::Message
 
   // implements Message ----------------------------------------------
 
-  setMapToProcessRequest* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<setMapToProcessRequest>(arena);
+  setMapToProcess_grpc1Request* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<setMapToProcess_grpc1Request>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const setMapToProcessRequest& from);
+  void CopyFrom(const setMapToProcess_grpc1Request& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const setMapToProcessRequest& from) { setMapToProcessRequest::MergeImpl(*this, from); }
+  void MergeFrom(const setMapToProcess_grpc1Request& from) { setMapToProcess_grpc1Request::MergeImpl(*this, from); }
 
   private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -1193,18 +1201,434 @@ class setMapToProcessRequest final : public ::google::protobuf::Message
   private:
   void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static void SharedDtor(MessageLite& self);
-  void InternalSwap(setMapToProcessRequest* PROTOBUF_NONNULL other);
+  void InternalSwap(setMapToProcess_grpc1Request* PROTOBUF_NONNULL other);
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "grpcIMapProcessingPipeline.setMapToProcessRequest"; }
+  static ::absl::string_view FullMessageName() { return "grpcIMapProcessingPipeline.setMapToProcess_grpc1Request"; }
 
  protected:
-  explicit setMapToProcessRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  setMapToProcessRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const setMapToProcessRequest& from);
-  setMapToProcessRequest(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, setMapToProcessRequest&& from) noexcept
-      : setMapToProcessRequest(arena) {
+  explicit setMapToProcess_grpc1Request(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  setMapToProcess_grpc1Request(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const setMapToProcess_grpc1Request& from);
+  setMapToProcess_grpc1Request(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, setMapToProcess_grpc1Request&& from) noexcept
+      : setMapToProcess_grpc1Request(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kMapUUIDFieldNumber = 2,
+    kResultMapUUIDFieldNumber = 3,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // string mapUUID = 2;
+  void clear_mapuuid() ;
+  const ::std::string& mapuuid() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_mapuuid(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_mapuuid();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_mapuuid();
+  void set_allocated_mapuuid(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_mapuuid() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuid(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_mapuuid();
+
+  public:
+  // string resultMapUUID = 3;
+  void clear_resultmapuuid() ;
+  const ::std::string& resultmapuuid() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_resultmapuuid(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_resultmapuuid();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_resultmapuuid();
+  void set_allocated_resultmapuuid(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_resultmapuuid() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_resultmapuuid(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_resultmapuuid();
+
+  public:
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat() ;
+  ::int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::int32_t value);
+
+  private:
+  ::int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIMapProcessingPipeline.setMapToProcess_grpc1Request)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<2, 3,
+                                   0, 84,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const setMapToProcess_grpc1Request& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr mapuuid_;
+    ::google::protobuf::internal::ArenaStringPtr resultmapuuid_;
+    ::int32_t grpcservercompressionformat_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIMapProcessingPipelineService_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull setMapToProcess_grpc1Request_class_data_;
+// -------------------------------------------------------------------
+
+class setMapToProcess_grpc0Response final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIMapProcessingPipeline.setMapToProcess_grpc0Response) */ {
+ public:
+  inline setMapToProcess_grpc0Response() : setMapToProcess_grpc0Response(nullptr) {}
+  ~setMapToProcess_grpc0Response() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(setMapToProcess_grpc0Response* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(setMapToProcess_grpc0Response));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR setMapToProcess_grpc0Response(::google::protobuf::internal::ConstantInitialized);
+
+  inline setMapToProcess_grpc0Response(const setMapToProcess_grpc0Response& from) : setMapToProcess_grpc0Response(nullptr, from) {}
+  inline setMapToProcess_grpc0Response(setMapToProcess_grpc0Response&& from) noexcept
+      : setMapToProcess_grpc0Response(nullptr, ::std::move(from)) {}
+  inline setMapToProcess_grpc0Response& operator=(const setMapToProcess_grpc0Response& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline setMapToProcess_grpc0Response& operator=(setMapToProcess_grpc0Response&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const setMapToProcess_grpc0Response& default_instance() {
+    return *reinterpret_cast<const setMapToProcess_grpc0Response*>(
+        &_setMapToProcess_grpc0Response_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 7;
+  friend void swap(setMapToProcess_grpc0Response& a, setMapToProcess_grpc0Response& b) { a.Swap(&b); }
+  inline void Swap(setMapToProcess_grpc0Response* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(setMapToProcess_grpc0Response* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  setMapToProcess_grpc0Response* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<setMapToProcess_grpc0Response>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const setMapToProcess_grpc0Response& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const setMapToProcess_grpc0Response& from) { setMapToProcess_grpc0Response::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(setMapToProcess_grpc0Response* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "grpcIMapProcessingPipeline.setMapToProcess_grpc0Response"; }
+
+ protected:
+  explicit setMapToProcess_grpc0Response(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  setMapToProcess_grpc0Response(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const setMapToProcess_grpc0Response& from);
+  setMapToProcess_grpc0Response(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, setMapToProcess_grpc0Response&& from) noexcept
+      : setMapToProcess_grpc0Response(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // sint32 xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue() ;
+  ::int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::int32_t value);
+
+  private:
+  ::int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIMapProcessingPipeline.setMapToProcess_grpc0Response)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<0, 1,
+                                   0, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const setMapToProcess_grpc0Response& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::int32_t xpcfgrpcreturnvalue_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIMapProcessingPipelineService_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull setMapToProcess_grpc0Response_class_data_;
+// -------------------------------------------------------------------
+
+class setMapToProcess_grpc0Request final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIMapProcessingPipeline.setMapToProcess_grpc0Request) */ {
+ public:
+  inline setMapToProcess_grpc0Request() : setMapToProcess_grpc0Request(nullptr) {}
+  ~setMapToProcess_grpc0Request() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(setMapToProcess_grpc0Request* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(setMapToProcess_grpc0Request));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR setMapToProcess_grpc0Request(::google::protobuf::internal::ConstantInitialized);
+
+  inline setMapToProcess_grpc0Request(const setMapToProcess_grpc0Request& from) : setMapToProcess_grpc0Request(nullptr, from) {}
+  inline setMapToProcess_grpc0Request(setMapToProcess_grpc0Request&& from) noexcept
+      : setMapToProcess_grpc0Request(nullptr, ::std::move(from)) {}
+  inline setMapToProcess_grpc0Request& operator=(const setMapToProcess_grpc0Request& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline setMapToProcess_grpc0Request& operator=(setMapToProcess_grpc0Request&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const setMapToProcess_grpc0Request& default_instance() {
+    return *reinterpret_cast<const setMapToProcess_grpc0Request*>(
+        &_setMapToProcess_grpc0Request_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 6;
+  friend void swap(setMapToProcess_grpc0Request& a, setMapToProcess_grpc0Request& b) { a.Swap(&b); }
+  inline void Swap(setMapToProcess_grpc0Request* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(setMapToProcess_grpc0Request* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  setMapToProcess_grpc0Request* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<setMapToProcess_grpc0Request>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const setMapToProcess_grpc0Request& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const setMapToProcess_grpc0Request& from) { setMapToProcess_grpc0Request::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(setMapToProcess_grpc0Request* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "grpcIMapProcessingPipeline.setMapToProcess_grpc0Request"; }
+
+ protected:
+  explicit setMapToProcess_grpc0Request(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  setMapToProcess_grpc0Request(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const setMapToProcess_grpc0Request& from);
+  setMapToProcess_grpc0Request(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, setMapToProcess_grpc0Request&& from) noexcept
+      : setMapToProcess_grpc0Request(arena) {
     *this = ::std::move(from);
   }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
@@ -1249,7 +1673,7 @@ class setMapToProcessRequest final : public ::google::protobuf::Message
   void _internal_set_grpcservercompressionformat(::int32_t value);
 
   public:
-  // @@protoc_insertion_point(class_scope:grpcIMapProcessingPipeline.setMapToProcessRequest)
+  // @@protoc_insertion_point(class_scope:grpcIMapProcessingPipeline.setMapToProcess_grpc0Request)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
@@ -1272,7 +1696,7 @@ class setMapToProcessRequest final : public ::google::protobuf::Message
     inline explicit Impl_(
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const setMapToProcessRequest& from_msg);
+        const setMapToProcess_grpc0Request& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr map_;
@@ -1283,7 +1707,7 @@ class setMapToProcessRequest final : public ::google::protobuf::Message
   friend struct ::TableStruct_grpcIMapProcessingPipelineService_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull setMapToProcessRequest_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull setMapToProcess_grpc0Request_class_data_;
 // -------------------------------------------------------------------
 
 class initResponse final : public ::google::protobuf::Message
@@ -1723,7 +2147,7 @@ class getStatusResponse final : public ::google::protobuf::Message
     return *reinterpret_cast<const getStatusResponse*>(
         &_getStatusResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 9;
+  static constexpr int kIndexInFileMessages = 11;
   friend void swap(getStatusResponse& a, getStatusResponse& b) { a.Swap(&b); }
   inline void Swap(getStatusResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1938,7 +2362,7 @@ class getStatusRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const getStatusRequest*>(
         &_getStatusRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 8;
+  static constexpr int kIndexInFileMessages = 10;
   friend void swap(getStatusRequest& a, getStatusRequest& b) { a.Swap(&b); }
   inline void Swap(getStatusRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2153,7 +2577,7 @@ class getProcessingDataResponse final : public ::google::protobuf::Message
     return *reinterpret_cast<const getProcessingDataResponse*>(
         &_getProcessingDataResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 11;
+  static constexpr int kIndexInFileMessages = 13;
   friend void swap(getProcessingDataResponse& a, getProcessingDataResponse& b) { a.Swap(&b); }
   inline void Swap(getProcessingDataResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2378,7 +2802,7 @@ class getProcessingDataRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const getProcessingDataRequest*>(
         &_getProcessingDataRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 10;
+  static constexpr int kIndexInFileMessages = 12;
   friend void swap(getProcessingDataRequest& a, getProcessingDataRequest& b) { a.Swap(&b); }
   inline void Swap(getProcessingDataRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2603,7 +3027,7 @@ class getProcessedMapResponse final : public ::google::protobuf::Message
     return *reinterpret_cast<const getProcessedMapResponse*>(
         &_getProcessedMapResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 13;
+  static constexpr int kIndexInFileMessages = 15;
   friend void swap(getProcessedMapResponse& a, getProcessedMapResponse& b) { a.Swap(&b); }
   inline void Swap(getProcessedMapResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2811,7 +3235,7 @@ class getProcessedMapRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const getProcessedMapRequest*>(
         &_getProcessedMapRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 12;
+  static constexpr int kIndexInFileMessages = 14;
   friend void swap(getProcessedMapRequest& a, getProcessedMapRequest& b) { a.Swap(&b); }
   inline void Swap(getProcessedMapRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3145,73 +3569,73 @@ inline void stopResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
 
 // -------------------------------------------------------------------
 
-// setMapToProcessRequest
+// setMapToProcess_grpc0Request
 
 // int32 grpcServerCompressionFormat = 1;
-inline void setMapToProcessRequest::clear_grpcservercompressionformat() {
+inline void setMapToProcess_grpc0Request::clear_grpcservercompressionformat() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.grpcservercompressionformat_ = 0;
   _impl_._has_bits_[0] &= ~0x00000002U;
 }
-inline ::int32_t setMapToProcessRequest::grpcservercompressionformat() const {
-  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.setMapToProcessRequest.grpcServerCompressionFormat)
+inline ::int32_t setMapToProcess_grpc0Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.setMapToProcess_grpc0Request.grpcServerCompressionFormat)
   return _internal_grpcservercompressionformat();
 }
-inline void setMapToProcessRequest::set_grpcservercompressionformat(::int32_t value) {
+inline void setMapToProcess_grpc0Request::set_grpcservercompressionformat(::int32_t value) {
   _internal_set_grpcservercompressionformat(value);
   _impl_._has_bits_[0] |= 0x00000002U;
-  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.setMapToProcessRequest.grpcServerCompressionFormat)
+  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.setMapToProcess_grpc0Request.grpcServerCompressionFormat)
 }
-inline ::int32_t setMapToProcessRequest::_internal_grpcservercompressionformat() const {
+inline ::int32_t setMapToProcess_grpc0Request::_internal_grpcservercompressionformat() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.grpcservercompressionformat_;
 }
-inline void setMapToProcessRequest::_internal_set_grpcservercompressionformat(::int32_t value) {
+inline void setMapToProcess_grpc0Request::_internal_set_grpcservercompressionformat(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.grpcservercompressionformat_ = value;
 }
 
 // bytes map = 2;
-inline void setMapToProcessRequest::clear_map() {
+inline void setMapToProcess_grpc0Request::clear_map() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.map_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000001U;
 }
-inline const ::std::string& setMapToProcessRequest::map() const
+inline const ::std::string& setMapToProcess_grpc0Request::map() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.setMapToProcessRequest.map)
+  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.setMapToProcess_grpc0Request.map)
   return _internal_map();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void setMapToProcessRequest::set_map(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void setMapToProcess_grpc0Request::set_map(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001U;
   _impl_.map_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.setMapToProcessRequest.map)
+  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.setMapToProcess_grpc0Request.map)
 }
-inline ::std::string* PROTOBUF_NONNULL setMapToProcessRequest::mutable_map()
+inline ::std::string* PROTOBUF_NONNULL setMapToProcess_grpc0Request::mutable_map()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_map();
-  // @@protoc_insertion_point(field_mutable:grpcIMapProcessingPipeline.setMapToProcessRequest.map)
+  // @@protoc_insertion_point(field_mutable:grpcIMapProcessingPipeline.setMapToProcess_grpc0Request.map)
   return _s;
 }
-inline const ::std::string& setMapToProcessRequest::_internal_map() const {
+inline const ::std::string& setMapToProcess_grpc0Request::_internal_map() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.map_.Get();
 }
-inline void setMapToProcessRequest::_internal_set_map(const ::std::string& value) {
+inline void setMapToProcess_grpc0Request::_internal_set_map(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001U;
   _impl_.map_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL setMapToProcessRequest::_internal_mutable_map() {
+inline ::std::string* PROTOBUF_NONNULL setMapToProcess_grpc0Request::_internal_mutable_map() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001U;
   return _impl_.map_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE setMapToProcessRequest::release_map() {
+inline ::std::string* PROTOBUF_NULLABLE setMapToProcess_grpc0Request::release_map() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:grpcIMapProcessingPipeline.setMapToProcessRequest.map)
+  // @@protoc_insertion_point(field_release:grpcIMapProcessingPipeline.setMapToProcess_grpc0Request.map)
   if ((_impl_._has_bits_[0] & 0x00000001U) == 0) {
     return nullptr;
   }
@@ -3222,7 +3646,7 @@ inline ::std::string* PROTOBUF_NULLABLE setMapToProcessRequest::release_map() {
   }
   return released;
 }
-inline void setMapToProcessRequest::set_allocated_map(::std::string* PROTOBUF_NULLABLE value) {
+inline void setMapToProcess_grpc0Request::set_allocated_map(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000001U;
@@ -3233,33 +3657,219 @@ inline void setMapToProcessRequest::set_allocated_map(::std::string* PROTOBUF_NU
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.map_.IsDefault()) {
     _impl_.map_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:grpcIMapProcessingPipeline.setMapToProcessRequest.map)
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapProcessingPipeline.setMapToProcess_grpc0Request.map)
 }
 
 // -------------------------------------------------------------------
 
-// setMapToProcessResponse
+// setMapToProcess_grpc0Response
 
 // sint32 xpcfGrpcReturnValue = 1;
-inline void setMapToProcessResponse::clear_xpcfgrpcreturnvalue() {
+inline void setMapToProcess_grpc0Response::clear_xpcfgrpcreturnvalue() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.xpcfgrpcreturnvalue_ = 0;
   _impl_._has_bits_[0] &= ~0x00000001U;
 }
-inline ::int32_t setMapToProcessResponse::xpcfgrpcreturnvalue() const {
-  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.setMapToProcessResponse.xpcfGrpcReturnValue)
+inline ::int32_t setMapToProcess_grpc0Response::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.setMapToProcess_grpc0Response.xpcfGrpcReturnValue)
   return _internal_xpcfgrpcreturnvalue();
 }
-inline void setMapToProcessResponse::set_xpcfgrpcreturnvalue(::int32_t value) {
+inline void setMapToProcess_grpc0Response::set_xpcfgrpcreturnvalue(::int32_t value) {
   _internal_set_xpcfgrpcreturnvalue(value);
   _impl_._has_bits_[0] |= 0x00000001U;
-  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.setMapToProcessResponse.xpcfGrpcReturnValue)
+  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.setMapToProcess_grpc0Response.xpcfGrpcReturnValue)
 }
-inline ::int32_t setMapToProcessResponse::_internal_xpcfgrpcreturnvalue() const {
+inline ::int32_t setMapToProcess_grpc0Response::_internal_xpcfgrpcreturnvalue() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.xpcfgrpcreturnvalue_;
 }
-inline void setMapToProcessResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
+inline void setMapToProcess_grpc0Response::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// setMapToProcess_grpc1Request
+
+// int32 grpcServerCompressionFormat = 1;
+inline void setMapToProcess_grpc1Request::clear_grpcservercompressionformat() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000004U;
+}
+inline ::int32_t setMapToProcess_grpc1Request::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.setMapToProcess_grpc1Request.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void setMapToProcess_grpc1Request::set_grpcservercompressionformat(::int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  _impl_._has_bits_[0] |= 0x00000004U;
+  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.setMapToProcess_grpc1Request.grpcServerCompressionFormat)
+}
+inline ::int32_t setMapToProcess_grpc1Request::_internal_grpcservercompressionformat() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.grpcservercompressionformat_;
+}
+inline void setMapToProcess_grpc1Request::_internal_set_grpcservercompressionformat(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = value;
+}
+
+// string mapUUID = 2;
+inline void setMapToProcess_grpc1Request::clear_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001U;
+}
+inline const ::std::string& setMapToProcess_grpc1Request::mapuuid() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.setMapToProcess_grpc1Request.mapUUID)
+  return _internal_mapuuid();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void setMapToProcess_grpc1Request::set_mapuuid(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.mapuuid_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.setMapToProcess_grpc1Request.mapUUID)
+}
+inline ::std::string* PROTOBUF_NONNULL setMapToProcess_grpc1Request::mutable_mapuuid()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_mapuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIMapProcessingPipeline.setMapToProcess_grpc1Request.mapUUID)
+  return _s;
+}
+inline const ::std::string& setMapToProcess_grpc1Request::_internal_mapuuid() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.mapuuid_.Get();
+}
+inline void setMapToProcess_grpc1Request::_internal_set_mapuuid(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.mapuuid_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL setMapToProcess_grpc1Request::_internal_mutable_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  return _impl_.mapuuid_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE setMapToProcess_grpc1Request::release_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapProcessingPipeline.setMapToProcess_grpc1Request.mapUUID)
+  if ((_impl_._has_bits_[0] & 0x00000001U) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001U;
+  auto* released = _impl_.mapuuid_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.mapuuid_.Set("", GetArena());
+  }
+  return released;
+}
+inline void setMapToProcess_grpc1Request::set_allocated_mapuuid(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001U;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001U;
+  }
+  _impl_.mapuuid_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.mapuuid_.IsDefault()) {
+    _impl_.mapuuid_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapProcessingPipeline.setMapToProcess_grpc1Request.mapUUID)
+}
+
+// string resultMapUUID = 3;
+inline void setMapToProcess_grpc1Request::clear_resultmapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.resultmapuuid_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002U;
+}
+inline const ::std::string& setMapToProcess_grpc1Request::resultmapuuid() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.setMapToProcess_grpc1Request.resultMapUUID)
+  return _internal_resultmapuuid();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void setMapToProcess_grpc1Request::set_resultmapuuid(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  _impl_.resultmapuuid_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.setMapToProcess_grpc1Request.resultMapUUID)
+}
+inline ::std::string* PROTOBUF_NONNULL setMapToProcess_grpc1Request::mutable_resultmapuuid()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_resultmapuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIMapProcessingPipeline.setMapToProcess_grpc1Request.resultMapUUID)
+  return _s;
+}
+inline const ::std::string& setMapToProcess_grpc1Request::_internal_resultmapuuid() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.resultmapuuid_.Get();
+}
+inline void setMapToProcess_grpc1Request::_internal_set_resultmapuuid(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  _impl_.resultmapuuid_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL setMapToProcess_grpc1Request::_internal_mutable_resultmapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  return _impl_.resultmapuuid_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE setMapToProcess_grpc1Request::release_resultmapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapProcessingPipeline.setMapToProcess_grpc1Request.resultMapUUID)
+  if ((_impl_._has_bits_[0] & 0x00000002U) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002U;
+  auto* released = _impl_.resultmapuuid_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.resultmapuuid_.Set("", GetArena());
+  }
+  return released;
+}
+inline void setMapToProcess_grpc1Request::set_allocated_resultmapuuid(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002U;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002U;
+  }
+  _impl_.resultmapuuid_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.resultmapuuid_.IsDefault()) {
+    _impl_.resultmapuuid_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapProcessingPipeline.setMapToProcess_grpc1Request.resultMapUUID)
+}
+
+// -------------------------------------------------------------------
+
+// setMapToProcess_grpc1Response
+
+// sint32 xpcfGrpcReturnValue = 1;
+inline void setMapToProcess_grpc1Response::clear_xpcfgrpcreturnvalue() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001U;
+}
+inline ::int32_t setMapToProcess_grpc1Response::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMapProcessingPipeline.setMapToProcess_grpc1Response.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void setMapToProcess_grpc1Response::set_xpcfgrpcreturnvalue(::int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  // @@protoc_insertion_point(field_set:grpcIMapProcessingPipeline.setMapToProcess_grpc1Response.xpcfGrpcReturnValue)
+}
+inline ::int32_t setMapToProcess_grpc1Response::_internal_xpcfgrpcreturnvalue() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline void setMapToProcess_grpc1Response::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.xpcfgrpcreturnvalue_ = value;
 }

@@ -26,6 +26,7 @@ class IMapProcessingPipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBas
     SolAR::FrameworkReturnCode start()     override;
     SolAR::FrameworkReturnCode stop()     override;
     SolAR::FrameworkReturnCode setMapToProcess(SRef<SolAR::datastructure::Map> const map)     override;
+    SolAR::FrameworkReturnCode setMapToProcess(std::string const& mapUUID, std::string const& resultMapUUID)     override;
     SolAR::FrameworkReturnCode getStatus(SolAR::api::pipeline::MapProcessingStatus& status, float& progress)     const     override;
     SolAR::FrameworkReturnCode getProcessingData(std::vector<SRef<SolAR::datastructure::CloudPoint>>& pointCloud, std::vector<SolAR::datastructure::Transform3Df>& keyframePoses)     const     override;
     SolAR::FrameworkReturnCode getProcessedMap(SRef<SolAR::datastructure::Map>& map)     const     override;

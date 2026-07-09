@@ -20,6 +20,7 @@
         <value>method|start|none|0</value>
         <value>method|stop|none|0</value>
         <value>method|setMapToProcess|none|0</value>
+        <value>method|setMapToProcess|none|0</value>
         <value>method|getStatus|none|0</value>
         <value>method|getProcessingData|none|0</value>
         <value>method|getProcessedMap|none|0</value>
