@@ -25,11 +25,9 @@ static const char* grpcIMapProcessingPipelineService_method_names[] = {
   "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/init",
   "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/start",
   "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/stop",
-  "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/setMapToProcess_grpc0",
-  "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/setMapToProcess_grpc1",
+  "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/setMapToProcess",
   "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/getStatus",
   "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/getProcessingData",
-  "/grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService/getProcessedMap",
 };
 
 std::unique_ptr< grpcIMapProcessingPipelineService::Stub> grpcIMapProcessingPipelineService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -42,11 +40,9 @@ grpcIMapProcessingPipelineService::Stub::Stub(const std::shared_ptr< ::grpc::Cha
   : channel_(channel), rpcmethod_init_(grpcIMapProcessingPipelineService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_start_(grpcIMapProcessingPipelineService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_stop_(grpcIMapProcessingPipelineService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setMapToProcess_grpc0_(grpcIMapProcessingPipelineService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_setMapToProcess_grpc1_(grpcIMapProcessingPipelineService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getStatus_(grpcIMapProcessingPipelineService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getProcessingData_(grpcIMapProcessingPipelineService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getProcessedMap_(grpcIMapProcessingPipelineService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_setMapToProcess_(grpcIMapProcessingPipelineService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getStatus_(grpcIMapProcessingPipelineService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getProcessingData_(grpcIMapProcessingPipelineService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMapProcessingPipelineService::Stub::init(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::initRequest& request, ::grpcIMapProcessingPipeline::initResponse* response) {
@@ -118,48 +114,25 @@ void grpcIMapProcessingPipelineService::Stub::async::stop(::grpc::ClientContext*
   return result;
 }
 
-::grpc::Status grpcIMapProcessingPipelineService::Stub::setMapToProcess_grpc0(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Request& request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Response* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setMapToProcess_grpc0_, context, request, response);
+::grpc::Status grpcIMapProcessingPipelineService::Stub::setMapToProcess(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcessRequest& request, ::grpcIMapProcessingPipeline::setMapToProcessResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapProcessingPipeline::setMapToProcessRequest, ::grpcIMapProcessingPipeline::setMapToProcessResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setMapToProcess_, context, request, response);
 }
 
-void grpcIMapProcessingPipelineService::Stub::async::setMapToProcess_grpc0(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Request* request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Response* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMapToProcess_grpc0_, context, request, response, std::move(f));
+void grpcIMapProcessingPipelineService::Stub::async::setMapToProcess(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcessRequest* request, ::grpcIMapProcessingPipeline::setMapToProcessResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapProcessingPipeline::setMapToProcessRequest, ::grpcIMapProcessingPipeline::setMapToProcessResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMapToProcess_, context, request, response, std::move(f));
 }
 
-void grpcIMapProcessingPipelineService::Stub::async::setMapToProcess_grpc0(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Request* request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Response* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMapToProcess_grpc0_, context, request, response, reactor);
+void grpcIMapProcessingPipelineService::Stub::async::setMapToProcess(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcessRequest* request, ::grpcIMapProcessingPipeline::setMapToProcessResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMapToProcess_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Response>* grpcIMapProcessingPipelineService::Stub::PrepareAsyncsetMapToProcess_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Request& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Response, ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setMapToProcess_grpc0_, context, request);
+::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::setMapToProcessResponse>* grpcIMapProcessingPipelineService::Stub::PrepareAsyncsetMapToProcessRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcessRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapProcessingPipeline::setMapToProcessResponse, ::grpcIMapProcessingPipeline::setMapToProcessRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setMapToProcess_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Response>* grpcIMapProcessingPipelineService::Stub::AsyncsetMapToProcess_grpc0Raw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Request& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::setMapToProcessResponse>* grpcIMapProcessingPipelineService::Stub::AsyncsetMapToProcessRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcessRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncsetMapToProcess_grpc0Raw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status grpcIMapProcessingPipelineService::Stub::setMapToProcess_grpc1(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Request& request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Response* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_setMapToProcess_grpc1_, context, request, response);
-}
-
-void grpcIMapProcessingPipelineService::Stub::async::setMapToProcess_grpc1(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Request* request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Response* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMapToProcess_grpc1_, context, request, response, std::move(f));
-}
-
-void grpcIMapProcessingPipelineService::Stub::async::setMapToProcess_grpc1(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Request* request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Response* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_setMapToProcess_grpc1_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Response>* grpcIMapProcessingPipelineService::Stub::PrepareAsyncsetMapToProcess_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Request& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Response, ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Request, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_setMapToProcess_grpc1_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Response>* grpcIMapProcessingPipelineService::Stub::AsyncsetMapToProcess_grpc1Raw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Request& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncsetMapToProcess_grpc1Raw(context, request, cq);
+    this->PrepareAsyncsetMapToProcessRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -210,29 +183,6 @@ void grpcIMapProcessingPipelineService::Stub::async::getProcessingData(::grpc::C
   return result;
 }
 
-::grpc::Status grpcIMapProcessingPipelineService::Stub::getProcessedMap(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest& request, ::grpcIMapProcessingPipeline::getProcessedMapResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapProcessingPipeline::getProcessedMapRequest, ::grpcIMapProcessingPipeline::getProcessedMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getProcessedMap_, context, request, response);
-}
-
-void grpcIMapProcessingPipelineService::Stub::async::getProcessedMap(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest* request, ::grpcIMapProcessingPipeline::getProcessedMapResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::grpcIMapProcessingPipeline::getProcessedMapRequest, ::grpcIMapProcessingPipeline::getProcessedMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getProcessedMap_, context, request, response, std::move(f));
-}
-
-void grpcIMapProcessingPipelineService::Stub::async::getProcessedMap(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest* request, ::grpcIMapProcessingPipeline::getProcessedMapResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getProcessedMap_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getProcessedMapResponse>* grpcIMapProcessingPipelineService::Stub::PrepareAsyncgetProcessedMapRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapProcessingPipeline::getProcessedMapResponse, ::grpcIMapProcessingPipeline::getProcessedMapRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getProcessedMap_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::grpcIMapProcessingPipeline::getProcessedMapResponse>* grpcIMapProcessingPipelineService::Stub::AsyncgetProcessedMapRaw(::grpc::ClientContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncgetProcessedMapRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
 grpcIMapProcessingPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapProcessingPipelineService_method_names[0],
@@ -267,25 +217,15 @@ grpcIMapProcessingPipelineService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapProcessingPipelineService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMapProcessingPipelineService::Service, ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< grpcIMapProcessingPipelineService::Service, ::grpcIMapProcessingPipeline::setMapToProcessRequest, ::grpcIMapProcessingPipeline::setMapToProcessResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapProcessingPipelineService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Request* req,
-             ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Response* resp) {
-               return service->setMapToProcess_grpc0(ctx, req, resp);
+             const ::grpcIMapProcessingPipeline::setMapToProcessRequest* req,
+             ::grpcIMapProcessingPipeline::setMapToProcessResponse* resp) {
+               return service->setMapToProcess(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapProcessingPipelineService_method_names[4],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMapProcessingPipelineService::Service, ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Response, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcIMapProcessingPipelineService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Request* req,
-             ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Response* resp) {
-               return service->setMapToProcess_grpc1(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapProcessingPipelineService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapProcessingPipelineService::Service, ::grpcIMapProcessingPipeline::getStatusRequest, ::grpcIMapProcessingPipeline::getStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapProcessingPipelineService::Service* service,
@@ -295,7 +235,7 @@ grpcIMapProcessingPipelineService::Service::Service() {
                return service->getStatus(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapProcessingPipelineService_method_names[6],
+      grpcIMapProcessingPipelineService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapProcessingPipelineService::Service, ::grpcIMapProcessingPipeline::getProcessingDataRequest, ::grpcIMapProcessingPipeline::getProcessingDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapProcessingPipelineService::Service* service,
@@ -303,16 +243,6 @@ grpcIMapProcessingPipelineService::Service::Service() {
              const ::grpcIMapProcessingPipeline::getProcessingDataRequest* req,
              ::grpcIMapProcessingPipeline::getProcessingDataResponse* resp) {
                return service->getProcessingData(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapProcessingPipelineService_method_names[7],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< grpcIMapProcessingPipelineService::Service, ::grpcIMapProcessingPipeline::getProcessedMapRequest, ::grpcIMapProcessingPipeline::getProcessedMapResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](grpcIMapProcessingPipelineService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::grpcIMapProcessingPipeline::getProcessedMapRequest* req,
-             ::grpcIMapProcessingPipeline::getProcessedMapResponse* resp) {
-               return service->getProcessedMap(ctx, req, resp);
              }, this)));
 }
 
@@ -340,14 +270,7 @@ grpcIMapProcessingPipelineService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status grpcIMapProcessingPipelineService::Service::setMapToProcess_grpc0(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Request* request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Response* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status grpcIMapProcessingPipelineService::Service::setMapToProcess_grpc1(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Request* request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Response* response) {
+::grpc::Status grpcIMapProcessingPipelineService::Service::setMapToProcess(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::setMapToProcessRequest* request, ::grpcIMapProcessingPipeline::setMapToProcessResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -362,13 +285,6 @@ grpcIMapProcessingPipelineService::Service::~Service() {
 }
 
 ::grpc::Status grpcIMapProcessingPipelineService::Service::getProcessingData(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status grpcIMapProcessingPipelineService::Service::getProcessedMap(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest* request, ::grpcIMapProcessingPipeline::getProcessedMapResponse* response) {
   (void) context;
   (void) request;
   (void) response;

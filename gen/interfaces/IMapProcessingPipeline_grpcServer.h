@@ -28,11 +28,9 @@ class IMapProcessingPipeline_grpcServer:  public org::bcom::xpcf::ConfigurableBa
         ::grpc::Status init(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::initRequest* request, ::grpcIMapProcessingPipeline::initResponse* response) override;
         ::grpc::Status start(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::startRequest* request, ::grpcIMapProcessingPipeline::startResponse* response) override;
         ::grpc::Status stop(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::stopRequest* request, ::grpcIMapProcessingPipeline::stopResponse* response) override;
-        ::grpc::Status setMapToProcess_grpc0(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Request* request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc0Response* response) override;
-        ::grpc::Status setMapToProcess_grpc1(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Request* request, ::grpcIMapProcessingPipeline::setMapToProcess_grpc1Response* response) override;
+        ::grpc::Status setMapToProcess(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::setMapToProcessRequest* request, ::grpcIMapProcessingPipeline::setMapToProcessResponse* response) override;
         ::grpc::Status getStatus(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getStatusRequest* request, ::grpcIMapProcessingPipeline::getStatusResponse* response) override;
         ::grpc::Status getProcessingData(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getProcessingDataRequest* request, ::grpcIMapProcessingPipeline::getProcessingDataResponse* response) override;
-        ::grpc::Status getProcessedMap(::grpc::ServerContext* context, const ::grpcIMapProcessingPipeline::getProcessedMapRequest* request, ::grpcIMapProcessingPipeline::getProcessedMapResponse* response) override;
 
         SRef<SolAR::api::pipeline::IMapProcessingPipeline> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;
