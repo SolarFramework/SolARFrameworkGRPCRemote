@@ -22,7 +22,6 @@
         <value>method|setMapToProcess|none|none</value>
         <value>method|getStatus|none|none</value>
         <value>method|getProcessingData|none|none</value>
-        <value>method|getProcessedMap|none|none</value>
       </property>
     </configure>
     <configure component="IMapUpdatePipeline_grpcProxy">
