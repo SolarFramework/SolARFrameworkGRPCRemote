@@ -149,9 +149,13 @@
         <value>method|getMapInfo|none|0</value>
         <value>method|backupMap|none|0</value>
         <value>method|restoreMap|none|0</value>
+        <value>method|getAvailableMapProcessingTypes|none|0</value>
         <value>method|requestMapProcessing|none|0</value>
         <value>method|getMapProcessingStatus|none|0</value>
         <value>method|getMapProcessingData|none|0</value>
+        <value>method|getAvailableMapExportImportFormats|none|0</value>
+        <value>method|exportMapToFormat|none|0</value>
+        <value>method|importMapFromFormat|none|0</value>
       </property>
     </configure>
     <configure component="IMapsManager_grpcServer">
@@ -168,9 +172,13 @@
         <value>method|getMapInfo|none|0</value>
         <value>method|backupMap|none|0</value>
         <value>method|restoreMap|none|0</value>
+        <value>method|getAvailableMapProcessingTypes|none|0</value>
         <value>method|requestMapProcessing|none|0</value>
         <value>method|getMapProcessingStatus|none|0</value>
         <value>method|getMapProcessingData|none|0</value>
+        <value>method|getAvailableMapExportImportFormats|none|0</value>
+        <value>method|exportMapToFormat|none|0</value>
+        <value>method|importMapFromFormat|none|0</value>
       </property>
     </configure>
     <configure component="IServiceManager_grpcServer">

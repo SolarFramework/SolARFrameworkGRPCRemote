@@ -53,7 +53,7 @@ IMapsManager_grpcProxy::IMapsManager_grpcProxy():xpcf::ConfigurableBase(xpcf::to
   declareInterface<SolAR::api::service::IMapsManager>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(15);
+  m_grpcProxyCompressionConfig.resize(19);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -798,6 +798,70 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::restoreMap(std::string const
 }
 
 
+SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getAvailableMapProcessingTypes(std::vector<SolAR::api::service::MapProcessingType>& availableTypes) const
+{
+  ::grpc::ClientContext context;
+  ::grpcIMapsManager::getAvailableMapProcessingTypesRequest reqIn;
+  ::grpcIMapsManager::getAvailableMapProcessingTypesResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getAvailableMapProcessingTypes", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_availabletypes(xpcf::serialize<std::vector<SolAR::api::service::MapProcessingType>>(availableTypes));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapsManager_grpcProxy::getAvailableMapProcessingTypes request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMapsManager_grpcProxy.getAvailableMapProcessingTypes",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapsManager.grpcIMapsManagerService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getAvailableMapProcessingTypes"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getAvailableMapProcessingTypes(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapsManager_grpcProxy::getAvailableMapProcessingTypes response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getAvailableMapProcessingTypes rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMapsManagerService.getAvailableMapProcessingTypes() rpc failed.");
+    span->End();
+    throw xpcf::RemotingException("grpcIMapsManagerService","getAvailableMapProcessingTypes",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
+  availableTypes = xpcf::deserialize<std::vector<SolAR::api::service::MapProcessingType>>(respOut.availabletypes());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
 SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::requestMapProcessing(std::string const& mapUUID, std::string const& resultMapUUID, SolAR::api::service::MapProcessingType const processingType)
 {
   ::grpc::ClientContext context;
@@ -995,6 +1059,201 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getMapProcessingData(std::st
   
   pointCloud = xpcf::deserialize<std::vector<SRef<SolAR::datastructure::CloudPoint>>>(respOut.pointcloud());
   keyframePoses = xpcf::deserialize<std::vector<SolAR::datastructure::Transform3Df>>(respOut.keyframeposes());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getAvailableMapExportImportFormats(std::vector<SolAR::api::service::MapExportImportFormat>& availableFormats) const
+{
+  ::grpc::ClientContext context;
+  ::grpcIMapsManager::getAvailableMapExportImportFormatsRequest reqIn;
+  ::grpcIMapsManager::getAvailableMapExportImportFormatsResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "getAvailableMapExportImportFormats", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_availableformats(xpcf::serialize<std::vector<SolAR::api::service::MapExportImportFormat>>(availableFormats));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapsManager_grpcProxy::getAvailableMapExportImportFormats request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMapsManager_grpcProxy.getAvailableMapExportImportFormats",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapsManager.grpcIMapsManagerService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getAvailableMapExportImportFormats"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->getAvailableMapExportImportFormats(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapsManager_grpcProxy::getAvailableMapExportImportFormats response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "getAvailableMapExportImportFormats rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMapsManagerService.getAvailableMapExportImportFormats() rpc failed.");
+    span->End();
+    throw xpcf::RemotingException("grpcIMapsManagerService","getAvailableMapExportImportFormats",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
+  availableFormats = xpcf::deserialize<std::vector<SolAR::api::service::MapExportImportFormat>>(respOut.availableformats());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::exportMapToFormat(std::string const& mapUUID, SolAR::api::service::MapExportImportFormat const& exportFormat, std::vector<unsigned char>& compressedZipExport) const
+{
+  ::grpc::ClientContext context;
+  ::grpcIMapsManager::exportMapToFormatRequest reqIn;
+  ::grpcIMapsManager::exportMapToFormatResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "exportMapToFormat", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_mapuuid(mapUUID);
+  reqIn.set_exportformat(static_cast<int32_t>(exportFormat));
+  reqIn.set_compressedzipexport(xpcf::serialize<std::vector<unsigned char>>(compressedZipExport));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapsManager_grpcProxy::exportMapToFormat request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMapsManager_grpcProxy.exportMapToFormat",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapsManager.grpcIMapsManagerService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "exportMapToFormat"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->exportMapToFormat(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapsManager_grpcProxy::exportMapToFormat response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "exportMapToFormat rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMapsManagerService.exportMapToFormat() rpc failed.");
+    span->End();
+    throw xpcf::RemotingException("grpcIMapsManagerService","exportMapToFormat",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
+  compressedZipExport = xpcf::deserialize<std::vector<unsigned char>>(respOut.compressedzipexport());
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::importMapFromFormat(std::string const& mapUUID, SolAR::api::service::MapExportImportFormat const& importFormat, std::vector<unsigned char> const& compressedZipImport) const
+{
+  ::grpc::ClientContext context;
+  ::grpcIMapsManager::importMapFromFormatRequest reqIn;
+  ::grpcIMapsManager::importMapFromFormatResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "importMapFromFormat", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_mapuuid(mapUUID);
+  reqIn.set_importformat(static_cast<int32_t>(importFormat));
+  reqIn.set_compressedzipimport(xpcf::serialize<std::vector<unsigned char>>(compressedZipImport));
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapsManager_grpcProxy::importMapFromFormat request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IMapsManager_grpcProxy.importMapFromFormat",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapsManager.grpcIMapsManagerService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "importMapFromFormat"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->importMapFromFormat(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IMapsManager_grpcProxy::importMapFromFormat response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "importMapFromFormat rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMapsManagerService.importMapFromFormat() rpc failed.");
+    span->End();
+    throw xpcf::RemotingException("grpcIMapsManagerService","importMapFromFormat",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

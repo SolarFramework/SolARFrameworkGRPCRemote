@@ -36,9 +36,13 @@ class IMapsManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
         ::grpc::Status getMapInfo(::grpc::ServerContext* context, const ::grpcIMapsManager::getMapInfoRequest* request, ::grpcIMapsManager::getMapInfoResponse* response) override;
         ::grpc::Status backupMap(::grpc::ServerContext* context, const ::grpcIMapsManager::backupMapRequest* request, ::grpcIMapsManager::backupMapResponse* response) override;
         ::grpc::Status restoreMap(::grpc::ServerContext* context, const ::grpcIMapsManager::restoreMapRequest* request, ::grpcIMapsManager::restoreMapResponse* response) override;
+        ::grpc::Status getAvailableMapProcessingTypes(::grpc::ServerContext* context, const ::grpcIMapsManager::getAvailableMapProcessingTypesRequest* request, ::grpcIMapsManager::getAvailableMapProcessingTypesResponse* response) override;
         ::grpc::Status requestMapProcessing(::grpc::ServerContext* context, const ::grpcIMapsManager::requestMapProcessingRequest* request, ::grpcIMapsManager::requestMapProcessingResponse* response) override;
         ::grpc::Status getMapProcessingStatus(::grpc::ServerContext* context, const ::grpcIMapsManager::getMapProcessingStatusRequest* request, ::grpcIMapsManager::getMapProcessingStatusResponse* response) override;
         ::grpc::Status getMapProcessingData(::grpc::ServerContext* context, const ::grpcIMapsManager::getMapProcessingDataRequest* request, ::grpcIMapsManager::getMapProcessingDataResponse* response) override;
+        ::grpc::Status getAvailableMapExportImportFormats(::grpc::ServerContext* context, const ::grpcIMapsManager::getAvailableMapExportImportFormatsRequest* request, ::grpcIMapsManager::getAvailableMapExportImportFormatsResponse* response) override;
+        ::grpc::Status exportMapToFormat(::grpc::ServerContext* context, const ::grpcIMapsManager::exportMapToFormatRequest* request, ::grpcIMapsManager::exportMapToFormatResponse* response) override;
+        ::grpc::Status importMapFromFormat(::grpc::ServerContext* context, const ::grpcIMapsManager::importMapFromFormatRequest* request, ::grpcIMapsManager::importMapFromFormatResponse* response) override;
 
         SRef<SolAR::api::service::IMapsManager> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;

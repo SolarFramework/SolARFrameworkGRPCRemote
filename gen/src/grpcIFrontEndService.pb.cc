@@ -733,6 +733,66 @@ struct init_grpc0RequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 init_grpc0RequestDefaultTypeInternal _init_grpc0Request_default_instance_;
 
+inline constexpr importMapFromFormatResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        xpcfgrpcreturnvalue_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR importMapFromFormatResponse::importMapFromFormatResponse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(importMapFromFormatResponse_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct importMapFromFormatResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR importMapFromFormatResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~importMapFromFormatResponseDefaultTypeInternal() {}
+  union {
+    importMapFromFormatResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 importMapFromFormatResponseDefaultTypeInternal _importMapFromFormatResponse_default_instance_;
+
+inline constexpr importMapFromFormatRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        accesstoken_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        mapuuid_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        compressedzipimport_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        grpcservercompressionformat_{0},
+        importformat_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR importMapFromFormatRequest::importMapFromFormatRequest(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(importMapFromFormatRequest_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct importMapFromFormatRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR importMapFromFormatRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~importMapFromFormatRequestDefaultTypeInternal() {}
+  union {
+    importMapFromFormatRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 importMapFromFormatRequestDefaultTypeInternal _importMapFromFormatRequest_default_instance_;
+
 inline constexpr imageProcessRequestResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
@@ -1606,6 +1666,124 @@ struct getCameraParametersRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getCameraParametersRequestDefaultTypeInternal _getCameraParametersRequest_default_instance_;
 
+inline constexpr getAvailableMapProcessingTypesResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        availabletypes_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        xpcfgrpcreturnvalue_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR getAvailableMapProcessingTypesResponse::getAvailableMapProcessingTypesResponse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(getAvailableMapProcessingTypesResponse_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct getAvailableMapProcessingTypesResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR getAvailableMapProcessingTypesResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~getAvailableMapProcessingTypesResponseDefaultTypeInternal() {}
+  union {
+    getAvailableMapProcessingTypesResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getAvailableMapProcessingTypesResponseDefaultTypeInternal _getAvailableMapProcessingTypesResponse_default_instance_;
+
+inline constexpr getAvailableMapProcessingTypesRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        accesstoken_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        availabletypes_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        grpcservercompressionformat_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR getAvailableMapProcessingTypesRequest::getAvailableMapProcessingTypesRequest(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(getAvailableMapProcessingTypesRequest_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct getAvailableMapProcessingTypesRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR getAvailableMapProcessingTypesRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~getAvailableMapProcessingTypesRequestDefaultTypeInternal() {}
+  union {
+    getAvailableMapProcessingTypesRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getAvailableMapProcessingTypesRequestDefaultTypeInternal _getAvailableMapProcessingTypesRequest_default_instance_;
+
+inline constexpr getAvailableMapExportImportFormatsResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        availableformats_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        xpcfgrpcreturnvalue_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR getAvailableMapExportImportFormatsResponse::getAvailableMapExportImportFormatsResponse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(getAvailableMapExportImportFormatsResponse_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct getAvailableMapExportImportFormatsResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR getAvailableMapExportImportFormatsResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~getAvailableMapExportImportFormatsResponseDefaultTypeInternal() {}
+  union {
+    getAvailableMapExportImportFormatsResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getAvailableMapExportImportFormatsResponseDefaultTypeInternal _getAvailableMapExportImportFormatsResponse_default_instance_;
+
+inline constexpr getAvailableMapExportImportFormatsRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        accesstoken_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        availableformats_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        grpcservercompressionformat_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR getAvailableMapExportImportFormatsRequest::getAvailableMapExportImportFormatsRequest(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(getAvailableMapExportImportFormatsRequest_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct getAvailableMapExportImportFormatsRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR getAvailableMapExportImportFormatsRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~getAvailableMapExportImportFormatsRequestDefaultTypeInternal() {}
+  union {
+    getAvailableMapExportImportFormatsRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getAvailableMapExportImportFormatsRequestDefaultTypeInternal _getAvailableMapExportImportFormatsRequest_default_instance_;
+
 inline constexpr getAllMapsUUIDResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
@@ -1723,6 +1901,69 @@ struct getAllClientsUUIDRequestDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getAllClientsUUIDRequestDefaultTypeInternal _getAllClientsUUIDRequest_default_instance_;
+
+inline constexpr exportMapToFormatResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        compressedzipexport_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        xpcfgrpcreturnvalue_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR exportMapToFormatResponse::exportMapToFormatResponse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(exportMapToFormatResponse_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct exportMapToFormatResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR exportMapToFormatResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~exportMapToFormatResponseDefaultTypeInternal() {}
+  union {
+    exportMapToFormatResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 exportMapToFormatResponseDefaultTypeInternal _exportMapToFormatResponse_default_instance_;
+
+inline constexpr exportMapToFormatRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        accesstoken_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        mapuuid_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        compressedzipexport_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        grpcservercompressionformat_{0},
+        exportformat_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR exportMapToFormatRequest::exportMapToFormatRequest(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(exportMapToFormatRequest_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct exportMapToFormatRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR exportMapToFormatRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~exportMapToFormatRequestDefaultTypeInternal() {}
+  union {
+    exportMapToFormatRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 exportMapToFormatRequestDefaultTypeInternal _exportMapToFormatRequest_default_instance_;
 
 inline constexpr deleteMapResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -2424,6 +2665,22 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::restoreMapResponse, _impl_.xpcfgrpcreturnvalue_),
         0,
         0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getAvailableMapProcessingTypesRequest, _impl_._has_bits_),
+        6, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getAvailableMapProcessingTypesRequest, _impl_.grpcservercompressionformat_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getAvailableMapProcessingTypesRequest, _impl_.accesstoken_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getAvailableMapProcessingTypesRequest, _impl_.availabletypes_),
+        2,
+        0,
+        1,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getAvailableMapProcessingTypesResponse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getAvailableMapProcessingTypesResponse, _impl_.availabletypes_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getAvailableMapProcessingTypesResponse, _impl_.xpcfgrpcreturnvalue_),
+        0,
+        1,
+        0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::requestMapProcessingRequest, _impl_._has_bits_),
         8, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::requestMapProcessingRequest, _impl_.grpcservercompressionformat_),
@@ -2489,6 +2746,60 @@ const ::uint32_t
         0,
         1,
         2,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest, _impl_._has_bits_),
+        6, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest, _impl_.grpcservercompressionformat_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest, _impl_.accesstoken_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest, _impl_.availableformats_),
+        2,
+        0,
+        1,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse, _impl_.availableformats_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse, _impl_.xpcfgrpcreturnvalue_),
+        0,
+        1,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::exportMapToFormatRequest, _impl_._has_bits_),
+        8, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::exportMapToFormatRequest, _impl_.grpcservercompressionformat_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::exportMapToFormatRequest, _impl_.accesstoken_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::exportMapToFormatRequest, _impl_.mapuuid_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::exportMapToFormatRequest, _impl_.exportformat_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::exportMapToFormatRequest, _impl_.compressedzipexport_),
+        3,
+        0,
+        1,
+        4,
+        2,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::exportMapToFormatResponse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::exportMapToFormatResponse, _impl_.compressedzipexport_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::exportMapToFormatResponse, _impl_.xpcfgrpcreturnvalue_),
+        0,
+        1,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::importMapFromFormatRequest, _impl_._has_bits_),
+        8, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::importMapFromFormatRequest, _impl_.grpcservercompressionformat_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::importMapFromFormatRequest, _impl_.accesstoken_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::importMapFromFormatRequest, _impl_.mapuuid_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::importMapFromFormatRequest, _impl_.importformat_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::importMapFromFormatRequest, _impl_.compressedzipimport_),
+        3,
+        0,
+        1,
+        4,
+        2,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::importMapFromFormatResponse, _impl_._has_bits_),
+        4, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::importMapFromFormatResponse, _impl_.xpcfgrpcreturnvalue_),
+        0,
 };
 
 static const ::_pbi::MigrationSchema
@@ -2547,12 +2858,20 @@ static const ::_pbi::MigrationSchema
         {495, sizeof(::grpcIFrontEnd::backupMapResponse)},
         {502, sizeof(::grpcIFrontEnd::restoreMapRequest)},
         {513, sizeof(::grpcIFrontEnd::restoreMapResponse)},
-        {518, sizeof(::grpcIFrontEnd::requestMapProcessingRequest)},
-        {531, sizeof(::grpcIFrontEnd::requestMapProcessingResponse)},
-        {536, sizeof(::grpcIFrontEnd::getMapProcessingStatusRequest)},
-        {551, sizeof(::grpcIFrontEnd::getMapProcessingStatusResponse)},
-        {562, sizeof(::grpcIFrontEnd::getMapProcessingDataRequest)},
-        {575, sizeof(::grpcIFrontEnd::getMapProcessingDataResponse)},
+        {518, sizeof(::grpcIFrontEnd::getAvailableMapProcessingTypesRequest)},
+        {527, sizeof(::grpcIFrontEnd::getAvailableMapProcessingTypesResponse)},
+        {534, sizeof(::grpcIFrontEnd::requestMapProcessingRequest)},
+        {547, sizeof(::grpcIFrontEnd::requestMapProcessingResponse)},
+        {552, sizeof(::grpcIFrontEnd::getMapProcessingStatusRequest)},
+        {567, sizeof(::grpcIFrontEnd::getMapProcessingStatusResponse)},
+        {578, sizeof(::grpcIFrontEnd::getMapProcessingDataRequest)},
+        {591, sizeof(::grpcIFrontEnd::getMapProcessingDataResponse)},
+        {600, sizeof(::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest)},
+        {609, sizeof(::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse)},
+        {616, sizeof(::grpcIFrontEnd::exportMapToFormatRequest)},
+        {629, sizeof(::grpcIFrontEnd::exportMapToFormatResponse)},
+        {636, sizeof(::grpcIFrontEnd::importMapFromFormatRequest)},
+        {649, sizeof(::grpcIFrontEnd::importMapFromFormatResponse)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::grpcIFrontEnd::_registerClientRequest_default_instance_._instance,
@@ -2609,12 +2928,20 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::grpcIFrontEnd::_backupMapResponse_default_instance_._instance,
     &::grpcIFrontEnd::_restoreMapRequest_default_instance_._instance,
     &::grpcIFrontEnd::_restoreMapResponse_default_instance_._instance,
+    &::grpcIFrontEnd::_getAvailableMapProcessingTypesRequest_default_instance_._instance,
+    &::grpcIFrontEnd::_getAvailableMapProcessingTypesResponse_default_instance_._instance,
     &::grpcIFrontEnd::_requestMapProcessingRequest_default_instance_._instance,
     &::grpcIFrontEnd::_requestMapProcessingResponse_default_instance_._instance,
     &::grpcIFrontEnd::_getMapProcessingStatusRequest_default_instance_._instance,
     &::grpcIFrontEnd::_getMapProcessingStatusResponse_default_instance_._instance,
     &::grpcIFrontEnd::_getMapProcessingDataRequest_default_instance_._instance,
     &::grpcIFrontEnd::_getMapProcessingDataResponse_default_instance_._instance,
+    &::grpcIFrontEnd::_getAvailableMapExportImportFormatsRequest_default_instance_._instance,
+    &::grpcIFrontEnd::_getAvailableMapExportImportFormatsResponse_default_instance_._instance,
+    &::grpcIFrontEnd::_exportMapToFormatRequest_default_instance_._instance,
+    &::grpcIFrontEnd::_exportMapToFormatResponse_default_instance_._instance,
+    &::grpcIFrontEnd::_importMapFromFormatRequest_default_instance_._instance,
+    &::grpcIFrontEnd::_importMapFromFormatResponse_default_instance_._instance,
 };
 const char descriptor_table_protodef_grpcIFrontEndService_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
@@ -2766,103 +3093,138 @@ const char descriptor_table_protodef_grpcIFrontEndService_2eproto[] ABSL_ATTRIBU
     "sionFormat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t\022\017\n"
     "\007mapUUID\030\003 \001(\t\022\031\n\021compressedZipData\030\004 \001("
     "\014\"1\n\022restoreMapResponse\022\033\n\023xpcfGrpcRetur"
-    "nValue\030\001 \001(\021\"\227\001\n\033requestMapProcessingReq"
+    "nValue\030\001 \001(\021\"y\n%getAvailableMapProcessin"
+    "gTypesRequest\022#\n\033grpcServerCompressionFo"
+    "rmat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t\022\026\n\016avail"
+    "ableTypes\030\003 \001(\014\"]\n&getAvailableMapProces"
+    "singTypesResponse\022\026\n\016availableTypes\030\001 \001("
+    "\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"\227\001\n\033reque"
+    "stMapProcessingRequest\022#\n\033grpcServerComp"
+    "ressionFormat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t"
+    "\022\017\n\007mapUUID\030\003 \001(\t\022\025\n\rresultMapUUID\030\004 \001(\t"
+    "\022\026\n\016processingType\030\005 \001(\021\";\n\034requestMapPr"
+    "ocessingResponse\022\033\n\023xpcfGrpcReturnValue\030"
+    "\001 \001(\021\"\252\001\n\035getMapProcessingStatusRequest\022"
+    "#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\023\n\013"
+    "accessToken\030\002 \001(\t\022\025\n\rresultMapUUID\030\003 \001(\t"
+    "\022\016\n\006status\030\004 \001(\021\022\026\n\016processingType\030\005 \001(\021"
+    "\022\020\n\010progress\030\006 \001(\002\"w\n\036getMapProcessingSt"
+    "atusResponse\022\016\n\006status\030\001 \001(\021\022\026\n\016processi"
+    "ngType\030\002 \001(\021\022\020\n\010progress\030\003 \001(\002\022\033\n\023xpcfGr"
+    "pcReturnValue\030\004 \001(\021\"\231\001\n\033getMapProcessing"
+    "DataRequest\022#\n\033grpcServerCompressionForm"
+    "at\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t\022\025\n\rresultM"
+    "apUUID\030\003 \001(\t\022\022\n\npointCloud\030\004 \001(\014\022\025\n\rkeyf"
+    "ramePoses\030\005 \001(\014\"f\n\034getMapProcessingDataR"
+    "esponse\022\022\n\npointCloud\030\001 \001(\014\022\025\n\rkeyframeP"
+    "oses\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\003 \001(\021\""
+    "\177\n)getAvailableMapExportImportFormatsReq"
     "uest\022#\n\033grpcServerCompressionFormat\030\001 \001("
-    "\005\022\023\n\013accessToken\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\022"
-    "\025\n\rresultMapUUID\030\004 \001(\t\022\026\n\016processingType"
-    "\030\005 \001(\021\";\n\034requestMapProcessingResponse\022\033"
-    "\n\023xpcfGrpcReturnValue\030\001 \001(\021\"\252\001\n\035getMapPr"
-    "ocessingStatusRequest\022#\n\033grpcServerCompr"
-    "essionFormat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t\022"
-    "\025\n\rresultMapUUID\030\003 \001(\t\022\016\n\006status\030\004 \001(\021\022\026"
-    "\n\016processingType\030\005 \001(\021\022\020\n\010progress\030\006 \001(\002"
-    "\"w\n\036getMapProcessingStatusResponse\022\016\n\006st"
-    "atus\030\001 \001(\021\022\026\n\016processingType\030\002 \001(\021\022\020\n\010pr"
-    "ogress\030\003 \001(\002\022\033\n\023xpcfGrpcReturnValue\030\004 \001("
-    "\021\"\231\001\n\033getMapProcessingDataRequest\022#\n\033grp"
-    "cServerCompressionFormat\030\001 \001(\005\022\023\n\013access"
-    "Token\030\002 \001(\t\022\025\n\rresultMapUUID\030\003 \001(\t\022\022\n\npo"
-    "intCloud\030\004 \001(\014\022\025\n\rkeyframePoses\030\005 \001(\014\"f\n"
-    "\034getMapProcessingDataResponse\022\022\n\npointCl"
-    "oud\030\001 \001(\014\022\025\n\rkeyframePoses\030\002 \001(\014\022\033\n\023xpcf"
-    "GrpcReturnValue\030\003 \001(\0212\351\027\n\024grpcIFrontEndS"
-    "ervice\022_\n\016registerClient\022$.grpcIFrontEnd"
-    ".registerClientRequest\032%.grpcIFrontEnd.r"
-    "egisterClientResponse\"\000\022e\n\020unregisterCli"
-    "ent\022&.grpcIFrontEnd.unregisterClientRequ"
-    "est\032\'.grpcIFrontEnd.unregisterClientResp"
-    "onse\"\000\022h\n\021getAllClientsUUID\022\'.grpcIFront"
-    "End.getAllClientsUUIDRequest\032(.grpcIFron"
-    "tEnd.getAllClientsUUIDResponse\"\000\022\\\n\rgetD"
-    "eviceInfo\022#.grpcIFrontEnd.getDeviceInfoR"
-    "equest\032$.grpcIFrontEnd.getDeviceInfoResp"
-    "onse\"\000\022S\n\ninit_grpc0\022 .grpcIFrontEnd.ini"
-    "t_grpc0Request\032!.grpcIFrontEnd.init_grpc"
-    "0Response\"\000\022S\n\ninit_grpc1\022 .grpcIFrontEn"
-    "d.init_grpc1Request\032!.grpcIFrontEnd.init"
-    "_grpc1Response\"\000\022D\n\005start\022\033.grpcIFrontEn"
-    "d.startRequest\032\034.grpcIFrontEnd.startResp"
-    "onse\"\000\022A\n\004stop\022\032.grpcIFrontEnd.stopReque"
-    "st\032\033.grpcIFrontEnd.stopResponse\"\000\022h\n\021get"
-    "ProcessingMode\022\'.grpcIFrontEnd.getProces"
-    "singModeRequest\032(.grpcIFrontEnd.getProce"
-    "ssingModeResponse\"\000\022\200\001\n\031setCameraParamet"
-    "ers_grpc0\022/.grpcIFrontEnd.setCameraParam"
-    "eters_grpc0Request\0320.grpcIFrontEnd.setCa"
-    "meraParameters_grpc0Response\"\000\022\200\001\n\031setCa"
-    "meraParameters_grpc1\022/.grpcIFrontEnd.set"
-    "CameraParameters_grpc1Request\0320.grpcIFro"
-    "ntEnd.setCameraParameters_grpc1Response\""
-    "\000\022\203\001\n\032setRectificationParameters\0220.grpcI"
-    "FrontEnd.setRectificationParametersReque"
-    "st\0321.grpcIFrontEnd.setRectificationParam"
-    "etersResponse\"\000\022n\n\023getCameraParameters\022)"
-    ".grpcIFrontEnd.getCameraParametersReques"
-    "t\032*.grpcIFrontEnd.getCameraParametersRes"
-    "ponse\"\000\022n\n\023imageProcessRequest\022).grpcIFr"
-    "ontEnd.imageProcessRequestRequest\032*.grpc"
-    "IFrontEnd.imageProcessRequestResponse\"\000\022"
-    "t\n\025getMappingDataRequest\022+.grpcIFrontEnd"
-    ".getMappingDataRequestRequest\032,.grpcIFro"
-    "ntEnd.getMappingDataRequestResponse\"\000\022\\\n"
-    "\rgetClientPose\022#.grpcIFrontEnd.getClient"
-    "PoseRequest\032$.grpcIFrontEnd.getClientPos"
-    "eResponse\"\000\022P\n\tcreateMap\022\037.grpcIFrontEnd"
-    ".createMapRequest\032 .grpcIFrontEnd.create"
-    "MapResponse\"\000\022P\n\tdeleteMap\022\037.grpcIFrontE"
-    "nd.deleteMapRequest\032 .grpcIFrontEnd.dele"
-    "teMapResponse\"\000\022_\n\016getAllMapsUUID\022$.grpc"
-    "IFrontEnd.getAllMapsUUIDRequest\032%.grpcIF"
-    "rontEnd.getAllMapsUUIDResponse\"\000\022e\n\020getC"
-    "lientMapUUID\022&.grpcIFrontEnd.getClientMa"
-    "pUUIDRequest\032\'.grpcIFrontEnd.getClientMa"
-    "pUUIDResponse\"\000\022n\n\023getClientInfoForMap\022)"
-    ".grpcIFrontEnd.getClientInfoForMapReques"
-    "t\032*.grpcIFrontEnd.getClientInfoForMapRes"
-    "ponse\"\000\022\\\n\rgetMapRequest\022#.grpcIFrontEnd"
-    ".getMapRequestRequest\032$.grpcIFrontEnd.ge"
-    "tMapRequestResponse\"\000\022\\\n\rsetMapRequest\022#"
-    ".grpcIFrontEnd.setMapRequestRequest\032$.gr"
-    "pcIFrontEnd.setMapRequestResponse\"\000\022q\n\024g"
-    "etPointCloudRequest\022*.grpcIFrontEnd.getP"
-    "ointCloudRequestRequest\032+.grpcIFrontEnd."
-    "getPointCloudRequestResponse\"\000\022S\n\ngetMap"
-    "Info\022 .grpcIFrontEnd.getMapInfoRequest\032!"
-    ".grpcIFrontEnd.getMapInfoResponse\"\000\022P\n\tb"
-    "ackupMap\022\037.grpcIFrontEnd.backupMapReques"
-    "t\032 .grpcIFrontEnd.backupMapResponse\"\000\022S\n"
-    "\nrestoreMap\022 .grpcIFrontEnd.restoreMapRe"
-    "quest\032!.grpcIFrontEnd.restoreMapResponse"
-    "\"\000\022q\n\024requestMapProcessing\022*.grpcIFrontE"
-    "nd.requestMapProcessingRequest\032+.grpcIFr"
-    "ontEnd.requestMapProcessingResponse\"\000\022w\n"
-    "\026getMapProcessingStatus\022,.grpcIFrontEnd."
-    "getMapProcessingStatusRequest\032-.grpcIFro"
-    "ntEnd.getMapProcessingStatusResponse\"\000\022q"
-    "\n\024getMapProcessingData\022*.grpcIFrontEnd.g"
-    "etMapProcessingDataRequest\032+.grpcIFrontE"
-    "nd.getMapProcessingDataResponse\"\000b\006proto"
-    "3"
+    "\005\022\023\n\013accessToken\030\002 \001(\t\022\030\n\020availableForma"
+    "ts\030\003 \001(\014\"c\n*getAvailableMapExportImportF"
+    "ormatsResponse\022\030\n\020availableFormats\030\001 \001(\014"
+    "\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"\230\001\n\030export"
+    "MapToFormatRequest\022#\n\033grpcServerCompress"
+    "ionFormat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t\022\017\n\007"
+    "mapUUID\030\003 \001(\t\022\024\n\014exportFormat\030\004 \001(\021\022\033\n\023c"
+    "ompressedZipExport\030\005 \001(\014\"U\n\031exportMapToF"
+    "ormatResponse\022\033\n\023compressedZipExport\030\001 \001"
+    "(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"\232\001\n\032impo"
+    "rtMapFromFormatRequest\022#\n\033grpcServerComp"
+    "ressionFormat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t"
+    "\022\017\n\007mapUUID\030\003 \001(\t\022\024\n\014importFormat\030\004 \001(\021\022"
+    "\033\n\023compressedZipImport\030\005 \001(\014\":\n\033importMa"
+    "pFromFormatResponse\022\033\n\023xpcfGrpcReturnVal"
+    "ue\030\001 \001(\0212\363\033\n\024grpcIFrontEndService\022_\n\016reg"
+    "isterClient\022$.grpcIFrontEnd.registerClie"
+    "ntRequest\032%.grpcIFrontEnd.registerClient"
+    "Response\"\000\022e\n\020unregisterClient\022&.grpcIFr"
+    "ontEnd.unregisterClientRequest\032\'.grpcIFr"
+    "ontEnd.unregisterClientResponse\"\000\022h\n\021get"
+    "AllClientsUUID\022\'.grpcIFrontEnd.getAllCli"
+    "entsUUIDRequest\032(.grpcIFrontEnd.getAllCl"
+    "ientsUUIDResponse\"\000\022\\\n\rgetDeviceInfo\022#.g"
+    "rpcIFrontEnd.getDeviceInfoRequest\032$.grpc"
+    "IFrontEnd.getDeviceInfoResponse\"\000\022S\n\nini"
+    "t_grpc0\022 .grpcIFrontEnd.init_grpc0Reques"
+    "t\032!.grpcIFrontEnd.init_grpc0Response\"\000\022S"
+    "\n\ninit_grpc1\022 .grpcIFrontEnd.init_grpc1R"
+    "equest\032!.grpcIFrontEnd.init_grpc1Respons"
+    "e\"\000\022D\n\005start\022\033.grpcIFrontEnd.startReques"
+    "t\032\034.grpcIFrontEnd.startResponse\"\000\022A\n\004sto"
+    "p\022\032.grpcIFrontEnd.stopRequest\032\033.grpcIFro"
+    "ntEnd.stopResponse\"\000\022h\n\021getProcessingMod"
+    "e\022\'.grpcIFrontEnd.getProcessingModeReque"
+    "st\032(.grpcIFrontEnd.getProcessingModeResp"
+    "onse\"\000\022\200\001\n\031setCameraParameters_grpc0\022/.g"
+    "rpcIFrontEnd.setCameraParameters_grpc0Re"
+    "quest\0320.grpcIFrontEnd.setCameraParameter"
+    "s_grpc0Response\"\000\022\200\001\n\031setCameraParameter"
+    "s_grpc1\022/.grpcIFrontEnd.setCameraParamet"
+    "ers_grpc1Request\0320.grpcIFrontEnd.setCame"
+    "raParameters_grpc1Response\"\000\022\203\001\n\032setRect"
+    "ificationParameters\0220.grpcIFrontEnd.setR"
+    "ectificationParametersRequest\0321.grpcIFro"
+    "ntEnd.setRectificationParametersResponse"
+    "\"\000\022n\n\023getCameraParameters\022).grpcIFrontEn"
+    "d.getCameraParametersRequest\032*.grpcIFron"
+    "tEnd.getCameraParametersResponse\"\000\022n\n\023im"
+    "ageProcessRequest\022).grpcIFrontEnd.imageP"
+    "rocessRequestRequest\032*.grpcIFrontEnd.ima"
+    "geProcessRequestResponse\"\000\022t\n\025getMapping"
+    "DataRequest\022+.grpcIFrontEnd.getMappingDa"
+    "taRequestRequest\032,.grpcIFrontEnd.getMapp"
+    "ingDataRequestResponse\"\000\022\\\n\rgetClientPos"
+    "e\022#.grpcIFrontEnd.getClientPoseRequest\032$"
+    ".grpcIFrontEnd.getClientPoseResponse\"\000\022P"
+    "\n\tcreateMap\022\037.grpcIFrontEnd.createMapReq"
+    "uest\032 .grpcIFrontEnd.createMapResponse\"\000"
+    "\022P\n\tdeleteMap\022\037.grpcIFrontEnd.deleteMapR"
+    "equest\032 .grpcIFrontEnd.deleteMapResponse"
+    "\"\000\022_\n\016getAllMapsUUID\022$.grpcIFrontEnd.get"
+    "AllMapsUUIDRequest\032%.grpcIFrontEnd.getAl"
+    "lMapsUUIDResponse\"\000\022e\n\020getClientMapUUID\022"
+    "&.grpcIFrontEnd.getClientMapUUIDRequest\032"
+    "\'.grpcIFrontEnd.getClientMapUUIDResponse"
+    "\"\000\022n\n\023getClientInfoForMap\022).grpcIFrontEn"
+    "d.getClientInfoForMapRequest\032*.grpcIFron"
+    "tEnd.getClientInfoForMapResponse\"\000\022\\\n\rge"
+    "tMapRequest\022#.grpcIFrontEnd.getMapReques"
+    "tRequest\032$.grpcIFrontEnd.getMapRequestRe"
+    "sponse\"\000\022\\\n\rsetMapRequest\022#.grpcIFrontEn"
+    "d.setMapRequestRequest\032$.grpcIFrontEnd.s"
+    "etMapRequestResponse\"\000\022q\n\024getPointCloudR"
+    "equest\022*.grpcIFrontEnd.getPointCloudRequ"
+    "estRequest\032+.grpcIFrontEnd.getPointCloud"
+    "RequestResponse\"\000\022S\n\ngetMapInfo\022 .grpcIF"
+    "rontEnd.getMapInfoRequest\032!.grpcIFrontEn"
+    "d.getMapInfoResponse\"\000\022P\n\tbackupMap\022\037.gr"
+    "pcIFrontEnd.backupMapRequest\032 .grpcIFron"
+    "tEnd.backupMapResponse\"\000\022S\n\nrestoreMap\022 "
+    ".grpcIFrontEnd.restoreMapRequest\032!.grpcI"
+    "FrontEnd.restoreMapResponse\"\000\022\217\001\n\036getAva"
+    "ilableMapProcessingTypes\0224.grpcIFrontEnd"
+    ".getAvailableMapProcessingTypesRequest\0325"
+    ".grpcIFrontEnd.getAvailableMapProcessing"
+    "TypesResponse\"\000\022q\n\024requestMapProcessing\022"
+    "*.grpcIFrontEnd.requestMapProcessingRequ"
+    "est\032+.grpcIFrontEnd.requestMapProcessing"
+    "Response\"\000\022w\n\026getMapProcessingStatus\022,.g"
+    "rpcIFrontEnd.getMapProcessingStatusReque"
+    "st\032-.grpcIFrontEnd.getMapProcessingStatu"
+    "sResponse\"\000\022q\n\024getMapProcessingData\022*.gr"
+    "pcIFrontEnd.getMapProcessingDataRequest\032"
+    "+.grpcIFrontEnd.getMapProcessingDataResp"
+    "onse\"\000\022\233\001\n\"getAvailableMapExportImportFo"
+    "rmats\0228.grpcIFrontEnd.getAvailableMapExp"
+    "ortImportFormatsRequest\0329.grpcIFrontEnd."
+    "getAvailableMapExportImportFormatsRespon"
+    "se\"\000\022h\n\021exportMapToFormat\022\'.grpcIFrontEn"
+    "d.exportMapToFormatRequest\032(.grpcIFrontE"
+    "nd.exportMapToFormatResponse\"\000\022n\n\023import"
+    "MapFromFormat\022).grpcIFrontEnd.importMapF"
+    "romFormatRequest\032*.grpcIFrontEnd.importM"
+    "apFromFormatResponse\"\000b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_grpcIFrontEndService_2eproto_deps[1] = {
@@ -2872,13 +3234,13 @@ static ::absl::once_flag descriptor_table_grpcIFrontEndService_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_grpcIFrontEndService_2eproto = {
     false,
     false,
-    9761,
+    11190,
     descriptor_table_protodef_grpcIFrontEndService_2eproto,
     "grpcIFrontEndService.proto",
     &descriptor_table_grpcIFrontEndService_2eproto_once,
     descriptor_table_grpcIFrontEndService_2eproto_deps,
     1,
-    60,
+    68,
     schemas,
     file_default_instances,
     TableStruct_grpcIFrontEndService_2eproto::offsets,
@@ -21591,6 +21953,646 @@ void restoreMapResponse::InternalSwap(restoreMapResponse* PROTOBUF_RESTRICT PROT
 }
 // ===================================================================
 
+class getAvailableMapProcessingTypesRequest::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<getAvailableMapProcessingTypesRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesRequest, _impl_._has_bits_);
+};
+
+getAvailableMapProcessingTypesRequest::getAvailableMapProcessingTypesRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, getAvailableMapProcessingTypesRequest_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIFrontEnd.getAvailableMapProcessingTypesRequest)
+}
+PROTOBUF_NDEBUG_INLINE getAvailableMapProcessingTypesRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::grpcIFrontEnd::getAvailableMapProcessingTypesRequest& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        accesstoken_(arena, from.accesstoken_),
+        availabletypes_(arena, from.availabletypes_) {}
+
+getAvailableMapProcessingTypesRequest::getAvailableMapProcessingTypesRequest(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const getAvailableMapProcessingTypesRequest& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, getAvailableMapProcessingTypesRequest_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  getAvailableMapProcessingTypesRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+
+  // @@protoc_insertion_point(copy_constructor:grpcIFrontEnd.getAvailableMapProcessingTypesRequest)
+}
+PROTOBUF_NDEBUG_INLINE getAvailableMapProcessingTypesRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        accesstoken_(arena),
+        availabletypes_(arena) {}
+
+inline void getAvailableMapProcessingTypesRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.grpcservercompressionformat_ = {};
+}
+getAvailableMapProcessingTypesRequest::~getAvailableMapProcessingTypesRequest() {
+  // @@protoc_insertion_point(destructor:grpcIFrontEnd.getAvailableMapProcessingTypesRequest)
+  SharedDtor(*this);
+}
+inline void getAvailableMapProcessingTypesRequest::SharedDtor(MessageLite& self) {
+  getAvailableMapProcessingTypesRequest& this_ = static_cast<getAvailableMapProcessingTypesRequest&>(self);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.accesstoken_.Destroy();
+  this_._impl_.availabletypes_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL getAvailableMapProcessingTypesRequest::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) getAvailableMapProcessingTypesRequest(arena);
+}
+constexpr auto getAvailableMapProcessingTypesRequest::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(getAvailableMapProcessingTypesRequest),
+                                            alignof(getAvailableMapProcessingTypesRequest));
+}
+constexpr auto getAvailableMapProcessingTypesRequest::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_getAvailableMapProcessingTypesRequest_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &getAvailableMapProcessingTypesRequest::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<getAvailableMapProcessingTypesRequest>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &getAvailableMapProcessingTypesRequest::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<getAvailableMapProcessingTypesRequest>(), &getAvailableMapProcessingTypesRequest::ByteSizeLong,
+              &getAvailableMapProcessingTypesRequest::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesRequest, _impl_._cached_size_),
+          false,
+      },
+      &getAvailableMapProcessingTypesRequest::kDescriptorMethods,
+      &descriptor_table_grpcIFrontEndService_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull getAvailableMapProcessingTypesRequest_class_data_ =
+        getAvailableMapProcessingTypesRequest::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+getAvailableMapProcessingTypesRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&getAvailableMapProcessingTypesRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(getAvailableMapProcessingTypesRequest_class_data_.tc_table);
+  return getAvailableMapProcessingTypesRequest_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 0, 71, 2>
+getAvailableMapProcessingTypesRequest::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesRequest, _impl_._has_bits_),
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    getAvailableMapProcessingTypesRequest_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIFrontEnd::getAvailableMapProcessingTypesRequest>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // int32 grpcServerCompressionFormat = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(getAvailableMapProcessingTypesRequest, _impl_.grpcservercompressionformat_), 2>(),
+     {8, 2, 0, PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesRequest, _impl_.grpcservercompressionformat_)}},
+    // string accessToken = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesRequest, _impl_.accesstoken_)}},
+    // bytes availableTypes = 3;
+    {::_pbi::TcParser::FastBS1,
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesRequest, _impl_.availabletypes_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int32 grpcServerCompressionFormat = 1;
+    {PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesRequest, _impl_.grpcservercompressionformat_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // string accessToken = 2;
+    {PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesRequest, _impl_.accesstoken_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bytes availableTypes = 3;
+    {PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesRequest, _impl_.availabletypes_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\63\0\13\0\0\0\0\0"
+    "grpcIFrontEnd.getAvailableMapProcessingTypesRequest"
+    "accessToken"
+  }},
+};
+PROTOBUF_NOINLINE void getAvailableMapProcessingTypesRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIFrontEnd.getAvailableMapProcessingTypesRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003U) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      _impl_.accesstoken_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      _impl_.availabletypes_.ClearNonDefaultToEmpty();
+    }
+  }
+  _impl_.grpcservercompressionformat_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL getAvailableMapProcessingTypesRequest::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const getAvailableMapProcessingTypesRequest& this_ = static_cast<const getAvailableMapProcessingTypesRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL getAvailableMapProcessingTypesRequest::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const getAvailableMapProcessingTypesRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIFrontEnd.getAvailableMapProcessingTypesRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if ((this_._impl_._has_bits_[0] & 0x00000004U) != 0) {
+    if (this_._internal_grpcservercompressionformat() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<1>(
+              stream, this_._internal_grpcservercompressionformat(), target);
+    }
+  }
+
+  // string accessToken = 2;
+  if ((this_._impl_._has_bits_[0] & 0x00000001U) != 0) {
+    if (!this_._internal_accesstoken().empty()) {
+      const ::std::string& _s = this_._internal_accesstoken();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.getAvailableMapProcessingTypesRequest.accessToken");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // bytes availableTypes = 3;
+  if ((this_._impl_._has_bits_[0] & 0x00000002U) != 0) {
+    if (!this_._internal_availabletypes().empty()) {
+      const ::std::string& _s = this_._internal_availabletypes();
+      target = stream->WriteBytesMaybeAliased(3, _s, target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIFrontEnd.getAvailableMapProcessingTypesRequest)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t getAvailableMapProcessingTypesRequest::ByteSizeLong(const MessageLite& base) {
+  const getAvailableMapProcessingTypesRequest& this_ = static_cast<const getAvailableMapProcessingTypesRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t getAvailableMapProcessingTypesRequest::ByteSizeLong() const {
+  const getAvailableMapProcessingTypesRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:grpcIFrontEnd.getAvailableMapProcessingTypesRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007U) != 0) {
+    // string accessToken = 2;
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!this_._internal_accesstoken().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_accesstoken());
+      }
+    }
+    // bytes availableTypes = 3;
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (!this_._internal_availabletypes().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                        this_._internal_availabletypes());
+      }
+    }
+    // int32 grpcServerCompressionFormat = 1;
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      if (this_._internal_grpcservercompressionformat() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_grpcservercompressionformat());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void getAvailableMapProcessingTypesRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<getAvailableMapProcessingTypesRequest*>(&to_msg);
+  auto& from = static_cast<const getAvailableMapProcessingTypesRequest&>(from_msg);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    from.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFrontEnd.getAvailableMapProcessingTypesRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007U) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!from._internal_accesstoken().empty()) {
+        _this->_internal_set_accesstoken(from._internal_accesstoken());
+      } else {
+        if (_this->_impl_.accesstoken_.IsDefault()) {
+          _this->_internal_set_accesstoken("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (!from._internal_availabletypes().empty()) {
+        _this->_internal_set_availabletypes(from._internal_availabletypes());
+      } else {
+        if (_this->_impl_.availabletypes_.IsDefault()) {
+          _this->_internal_set_availabletypes("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      if (from._internal_grpcservercompressionformat() != 0) {
+        _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getAvailableMapProcessingTypesRequest::CopyFrom(const getAvailableMapProcessingTypesRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIFrontEnd.getAvailableMapProcessingTypesRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void getAvailableMapProcessingTypesRequest::InternalSwap(getAvailableMapProcessingTypesRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.accesstoken_, &other->_impl_.accesstoken_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.availabletypes_, &other->_impl_.availabletypes_, arena);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+}
+
+::google::protobuf::Metadata getAvailableMapProcessingTypesRequest::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class getAvailableMapProcessingTypesResponse::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<getAvailableMapProcessingTypesResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesResponse, _impl_._has_bits_);
+};
+
+getAvailableMapProcessingTypesResponse::getAvailableMapProcessingTypesResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, getAvailableMapProcessingTypesResponse_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIFrontEnd.getAvailableMapProcessingTypesResponse)
+}
+PROTOBUF_NDEBUG_INLINE getAvailableMapProcessingTypesResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::grpcIFrontEnd::getAvailableMapProcessingTypesResponse& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        availabletypes_(arena, from.availabletypes_) {}
+
+getAvailableMapProcessingTypesResponse::getAvailableMapProcessingTypesResponse(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const getAvailableMapProcessingTypesResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, getAvailableMapProcessingTypesResponse_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  getAvailableMapProcessingTypesResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+
+  // @@protoc_insertion_point(copy_constructor:grpcIFrontEnd.getAvailableMapProcessingTypesResponse)
+}
+PROTOBUF_NDEBUG_INLINE getAvailableMapProcessingTypesResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        availabletypes_(arena) {}
+
+inline void getAvailableMapProcessingTypesResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.xpcfgrpcreturnvalue_ = {};
+}
+getAvailableMapProcessingTypesResponse::~getAvailableMapProcessingTypesResponse() {
+  // @@protoc_insertion_point(destructor:grpcIFrontEnd.getAvailableMapProcessingTypesResponse)
+  SharedDtor(*this);
+}
+inline void getAvailableMapProcessingTypesResponse::SharedDtor(MessageLite& self) {
+  getAvailableMapProcessingTypesResponse& this_ = static_cast<getAvailableMapProcessingTypesResponse&>(self);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.availabletypes_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL getAvailableMapProcessingTypesResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) getAvailableMapProcessingTypesResponse(arena);
+}
+constexpr auto getAvailableMapProcessingTypesResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(getAvailableMapProcessingTypesResponse),
+                                            alignof(getAvailableMapProcessingTypesResponse));
+}
+constexpr auto getAvailableMapProcessingTypesResponse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_getAvailableMapProcessingTypesResponse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &getAvailableMapProcessingTypesResponse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<getAvailableMapProcessingTypesResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &getAvailableMapProcessingTypesResponse::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<getAvailableMapProcessingTypesResponse>(), &getAvailableMapProcessingTypesResponse::ByteSizeLong,
+              &getAvailableMapProcessingTypesResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesResponse, _impl_._cached_size_),
+          false,
+      },
+      &getAvailableMapProcessingTypesResponse::kDescriptorMethods,
+      &descriptor_table_grpcIFrontEndService_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull getAvailableMapProcessingTypesResponse_class_data_ =
+        getAvailableMapProcessingTypesResponse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+getAvailableMapProcessingTypesResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&getAvailableMapProcessingTypesResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(getAvailableMapProcessingTypesResponse_class_data_.tc_table);
+  return getAvailableMapProcessingTypesResponse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 0, 2>
+getAvailableMapProcessingTypesResponse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesResponse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    getAvailableMapProcessingTypesResponse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIFrontEnd::getAvailableMapProcessingTypesResponse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // sint32 xpcfGrpcReturnValue = 2;
+    {::_pbi::TcParser::FastZ32S1,
+     {16, 1, 0, PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesResponse, _impl_.xpcfgrpcreturnvalue_)}},
+    // bytes availableTypes = 1;
+    {::_pbi::TcParser::FastBS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesResponse, _impl_.availabletypes_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // bytes availableTypes = 1;
+    {PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesResponse, _impl_.availabletypes_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // sint32 xpcfGrpcReturnValue = 2;
+    {PROTOBUF_FIELD_OFFSET(getAvailableMapProcessingTypesResponse, _impl_.xpcfgrpcreturnvalue_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kSInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+PROTOBUF_NOINLINE void getAvailableMapProcessingTypesResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIFrontEnd.getAvailableMapProcessingTypesResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000001U) != 0) {
+    _impl_.availabletypes_.ClearNonDefaultToEmpty();
+  }
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL getAvailableMapProcessingTypesResponse::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const getAvailableMapProcessingTypesResponse& this_ = static_cast<const getAvailableMapProcessingTypesResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL getAvailableMapProcessingTypesResponse::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const getAvailableMapProcessingTypesResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIFrontEnd.getAvailableMapProcessingTypesResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // bytes availableTypes = 1;
+  if ((this_._impl_._has_bits_[0] & 0x00000001U) != 0) {
+    if (!this_._internal_availabletypes().empty()) {
+      const ::std::string& _s = this_._internal_availabletypes();
+      target = stream->WriteBytesMaybeAliased(1, _s, target);
+    }
+  }
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  if ((this_._impl_._has_bits_[0] & 0x00000002U) != 0) {
+    if (this_._internal_xpcfgrpcreturnvalue() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+          2, this_._internal_xpcfgrpcreturnvalue(), target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIFrontEnd.getAvailableMapProcessingTypesResponse)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t getAvailableMapProcessingTypesResponse::ByteSizeLong(const MessageLite& base) {
+  const getAvailableMapProcessingTypesResponse& this_ = static_cast<const getAvailableMapProcessingTypesResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t getAvailableMapProcessingTypesResponse::ByteSizeLong() const {
+  const getAvailableMapProcessingTypesResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:grpcIFrontEnd.getAvailableMapProcessingTypesResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003U) != 0) {
+    // bytes availableTypes = 1;
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!this_._internal_availabletypes().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                        this_._internal_availabletypes());
+      }
+    }
+    // sint32 xpcfGrpcReturnValue = 2;
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (this_._internal_xpcfgrpcreturnvalue() != 0) {
+        total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+            this_._internal_xpcfgrpcreturnvalue());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void getAvailableMapProcessingTypesResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<getAvailableMapProcessingTypesResponse*>(&to_msg);
+  auto& from = static_cast<const getAvailableMapProcessingTypesResponse&>(from_msg);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    from.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFrontEnd.getAvailableMapProcessingTypesResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003U) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!from._internal_availabletypes().empty()) {
+        _this->_internal_set_availabletypes(from._internal_availabletypes());
+      } else {
+        if (_this->_impl_.availabletypes_.IsDefault()) {
+          _this->_internal_set_availabletypes("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (from._internal_xpcfgrpcreturnvalue() != 0) {
+        _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getAvailableMapProcessingTypesResponse::CopyFrom(const getAvailableMapProcessingTypesResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIFrontEnd.getAvailableMapProcessingTypesResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void getAvailableMapProcessingTypesResponse::InternalSwap(getAvailableMapProcessingTypesResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.availabletypes_, &other->_impl_.availabletypes_, arena);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+}
+
+::google::protobuf::Metadata getAvailableMapProcessingTypesResponse::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
 class requestMapProcessingRequest::_Internal {
  public:
   using HasBits =
@@ -23799,6 +24801,2045 @@ void getMapProcessingDataResponse::InternalSwap(getMapProcessingDataResponse* PR
 }
 
 ::google::protobuf::Metadata getMapProcessingDataResponse::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class getAvailableMapExportImportFormatsRequest::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<getAvailableMapExportImportFormatsRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsRequest, _impl_._has_bits_);
+};
+
+getAvailableMapExportImportFormatsRequest::getAvailableMapExportImportFormatsRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, getAvailableMapExportImportFormatsRequest_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIFrontEnd.getAvailableMapExportImportFormatsRequest)
+}
+PROTOBUF_NDEBUG_INLINE getAvailableMapExportImportFormatsRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        accesstoken_(arena, from.accesstoken_),
+        availableformats_(arena, from.availableformats_) {}
+
+getAvailableMapExportImportFormatsRequest::getAvailableMapExportImportFormatsRequest(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const getAvailableMapExportImportFormatsRequest& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, getAvailableMapExportImportFormatsRequest_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  getAvailableMapExportImportFormatsRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+
+  // @@protoc_insertion_point(copy_constructor:grpcIFrontEnd.getAvailableMapExportImportFormatsRequest)
+}
+PROTOBUF_NDEBUG_INLINE getAvailableMapExportImportFormatsRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        accesstoken_(arena),
+        availableformats_(arena) {}
+
+inline void getAvailableMapExportImportFormatsRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.grpcservercompressionformat_ = {};
+}
+getAvailableMapExportImportFormatsRequest::~getAvailableMapExportImportFormatsRequest() {
+  // @@protoc_insertion_point(destructor:grpcIFrontEnd.getAvailableMapExportImportFormatsRequest)
+  SharedDtor(*this);
+}
+inline void getAvailableMapExportImportFormatsRequest::SharedDtor(MessageLite& self) {
+  getAvailableMapExportImportFormatsRequest& this_ = static_cast<getAvailableMapExportImportFormatsRequest&>(self);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.accesstoken_.Destroy();
+  this_._impl_.availableformats_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL getAvailableMapExportImportFormatsRequest::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) getAvailableMapExportImportFormatsRequest(arena);
+}
+constexpr auto getAvailableMapExportImportFormatsRequest::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(getAvailableMapExportImportFormatsRequest),
+                                            alignof(getAvailableMapExportImportFormatsRequest));
+}
+constexpr auto getAvailableMapExportImportFormatsRequest::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_getAvailableMapExportImportFormatsRequest_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &getAvailableMapExportImportFormatsRequest::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<getAvailableMapExportImportFormatsRequest>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &getAvailableMapExportImportFormatsRequest::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<getAvailableMapExportImportFormatsRequest>(), &getAvailableMapExportImportFormatsRequest::ByteSizeLong,
+              &getAvailableMapExportImportFormatsRequest::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsRequest, _impl_._cached_size_),
+          false,
+      },
+      &getAvailableMapExportImportFormatsRequest::kDescriptorMethods,
+      &descriptor_table_grpcIFrontEndService_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull getAvailableMapExportImportFormatsRequest_class_data_ =
+        getAvailableMapExportImportFormatsRequest::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+getAvailableMapExportImportFormatsRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&getAvailableMapExportImportFormatsRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(getAvailableMapExportImportFormatsRequest_class_data_.tc_table);
+  return getAvailableMapExportImportFormatsRequest_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 0, 75, 2>
+getAvailableMapExportImportFormatsRequest::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsRequest, _impl_._has_bits_),
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    getAvailableMapExportImportFormatsRequest_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // int32 grpcServerCompressionFormat = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(getAvailableMapExportImportFormatsRequest, _impl_.grpcservercompressionformat_), 2>(),
+     {8, 2, 0, PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsRequest, _impl_.grpcservercompressionformat_)}},
+    // string accessToken = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsRequest, _impl_.accesstoken_)}},
+    // bytes availableFormats = 3;
+    {::_pbi::TcParser::FastBS1,
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsRequest, _impl_.availableformats_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int32 grpcServerCompressionFormat = 1;
+    {PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsRequest, _impl_.grpcservercompressionformat_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // string accessToken = 2;
+    {PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsRequest, _impl_.accesstoken_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bytes availableFormats = 3;
+    {PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsRequest, _impl_.availableformats_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\67\0\13\0\0\0\0\0"
+    "grpcIFrontEnd.getAvailableMapExportImportFormatsRequest"
+    "accessToken"
+  }},
+};
+PROTOBUF_NOINLINE void getAvailableMapExportImportFormatsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIFrontEnd.getAvailableMapExportImportFormatsRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003U) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      _impl_.accesstoken_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      _impl_.availableformats_.ClearNonDefaultToEmpty();
+    }
+  }
+  _impl_.grpcservercompressionformat_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL getAvailableMapExportImportFormatsRequest::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const getAvailableMapExportImportFormatsRequest& this_ = static_cast<const getAvailableMapExportImportFormatsRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL getAvailableMapExportImportFormatsRequest::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const getAvailableMapExportImportFormatsRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIFrontEnd.getAvailableMapExportImportFormatsRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if ((this_._impl_._has_bits_[0] & 0x00000004U) != 0) {
+    if (this_._internal_grpcservercompressionformat() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<1>(
+              stream, this_._internal_grpcservercompressionformat(), target);
+    }
+  }
+
+  // string accessToken = 2;
+  if ((this_._impl_._has_bits_[0] & 0x00000001U) != 0) {
+    if (!this_._internal_accesstoken().empty()) {
+      const ::std::string& _s = this_._internal_accesstoken();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.getAvailableMapExportImportFormatsRequest.accessToken");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // bytes availableFormats = 3;
+  if ((this_._impl_._has_bits_[0] & 0x00000002U) != 0) {
+    if (!this_._internal_availableformats().empty()) {
+      const ::std::string& _s = this_._internal_availableformats();
+      target = stream->WriteBytesMaybeAliased(3, _s, target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIFrontEnd.getAvailableMapExportImportFormatsRequest)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t getAvailableMapExportImportFormatsRequest::ByteSizeLong(const MessageLite& base) {
+  const getAvailableMapExportImportFormatsRequest& this_ = static_cast<const getAvailableMapExportImportFormatsRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t getAvailableMapExportImportFormatsRequest::ByteSizeLong() const {
+  const getAvailableMapExportImportFormatsRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:grpcIFrontEnd.getAvailableMapExportImportFormatsRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007U) != 0) {
+    // string accessToken = 2;
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!this_._internal_accesstoken().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_accesstoken());
+      }
+    }
+    // bytes availableFormats = 3;
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (!this_._internal_availableformats().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                        this_._internal_availableformats());
+      }
+    }
+    // int32 grpcServerCompressionFormat = 1;
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      if (this_._internal_grpcservercompressionformat() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_grpcservercompressionformat());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void getAvailableMapExportImportFormatsRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<getAvailableMapExportImportFormatsRequest*>(&to_msg);
+  auto& from = static_cast<const getAvailableMapExportImportFormatsRequest&>(from_msg);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    from.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFrontEnd.getAvailableMapExportImportFormatsRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007U) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!from._internal_accesstoken().empty()) {
+        _this->_internal_set_accesstoken(from._internal_accesstoken());
+      } else {
+        if (_this->_impl_.accesstoken_.IsDefault()) {
+          _this->_internal_set_accesstoken("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (!from._internal_availableformats().empty()) {
+        _this->_internal_set_availableformats(from._internal_availableformats());
+      } else {
+        if (_this->_impl_.availableformats_.IsDefault()) {
+          _this->_internal_set_availableformats("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      if (from._internal_grpcservercompressionformat() != 0) {
+        _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getAvailableMapExportImportFormatsRequest::CopyFrom(const getAvailableMapExportImportFormatsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIFrontEnd.getAvailableMapExportImportFormatsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void getAvailableMapExportImportFormatsRequest::InternalSwap(getAvailableMapExportImportFormatsRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.accesstoken_, &other->_impl_.accesstoken_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.availableformats_, &other->_impl_.availableformats_, arena);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+}
+
+::google::protobuf::Metadata getAvailableMapExportImportFormatsRequest::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class getAvailableMapExportImportFormatsResponse::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<getAvailableMapExportImportFormatsResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsResponse, _impl_._has_bits_);
+};
+
+getAvailableMapExportImportFormatsResponse::getAvailableMapExportImportFormatsResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, getAvailableMapExportImportFormatsResponse_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIFrontEnd.getAvailableMapExportImportFormatsResponse)
+}
+PROTOBUF_NDEBUG_INLINE getAvailableMapExportImportFormatsResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        availableformats_(arena, from.availableformats_) {}
+
+getAvailableMapExportImportFormatsResponse::getAvailableMapExportImportFormatsResponse(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const getAvailableMapExportImportFormatsResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, getAvailableMapExportImportFormatsResponse_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  getAvailableMapExportImportFormatsResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+
+  // @@protoc_insertion_point(copy_constructor:grpcIFrontEnd.getAvailableMapExportImportFormatsResponse)
+}
+PROTOBUF_NDEBUG_INLINE getAvailableMapExportImportFormatsResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        availableformats_(arena) {}
+
+inline void getAvailableMapExportImportFormatsResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.xpcfgrpcreturnvalue_ = {};
+}
+getAvailableMapExportImportFormatsResponse::~getAvailableMapExportImportFormatsResponse() {
+  // @@protoc_insertion_point(destructor:grpcIFrontEnd.getAvailableMapExportImportFormatsResponse)
+  SharedDtor(*this);
+}
+inline void getAvailableMapExportImportFormatsResponse::SharedDtor(MessageLite& self) {
+  getAvailableMapExportImportFormatsResponse& this_ = static_cast<getAvailableMapExportImportFormatsResponse&>(self);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.availableformats_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL getAvailableMapExportImportFormatsResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) getAvailableMapExportImportFormatsResponse(arena);
+}
+constexpr auto getAvailableMapExportImportFormatsResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(getAvailableMapExportImportFormatsResponse),
+                                            alignof(getAvailableMapExportImportFormatsResponse));
+}
+constexpr auto getAvailableMapExportImportFormatsResponse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_getAvailableMapExportImportFormatsResponse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &getAvailableMapExportImportFormatsResponse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<getAvailableMapExportImportFormatsResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &getAvailableMapExportImportFormatsResponse::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<getAvailableMapExportImportFormatsResponse>(), &getAvailableMapExportImportFormatsResponse::ByteSizeLong,
+              &getAvailableMapExportImportFormatsResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsResponse, _impl_._cached_size_),
+          false,
+      },
+      &getAvailableMapExportImportFormatsResponse::kDescriptorMethods,
+      &descriptor_table_grpcIFrontEndService_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull getAvailableMapExportImportFormatsResponse_class_data_ =
+        getAvailableMapExportImportFormatsResponse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+getAvailableMapExportImportFormatsResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&getAvailableMapExportImportFormatsResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(getAvailableMapExportImportFormatsResponse_class_data_.tc_table);
+  return getAvailableMapExportImportFormatsResponse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 0, 2>
+getAvailableMapExportImportFormatsResponse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsResponse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    getAvailableMapExportImportFormatsResponse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // sint32 xpcfGrpcReturnValue = 2;
+    {::_pbi::TcParser::FastZ32S1,
+     {16, 1, 0, PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsResponse, _impl_.xpcfgrpcreturnvalue_)}},
+    // bytes availableFormats = 1;
+    {::_pbi::TcParser::FastBS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsResponse, _impl_.availableformats_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // bytes availableFormats = 1;
+    {PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsResponse, _impl_.availableformats_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // sint32 xpcfGrpcReturnValue = 2;
+    {PROTOBUF_FIELD_OFFSET(getAvailableMapExportImportFormatsResponse, _impl_.xpcfgrpcreturnvalue_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kSInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+PROTOBUF_NOINLINE void getAvailableMapExportImportFormatsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIFrontEnd.getAvailableMapExportImportFormatsResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000001U) != 0) {
+    _impl_.availableformats_.ClearNonDefaultToEmpty();
+  }
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL getAvailableMapExportImportFormatsResponse::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const getAvailableMapExportImportFormatsResponse& this_ = static_cast<const getAvailableMapExportImportFormatsResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL getAvailableMapExportImportFormatsResponse::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const getAvailableMapExportImportFormatsResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIFrontEnd.getAvailableMapExportImportFormatsResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // bytes availableFormats = 1;
+  if ((this_._impl_._has_bits_[0] & 0x00000001U) != 0) {
+    if (!this_._internal_availableformats().empty()) {
+      const ::std::string& _s = this_._internal_availableformats();
+      target = stream->WriteBytesMaybeAliased(1, _s, target);
+    }
+  }
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  if ((this_._impl_._has_bits_[0] & 0x00000002U) != 0) {
+    if (this_._internal_xpcfgrpcreturnvalue() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+          2, this_._internal_xpcfgrpcreturnvalue(), target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIFrontEnd.getAvailableMapExportImportFormatsResponse)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t getAvailableMapExportImportFormatsResponse::ByteSizeLong(const MessageLite& base) {
+  const getAvailableMapExportImportFormatsResponse& this_ = static_cast<const getAvailableMapExportImportFormatsResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t getAvailableMapExportImportFormatsResponse::ByteSizeLong() const {
+  const getAvailableMapExportImportFormatsResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:grpcIFrontEnd.getAvailableMapExportImportFormatsResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003U) != 0) {
+    // bytes availableFormats = 1;
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!this_._internal_availableformats().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                        this_._internal_availableformats());
+      }
+    }
+    // sint32 xpcfGrpcReturnValue = 2;
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (this_._internal_xpcfgrpcreturnvalue() != 0) {
+        total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+            this_._internal_xpcfgrpcreturnvalue());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void getAvailableMapExportImportFormatsResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<getAvailableMapExportImportFormatsResponse*>(&to_msg);
+  auto& from = static_cast<const getAvailableMapExportImportFormatsResponse&>(from_msg);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    from.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFrontEnd.getAvailableMapExportImportFormatsResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003U) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!from._internal_availableformats().empty()) {
+        _this->_internal_set_availableformats(from._internal_availableformats());
+      } else {
+        if (_this->_impl_.availableformats_.IsDefault()) {
+          _this->_internal_set_availableformats("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (from._internal_xpcfgrpcreturnvalue() != 0) {
+        _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getAvailableMapExportImportFormatsResponse::CopyFrom(const getAvailableMapExportImportFormatsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIFrontEnd.getAvailableMapExportImportFormatsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void getAvailableMapExportImportFormatsResponse::InternalSwap(getAvailableMapExportImportFormatsResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.availableformats_, &other->_impl_.availableformats_, arena);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+}
+
+::google::protobuf::Metadata getAvailableMapExportImportFormatsResponse::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class exportMapToFormatRequest::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<exportMapToFormatRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_._has_bits_);
+};
+
+exportMapToFormatRequest::exportMapToFormatRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, exportMapToFormatRequest_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIFrontEnd.exportMapToFormatRequest)
+}
+PROTOBUF_NDEBUG_INLINE exportMapToFormatRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::grpcIFrontEnd::exportMapToFormatRequest& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        accesstoken_(arena, from.accesstoken_),
+        mapuuid_(arena, from.mapuuid_),
+        compressedzipexport_(arena, from.compressedzipexport_) {}
+
+exportMapToFormatRequest::exportMapToFormatRequest(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const exportMapToFormatRequest& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, exportMapToFormatRequest_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  exportMapToFormatRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           offsetof(Impl_, exportformat_) -
+               offsetof(Impl_, grpcservercompressionformat_) +
+               sizeof(Impl_::exportformat_));
+
+  // @@protoc_insertion_point(copy_constructor:grpcIFrontEnd.exportMapToFormatRequest)
+}
+PROTOBUF_NDEBUG_INLINE exportMapToFormatRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        accesstoken_(arena),
+        mapuuid_(arena),
+        compressedzipexport_(arena) {}
+
+inline void exportMapToFormatRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           0,
+           offsetof(Impl_, exportformat_) -
+               offsetof(Impl_, grpcservercompressionformat_) +
+               sizeof(Impl_::exportformat_));
+}
+exportMapToFormatRequest::~exportMapToFormatRequest() {
+  // @@protoc_insertion_point(destructor:grpcIFrontEnd.exportMapToFormatRequest)
+  SharedDtor(*this);
+}
+inline void exportMapToFormatRequest::SharedDtor(MessageLite& self) {
+  exportMapToFormatRequest& this_ = static_cast<exportMapToFormatRequest&>(self);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.accesstoken_.Destroy();
+  this_._impl_.mapuuid_.Destroy();
+  this_._impl_.compressedzipexport_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL exportMapToFormatRequest::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) exportMapToFormatRequest(arena);
+}
+constexpr auto exportMapToFormatRequest::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(exportMapToFormatRequest),
+                                            alignof(exportMapToFormatRequest));
+}
+constexpr auto exportMapToFormatRequest::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_exportMapToFormatRequest_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &exportMapToFormatRequest::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<exportMapToFormatRequest>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &exportMapToFormatRequest::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<exportMapToFormatRequest>(), &exportMapToFormatRequest::ByteSizeLong,
+              &exportMapToFormatRequest::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_._cached_size_),
+          false,
+      },
+      &exportMapToFormatRequest::kDescriptorMethods,
+      &descriptor_table_grpcIFrontEndService_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull exportMapToFormatRequest_class_data_ =
+        exportMapToFormatRequest::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+exportMapToFormatRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&exportMapToFormatRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(exportMapToFormatRequest_class_data_.tc_table);
+  return exportMapToFormatRequest_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 5, 0, 65, 2>
+exportMapToFormatRequest::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_._has_bits_),
+    0, // no _extensions_
+    5, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967264,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    5,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    exportMapToFormatRequest_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIFrontEnd::exportMapToFormatRequest>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // int32 grpcServerCompressionFormat = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(exportMapToFormatRequest, _impl_.grpcservercompressionformat_), 3>(),
+     {8, 3, 0, PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_.grpcservercompressionformat_)}},
+    // string accessToken = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_.accesstoken_)}},
+    // string mapUUID = 3;
+    {::_pbi::TcParser::FastUS1,
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_.mapuuid_)}},
+    // sint32 exportFormat = 4;
+    {::_pbi::TcParser::FastZ32S1,
+     {32, 4, 0, PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_.exportformat_)}},
+    // bytes compressedZipExport = 5;
+    {::_pbi::TcParser::FastBS1,
+     {42, 2, 0, PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_.compressedzipexport_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int32 grpcServerCompressionFormat = 1;
+    {PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_.grpcservercompressionformat_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // string accessToken = 2;
+    {PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_.accesstoken_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string mapUUID = 3;
+    {PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_.mapuuid_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // sint32 exportFormat = 4;
+    {PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_.exportformat_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kSInt32)},
+    // bytes compressedZipExport = 5;
+    {PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_.compressedzipexport_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\46\0\13\7\0\0\0\0"
+    "grpcIFrontEnd.exportMapToFormatRequest"
+    "accessToken"
+    "mapUUID"
+  }},
+};
+PROTOBUF_NOINLINE void exportMapToFormatRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIFrontEnd.exportMapToFormatRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007U) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      _impl_.accesstoken_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      _impl_.mapuuid_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      _impl_.compressedzipexport_.ClearNonDefaultToEmpty();
+    }
+  }
+  if ((cached_has_bits & 0x00000018U) != 0) {
+    ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.exportformat_) -
+        reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.exportformat_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL exportMapToFormatRequest::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const exportMapToFormatRequest& this_ = static_cast<const exportMapToFormatRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL exportMapToFormatRequest::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const exportMapToFormatRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIFrontEnd.exportMapToFormatRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if ((this_._impl_._has_bits_[0] & 0x00000008U) != 0) {
+    if (this_._internal_grpcservercompressionformat() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<1>(
+              stream, this_._internal_grpcservercompressionformat(), target);
+    }
+  }
+
+  // string accessToken = 2;
+  if ((this_._impl_._has_bits_[0] & 0x00000001U) != 0) {
+    if (!this_._internal_accesstoken().empty()) {
+      const ::std::string& _s = this_._internal_accesstoken();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.exportMapToFormatRequest.accessToken");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // string mapUUID = 3;
+  if ((this_._impl_._has_bits_[0] & 0x00000002U) != 0) {
+    if (!this_._internal_mapuuid().empty()) {
+      const ::std::string& _s = this_._internal_mapuuid();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.exportMapToFormatRequest.mapUUID");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
+  // sint32 exportFormat = 4;
+  if ((this_._impl_._has_bits_[0] & 0x00000010U) != 0) {
+    if (this_._internal_exportformat() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+          4, this_._internal_exportformat(), target);
+    }
+  }
+
+  // bytes compressedZipExport = 5;
+  if ((this_._impl_._has_bits_[0] & 0x00000004U) != 0) {
+    if (!this_._internal_compressedzipexport().empty()) {
+      const ::std::string& _s = this_._internal_compressedzipexport();
+      target = stream->WriteBytesMaybeAliased(5, _s, target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIFrontEnd.exportMapToFormatRequest)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t exportMapToFormatRequest::ByteSizeLong(const MessageLite& base) {
+  const exportMapToFormatRequest& this_ = static_cast<const exportMapToFormatRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t exportMapToFormatRequest::ByteSizeLong() const {
+  const exportMapToFormatRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:grpcIFrontEnd.exportMapToFormatRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x0000001fU) != 0) {
+    // string accessToken = 2;
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!this_._internal_accesstoken().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_accesstoken());
+      }
+    }
+    // string mapUUID = 3;
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (!this_._internal_mapuuid().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_mapuuid());
+      }
+    }
+    // bytes compressedZipExport = 5;
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      if (!this_._internal_compressedzipexport().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                        this_._internal_compressedzipexport());
+      }
+    }
+    // int32 grpcServerCompressionFormat = 1;
+    if ((cached_has_bits & 0x00000008U) != 0) {
+      if (this_._internal_grpcservercompressionformat() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_grpcservercompressionformat());
+      }
+    }
+    // sint32 exportFormat = 4;
+    if ((cached_has_bits & 0x00000010U) != 0) {
+      if (this_._internal_exportformat() != 0) {
+        total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+            this_._internal_exportformat());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void exportMapToFormatRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<exportMapToFormatRequest*>(&to_msg);
+  auto& from = static_cast<const exportMapToFormatRequest&>(from_msg);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    from.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFrontEnd.exportMapToFormatRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x0000001fU) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!from._internal_accesstoken().empty()) {
+        _this->_internal_set_accesstoken(from._internal_accesstoken());
+      } else {
+        if (_this->_impl_.accesstoken_.IsDefault()) {
+          _this->_internal_set_accesstoken("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (!from._internal_mapuuid().empty()) {
+        _this->_internal_set_mapuuid(from._internal_mapuuid());
+      } else {
+        if (_this->_impl_.mapuuid_.IsDefault()) {
+          _this->_internal_set_mapuuid("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      if (!from._internal_compressedzipexport().empty()) {
+        _this->_internal_set_compressedzipexport(from._internal_compressedzipexport());
+      } else {
+        if (_this->_impl_.compressedzipexport_.IsDefault()) {
+          _this->_internal_set_compressedzipexport("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000008U) != 0) {
+      if (from._internal_grpcservercompressionformat() != 0) {
+        _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+      }
+    }
+    if ((cached_has_bits & 0x00000010U) != 0) {
+      if (from._internal_exportformat() != 0) {
+        _this->_impl_.exportformat_ = from._impl_.exportformat_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void exportMapToFormatRequest::CopyFrom(const exportMapToFormatRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIFrontEnd.exportMapToFormatRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void exportMapToFormatRequest::InternalSwap(exportMapToFormatRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.accesstoken_, &other->_impl_.accesstoken_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.mapuuid_, &other->_impl_.mapuuid_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.compressedzipexport_, &other->_impl_.compressedzipexport_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_.exportformat_)
+      + sizeof(exportMapToFormatRequest::_impl_.exportformat_)
+      - PROTOBUF_FIELD_OFFSET(exportMapToFormatRequest, _impl_.grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
+}
+
+::google::protobuf::Metadata exportMapToFormatRequest::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class exportMapToFormatResponse::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<exportMapToFormatResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(exportMapToFormatResponse, _impl_._has_bits_);
+};
+
+exportMapToFormatResponse::exportMapToFormatResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, exportMapToFormatResponse_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIFrontEnd.exportMapToFormatResponse)
+}
+PROTOBUF_NDEBUG_INLINE exportMapToFormatResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::grpcIFrontEnd::exportMapToFormatResponse& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        compressedzipexport_(arena, from.compressedzipexport_) {}
+
+exportMapToFormatResponse::exportMapToFormatResponse(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const exportMapToFormatResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, exportMapToFormatResponse_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  exportMapToFormatResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+
+  // @@protoc_insertion_point(copy_constructor:grpcIFrontEnd.exportMapToFormatResponse)
+}
+PROTOBUF_NDEBUG_INLINE exportMapToFormatResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        compressedzipexport_(arena) {}
+
+inline void exportMapToFormatResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.xpcfgrpcreturnvalue_ = {};
+}
+exportMapToFormatResponse::~exportMapToFormatResponse() {
+  // @@protoc_insertion_point(destructor:grpcIFrontEnd.exportMapToFormatResponse)
+  SharedDtor(*this);
+}
+inline void exportMapToFormatResponse::SharedDtor(MessageLite& self) {
+  exportMapToFormatResponse& this_ = static_cast<exportMapToFormatResponse&>(self);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.compressedzipexport_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL exportMapToFormatResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) exportMapToFormatResponse(arena);
+}
+constexpr auto exportMapToFormatResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(exportMapToFormatResponse),
+                                            alignof(exportMapToFormatResponse));
+}
+constexpr auto exportMapToFormatResponse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_exportMapToFormatResponse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &exportMapToFormatResponse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<exportMapToFormatResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &exportMapToFormatResponse::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<exportMapToFormatResponse>(), &exportMapToFormatResponse::ByteSizeLong,
+              &exportMapToFormatResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(exportMapToFormatResponse, _impl_._cached_size_),
+          false,
+      },
+      &exportMapToFormatResponse::kDescriptorMethods,
+      &descriptor_table_grpcIFrontEndService_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull exportMapToFormatResponse_class_data_ =
+        exportMapToFormatResponse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+exportMapToFormatResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&exportMapToFormatResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(exportMapToFormatResponse_class_data_.tc_table);
+  return exportMapToFormatResponse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 0, 2>
+exportMapToFormatResponse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(exportMapToFormatResponse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    exportMapToFormatResponse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIFrontEnd::exportMapToFormatResponse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // sint32 xpcfGrpcReturnValue = 2;
+    {::_pbi::TcParser::FastZ32S1,
+     {16, 1, 0, PROTOBUF_FIELD_OFFSET(exportMapToFormatResponse, _impl_.xpcfgrpcreturnvalue_)}},
+    // bytes compressedZipExport = 1;
+    {::_pbi::TcParser::FastBS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(exportMapToFormatResponse, _impl_.compressedzipexport_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // bytes compressedZipExport = 1;
+    {PROTOBUF_FIELD_OFFSET(exportMapToFormatResponse, _impl_.compressedzipexport_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+    // sint32 xpcfGrpcReturnValue = 2;
+    {PROTOBUF_FIELD_OFFSET(exportMapToFormatResponse, _impl_.xpcfgrpcreturnvalue_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kSInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+PROTOBUF_NOINLINE void exportMapToFormatResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIFrontEnd.exportMapToFormatResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000001U) != 0) {
+    _impl_.compressedzipexport_.ClearNonDefaultToEmpty();
+  }
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL exportMapToFormatResponse::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const exportMapToFormatResponse& this_ = static_cast<const exportMapToFormatResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL exportMapToFormatResponse::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const exportMapToFormatResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIFrontEnd.exportMapToFormatResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // bytes compressedZipExport = 1;
+  if ((this_._impl_._has_bits_[0] & 0x00000001U) != 0) {
+    if (!this_._internal_compressedzipexport().empty()) {
+      const ::std::string& _s = this_._internal_compressedzipexport();
+      target = stream->WriteBytesMaybeAliased(1, _s, target);
+    }
+  }
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  if ((this_._impl_._has_bits_[0] & 0x00000002U) != 0) {
+    if (this_._internal_xpcfgrpcreturnvalue() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+          2, this_._internal_xpcfgrpcreturnvalue(), target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIFrontEnd.exportMapToFormatResponse)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t exportMapToFormatResponse::ByteSizeLong(const MessageLite& base) {
+  const exportMapToFormatResponse& this_ = static_cast<const exportMapToFormatResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t exportMapToFormatResponse::ByteSizeLong() const {
+  const exportMapToFormatResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:grpcIFrontEnd.exportMapToFormatResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003U) != 0) {
+    // bytes compressedZipExport = 1;
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!this_._internal_compressedzipexport().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                        this_._internal_compressedzipexport());
+      }
+    }
+    // sint32 xpcfGrpcReturnValue = 2;
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (this_._internal_xpcfgrpcreturnvalue() != 0) {
+        total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+            this_._internal_xpcfgrpcreturnvalue());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void exportMapToFormatResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<exportMapToFormatResponse*>(&to_msg);
+  auto& from = static_cast<const exportMapToFormatResponse&>(from_msg);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    from.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFrontEnd.exportMapToFormatResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003U) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!from._internal_compressedzipexport().empty()) {
+        _this->_internal_set_compressedzipexport(from._internal_compressedzipexport());
+      } else {
+        if (_this->_impl_.compressedzipexport_.IsDefault()) {
+          _this->_internal_set_compressedzipexport("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (from._internal_xpcfgrpcreturnvalue() != 0) {
+        _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void exportMapToFormatResponse::CopyFrom(const exportMapToFormatResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIFrontEnd.exportMapToFormatResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void exportMapToFormatResponse::InternalSwap(exportMapToFormatResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.compressedzipexport_, &other->_impl_.compressedzipexport_, arena);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+}
+
+::google::protobuf::Metadata exportMapToFormatResponse::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class importMapFromFormatRequest::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<importMapFromFormatRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_._has_bits_);
+};
+
+importMapFromFormatRequest::importMapFromFormatRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, importMapFromFormatRequest_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIFrontEnd.importMapFromFormatRequest)
+}
+PROTOBUF_NDEBUG_INLINE importMapFromFormatRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::grpcIFrontEnd::importMapFromFormatRequest& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        accesstoken_(arena, from.accesstoken_),
+        mapuuid_(arena, from.mapuuid_),
+        compressedzipimport_(arena, from.compressedzipimport_) {}
+
+importMapFromFormatRequest::importMapFromFormatRequest(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const importMapFromFormatRequest& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, importMapFromFormatRequest_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  importMapFromFormatRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           offsetof(Impl_, importformat_) -
+               offsetof(Impl_, grpcservercompressionformat_) +
+               sizeof(Impl_::importformat_));
+
+  // @@protoc_insertion_point(copy_constructor:grpcIFrontEnd.importMapFromFormatRequest)
+}
+PROTOBUF_NDEBUG_INLINE importMapFromFormatRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        accesstoken_(arena),
+        mapuuid_(arena),
+        compressedzipimport_(arena) {}
+
+inline void importMapFromFormatRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           0,
+           offsetof(Impl_, importformat_) -
+               offsetof(Impl_, grpcservercompressionformat_) +
+               sizeof(Impl_::importformat_));
+}
+importMapFromFormatRequest::~importMapFromFormatRequest() {
+  // @@protoc_insertion_point(destructor:grpcIFrontEnd.importMapFromFormatRequest)
+  SharedDtor(*this);
+}
+inline void importMapFromFormatRequest::SharedDtor(MessageLite& self) {
+  importMapFromFormatRequest& this_ = static_cast<importMapFromFormatRequest&>(self);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.accesstoken_.Destroy();
+  this_._impl_.mapuuid_.Destroy();
+  this_._impl_.compressedzipimport_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL importMapFromFormatRequest::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) importMapFromFormatRequest(arena);
+}
+constexpr auto importMapFromFormatRequest::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(importMapFromFormatRequest),
+                                            alignof(importMapFromFormatRequest));
+}
+constexpr auto importMapFromFormatRequest::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_importMapFromFormatRequest_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &importMapFromFormatRequest::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<importMapFromFormatRequest>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &importMapFromFormatRequest::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<importMapFromFormatRequest>(), &importMapFromFormatRequest::ByteSizeLong,
+              &importMapFromFormatRequest::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_._cached_size_),
+          false,
+      },
+      &importMapFromFormatRequest::kDescriptorMethods,
+      &descriptor_table_grpcIFrontEndService_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull importMapFromFormatRequest_class_data_ =
+        importMapFromFormatRequest::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+importMapFromFormatRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&importMapFromFormatRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(importMapFromFormatRequest_class_data_.tc_table);
+  return importMapFromFormatRequest_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 5, 0, 67, 2>
+importMapFromFormatRequest::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_._has_bits_),
+    0, // no _extensions_
+    5, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967264,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    5,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    importMapFromFormatRequest_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIFrontEnd::importMapFromFormatRequest>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // int32 grpcServerCompressionFormat = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(importMapFromFormatRequest, _impl_.grpcservercompressionformat_), 3>(),
+     {8, 3, 0, PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_.grpcservercompressionformat_)}},
+    // string accessToken = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_.accesstoken_)}},
+    // string mapUUID = 3;
+    {::_pbi::TcParser::FastUS1,
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_.mapuuid_)}},
+    // sint32 importFormat = 4;
+    {::_pbi::TcParser::FastZ32S1,
+     {32, 4, 0, PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_.importformat_)}},
+    // bytes compressedZipImport = 5;
+    {::_pbi::TcParser::FastBS1,
+     {42, 2, 0, PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_.compressedzipimport_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int32 grpcServerCompressionFormat = 1;
+    {PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_.grpcservercompressionformat_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // string accessToken = 2;
+    {PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_.accesstoken_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string mapUUID = 3;
+    {PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_.mapuuid_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // sint32 importFormat = 4;
+    {PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_.importformat_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kSInt32)},
+    // bytes compressedZipImport = 5;
+    {PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_.compressedzipimport_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\50\0\13\7\0\0\0\0"
+    "grpcIFrontEnd.importMapFromFormatRequest"
+    "accessToken"
+    "mapUUID"
+  }},
+};
+PROTOBUF_NOINLINE void importMapFromFormatRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIFrontEnd.importMapFromFormatRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007U) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      _impl_.accesstoken_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      _impl_.mapuuid_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      _impl_.compressedzipimport_.ClearNonDefaultToEmpty();
+    }
+  }
+  if ((cached_has_bits & 0x00000018U) != 0) {
+    ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.importformat_) -
+        reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.importformat_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL importMapFromFormatRequest::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const importMapFromFormatRequest& this_ = static_cast<const importMapFromFormatRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL importMapFromFormatRequest::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const importMapFromFormatRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIFrontEnd.importMapFromFormatRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if ((this_._impl_._has_bits_[0] & 0x00000008U) != 0) {
+    if (this_._internal_grpcservercompressionformat() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<1>(
+              stream, this_._internal_grpcservercompressionformat(), target);
+    }
+  }
+
+  // string accessToken = 2;
+  if ((this_._impl_._has_bits_[0] & 0x00000001U) != 0) {
+    if (!this_._internal_accesstoken().empty()) {
+      const ::std::string& _s = this_._internal_accesstoken();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.importMapFromFormatRequest.accessToken");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // string mapUUID = 3;
+  if ((this_._impl_._has_bits_[0] & 0x00000002U) != 0) {
+    if (!this_._internal_mapuuid().empty()) {
+      const ::std::string& _s = this_._internal_mapuuid();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.importMapFromFormatRequest.mapUUID");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
+  // sint32 importFormat = 4;
+  if ((this_._impl_._has_bits_[0] & 0x00000010U) != 0) {
+    if (this_._internal_importformat() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+          4, this_._internal_importformat(), target);
+    }
+  }
+
+  // bytes compressedZipImport = 5;
+  if ((this_._impl_._has_bits_[0] & 0x00000004U) != 0) {
+    if (!this_._internal_compressedzipimport().empty()) {
+      const ::std::string& _s = this_._internal_compressedzipimport();
+      target = stream->WriteBytesMaybeAliased(5, _s, target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIFrontEnd.importMapFromFormatRequest)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t importMapFromFormatRequest::ByteSizeLong(const MessageLite& base) {
+  const importMapFromFormatRequest& this_ = static_cast<const importMapFromFormatRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t importMapFromFormatRequest::ByteSizeLong() const {
+  const importMapFromFormatRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:grpcIFrontEnd.importMapFromFormatRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x0000001fU) != 0) {
+    // string accessToken = 2;
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!this_._internal_accesstoken().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_accesstoken());
+      }
+    }
+    // string mapUUID = 3;
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (!this_._internal_mapuuid().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_mapuuid());
+      }
+    }
+    // bytes compressedZipImport = 5;
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      if (!this_._internal_compressedzipimport().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                        this_._internal_compressedzipimport());
+      }
+    }
+    // int32 grpcServerCompressionFormat = 1;
+    if ((cached_has_bits & 0x00000008U) != 0) {
+      if (this_._internal_grpcservercompressionformat() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_grpcservercompressionformat());
+      }
+    }
+    // sint32 importFormat = 4;
+    if ((cached_has_bits & 0x00000010U) != 0) {
+      if (this_._internal_importformat() != 0) {
+        total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+            this_._internal_importformat());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void importMapFromFormatRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<importMapFromFormatRequest*>(&to_msg);
+  auto& from = static_cast<const importMapFromFormatRequest&>(from_msg);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    from.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFrontEnd.importMapFromFormatRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x0000001fU) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!from._internal_accesstoken().empty()) {
+        _this->_internal_set_accesstoken(from._internal_accesstoken());
+      } else {
+        if (_this->_impl_.accesstoken_.IsDefault()) {
+          _this->_internal_set_accesstoken("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (!from._internal_mapuuid().empty()) {
+        _this->_internal_set_mapuuid(from._internal_mapuuid());
+      } else {
+        if (_this->_impl_.mapuuid_.IsDefault()) {
+          _this->_internal_set_mapuuid("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      if (!from._internal_compressedzipimport().empty()) {
+        _this->_internal_set_compressedzipimport(from._internal_compressedzipimport());
+      } else {
+        if (_this->_impl_.compressedzipimport_.IsDefault()) {
+          _this->_internal_set_compressedzipimport("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000008U) != 0) {
+      if (from._internal_grpcservercompressionformat() != 0) {
+        _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+      }
+    }
+    if ((cached_has_bits & 0x00000010U) != 0) {
+      if (from._internal_importformat() != 0) {
+        _this->_impl_.importformat_ = from._impl_.importformat_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void importMapFromFormatRequest::CopyFrom(const importMapFromFormatRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIFrontEnd.importMapFromFormatRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void importMapFromFormatRequest::InternalSwap(importMapFromFormatRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.accesstoken_, &other->_impl_.accesstoken_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.mapuuid_, &other->_impl_.mapuuid_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.compressedzipimport_, &other->_impl_.compressedzipimport_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_.importformat_)
+      + sizeof(importMapFromFormatRequest::_impl_.importformat_)
+      - PROTOBUF_FIELD_OFFSET(importMapFromFormatRequest, _impl_.grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
+}
+
+::google::protobuf::Metadata importMapFromFormatRequest::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class importMapFromFormatResponse::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<importMapFromFormatResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(importMapFromFormatResponse, _impl_._has_bits_);
+};
+
+importMapFromFormatResponse::importMapFromFormatResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, importMapFromFormatResponse_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIFrontEnd.importMapFromFormatResponse)
+}
+importMapFromFormatResponse::importMapFromFormatResponse(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const importMapFromFormatResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, importMapFromFormatResponse_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(from._impl_) {
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+}
+PROTOBUF_NDEBUG_INLINE importMapFromFormatResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0} {}
+
+inline void importMapFromFormatResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.xpcfgrpcreturnvalue_ = {};
+}
+importMapFromFormatResponse::~importMapFromFormatResponse() {
+  // @@protoc_insertion_point(destructor:grpcIFrontEnd.importMapFromFormatResponse)
+  SharedDtor(*this);
+}
+inline void importMapFromFormatResponse::SharedDtor(MessageLite& self) {
+  importMapFromFormatResponse& this_ = static_cast<importMapFromFormatResponse&>(self);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL importMapFromFormatResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) importMapFromFormatResponse(arena);
+}
+constexpr auto importMapFromFormatResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(importMapFromFormatResponse),
+                                            alignof(importMapFromFormatResponse));
+}
+constexpr auto importMapFromFormatResponse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_importMapFromFormatResponse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &importMapFromFormatResponse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<importMapFromFormatResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &importMapFromFormatResponse::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<importMapFromFormatResponse>(), &importMapFromFormatResponse::ByteSizeLong,
+              &importMapFromFormatResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(importMapFromFormatResponse, _impl_._cached_size_),
+          false,
+      },
+      &importMapFromFormatResponse::kDescriptorMethods,
+      &descriptor_table_grpcIFrontEndService_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull importMapFromFormatResponse_class_data_ =
+        importMapFromFormatResponse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+importMapFromFormatResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&importMapFromFormatResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(importMapFromFormatResponse_class_data_.tc_table);
+  return importMapFromFormatResponse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 0, 2>
+importMapFromFormatResponse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(importMapFromFormatResponse, _impl_._has_bits_),
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    importMapFromFormatResponse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIFrontEnd::importMapFromFormatResponse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // sint32 xpcfGrpcReturnValue = 1;
+    {::_pbi::TcParser::FastZ32S1,
+     {8, 0, 0, PROTOBUF_FIELD_OFFSET(importMapFromFormatResponse, _impl_.xpcfgrpcreturnvalue_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // sint32 xpcfGrpcReturnValue = 1;
+    {PROTOBUF_FIELD_OFFSET(importMapFromFormatResponse, _impl_.xpcfgrpcreturnvalue_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kSInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+PROTOBUF_NOINLINE void importMapFromFormatResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIFrontEnd.importMapFromFormatResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL importMapFromFormatResponse::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const importMapFromFormatResponse& this_ = static_cast<const importMapFromFormatResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL importMapFromFormatResponse::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const importMapFromFormatResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIFrontEnd.importMapFromFormatResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // sint32 xpcfGrpcReturnValue = 1;
+  if ((this_._impl_._has_bits_[0] & 0x00000001U) != 0) {
+    if (this_._internal_xpcfgrpcreturnvalue() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+          1, this_._internal_xpcfgrpcreturnvalue(), target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIFrontEnd.importMapFromFormatResponse)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t importMapFromFormatResponse::ByteSizeLong(const MessageLite& base) {
+  const importMapFromFormatResponse& this_ = static_cast<const importMapFromFormatResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t importMapFromFormatResponse::ByteSizeLong() const {
+  const importMapFromFormatResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:grpcIFrontEnd.importMapFromFormatResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+   {
+    // sint32 xpcfGrpcReturnValue = 1;
+    cached_has_bits = this_._impl_._has_bits_[0];
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (this_._internal_xpcfgrpcreturnvalue() != 0) {
+        total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+            this_._internal_xpcfgrpcreturnvalue());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void importMapFromFormatResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<importMapFromFormatResponse*>(&to_msg);
+  auto& from = static_cast<const importMapFromFormatResponse&>(from_msg);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    from.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFrontEnd.importMapFromFormatResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000001U) != 0) {
+    if (from._internal_xpcfgrpcreturnvalue() != 0) {
+      _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void importMapFromFormatResponse::CopyFrom(const importMapFromFormatResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIFrontEnd.importMapFromFormatResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void importMapFromFormatResponse::InternalSwap(importMapFromFormatResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+}
+
+::google::protobuf::Metadata importMapFromFormatResponse::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // @@protoc_insertion_point(namespace_scope)

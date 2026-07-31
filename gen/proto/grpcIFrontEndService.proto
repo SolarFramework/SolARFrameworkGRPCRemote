@@ -398,6 +398,19 @@ message restoreMapResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
+message getAvailableMapProcessingTypesRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string accessToken = 2;
+bytes availableTypes = 3;
+}
+
+message getAvailableMapProcessingTypesResponse
+{
+bytes availableTypes = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
 message requestMapProcessingRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -446,6 +459,48 @@ bytes keyframePoses = 2;
 sint32 xpcfGrpcReturnValue = 3;
 }
 
+message getAvailableMapExportImportFormatsRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string accessToken = 2;
+bytes availableFormats = 3;
+}
+
+message getAvailableMapExportImportFormatsResponse
+{
+bytes availableFormats = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message exportMapToFormatRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string accessToken = 2;
+string mapUUID = 3;
+sint32 exportFormat = 4;
+bytes compressedZipExport = 5;
+}
+
+message exportMapToFormatResponse
+{
+bytes compressedZipExport = 1;
+sint32 xpcfGrpcReturnValue = 2;
+}
+
+message importMapFromFormatRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string accessToken = 2;
+string mapUUID = 3;
+sint32 importFormat = 4;
+bytes compressedZipImport = 5;
+}
+
+message importMapFromFormatResponse
+{
+sint32 xpcfGrpcReturnValue = 1;
+}
+
 service grpcIFrontEndService {
 rpc registerClient(registerClientRequest) returns(registerClientResponse) {}
 rpc unregisterClient(unregisterClientRequest) returns(unregisterClientResponse) {}
@@ -474,8 +529,12 @@ rpc getPointCloudRequest(getPointCloudRequestRequest) returns(getPointCloudReque
 rpc getMapInfo(getMapInfoRequest) returns(getMapInfoResponse) {}
 rpc backupMap(backupMapRequest) returns(backupMapResponse) {}
 rpc restoreMap(restoreMapRequest) returns(restoreMapResponse) {}
+rpc getAvailableMapProcessingTypes(getAvailableMapProcessingTypesRequest) returns(getAvailableMapProcessingTypesResponse) {}
 rpc requestMapProcessing(requestMapProcessingRequest) returns(requestMapProcessingResponse) {}
 rpc getMapProcessingStatus(getMapProcessingStatusRequest) returns(getMapProcessingStatusResponse) {}
 rpc getMapProcessingData(getMapProcessingDataRequest) returns(getMapProcessingDataResponse) {}
+rpc getAvailableMapExportImportFormats(getAvailableMapExportImportFormatsRequest) returns(getAvailableMapExportImportFormatsResponse) {}
+rpc exportMapToFormat(exportMapToFormatRequest) returns(exportMapToFormatResponse) {}
+rpc importMapFromFormat(importMapFromFormatRequest) returns(importMapFromFormatResponse) {}
 }
 

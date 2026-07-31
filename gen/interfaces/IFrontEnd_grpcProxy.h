@@ -49,9 +49,13 @@ class IFrontEnd_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual pu
     SolAR::FrameworkReturnCode getMapInfo(std::string const& accessToken, std::string const& mapUUID, std::string& version, SolAR::datastructure::GlobalDescriptorType& globalDescriptorType, SolAR::datastructure::DescriptorType& descriptorType, uint32_t& dataSize, bool& areImageSaved, std::vector<SolAR::datastructure::MapProcessingStep>& mapProcessingHistory)     const     override;
     SolAR::FrameworkReturnCode backupMap(std::string const& accessToken, std::string const& mapUUID, std::vector<unsigned char>& compressedZipData)     const     override;
     SolAR::FrameworkReturnCode restoreMap(std::string const& accessToken, std::string const& mapUUID, std::vector<unsigned char> const& compressedZipData)     override;
+    SolAR::FrameworkReturnCode getAvailableMapProcessingTypes(std::string const& accessToken, std::vector<SolAR::api::service::MapProcessingType>& availableTypes)     const     override;
     SolAR::FrameworkReturnCode requestMapProcessing(std::string const& accessToken, std::string const& mapUUID, std::string const& resultMapUUID, SolAR::api::service::MapProcessingType const processingType)     override;
     SolAR::FrameworkReturnCode getMapProcessingStatus(std::string const& accessToken, std::string const& resultMapUUID, SolAR::api::service::MapProcessingStatus& status, SolAR::api::service::MapProcessingType& processingType, float& progress)     const     override;
     SolAR::FrameworkReturnCode getMapProcessingData(std::string const& accessToken, std::string const& resultMapUUID, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pointCloud, std::vector<SolAR::datastructure::Transform3Df>& keyframePoses)     const     override;
+    SolAR::FrameworkReturnCode getAvailableMapExportImportFormats(std::string const& accessToken, std::vector<SolAR::api::service::MapExportImportFormat>& availableFormats)     const     override;
+    SolAR::FrameworkReturnCode exportMapToFormat(std::string const& accessToken, std::string const& mapUUID, SolAR::api::service::MapExportImportFormat const& exportFormat, std::vector<unsigned char>& compressedZipExport)     const     override;
+    SolAR::FrameworkReturnCode importMapFromFormat(std::string const& accessToken, std::string const& mapUUID, SolAR::api::service::MapExportImportFormat const& importFormat, std::vector<unsigned char> const& compressedZipImport)     const     override;
 
 
   private:

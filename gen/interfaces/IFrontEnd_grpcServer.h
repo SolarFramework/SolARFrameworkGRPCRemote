@@ -52,9 +52,13 @@ class IFrontEnd_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual p
         ::grpc::Status getMapInfo(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapInfoRequest* request, ::grpcIFrontEnd::getMapInfoResponse* response) override;
         ::grpc::Status backupMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::backupMapRequest* request, ::grpcIFrontEnd::backupMapResponse* response) override;
         ::grpc::Status restoreMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::restoreMapRequest* request, ::grpcIFrontEnd::restoreMapResponse* response) override;
+        ::grpc::Status getAvailableMapProcessingTypes(::grpc::ServerContext* context, const ::grpcIFrontEnd::getAvailableMapProcessingTypesRequest* request, ::grpcIFrontEnd::getAvailableMapProcessingTypesResponse* response) override;
         ::grpc::Status requestMapProcessing(::grpc::ServerContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpcIFrontEnd::requestMapProcessingResponse* response) override;
         ::grpc::Status getMapProcessingStatus(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapProcessingStatusRequest* request, ::grpcIFrontEnd::getMapProcessingStatusResponse* response) override;
         ::grpc::Status getMapProcessingData(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapProcessingDataRequest* request, ::grpcIFrontEnd::getMapProcessingDataResponse* response) override;
+        ::grpc::Status getAvailableMapExportImportFormats(::grpc::ServerContext* context, const ::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest* request, ::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse* response) override;
+        ::grpc::Status exportMapToFormat(::grpc::ServerContext* context, const ::grpcIFrontEnd::exportMapToFormatRequest* request, ::grpcIFrontEnd::exportMapToFormatResponse* response) override;
+        ::grpc::Status importMapFromFormat(::grpc::ServerContext* context, const ::grpcIFrontEnd::importMapFromFormatRequest* request, ::grpcIFrontEnd::importMapFromFormatResponse* response) override;
 
         SRef<SolAR::api::service::IFrontEnd> m_xpcfComponent;
         xpcf::grpcServerCompressionInfos m_serviceCompressionInfos;

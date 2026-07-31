@@ -33,9 +33,13 @@ static const char* grpcIMapsManagerService_method_names[] = {
   "/grpcIMapsManager.grpcIMapsManagerService/getMapInfo",
   "/grpcIMapsManager.grpcIMapsManagerService/backupMap",
   "/grpcIMapsManager.grpcIMapsManagerService/restoreMap",
+  "/grpcIMapsManager.grpcIMapsManagerService/getAvailableMapProcessingTypes",
   "/grpcIMapsManager.grpcIMapsManagerService/requestMapProcessing",
   "/grpcIMapsManager.grpcIMapsManagerService/getMapProcessingStatus",
   "/grpcIMapsManager.grpcIMapsManagerService/getMapProcessingData",
+  "/grpcIMapsManager.grpcIMapsManagerService/getAvailableMapExportImportFormats",
+  "/grpcIMapsManager.grpcIMapsManagerService/exportMapToFormat",
+  "/grpcIMapsManager.grpcIMapsManagerService/importMapFromFormat",
 };
 
 std::unique_ptr< grpcIMapsManagerService::Stub> grpcIMapsManagerService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -56,9 +60,13 @@ grpcIMapsManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterf
   , rpcmethod_getMapInfo_(grpcIMapsManagerService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_backupMap_(grpcIMapsManagerService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_restoreMap_(grpcIMapsManagerService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_requestMapProcessing_(grpcIMapsManagerService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapProcessingStatus_(grpcIMapsManagerService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapProcessingData_(grpcIMapsManagerService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAvailableMapProcessingTypes_(grpcIMapsManagerService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_requestMapProcessing_(grpcIMapsManagerService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapProcessingStatus_(grpcIMapsManagerService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapProcessingData_(grpcIMapsManagerService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAvailableMapExportImportFormats_(grpcIMapsManagerService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_exportMapToFormat_(grpcIMapsManagerService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_importMapFromFormat_(grpcIMapsManagerService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMapsManagerService::Stub::createMap(::grpc::ClientContext* context, const ::grpcIMapsManager::createMapRequest& request, ::grpcIMapsManager::createMapResponse* response) {
@@ -314,6 +322,29 @@ void grpcIMapsManagerService::Stub::async::restoreMap(::grpc::ClientContext* con
   return result;
 }
 
+::grpc::Status grpcIMapsManagerService::Stub::getAvailableMapProcessingTypes(::grpc::ClientContext* context, const ::grpcIMapsManager::getAvailableMapProcessingTypesRequest& request, ::grpcIMapsManager::getAvailableMapProcessingTypesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapsManager::getAvailableMapProcessingTypesRequest, ::grpcIMapsManager::getAvailableMapProcessingTypesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getAvailableMapProcessingTypes_, context, request, response);
+}
+
+void grpcIMapsManagerService::Stub::async::getAvailableMapProcessingTypes(::grpc::ClientContext* context, const ::grpcIMapsManager::getAvailableMapProcessingTypesRequest* request, ::grpcIMapsManager::getAvailableMapProcessingTypesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapsManager::getAvailableMapProcessingTypesRequest, ::grpcIMapsManager::getAvailableMapProcessingTypesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAvailableMapProcessingTypes_, context, request, response, std::move(f));
+}
+
+void grpcIMapsManagerService::Stub::async::getAvailableMapProcessingTypes(::grpc::ClientContext* context, const ::grpcIMapsManager::getAvailableMapProcessingTypesRequest* request, ::grpcIMapsManager::getAvailableMapProcessingTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAvailableMapProcessingTypes_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::getAvailableMapProcessingTypesResponse>* grpcIMapsManagerService::Stub::PrepareAsyncgetAvailableMapProcessingTypesRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::getAvailableMapProcessingTypesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapsManager::getAvailableMapProcessingTypesResponse, ::grpcIMapsManager::getAvailableMapProcessingTypesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getAvailableMapProcessingTypes_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::getAvailableMapProcessingTypesResponse>* grpcIMapsManagerService::Stub::AsyncgetAvailableMapProcessingTypesRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::getAvailableMapProcessingTypesRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetAvailableMapProcessingTypesRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status grpcIMapsManagerService::Stub::requestMapProcessing(::grpc::ClientContext* context, const ::grpcIMapsManager::requestMapProcessingRequest& request, ::grpcIMapsManager::requestMapProcessingResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMapsManager::requestMapProcessingRequest, ::grpcIMapsManager::requestMapProcessingResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_requestMapProcessing_, context, request, response);
 }
@@ -379,6 +410,75 @@ void grpcIMapsManagerService::Stub::async::getMapProcessingData(::grpc::ClientCo
 ::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::getMapProcessingDataResponse>* grpcIMapsManagerService::Stub::AsyncgetMapProcessingDataRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::getMapProcessingDataRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncgetMapProcessingDataRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIMapsManagerService::Stub::getAvailableMapExportImportFormats(::grpc::ClientContext* context, const ::grpcIMapsManager::getAvailableMapExportImportFormatsRequest& request, ::grpcIMapsManager::getAvailableMapExportImportFormatsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapsManager::getAvailableMapExportImportFormatsRequest, ::grpcIMapsManager::getAvailableMapExportImportFormatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getAvailableMapExportImportFormats_, context, request, response);
+}
+
+void grpcIMapsManagerService::Stub::async::getAvailableMapExportImportFormats(::grpc::ClientContext* context, const ::grpcIMapsManager::getAvailableMapExportImportFormatsRequest* request, ::grpcIMapsManager::getAvailableMapExportImportFormatsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapsManager::getAvailableMapExportImportFormatsRequest, ::grpcIMapsManager::getAvailableMapExportImportFormatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAvailableMapExportImportFormats_, context, request, response, std::move(f));
+}
+
+void grpcIMapsManagerService::Stub::async::getAvailableMapExportImportFormats(::grpc::ClientContext* context, const ::grpcIMapsManager::getAvailableMapExportImportFormatsRequest* request, ::grpcIMapsManager::getAvailableMapExportImportFormatsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAvailableMapExportImportFormats_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::getAvailableMapExportImportFormatsResponse>* grpcIMapsManagerService::Stub::PrepareAsyncgetAvailableMapExportImportFormatsRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::getAvailableMapExportImportFormatsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapsManager::getAvailableMapExportImportFormatsResponse, ::grpcIMapsManager::getAvailableMapExportImportFormatsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getAvailableMapExportImportFormats_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::getAvailableMapExportImportFormatsResponse>* grpcIMapsManagerService::Stub::AsyncgetAvailableMapExportImportFormatsRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::getAvailableMapExportImportFormatsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetAvailableMapExportImportFormatsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIMapsManagerService::Stub::exportMapToFormat(::grpc::ClientContext* context, const ::grpcIMapsManager::exportMapToFormatRequest& request, ::grpcIMapsManager::exportMapToFormatResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapsManager::exportMapToFormatRequest, ::grpcIMapsManager::exportMapToFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_exportMapToFormat_, context, request, response);
+}
+
+void grpcIMapsManagerService::Stub::async::exportMapToFormat(::grpc::ClientContext* context, const ::grpcIMapsManager::exportMapToFormatRequest* request, ::grpcIMapsManager::exportMapToFormatResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapsManager::exportMapToFormatRequest, ::grpcIMapsManager::exportMapToFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_exportMapToFormat_, context, request, response, std::move(f));
+}
+
+void grpcIMapsManagerService::Stub::async::exportMapToFormat(::grpc::ClientContext* context, const ::grpcIMapsManager::exportMapToFormatRequest* request, ::grpcIMapsManager::exportMapToFormatResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_exportMapToFormat_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::exportMapToFormatResponse>* grpcIMapsManagerService::Stub::PrepareAsyncexportMapToFormatRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::exportMapToFormatRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapsManager::exportMapToFormatResponse, ::grpcIMapsManager::exportMapToFormatRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_exportMapToFormat_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::exportMapToFormatResponse>* grpcIMapsManagerService::Stub::AsyncexportMapToFormatRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::exportMapToFormatRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncexportMapToFormatRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIMapsManagerService::Stub::importMapFromFormat(::grpc::ClientContext* context, const ::grpcIMapsManager::importMapFromFormatRequest& request, ::grpcIMapsManager::importMapFromFormatResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapsManager::importMapFromFormatRequest, ::grpcIMapsManager::importMapFromFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_importMapFromFormat_, context, request, response);
+}
+
+void grpcIMapsManagerService::Stub::async::importMapFromFormat(::grpc::ClientContext* context, const ::grpcIMapsManager::importMapFromFormatRequest* request, ::grpcIMapsManager::importMapFromFormatResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapsManager::importMapFromFormatRequest, ::grpcIMapsManager::importMapFromFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_importMapFromFormat_, context, request, response, std::move(f));
+}
+
+void grpcIMapsManagerService::Stub::async::importMapFromFormat(::grpc::ClientContext* context, const ::grpcIMapsManager::importMapFromFormatRequest* request, ::grpcIMapsManager::importMapFromFormatResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_importMapFromFormat_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::importMapFromFormatResponse>* grpcIMapsManagerService::Stub::PrepareAsyncimportMapFromFormatRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::importMapFromFormatRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapsManager::importMapFromFormatResponse, ::grpcIMapsManager::importMapFromFormatRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_importMapFromFormat_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::importMapFromFormatResponse>* grpcIMapsManagerService::Stub::AsyncimportMapFromFormatRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::importMapFromFormatRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncimportMapFromFormatRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -497,6 +597,16 @@ grpcIMapsManagerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapsManagerService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::getAvailableMapProcessingTypesRequest, ::grpcIMapsManager::getAvailableMapProcessingTypesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapsManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapsManager::getAvailableMapProcessingTypesRequest* req,
+             ::grpcIMapsManager::getAvailableMapProcessingTypesResponse* resp) {
+               return service->getAvailableMapProcessingTypes(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapsManagerService_method_names[12],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::requestMapProcessingRequest, ::grpcIMapsManager::requestMapProcessingResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -505,7 +615,7 @@ grpcIMapsManagerService::Service::Service() {
                return service->requestMapProcessing(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapsManagerService_method_names[12],
+      grpcIMapsManagerService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::getMapProcessingStatusRequest, ::grpcIMapsManager::getMapProcessingStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
@@ -515,7 +625,7 @@ grpcIMapsManagerService::Service::Service() {
                return service->getMapProcessingStatus(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapsManagerService_method_names[13],
+      grpcIMapsManagerService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::getMapProcessingDataRequest, ::grpcIMapsManager::getMapProcessingDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
@@ -523,6 +633,36 @@ grpcIMapsManagerService::Service::Service() {
              const ::grpcIMapsManager::getMapProcessingDataRequest* req,
              ::grpcIMapsManager::getMapProcessingDataResponse* resp) {
                return service->getMapProcessingData(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapsManagerService_method_names[15],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::getAvailableMapExportImportFormatsRequest, ::grpcIMapsManager::getAvailableMapExportImportFormatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapsManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapsManager::getAvailableMapExportImportFormatsRequest* req,
+             ::grpcIMapsManager::getAvailableMapExportImportFormatsResponse* resp) {
+               return service->getAvailableMapExportImportFormats(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapsManagerService_method_names[16],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::exportMapToFormatRequest, ::grpcIMapsManager::exportMapToFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapsManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapsManager::exportMapToFormatRequest* req,
+             ::grpcIMapsManager::exportMapToFormatResponse* resp) {
+               return service->exportMapToFormat(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapsManagerService_method_names[17],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::importMapFromFormatRequest, ::grpcIMapsManager::importMapFromFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapsManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapsManager::importMapFromFormatRequest* req,
+             ::grpcIMapsManager::importMapFromFormatResponse* resp) {
+               return service->importMapFromFormat(ctx, req, resp);
              }, this)));
 }
 
@@ -606,6 +746,13 @@ grpcIMapsManagerService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
+::grpc::Status grpcIMapsManagerService::Service::getAvailableMapProcessingTypes(::grpc::ServerContext* context, const ::grpcIMapsManager::getAvailableMapProcessingTypesRequest* request, ::grpcIMapsManager::getAvailableMapProcessingTypesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 ::grpc::Status grpcIMapsManagerService::Service::requestMapProcessing(::grpc::ServerContext* context, const ::grpcIMapsManager::requestMapProcessingRequest* request, ::grpcIMapsManager::requestMapProcessingResponse* response) {
   (void) context;
   (void) request;
@@ -621,6 +768,27 @@ grpcIMapsManagerService::Service::~Service() {
 }
 
 ::grpc::Status grpcIMapsManagerService::Service::getMapProcessingData(::grpc::ServerContext* context, const ::grpcIMapsManager::getMapProcessingDataRequest* request, ::grpcIMapsManager::getMapProcessingDataResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapsManagerService::Service::getAvailableMapExportImportFormats(::grpc::ServerContext* context, const ::grpcIMapsManager::getAvailableMapExportImportFormatsRequest* request, ::grpcIMapsManager::getAvailableMapExportImportFormatsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapsManagerService::Service::exportMapToFormat(::grpc::ServerContext* context, const ::grpcIMapsManager::exportMapToFormatRequest* request, ::grpcIMapsManager::exportMapToFormatResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapsManagerService::Service::importMapFromFormat(::grpc::ServerContext* context, const ::grpcIMapsManager::importMapFromFormatRequest* request, ::grpcIMapsManager::importMapFromFormatResponse* response) {
   (void) context;
   (void) request;
   (void) response;
