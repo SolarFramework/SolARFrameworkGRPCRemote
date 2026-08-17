@@ -5,6 +5,8 @@
 #define XPCFGRPCMODULEMAIN_H
 #include "IImageSegmentationPipeline_grpcProxy.h"
 #include "IImageSegmentationPipeline_grpcServer.h"
+#include "IMapImportExportPipeline_grpcProxy.h"
+#include "IMapImportExportPipeline_grpcServer.h"
 #include "IMapProcessingPipeline_grpcProxy.h"
 #include "IMapProcessingPipeline_grpcServer.h"
 #include "IMapUpdatePipeline_grpcProxy.h"

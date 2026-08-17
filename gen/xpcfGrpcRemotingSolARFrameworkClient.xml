@@ -5,6 +5,10 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="0a897dee-74f1-42de-a6c1-f7855e0f0bbb" name="IImageSegmentationPipeline" description="The interface to define an image segmentation pipeline"/>
     </component>
+    <component uuid="59bed21a-caeb-4144-86b0-a006f2e4ff01" name="IMapImportExportPipeline_grpcProxy" description="IMapImportExportPipeline_grpcProxy">
+      <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
+      <interface uuid="6fed31af-2b41-4a49-ba3c-1b382229b0f9" name="IMapImportExportPipeline" description="The interface to define a map import/export pipeline"/>
+    </component>
     <component uuid="3e0afc52-5d71-411a-9e5b-bb73ced1cad0" name="IMapProcessingPipeline_grpcProxy" description="IMapProcessingPipeline_grpcProxy">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="6dfb6b83-d4c0-44c5-be5f-0298a7b9e833" name="IMapProcessingPipeline" description="The interface to define a map processing pipeline"/>
