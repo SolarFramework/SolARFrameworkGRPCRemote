@@ -1,5 +1,5 @@
 // GRPC Proxy Class implementation generated with xpcf_grpc_gen
-#include "IMapImportExportPipeline_grpcProxy.h"
+#include "IMapExportImportPipeline_grpcProxy.h"
 #include <cstddef>
 #include <boost/date_time.hpp>
 #include <xpcf/core/Exception.h>
@@ -44,13 +44,13 @@ private:
 };
 } // namespace
 
-template<> org::bcom::xpcf::grpc::proxyIMapImportExportPipeline::IMapImportExportPipeline_grpcProxy* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::proxyIMapImportExportPipeline::IMapImportExportPipeline_grpcProxy>();
+template<> org::bcom::xpcf::grpc::proxyIMapExportImportPipeline::IMapExportImportPipeline_grpcProxy* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::proxyIMapExportImportPipeline::IMapExportImportPipeline_grpcProxy>();
 
-namespace org::bcom::xpcf::grpc::proxyIMapImportExportPipeline {
+namespace org::bcom::xpcf::grpc::proxyIMapExportImportPipeline {
 
-IMapImportExportPipeline_grpcProxy::IMapImportExportPipeline_grpcProxy():xpcf::ConfigurableBase(xpcf::toMap<IMapImportExportPipeline_grpcProxy>())
+IMapExportImportPipeline_grpcProxy::IMapExportImportPipeline_grpcProxy():xpcf::ConfigurableBase(xpcf::toMap<IMapExportImportPipeline_grpcProxy>())
 {
-  declareInterface<SolAR::api::pipeline::IMapImportExportPipeline>(this);
+  declareInterface<SolAR::api::pipeline::IMapExportImportPipeline>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
   m_grpcProxyCompressionConfig.resize(6);
@@ -58,14 +58,14 @@ IMapImportExportPipeline_grpcProxy::IMapImportExportPipeline_grpcProxy():xpcf::C
 }
 
 
-void IMapImportExportPipeline_grpcProxy::unloadComponent ()
+void IMapExportImportPipeline_grpcProxy::unloadComponent ()
 {
   delete this;
   return;
 }
 
 
-XPCFErrorCode IMapImportExportPipeline_grpcProxy::onConfigured()
+XPCFErrorCode IMapExportImportPipeline_grpcProxy::onConfigured()
 {
   ::grpc::ChannelArguments ch_args;
   ch_args.SetMaxReceiveMessageSize(-1);
@@ -73,7 +73,7 @@ XPCFErrorCode IMapImportExportPipeline_grpcProxy::onConfigured()
   m_channel = ::grpc::CreateCustomChannel(m_channelUrl,
   xpcf::GrpcHelper::getCredentials(static_cast<xpcf::grpcCredentials>(m_channelCredentials)),
   ch_args);
-  m_grpcStub = ::grpcIMapImportExportPipeline::grpcIMapImportExportPipelineService::NewStub(m_channel);
+  m_grpcStub = ::grpcIMapExportImportPipeline::grpcIMapExportImportPipelineService::NewStub(m_channel);
   for (auto & compressionLine : m_grpcProxyCompressionConfig) {
       translateClientConfiguration(compressionLine, m_serviceCompressionInfos, m_methodCompressionInfosMap);
   }
@@ -81,11 +81,11 @@ XPCFErrorCode IMapImportExportPipeline_grpcProxy::onConfigured()
 }
 
 
-SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::init()
+SolAR::FrameworkReturnCode  IMapExportImportPipeline_grpcProxy::init()
 {
   ::grpc::ClientContext context;
-  ::grpcIMapImportExportPipeline::initRequest reqIn;
-  ::grpcIMapImportExportPipeline::initResponse respOut;
+  ::grpcIMapExportImportPipeline::initRequest reqIn;
+  ::grpcIMapExportImportPipeline::initResponse respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "init", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
@@ -93,7 +93,7 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::init()
   #endif
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcProxy::init request sent at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcProxy::init request sent at " << to_simple_string(start) << std::endl;
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
@@ -106,9 +106,9 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::init()
   
   opentelemetry::trace::StartSpanOptions spanOptions;
   spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
-  auto span = tracer->StartSpan("IMapImportExportPipeline_grpcProxy.init",
+  auto span = tracer->StartSpan("IMapExportImportPipeline_grpcProxy.init",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
-                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapImportExportPipeline.grpcIMapImportExportPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapExportImportPipeline.grpcIMapExportImportPipelineService"},
                                  {opentelemetry::semconv::rpc::kRpcMethod, "init"},
                                  {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
                                  {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
@@ -125,14 +125,14 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::init()
   ::grpc::Status grpcRemoteStatus = m_grpcStub->init(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcProxy::init response received at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcProxy::init response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "init rpc failed." << std::endl;
-    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMapImportExportPipelineService.init() rpc failed.");
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMapExportImportPipelineService.init() rpc failed.");
     span->End();
-    throw xpcf::RemotingException("grpcIMapImportExportPipelineService","init",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    throw xpcf::RemotingException("grpcIMapExportImportPipelineService","init",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   
@@ -143,11 +143,11 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::init()
 }
 
 
-SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::start()
+SolAR::FrameworkReturnCode  IMapExportImportPipeline_grpcProxy::start()
 {
   ::grpc::ClientContext context;
-  ::grpcIMapImportExportPipeline::startRequest reqIn;
-  ::grpcIMapImportExportPipeline::startResponse respOut;
+  ::grpcIMapExportImportPipeline::startRequest reqIn;
+  ::grpcIMapExportImportPipeline::startResponse respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "start", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
@@ -155,7 +155,7 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::start()
   #endif
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcProxy::start request sent at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcProxy::start request sent at " << to_simple_string(start) << std::endl;
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
@@ -168,9 +168,9 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::start()
   
   opentelemetry::trace::StartSpanOptions spanOptions;
   spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
-  auto span = tracer->StartSpan("IMapImportExportPipeline_grpcProxy.start",
+  auto span = tracer->StartSpan("IMapExportImportPipeline_grpcProxy.start",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
-                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapImportExportPipeline.grpcIMapImportExportPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapExportImportPipeline.grpcIMapExportImportPipelineService"},
                                  {opentelemetry::semconv::rpc::kRpcMethod, "start"},
                                  {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
                                  {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
@@ -187,14 +187,14 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::start()
   ::grpc::Status grpcRemoteStatus = m_grpcStub->start(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcProxy::start response received at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcProxy::start response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "start rpc failed." << std::endl;
-    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMapImportExportPipelineService.start() rpc failed.");
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMapExportImportPipelineService.start() rpc failed.");
     span->End();
-    throw xpcf::RemotingException("grpcIMapImportExportPipelineService","start",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    throw xpcf::RemotingException("grpcIMapExportImportPipelineService","start",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   
@@ -205,11 +205,11 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::start()
 }
 
 
-SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::stop()
+SolAR::FrameworkReturnCode  IMapExportImportPipeline_grpcProxy::stop()
 {
   ::grpc::ClientContext context;
-  ::grpcIMapImportExportPipeline::stopRequest reqIn;
-  ::grpcIMapImportExportPipeline::stopResponse respOut;
+  ::grpcIMapExportImportPipeline::stopRequest reqIn;
+  ::grpcIMapExportImportPipeline::stopResponse respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "stop", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
@@ -217,7 +217,7 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::stop()
   #endif
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcProxy::stop request sent at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcProxy::stop request sent at " << to_simple_string(start) << std::endl;
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
@@ -230,9 +230,9 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::stop()
   
   opentelemetry::trace::StartSpanOptions spanOptions;
   spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
-  auto span = tracer->StartSpan("IMapImportExportPipeline_grpcProxy.stop",
+  auto span = tracer->StartSpan("IMapExportImportPipeline_grpcProxy.stop",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
-                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapImportExportPipeline.grpcIMapImportExportPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapExportImportPipeline.grpcIMapExportImportPipelineService"},
                                  {opentelemetry::semconv::rpc::kRpcMethod, "stop"},
                                  {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
                                  {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
@@ -249,14 +249,14 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::stop()
   ::grpc::Status grpcRemoteStatus = m_grpcStub->stop(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcProxy::stop response received at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcProxy::stop response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "stop rpc failed." << std::endl;
-    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMapImportExportPipelineService.stop() rpc failed.");
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMapExportImportPipelineService.stop() rpc failed.");
     span->End();
-    throw xpcf::RemotingException("grpcIMapImportExportPipelineService","stop",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    throw xpcf::RemotingException("grpcIMapExportImportPipelineService","stop",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   
@@ -267,11 +267,11 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::stop()
 }
 
 
-SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::exportMap(std::string const& mapUUID, std::vector<unsigned char>& compressedZipExport)
+SolAR::FrameworkReturnCode  IMapExportImportPipeline_grpcProxy::exportMap(std::string const& mapUUID, std::vector<unsigned char>& compressedZipExport)
 {
   ::grpc::ClientContext context;
-  ::grpcIMapImportExportPipeline::exportMapRequest reqIn;
-  ::grpcIMapImportExportPipeline::exportMapResponse respOut;
+  ::grpcIMapExportImportPipeline::exportMapRequest reqIn;
+  ::grpcIMapExportImportPipeline::exportMapResponse respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "exportMap", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
@@ -281,7 +281,7 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::exportMap(std::s
   reqIn.set_compressedzipexport(xpcf::serialize<std::vector<unsigned char>>(compressedZipExport));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcProxy::exportMap request sent at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcProxy::exportMap request sent at " << to_simple_string(start) << std::endl;
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
@@ -294,9 +294,9 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::exportMap(std::s
   
   opentelemetry::trace::StartSpanOptions spanOptions;
   spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
-  auto span = tracer->StartSpan("IMapImportExportPipeline_grpcProxy.exportMap",
+  auto span = tracer->StartSpan("IMapExportImportPipeline_grpcProxy.exportMap",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
-                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapImportExportPipeline.grpcIMapImportExportPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapExportImportPipeline.grpcIMapExportImportPipelineService"},
                                  {opentelemetry::semconv::rpc::kRpcMethod, "exportMap"},
                                  {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
                                  {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
@@ -313,14 +313,14 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::exportMap(std::s
   ::grpc::Status grpcRemoteStatus = m_grpcStub->exportMap(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcProxy::exportMap response received at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcProxy::exportMap response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "exportMap rpc failed." << std::endl;
-    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMapImportExportPipelineService.exportMap() rpc failed.");
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMapExportImportPipelineService.exportMap() rpc failed.");
     span->End();
-    throw xpcf::RemotingException("grpcIMapImportExportPipelineService","exportMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    throw xpcf::RemotingException("grpcIMapExportImportPipelineService","exportMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   
@@ -332,11 +332,11 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::exportMap(std::s
 }
 
 
-SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::importMap(std::string const& mapUUID, std::vector<unsigned char> const& compressedZipImport)
+SolAR::FrameworkReturnCode  IMapExportImportPipeline_grpcProxy::importMap(std::string const& mapUUID, std::vector<unsigned char> const& compressedZipImport)
 {
   ::grpc::ClientContext context;
-  ::grpcIMapImportExportPipeline::importMapRequest reqIn;
-  ::grpcIMapImportExportPipeline::importMapResponse respOut;
+  ::grpcIMapExportImportPipeline::importMapRequest reqIn;
+  ::grpcIMapExportImportPipeline::importMapResponse respOut;
   #ifndef DISABLE_GRPC_COMPRESSION
   xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "importMap", m_methodCompressionInfosMap);
   xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
@@ -346,7 +346,7 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::importMap(std::s
   reqIn.set_compressedzipimport(xpcf::serialize<std::vector<unsigned char>>(compressedZipImport));
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcProxy::importMap request sent at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcProxy::importMap request sent at " << to_simple_string(start) << std::endl;
   #endif
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
@@ -359,9 +359,9 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::importMap(std::s
   
   opentelemetry::trace::StartSpanOptions spanOptions;
   spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
-  auto span = tracer->StartSpan("IMapImportExportPipeline_grpcProxy.importMap",
+  auto span = tracer->StartSpan("IMapExportImportPipeline_grpcProxy.importMap",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
-                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapImportExportPipeline.grpcIMapImportExportPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapExportImportPipeline.grpcIMapExportImportPipelineService"},
                                  {opentelemetry::semconv::rpc::kRpcMethod, "importMap"},
                                  {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
                                  {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
@@ -378,14 +378,14 @@ SolAR::FrameworkReturnCode  IMapImportExportPipeline_grpcProxy::importMap(std::s
   ::grpc::Status grpcRemoteStatus = m_grpcStub->importMap(&context, reqIn, &respOut);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcProxy::importMap response received at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcProxy::importMap response received at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   if (!grpcRemoteStatus.ok())  {
     std::cout << "importMap rpc failed." << std::endl;
-    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMapImportExportPipelineService.importMap() rpc failed.");
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIMapExportImportPipelineService.importMap() rpc failed.");
     span->End();
-    throw xpcf::RemotingException("grpcIMapImportExportPipelineService","importMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+    throw xpcf::RemotingException("grpcIMapExportImportPipelineService","importMap",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
   }
 
   

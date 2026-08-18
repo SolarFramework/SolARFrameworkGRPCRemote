@@ -1,24 +1,24 @@
 // GRPC Proxy Class Header generated with xpcf_grpc_gen
 
 
-#ifndef IMAPIMPORTEXPORTPIPELINE_GRPCPROXY_H
-#define IMAPIMPORTEXPORTPIPELINE_GRPCPROXY_H
-#include "api/pipeline/IMapImportExportPipeline.h"
+#ifndef IMAPEXPORTIMPORTPIPELINE_GRPCPROXY_H
+#define IMAPEXPORTIMPORTPIPELINE_GRPCPROXY_H
+#include "api/pipeline/IMapExportImportPipeline.h"
 #include <xpcf/component/ConfigurableBase.h>
 #include <memory>
 #include <string>
 #include <map>
-#include "grpcIMapImportExportPipelineService.grpc.pb.h"
+#include "grpcIMapExportImportPipelineService.grpc.pb.h"
 #include <grpc/grpc.h>
 #include <grpc++/channel.h>
 #include <xpcf/remoting/GrpcHelper.h>
 
-namespace org::bcom::xpcf::grpc::proxyIMapImportExportPipeline {
+namespace org::bcom::xpcf::grpc::proxyIMapExportImportPipeline {
 
-class IMapImportExportPipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual public SolAR::api::pipeline::IMapImportExportPipeline {
+class IMapExportImportPipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual public SolAR::api::pipeline::IMapExportImportPipeline {
   public:
-    IMapImportExportPipeline_grpcProxy();
-    ~IMapImportExportPipeline_grpcProxy() override = default;
+    IMapExportImportPipeline_grpcProxy();
+    ~IMapExportImportPipeline_grpcProxy() override = default;
     void unloadComponent () override final;
     org::bcom::xpcf::XPCFErrorCode onConfigured() override;
 
@@ -36,18 +36,18 @@ class IMapImportExportPipeline_grpcProxy:  public org::bcom::xpcf::ConfigurableB
     xpcf::grpcCompressionInfos m_serviceCompressionInfos;
     std::map<std::string, xpcf::grpcCompressionInfos> m_methodCompressionInfosMap;
     std::vector<std::string> m_grpcProxyCompressionConfig;
-    std::unique_ptr<::grpcIMapImportExportPipeline::grpcIMapImportExportPipelineService::Stub> m_grpcStub;
+    std::unique_ptr<::grpcIMapExportImportPipeline::grpcIMapExportImportPipelineService::Stub> m_grpcStub;
 
 };
 
 }
 
 
-template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIMapImportExportPipeline::IMapImportExportPipeline_grpcProxy>
+template <> struct org::bcom::xpcf::ComponentTraits<org::bcom::xpcf::grpc::proxyIMapExportImportPipeline::IMapExportImportPipeline_grpcProxy>
 {
   static constexpr const char * UUID = "59bed21a-caeb-4144-86b0-a006f2e4ff01";
-  static constexpr const char * NAME = "IMapImportExportPipeline_grpcProxy";
-  static constexpr const char * DESCRIPTION = "IMapImportExportPipeline_grpcProxy grpc client proxy component";
+  static constexpr const char * NAME = "IMapExportImportPipeline_grpcProxy";
+  static constexpr const char * DESCRIPTION = "IMapExportImportPipeline_grpcProxy grpc client proxy component";
 };
 
 

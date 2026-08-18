@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/empty.proto";
 
-package grpcIMapImportExportPipeline;
+package grpcIMapExportImportPipeline;
 
 message initRequest
 {
@@ -59,7 +59,7 @@ message importMapResponse
 sint32 xpcfGrpcReturnValue = 1;
 }
 
-service grpcIMapImportExportPipelineService {
+service grpcIMapExportImportPipelineService {
 rpc init(initRequest) returns(initResponse) {}
 rpc start(startRequest) returns(startResponse) {}
 rpc stop(stopRequest) returns(stopResponse) {}

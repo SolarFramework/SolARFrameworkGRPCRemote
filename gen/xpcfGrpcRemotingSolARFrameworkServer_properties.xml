@@ -13,7 +13,7 @@
         <value>method|getOutputMask|none|0</value>
       </property>
     </configure>
-    <configure component="IMapImportExportPipeline_grpcServer">
+    <configure component="IMapExportImportPipeline_grpcServer">
       <property name="grpc_compress_server" type="string">
         <value>service|none|0</value>
         <value>method|init|none|0</value>

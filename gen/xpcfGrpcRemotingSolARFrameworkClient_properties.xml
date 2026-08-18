@@ -13,7 +13,7 @@
         <value>method|getOutputMask|none|none</value>
       </property>
     </configure>
-    <configure component="IMapImportExportPipeline_grpcProxy">
+    <configure component="IMapExportImportPipeline_grpcProxy">
       <property name="grpc_compress_proxy" type="string">
         <value>service|none|none</value>
         <value>method|init|none|none</value>

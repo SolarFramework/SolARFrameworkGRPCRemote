@@ -1,5 +1,5 @@
 // GRPC Server Class implementation generated with xpcf_grpc_gen
-#include "IMapImportExportPipeline_grpcServer.h"
+#include "IMapExportImportPipeline_grpcServer.h"
 #include <cstddef>
 #include <boost/date_time.hpp>
 #include <xpcf/remoting/ISerializable.h>
@@ -87,27 +87,27 @@ private:
 
 namespace xpcf = org::bcom::xpcf;
 
-template<> org::bcom::xpcf::grpc::serverIMapImportExportPipeline::IMapImportExportPipeline_grpcServer* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::serverIMapImportExportPipeline::IMapImportExportPipeline_grpcServer>();
+template<> org::bcom::xpcf::grpc::serverIMapExportImportPipeline::IMapExportImportPipeline_grpcServer* xpcf::ComponentFactory::createInstance<org::bcom::xpcf::grpc::serverIMapExportImportPipeline::IMapExportImportPipeline_grpcServer>();
 
-namespace org::bcom::xpcf::grpc::serverIMapImportExportPipeline {
+namespace org::bcom::xpcf::grpc::serverIMapExportImportPipeline {
 
-IMapImportExportPipeline_grpcServer::IMapImportExportPipeline_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<IMapImportExportPipeline_grpcServer>())
+IMapExportImportPipeline_grpcServer::IMapExportImportPipeline_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<IMapExportImportPipeline_grpcServer>())
 {
   declareInterface<xpcf::IGrpcService>(this);
-  declareInjectable<SolAR::api::pipeline::IMapImportExportPipeline>(m_grpcService.m_xpcfComponent);
+  declareInjectable<SolAR::api::pipeline::IMapExportImportPipeline>(m_grpcService.m_xpcfComponent);
   m_grpcServerCompressionConfig.resize(6);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
 
-void IMapImportExportPipeline_grpcServer::unloadComponent ()
+void IMapExportImportPipeline_grpcServer::unloadComponent ()
 {
   delete this;
   return;
 }
 
 
-XPCFErrorCode IMapImportExportPipeline_grpcServer::onConfigured()
+XPCFErrorCode IMapExportImportPipeline_grpcServer::onConfigured()
 {
   for (auto & grpcCompressionLine : m_grpcServerCompressionConfig) {
 ;        translateServerConfiguration(grpcCompressionLine, m_grpcService.m_serviceCompressionInfos, m_grpcService.m_methodCompressionInfosMap);
@@ -116,12 +116,12 @@ XPCFErrorCode IMapImportExportPipeline_grpcServer::onConfigured()
 }
 
 
-::grpc::Service * IMapImportExportPipeline_grpcServer::getService()
+::grpc::Service * IMapExportImportPipeline_grpcServer::getService()
 {
   return &m_grpcService;
 }
 
-::grpc::Status IMapImportExportPipeline_grpcServer::grpcIMapImportExportPipelineServiceImpl::init(::grpc::ServerContext* context, const ::grpcIMapImportExportPipeline::initRequest* request, ::grpcIMapImportExportPipeline::initResponse* response)
+::grpc::Status IMapExportImportPipeline_grpcServer::grpcIMapExportImportPipelineServiceImpl::init(::grpc::ServerContext* context, const ::grpcIMapExportImportPipeline::initRequest* request, ::grpcIMapExportImportPipeline::initResponse* response)
 {
   auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
@@ -135,9 +135,9 @@ XPCFErrorCode IMapImportExportPipeline_grpcServer::onConfigured()
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
   auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
-  auto span = tracer->StartSpan("IMapImportExportPipeline_grpcServer.init",
+  auto span = tracer->StartSpan("IMapExportImportPipeline_grpcServer.init",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
-                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapImportExportPipeline.grpcIMapImportExportPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapExportImportPipeline.grpcIMapExportImportPipelineService"},
                                  {opentelemetry::semconv::rpc::kRpcMethod, "init"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
@@ -151,20 +151,20 @@ XPCFErrorCode IMapImportExportPipeline_grpcServer::onConfigured()
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcServer::init request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcServer::init request received at " << to_simple_string(start) << std::endl;
   #endif
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->init();
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcServer::init response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcServer::init response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
 }
 
 
-::grpc::Status IMapImportExportPipeline_grpcServer::grpcIMapImportExportPipelineServiceImpl::start(::grpc::ServerContext* context, const ::grpcIMapImportExportPipeline::startRequest* request, ::grpcIMapImportExportPipeline::startResponse* response)
+::grpc::Status IMapExportImportPipeline_grpcServer::grpcIMapExportImportPipelineServiceImpl::start(::grpc::ServerContext* context, const ::grpcIMapExportImportPipeline::startRequest* request, ::grpcIMapExportImportPipeline::startResponse* response)
 {
   auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
@@ -178,9 +178,9 @@ XPCFErrorCode IMapImportExportPipeline_grpcServer::onConfigured()
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
   auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
-  auto span = tracer->StartSpan("IMapImportExportPipeline_grpcServer.start",
+  auto span = tracer->StartSpan("IMapExportImportPipeline_grpcServer.start",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
-                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapImportExportPipeline.grpcIMapImportExportPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapExportImportPipeline.grpcIMapExportImportPipelineService"},
                                  {opentelemetry::semconv::rpc::kRpcMethod, "start"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
@@ -194,20 +194,20 @@ XPCFErrorCode IMapImportExportPipeline_grpcServer::onConfigured()
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcServer::start request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcServer::start request received at " << to_simple_string(start) << std::endl;
   #endif
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->start();
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcServer::start response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcServer::start response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
 }
 
 
-::grpc::Status IMapImportExportPipeline_grpcServer::grpcIMapImportExportPipelineServiceImpl::stop(::grpc::ServerContext* context, const ::grpcIMapImportExportPipeline::stopRequest* request, ::grpcIMapImportExportPipeline::stopResponse* response)
+::grpc::Status IMapExportImportPipeline_grpcServer::grpcIMapExportImportPipelineServiceImpl::stop(::grpc::ServerContext* context, const ::grpcIMapExportImportPipeline::stopRequest* request, ::grpcIMapExportImportPipeline::stopResponse* response)
 {
   auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
@@ -221,9 +221,9 @@ XPCFErrorCode IMapImportExportPipeline_grpcServer::onConfigured()
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
   auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
-  auto span = tracer->StartSpan("IMapImportExportPipeline_grpcServer.stop",
+  auto span = tracer->StartSpan("IMapExportImportPipeline_grpcServer.stop",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
-                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapImportExportPipeline.grpcIMapImportExportPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapExportImportPipeline.grpcIMapExportImportPipelineService"},
                                  {opentelemetry::semconv::rpc::kRpcMethod, "stop"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
@@ -237,20 +237,20 @@ XPCFErrorCode IMapImportExportPipeline_grpcServer::onConfigured()
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcServer::stop request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcServer::stop request received at " << to_simple_string(start) << std::endl;
   #endif
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->stop();
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcServer::stop response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcServer::stop response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
 }
 
 
-::grpc::Status IMapImportExportPipeline_grpcServer::grpcIMapImportExportPipelineServiceImpl::exportMap(::grpc::ServerContext* context, const ::grpcIMapImportExportPipeline::exportMapRequest* request, ::grpcIMapImportExportPipeline::exportMapResponse* response)
+::grpc::Status IMapExportImportPipeline_grpcServer::grpcIMapExportImportPipelineServiceImpl::exportMap(::grpc::ServerContext* context, const ::grpcIMapExportImportPipeline::exportMapRequest* request, ::grpcIMapExportImportPipeline::exportMapResponse* response)
 {
   auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
@@ -264,9 +264,9 @@ XPCFErrorCode IMapImportExportPipeline_grpcServer::onConfigured()
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
   auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
-  auto span = tracer->StartSpan("IMapImportExportPipeline_grpcServer.exportMap",
+  auto span = tracer->StartSpan("IMapExportImportPipeline_grpcServer.exportMap",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
-                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapImportExportPipeline.grpcIMapImportExportPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapExportImportPipeline.grpcIMapExportImportPipelineService"},
                                  {opentelemetry::semconv::rpc::kRpcMethod, "exportMap"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
@@ -280,7 +280,7 @@ XPCFErrorCode IMapImportExportPipeline_grpcServer::onConfigured()
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcServer::exportMap request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcServer::exportMap request received at " << to_simple_string(start) << std::endl;
   #endif
   std::string mapUUID = request->mapuuid();
   std::vector<unsigned char> compressedZipExport = xpcf::deserialize<std::vector<unsigned char>>(request->compressedzipexport());
@@ -289,14 +289,14 @@ XPCFErrorCode IMapImportExportPipeline_grpcServer::onConfigured()
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcServer::exportMap response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcServer::exportMap response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;
 }
 
 
-::grpc::Status IMapImportExportPipeline_grpcServer::grpcIMapImportExportPipelineServiceImpl::importMap(::grpc::ServerContext* context, const ::grpcIMapImportExportPipeline::importMapRequest* request, ::grpcIMapImportExportPipeline::importMapResponse* response)
+::grpc::Status IMapExportImportPipeline_grpcServer::grpcIMapExportImportPipelineServiceImpl::importMap(::grpc::ServerContext* context, const ::grpcIMapExportImportPipeline::importMapRequest* request, ::grpcIMapExportImportPipeline::importMapResponse* response)
 {
   auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
   auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
@@ -310,9 +310,9 @@ XPCFErrorCode IMapImportExportPipeline_grpcServer::onConfigured()
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
   auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
-  auto span = tracer->StartSpan("IMapImportExportPipeline_grpcServer.importMap",
+  auto span = tracer->StartSpan("IMapExportImportPipeline_grpcServer.importMap",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
-                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapImportExportPipeline.grpcIMapImportExportPipelineService"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIMapExportImportPipeline.grpcIMapExportImportPipelineService"},
                                  {opentelemetry::semconv::rpc::kRpcMethod, "importMap"},
                                  {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
                                 options);
@@ -326,7 +326,7 @@ XPCFErrorCode IMapImportExportPipeline_grpcServer::onConfigured()
   #endif
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcServer::importMap request received at " << to_simple_string(start) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcServer::importMap request received at " << to_simple_string(start) << std::endl;
   #endif
   std::string mapUUID = request->mapuuid();
   std::vector<unsigned char> compressedZipImport = xpcf::deserialize<std::vector<unsigned char>>(request->compressedzipimport());
@@ -334,7 +334,7 @@ XPCFErrorCode IMapImportExportPipeline_grpcServer::onConfigured()
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
-  std::cout << "====> IMapImportExportPipeline_grpcServer::importMap response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "====> IMapExportImportPipeline_grpcServer::importMap response sent at " << to_simple_string(end) << std::endl;
   std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
   #endif
   return ::grpc::Status::OK;

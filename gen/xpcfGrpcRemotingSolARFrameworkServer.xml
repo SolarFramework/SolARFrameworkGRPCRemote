@@ -5,7 +5,7 @@
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
     </component>
-    <component uuid="a72a8498-eaf8-483a-9c6f-423faaefb047" name="IMapImportExportPipeline_grpcServer" description="IMapImportExportPipeline_grpcServer">
+    <component uuid="a72a8498-eaf8-483a-9c6f-423faaefb047" name="IMapExportImportPipeline_grpcServer" description="IMapExportImportPipeline_grpcServer">
       <interface uuid="125f2007-1bf9-421d-9367-fbdc1210d006" name="XPCF::IComponentIntrospect" description="Component introspection interface"/>
       <interface uuid="baab5e42-2c24-48de-953b-07237af419e4" name="org::bcom::xpcf::IGrpcService" description="xpcf GrpcService interface"/>
     </component>
@@ -50,7 +50,7 @@
     <bindings>
       <bind interface="org::bcom::xpcf::IGrpcService">
         <component to="IImageSegmentationPipeline_grpcServer"/>
-        <component to="IMapImportExportPipeline_grpcServer"/>
+        <component to="IMapExportImportPipeline_grpcServer"/>
         <component to="IMapProcessingPipeline_grpcServer"/>
         <component to="IMapUpdatePipeline_grpcServer"/>
         <component to="IMappingPipeline_grpcServer"/>
