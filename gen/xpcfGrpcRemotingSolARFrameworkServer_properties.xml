@@ -13,6 +13,16 @@
         <value>method|getOutputMask|none|0</value>
       </property>
     </configure>
+    <configure component="IMapExportImportPipeline_grpcServer">
+      <property name="grpc_compress_server" type="string">
+        <value>service|none|0</value>
+        <value>method|init|none|0</value>
+        <value>method|start|none|0</value>
+        <value>method|stop|none|0</value>
+        <value>method|exportMap|none|0</value>
+        <value>method|importMap|none|0</value>
+      </property>
+    </configure>
     <configure component="IMapProcessingPipeline_grpcServer">
       <property name="grpc_compress_server" type="string">
         <value>service|none|0</value>
@@ -149,9 +159,13 @@
         <value>method|getMapInfo|none|0</value>
         <value>method|backupMap|none|0</value>
         <value>method|restoreMap|none|0</value>
+        <value>method|getAvailableMapProcessingTypes|none|0</value>
         <value>method|requestMapProcessing|none|0</value>
         <value>method|getMapProcessingStatus|none|0</value>
         <value>method|getMapProcessingData|none|0</value>
+        <value>method|getAvailableMapExportImportFormats|none|0</value>
+        <value>method|exportMapToFormat|none|0</value>
+        <value>method|importMapFromFormat|none|0</value>
       </property>
     </configure>
     <configure component="IMapsManager_grpcServer">
@@ -168,9 +182,13 @@
         <value>method|getMapInfo|none|0</value>
         <value>method|backupMap|none|0</value>
         <value>method|restoreMap|none|0</value>
+        <value>method|getAvailableMapProcessingTypes|none|0</value>
         <value>method|requestMapProcessing|none|0</value>
         <value>method|getMapProcessingStatus|none|0</value>
         <value>method|getMapProcessingData|none|0</value>
+        <value>method|getAvailableMapExportImportFormats|none|0</value>
+        <value>method|exportMapToFormat|none|0</value>
+        <value>method|importMapFromFormat|none|0</value>
       </property>
     </configure>
     <configure component="IServiceManager_grpcServer">

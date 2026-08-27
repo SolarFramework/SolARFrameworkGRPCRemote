@@ -49,9 +49,13 @@ static const char* grpcIFrontEndService_method_names[] = {
   "/grpcIFrontEnd.grpcIFrontEndService/getMapInfo",
   "/grpcIFrontEnd.grpcIFrontEndService/backupMap",
   "/grpcIFrontEnd.grpcIFrontEndService/restoreMap",
+  "/grpcIFrontEnd.grpcIFrontEndService/getAvailableMapProcessingTypes",
   "/grpcIFrontEnd.grpcIFrontEndService/requestMapProcessing",
   "/grpcIFrontEnd.grpcIFrontEndService/getMapProcessingStatus",
   "/grpcIFrontEnd.grpcIFrontEndService/getMapProcessingData",
+  "/grpcIFrontEnd.grpcIFrontEndService/getAvailableMapExportImportFormats",
+  "/grpcIFrontEnd.grpcIFrontEndService/exportMapToFormat",
+  "/grpcIFrontEnd.grpcIFrontEndService/importMapFromFormat",
 };
 
 std::unique_ptr< grpcIFrontEndService::Stub> grpcIFrontEndService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -88,9 +92,13 @@ grpcIFrontEndService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface
   , rpcmethod_getMapInfo_(grpcIFrontEndService_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_backupMap_(grpcIFrontEndService_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_restoreMap_(grpcIFrontEndService_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_requestMapProcessing_(grpcIFrontEndService_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapProcessingStatus_(grpcIFrontEndService_method_names[28], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapProcessingData_(grpcIFrontEndService_method_names[29], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAvailableMapProcessingTypes_(grpcIFrontEndService_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_requestMapProcessing_(grpcIFrontEndService_method_names[28], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapProcessingStatus_(grpcIFrontEndService_method_names[29], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapProcessingData_(grpcIFrontEndService_method_names[30], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAvailableMapExportImportFormats_(grpcIFrontEndService_method_names[31], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_exportMapToFormat_(grpcIFrontEndService_method_names[32], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_importMapFromFormat_(grpcIFrontEndService_method_names[33], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIFrontEndService::Stub::registerClient(::grpc::ClientContext* context, const ::grpcIFrontEnd::registerClientRequest& request, ::grpcIFrontEnd::registerClientResponse* response) {
@@ -714,6 +722,29 @@ void grpcIFrontEndService::Stub::async::restoreMap(::grpc::ClientContext* contex
   return result;
 }
 
+::grpc::Status grpcIFrontEndService::Stub::getAvailableMapProcessingTypes(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAvailableMapProcessingTypesRequest& request, ::grpcIFrontEnd::getAvailableMapProcessingTypesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::getAvailableMapProcessingTypesRequest, ::grpcIFrontEnd::getAvailableMapProcessingTypesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getAvailableMapProcessingTypes_, context, request, response);
+}
+
+void grpcIFrontEndService::Stub::async::getAvailableMapProcessingTypes(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAvailableMapProcessingTypesRequest* request, ::grpcIFrontEnd::getAvailableMapProcessingTypesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::getAvailableMapProcessingTypesRequest, ::grpcIFrontEnd::getAvailableMapProcessingTypesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAvailableMapProcessingTypes_, context, request, response, std::move(f));
+}
+
+void grpcIFrontEndService::Stub::async::getAvailableMapProcessingTypes(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAvailableMapProcessingTypesRequest* request, ::grpcIFrontEnd::getAvailableMapProcessingTypesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAvailableMapProcessingTypes_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getAvailableMapProcessingTypesResponse>* grpcIFrontEndService::Stub::PrepareAsyncgetAvailableMapProcessingTypesRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAvailableMapProcessingTypesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::getAvailableMapProcessingTypesResponse, ::grpcIFrontEnd::getAvailableMapProcessingTypesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getAvailableMapProcessingTypes_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getAvailableMapProcessingTypesResponse>* grpcIFrontEndService::Stub::AsyncgetAvailableMapProcessingTypesRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAvailableMapProcessingTypesRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetAvailableMapProcessingTypesRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status grpcIFrontEndService::Stub::requestMapProcessing(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest& request, ::grpcIFrontEnd::requestMapProcessingResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::requestMapProcessingRequest, ::grpcIFrontEnd::requestMapProcessingResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_requestMapProcessing_, context, request, response);
 }
@@ -779,6 +810,75 @@ void grpcIFrontEndService::Stub::async::getMapProcessingData(::grpc::ClientConte
 ::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getMapProcessingDataResponse>* grpcIFrontEndService::Stub::AsyncgetMapProcessingDataRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getMapProcessingDataRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncgetMapProcessingDataRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIFrontEndService::Stub::getAvailableMapExportImportFormats(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest& request, ::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest, ::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getAvailableMapExportImportFormats_, context, request, response);
+}
+
+void grpcIFrontEndService::Stub::async::getAvailableMapExportImportFormats(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest* request, ::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest, ::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAvailableMapExportImportFormats_, context, request, response, std::move(f));
+}
+
+void grpcIFrontEndService::Stub::async::getAvailableMapExportImportFormats(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest* request, ::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getAvailableMapExportImportFormats_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse>* grpcIFrontEndService::Stub::PrepareAsyncgetAvailableMapExportImportFormatsRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse, ::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getAvailableMapExportImportFormats_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse>* grpcIFrontEndService::Stub::AsyncgetAvailableMapExportImportFormatsRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetAvailableMapExportImportFormatsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIFrontEndService::Stub::exportMapToFormat(::grpc::ClientContext* context, const ::grpcIFrontEnd::exportMapToFormatRequest& request, ::grpcIFrontEnd::exportMapToFormatResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::exportMapToFormatRequest, ::grpcIFrontEnd::exportMapToFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_exportMapToFormat_, context, request, response);
+}
+
+void grpcIFrontEndService::Stub::async::exportMapToFormat(::grpc::ClientContext* context, const ::grpcIFrontEnd::exportMapToFormatRequest* request, ::grpcIFrontEnd::exportMapToFormatResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::exportMapToFormatRequest, ::grpcIFrontEnd::exportMapToFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_exportMapToFormat_, context, request, response, std::move(f));
+}
+
+void grpcIFrontEndService::Stub::async::exportMapToFormat(::grpc::ClientContext* context, const ::grpcIFrontEnd::exportMapToFormatRequest* request, ::grpcIFrontEnd::exportMapToFormatResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_exportMapToFormat_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::exportMapToFormatResponse>* grpcIFrontEndService::Stub::PrepareAsyncexportMapToFormatRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::exportMapToFormatRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::exportMapToFormatResponse, ::grpcIFrontEnd::exportMapToFormatRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_exportMapToFormat_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::exportMapToFormatResponse>* grpcIFrontEndService::Stub::AsyncexportMapToFormatRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::exportMapToFormatRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncexportMapToFormatRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status grpcIFrontEndService::Stub::importMapFromFormat(::grpc::ClientContext* context, const ::grpcIFrontEnd::importMapFromFormatRequest& request, ::grpcIFrontEnd::importMapFromFormatResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::importMapFromFormatRequest, ::grpcIFrontEnd::importMapFromFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_importMapFromFormat_, context, request, response);
+}
+
+void grpcIFrontEndService::Stub::async::importMapFromFormat(::grpc::ClientContext* context, const ::grpcIFrontEnd::importMapFromFormatRequest* request, ::grpcIFrontEnd::importMapFromFormatResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::importMapFromFormatRequest, ::grpcIFrontEnd::importMapFromFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_importMapFromFormat_, context, request, response, std::move(f));
+}
+
+void grpcIFrontEndService::Stub::async::importMapFromFormat(::grpc::ClientContext* context, const ::grpcIFrontEnd::importMapFromFormatRequest* request, ::grpcIFrontEnd::importMapFromFormatResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_importMapFromFormat_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::importMapFromFormatResponse>* grpcIFrontEndService::Stub::PrepareAsyncimportMapFromFormatRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::importMapFromFormatRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::importMapFromFormatResponse, ::grpcIFrontEnd::importMapFromFormatRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_importMapFromFormat_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::importMapFromFormatResponse>* grpcIFrontEndService::Stub::AsyncimportMapFromFormatRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::importMapFromFormatRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncimportMapFromFormatRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -1057,6 +1157,16 @@ grpcIFrontEndService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIFrontEndService_method_names[27],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getAvailableMapProcessingTypesRequest, ::grpcIFrontEnd::getAvailableMapProcessingTypesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIFrontEndService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIFrontEnd::getAvailableMapProcessingTypesRequest* req,
+             ::grpcIFrontEnd::getAvailableMapProcessingTypesResponse* resp) {
+               return service->getAvailableMapProcessingTypes(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIFrontEndService_method_names[28],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::requestMapProcessingRequest, ::grpcIFrontEnd::requestMapProcessingResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -1065,7 +1175,7 @@ grpcIFrontEndService::Service::Service() {
                return service->requestMapProcessing(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[28],
+      grpcIFrontEndService_method_names[29],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapProcessingStatusRequest, ::grpcIFrontEnd::getMapProcessingStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1075,7 +1185,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getMapProcessingStatus(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[29],
+      grpcIFrontEndService_method_names[30],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapProcessingDataRequest, ::grpcIFrontEnd::getMapProcessingDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1083,6 +1193,36 @@ grpcIFrontEndService::Service::Service() {
              const ::grpcIFrontEnd::getMapProcessingDataRequest* req,
              ::grpcIFrontEnd::getMapProcessingDataResponse* resp) {
                return service->getMapProcessingData(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIFrontEndService_method_names[31],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest, ::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIFrontEndService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest* req,
+             ::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse* resp) {
+               return service->getAvailableMapExportImportFormats(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIFrontEndService_method_names[32],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::exportMapToFormatRequest, ::grpcIFrontEnd::exportMapToFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIFrontEndService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIFrontEnd::exportMapToFormatRequest* req,
+             ::grpcIFrontEnd::exportMapToFormatResponse* resp) {
+               return service->exportMapToFormat(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIFrontEndService_method_names[33],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::importMapFromFormatRequest, ::grpcIFrontEnd::importMapFromFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIFrontEndService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIFrontEnd::importMapFromFormatRequest* req,
+             ::grpcIFrontEnd::importMapFromFormatResponse* resp) {
+               return service->importMapFromFormat(ctx, req, resp);
              }, this)));
 }
 
@@ -1278,6 +1418,13 @@ grpcIFrontEndService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
+::grpc::Status grpcIFrontEndService::Service::getAvailableMapProcessingTypes(::grpc::ServerContext* context, const ::grpcIFrontEnd::getAvailableMapProcessingTypesRequest* request, ::grpcIFrontEnd::getAvailableMapProcessingTypesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 ::grpc::Status grpcIFrontEndService::Service::requestMapProcessing(::grpc::ServerContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpcIFrontEnd::requestMapProcessingResponse* response) {
   (void) context;
   (void) request;
@@ -1293,6 +1440,27 @@ grpcIFrontEndService::Service::~Service() {
 }
 
 ::grpc::Status grpcIFrontEndService::Service::getMapProcessingData(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapProcessingDataRequest* request, ::grpcIFrontEnd::getMapProcessingDataResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIFrontEndService::Service::getAvailableMapExportImportFormats(::grpc::ServerContext* context, const ::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest* request, ::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIFrontEndService::Service::exportMapToFormat(::grpc::ServerContext* context, const ::grpcIFrontEnd::exportMapToFormatRequest* request, ::grpcIFrontEnd::exportMapToFormatResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIFrontEndService::Service::importMapFromFormat(::grpc::ServerContext* context, const ::grpcIFrontEnd::importMapFromFormatRequest* request, ::grpcIFrontEnd::importMapFromFormatResponse* response) {
   (void) context;
   (void) request;
   (void) response;

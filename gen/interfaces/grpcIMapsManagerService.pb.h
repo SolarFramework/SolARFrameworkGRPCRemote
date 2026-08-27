@@ -86,6 +86,14 @@ class deleteMapResponse;
 struct deleteMapResponseDefaultTypeInternal;
 extern deleteMapResponseDefaultTypeInternal _deleteMapResponse_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull deleteMapResponse_class_data_;
+class exportMapToFormatRequest;
+struct exportMapToFormatRequestDefaultTypeInternal;
+extern exportMapToFormatRequestDefaultTypeInternal _exportMapToFormatRequest_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull exportMapToFormatRequest_class_data_;
+class exportMapToFormatResponse;
+struct exportMapToFormatResponseDefaultTypeInternal;
+extern exportMapToFormatResponseDefaultTypeInternal _exportMapToFormatResponse_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull exportMapToFormatResponse_class_data_;
 class getAllMapsRequest;
 struct getAllMapsRequestDefaultTypeInternal;
 extern getAllMapsRequestDefaultTypeInternal _getAllMapsRequest_default_instance_;
@@ -94,6 +102,22 @@ class getAllMapsResponse;
 struct getAllMapsResponseDefaultTypeInternal;
 extern getAllMapsResponseDefaultTypeInternal _getAllMapsResponse_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull getAllMapsResponse_class_data_;
+class getAvailableMapExportImportFormatsRequest;
+struct getAvailableMapExportImportFormatsRequestDefaultTypeInternal;
+extern getAvailableMapExportImportFormatsRequestDefaultTypeInternal _getAvailableMapExportImportFormatsRequest_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull getAvailableMapExportImportFormatsRequest_class_data_;
+class getAvailableMapExportImportFormatsResponse;
+struct getAvailableMapExportImportFormatsResponseDefaultTypeInternal;
+extern getAvailableMapExportImportFormatsResponseDefaultTypeInternal _getAvailableMapExportImportFormatsResponse_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull getAvailableMapExportImportFormatsResponse_class_data_;
+class getAvailableMapProcessingTypesRequest;
+struct getAvailableMapProcessingTypesRequestDefaultTypeInternal;
+extern getAvailableMapProcessingTypesRequestDefaultTypeInternal _getAvailableMapProcessingTypesRequest_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull getAvailableMapProcessingTypesRequest_class_data_;
+class getAvailableMapProcessingTypesResponse;
+struct getAvailableMapProcessingTypesResponseDefaultTypeInternal;
+extern getAvailableMapProcessingTypesResponseDefaultTypeInternal _getAvailableMapProcessingTypesResponse_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull getAvailableMapProcessingTypesResponse_class_data_;
 class getMapInfoRequest;
 struct getMapInfoRequestDefaultTypeInternal;
 extern getMapInfoRequestDefaultTypeInternal _getMapInfoRequest_default_instance_;
@@ -134,6 +158,14 @@ class getPointCloudRequestResponse;
 struct getPointCloudRequestResponseDefaultTypeInternal;
 extern getPointCloudRequestResponseDefaultTypeInternal _getPointCloudRequestResponse_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull getPointCloudRequestResponse_class_data_;
+class importMapFromFormatRequest;
+struct importMapFromFormatRequestDefaultTypeInternal;
+extern importMapFromFormatRequestDefaultTypeInternal _importMapFromFormatRequest_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull importMapFromFormatRequest_class_data_;
+class importMapFromFormatResponse;
+struct importMapFromFormatResponseDefaultTypeInternal;
+extern importMapFromFormatResponseDefaultTypeInternal _importMapFromFormatResponse_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull importMapFromFormatResponse_class_data_;
 class increaseMapClientsRequest;
 struct increaseMapClientsRequestDefaultTypeInternal;
 extern increaseMapClientsRequestDefaultTypeInternal _increaseMapClientsRequest_default_instance_;
@@ -1066,7 +1098,7 @@ class requestMapProcessingResponse final : public ::google::protobuf::Message
     return *reinterpret_cast<const requestMapProcessingResponse*>(
         &_requestMapProcessingResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 23;
+  static constexpr int kIndexInFileMessages = 25;
   friend void swap(requestMapProcessingResponse& a, requestMapProcessingResponse& b) { a.Swap(&b); }
   inline void Swap(requestMapProcessingResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1257,7 +1289,7 @@ class requestMapProcessingRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const requestMapProcessingRequest*>(
         &_requestMapProcessingRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 22;
+  static constexpr int kIndexInFileMessages = 24;
   friend void swap(requestMapProcessingRequest& a, requestMapProcessingRequest& b) { a.Swap(&b); }
   inline void Swap(requestMapProcessingRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1870,6 +1902,434 @@ class increaseMapClientsRequest final : public ::google::protobuf::Message
 };
 
 extern const ::google::protobuf::internal::ClassDataFull increaseMapClientsRequest_class_data_;
+// -------------------------------------------------------------------
+
+class importMapFromFormatResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIMapsManager.importMapFromFormatResponse) */ {
+ public:
+  inline importMapFromFormatResponse() : importMapFromFormatResponse(nullptr) {}
+  ~importMapFromFormatResponse() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(importMapFromFormatResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(importMapFromFormatResponse));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR importMapFromFormatResponse(::google::protobuf::internal::ConstantInitialized);
+
+  inline importMapFromFormatResponse(const importMapFromFormatResponse& from) : importMapFromFormatResponse(nullptr, from) {}
+  inline importMapFromFormatResponse(importMapFromFormatResponse&& from) noexcept
+      : importMapFromFormatResponse(nullptr, ::std::move(from)) {}
+  inline importMapFromFormatResponse& operator=(const importMapFromFormatResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline importMapFromFormatResponse& operator=(importMapFromFormatResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const importMapFromFormatResponse& default_instance() {
+    return *reinterpret_cast<const importMapFromFormatResponse*>(
+        &_importMapFromFormatResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 35;
+  friend void swap(importMapFromFormatResponse& a, importMapFromFormatResponse& b) { a.Swap(&b); }
+  inline void Swap(importMapFromFormatResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(importMapFromFormatResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  importMapFromFormatResponse* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<importMapFromFormatResponse>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const importMapFromFormatResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const importMapFromFormatResponse& from) { importMapFromFormatResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(importMapFromFormatResponse* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "grpcIMapsManager.importMapFromFormatResponse"; }
+
+ protected:
+  explicit importMapFromFormatResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  importMapFromFormatResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const importMapFromFormatResponse& from);
+  importMapFromFormatResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, importMapFromFormatResponse&& from) noexcept
+      : importMapFromFormatResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kXpcfGrpcReturnValueFieldNumber = 1,
+  };
+  // sint32 xpcfGrpcReturnValue = 1;
+  void clear_xpcfgrpcreturnvalue() ;
+  ::int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::int32_t value);
+
+  private:
+  ::int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIMapsManager.importMapFromFormatResponse)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<0, 1,
+                                   0, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const importMapFromFormatResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::int32_t xpcfgrpcreturnvalue_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIMapsManagerService_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull importMapFromFormatResponse_class_data_;
+// -------------------------------------------------------------------
+
+class importMapFromFormatRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIMapsManager.importMapFromFormatRequest) */ {
+ public:
+  inline importMapFromFormatRequest() : importMapFromFormatRequest(nullptr) {}
+  ~importMapFromFormatRequest() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(importMapFromFormatRequest* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(importMapFromFormatRequest));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR importMapFromFormatRequest(::google::protobuf::internal::ConstantInitialized);
+
+  inline importMapFromFormatRequest(const importMapFromFormatRequest& from) : importMapFromFormatRequest(nullptr, from) {}
+  inline importMapFromFormatRequest(importMapFromFormatRequest&& from) noexcept
+      : importMapFromFormatRequest(nullptr, ::std::move(from)) {}
+  inline importMapFromFormatRequest& operator=(const importMapFromFormatRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline importMapFromFormatRequest& operator=(importMapFromFormatRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const importMapFromFormatRequest& default_instance() {
+    return *reinterpret_cast<const importMapFromFormatRequest*>(
+        &_importMapFromFormatRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 34;
+  friend void swap(importMapFromFormatRequest& a, importMapFromFormatRequest& b) { a.Swap(&b); }
+  inline void Swap(importMapFromFormatRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(importMapFromFormatRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  importMapFromFormatRequest* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<importMapFromFormatRequest>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const importMapFromFormatRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const importMapFromFormatRequest& from) { importMapFromFormatRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(importMapFromFormatRequest* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "grpcIMapsManager.importMapFromFormatRequest"; }
+
+ protected:
+  explicit importMapFromFormatRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  importMapFromFormatRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const importMapFromFormatRequest& from);
+  importMapFromFormatRequest(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, importMapFromFormatRequest&& from) noexcept
+      : importMapFromFormatRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kMapUUIDFieldNumber = 2,
+    kCompressedZipImportFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kImportFormatFieldNumber = 3,
+  };
+  // string mapUUID = 2;
+  void clear_mapuuid() ;
+  const ::std::string& mapuuid() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_mapuuid(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_mapuuid();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_mapuuid();
+  void set_allocated_mapuuid(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_mapuuid() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuid(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_mapuuid();
+
+  public:
+  // bytes compressedZipImport = 4;
+  void clear_compressedzipimport() ;
+  const ::std::string& compressedzipimport() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_compressedzipimport(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_compressedzipimport();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_compressedzipimport();
+  void set_allocated_compressedzipimport(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_compressedzipimport() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_compressedzipimport(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_compressedzipimport();
+
+  public:
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat() ;
+  ::int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::int32_t value);
+
+  private:
+  ::int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::int32_t value);
+
+  public:
+  // sint32 importFormat = 3;
+  void clear_importformat() ;
+  ::int32_t importformat() const;
+  void set_importformat(::int32_t value);
+
+  private:
+  ::int32_t _internal_importformat() const;
+  void _internal_set_importformat(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIMapsManager.importMapFromFormatRequest)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<2, 4,
+                                   0, 59,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const importMapFromFormatRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr mapuuid_;
+    ::google::protobuf::internal::ArenaStringPtr compressedzipimport_;
+    ::int32_t grpcservercompressionformat_;
+    ::int32_t importformat_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIMapsManagerService_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull importMapFromFormatRequest_class_data_;
 // -------------------------------------------------------------------
 
 class getPointCloudRequestResponse final : public ::google::protobuf::Message
@@ -2805,7 +3265,7 @@ class getMapProcessingStatusResponse final : public ::google::protobuf::Message
     return *reinterpret_cast<const getMapProcessingStatusResponse*>(
         &_getMapProcessingStatusResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 25;
+  static constexpr int kIndexInFileMessages = 27;
   friend void swap(getMapProcessingStatusResponse& a, getMapProcessingStatusResponse& b) { a.Swap(&b); }
   inline void Swap(getMapProcessingStatusResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3032,7 +3492,7 @@ class getMapProcessingStatusRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const getMapProcessingStatusRequest*>(
         &_getMapProcessingStatusRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 24;
+  static constexpr int kIndexInFileMessages = 26;
   friend void swap(getMapProcessingStatusRequest& a, getMapProcessingStatusRequest& b) { a.Swap(&b); }
   inline void Swap(getMapProcessingStatusRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3276,7 +3736,7 @@ class getMapProcessingDataResponse final : public ::google::protobuf::Message
     return *reinterpret_cast<const getMapProcessingDataResponse*>(
         &_getMapProcessingDataResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 27;
+  static constexpr int kIndexInFileMessages = 29;
   friend void swap(getMapProcessingDataResponse& a, getMapProcessingDataResponse& b) { a.Swap(&b); }
   inline void Swap(getMapProcessingDataResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3501,7 +3961,7 @@ class getMapProcessingDataRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const getMapProcessingDataRequest*>(
         &_getMapProcessingDataRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 26;
+  static constexpr int kIndexInFileMessages = 28;
   friend void swap(getMapProcessingDataRequest& a, getMapProcessingDataRequest& b) { a.Swap(&b); }
   inline void Swap(getMapProcessingDataRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -4251,6 +4711,838 @@ class getMapInfoRequest final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull getMapInfoRequest_class_data_;
 // -------------------------------------------------------------------
 
+class getAvailableMapProcessingTypesResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIMapsManager.getAvailableMapProcessingTypesResponse) */ {
+ public:
+  inline getAvailableMapProcessingTypesResponse() : getAvailableMapProcessingTypesResponse(nullptr) {}
+  ~getAvailableMapProcessingTypesResponse() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(getAvailableMapProcessingTypesResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(getAvailableMapProcessingTypesResponse));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR getAvailableMapProcessingTypesResponse(::google::protobuf::internal::ConstantInitialized);
+
+  inline getAvailableMapProcessingTypesResponse(const getAvailableMapProcessingTypesResponse& from) : getAvailableMapProcessingTypesResponse(nullptr, from) {}
+  inline getAvailableMapProcessingTypesResponse(getAvailableMapProcessingTypesResponse&& from) noexcept
+      : getAvailableMapProcessingTypesResponse(nullptr, ::std::move(from)) {}
+  inline getAvailableMapProcessingTypesResponse& operator=(const getAvailableMapProcessingTypesResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getAvailableMapProcessingTypesResponse& operator=(getAvailableMapProcessingTypesResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const getAvailableMapProcessingTypesResponse& default_instance() {
+    return *reinterpret_cast<const getAvailableMapProcessingTypesResponse*>(
+        &_getAvailableMapProcessingTypesResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 23;
+  friend void swap(getAvailableMapProcessingTypesResponse& a, getAvailableMapProcessingTypesResponse& b) { a.Swap(&b); }
+  inline void Swap(getAvailableMapProcessingTypesResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getAvailableMapProcessingTypesResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  getAvailableMapProcessingTypesResponse* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<getAvailableMapProcessingTypesResponse>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const getAvailableMapProcessingTypesResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const getAvailableMapProcessingTypesResponse& from) { getAvailableMapProcessingTypesResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(getAvailableMapProcessingTypesResponse* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "grpcIMapsManager.getAvailableMapProcessingTypesResponse"; }
+
+ protected:
+  explicit getAvailableMapProcessingTypesResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  getAvailableMapProcessingTypesResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const getAvailableMapProcessingTypesResponse& from);
+  getAvailableMapProcessingTypesResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, getAvailableMapProcessingTypesResponse&& from) noexcept
+      : getAvailableMapProcessingTypesResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kAvailableTypesFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
+  };
+  // bytes availableTypes = 1;
+  void clear_availabletypes() ;
+  const ::std::string& availabletypes() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_availabletypes(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_availabletypes();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_availabletypes();
+  void set_allocated_availabletypes(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_availabletypes() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_availabletypes(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_availabletypes();
+
+  public:
+  // sint32 xpcfGrpcReturnValue = 2;
+  void clear_xpcfgrpcreturnvalue() ;
+  ::int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::int32_t value);
+
+  private:
+  ::int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIMapsManager.getAvailableMapProcessingTypesResponse)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   0, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const getAvailableMapProcessingTypesResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr availabletypes_;
+    ::int32_t xpcfgrpcreturnvalue_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIMapsManagerService_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull getAvailableMapProcessingTypesResponse_class_data_;
+// -------------------------------------------------------------------
+
+class getAvailableMapProcessingTypesRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIMapsManager.getAvailableMapProcessingTypesRequest) */ {
+ public:
+  inline getAvailableMapProcessingTypesRequest() : getAvailableMapProcessingTypesRequest(nullptr) {}
+  ~getAvailableMapProcessingTypesRequest() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(getAvailableMapProcessingTypesRequest* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(getAvailableMapProcessingTypesRequest));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR getAvailableMapProcessingTypesRequest(::google::protobuf::internal::ConstantInitialized);
+
+  inline getAvailableMapProcessingTypesRequest(const getAvailableMapProcessingTypesRequest& from) : getAvailableMapProcessingTypesRequest(nullptr, from) {}
+  inline getAvailableMapProcessingTypesRequest(getAvailableMapProcessingTypesRequest&& from) noexcept
+      : getAvailableMapProcessingTypesRequest(nullptr, ::std::move(from)) {}
+  inline getAvailableMapProcessingTypesRequest& operator=(const getAvailableMapProcessingTypesRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getAvailableMapProcessingTypesRequest& operator=(getAvailableMapProcessingTypesRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const getAvailableMapProcessingTypesRequest& default_instance() {
+    return *reinterpret_cast<const getAvailableMapProcessingTypesRequest*>(
+        &_getAvailableMapProcessingTypesRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 22;
+  friend void swap(getAvailableMapProcessingTypesRequest& a, getAvailableMapProcessingTypesRequest& b) { a.Swap(&b); }
+  inline void Swap(getAvailableMapProcessingTypesRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getAvailableMapProcessingTypesRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  getAvailableMapProcessingTypesRequest* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<getAvailableMapProcessingTypesRequest>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const getAvailableMapProcessingTypesRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const getAvailableMapProcessingTypesRequest& from) { getAvailableMapProcessingTypesRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(getAvailableMapProcessingTypesRequest* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "grpcIMapsManager.getAvailableMapProcessingTypesRequest"; }
+
+ protected:
+  explicit getAvailableMapProcessingTypesRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  getAvailableMapProcessingTypesRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const getAvailableMapProcessingTypesRequest& from);
+  getAvailableMapProcessingTypesRequest(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, getAvailableMapProcessingTypesRequest&& from) noexcept
+      : getAvailableMapProcessingTypesRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kAvailableTypesFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // bytes availableTypes = 2;
+  void clear_availabletypes() ;
+  const ::std::string& availabletypes() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_availabletypes(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_availabletypes();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_availabletypes();
+  void set_allocated_availabletypes(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_availabletypes() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_availabletypes(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_availabletypes();
+
+  public:
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat() ;
+  ::int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::int32_t value);
+
+  private:
+  ::int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIMapsManager.getAvailableMapProcessingTypesRequest)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   0, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const getAvailableMapProcessingTypesRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr availabletypes_;
+    ::int32_t grpcservercompressionformat_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIMapsManagerService_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull getAvailableMapProcessingTypesRequest_class_data_;
+// -------------------------------------------------------------------
+
+class getAvailableMapExportImportFormatsResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIMapsManager.getAvailableMapExportImportFormatsResponse) */ {
+ public:
+  inline getAvailableMapExportImportFormatsResponse() : getAvailableMapExportImportFormatsResponse(nullptr) {}
+  ~getAvailableMapExportImportFormatsResponse() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(getAvailableMapExportImportFormatsResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(getAvailableMapExportImportFormatsResponse));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR getAvailableMapExportImportFormatsResponse(::google::protobuf::internal::ConstantInitialized);
+
+  inline getAvailableMapExportImportFormatsResponse(const getAvailableMapExportImportFormatsResponse& from) : getAvailableMapExportImportFormatsResponse(nullptr, from) {}
+  inline getAvailableMapExportImportFormatsResponse(getAvailableMapExportImportFormatsResponse&& from) noexcept
+      : getAvailableMapExportImportFormatsResponse(nullptr, ::std::move(from)) {}
+  inline getAvailableMapExportImportFormatsResponse& operator=(const getAvailableMapExportImportFormatsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getAvailableMapExportImportFormatsResponse& operator=(getAvailableMapExportImportFormatsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const getAvailableMapExportImportFormatsResponse& default_instance() {
+    return *reinterpret_cast<const getAvailableMapExportImportFormatsResponse*>(
+        &_getAvailableMapExportImportFormatsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 31;
+  friend void swap(getAvailableMapExportImportFormatsResponse& a, getAvailableMapExportImportFormatsResponse& b) { a.Swap(&b); }
+  inline void Swap(getAvailableMapExportImportFormatsResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getAvailableMapExportImportFormatsResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  getAvailableMapExportImportFormatsResponse* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<getAvailableMapExportImportFormatsResponse>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const getAvailableMapExportImportFormatsResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const getAvailableMapExportImportFormatsResponse& from) { getAvailableMapExportImportFormatsResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(getAvailableMapExportImportFormatsResponse* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "grpcIMapsManager.getAvailableMapExportImportFormatsResponse"; }
+
+ protected:
+  explicit getAvailableMapExportImportFormatsResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  getAvailableMapExportImportFormatsResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const getAvailableMapExportImportFormatsResponse& from);
+  getAvailableMapExportImportFormatsResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, getAvailableMapExportImportFormatsResponse&& from) noexcept
+      : getAvailableMapExportImportFormatsResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kAvailableFormatsFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
+  };
+  // bytes availableFormats = 1;
+  void clear_availableformats() ;
+  const ::std::string& availableformats() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_availableformats(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_availableformats();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_availableformats();
+  void set_allocated_availableformats(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_availableformats() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_availableformats(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_availableformats();
+
+  public:
+  // sint32 xpcfGrpcReturnValue = 2;
+  void clear_xpcfgrpcreturnvalue() ;
+  ::int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::int32_t value);
+
+  private:
+  ::int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIMapsManager.getAvailableMapExportImportFormatsResponse)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   0, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const getAvailableMapExportImportFormatsResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr availableformats_;
+    ::int32_t xpcfgrpcreturnvalue_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIMapsManagerService_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull getAvailableMapExportImportFormatsResponse_class_data_;
+// -------------------------------------------------------------------
+
+class getAvailableMapExportImportFormatsRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIMapsManager.getAvailableMapExportImportFormatsRequest) */ {
+ public:
+  inline getAvailableMapExportImportFormatsRequest() : getAvailableMapExportImportFormatsRequest(nullptr) {}
+  ~getAvailableMapExportImportFormatsRequest() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(getAvailableMapExportImportFormatsRequest* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(getAvailableMapExportImportFormatsRequest));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR getAvailableMapExportImportFormatsRequest(::google::protobuf::internal::ConstantInitialized);
+
+  inline getAvailableMapExportImportFormatsRequest(const getAvailableMapExportImportFormatsRequest& from) : getAvailableMapExportImportFormatsRequest(nullptr, from) {}
+  inline getAvailableMapExportImportFormatsRequest(getAvailableMapExportImportFormatsRequest&& from) noexcept
+      : getAvailableMapExportImportFormatsRequest(nullptr, ::std::move(from)) {}
+  inline getAvailableMapExportImportFormatsRequest& operator=(const getAvailableMapExportImportFormatsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline getAvailableMapExportImportFormatsRequest& operator=(getAvailableMapExportImportFormatsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const getAvailableMapExportImportFormatsRequest& default_instance() {
+    return *reinterpret_cast<const getAvailableMapExportImportFormatsRequest*>(
+        &_getAvailableMapExportImportFormatsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 30;
+  friend void swap(getAvailableMapExportImportFormatsRequest& a, getAvailableMapExportImportFormatsRequest& b) { a.Swap(&b); }
+  inline void Swap(getAvailableMapExportImportFormatsRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(getAvailableMapExportImportFormatsRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  getAvailableMapExportImportFormatsRequest* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<getAvailableMapExportImportFormatsRequest>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const getAvailableMapExportImportFormatsRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const getAvailableMapExportImportFormatsRequest& from) { getAvailableMapExportImportFormatsRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(getAvailableMapExportImportFormatsRequest* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "grpcIMapsManager.getAvailableMapExportImportFormatsRequest"; }
+
+ protected:
+  explicit getAvailableMapExportImportFormatsRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  getAvailableMapExportImportFormatsRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const getAvailableMapExportImportFormatsRequest& from);
+  getAvailableMapExportImportFormatsRequest(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, getAvailableMapExportImportFormatsRequest&& from) noexcept
+      : getAvailableMapExportImportFormatsRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kAvailableFormatsFieldNumber = 2,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+  };
+  // bytes availableFormats = 2;
+  void clear_availableformats() ;
+  const ::std::string& availableformats() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_availableformats(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_availableformats();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_availableformats();
+  void set_allocated_availableformats(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_availableformats() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_availableformats(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_availableformats();
+
+  public:
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat() ;
+  ::int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::int32_t value);
+
+  private:
+  ::int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIMapsManager.getAvailableMapExportImportFormatsRequest)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   0, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const getAvailableMapExportImportFormatsRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr availableformats_;
+    ::int32_t grpcservercompressionformat_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIMapsManagerService_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull getAvailableMapExportImportFormatsRequest_class_data_;
+// -------------------------------------------------------------------
+
 class getAllMapsResponse final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:grpcIMapsManager.getAllMapsResponse) */ {
  public:
@@ -4665,6 +5957,451 @@ class getAllMapsRequest final : public ::google::protobuf::Message
 };
 
 extern const ::google::protobuf::internal::ClassDataFull getAllMapsRequest_class_data_;
+// -------------------------------------------------------------------
+
+class exportMapToFormatResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIMapsManager.exportMapToFormatResponse) */ {
+ public:
+  inline exportMapToFormatResponse() : exportMapToFormatResponse(nullptr) {}
+  ~exportMapToFormatResponse() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(exportMapToFormatResponse* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(exportMapToFormatResponse));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR exportMapToFormatResponse(::google::protobuf::internal::ConstantInitialized);
+
+  inline exportMapToFormatResponse(const exportMapToFormatResponse& from) : exportMapToFormatResponse(nullptr, from) {}
+  inline exportMapToFormatResponse(exportMapToFormatResponse&& from) noexcept
+      : exportMapToFormatResponse(nullptr, ::std::move(from)) {}
+  inline exportMapToFormatResponse& operator=(const exportMapToFormatResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline exportMapToFormatResponse& operator=(exportMapToFormatResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const exportMapToFormatResponse& default_instance() {
+    return *reinterpret_cast<const exportMapToFormatResponse*>(
+        &_exportMapToFormatResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 33;
+  friend void swap(exportMapToFormatResponse& a, exportMapToFormatResponse& b) { a.Swap(&b); }
+  inline void Swap(exportMapToFormatResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(exportMapToFormatResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  exportMapToFormatResponse* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<exportMapToFormatResponse>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const exportMapToFormatResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const exportMapToFormatResponse& from) { exportMapToFormatResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(exportMapToFormatResponse* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "grpcIMapsManager.exportMapToFormatResponse"; }
+
+ protected:
+  explicit exportMapToFormatResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  exportMapToFormatResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const exportMapToFormatResponse& from);
+  exportMapToFormatResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, exportMapToFormatResponse&& from) noexcept
+      : exportMapToFormatResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kCompressedZipExportFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
+  };
+  // bytes compressedZipExport = 1;
+  void clear_compressedzipexport() ;
+  const ::std::string& compressedzipexport() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_compressedzipexport(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_compressedzipexport();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_compressedzipexport();
+  void set_allocated_compressedzipexport(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_compressedzipexport() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_compressedzipexport(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_compressedzipexport();
+
+  public:
+  // sint32 xpcfGrpcReturnValue = 2;
+  void clear_xpcfgrpcreturnvalue() ;
+  ::int32_t xpcfgrpcreturnvalue() const;
+  void set_xpcfgrpcreturnvalue(::int32_t value);
+
+  private:
+  ::int32_t _internal_xpcfgrpcreturnvalue() const;
+  void _internal_set_xpcfgrpcreturnvalue(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIMapsManager.exportMapToFormatResponse)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   0, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const exportMapToFormatResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr compressedzipexport_;
+    ::int32_t xpcfgrpcreturnvalue_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIMapsManagerService_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull exportMapToFormatResponse_class_data_;
+// -------------------------------------------------------------------
+
+class exportMapToFormatRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:grpcIMapsManager.exportMapToFormatRequest) */ {
+ public:
+  inline exportMapToFormatRequest() : exportMapToFormatRequest(nullptr) {}
+  ~exportMapToFormatRequest() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(exportMapToFormatRequest* PROTOBUF_NONNULL msg, ::std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(exportMapToFormatRequest));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR exportMapToFormatRequest(::google::protobuf::internal::ConstantInitialized);
+
+  inline exportMapToFormatRequest(const exportMapToFormatRequest& from) : exportMapToFormatRequest(nullptr, from) {}
+  inline exportMapToFormatRequest(exportMapToFormatRequest&& from) noexcept
+      : exportMapToFormatRequest(nullptr, ::std::move(from)) {}
+  inline exportMapToFormatRequest& operator=(const exportMapToFormatRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline exportMapToFormatRequest& operator=(exportMapToFormatRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const exportMapToFormatRequest& default_instance() {
+    return *reinterpret_cast<const exportMapToFormatRequest*>(
+        &_exportMapToFormatRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 32;
+  friend void swap(exportMapToFormatRequest& a, exportMapToFormatRequest& b) { a.Swap(&b); }
+  inline void Swap(exportMapToFormatRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(exportMapToFormatRequest* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  exportMapToFormatRequest* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<exportMapToFormatRequest>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const exportMapToFormatRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const exportMapToFormatRequest& from) { exportMapToFormatRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(exportMapToFormatRequest* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "grpcIMapsManager.exportMapToFormatRequest"; }
+
+ protected:
+  explicit exportMapToFormatRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  exportMapToFormatRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const exportMapToFormatRequest& from);
+  exportMapToFormatRequest(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, exportMapToFormatRequest&& from) noexcept
+      : exportMapToFormatRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kMapUUIDFieldNumber = 2,
+    kCompressedZipExportFieldNumber = 4,
+    kGrpcServerCompressionFormatFieldNumber = 1,
+    kExportFormatFieldNumber = 3,
+  };
+  // string mapUUID = 2;
+  void clear_mapuuid() ;
+  const ::std::string& mapuuid() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_mapuuid(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_mapuuid();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_mapuuid();
+  void set_allocated_mapuuid(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_mapuuid() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_mapuuid(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_mapuuid();
+
+  public:
+  // bytes compressedZipExport = 4;
+  void clear_compressedzipexport() ;
+  const ::std::string& compressedzipexport() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_compressedzipexport(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_compressedzipexport();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_compressedzipexport();
+  void set_allocated_compressedzipexport(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_compressedzipexport() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_compressedzipexport(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_compressedzipexport();
+
+  public:
+  // int32 grpcServerCompressionFormat = 1;
+  void clear_grpcservercompressionformat() ;
+  ::int32_t grpcservercompressionformat() const;
+  void set_grpcservercompressionformat(::int32_t value);
+
+  private:
+  ::int32_t _internal_grpcservercompressionformat() const;
+  void _internal_set_grpcservercompressionformat(::int32_t value);
+
+  public:
+  // sint32 exportFormat = 3;
+  void clear_exportformat() ;
+  ::int32_t exportformat() const;
+  void set_exportformat(::int32_t value);
+
+  private:
+  ::int32_t _internal_exportformat() const;
+  void _internal_set_exportformat(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:grpcIMapsManager.exportMapToFormatRequest)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<2, 4,
+                                   0, 57,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const exportMapToFormatRequest& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr mapuuid_;
+    ::google::protobuf::internal::ArenaStringPtr compressedzipexport_;
+    ::int32_t grpcservercompressionformat_;
+    ::int32_t exportformat_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_grpcIMapsManagerService_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull exportMapToFormatRequest_class_data_;
 // -------------------------------------------------------------------
 
 class deleteMapResponse final : public ::google::protobuf::Message
@@ -8832,6 +10569,192 @@ inline void restoreMapResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t valu
 
 // -------------------------------------------------------------------
 
+// getAvailableMapProcessingTypesRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getAvailableMapProcessingTypesRequest::clear_grpcservercompressionformat() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002U;
+}
+inline ::int32_t getAvailableMapProcessingTypesRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.getAvailableMapProcessingTypesRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getAvailableMapProcessingTypesRequest::set_grpcservercompressionformat(::int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.getAvailableMapProcessingTypesRequest.grpcServerCompressionFormat)
+}
+inline ::int32_t getAvailableMapProcessingTypesRequest::_internal_grpcservercompressionformat() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.grpcservercompressionformat_;
+}
+inline void getAvailableMapProcessingTypesRequest::_internal_set_grpcservercompressionformat(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = value;
+}
+
+// bytes availableTypes = 2;
+inline void getAvailableMapProcessingTypesRequest::clear_availabletypes() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.availabletypes_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001U;
+}
+inline const ::std::string& getAvailableMapProcessingTypesRequest::availabletypes() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.getAvailableMapProcessingTypesRequest.availableTypes)
+  return _internal_availabletypes();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void getAvailableMapProcessingTypesRequest::set_availabletypes(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.availabletypes_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.getAvailableMapProcessingTypesRequest.availableTypes)
+}
+inline ::std::string* PROTOBUF_NONNULL getAvailableMapProcessingTypesRequest::mutable_availabletypes()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_availabletypes();
+  // @@protoc_insertion_point(field_mutable:grpcIMapsManager.getAvailableMapProcessingTypesRequest.availableTypes)
+  return _s;
+}
+inline const ::std::string& getAvailableMapProcessingTypesRequest::_internal_availabletypes() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.availabletypes_.Get();
+}
+inline void getAvailableMapProcessingTypesRequest::_internal_set_availabletypes(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.availabletypes_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL getAvailableMapProcessingTypesRequest::_internal_mutable_availabletypes() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  return _impl_.availabletypes_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE getAvailableMapProcessingTypesRequest::release_availabletypes() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapsManager.getAvailableMapProcessingTypesRequest.availableTypes)
+  if ((_impl_._has_bits_[0] & 0x00000001U) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001U;
+  auto* released = _impl_.availabletypes_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.availabletypes_.Set("", GetArena());
+  }
+  return released;
+}
+inline void getAvailableMapProcessingTypesRequest::set_allocated_availabletypes(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001U;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001U;
+  }
+  _impl_.availabletypes_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.availabletypes_.IsDefault()) {
+    _impl_.availabletypes_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.getAvailableMapProcessingTypesRequest.availableTypes)
+}
+
+// -------------------------------------------------------------------
+
+// getAvailableMapProcessingTypesResponse
+
+// bytes availableTypes = 1;
+inline void getAvailableMapProcessingTypesResponse::clear_availabletypes() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.availabletypes_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001U;
+}
+inline const ::std::string& getAvailableMapProcessingTypesResponse::availabletypes() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.getAvailableMapProcessingTypesResponse.availableTypes)
+  return _internal_availabletypes();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void getAvailableMapProcessingTypesResponse::set_availabletypes(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.availabletypes_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.getAvailableMapProcessingTypesResponse.availableTypes)
+}
+inline ::std::string* PROTOBUF_NONNULL getAvailableMapProcessingTypesResponse::mutable_availabletypes()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_availabletypes();
+  // @@protoc_insertion_point(field_mutable:grpcIMapsManager.getAvailableMapProcessingTypesResponse.availableTypes)
+  return _s;
+}
+inline const ::std::string& getAvailableMapProcessingTypesResponse::_internal_availabletypes() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.availabletypes_.Get();
+}
+inline void getAvailableMapProcessingTypesResponse::_internal_set_availabletypes(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.availabletypes_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL getAvailableMapProcessingTypesResponse::_internal_mutable_availabletypes() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  return _impl_.availabletypes_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE getAvailableMapProcessingTypesResponse::release_availabletypes() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapsManager.getAvailableMapProcessingTypesResponse.availableTypes)
+  if ((_impl_._has_bits_[0] & 0x00000001U) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001U;
+  auto* released = _impl_.availabletypes_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.availabletypes_.Set("", GetArena());
+  }
+  return released;
+}
+inline void getAvailableMapProcessingTypesResponse::set_allocated_availabletypes(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001U;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001U;
+  }
+  _impl_.availabletypes_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.availabletypes_.IsDefault()) {
+    _impl_.availabletypes_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.getAvailableMapProcessingTypesResponse.availableTypes)
+}
+
+// sint32 xpcfGrpcReturnValue = 2;
+inline void getAvailableMapProcessingTypesResponse::clear_xpcfgrpcreturnvalue() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002U;
+}
+inline ::int32_t getAvailableMapProcessingTypesResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.getAvailableMapProcessingTypesResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void getAvailableMapProcessingTypesResponse::set_xpcfgrpcreturnvalue(::int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.getAvailableMapProcessingTypesResponse.xpcfGrpcReturnValue)
+}
+inline ::int32_t getAvailableMapProcessingTypesResponse::_internal_xpcfgrpcreturnvalue() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline void getAvailableMapProcessingTypesResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+
+// -------------------------------------------------------------------
+
 // requestMapProcessingRequest
 
 // int32 grpcServerCompressionFormat = 1;
@@ -9682,6 +11605,677 @@ inline ::int32_t getMapProcessingDataResponse::_internal_xpcfgrpcreturnvalue() c
   return _impl_.xpcfgrpcreturnvalue_;
 }
 inline void getMapProcessingDataResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// getAvailableMapExportImportFormatsRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void getAvailableMapExportImportFormatsRequest::clear_grpcservercompressionformat() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002U;
+}
+inline ::int32_t getAvailableMapExportImportFormatsRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.getAvailableMapExportImportFormatsRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void getAvailableMapExportImportFormatsRequest::set_grpcservercompressionformat(::int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.getAvailableMapExportImportFormatsRequest.grpcServerCompressionFormat)
+}
+inline ::int32_t getAvailableMapExportImportFormatsRequest::_internal_grpcservercompressionformat() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.grpcservercompressionformat_;
+}
+inline void getAvailableMapExportImportFormatsRequest::_internal_set_grpcservercompressionformat(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = value;
+}
+
+// bytes availableFormats = 2;
+inline void getAvailableMapExportImportFormatsRequest::clear_availableformats() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.availableformats_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001U;
+}
+inline const ::std::string& getAvailableMapExportImportFormatsRequest::availableformats() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.getAvailableMapExportImportFormatsRequest.availableFormats)
+  return _internal_availableformats();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void getAvailableMapExportImportFormatsRequest::set_availableformats(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.availableformats_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.getAvailableMapExportImportFormatsRequest.availableFormats)
+}
+inline ::std::string* PROTOBUF_NONNULL getAvailableMapExportImportFormatsRequest::mutable_availableformats()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_availableformats();
+  // @@protoc_insertion_point(field_mutable:grpcIMapsManager.getAvailableMapExportImportFormatsRequest.availableFormats)
+  return _s;
+}
+inline const ::std::string& getAvailableMapExportImportFormatsRequest::_internal_availableformats() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.availableformats_.Get();
+}
+inline void getAvailableMapExportImportFormatsRequest::_internal_set_availableformats(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.availableformats_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL getAvailableMapExportImportFormatsRequest::_internal_mutable_availableformats() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  return _impl_.availableformats_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE getAvailableMapExportImportFormatsRequest::release_availableformats() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapsManager.getAvailableMapExportImportFormatsRequest.availableFormats)
+  if ((_impl_._has_bits_[0] & 0x00000001U) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001U;
+  auto* released = _impl_.availableformats_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.availableformats_.Set("", GetArena());
+  }
+  return released;
+}
+inline void getAvailableMapExportImportFormatsRequest::set_allocated_availableformats(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001U;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001U;
+  }
+  _impl_.availableformats_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.availableformats_.IsDefault()) {
+    _impl_.availableformats_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.getAvailableMapExportImportFormatsRequest.availableFormats)
+}
+
+// -------------------------------------------------------------------
+
+// getAvailableMapExportImportFormatsResponse
+
+// bytes availableFormats = 1;
+inline void getAvailableMapExportImportFormatsResponse::clear_availableformats() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.availableformats_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001U;
+}
+inline const ::std::string& getAvailableMapExportImportFormatsResponse::availableformats() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.getAvailableMapExportImportFormatsResponse.availableFormats)
+  return _internal_availableformats();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void getAvailableMapExportImportFormatsResponse::set_availableformats(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.availableformats_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.getAvailableMapExportImportFormatsResponse.availableFormats)
+}
+inline ::std::string* PROTOBUF_NONNULL getAvailableMapExportImportFormatsResponse::mutable_availableformats()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_availableformats();
+  // @@protoc_insertion_point(field_mutable:grpcIMapsManager.getAvailableMapExportImportFormatsResponse.availableFormats)
+  return _s;
+}
+inline const ::std::string& getAvailableMapExportImportFormatsResponse::_internal_availableformats() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.availableformats_.Get();
+}
+inline void getAvailableMapExportImportFormatsResponse::_internal_set_availableformats(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.availableformats_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL getAvailableMapExportImportFormatsResponse::_internal_mutable_availableformats() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  return _impl_.availableformats_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE getAvailableMapExportImportFormatsResponse::release_availableformats() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapsManager.getAvailableMapExportImportFormatsResponse.availableFormats)
+  if ((_impl_._has_bits_[0] & 0x00000001U) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001U;
+  auto* released = _impl_.availableformats_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.availableformats_.Set("", GetArena());
+  }
+  return released;
+}
+inline void getAvailableMapExportImportFormatsResponse::set_allocated_availableformats(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001U;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001U;
+  }
+  _impl_.availableformats_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.availableformats_.IsDefault()) {
+    _impl_.availableformats_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.getAvailableMapExportImportFormatsResponse.availableFormats)
+}
+
+// sint32 xpcfGrpcReturnValue = 2;
+inline void getAvailableMapExportImportFormatsResponse::clear_xpcfgrpcreturnvalue() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002U;
+}
+inline ::int32_t getAvailableMapExportImportFormatsResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.getAvailableMapExportImportFormatsResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void getAvailableMapExportImportFormatsResponse::set_xpcfgrpcreturnvalue(::int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.getAvailableMapExportImportFormatsResponse.xpcfGrpcReturnValue)
+}
+inline ::int32_t getAvailableMapExportImportFormatsResponse::_internal_xpcfgrpcreturnvalue() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline void getAvailableMapExportImportFormatsResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// exportMapToFormatRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void exportMapToFormatRequest::clear_grpcservercompressionformat() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000004U;
+}
+inline ::int32_t exportMapToFormatRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.exportMapToFormatRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void exportMapToFormatRequest::set_grpcservercompressionformat(::int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  _impl_._has_bits_[0] |= 0x00000004U;
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.exportMapToFormatRequest.grpcServerCompressionFormat)
+}
+inline ::int32_t exportMapToFormatRequest::_internal_grpcservercompressionformat() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.grpcservercompressionformat_;
+}
+inline void exportMapToFormatRequest::_internal_set_grpcservercompressionformat(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = value;
+}
+
+// string mapUUID = 2;
+inline void exportMapToFormatRequest::clear_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001U;
+}
+inline const ::std::string& exportMapToFormatRequest::mapuuid() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.exportMapToFormatRequest.mapUUID)
+  return _internal_mapuuid();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void exportMapToFormatRequest::set_mapuuid(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.mapuuid_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.exportMapToFormatRequest.mapUUID)
+}
+inline ::std::string* PROTOBUF_NONNULL exportMapToFormatRequest::mutable_mapuuid()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_mapuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIMapsManager.exportMapToFormatRequest.mapUUID)
+  return _s;
+}
+inline const ::std::string& exportMapToFormatRequest::_internal_mapuuid() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.mapuuid_.Get();
+}
+inline void exportMapToFormatRequest::_internal_set_mapuuid(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.mapuuid_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL exportMapToFormatRequest::_internal_mutable_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  return _impl_.mapuuid_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE exportMapToFormatRequest::release_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapsManager.exportMapToFormatRequest.mapUUID)
+  if ((_impl_._has_bits_[0] & 0x00000001U) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001U;
+  auto* released = _impl_.mapuuid_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.mapuuid_.Set("", GetArena());
+  }
+  return released;
+}
+inline void exportMapToFormatRequest::set_allocated_mapuuid(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001U;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001U;
+  }
+  _impl_.mapuuid_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.mapuuid_.IsDefault()) {
+    _impl_.mapuuid_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.exportMapToFormatRequest.mapUUID)
+}
+
+// sint32 exportFormat = 3;
+inline void exportMapToFormatRequest::clear_exportformat() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.exportformat_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000008U;
+}
+inline ::int32_t exportMapToFormatRequest::exportformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.exportMapToFormatRequest.exportFormat)
+  return _internal_exportformat();
+}
+inline void exportMapToFormatRequest::set_exportformat(::int32_t value) {
+  _internal_set_exportformat(value);
+  _impl_._has_bits_[0] |= 0x00000008U;
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.exportMapToFormatRequest.exportFormat)
+}
+inline ::int32_t exportMapToFormatRequest::_internal_exportformat() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.exportformat_;
+}
+inline void exportMapToFormatRequest::_internal_set_exportformat(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.exportformat_ = value;
+}
+
+// bytes compressedZipExport = 4;
+inline void exportMapToFormatRequest::clear_compressedzipexport() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipexport_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002U;
+}
+inline const ::std::string& exportMapToFormatRequest::compressedzipexport() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.exportMapToFormatRequest.compressedZipExport)
+  return _internal_compressedzipexport();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void exportMapToFormatRequest::set_compressedzipexport(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  _impl_.compressedzipexport_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.exportMapToFormatRequest.compressedZipExport)
+}
+inline ::std::string* PROTOBUF_NONNULL exportMapToFormatRequest::mutable_compressedzipexport()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_compressedzipexport();
+  // @@protoc_insertion_point(field_mutable:grpcIMapsManager.exportMapToFormatRequest.compressedZipExport)
+  return _s;
+}
+inline const ::std::string& exportMapToFormatRequest::_internal_compressedzipexport() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.compressedzipexport_.Get();
+}
+inline void exportMapToFormatRequest::_internal_set_compressedzipexport(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  _impl_.compressedzipexport_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL exportMapToFormatRequest::_internal_mutable_compressedzipexport() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  return _impl_.compressedzipexport_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE exportMapToFormatRequest::release_compressedzipexport() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapsManager.exportMapToFormatRequest.compressedZipExport)
+  if ((_impl_._has_bits_[0] & 0x00000002U) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002U;
+  auto* released = _impl_.compressedzipexport_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.compressedzipexport_.Set("", GetArena());
+  }
+  return released;
+}
+inline void exportMapToFormatRequest::set_allocated_compressedzipexport(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002U;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002U;
+  }
+  _impl_.compressedzipexport_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.compressedzipexport_.IsDefault()) {
+    _impl_.compressedzipexport_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.exportMapToFormatRequest.compressedZipExport)
+}
+
+// -------------------------------------------------------------------
+
+// exportMapToFormatResponse
+
+// bytes compressedZipExport = 1;
+inline void exportMapToFormatResponse::clear_compressedzipexport() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipexport_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001U;
+}
+inline const ::std::string& exportMapToFormatResponse::compressedzipexport() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.exportMapToFormatResponse.compressedZipExport)
+  return _internal_compressedzipexport();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void exportMapToFormatResponse::set_compressedzipexport(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.compressedzipexport_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.exportMapToFormatResponse.compressedZipExport)
+}
+inline ::std::string* PROTOBUF_NONNULL exportMapToFormatResponse::mutable_compressedzipexport()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_compressedzipexport();
+  // @@protoc_insertion_point(field_mutable:grpcIMapsManager.exportMapToFormatResponse.compressedZipExport)
+  return _s;
+}
+inline const ::std::string& exportMapToFormatResponse::_internal_compressedzipexport() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.compressedzipexport_.Get();
+}
+inline void exportMapToFormatResponse::_internal_set_compressedzipexport(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.compressedzipexport_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL exportMapToFormatResponse::_internal_mutable_compressedzipexport() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  return _impl_.compressedzipexport_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE exportMapToFormatResponse::release_compressedzipexport() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapsManager.exportMapToFormatResponse.compressedZipExport)
+  if ((_impl_._has_bits_[0] & 0x00000001U) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001U;
+  auto* released = _impl_.compressedzipexport_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.compressedzipexport_.Set("", GetArena());
+  }
+  return released;
+}
+inline void exportMapToFormatResponse::set_allocated_compressedzipexport(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001U;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001U;
+  }
+  _impl_.compressedzipexport_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.compressedzipexport_.IsDefault()) {
+    _impl_.compressedzipexport_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.exportMapToFormatResponse.compressedZipExport)
+}
+
+// sint32 xpcfGrpcReturnValue = 2;
+inline void exportMapToFormatResponse::clear_xpcfgrpcreturnvalue() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002U;
+}
+inline ::int32_t exportMapToFormatResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.exportMapToFormatResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void exportMapToFormatResponse::set_xpcfgrpcreturnvalue(::int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.exportMapToFormatResponse.xpcfGrpcReturnValue)
+}
+inline ::int32_t exportMapToFormatResponse::_internal_xpcfgrpcreturnvalue() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline void exportMapToFormatResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// importMapFromFormatRequest
+
+// int32 grpcServerCompressionFormat = 1;
+inline void importMapFromFormatRequest::clear_grpcservercompressionformat() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000004U;
+}
+inline ::int32_t importMapFromFormatRequest::grpcservercompressionformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.importMapFromFormatRequest.grpcServerCompressionFormat)
+  return _internal_grpcservercompressionformat();
+}
+inline void importMapFromFormatRequest::set_grpcservercompressionformat(::int32_t value) {
+  _internal_set_grpcservercompressionformat(value);
+  _impl_._has_bits_[0] |= 0x00000004U;
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.importMapFromFormatRequest.grpcServerCompressionFormat)
+}
+inline ::int32_t importMapFromFormatRequest::_internal_grpcservercompressionformat() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.grpcservercompressionformat_;
+}
+inline void importMapFromFormatRequest::_internal_set_grpcservercompressionformat(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.grpcservercompressionformat_ = value;
+}
+
+// string mapUUID = 2;
+inline void importMapFromFormatRequest::clear_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.mapuuid_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001U;
+}
+inline const ::std::string& importMapFromFormatRequest::mapuuid() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.importMapFromFormatRequest.mapUUID)
+  return _internal_mapuuid();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void importMapFromFormatRequest::set_mapuuid(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.mapuuid_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.importMapFromFormatRequest.mapUUID)
+}
+inline ::std::string* PROTOBUF_NONNULL importMapFromFormatRequest::mutable_mapuuid()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_mapuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIMapsManager.importMapFromFormatRequest.mapUUID)
+  return _s;
+}
+inline const ::std::string& importMapFromFormatRequest::_internal_mapuuid() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.mapuuid_.Get();
+}
+inline void importMapFromFormatRequest::_internal_set_mapuuid(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.mapuuid_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL importMapFromFormatRequest::_internal_mutable_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  return _impl_.mapuuid_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE importMapFromFormatRequest::release_mapuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapsManager.importMapFromFormatRequest.mapUUID)
+  if ((_impl_._has_bits_[0] & 0x00000001U) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001U;
+  auto* released = _impl_.mapuuid_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.mapuuid_.Set("", GetArena());
+  }
+  return released;
+}
+inline void importMapFromFormatRequest::set_allocated_mapuuid(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001U;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001U;
+  }
+  _impl_.mapuuid_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.mapuuid_.IsDefault()) {
+    _impl_.mapuuid_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.importMapFromFormatRequest.mapUUID)
+}
+
+// sint32 importFormat = 3;
+inline void importMapFromFormatRequest::clear_importformat() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.importformat_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000008U;
+}
+inline ::int32_t importMapFromFormatRequest::importformat() const {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.importMapFromFormatRequest.importFormat)
+  return _internal_importformat();
+}
+inline void importMapFromFormatRequest::set_importformat(::int32_t value) {
+  _internal_set_importformat(value);
+  _impl_._has_bits_[0] |= 0x00000008U;
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.importMapFromFormatRequest.importFormat)
+}
+inline ::int32_t importMapFromFormatRequest::_internal_importformat() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.importformat_;
+}
+inline void importMapFromFormatRequest::_internal_set_importformat(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.importformat_ = value;
+}
+
+// bytes compressedZipImport = 4;
+inline void importMapFromFormatRequest::clear_compressedzipimport() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.compressedzipimport_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002U;
+}
+inline const ::std::string& importMapFromFormatRequest::compressedzipimport() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.importMapFromFormatRequest.compressedZipImport)
+  return _internal_compressedzipimport();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void importMapFromFormatRequest::set_compressedzipimport(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  _impl_.compressedzipimport_.SetBytes(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.importMapFromFormatRequest.compressedZipImport)
+}
+inline ::std::string* PROTOBUF_NONNULL importMapFromFormatRequest::mutable_compressedzipimport()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_compressedzipimport();
+  // @@protoc_insertion_point(field_mutable:grpcIMapsManager.importMapFromFormatRequest.compressedZipImport)
+  return _s;
+}
+inline const ::std::string& importMapFromFormatRequest::_internal_compressedzipimport() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.compressedzipimport_.Get();
+}
+inline void importMapFromFormatRequest::_internal_set_compressedzipimport(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  _impl_.compressedzipimport_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL importMapFromFormatRequest::_internal_mutable_compressedzipimport() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  return _impl_.compressedzipimport_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE importMapFromFormatRequest::release_compressedzipimport() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapsManager.importMapFromFormatRequest.compressedZipImport)
+  if ((_impl_._has_bits_[0] & 0x00000002U) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002U;
+  auto* released = _impl_.compressedzipimport_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.compressedzipimport_.Set("", GetArena());
+  }
+  return released;
+}
+inline void importMapFromFormatRequest::set_allocated_compressedzipimport(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002U;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002U;
+  }
+  _impl_.compressedzipimport_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.compressedzipimport_.IsDefault()) {
+    _impl_.compressedzipimport_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.importMapFromFormatRequest.compressedZipImport)
+}
+
+// -------------------------------------------------------------------
+
+// importMapFromFormatResponse
+
+// sint32 xpcfGrpcReturnValue = 1;
+inline void importMapFromFormatResponse::clear_xpcfgrpcreturnvalue() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001U;
+}
+inline ::int32_t importMapFromFormatResponse::xpcfgrpcreturnvalue() const {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.importMapFromFormatResponse.xpcfGrpcReturnValue)
+  return _internal_xpcfgrpcreturnvalue();
+}
+inline void importMapFromFormatResponse::set_xpcfgrpcreturnvalue(::int32_t value) {
+  _internal_set_xpcfgrpcreturnvalue(value);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.importMapFromFormatResponse.xpcfGrpcReturnValue)
+}
+inline ::int32_t importMapFromFormatResponse::_internal_xpcfgrpcreturnvalue() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.xpcfgrpcreturnvalue_;
+}
+inline void importMapFromFormatResponse::_internal_set_xpcfgrpcreturnvalue(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.xpcfgrpcreturnvalue_ = value;
 }
