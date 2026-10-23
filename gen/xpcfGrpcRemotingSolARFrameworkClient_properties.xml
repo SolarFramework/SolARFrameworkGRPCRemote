@@ -183,6 +183,7 @@
         <value>method|backupMap|none|none</value>
         <value>method|restoreMap|none|none</value>
         <value>method|getAvailableMapProcessingTypes|none|none</value>
+        <value>method|extractImagesFromVideo|none|none</value>
         <value>method|requestMapProcessing|none|none</value>
         <value>method|getMapProcessingStatus|none|none</value>
         <value>method|getMapProcessingData|none|none</value>

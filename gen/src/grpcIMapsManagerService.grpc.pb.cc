@@ -34,6 +34,7 @@ static const char* grpcIMapsManagerService_method_names[] = {
   "/grpcIMapsManager.grpcIMapsManagerService/backupMap",
   "/grpcIMapsManager.grpcIMapsManagerService/restoreMap",
   "/grpcIMapsManager.grpcIMapsManagerService/getAvailableMapProcessingTypes",
+  "/grpcIMapsManager.grpcIMapsManagerService/extractImagesFromVideo",
   "/grpcIMapsManager.grpcIMapsManagerService/requestMapProcessing",
   "/grpcIMapsManager.grpcIMapsManagerService/getMapProcessingStatus",
   "/grpcIMapsManager.grpcIMapsManagerService/getMapProcessingData",
@@ -61,12 +62,13 @@ grpcIMapsManagerService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterf
   , rpcmethod_backupMap_(grpcIMapsManagerService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_restoreMap_(grpcIMapsManagerService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getAvailableMapProcessingTypes_(grpcIMapsManagerService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_requestMapProcessing_(grpcIMapsManagerService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapProcessingStatus_(grpcIMapsManagerService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapProcessingData_(grpcIMapsManagerService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getAvailableMapExportImportFormats_(grpcIMapsManagerService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_exportMapToFormat_(grpcIMapsManagerService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_importMapFromFormat_(grpcIMapsManagerService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_extractImagesFromVideo_(grpcIMapsManagerService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_requestMapProcessing_(grpcIMapsManagerService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapProcessingStatus_(grpcIMapsManagerService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapProcessingData_(grpcIMapsManagerService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAvailableMapExportImportFormats_(grpcIMapsManagerService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_exportMapToFormat_(grpcIMapsManagerService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_importMapFromFormat_(grpcIMapsManagerService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIMapsManagerService::Stub::createMap(::grpc::ClientContext* context, const ::grpcIMapsManager::createMapRequest& request, ::grpcIMapsManager::createMapResponse* response) {
@@ -345,6 +347,29 @@ void grpcIMapsManagerService::Stub::async::getAvailableMapProcessingTypes(::grpc
   return result;
 }
 
+::grpc::Status grpcIMapsManagerService::Stub::extractImagesFromVideo(::grpc::ClientContext* context, const ::grpcIMapsManager::extractImagesFromVideoRequest& request, ::grpcIMapsManager::extractImagesFromVideoResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIMapsManager::extractImagesFromVideoRequest, ::grpcIMapsManager::extractImagesFromVideoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_extractImagesFromVideo_, context, request, response);
+}
+
+void grpcIMapsManagerService::Stub::async::extractImagesFromVideo(::grpc::ClientContext* context, const ::grpcIMapsManager::extractImagesFromVideoRequest* request, ::grpcIMapsManager::extractImagesFromVideoResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIMapsManager::extractImagesFromVideoRequest, ::grpcIMapsManager::extractImagesFromVideoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_extractImagesFromVideo_, context, request, response, std::move(f));
+}
+
+void grpcIMapsManagerService::Stub::async::extractImagesFromVideo(::grpc::ClientContext* context, const ::grpcIMapsManager::extractImagesFromVideoRequest* request, ::grpcIMapsManager::extractImagesFromVideoResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_extractImagesFromVideo_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::extractImagesFromVideoResponse>* grpcIMapsManagerService::Stub::PrepareAsyncextractImagesFromVideoRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::extractImagesFromVideoRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIMapsManager::extractImagesFromVideoResponse, ::grpcIMapsManager::extractImagesFromVideoRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_extractImagesFromVideo_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIMapsManager::extractImagesFromVideoResponse>* grpcIMapsManagerService::Stub::AsyncextractImagesFromVideoRaw(::grpc::ClientContext* context, const ::grpcIMapsManager::extractImagesFromVideoRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncextractImagesFromVideoRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status grpcIMapsManagerService::Stub::requestMapProcessing(::grpc::ClientContext* context, const ::grpcIMapsManager::requestMapProcessingRequest& request, ::grpcIMapsManager::requestMapProcessingResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIMapsManager::requestMapProcessingRequest, ::grpcIMapsManager::requestMapProcessingResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_requestMapProcessing_, context, request, response);
 }
@@ -607,6 +632,16 @@ grpcIMapsManagerService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIMapsManagerService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::extractImagesFromVideoRequest, ::grpcIMapsManager::extractImagesFromVideoResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIMapsManagerService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIMapsManager::extractImagesFromVideoRequest* req,
+             ::grpcIMapsManager::extractImagesFromVideoResponse* resp) {
+               return service->extractImagesFromVideo(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIMapsManagerService_method_names[13],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::requestMapProcessingRequest, ::grpcIMapsManager::requestMapProcessingResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -615,7 +650,7 @@ grpcIMapsManagerService::Service::Service() {
                return service->requestMapProcessing(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapsManagerService_method_names[13],
+      grpcIMapsManagerService_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::getMapProcessingStatusRequest, ::grpcIMapsManager::getMapProcessingStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
@@ -625,7 +660,7 @@ grpcIMapsManagerService::Service::Service() {
                return service->getMapProcessingStatus(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapsManagerService_method_names[14],
+      grpcIMapsManagerService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::getMapProcessingDataRequest, ::grpcIMapsManager::getMapProcessingDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
@@ -635,7 +670,7 @@ grpcIMapsManagerService::Service::Service() {
                return service->getMapProcessingData(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapsManagerService_method_names[15],
+      grpcIMapsManagerService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::getAvailableMapExportImportFormatsRequest, ::grpcIMapsManager::getAvailableMapExportImportFormatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
@@ -645,7 +680,7 @@ grpcIMapsManagerService::Service::Service() {
                return service->getAvailableMapExportImportFormats(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapsManagerService_method_names[16],
+      grpcIMapsManagerService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::exportMapToFormatRequest, ::grpcIMapsManager::exportMapToFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
@@ -655,7 +690,7 @@ grpcIMapsManagerService::Service::Service() {
                return service->exportMapToFormat(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIMapsManagerService_method_names[17],
+      grpcIMapsManagerService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIMapsManagerService::Service, ::grpcIMapsManager::importMapFromFormatRequest, ::grpcIMapsManager::importMapFromFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIMapsManagerService::Service* service,
@@ -747,6 +782,13 @@ grpcIMapsManagerService::Service::~Service() {
 }
 
 ::grpc::Status grpcIMapsManagerService::Service::getAvailableMapProcessingTypes(::grpc::ServerContext* context, const ::grpcIMapsManager::getAvailableMapProcessingTypesRequest* request, ::grpcIMapsManager::getAvailableMapProcessingTypesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIMapsManagerService::Service::extractImagesFromVideo(::grpc::ServerContext* context, const ::grpcIMapsManager::extractImagesFromVideoRequest* request, ::grpcIMapsManager::extractImagesFromVideoResponse* response) {
   (void) context;
   (void) request;
   (void) response;

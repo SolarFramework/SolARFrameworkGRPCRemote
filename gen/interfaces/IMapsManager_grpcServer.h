@@ -37,6 +37,7 @@ class IMapsManager_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtua
         ::grpc::Status backupMap(::grpc::ServerContext* context, const ::grpcIMapsManager::backupMapRequest* request, ::grpcIMapsManager::backupMapResponse* response) override;
         ::grpc::Status restoreMap(::grpc::ServerContext* context, const ::grpcIMapsManager::restoreMapRequest* request, ::grpcIMapsManager::restoreMapResponse* response) override;
         ::grpc::Status getAvailableMapProcessingTypes(::grpc::ServerContext* context, const ::grpcIMapsManager::getAvailableMapProcessingTypesRequest* request, ::grpcIMapsManager::getAvailableMapProcessingTypesResponse* response) override;
+        ::grpc::Status extractImagesFromVideo(::grpc::ServerContext* context, const ::grpcIMapsManager::extractImagesFromVideoRequest* request, ::grpcIMapsManager::extractImagesFromVideoResponse* response) override;
         ::grpc::Status requestMapProcessing(::grpc::ServerContext* context, const ::grpcIMapsManager::requestMapProcessingRequest* request, ::grpcIMapsManager::requestMapProcessingResponse* response) override;
         ::grpc::Status getMapProcessingStatus(::grpc::ServerContext* context, const ::grpcIMapsManager::getMapProcessingStatusRequest* request, ::grpcIMapsManager::getMapProcessingStatusResponse* response) override;
         ::grpc::Status getMapProcessingData(::grpc::ServerContext* context, const ::grpcIMapsManager::getMapProcessingDataRequest* request, ::grpcIMapsManager::getMapProcessingDataResponse* response) override;

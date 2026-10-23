@@ -4,7 +4,7 @@ CONFIG -= qt
 
 ## global definitions : target lib name, version
 FRAMEWORK = $$TARGET
-VERSION=1.6.0
+VERSION=1.7.0
 
 DEFINES += MYVERSION=$${VERSION}
 DEFINES += XPCFVERSION=\\\"$${VERSION}\\\"
