@@ -6302,7 +6302,8 @@ class extractImagesFromVideoRequest final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kVideoURLFieldNumber = 2,
-    kImageUUIDFieldNumber = 3,
+    kHeadersFieldNumber = 3,
+    kImageUUIDFieldNumber = 4,
     kGrpcServerCompressionFormatFieldNumber = 1,
   };
   // string videoURL = 2;
@@ -6320,7 +6321,22 @@ class extractImagesFromVideoRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_videourl();
 
   public:
-  // string imageUUID = 3;
+  // string headers = 3;
+  void clear_headers() ;
+  const ::std::string& headers() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_headers(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_headers();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_headers();
+  void set_allocated_headers(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_headers() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_headers(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_headers();
+
+  public:
+  // string imageUUID = 4;
   void clear_imageuuid() ;
   const ::std::string& imageuuid() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -6349,8 +6365,8 @@ class extractImagesFromVideoRequest final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<2, 3,
-                                   0, 72,
+  static const ::google::protobuf::internal::TcParseTable<2, 4,
+                                   0, 79,
                                    2>
       _table_;
 
@@ -6372,6 +6388,7 @@ class extractImagesFromVideoRequest final : public ::google::protobuf::Message
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr videourl_;
+    ::google::protobuf::internal::ArenaStringPtr headers_;
     ::google::protobuf::internal::ArenaStringPtr imageuuid_;
     ::int32_t grpcservercompressionformat_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -11185,7 +11202,7 @@ inline void getAvailableMapProcessingTypesResponse::_internal_set_xpcfgrpcreturn
 inline void extractImagesFromVideoRequest::clear_grpcservercompressionformat() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.grpcservercompressionformat_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000004U;
+  _impl_._has_bits_[0] &= ~0x00000008U;
 }
 inline ::int32_t extractImagesFromVideoRequest::grpcservercompressionformat() const {
   // @@protoc_insertion_point(field_get:grpcIMapsManager.extractImagesFromVideoRequest.grpcServerCompressionFormat)
@@ -11193,7 +11210,7 @@ inline ::int32_t extractImagesFromVideoRequest::grpcservercompressionformat() co
 }
 inline void extractImagesFromVideoRequest::set_grpcservercompressionformat(::int32_t value) {
   _internal_set_grpcservercompressionformat(value);
-  _impl_._has_bits_[0] |= 0x00000004U;
+  _impl_._has_bits_[0] |= 0x00000008U;
   // @@protoc_insertion_point(field_set:grpcIMapsManager.extractImagesFromVideoRequest.grpcServerCompressionFormat)
 }
 inline ::int32_t extractImagesFromVideoRequest::_internal_grpcservercompressionformat() const {
@@ -11270,11 +11287,76 @@ inline void extractImagesFromVideoRequest::set_allocated_videourl(::std::string*
   // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.extractImagesFromVideoRequest.videoURL)
 }
 
-// string imageUUID = 3;
+// string headers = 3;
+inline void extractImagesFromVideoRequest::clear_headers() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.headers_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002U;
+}
+inline const ::std::string& extractImagesFromVideoRequest::headers() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.extractImagesFromVideoRequest.headers)
+  return _internal_headers();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void extractImagesFromVideoRequest::set_headers(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  _impl_.headers_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.extractImagesFromVideoRequest.headers)
+}
+inline ::std::string* PROTOBUF_NONNULL extractImagesFromVideoRequest::mutable_headers()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_headers();
+  // @@protoc_insertion_point(field_mutable:grpcIMapsManager.extractImagesFromVideoRequest.headers)
+  return _s;
+}
+inline const ::std::string& extractImagesFromVideoRequest::_internal_headers() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.headers_.Get();
+}
+inline void extractImagesFromVideoRequest::_internal_set_headers(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  _impl_.headers_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL extractImagesFromVideoRequest::_internal_mutable_headers() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002U;
+  return _impl_.headers_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE extractImagesFromVideoRequest::release_headers() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapsManager.extractImagesFromVideoRequest.headers)
+  if ((_impl_._has_bits_[0] & 0x00000002U) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002U;
+  auto* released = _impl_.headers_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.headers_.Set("", GetArena());
+  }
+  return released;
+}
+inline void extractImagesFromVideoRequest::set_allocated_headers(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002U;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002U;
+  }
+  _impl_.headers_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.headers_.IsDefault()) {
+    _impl_.headers_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.extractImagesFromVideoRequest.headers)
+}
+
+// string imageUUID = 4;
 inline void extractImagesFromVideoRequest::clear_imageuuid() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.imageuuid_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000002U;
+  _impl_._has_bits_[0] &= ~0x00000004U;
 }
 inline const ::std::string& extractImagesFromVideoRequest::imageuuid() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -11284,7 +11366,7 @@ inline const ::std::string& extractImagesFromVideoRequest::imageuuid() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void extractImagesFromVideoRequest::set_imageuuid(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002U;
+  _impl_._has_bits_[0] |= 0x00000004U;
   _impl_.imageuuid_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:grpcIMapsManager.extractImagesFromVideoRequest.imageUUID)
 }
@@ -11300,21 +11382,21 @@ inline const ::std::string& extractImagesFromVideoRequest::_internal_imageuuid()
 }
 inline void extractImagesFromVideoRequest::_internal_set_imageuuid(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002U;
+  _impl_._has_bits_[0] |= 0x00000004U;
   _impl_.imageuuid_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL extractImagesFromVideoRequest::_internal_mutable_imageuuid() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002U;
+  _impl_._has_bits_[0] |= 0x00000004U;
   return _impl_.imageuuid_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE extractImagesFromVideoRequest::release_imageuuid() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:grpcIMapsManager.extractImagesFromVideoRequest.imageUUID)
-  if ((_impl_._has_bits_[0] & 0x00000002U) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000004U) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000002U;
+  _impl_._has_bits_[0] &= ~0x00000004U;
   auto* released = _impl_.imageuuid_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.imageuuid_.Set("", GetArena());
@@ -11324,9 +11406,9 @@ inline ::std::string* PROTOBUF_NULLABLE extractImagesFromVideoRequest::release_i
 inline void extractImagesFromVideoRequest::set_allocated_imageuuid(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002U;
+    _impl_._has_bits_[0] |= 0x00000004U;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000002U;
+    _impl_._has_bits_[0] &= ~0x00000004U;
   }
   _impl_.imageuuid_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.imageuuid_.IsDefault()) {

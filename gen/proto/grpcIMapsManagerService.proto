@@ -165,7 +165,8 @@ message extractImagesFromVideoRequest
 {
 int32 grpcServerCompressionFormat  = 1;
 string videoURL = 2;
-string imageUUID = 3;
+string headers = 3;
+string imageUUID = 4;
 }
 
 message extractImagesFromVideoResponse

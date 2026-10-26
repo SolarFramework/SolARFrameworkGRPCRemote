@@ -862,7 +862,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getAvailableMapProcessingTyp
 }
 
 
-SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::extractImagesFromVideo(std::string const& videoURL, std::string imageUUID)
+SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::extractImagesFromVideo(std::string const& videoURL, std::string headers, std::string imageUUID)
 {
   ::grpc::ClientContext context;
   ::grpcIMapsManager::extractImagesFromVideoRequest reqIn;
@@ -873,6 +873,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::extractImagesFromVideo(std::
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_videourl(videoURL);
+  reqIn.set_headers(headers);
   reqIn.set_imageuuid(imageUUID);
   #ifdef ENABLE_PROXY_TIMERS
   boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
