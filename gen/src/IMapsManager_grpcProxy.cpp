@@ -862,7 +862,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::getAvailableMapProcessingTyp
 }
 
 
-SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::extractImagesFromVideo(std::string const& videoURL, std::string headers, std::string imageUUID)
+SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::extractImagesFromVideo(std::string const& videoURL, std::string const& headers, std::string& imageUUID)
 {
   ::grpc::ClientContext context;
   ::grpcIMapsManager::extractImagesFromVideoRequest reqIn;
@@ -923,6 +923,7 @@ SolAR::FrameworkReturnCode  IMapsManager_grpcProxy::extractImagesFromVideo(std::
   span->SetStatus(opentelemetry::trace::StatusCode::kOk);
   span->End();
   
+  imageUUID = respOut.imageuuid();
   return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
 }
 

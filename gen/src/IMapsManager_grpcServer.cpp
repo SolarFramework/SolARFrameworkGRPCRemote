@@ -710,6 +710,7 @@ XPCFErrorCode IMapsManager_grpcServer::onConfigured()
   std::string headers = request->headers();
   std::string imageUUID = request->imageuuid();
   SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->extractImagesFromVideo(videoURL, headers, imageUUID);
+  response->set_imageuuid(imageUUID);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();

@@ -6110,9 +6110,25 @@ class extractImagesFromVideoResponse final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kXpcfGrpcReturnValueFieldNumber = 1,
+    kImageUUIDFieldNumber = 1,
+    kXpcfGrpcReturnValueFieldNumber = 2,
   };
-  // sint32 xpcfGrpcReturnValue = 1;
+  // string imageUUID = 1;
+  void clear_imageuuid() ;
+  const ::std::string& imageuuid() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_imageuuid(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_imageuuid();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_imageuuid();
+  void set_allocated_imageuuid(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_imageuuid() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_imageuuid(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_imageuuid();
+
+  public:
+  // sint32 xpcfGrpcReturnValue = 2;
   void clear_xpcfgrpcreturnvalue() ;
   ::int32_t xpcfgrpcreturnvalue() const;
   void set_xpcfgrpcreturnvalue(::int32_t value);
@@ -6126,8 +6142,8 @@ class extractImagesFromVideoResponse final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<0, 1,
-                                   0, 0,
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   0, 65,
                                    2>
       _table_;
 
@@ -6148,6 +6164,7 @@ class extractImagesFromVideoResponse final : public ::google::protobuf::Message
         const extractImagesFromVideoResponse& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr imageuuid_;
     ::int32_t xpcfgrpcreturnvalue_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -11421,11 +11438,76 @@ inline void extractImagesFromVideoRequest::set_allocated_imageuuid(::std::string
 
 // extractImagesFromVideoResponse
 
-// sint32 xpcfGrpcReturnValue = 1;
+// string imageUUID = 1;
+inline void extractImagesFromVideoResponse::clear_imageuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.imageuuid_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001U;
+}
+inline const ::std::string& extractImagesFromVideoResponse::imageuuid() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:grpcIMapsManager.extractImagesFromVideoResponse.imageUUID)
+  return _internal_imageuuid();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void extractImagesFromVideoResponse::set_imageuuid(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.imageuuid_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:grpcIMapsManager.extractImagesFromVideoResponse.imageUUID)
+}
+inline ::std::string* PROTOBUF_NONNULL extractImagesFromVideoResponse::mutable_imageuuid()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_imageuuid();
+  // @@protoc_insertion_point(field_mutable:grpcIMapsManager.extractImagesFromVideoResponse.imageUUID)
+  return _s;
+}
+inline const ::std::string& extractImagesFromVideoResponse::_internal_imageuuid() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.imageuuid_.Get();
+}
+inline void extractImagesFromVideoResponse::_internal_set_imageuuid(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_.imageuuid_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL extractImagesFromVideoResponse::_internal_mutable_imageuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001U;
+  return _impl_.imageuuid_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE extractImagesFromVideoResponse::release_imageuuid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:grpcIMapsManager.extractImagesFromVideoResponse.imageUUID)
+  if ((_impl_._has_bits_[0] & 0x00000001U) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001U;
+  auto* released = _impl_.imageuuid_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.imageuuid_.Set("", GetArena());
+  }
+  return released;
+}
+inline void extractImagesFromVideoResponse::set_allocated_imageuuid(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001U;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001U;
+  }
+  _impl_.imageuuid_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.imageuuid_.IsDefault()) {
+    _impl_.imageuuid_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:grpcIMapsManager.extractImagesFromVideoResponse.imageUUID)
+}
+
+// sint32 xpcfGrpcReturnValue = 2;
 inline void extractImagesFromVideoResponse::clear_xpcfgrpcreturnvalue() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.xpcfgrpcreturnvalue_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000001U;
+  _impl_._has_bits_[0] &= ~0x00000002U;
 }
 inline ::int32_t extractImagesFromVideoResponse::xpcfgrpcreturnvalue() const {
   // @@protoc_insertion_point(field_get:grpcIMapsManager.extractImagesFromVideoResponse.xpcfGrpcReturnValue)
@@ -11433,7 +11515,7 @@ inline ::int32_t extractImagesFromVideoResponse::xpcfgrpcreturnvalue() const {
 }
 inline void extractImagesFromVideoResponse::set_xpcfgrpcreturnvalue(::int32_t value) {
   _internal_set_xpcfgrpcreturnvalue(value);
-  _impl_._has_bits_[0] |= 0x00000001U;
+  _impl_._has_bits_[0] |= 0x00000002U;
   // @@protoc_insertion_point(field_set:grpcIMapsManager.extractImagesFromVideoResponse.xpcfGrpcReturnValue)
 }
 inline ::int32_t extractImagesFromVideoResponse::_internal_xpcfgrpcreturnvalue() const {

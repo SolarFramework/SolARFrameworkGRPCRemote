@@ -171,7 +171,8 @@ string imageUUID = 4;
 
 message extractImagesFromVideoResponse
 {
-sint32 xpcfGrpcReturnValue = 1;
+string imageUUID = 1;
+sint32 xpcfGrpcReturnValue = 2;
 }
 
 message requestMapProcessingRequest
