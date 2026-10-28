@@ -53,7 +53,7 @@ IFrontEnd_grpcProxy::IFrontEnd_grpcProxy():xpcf::ConfigurableBase(xpcf::toMap<IF
   declareInterface<SolAR::api::service::IFrontEnd>(this);
   declareProperty("channelUrl",m_channelUrl);
   declareProperty("channelCredentials",m_channelCredentials);
-  m_grpcProxyCompressionConfig.resize(35);
+  m_grpcProxyCompressionConfig.resize(36);
   declarePropertySequence("grpc_compress_proxy", m_grpcProxyCompressionConfig);
 }
 
@@ -1944,7 +1944,74 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::getAvailableMapProcessingTypes(
 }
 
 
-SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::requestMapProcessing(std::string const& accessToken, std::string const& mapUUID, std::string const& resultMapUUID, SolAR::api::service::MapProcessingType const processingType)
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::extractImagesFromVideo(std::string const& accessToken, std::string const& videoURL, std::string const& headers, std::string& imageUUID)
+{
+  ::grpc::ClientContext context;
+  ::grpcIFrontEnd::extractImagesFromVideoRequest reqIn;
+  ::grpcIFrontEnd::extractImagesFromVideoResponse respOut;
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressionInfos proxyCompressionInfo = xpcf::deduceClientCompressionInfo(m_serviceCompressionInfos, "extractImagesFromVideo", m_methodCompressionInfosMap);
+  xpcf::grpcCompressType serverCompressionType = xpcf::prepareClientCompressionContext(context, proxyCompressionInfo);
+  reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
+  #endif
+  reqIn.set_accesstoken(accessToken);
+  reqIn.set_videourl(videoURL);
+  reqIn.set_headers(headers);
+  reqIn.set_imageuuid(imageUUID);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::extractImagesFromVideo request sent at " << to_simple_string(start) << std::endl;
+  #endif
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
+  
+  // TODO: safer parsing with error handling
+  auto const pos = m_channelUrl.find_last_of(':');
+  auto networkAddress = m_channelUrl.substr(0, pos);
+  auto networkPort =  m_channelUrl.substr(pos + 1);
+  
+  opentelemetry::trace::StartSpanOptions spanOptions;
+  spanOptions.kind = opentelemetry::trace::SpanKind::kClient;
+  auto span = tracer->StartSpan("IFrontEnd_grpcProxy.extractImagesFromVideo",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "extractImagesFromVideo"},
+                                 {opentelemetry::semconv::network::kNetworkPeerAddress, networkAddress},
+                                 {opentelemetry::semconv::network::kNetworkPeerPort, std::stoi(networkPort)}},
+                                spanOptions);
+  
+  auto scope = tracer->WithActiveSpan(span);
+  
+  // inject current context to grpc metadata
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcClientCarrier carrier(&context);
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  prop->Inject(carrier, currentCtx);
+  
+  ::grpc::Status grpcRemoteStatus = m_grpcStub->extractImagesFromVideo(&context, reqIn, &respOut);
+  #ifdef ENABLE_PROXY_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcProxy::extractImagesFromVideo response received at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  if (!grpcRemoteStatus.ok())  {
+    std::cout << "extractImagesFromVideo rpc failed." << std::endl;
+    span->SetStatus(opentelemetry::trace::StatusCode::kError, "grpcIFrontEndService.extractImagesFromVideo() rpc failed.");
+    span->End();
+    throw xpcf::RemotingException("grpcIFrontEndService","extractImagesFromVideo",static_cast<uint32_t>(grpcRemoteStatus.error_code()));
+  }
+
+  
+  span->SetStatus(opentelemetry::trace::StatusCode::kOk);
+  span->End();
+  
+  imageUUID = respOut.imageuuid();
+  return static_cast<SolAR::FrameworkReturnCode>(respOut.xpcfgrpcreturnvalue());
+}
+
+
+SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::requestMapProcessing(std::string const& accessToken, std::string const& mapOrImageUUID, std::string const& resultMapUUID, SolAR::api::service::MapProcessingType const processingType)
 {
   ::grpc::ClientContext context;
   ::grpcIFrontEnd::requestMapProcessingRequest reqIn;
@@ -1955,7 +2022,7 @@ SolAR::FrameworkReturnCode  IFrontEnd_grpcProxy::requestMapProcessing(std::strin
   reqIn.set_grpcservercompressionformat (static_cast<int32_t>(serverCompressionType));
   #endif
   reqIn.set_accesstoken(accessToken);
-  reqIn.set_mapuuid(mapUUID);
+  reqIn.set_maporimageuuid(mapOrImageUUID);
   reqIn.set_resultmapuuid(resultMapUUID);
   reqIn.set_processingtype(static_cast<int32_t>(processingType));
   #ifdef ENABLE_PROXY_TIMERS
