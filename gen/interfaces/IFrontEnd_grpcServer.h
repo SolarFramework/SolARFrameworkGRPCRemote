@@ -54,6 +54,7 @@ class IFrontEnd_grpcServer:  public org::bcom::xpcf::ConfigurableBase, virtual p
         ::grpc::Status restoreMap(::grpc::ServerContext* context, const ::grpcIFrontEnd::restoreMapRequest* request, ::grpcIFrontEnd::restoreMapResponse* response) override;
         ::grpc::Status getAvailableMapProcessingTypes(::grpc::ServerContext* context, const ::grpcIFrontEnd::getAvailableMapProcessingTypesRequest* request, ::grpcIFrontEnd::getAvailableMapProcessingTypesResponse* response) override;
         ::grpc::Status extractImagesFromVideo(::grpc::ServerContext* context, const ::grpcIFrontEnd::extractImagesFromVideoRequest* request, ::grpcIFrontEnd::extractImagesFromVideoResponse* response) override;
+        ::grpc::Status getExtractImagesFromVideoStatus(::grpc::ServerContext* context, const ::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest* request, ::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse* response) override;
         ::grpc::Status requestMapProcessing(::grpc::ServerContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpcIFrontEnd::requestMapProcessingResponse* response) override;
         ::grpc::Status getMapProcessingStatus(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapProcessingStatusRequest* request, ::grpcIFrontEnd::getMapProcessingStatusResponse* response) override;
         ::grpc::Status getMapProcessingData(::grpc::ServerContext* context, const ::grpcIFrontEnd::getMapProcessingDataRequest* request, ::grpcIFrontEnd::getMapProcessingDataResponse* response) override;

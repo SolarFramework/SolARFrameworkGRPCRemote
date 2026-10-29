@@ -161,6 +161,7 @@
         <value>method|restoreMap|none|0</value>
         <value>method|getAvailableMapProcessingTypes|none|0</value>
         <value>method|extractImagesFromVideo|none|0</value>
+        <value>method|getExtractImagesFromVideoStatus|none|0</value>
         <value>method|requestMapProcessing|none|0</value>
         <value>method|getMapProcessingStatus|none|0</value>
         <value>method|getMapProcessingData|none|0</value>
@@ -185,6 +186,7 @@
         <value>method|restoreMap|none|0</value>
         <value>method|getAvailableMapProcessingTypes|none|0</value>
         <value>method|extractImagesFromVideo|none|0</value>
+        <value>method|getExtractImagesFromVideoStatus|none|0</value>
         <value>method|requestMapProcessing|none|0</value>
         <value>method|getMapProcessingStatus|none|0</value>
         <value>method|getMapProcessingData|none|0</value>

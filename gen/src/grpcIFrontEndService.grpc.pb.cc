@@ -51,6 +51,7 @@ static const char* grpcIFrontEndService_method_names[] = {
   "/grpcIFrontEnd.grpcIFrontEndService/restoreMap",
   "/grpcIFrontEnd.grpcIFrontEndService/getAvailableMapProcessingTypes",
   "/grpcIFrontEnd.grpcIFrontEndService/extractImagesFromVideo",
+  "/grpcIFrontEnd.grpcIFrontEndService/getExtractImagesFromVideoStatus",
   "/grpcIFrontEnd.grpcIFrontEndService/requestMapProcessing",
   "/grpcIFrontEnd.grpcIFrontEndService/getMapProcessingStatus",
   "/grpcIFrontEnd.grpcIFrontEndService/getMapProcessingData",
@@ -95,12 +96,13 @@ grpcIFrontEndService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface
   , rpcmethod_restoreMap_(grpcIFrontEndService_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_getAvailableMapProcessingTypes_(grpcIFrontEndService_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_extractImagesFromVideo_(grpcIFrontEndService_method_names[28], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_requestMapProcessing_(grpcIFrontEndService_method_names[29], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapProcessingStatus_(grpcIFrontEndService_method_names[30], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getMapProcessingData_(grpcIFrontEndService_method_names[31], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_getAvailableMapExportImportFormats_(grpcIFrontEndService_method_names[32], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_exportMapToFormat_(grpcIFrontEndService_method_names[33], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_importMapFromFormat_(grpcIFrontEndService_method_names[34], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getExtractImagesFromVideoStatus_(grpcIFrontEndService_method_names[29], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_requestMapProcessing_(grpcIFrontEndService_method_names[30], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapProcessingStatus_(grpcIFrontEndService_method_names[31], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getMapProcessingData_(grpcIFrontEndService_method_names[32], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_getAvailableMapExportImportFormats_(grpcIFrontEndService_method_names[33], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_exportMapToFormat_(grpcIFrontEndService_method_names[34], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_importMapFromFormat_(grpcIFrontEndService_method_names[35], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status grpcIFrontEndService::Stub::registerClient(::grpc::ClientContext* context, const ::grpcIFrontEnd::registerClientRequest& request, ::grpcIFrontEnd::registerClientResponse* response) {
@@ -770,6 +772,29 @@ void grpcIFrontEndService::Stub::async::extractImagesFromVideo(::grpc::ClientCon
   return result;
 }
 
+::grpc::Status grpcIFrontEndService::Stub::getExtractImagesFromVideoStatus(::grpc::ClientContext* context, const ::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest& request, ::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest, ::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_getExtractImagesFromVideoStatus_, context, request, response);
+}
+
+void grpcIFrontEndService::Stub::async::getExtractImagesFromVideoStatus(::grpc::ClientContext* context, const ::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest* request, ::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest, ::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getExtractImagesFromVideoStatus_, context, request, response, std::move(f));
+}
+
+void grpcIFrontEndService::Stub::async::getExtractImagesFromVideoStatus(::grpc::ClientContext* context, const ::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest* request, ::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_getExtractImagesFromVideoStatus_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse>* grpcIFrontEndService::Stub::PrepareAsyncgetExtractImagesFromVideoStatusRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse, ::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_getExtractImagesFromVideoStatus_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse>* grpcIFrontEndService::Stub::AsyncgetExtractImagesFromVideoStatusRaw(::grpc::ClientContext* context, const ::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncgetExtractImagesFromVideoStatusRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status grpcIFrontEndService::Stub::requestMapProcessing(::grpc::ClientContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest& request, ::grpcIFrontEnd::requestMapProcessingResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::grpcIFrontEnd::requestMapProcessingRequest, ::grpcIFrontEnd::requestMapProcessingResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_requestMapProcessing_, context, request, response);
 }
@@ -1202,6 +1227,16 @@ grpcIFrontEndService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       grpcIFrontEndService_method_names[29],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest, ::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](grpcIFrontEndService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest* req,
+             ::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse* resp) {
+               return service->getExtractImagesFromVideoStatus(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      grpcIFrontEndService_method_names[30],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::requestMapProcessingRequest, ::grpcIFrontEnd::requestMapProcessingResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -1210,7 +1245,7 @@ grpcIFrontEndService::Service::Service() {
                return service->requestMapProcessing(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[30],
+      grpcIFrontEndService_method_names[31],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapProcessingStatusRequest, ::grpcIFrontEnd::getMapProcessingStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1220,7 +1255,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getMapProcessingStatus(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[31],
+      grpcIFrontEndService_method_names[32],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getMapProcessingDataRequest, ::grpcIFrontEnd::getMapProcessingDataResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1230,7 +1265,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getMapProcessingData(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[32],
+      grpcIFrontEndService_method_names[33],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest, ::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1240,7 +1275,7 @@ grpcIFrontEndService::Service::Service() {
                return service->getAvailableMapExportImportFormats(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[33],
+      grpcIFrontEndService_method_names[34],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::exportMapToFormatRequest, ::grpcIFrontEnd::exportMapToFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1250,7 +1285,7 @@ grpcIFrontEndService::Service::Service() {
                return service->exportMapToFormat(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      grpcIFrontEndService_method_names[34],
+      grpcIFrontEndService_method_names[35],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< grpcIFrontEndService::Service, ::grpcIFrontEnd::importMapFromFormatRequest, ::grpcIFrontEnd::importMapFromFormatResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](grpcIFrontEndService::Service* service,
@@ -1461,6 +1496,13 @@ grpcIFrontEndService::Service::~Service() {
 }
 
 ::grpc::Status grpcIFrontEndService::Service::extractImagesFromVideo(::grpc::ServerContext* context, const ::grpcIFrontEnd::extractImagesFromVideoRequest* request, ::grpcIFrontEnd::extractImagesFromVideoResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status grpcIFrontEndService::Service::getExtractImagesFromVideoStatus(::grpc::ServerContext* context, const ::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest* request, ::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse* response) {
   (void) context;
   (void) request;
   (void) response;

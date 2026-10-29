@@ -35,6 +35,7 @@ class IMapsManager_grpcProxy:  public org::bcom::xpcf::ConfigurableBase, virtual
     SolAR::FrameworkReturnCode restoreMap(std::string const& mapUUID, std::vector<unsigned char> const& compressedZipData)     override;
     SolAR::FrameworkReturnCode getAvailableMapProcessingTypes(std::vector<SolAR::api::service::MapProcessingType>& availableTypes)     const     override;
     SolAR::FrameworkReturnCode extractImagesFromVideo(std::string const& videoURL, std::string const& headers, std::string& imageUUID)     override;
+    SolAR::FrameworkReturnCode getExtractImagesFromVideoStatus(std::string const& imageUUID, SolAR::api::service::MapProcessingStatus& status, float& progress)     const     override;
     SolAR::FrameworkReturnCode requestMapProcessing(std::string const& mapOrImageUUID, std::string const& resultMapUUID, SolAR::api::service::MapProcessingType const processingType)     override;
     SolAR::FrameworkReturnCode getMapProcessingStatus(std::string const& resultMapUUID, SolAR::api::service::MapProcessingStatus& status, SolAR::api::service::MapProcessingType& processingType, float& progress)     override;
     SolAR::FrameworkReturnCode getMapProcessingData(std::string const& resultMapUUID, std::vector<SRef<SolAR::datastructure::CloudPoint>>& pointCloud, std::vector<SolAR::datastructure::Transform3Df>& keyframePoses)     override;

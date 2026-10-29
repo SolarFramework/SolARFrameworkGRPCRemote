@@ -175,6 +175,21 @@ string imageUUID = 1;
 sint32 xpcfGrpcReturnValue = 2;
 }
 
+message getExtractImagesFromVideoStatusRequest
+{
+int32 grpcServerCompressionFormat  = 1;
+string imageUUID = 2;
+sint32 status = 3;
+float progress = 4;
+}
+
+message getExtractImagesFromVideoStatusResponse
+{
+sint32 status = 1;
+float progress = 2;
+sint32 xpcfGrpcReturnValue = 3;
+}
+
 message requestMapProcessingRequest
 {
 int32 grpcServerCompressionFormat  = 1;
@@ -273,6 +288,7 @@ rpc backupMap(backupMapRequest) returns(backupMapResponse) {}
 rpc restoreMap(restoreMapRequest) returns(restoreMapResponse) {}
 rpc getAvailableMapProcessingTypes(getAvailableMapProcessingTypesRequest) returns(getAvailableMapProcessingTypesResponse) {}
 rpc extractImagesFromVideo(extractImagesFromVideoRequest) returns(extractImagesFromVideoResponse) {}
+rpc getExtractImagesFromVideoStatus(getExtractImagesFromVideoStatusRequest) returns(getExtractImagesFromVideoStatusResponse) {}
 rpc requestMapProcessing(requestMapProcessingRequest) returns(requestMapProcessingResponse) {}
 rpc getMapProcessingStatus(getMapProcessingStatusRequest) returns(getMapProcessingStatusResponse) {}
 rpc getMapProcessingData(getMapProcessingDataRequest) returns(getMapProcessingDataResponse) {}
