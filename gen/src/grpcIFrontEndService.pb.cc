@@ -526,7 +526,7 @@ inline constexpr requestMapProcessingRequest::Impl_::Impl_(
         accesstoken_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        mapuuid_(
+        maporimageuuid_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         resultmapuuid_(
@@ -1341,6 +1341,66 @@ struct getMapInfoRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getMapInfoRequestDefaultTypeInternal _getMapInfoRequest_default_instance_;
 
+inline constexpr getExtractImagesFromVideoStatusResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        status_{0},
+        progress_{0},
+        xpcfgrpcreturnvalue_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR getExtractImagesFromVideoStatusResponse::getExtractImagesFromVideoStatusResponse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(getExtractImagesFromVideoStatusResponse_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct getExtractImagesFromVideoStatusResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR getExtractImagesFromVideoStatusResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~getExtractImagesFromVideoStatusResponseDefaultTypeInternal() {}
+  union {
+    getExtractImagesFromVideoStatusResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getExtractImagesFromVideoStatusResponseDefaultTypeInternal _getExtractImagesFromVideoStatusResponse_default_instance_;
+
+inline constexpr getExtractImagesFromVideoStatusRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        accesstoken_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        imageuuid_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        grpcservercompressionformat_{0},
+        status_{0},
+        progress_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR getExtractImagesFromVideoStatusRequest::getExtractImagesFromVideoStatusRequest(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(getExtractImagesFromVideoStatusRequest_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct getExtractImagesFromVideoStatusRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR getExtractImagesFromVideoStatusRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~getExtractImagesFromVideoStatusRequestDefaultTypeInternal() {}
+  union {
+    getExtractImagesFromVideoStatusRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getExtractImagesFromVideoStatusRequestDefaultTypeInternal _getExtractImagesFromVideoStatusRequest_default_instance_;
+
 inline constexpr getDeviceInfoResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
@@ -1901,6 +1961,71 @@ struct getAllClientsUUIDRequestDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 getAllClientsUUIDRequestDefaultTypeInternal _getAllClientsUUIDRequest_default_instance_;
+
+inline constexpr extractImagesFromVideoResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        imageuuid_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        xpcfgrpcreturnvalue_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR extractImagesFromVideoResponse::extractImagesFromVideoResponse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(extractImagesFromVideoResponse_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct extractImagesFromVideoResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR extractImagesFromVideoResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~extractImagesFromVideoResponseDefaultTypeInternal() {}
+  union {
+    extractImagesFromVideoResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 extractImagesFromVideoResponseDefaultTypeInternal _extractImagesFromVideoResponse_default_instance_;
+
+inline constexpr extractImagesFromVideoRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        accesstoken_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        videourl_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        headers_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        imageuuid_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        grpcservercompressionformat_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR extractImagesFromVideoRequest::extractImagesFromVideoRequest(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(extractImagesFromVideoRequest_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct extractImagesFromVideoRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR extractImagesFromVideoRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~extractImagesFromVideoRequestDefaultTypeInternal() {}
+  union {
+    extractImagesFromVideoRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 extractImagesFromVideoRequestDefaultTypeInternal _extractImagesFromVideoRequest_default_instance_;
 
 inline constexpr exportMapToFormatResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -2681,11 +2806,53 @@ const ::uint32_t
         0,
         1,
         0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::extractImagesFromVideoRequest, _impl_._has_bits_),
+        8, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::extractImagesFromVideoRequest, _impl_.grpcservercompressionformat_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::extractImagesFromVideoRequest, _impl_.accesstoken_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::extractImagesFromVideoRequest, _impl_.videourl_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::extractImagesFromVideoRequest, _impl_.headers_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::extractImagesFromVideoRequest, _impl_.imageuuid_),
+        4,
+        0,
+        1,
+        2,
+        3,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::extractImagesFromVideoResponse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::extractImagesFromVideoResponse, _impl_.imageuuid_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::extractImagesFromVideoResponse, _impl_.xpcfgrpcreturnvalue_),
+        0,
+        1,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest, _impl_._has_bits_),
+        8, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest, _impl_.grpcservercompressionformat_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest, _impl_.accesstoken_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest, _impl_.imageuuid_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest, _impl_.status_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest, _impl_.progress_),
+        2,
+        0,
+        1,
+        3,
+        4,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse, _impl_._has_bits_),
+        6, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse, _impl_.status_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse, _impl_.progress_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse, _impl_.xpcfgrpcreturnvalue_),
+        0,
+        1,
+        2,
+        0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::requestMapProcessingRequest, _impl_._has_bits_),
         8, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::requestMapProcessingRequest, _impl_.grpcservercompressionformat_),
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::requestMapProcessingRequest, _impl_.accesstoken_),
-        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::requestMapProcessingRequest, _impl_.mapuuid_),
+        PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::requestMapProcessingRequest, _impl_.maporimageuuid_),
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::requestMapProcessingRequest, _impl_.resultmapuuid_),
         PROTOBUF_FIELD_OFFSET(::grpcIFrontEnd::requestMapProcessingRequest, _impl_.processingtype_),
         3,
@@ -2860,18 +3027,22 @@ static const ::_pbi::MigrationSchema
         {513, sizeof(::grpcIFrontEnd::restoreMapResponse)},
         {518, sizeof(::grpcIFrontEnd::getAvailableMapProcessingTypesRequest)},
         {527, sizeof(::grpcIFrontEnd::getAvailableMapProcessingTypesResponse)},
-        {534, sizeof(::grpcIFrontEnd::requestMapProcessingRequest)},
-        {547, sizeof(::grpcIFrontEnd::requestMapProcessingResponse)},
-        {552, sizeof(::grpcIFrontEnd::getMapProcessingStatusRequest)},
-        {567, sizeof(::grpcIFrontEnd::getMapProcessingStatusResponse)},
-        {578, sizeof(::grpcIFrontEnd::getMapProcessingDataRequest)},
-        {591, sizeof(::grpcIFrontEnd::getMapProcessingDataResponse)},
-        {600, sizeof(::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest)},
-        {609, sizeof(::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse)},
-        {616, sizeof(::grpcIFrontEnd::exportMapToFormatRequest)},
-        {629, sizeof(::grpcIFrontEnd::exportMapToFormatResponse)},
-        {636, sizeof(::grpcIFrontEnd::importMapFromFormatRequest)},
-        {649, sizeof(::grpcIFrontEnd::importMapFromFormatResponse)},
+        {534, sizeof(::grpcIFrontEnd::extractImagesFromVideoRequest)},
+        {547, sizeof(::grpcIFrontEnd::extractImagesFromVideoResponse)},
+        {554, sizeof(::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest)},
+        {567, sizeof(::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse)},
+        {576, sizeof(::grpcIFrontEnd::requestMapProcessingRequest)},
+        {589, sizeof(::grpcIFrontEnd::requestMapProcessingResponse)},
+        {594, sizeof(::grpcIFrontEnd::getMapProcessingStatusRequest)},
+        {609, sizeof(::grpcIFrontEnd::getMapProcessingStatusResponse)},
+        {620, sizeof(::grpcIFrontEnd::getMapProcessingDataRequest)},
+        {633, sizeof(::grpcIFrontEnd::getMapProcessingDataResponse)},
+        {642, sizeof(::grpcIFrontEnd::getAvailableMapExportImportFormatsRequest)},
+        {651, sizeof(::grpcIFrontEnd::getAvailableMapExportImportFormatsResponse)},
+        {658, sizeof(::grpcIFrontEnd::exportMapToFormatRequest)},
+        {671, sizeof(::grpcIFrontEnd::exportMapToFormatResponse)},
+        {678, sizeof(::grpcIFrontEnd::importMapFromFormatRequest)},
+        {691, sizeof(::grpcIFrontEnd::importMapFromFormatResponse)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::grpcIFrontEnd::_registerClientRequest_default_instance_._instance,
@@ -2930,6 +3101,10 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::grpcIFrontEnd::_restoreMapResponse_default_instance_._instance,
     &::grpcIFrontEnd::_getAvailableMapProcessingTypesRequest_default_instance_._instance,
     &::grpcIFrontEnd::_getAvailableMapProcessingTypesResponse_default_instance_._instance,
+    &::grpcIFrontEnd::_extractImagesFromVideoRequest_default_instance_._instance,
+    &::grpcIFrontEnd::_extractImagesFromVideoResponse_default_instance_._instance,
+    &::grpcIFrontEnd::_getExtractImagesFromVideoStatusRequest_default_instance_._instance,
+    &::grpcIFrontEnd::_getExtractImagesFromVideoStatusResponse_default_instance_._instance,
     &::grpcIFrontEnd::_requestMapProcessingRequest_default_instance_._instance,
     &::grpcIFrontEnd::_requestMapProcessingResponse_default_instance_._instance,
     &::grpcIFrontEnd::_getMapProcessingStatusRequest_default_instance_._instance,
@@ -3098,133 +3273,152 @@ const char descriptor_table_protodef_grpcIFrontEndService_2eproto[] ABSL_ATTRIBU
     "rmat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t\022\026\n\016avail"
     "ableTypes\030\003 \001(\014\"]\n&getAvailableMapProces"
     "singTypesResponse\022\026\n\016availableTypes\030\001 \001("
-    "\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"\227\001\n\033reque"
-    "stMapProcessingRequest\022#\n\033grpcServerComp"
-    "ressionFormat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t"
-    "\022\017\n\007mapUUID\030\003 \001(\t\022\025\n\rresultMapUUID\030\004 \001(\t"
-    "\022\026\n\016processingType\030\005 \001(\021\";\n\034requestMapPr"
-    "ocessingResponse\022\033\n\023xpcfGrpcReturnValue\030"
-    "\001 \001(\021\"\252\001\n\035getMapProcessingStatusRequest\022"
-    "#\n\033grpcServerCompressionFormat\030\001 \001(\005\022\023\n\013"
-    "accessToken\030\002 \001(\t\022\025\n\rresultMapUUID\030\003 \001(\t"
-    "\022\016\n\006status\030\004 \001(\021\022\026\n\016processingType\030\005 \001(\021"
-    "\022\020\n\010progress\030\006 \001(\002\"w\n\036getMapProcessingSt"
-    "atusResponse\022\016\n\006status\030\001 \001(\021\022\026\n\016processi"
-    "ngType\030\002 \001(\021\022\020\n\010progress\030\003 \001(\002\022\033\n\023xpcfGr"
-    "pcReturnValue\030\004 \001(\021\"\231\001\n\033getMapProcessing"
-    "DataRequest\022#\n\033grpcServerCompressionForm"
-    "at\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t\022\025\n\rresultM"
-    "apUUID\030\003 \001(\t\022\022\n\npointCloud\030\004 \001(\014\022\025\n\rkeyf"
-    "ramePoses\030\005 \001(\014\"f\n\034getMapProcessingDataR"
-    "esponse\022\022\n\npointCloud\030\001 \001(\014\022\025\n\rkeyframeP"
-    "oses\030\002 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\003 \001(\021\""
-    "\177\n)getAvailableMapExportImportFormatsReq"
-    "uest\022#\n\033grpcServerCompressionFormat\030\001 \001("
-    "\005\022\023\n\013accessToken\030\002 \001(\t\022\030\n\020availableForma"
-    "ts\030\003 \001(\014\"c\n*getAvailableMapExportImportF"
-    "ormatsResponse\022\030\n\020availableFormats\030\001 \001(\014"
-    "\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"\230\001\n\030export"
-    "MapToFormatRequest\022#\n\033grpcServerCompress"
-    "ionFormat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t\022\017\n\007"
-    "mapUUID\030\003 \001(\t\022\024\n\014exportFormat\030\004 \001(\021\022\033\n\023c"
-    "ompressedZipExport\030\005 \001(\014\"U\n\031exportMapToF"
-    "ormatResponse\022\033\n\023compressedZipExport\030\001 \001"
-    "(\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"\232\001\n\032impo"
-    "rtMapFromFormatRequest\022#\n\033grpcServerComp"
-    "ressionFormat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t"
-    "\022\017\n\007mapUUID\030\003 \001(\t\022\024\n\014importFormat\030\004 \001(\021\022"
-    "\033\n\023compressedZipImport\030\005 \001(\014\":\n\033importMa"
-    "pFromFormatResponse\022\033\n\023xpcfGrpcReturnVal"
-    "ue\030\001 \001(\0212\363\033\n\024grpcIFrontEndService\022_\n\016reg"
-    "isterClient\022$.grpcIFrontEnd.registerClie"
-    "ntRequest\032%.grpcIFrontEnd.registerClient"
-    "Response\"\000\022e\n\020unregisterClient\022&.grpcIFr"
-    "ontEnd.unregisterClientRequest\032\'.grpcIFr"
-    "ontEnd.unregisterClientResponse\"\000\022h\n\021get"
-    "AllClientsUUID\022\'.grpcIFrontEnd.getAllCli"
-    "entsUUIDRequest\032(.grpcIFrontEnd.getAllCl"
-    "ientsUUIDResponse\"\000\022\\\n\rgetDeviceInfo\022#.g"
-    "rpcIFrontEnd.getDeviceInfoRequest\032$.grpc"
-    "IFrontEnd.getDeviceInfoResponse\"\000\022S\n\nini"
-    "t_grpc0\022 .grpcIFrontEnd.init_grpc0Reques"
-    "t\032!.grpcIFrontEnd.init_grpc0Response\"\000\022S"
-    "\n\ninit_grpc1\022 .grpcIFrontEnd.init_grpc1R"
-    "equest\032!.grpcIFrontEnd.init_grpc1Respons"
-    "e\"\000\022D\n\005start\022\033.grpcIFrontEnd.startReques"
-    "t\032\034.grpcIFrontEnd.startResponse\"\000\022A\n\004sto"
-    "p\022\032.grpcIFrontEnd.stopRequest\032\033.grpcIFro"
-    "ntEnd.stopResponse\"\000\022h\n\021getProcessingMod"
-    "e\022\'.grpcIFrontEnd.getProcessingModeReque"
-    "st\032(.grpcIFrontEnd.getProcessingModeResp"
-    "onse\"\000\022\200\001\n\031setCameraParameters_grpc0\022/.g"
-    "rpcIFrontEnd.setCameraParameters_grpc0Re"
-    "quest\0320.grpcIFrontEnd.setCameraParameter"
-    "s_grpc0Response\"\000\022\200\001\n\031setCameraParameter"
-    "s_grpc1\022/.grpcIFrontEnd.setCameraParamet"
-    "ers_grpc1Request\0320.grpcIFrontEnd.setCame"
-    "raParameters_grpc1Response\"\000\022\203\001\n\032setRect"
-    "ificationParameters\0220.grpcIFrontEnd.setR"
-    "ectificationParametersRequest\0321.grpcIFro"
-    "ntEnd.setRectificationParametersResponse"
-    "\"\000\022n\n\023getCameraParameters\022).grpcIFrontEn"
-    "d.getCameraParametersRequest\032*.grpcIFron"
-    "tEnd.getCameraParametersResponse\"\000\022n\n\023im"
-    "ageProcessRequest\022).grpcIFrontEnd.imageP"
-    "rocessRequestRequest\032*.grpcIFrontEnd.ima"
-    "geProcessRequestResponse\"\000\022t\n\025getMapping"
-    "DataRequest\022+.grpcIFrontEnd.getMappingDa"
-    "taRequestRequest\032,.grpcIFrontEnd.getMapp"
-    "ingDataRequestResponse\"\000\022\\\n\rgetClientPos"
-    "e\022#.grpcIFrontEnd.getClientPoseRequest\032$"
-    ".grpcIFrontEnd.getClientPoseResponse\"\000\022P"
-    "\n\tcreateMap\022\037.grpcIFrontEnd.createMapReq"
-    "uest\032 .grpcIFrontEnd.createMapResponse\"\000"
-    "\022P\n\tdeleteMap\022\037.grpcIFrontEnd.deleteMapR"
-    "equest\032 .grpcIFrontEnd.deleteMapResponse"
-    "\"\000\022_\n\016getAllMapsUUID\022$.grpcIFrontEnd.get"
-    "AllMapsUUIDRequest\032%.grpcIFrontEnd.getAl"
-    "lMapsUUIDResponse\"\000\022e\n\020getClientMapUUID\022"
-    "&.grpcIFrontEnd.getClientMapUUIDRequest\032"
-    "\'.grpcIFrontEnd.getClientMapUUIDResponse"
-    "\"\000\022n\n\023getClientInfoForMap\022).grpcIFrontEn"
-    "d.getClientInfoForMapRequest\032*.grpcIFron"
-    "tEnd.getClientInfoForMapResponse\"\000\022\\\n\rge"
-    "tMapRequest\022#.grpcIFrontEnd.getMapReques"
-    "tRequest\032$.grpcIFrontEnd.getMapRequestRe"
-    "sponse\"\000\022\\\n\rsetMapRequest\022#.grpcIFrontEn"
-    "d.setMapRequestRequest\032$.grpcIFrontEnd.s"
-    "etMapRequestResponse\"\000\022q\n\024getPointCloudR"
-    "equest\022*.grpcIFrontEnd.getPointCloudRequ"
-    "estRequest\032+.grpcIFrontEnd.getPointCloud"
-    "RequestResponse\"\000\022S\n\ngetMapInfo\022 .grpcIF"
-    "rontEnd.getMapInfoRequest\032!.grpcIFrontEn"
-    "d.getMapInfoResponse\"\000\022P\n\tbackupMap\022\037.gr"
-    "pcIFrontEnd.backupMapRequest\032 .grpcIFron"
-    "tEnd.backupMapResponse\"\000\022S\n\nrestoreMap\022 "
-    ".grpcIFrontEnd.restoreMapRequest\032!.grpcI"
-    "FrontEnd.restoreMapResponse\"\000\022\217\001\n\036getAva"
-    "ilableMapProcessingTypes\0224.grpcIFrontEnd"
-    ".getAvailableMapProcessingTypesRequest\0325"
-    ".grpcIFrontEnd.getAvailableMapProcessing"
-    "TypesResponse\"\000\022q\n\024requestMapProcessing\022"
-    "*.grpcIFrontEnd.requestMapProcessingRequ"
-    "est\032+.grpcIFrontEnd.requestMapProcessing"
-    "Response\"\000\022w\n\026getMapProcessingStatus\022,.g"
-    "rpcIFrontEnd.getMapProcessingStatusReque"
-    "st\032-.grpcIFrontEnd.getMapProcessingStatu"
-    "sResponse\"\000\022q\n\024getMapProcessingData\022*.gr"
-    "pcIFrontEnd.getMapProcessingDataRequest\032"
-    "+.grpcIFrontEnd.getMapProcessingDataResp"
-    "onse\"\000\022\233\001\n\"getAvailableMapExportImportFo"
-    "rmats\0228.grpcIFrontEnd.getAvailableMapExp"
-    "ortImportFormatsRequest\0329.grpcIFrontEnd."
-    "getAvailableMapExportImportFormatsRespon"
-    "se\"\000\022h\n\021exportMapToFormat\022\'.grpcIFrontEn"
-    "d.exportMapToFormatRequest\032(.grpcIFrontE"
-    "nd.exportMapToFormatResponse\"\000\022n\n\023import"
-    "MapFromFormat\022).grpcIFrontEnd.importMapF"
-    "romFormatRequest\032*.grpcIFrontEnd.importM"
-    "apFromFormatResponse\"\000b\006proto3"
+    "\014\022\033\n\023xpcfGrpcReturnValue\030\002 \001(\021\"\217\001\n\035extra"
+    "ctImagesFromVideoRequest\022#\n\033grpcServerCo"
+    "mpressionFormat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001"
+    "(\t\022\020\n\010videoURL\030\003 \001(\t\022\017\n\007headers\030\004 \001(\t\022\021\n"
+    "\timageUUID\030\005 \001(\t\"P\n\036extractImagesFromVid"
+    "eoResponse\022\021\n\timageUUID\030\001 \001(\t\022\033\n\023xpcfGrp"
+    "cReturnValue\030\002 \001(\021\"\227\001\n&getExtractImagesF"
+    "romVideoStatusRequest\022#\n\033grpcServerCompr"
+    "essionFormat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t\022"
+    "\021\n\timageUUID\030\003 \001(\t\022\016\n\006status\030\004 \001(\021\022\020\n\010pr"
+    "ogress\030\005 \001(\002\"h\n\'getExtractImagesFromVide"
+    "oStatusResponse\022\016\n\006status\030\001 \001(\021\022\020\n\010progr"
+    "ess\030\002 \001(\002\022\033\n\023xpcfGrpcReturnValue\030\003 \001(\021\"\236"
+    "\001\n\033requestMapProcessingRequest\022#\n\033grpcSe"
+    "rverCompressionFormat\030\001 \001(\005\022\023\n\013accessTok"
+    "en\030\002 \001(\t\022\026\n\016mapOrImageUUID\030\003 \001(\t\022\025\n\rresu"
+    "ltMapUUID\030\004 \001(\t\022\026\n\016processingType\030\005 \001(\021\""
+    ";\n\034requestMapProcessingResponse\022\033\n\023xpcfG"
+    "rpcReturnValue\030\001 \001(\021\"\252\001\n\035getMapProcessin"
+    "gStatusRequest\022#\n\033grpcServerCompressionF"
+    "ormat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t\022\025\n\rresu"
+    "ltMapUUID\030\003 \001(\t\022\016\n\006status\030\004 \001(\021\022\026\n\016proce"
+    "ssingType\030\005 \001(\021\022\020\n\010progress\030\006 \001(\002\"w\n\036get"
+    "MapProcessingStatusResponse\022\016\n\006status\030\001 "
+    "\001(\021\022\026\n\016processingType\030\002 \001(\021\022\020\n\010progress\030"
+    "\003 \001(\002\022\033\n\023xpcfGrpcReturnValue\030\004 \001(\021\"\231\001\n\033g"
+    "etMapProcessingDataRequest\022#\n\033grpcServer"
+    "CompressionFormat\030\001 \001(\005\022\023\n\013accessToken\030\002"
+    " \001(\t\022\025\n\rresultMapUUID\030\003 \001(\t\022\022\n\npointClou"
+    "d\030\004 \001(\014\022\025\n\rkeyframePoses\030\005 \001(\014\"f\n\034getMap"
+    "ProcessingDataResponse\022\022\n\npointCloud\030\001 \001"
+    "(\014\022\025\n\rkeyframePoses\030\002 \001(\014\022\033\n\023xpcfGrpcRet"
+    "urnValue\030\003 \001(\021\"\177\n)getAvailableMapExportI"
+    "mportFormatsRequest\022#\n\033grpcServerCompres"
+    "sionFormat\030\001 \001(\005\022\023\n\013accessToken\030\002 \001(\t\022\030\n"
+    "\020availableFormats\030\003 \001(\014\"c\n*getAvailableM"
+    "apExportImportFormatsResponse\022\030\n\020availab"
+    "leFormats\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue\030\002"
+    " \001(\021\"\230\001\n\030exportMapToFormatRequest\022#\n\033grp"
+    "cServerCompressionFormat\030\001 \001(\005\022\023\n\013access"
+    "Token\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\022\024\n\014exportFo"
+    "rmat\030\004 \001(\021\022\033\n\023compressedZipExport\030\005 \001(\014\""
+    "U\n\031exportMapToFormatResponse\022\033\n\023compress"
+    "edZipExport\030\001 \001(\014\022\033\n\023xpcfGrpcReturnValue"
+    "\030\002 \001(\021\"\232\001\n\032importMapFromFormatRequest\022#\n"
+    "\033grpcServerCompressionFormat\030\001 \001(\005\022\023\n\013ac"
+    "cessToken\030\002 \001(\t\022\017\n\007mapUUID\030\003 \001(\t\022\024\n\014impo"
+    "rtFormat\030\004 \001(\021\022\033\n\023compressedZipImport\030\005 "
+    "\001(\014\":\n\033importMapFromFormatResponse\022\033\n\023xp"
+    "cfGrpcReturnValue\030\001 \001(\0212\201\036\n\024grpcIFrontEn"
+    "dService\022_\n\016registerClient\022$.grpcIFrontE"
+    "nd.registerClientRequest\032%.grpcIFrontEnd"
+    ".registerClientResponse\"\000\022e\n\020unregisterC"
+    "lient\022&.grpcIFrontEnd.unregisterClientRe"
+    "quest\032\'.grpcIFrontEnd.unregisterClientRe"
+    "sponse\"\000\022h\n\021getAllClientsUUID\022\'.grpcIFro"
+    "ntEnd.getAllClientsUUIDRequest\032(.grpcIFr"
+    "ontEnd.getAllClientsUUIDResponse\"\000\022\\\n\rge"
+    "tDeviceInfo\022#.grpcIFrontEnd.getDeviceInf"
+    "oRequest\032$.grpcIFrontEnd.getDeviceInfoRe"
+    "sponse\"\000\022S\n\ninit_grpc0\022 .grpcIFrontEnd.i"
+    "nit_grpc0Request\032!.grpcIFrontEnd.init_gr"
+    "pc0Response\"\000\022S\n\ninit_grpc1\022 .grpcIFront"
+    "End.init_grpc1Request\032!.grpcIFrontEnd.in"
+    "it_grpc1Response\"\000\022D\n\005start\022\033.grpcIFront"
+    "End.startRequest\032\034.grpcIFrontEnd.startRe"
+    "sponse\"\000\022A\n\004stop\022\032.grpcIFrontEnd.stopReq"
+    "uest\032\033.grpcIFrontEnd.stopResponse\"\000\022h\n\021g"
+    "etProcessingMode\022\'.grpcIFrontEnd.getProc"
+    "essingModeRequest\032(.grpcIFrontEnd.getPro"
+    "cessingModeResponse\"\000\022\200\001\n\031setCameraParam"
+    "eters_grpc0\022/.grpcIFrontEnd.setCameraPar"
+    "ameters_grpc0Request\0320.grpcIFrontEnd.set"
+    "CameraParameters_grpc0Response\"\000\022\200\001\n\031set"
+    "CameraParameters_grpc1\022/.grpcIFrontEnd.s"
+    "etCameraParameters_grpc1Request\0320.grpcIF"
+    "rontEnd.setCameraParameters_grpc1Respons"
+    "e\"\000\022\203\001\n\032setRectificationParameters\0220.grp"
+    "cIFrontEnd.setRectificationParametersReq"
+    "uest\0321.grpcIFrontEnd.setRectificationPar"
+    "ametersResponse\"\000\022n\n\023getCameraParameters"
+    "\022).grpcIFrontEnd.getCameraParametersRequ"
+    "est\032*.grpcIFrontEnd.getCameraParametersR"
+    "esponse\"\000\022n\n\023imageProcessRequest\022).grpcI"
+    "FrontEnd.imageProcessRequestRequest\032*.gr"
+    "pcIFrontEnd.imageProcessRequestResponse\""
+    "\000\022t\n\025getMappingDataRequest\022+.grpcIFrontE"
+    "nd.getMappingDataRequestRequest\032,.grpcIF"
+    "rontEnd.getMappingDataRequestResponse\"\000\022"
+    "\\\n\rgetClientPose\022#.grpcIFrontEnd.getClie"
+    "ntPoseRequest\032$.grpcIFrontEnd.getClientP"
+    "oseResponse\"\000\022P\n\tcreateMap\022\037.grpcIFrontE"
+    "nd.createMapRequest\032 .grpcIFrontEnd.crea"
+    "teMapResponse\"\000\022P\n\tdeleteMap\022\037.grpcIFron"
+    "tEnd.deleteMapRequest\032 .grpcIFrontEnd.de"
+    "leteMapResponse\"\000\022_\n\016getAllMapsUUID\022$.gr"
+    "pcIFrontEnd.getAllMapsUUIDRequest\032%.grpc"
+    "IFrontEnd.getAllMapsUUIDResponse\"\000\022e\n\020ge"
+    "tClientMapUUID\022&.grpcIFrontEnd.getClient"
+    "MapUUIDRequest\032\'.grpcIFrontEnd.getClient"
+    "MapUUIDResponse\"\000\022n\n\023getClientInfoForMap"
+    "\022).grpcIFrontEnd.getClientInfoForMapRequ"
+    "est\032*.grpcIFrontEnd.getClientInfoForMapR"
+    "esponse\"\000\022\\\n\rgetMapRequest\022#.grpcIFrontE"
+    "nd.getMapRequestRequest\032$.grpcIFrontEnd."
+    "getMapRequestResponse\"\000\022\\\n\rsetMapRequest"
+    "\022#.grpcIFrontEnd.setMapRequestRequest\032$."
+    "grpcIFrontEnd.setMapRequestResponse\"\000\022q\n"
+    "\024getPointCloudRequest\022*.grpcIFrontEnd.ge"
+    "tPointCloudRequestRequest\032+.grpcIFrontEn"
+    "d.getPointCloudRequestResponse\"\000\022S\n\ngetM"
+    "apInfo\022 .grpcIFrontEnd.getMapInfoRequest"
+    "\032!.grpcIFrontEnd.getMapInfoResponse\"\000\022P\n"
+    "\tbackupMap\022\037.grpcIFrontEnd.backupMapRequ"
+    "est\032 .grpcIFrontEnd.backupMapResponse\"\000\022"
+    "S\n\nrestoreMap\022 .grpcIFrontEnd.restoreMap"
+    "Request\032!.grpcIFrontEnd.restoreMapRespon"
+    "se\"\000\022\217\001\n\036getAvailableMapProcessingTypes\022"
+    "4.grpcIFrontEnd.getAvailableMapProcessin"
+    "gTypesRequest\0325.grpcIFrontEnd.getAvailab"
+    "leMapProcessingTypesResponse\"\000\022w\n\026extrac"
+    "tImagesFromVideo\022,.grpcIFrontEnd.extract"
+    "ImagesFromVideoRequest\032-.grpcIFrontEnd.e"
+    "xtractImagesFromVideoResponse\"\000\022\222\001\n\037getE"
+    "xtractImagesFromVideoStatus\0225.grpcIFront"
+    "End.getExtractImagesFromVideoStatusReque"
+    "st\0326.grpcIFrontEnd.getExtractImagesFromV"
+    "ideoStatusResponse\"\000\022q\n\024requestMapProces"
+    "sing\022*.grpcIFrontEnd.requestMapProcessin"
+    "gRequest\032+.grpcIFrontEnd.requestMapProce"
+    "ssingResponse\"\000\022w\n\026getMapProcessingStatu"
+    "s\022,.grpcIFrontEnd.getMapProcessingStatus"
+    "Request\032-.grpcIFrontEnd.getMapProcessing"
+    "StatusResponse\"\000\022q\n\024getMapProcessingData"
+    "\022*.grpcIFrontEnd.getMapProcessingDataReq"
+    "uest\032+.grpcIFrontEnd.getMapProcessingDat"
+    "aResponse\"\000\022\233\001\n\"getAvailableMapExportImp"
+    "ortFormats\0228.grpcIFrontEnd.getAvailableM"
+    "apExportImportFormatsRequest\0329.grpcIFron"
+    "tEnd.getAvailableMapExportImportFormatsR"
+    "esponse\"\000\022h\n\021exportMapToFormat\022\'.grpcIFr"
+    "ontEnd.exportMapToFormatRequest\032(.grpcIF"
+    "rontEnd.exportMapToFormatResponse\"\000\022n\n\023i"
+    "mportMapFromFormat\022).grpcIFrontEnd.impor"
+    "tMapFromFormatRequest\032*.grpcIFrontEnd.im"
+    "portMapFromFormatResponse\"\000b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_grpcIFrontEndService_2eproto_deps[1] = {
@@ -3234,13 +3428,13 @@ static ::absl::once_flag descriptor_table_grpcIFrontEndService_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_grpcIFrontEndService_2eproto = {
     false,
     false,
-    11190,
+    11955,
     descriptor_table_protodef_grpcIFrontEndService_2eproto,
     "grpcIFrontEndService.proto",
     &descriptor_table_grpcIFrontEndService_2eproto_once,
     descriptor_table_grpcIFrontEndService_2eproto_deps,
     1,
-    68,
+    72,
     schemas,
     file_default_instances,
     TableStruct_grpcIFrontEndService_2eproto::offsets,
@@ -22593,6 +22787,1465 @@ void getAvailableMapProcessingTypesResponse::InternalSwap(getAvailableMapProcess
 }
 // ===================================================================
 
+class extractImagesFromVideoRequest::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<extractImagesFromVideoRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(extractImagesFromVideoRequest, _impl_._has_bits_);
+};
+
+extractImagesFromVideoRequest::extractImagesFromVideoRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, extractImagesFromVideoRequest_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIFrontEnd.extractImagesFromVideoRequest)
+}
+PROTOBUF_NDEBUG_INLINE extractImagesFromVideoRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::grpcIFrontEnd::extractImagesFromVideoRequest& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        accesstoken_(arena, from.accesstoken_),
+        videourl_(arena, from.videourl_),
+        headers_(arena, from.headers_),
+        imageuuid_(arena, from.imageuuid_) {}
+
+extractImagesFromVideoRequest::extractImagesFromVideoRequest(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const extractImagesFromVideoRequest& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, extractImagesFromVideoRequest_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  extractImagesFromVideoRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+
+  // @@protoc_insertion_point(copy_constructor:grpcIFrontEnd.extractImagesFromVideoRequest)
+}
+PROTOBUF_NDEBUG_INLINE extractImagesFromVideoRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        accesstoken_(arena),
+        videourl_(arena),
+        headers_(arena),
+        imageuuid_(arena) {}
+
+inline void extractImagesFromVideoRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.grpcservercompressionformat_ = {};
+}
+extractImagesFromVideoRequest::~extractImagesFromVideoRequest() {
+  // @@protoc_insertion_point(destructor:grpcIFrontEnd.extractImagesFromVideoRequest)
+  SharedDtor(*this);
+}
+inline void extractImagesFromVideoRequest::SharedDtor(MessageLite& self) {
+  extractImagesFromVideoRequest& this_ = static_cast<extractImagesFromVideoRequest&>(self);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.accesstoken_.Destroy();
+  this_._impl_.videourl_.Destroy();
+  this_._impl_.headers_.Destroy();
+  this_._impl_.imageuuid_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL extractImagesFromVideoRequest::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) extractImagesFromVideoRequest(arena);
+}
+constexpr auto extractImagesFromVideoRequest::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(extractImagesFromVideoRequest),
+                                            alignof(extractImagesFromVideoRequest));
+}
+constexpr auto extractImagesFromVideoRequest::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_extractImagesFromVideoRequest_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &extractImagesFromVideoRequest::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<extractImagesFromVideoRequest>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &extractImagesFromVideoRequest::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<extractImagesFromVideoRequest>(), &extractImagesFromVideoRequest::ByteSizeLong,
+              &extractImagesFromVideoRequest::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(extractImagesFromVideoRequest, _impl_._cached_size_),
+          false,
+      },
+      &extractImagesFromVideoRequest::kDescriptorMethods,
+      &descriptor_table_grpcIFrontEndService_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull extractImagesFromVideoRequest_class_data_ =
+        extractImagesFromVideoRequest::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+extractImagesFromVideoRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&extractImagesFromVideoRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(extractImagesFromVideoRequest_class_data_.tc_table);
+  return extractImagesFromVideoRequest_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 5, 0, 87, 2>
+extractImagesFromVideoRequest::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(extractImagesFromVideoRequest, _impl_._has_bits_),
+    0, // no _extensions_
+    5, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967264,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    5,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    extractImagesFromVideoRequest_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIFrontEnd::extractImagesFromVideoRequest>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // int32 grpcServerCompressionFormat = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(extractImagesFromVideoRequest, _impl_.grpcservercompressionformat_), 4>(),
+     {8, 4, 0, PROTOBUF_FIELD_OFFSET(extractImagesFromVideoRequest, _impl_.grpcservercompressionformat_)}},
+    // string accessToken = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(extractImagesFromVideoRequest, _impl_.accesstoken_)}},
+    // string videoURL = 3;
+    {::_pbi::TcParser::FastUS1,
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(extractImagesFromVideoRequest, _impl_.videourl_)}},
+    // string headers = 4;
+    {::_pbi::TcParser::FastUS1,
+     {34, 2, 0, PROTOBUF_FIELD_OFFSET(extractImagesFromVideoRequest, _impl_.headers_)}},
+    // string imageUUID = 5;
+    {::_pbi::TcParser::FastUS1,
+     {42, 3, 0, PROTOBUF_FIELD_OFFSET(extractImagesFromVideoRequest, _impl_.imageuuid_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int32 grpcServerCompressionFormat = 1;
+    {PROTOBUF_FIELD_OFFSET(extractImagesFromVideoRequest, _impl_.grpcservercompressionformat_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // string accessToken = 2;
+    {PROTOBUF_FIELD_OFFSET(extractImagesFromVideoRequest, _impl_.accesstoken_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string videoURL = 3;
+    {PROTOBUF_FIELD_OFFSET(extractImagesFromVideoRequest, _impl_.videourl_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string headers = 4;
+    {PROTOBUF_FIELD_OFFSET(extractImagesFromVideoRequest, _impl_.headers_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string imageUUID = 5;
+    {PROTOBUF_FIELD_OFFSET(extractImagesFromVideoRequest, _impl_.imageuuid_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\53\0\13\10\7\11\0\0"
+    "grpcIFrontEnd.extractImagesFromVideoRequest"
+    "accessToken"
+    "videoURL"
+    "headers"
+    "imageUUID"
+  }},
+};
+PROTOBUF_NOINLINE void extractImagesFromVideoRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIFrontEnd.extractImagesFromVideoRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x0000000fU) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      _impl_.accesstoken_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      _impl_.videourl_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      _impl_.headers_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000008U) != 0) {
+      _impl_.imageuuid_.ClearNonDefaultToEmpty();
+    }
+  }
+  _impl_.grpcservercompressionformat_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL extractImagesFromVideoRequest::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const extractImagesFromVideoRequest& this_ = static_cast<const extractImagesFromVideoRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL extractImagesFromVideoRequest::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const extractImagesFromVideoRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIFrontEnd.extractImagesFromVideoRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if ((this_._impl_._has_bits_[0] & 0x00000010U) != 0) {
+    if (this_._internal_grpcservercompressionformat() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<1>(
+              stream, this_._internal_grpcservercompressionformat(), target);
+    }
+  }
+
+  // string accessToken = 2;
+  if ((this_._impl_._has_bits_[0] & 0x00000001U) != 0) {
+    if (!this_._internal_accesstoken().empty()) {
+      const ::std::string& _s = this_._internal_accesstoken();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.extractImagesFromVideoRequest.accessToken");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // string videoURL = 3;
+  if ((this_._impl_._has_bits_[0] & 0x00000002U) != 0) {
+    if (!this_._internal_videourl().empty()) {
+      const ::std::string& _s = this_._internal_videourl();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.extractImagesFromVideoRequest.videoURL");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
+  // string headers = 4;
+  if ((this_._impl_._has_bits_[0] & 0x00000004U) != 0) {
+    if (!this_._internal_headers().empty()) {
+      const ::std::string& _s = this_._internal_headers();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.extractImagesFromVideoRequest.headers");
+      target = stream->WriteStringMaybeAliased(4, _s, target);
+    }
+  }
+
+  // string imageUUID = 5;
+  if ((this_._impl_._has_bits_[0] & 0x00000008U) != 0) {
+    if (!this_._internal_imageuuid().empty()) {
+      const ::std::string& _s = this_._internal_imageuuid();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.extractImagesFromVideoRequest.imageUUID");
+      target = stream->WriteStringMaybeAliased(5, _s, target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIFrontEnd.extractImagesFromVideoRequest)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t extractImagesFromVideoRequest::ByteSizeLong(const MessageLite& base) {
+  const extractImagesFromVideoRequest& this_ = static_cast<const extractImagesFromVideoRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t extractImagesFromVideoRequest::ByteSizeLong() const {
+  const extractImagesFromVideoRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:grpcIFrontEnd.extractImagesFromVideoRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x0000001fU) != 0) {
+    // string accessToken = 2;
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!this_._internal_accesstoken().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_accesstoken());
+      }
+    }
+    // string videoURL = 3;
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (!this_._internal_videourl().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_videourl());
+      }
+    }
+    // string headers = 4;
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      if (!this_._internal_headers().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_headers());
+      }
+    }
+    // string imageUUID = 5;
+    if ((cached_has_bits & 0x00000008U) != 0) {
+      if (!this_._internal_imageuuid().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_imageuuid());
+      }
+    }
+    // int32 grpcServerCompressionFormat = 1;
+    if ((cached_has_bits & 0x00000010U) != 0) {
+      if (this_._internal_grpcservercompressionformat() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_grpcservercompressionformat());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void extractImagesFromVideoRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<extractImagesFromVideoRequest*>(&to_msg);
+  auto& from = static_cast<const extractImagesFromVideoRequest&>(from_msg);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    from.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFrontEnd.extractImagesFromVideoRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x0000001fU) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!from._internal_accesstoken().empty()) {
+        _this->_internal_set_accesstoken(from._internal_accesstoken());
+      } else {
+        if (_this->_impl_.accesstoken_.IsDefault()) {
+          _this->_internal_set_accesstoken("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (!from._internal_videourl().empty()) {
+        _this->_internal_set_videourl(from._internal_videourl());
+      } else {
+        if (_this->_impl_.videourl_.IsDefault()) {
+          _this->_internal_set_videourl("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      if (!from._internal_headers().empty()) {
+        _this->_internal_set_headers(from._internal_headers());
+      } else {
+        if (_this->_impl_.headers_.IsDefault()) {
+          _this->_internal_set_headers("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000008U) != 0) {
+      if (!from._internal_imageuuid().empty()) {
+        _this->_internal_set_imageuuid(from._internal_imageuuid());
+      } else {
+        if (_this->_impl_.imageuuid_.IsDefault()) {
+          _this->_internal_set_imageuuid("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000010U) != 0) {
+      if (from._internal_grpcservercompressionformat() != 0) {
+        _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void extractImagesFromVideoRequest::CopyFrom(const extractImagesFromVideoRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIFrontEnd.extractImagesFromVideoRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void extractImagesFromVideoRequest::InternalSwap(extractImagesFromVideoRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.accesstoken_, &other->_impl_.accesstoken_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.videourl_, &other->_impl_.videourl_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.headers_, &other->_impl_.headers_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.imageuuid_, &other->_impl_.imageuuid_, arena);
+  swap(_impl_.grpcservercompressionformat_, other->_impl_.grpcservercompressionformat_);
+}
+
+::google::protobuf::Metadata extractImagesFromVideoRequest::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class extractImagesFromVideoResponse::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<extractImagesFromVideoResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(extractImagesFromVideoResponse, _impl_._has_bits_);
+};
+
+extractImagesFromVideoResponse::extractImagesFromVideoResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, extractImagesFromVideoResponse_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIFrontEnd.extractImagesFromVideoResponse)
+}
+PROTOBUF_NDEBUG_INLINE extractImagesFromVideoResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::grpcIFrontEnd::extractImagesFromVideoResponse& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        imageuuid_(arena, from.imageuuid_) {}
+
+extractImagesFromVideoResponse::extractImagesFromVideoResponse(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const extractImagesFromVideoResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, extractImagesFromVideoResponse_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  extractImagesFromVideoResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+
+  // @@protoc_insertion_point(copy_constructor:grpcIFrontEnd.extractImagesFromVideoResponse)
+}
+PROTOBUF_NDEBUG_INLINE extractImagesFromVideoResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        imageuuid_(arena) {}
+
+inline void extractImagesFromVideoResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.xpcfgrpcreturnvalue_ = {};
+}
+extractImagesFromVideoResponse::~extractImagesFromVideoResponse() {
+  // @@protoc_insertion_point(destructor:grpcIFrontEnd.extractImagesFromVideoResponse)
+  SharedDtor(*this);
+}
+inline void extractImagesFromVideoResponse::SharedDtor(MessageLite& self) {
+  extractImagesFromVideoResponse& this_ = static_cast<extractImagesFromVideoResponse&>(self);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.imageuuid_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL extractImagesFromVideoResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) extractImagesFromVideoResponse(arena);
+}
+constexpr auto extractImagesFromVideoResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(extractImagesFromVideoResponse),
+                                            alignof(extractImagesFromVideoResponse));
+}
+constexpr auto extractImagesFromVideoResponse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_extractImagesFromVideoResponse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &extractImagesFromVideoResponse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<extractImagesFromVideoResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &extractImagesFromVideoResponse::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<extractImagesFromVideoResponse>(), &extractImagesFromVideoResponse::ByteSizeLong,
+              &extractImagesFromVideoResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(extractImagesFromVideoResponse, _impl_._cached_size_),
+          false,
+      },
+      &extractImagesFromVideoResponse::kDescriptorMethods,
+      &descriptor_table_grpcIFrontEndService_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull extractImagesFromVideoResponse_class_data_ =
+        extractImagesFromVideoResponse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+extractImagesFromVideoResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&extractImagesFromVideoResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(extractImagesFromVideoResponse_class_data_.tc_table);
+  return extractImagesFromVideoResponse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 62, 2>
+extractImagesFromVideoResponse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(extractImagesFromVideoResponse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    extractImagesFromVideoResponse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIFrontEnd::extractImagesFromVideoResponse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // sint32 xpcfGrpcReturnValue = 2;
+    {::_pbi::TcParser::FastZ32S1,
+     {16, 1, 0, PROTOBUF_FIELD_OFFSET(extractImagesFromVideoResponse, _impl_.xpcfgrpcreturnvalue_)}},
+    // string imageUUID = 1;
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(extractImagesFromVideoResponse, _impl_.imageuuid_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string imageUUID = 1;
+    {PROTOBUF_FIELD_OFFSET(extractImagesFromVideoResponse, _impl_.imageuuid_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // sint32 xpcfGrpcReturnValue = 2;
+    {PROTOBUF_FIELD_OFFSET(extractImagesFromVideoResponse, _impl_.xpcfgrpcreturnvalue_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kSInt32)},
+  }},
+  // no aux_entries
+  {{
+    "\54\11\0\0\0\0\0\0"
+    "grpcIFrontEnd.extractImagesFromVideoResponse"
+    "imageUUID"
+  }},
+};
+PROTOBUF_NOINLINE void extractImagesFromVideoResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIFrontEnd.extractImagesFromVideoResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000001U) != 0) {
+    _impl_.imageuuid_.ClearNonDefaultToEmpty();
+  }
+  _impl_.xpcfgrpcreturnvalue_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL extractImagesFromVideoResponse::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const extractImagesFromVideoResponse& this_ = static_cast<const extractImagesFromVideoResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL extractImagesFromVideoResponse::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const extractImagesFromVideoResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIFrontEnd.extractImagesFromVideoResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string imageUUID = 1;
+  if ((this_._impl_._has_bits_[0] & 0x00000001U) != 0) {
+    if (!this_._internal_imageuuid().empty()) {
+      const ::std::string& _s = this_._internal_imageuuid();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.extractImagesFromVideoResponse.imageUUID");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // sint32 xpcfGrpcReturnValue = 2;
+  if ((this_._impl_._has_bits_[0] & 0x00000002U) != 0) {
+    if (this_._internal_xpcfgrpcreturnvalue() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+          2, this_._internal_xpcfgrpcreturnvalue(), target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIFrontEnd.extractImagesFromVideoResponse)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t extractImagesFromVideoResponse::ByteSizeLong(const MessageLite& base) {
+  const extractImagesFromVideoResponse& this_ = static_cast<const extractImagesFromVideoResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t extractImagesFromVideoResponse::ByteSizeLong() const {
+  const extractImagesFromVideoResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:grpcIFrontEnd.extractImagesFromVideoResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003U) != 0) {
+    // string imageUUID = 1;
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!this_._internal_imageuuid().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_imageuuid());
+      }
+    }
+    // sint32 xpcfGrpcReturnValue = 2;
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (this_._internal_xpcfgrpcreturnvalue() != 0) {
+        total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+            this_._internal_xpcfgrpcreturnvalue());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void extractImagesFromVideoResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<extractImagesFromVideoResponse*>(&to_msg);
+  auto& from = static_cast<const extractImagesFromVideoResponse&>(from_msg);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    from.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFrontEnd.extractImagesFromVideoResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003U) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!from._internal_imageuuid().empty()) {
+        _this->_internal_set_imageuuid(from._internal_imageuuid());
+      } else {
+        if (_this->_impl_.imageuuid_.IsDefault()) {
+          _this->_internal_set_imageuuid("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (from._internal_xpcfgrpcreturnvalue() != 0) {
+        _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void extractImagesFromVideoResponse::CopyFrom(const extractImagesFromVideoResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIFrontEnd.extractImagesFromVideoResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void extractImagesFromVideoResponse::InternalSwap(extractImagesFromVideoResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.imageuuid_, &other->_impl_.imageuuid_, arena);
+  swap(_impl_.xpcfgrpcreturnvalue_, other->_impl_.xpcfgrpcreturnvalue_);
+}
+
+::google::protobuf::Metadata extractImagesFromVideoResponse::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class getExtractImagesFromVideoStatusRequest::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<getExtractImagesFromVideoStatusRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_._has_bits_);
+};
+
+getExtractImagesFromVideoStatusRequest::getExtractImagesFromVideoStatusRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, getExtractImagesFromVideoStatusRequest_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIFrontEnd.getExtractImagesFromVideoStatusRequest)
+}
+PROTOBUF_NDEBUG_INLINE getExtractImagesFromVideoStatusRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    [[maybe_unused]] const ::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        accesstoken_(arena, from.accesstoken_),
+        imageuuid_(arena, from.imageuuid_) {}
+
+getExtractImagesFromVideoStatusRequest::getExtractImagesFromVideoStatusRequest(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const getExtractImagesFromVideoStatusRequest& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, getExtractImagesFromVideoStatusRequest_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  getExtractImagesFromVideoStatusRequest* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           offsetof(Impl_, progress_) -
+               offsetof(Impl_, grpcservercompressionformat_) +
+               sizeof(Impl_::progress_));
+
+  // @@protoc_insertion_point(copy_constructor:grpcIFrontEnd.getExtractImagesFromVideoStatusRequest)
+}
+PROTOBUF_NDEBUG_INLINE getExtractImagesFromVideoStatusRequest::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        accesstoken_(arena),
+        imageuuid_(arena) {}
+
+inline void getExtractImagesFromVideoStatusRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, grpcservercompressionformat_),
+           0,
+           offsetof(Impl_, progress_) -
+               offsetof(Impl_, grpcservercompressionformat_) +
+               sizeof(Impl_::progress_));
+}
+getExtractImagesFromVideoStatusRequest::~getExtractImagesFromVideoStatusRequest() {
+  // @@protoc_insertion_point(destructor:grpcIFrontEnd.getExtractImagesFromVideoStatusRequest)
+  SharedDtor(*this);
+}
+inline void getExtractImagesFromVideoStatusRequest::SharedDtor(MessageLite& self) {
+  getExtractImagesFromVideoStatusRequest& this_ = static_cast<getExtractImagesFromVideoStatusRequest&>(self);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.accesstoken_.Destroy();
+  this_._impl_.imageuuid_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL getExtractImagesFromVideoStatusRequest::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) getExtractImagesFromVideoStatusRequest(arena);
+}
+constexpr auto getExtractImagesFromVideoStatusRequest::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(getExtractImagesFromVideoStatusRequest),
+                                            alignof(getExtractImagesFromVideoStatusRequest));
+}
+constexpr auto getExtractImagesFromVideoStatusRequest::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_getExtractImagesFromVideoStatusRequest_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &getExtractImagesFromVideoStatusRequest::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<getExtractImagesFromVideoStatusRequest>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &getExtractImagesFromVideoStatusRequest::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<getExtractImagesFromVideoStatusRequest>(), &getExtractImagesFromVideoStatusRequest::ByteSizeLong,
+              &getExtractImagesFromVideoStatusRequest::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_._cached_size_),
+          false,
+      },
+      &getExtractImagesFromVideoStatusRequest::kDescriptorMethods,
+      &descriptor_table_grpcIFrontEndService_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull getExtractImagesFromVideoStatusRequest_class_data_ =
+        getExtractImagesFromVideoStatusRequest::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+getExtractImagesFromVideoStatusRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&getExtractImagesFromVideoStatusRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(getExtractImagesFromVideoStatusRequest_class_data_.tc_table);
+  return getExtractImagesFromVideoStatusRequest_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 5, 0, 81, 2>
+getExtractImagesFromVideoStatusRequest::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_._has_bits_),
+    0, // no _extensions_
+    5, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967264,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    5,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    getExtractImagesFromVideoStatusRequest_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // int32 grpcServerCompressionFormat = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(getExtractImagesFromVideoStatusRequest, _impl_.grpcservercompressionformat_), 2>(),
+     {8, 2, 0, PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_.grpcservercompressionformat_)}},
+    // string accessToken = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_.accesstoken_)}},
+    // string imageUUID = 3;
+    {::_pbi::TcParser::FastUS1,
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_.imageuuid_)}},
+    // sint32 status = 4;
+    {::_pbi::TcParser::FastZ32S1,
+     {32, 3, 0, PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_.status_)}},
+    // float progress = 5;
+    {::_pbi::TcParser::FastF32S1,
+     {45, 4, 0, PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_.progress_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // int32 grpcServerCompressionFormat = 1;
+    {PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_.grpcservercompressionformat_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // string accessToken = 2;
+    {PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_.accesstoken_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string imageUUID = 3;
+    {PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_.imageuuid_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // sint32 status = 4;
+    {PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_.status_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kSInt32)},
+    // float progress = 5;
+    {PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_.progress_), _Internal::kHasBitsOffset + 4, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+  }},
+  // no aux_entries
+  {{
+    "\64\0\13\11\0\0\0\0"
+    "grpcIFrontEnd.getExtractImagesFromVideoStatusRequest"
+    "accessToken"
+    "imageUUID"
+  }},
+};
+PROTOBUF_NOINLINE void getExtractImagesFromVideoStatusRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIFrontEnd.getExtractImagesFromVideoStatusRequest)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003U) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      _impl_.accesstoken_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      _impl_.imageuuid_.ClearNonDefaultToEmpty();
+    }
+  }
+  if ((cached_has_bits & 0x0000001cU) != 0) {
+    ::memset(&_impl_.grpcservercompressionformat_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.progress_) -
+        reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_)) + sizeof(_impl_.progress_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL getExtractImagesFromVideoStatusRequest::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const getExtractImagesFromVideoStatusRequest& this_ = static_cast<const getExtractImagesFromVideoStatusRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL getExtractImagesFromVideoStatusRequest::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const getExtractImagesFromVideoStatusRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIFrontEnd.getExtractImagesFromVideoStatusRequest)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // int32 grpcServerCompressionFormat = 1;
+  if ((this_._impl_._has_bits_[0] & 0x00000004U) != 0) {
+    if (this_._internal_grpcservercompressionformat() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<1>(
+              stream, this_._internal_grpcservercompressionformat(), target);
+    }
+  }
+
+  // string accessToken = 2;
+  if ((this_._impl_._has_bits_[0] & 0x00000001U) != 0) {
+    if (!this_._internal_accesstoken().empty()) {
+      const ::std::string& _s = this_._internal_accesstoken();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.getExtractImagesFromVideoStatusRequest.accessToken");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // string imageUUID = 3;
+  if ((this_._impl_._has_bits_[0] & 0x00000002U) != 0) {
+    if (!this_._internal_imageuuid().empty()) {
+      const ::std::string& _s = this_._internal_imageuuid();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.getExtractImagesFromVideoStatusRequest.imageUUID");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
+  // sint32 status = 4;
+  if ((this_._impl_._has_bits_[0] & 0x00000008U) != 0) {
+    if (this_._internal_status() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+          4, this_._internal_status(), target);
+    }
+  }
+
+  // float progress = 5;
+  if ((this_._impl_._has_bits_[0] & 0x00000010U) != 0) {
+    if (::absl::bit_cast<::uint32_t>(this_._internal_progress()) != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteFloatToArray(
+          5, this_._internal_progress(), target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIFrontEnd.getExtractImagesFromVideoStatusRequest)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t getExtractImagesFromVideoStatusRequest::ByteSizeLong(const MessageLite& base) {
+  const getExtractImagesFromVideoStatusRequest& this_ = static_cast<const getExtractImagesFromVideoStatusRequest&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t getExtractImagesFromVideoStatusRequest::ByteSizeLong() const {
+  const getExtractImagesFromVideoStatusRequest& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:grpcIFrontEnd.getExtractImagesFromVideoStatusRequest)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x0000001fU) != 0) {
+    // string accessToken = 2;
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!this_._internal_accesstoken().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_accesstoken());
+      }
+    }
+    // string imageUUID = 3;
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (!this_._internal_imageuuid().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_imageuuid());
+      }
+    }
+    // int32 grpcServerCompressionFormat = 1;
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      if (this_._internal_grpcservercompressionformat() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_grpcservercompressionformat());
+      }
+    }
+    // sint32 status = 4;
+    if ((cached_has_bits & 0x00000008U) != 0) {
+      if (this_._internal_status() != 0) {
+        total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+            this_._internal_status());
+      }
+    }
+    // float progress = 5;
+    if ((cached_has_bits & 0x00000010U) != 0) {
+      if (::absl::bit_cast<::uint32_t>(this_._internal_progress()) != 0) {
+        total_size += 5;
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void getExtractImagesFromVideoStatusRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<getExtractImagesFromVideoStatusRequest*>(&to_msg);
+  auto& from = static_cast<const getExtractImagesFromVideoStatusRequest&>(from_msg);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    from.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFrontEnd.getExtractImagesFromVideoStatusRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x0000001fU) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (!from._internal_accesstoken().empty()) {
+        _this->_internal_set_accesstoken(from._internal_accesstoken());
+      } else {
+        if (_this->_impl_.accesstoken_.IsDefault()) {
+          _this->_internal_set_accesstoken("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (!from._internal_imageuuid().empty()) {
+        _this->_internal_set_imageuuid(from._internal_imageuuid());
+      } else {
+        if (_this->_impl_.imageuuid_.IsDefault()) {
+          _this->_internal_set_imageuuid("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      if (from._internal_grpcservercompressionformat() != 0) {
+        _this->_impl_.grpcservercompressionformat_ = from._impl_.grpcservercompressionformat_;
+      }
+    }
+    if ((cached_has_bits & 0x00000008U) != 0) {
+      if (from._internal_status() != 0) {
+        _this->_impl_.status_ = from._impl_.status_;
+      }
+    }
+    if ((cached_has_bits & 0x00000010U) != 0) {
+      if (::absl::bit_cast<::uint32_t>(from._internal_progress()) != 0) {
+        _this->_impl_.progress_ = from._impl_.progress_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getExtractImagesFromVideoStatusRequest::CopyFrom(const getExtractImagesFromVideoStatusRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIFrontEnd.getExtractImagesFromVideoStatusRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void getExtractImagesFromVideoStatusRequest::InternalSwap(getExtractImagesFromVideoStatusRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.accesstoken_, &other->_impl_.accesstoken_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.imageuuid_, &other->_impl_.imageuuid_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_.progress_)
+      + sizeof(getExtractImagesFromVideoStatusRequest::_impl_.progress_)
+      - PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusRequest, _impl_.grpcservercompressionformat_)>(
+          reinterpret_cast<char*>(&_impl_.grpcservercompressionformat_),
+          reinterpret_cast<char*>(&other->_impl_.grpcservercompressionformat_));
+}
+
+::google::protobuf::Metadata getExtractImagesFromVideoStatusRequest::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class getExtractImagesFromVideoStatusResponse::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<getExtractImagesFromVideoStatusResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusResponse, _impl_._has_bits_);
+};
+
+getExtractImagesFromVideoStatusResponse::getExtractImagesFromVideoStatusResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, getExtractImagesFromVideoStatusResponse_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:grpcIFrontEnd.getExtractImagesFromVideoStatusResponse)
+}
+getExtractImagesFromVideoStatusResponse::getExtractImagesFromVideoStatusResponse(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const getExtractImagesFromVideoStatusResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, getExtractImagesFromVideoStatusResponse_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(from._impl_) {
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+}
+PROTOBUF_NDEBUG_INLINE getExtractImagesFromVideoStatusResponse::Impl_::Impl_(
+    [[maybe_unused]] ::google::protobuf::internal::InternalVisibility visibility,
+    [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0} {}
+
+inline void getExtractImagesFromVideoStatusResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, status_),
+           0,
+           offsetof(Impl_, xpcfgrpcreturnvalue_) -
+               offsetof(Impl_, status_) +
+               sizeof(Impl_::xpcfgrpcreturnvalue_));
+}
+getExtractImagesFromVideoStatusResponse::~getExtractImagesFromVideoStatusResponse() {
+  // @@protoc_insertion_point(destructor:grpcIFrontEnd.getExtractImagesFromVideoStatusResponse)
+  SharedDtor(*this);
+}
+inline void getExtractImagesFromVideoStatusResponse::SharedDtor(MessageLite& self) {
+  getExtractImagesFromVideoStatusResponse& this_ = static_cast<getExtractImagesFromVideoStatusResponse&>(self);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL getExtractImagesFromVideoStatusResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) getExtractImagesFromVideoStatusResponse(arena);
+}
+constexpr auto getExtractImagesFromVideoStatusResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(getExtractImagesFromVideoStatusResponse),
+                                            alignof(getExtractImagesFromVideoStatusResponse));
+}
+constexpr auto getExtractImagesFromVideoStatusResponse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_getExtractImagesFromVideoStatusResponse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &getExtractImagesFromVideoStatusResponse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<getExtractImagesFromVideoStatusResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &getExtractImagesFromVideoStatusResponse::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<getExtractImagesFromVideoStatusResponse>(), &getExtractImagesFromVideoStatusResponse::ByteSizeLong,
+              &getExtractImagesFromVideoStatusResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusResponse, _impl_._cached_size_),
+          false,
+      },
+      &getExtractImagesFromVideoStatusResponse::kDescriptorMethods,
+      &descriptor_table_grpcIFrontEndService_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull getExtractImagesFromVideoStatusResponse_class_data_ =
+        getExtractImagesFromVideoStatusResponse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+getExtractImagesFromVideoStatusResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&getExtractImagesFromVideoStatusResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(getExtractImagesFromVideoStatusResponse_class_data_.tc_table);
+  return getExtractImagesFromVideoStatusResponse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 0, 0, 2>
+getExtractImagesFromVideoStatusResponse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusResponse, _impl_._has_bits_),
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    getExtractImagesFromVideoStatusResponse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // sint32 status = 1;
+    {::_pbi::TcParser::FastZ32S1,
+     {8, 0, 0, PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusResponse, _impl_.status_)}},
+    // float progress = 2;
+    {::_pbi::TcParser::FastF32S1,
+     {21, 1, 0, PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusResponse, _impl_.progress_)}},
+    // sint32 xpcfGrpcReturnValue = 3;
+    {::_pbi::TcParser::FastZ32S1,
+     {24, 2, 0, PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusResponse, _impl_.xpcfgrpcreturnvalue_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // sint32 status = 1;
+    {PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusResponse, _impl_.status_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kSInt32)},
+    // float progress = 2;
+    {PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusResponse, _impl_.progress_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // sint32 xpcfGrpcReturnValue = 3;
+    {PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusResponse, _impl_.xpcfgrpcreturnvalue_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kSInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+PROTOBUF_NOINLINE void getExtractImagesFromVideoStatusResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:grpcIFrontEnd.getExtractImagesFromVideoStatusResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007U) != 0) {
+    ::memset(&_impl_.status_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.xpcfgrpcreturnvalue_) -
+        reinterpret_cast<char*>(&_impl_.status_)) + sizeof(_impl_.xpcfgrpcreturnvalue_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL getExtractImagesFromVideoStatusResponse::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const getExtractImagesFromVideoStatusResponse& this_ = static_cast<const getExtractImagesFromVideoStatusResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL getExtractImagesFromVideoStatusResponse::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const getExtractImagesFromVideoStatusResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    this_.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(serialize_to_array_start:grpcIFrontEnd.getExtractImagesFromVideoStatusResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // sint32 status = 1;
+  if ((this_._impl_._has_bits_[0] & 0x00000001U) != 0) {
+    if (this_._internal_status() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+          1, this_._internal_status(), target);
+    }
+  }
+
+  // float progress = 2;
+  if ((this_._impl_._has_bits_[0] & 0x00000002U) != 0) {
+    if (::absl::bit_cast<::uint32_t>(this_._internal_progress()) != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteFloatToArray(
+          2, this_._internal_progress(), target);
+    }
+  }
+
+  // sint32 xpcfGrpcReturnValue = 3;
+  if ((this_._impl_._has_bits_[0] & 0x00000004U) != 0) {
+    if (this_._internal_xpcfgrpcreturnvalue() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteSInt32ToArray(
+          3, this_._internal_xpcfgrpcreturnvalue(), target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:grpcIFrontEnd.getExtractImagesFromVideoStatusResponse)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t getExtractImagesFromVideoStatusResponse::ByteSizeLong(const MessageLite& base) {
+  const getExtractImagesFromVideoStatusResponse& this_ = static_cast<const getExtractImagesFromVideoStatusResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t getExtractImagesFromVideoStatusResponse::ByteSizeLong() const {
+  const getExtractImagesFromVideoStatusResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:grpcIFrontEnd.getExtractImagesFromVideoStatusResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007U) != 0) {
+    // sint32 status = 1;
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (this_._internal_status() != 0) {
+        total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+            this_._internal_status());
+      }
+    }
+    // float progress = 2;
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (::absl::bit_cast<::uint32_t>(this_._internal_progress()) != 0) {
+        total_size += 5;
+      }
+    }
+    // sint32 xpcfGrpcReturnValue = 3;
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      if (this_._internal_xpcfgrpcreturnvalue() != 0) {
+        total_size += ::_pbi::WireFormatLite::SInt32SizePlusOne(
+            this_._internal_xpcfgrpcreturnvalue());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void getExtractImagesFromVideoStatusResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<getExtractImagesFromVideoStatusResponse*>(&to_msg);
+  auto& from = static_cast<const getExtractImagesFromVideoStatusResponse&>(from_msg);
+  if constexpr (::_pbi::DebugHardenVerifyHasBitConsistency()) {
+    from.VerifyHasBitConsistency();
+  }
+  // @@protoc_insertion_point(class_specific_merge_from_start:grpcIFrontEnd.getExtractImagesFromVideoStatusResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007U) != 0) {
+    if ((cached_has_bits & 0x00000001U) != 0) {
+      if (from._internal_status() != 0) {
+        _this->_impl_.status_ = from._impl_.status_;
+      }
+    }
+    if ((cached_has_bits & 0x00000002U) != 0) {
+      if (::absl::bit_cast<::uint32_t>(from._internal_progress()) != 0) {
+        _this->_impl_.progress_ = from._impl_.progress_;
+      }
+    }
+    if ((cached_has_bits & 0x00000004U) != 0) {
+      if (from._internal_xpcfgrpcreturnvalue() != 0) {
+        _this->_impl_.xpcfgrpcreturnvalue_ = from._impl_.xpcfgrpcreturnvalue_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void getExtractImagesFromVideoStatusResponse::CopyFrom(const getExtractImagesFromVideoStatusResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:grpcIFrontEnd.getExtractImagesFromVideoStatusResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void getExtractImagesFromVideoStatusResponse::InternalSwap(getExtractImagesFromVideoStatusResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusResponse, _impl_.xpcfgrpcreturnvalue_)
+      + sizeof(getExtractImagesFromVideoStatusResponse::_impl_.xpcfgrpcreturnvalue_)
+      - PROTOBUF_FIELD_OFFSET(getExtractImagesFromVideoStatusResponse, _impl_.status_)>(
+          reinterpret_cast<char*>(&_impl_.status_),
+          reinterpret_cast<char*>(&other->_impl_.status_));
+}
+
+::google::protobuf::Metadata getExtractImagesFromVideoStatusResponse::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
 class requestMapProcessingRequest::_Internal {
  public:
   using HasBits =
@@ -22617,7 +24270,7 @@ PROTOBUF_NDEBUG_INLINE requestMapProcessingRequest::Impl_::Impl_(
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
         accesstoken_(arena, from.accesstoken_),
-        mapuuid_(arena, from.mapuuid_),
+        maporimageuuid_(arena, from.maporimageuuid_),
         resultmapuuid_(arena, from.resultmapuuid_) {}
 
 requestMapProcessingRequest::requestMapProcessingRequest(
@@ -22648,7 +24301,7 @@ PROTOBUF_NDEBUG_INLINE requestMapProcessingRequest::Impl_::Impl_(
     [[maybe_unused]] ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
         accesstoken_(arena),
-        mapuuid_(arena),
+        maporimageuuid_(arena),
         resultmapuuid_(arena) {}
 
 inline void requestMapProcessingRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
@@ -22672,7 +24325,7 @@ inline void requestMapProcessingRequest::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.accesstoken_.Destroy();
-  this_._impl_.mapuuid_.Destroy();
+  this_._impl_.maporimageuuid_.Destroy();
   this_._impl_.resultmapuuid_.Destroy();
   this_._impl_.~Impl_();
 }
@@ -22720,7 +24373,7 @@ requestMapProcessingRequest::GetClassData() const {
   return requestMapProcessingRequest_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 5, 0, 81, 2>
+const ::_pbi::TcParseTable<3, 5, 0, 88, 2>
 requestMapProcessingRequest::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(requestMapProcessingRequest, _impl_._has_bits_),
@@ -22746,9 +24399,9 @@ requestMapProcessingRequest::_table_ = {
     // string accessToken = 2;
     {::_pbi::TcParser::FastUS1,
      {18, 0, 0, PROTOBUF_FIELD_OFFSET(requestMapProcessingRequest, _impl_.accesstoken_)}},
-    // string mapUUID = 3;
+    // string mapOrImageUUID = 3;
     {::_pbi::TcParser::FastUS1,
-     {26, 1, 0, PROTOBUF_FIELD_OFFSET(requestMapProcessingRequest, _impl_.mapuuid_)}},
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(requestMapProcessingRequest, _impl_.maporimageuuid_)}},
     // string resultMapUUID = 4;
     {::_pbi::TcParser::FastUS1,
      {34, 2, 0, PROTOBUF_FIELD_OFFSET(requestMapProcessingRequest, _impl_.resultmapuuid_)}},
@@ -22764,8 +24417,8 @@ requestMapProcessingRequest::_table_ = {
     {PROTOBUF_FIELD_OFFSET(requestMapProcessingRequest, _impl_.grpcservercompressionformat_), _Internal::kHasBitsOffset + 3, 0, (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
     // string accessToken = 2;
     {PROTOBUF_FIELD_OFFSET(requestMapProcessingRequest, _impl_.accesstoken_), _Internal::kHasBitsOffset + 0, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string mapUUID = 3;
-    {PROTOBUF_FIELD_OFFSET(requestMapProcessingRequest, _impl_.mapuuid_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string mapOrImageUUID = 3;
+    {PROTOBUF_FIELD_OFFSET(requestMapProcessingRequest, _impl_.maporimageuuid_), _Internal::kHasBitsOffset + 1, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string resultMapUUID = 4;
     {PROTOBUF_FIELD_OFFSET(requestMapProcessingRequest, _impl_.resultmapuuid_), _Internal::kHasBitsOffset + 2, 0, (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // sint32 processingType = 5;
@@ -22773,10 +24426,10 @@ requestMapProcessingRequest::_table_ = {
   }},
   // no aux_entries
   {{
-    "\51\0\13\7\15\0\0\0"
+    "\51\0\13\16\15\0\0\0"
     "grpcIFrontEnd.requestMapProcessingRequest"
     "accessToken"
-    "mapUUID"
+    "mapOrImageUUID"
     "resultMapUUID"
   }},
 };
@@ -22793,7 +24446,7 @@ PROTOBUF_NOINLINE void requestMapProcessingRequest::Clear() {
       _impl_.accesstoken_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000002U) != 0) {
-      _impl_.mapuuid_.ClearNonDefaultToEmpty();
+      _impl_.maporimageuuid_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000004U) != 0) {
       _impl_.resultmapuuid_.ClearNonDefaultToEmpty();
@@ -22845,12 +24498,12 @@ PROTOBUF_NOINLINE void requestMapProcessingRequest::Clear() {
     }
   }
 
-  // string mapUUID = 3;
+  // string mapOrImageUUID = 3;
   if ((this_._impl_._has_bits_[0] & 0x00000002U) != 0) {
-    if (!this_._internal_mapuuid().empty()) {
-      const ::std::string& _s = this_._internal_mapuuid();
+    if (!this_._internal_maporimageuuid().empty()) {
+      const ::std::string& _s = this_._internal_maporimageuuid();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.requestMapProcessingRequest.mapUUID");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "grpcIFrontEnd.requestMapProcessingRequest.mapOrImageUUID");
       target = stream->WriteStringMaybeAliased(3, _s, target);
     }
   }
@@ -22907,11 +24560,11 @@ PROTOBUF_NOINLINE void requestMapProcessingRequest::Clear() {
                                         this_._internal_accesstoken());
       }
     }
-    // string mapUUID = 3;
+    // string mapOrImageUUID = 3;
     if ((cached_has_bits & 0x00000002U) != 0) {
-      if (!this_._internal_mapuuid().empty()) {
+      if (!this_._internal_maporimageuuid().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_mapuuid());
+                                        this_._internal_maporimageuuid());
       }
     }
     // string resultMapUUID = 4;
@@ -22963,11 +24616,11 @@ void requestMapProcessingRequest::MergeImpl(::google::protobuf::MessageLite& to_
       }
     }
     if ((cached_has_bits & 0x00000002U) != 0) {
-      if (!from._internal_mapuuid().empty()) {
-        _this->_internal_set_mapuuid(from._internal_mapuuid());
+      if (!from._internal_maporimageuuid().empty()) {
+        _this->_internal_set_maporimageuuid(from._internal_maporimageuuid());
       } else {
-        if (_this->_impl_.mapuuid_.IsDefault()) {
-          _this->_internal_set_mapuuid("");
+        if (_this->_impl_.maporimageuuid_.IsDefault()) {
+          _this->_internal_set_maporimageuuid("");
         }
       }
     }
@@ -23010,7 +24663,7 @@ void requestMapProcessingRequest::InternalSwap(requestMapProcessingRequest* PROT
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.accesstoken_, &other->_impl_.accesstoken_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.mapuuid_, &other->_impl_.mapuuid_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.maporimageuuid_, &other->_impl_.maporimageuuid_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.resultmapuuid_, &other->_impl_.resultmapuuid_, arena);
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(requestMapProcessingRequest, _impl_.processingtype_)

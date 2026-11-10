@@ -95,7 +95,7 @@ IFrontEnd_grpcServer::IFrontEnd_grpcServer():xpcf::ConfigurableBase(xpcf::toMap<
 {
   declareInterface<xpcf::IGrpcService>(this);
   declareInjectable<SolAR::api::service::IFrontEnd>(m_grpcService.m_xpcfComponent);
-  m_grpcServerCompressionConfig.resize(35);
+  m_grpcServerCompressionConfig.resize(37);
   declarePropertySequence("grpc_compress_server", m_grpcServerCompressionConfig);
 }
 
@@ -134,7 +134,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.registerClient",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -182,7 +182,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.unregisterClient",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -227,7 +227,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getAllClientsUUID",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -273,7 +273,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getDeviceInfo",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -320,7 +320,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.init",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -365,7 +365,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.init",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -411,7 +411,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.start",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -456,7 +456,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.stop",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -501,7 +501,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getProcessingMode",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -548,7 +548,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.setCameraParameters",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -594,7 +594,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.setCameraParameters",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -641,7 +641,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.setRectificationParameters",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -688,7 +688,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getCameraParameters",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -735,7 +735,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.imageProcessRequest",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -795,7 +795,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getMappingDataRequest",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -844,7 +844,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getClientPose",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -898,7 +898,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.createMap",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -943,7 +943,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.deleteMap",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -988,7 +988,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getAllMapsUUID",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1034,7 +1034,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getClientMapUUID",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1081,7 +1081,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getClientInfoForMap",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1128,7 +1128,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getMapRequest",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1176,7 +1176,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.setMapRequest",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1222,7 +1222,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getPointCloudRequest",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1269,7 +1269,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getMapInfo",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1326,7 +1326,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.backupMap",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1373,7 +1373,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.restoreMap",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1419,7 +1419,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getAvailableMapProcessingTypes",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1452,6 +1452,103 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
 }
 
 
+::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::extractImagesFromVideo(::grpc::ServerContext* context, const ::grpcIFrontEnd::extractImagesFromVideoRequest* request, ::grpcIFrontEnd::extractImagesFromVideoResponse* response)
+{
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.extractImagesFromVideo",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "extractImagesFromVideo"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  SpanScope spanScope(span);
+  auto scope= tracer->WithActiveSpan(span);
+  
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "extractImagesFromVideo", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::extractImagesFromVideo request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string accessToken = request->accesstoken();
+  std::string videoURL = request->videourl();
+  std::string headers = request->headers();
+  std::string imageUUID = request->imageuuid();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->extractImagesFromVideo(accessToken, videoURL, headers, imageUUID);
+  response->set_imageuuid(imageUUID);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::extractImagesFromVideo response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
+::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::getExtractImagesFromVideoStatus(::grpc::ServerContext* context, const ::grpcIFrontEnd::getExtractImagesFromVideoStatusRequest* request, ::grpcIFrontEnd::getExtractImagesFromVideoStatusResponse* response)
+{
+  auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
+  auto currentCtx = opentelemetry::context::RuntimeContext::GetCurrent();
+  GrpcServerCarrier carrier(context);
+  auto newContext = prop->Extract(carrier, currentCtx);
+  ContextScope ctxtScope(newContext);
+  
+  opentelemetry::trace::StartSpanOptions options;
+  options.kind = opentelemetry::trace::SpanKind::kServer;
+  options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
+  
+  auto provider = opentelemetry::trace::Provider::GetTracerProvider();
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
+  auto span = tracer->StartSpan("IFrontEnd_grpcServer.getExtractImagesFromVideoStatus",
+                                {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
+                                 {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
+                                 {opentelemetry::semconv::rpc::kRpcMethod, "getExtractImagesFromVideoStatus"},
+                                 {opentelemetry::semconv::rpc::kRpcGrpcStatusCode, 0}},
+                                options);
+  SpanScope spanScope(span);
+  auto scope= tracer->WithActiveSpan(span);
+  
+  #ifndef DISABLE_GRPC_COMPRESSION
+  xpcf::grpcCompressType askedCompressionType = static_cast<xpcf::grpcCompressType>(request->grpcservercompressionformat());
+  xpcf::grpcServerCompressionInfos serverCompressInfo = xpcf::deduceServerCompressionType(askedCompressionType, m_serviceCompressionInfos, "getExtractImagesFromVideoStatus", m_methodCompressionInfosMap);
+  xpcf::prepareServerCompressionContext(context, serverCompressInfo);
+  #endif
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime start = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::getExtractImagesFromVideoStatus request received at " << to_simple_string(start) << std::endl;
+  #endif
+  std::string accessToken = request->accesstoken();
+  std::string imageUUID = request->imageuuid();
+  SolAR::api::service::MapProcessingStatus status = static_cast<SolAR::api::service::MapProcessingStatus>(request->status());
+  float progress = request->progress();
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->getExtractImagesFromVideoStatus(accessToken, imageUUID, status, progress);
+  response->set_status(static_cast<int32_t>(status));
+  response->set_progress(progress);
+  response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
+  #ifdef ENABLE_SERVER_TIMERS
+  boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
+  std::cout << "====> IFrontEnd_grpcServer::getExtractImagesFromVideoStatus response sent at " << to_simple_string(end) << std::endl;
+  std::cout << "   => elapsed time = " << ((end - start).total_microseconds() / 1000.00) << " ms" << std::endl;
+  #endif
+  return ::grpc::Status::OK;
+}
+
+
 ::grpc::Status IFrontEnd_grpcServer::grpcIFrontEndServiceImpl::requestMapProcessing(::grpc::ServerContext* context, const ::grpcIFrontEnd::requestMapProcessingRequest* request, ::grpcIFrontEnd::requestMapProcessingResponse* response)
 {
   auto prop = opentelemetry::context::propagation::GlobalTextMapPropagator::GetGlobalPropagator();
@@ -1465,7 +1562,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.requestMapProcessing",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1485,10 +1582,10 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   std::cout << "====> IFrontEnd_grpcServer::requestMapProcessing request received at " << to_simple_string(start) << std::endl;
   #endif
   std::string accessToken = request->accesstoken();
-  std::string mapUUID = request->mapuuid();
+  std::string mapOrImageUUID = request->maporimageuuid();
   std::string resultMapUUID = request->resultmapuuid();
   SolAR::api::service::MapProcessingType processingType = static_cast<SolAR::api::service::MapProcessingType>(request->processingtype());
-  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->requestMapProcessing(accessToken, mapUUID, resultMapUUID, processingType);
+  SolAR::FrameworkReturnCode returnValue = m_xpcfComponent->requestMapProcessing(accessToken, mapOrImageUUID, resultMapUUID, processingType);
   response->set_xpcfgrpcreturnvalue(static_cast<int32_t>(returnValue));
   #ifdef ENABLE_SERVER_TIMERS
   boost::posix_time::ptime end = boost::posix_time::microsec_clock::universal_time();
@@ -1512,7 +1609,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getMapProcessingStatus",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1563,7 +1660,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getMapProcessingData",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1612,7 +1709,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.getAvailableMapExportImportFormats",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1658,7 +1755,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.exportMapToFormat",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},
@@ -1706,7 +1803,7 @@ XPCFErrorCode IFrontEnd_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IFrontEnd_grpcServer.importMapFromFormat",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIFrontEnd.grpcIFrontEndService"},

@@ -134,7 +134,7 @@ XPCFErrorCode IMapProcessingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IMapProcessingPipeline_grpcServer.init",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService"},
@@ -177,7 +177,7 @@ XPCFErrorCode IMapProcessingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IMapProcessingPipeline_grpcServer.start",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService"},
@@ -220,7 +220,7 @@ XPCFErrorCode IMapProcessingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IMapProcessingPipeline_grpcServer.stop",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService"},
@@ -263,7 +263,7 @@ XPCFErrorCode IMapProcessingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IMapProcessingPipeline_grpcServer.setMapToProcess",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService"},
@@ -308,7 +308,7 @@ XPCFErrorCode IMapProcessingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IMapProcessingPipeline_grpcServer.getStatus",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService"},
@@ -355,7 +355,7 @@ XPCFErrorCode IMapProcessingPipeline_grpcServer::onConfigured()
   options.parent = opentelemetry::trace::GetSpan(newContext)->GetContext();
   
   auto provider = opentelemetry::trace::Provider::GetTracerProvider();
-  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.6.0");
+  auto tracer = provider->GetTracer("xpcfGrpcRemotingSolARFramework", "1.7.0");
   auto span = tracer->StartSpan("IMapProcessingPipeline_grpcServer.getProcessingData",
                                 {{opentelemetry::semconv::rpc::kRpcSystem, "grpc"},
                                  {opentelemetry::semconv::rpc::kRpcService, "grpcIMapProcessingPipeline.grpcIMapProcessingPipelineService"},
